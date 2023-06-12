@@ -2,7 +2,7 @@
 import socket # socket.gethostbyname(host)
 import optparse
 import threading
-
+# 由于互联网的规模巨大，导致重要信息的片段残留在网上的可能性很高
 #打印信号量
 screenLock =threading.Semaphore(value=1)
 
