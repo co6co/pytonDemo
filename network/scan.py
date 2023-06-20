@@ -3,12 +3,13 @@ import socket # socket.gethostbyname(host)
 import optparse
 import threading
 # 由于互联网的规模巨大，导致重要信息的片段残留在网上的可能性很高
+
 #打印信号量
 screenLock =threading.Semaphore(value=1)
 
+
 def connScan(host,port):
     try:
-        
         connSkt=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         connSkt.connect((host,port))
         #connSkt.send('ViolentPython\r\n')
@@ -22,7 +23,7 @@ def connScan(host,port):
         screenLock.release()
         connSkt.close
 
- 
+
 def portScan(hostName,ports): 
     try :
         tgtIP=socket.gethostbyname(hostName )
@@ -40,7 +41,6 @@ def portScan(hostName,ports):
         print("scan %s"%(tgtPort))
         t=threading.Thread(target=connScan,args=(hostName,int(tgtPort)))
         t.start()
-        
 
 def main():
     # 解析命令行参数 
@@ -52,7 +52,7 @@ def main():
     (options,args)=parser.parse_args()
     tgtHost=options.tgtHost
     tgtPort=options.tgtPort 
-   # args.append(tgtPort)
+    #args.append(tgtPort)
     args.insert(0,tgtPort) 
     if(tgtHost ==None) | (tgtPort==None):
         print (parser.usage)
@@ -63,4 +63,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

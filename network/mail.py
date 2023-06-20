@@ -7,7 +7,12 @@ def sendMail(user,pwd,to,subject,text):
     msg['To'] = to
     msg['Subject'] = subject
     try:
-        smtpServer = smtplib.SMTP('smtp.gmail.com', 587)
+        
+        #POP3服务器: pop.163.com
+        #SMTP服务器: smtp.163.com
+        #IMAP服务器: imap.163.com
+
+        smtpServer = smtplib.SMTP('smtp.163.com',25) # 25、587、465、2525
         print("[+] Connecting To Mail Server.")
         smtpServer.ehlo()
         print("[+] Starting Encrypted Session.")
@@ -19,8 +24,8 @@ def sendMail(user,pwd,to,subject,text):
         smtpServer.sendmail(user, to, msg.as_string())
         smtpServer.close()
         print("[+] Mail Sent Successfully.")
-    except:
-        print("[-] Sending Mail Failed.")
-user = 'username'
-pwd = 'password'
-sendMail(user, pwd, 'target@tgt.tgt', 'Re: Important', 'Test Message')
+    except Exception as e:
+        print("[-] Sending Mail Failed.",e)
+user = 'ynchyung@163.com'
+pwd = 'KJIJJQWN3QJWRRP'
+sendMail(user, pwd, 'ynchyung@163.com', 'Re: Important', 'Test Message')

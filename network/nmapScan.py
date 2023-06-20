@@ -1,8 +1,6 @@
 
-import nmap
 import optparse
-# 安装
-# pip install python-nmap
+import nmap # pip install python-nmap
 
 def nmapScan(host,port):
     nm=nmap.PortScanner()
