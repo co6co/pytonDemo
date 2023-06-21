@@ -85,9 +85,10 @@ class clash:
     def genNodeList(self,urlList): #生成 proxy_list 
         # 请求订阅地址
         for url in urlList:
+            if not url.lower().startswith("http"):
+                continue
             log("订阅：'{}'".format(url))
-            response = webutility.get(url)
-            print(f"https://tt.vg/evIzX:{response.status_code}")
+            response = webutility.get(url) 
             response=response.text
             try:
                 raw = base64.b64decode(response)
