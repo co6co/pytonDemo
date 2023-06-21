@@ -1,5 +1,4 @@
-import requests, yaml,base64 
-
+import requests, yaml,base64,os
 def get_proxies(urls):
     url_list = urls.split(';')
     

@@ -1,21 +1,9 @@
 import os ,sys,time
-from loguru import logger
-logger.remove()
-logger.add(sys.stdout,level="INFO",format="{message}")
-'''
-#https://blog.csdn.net/Kangyucheng/article/details/112794185
-TRACE           5   trace()
-DEBUG           10  debug()
-INFO            20  info()
-SUCCESS         25  success()
-WARNING         30  warning()
-ERROR           40  error()
-CRITICAL        50  critical()
-'''
-
-logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_INFO.log",level="INFO",encoding="utf-8" ,rotation="00:00" ,retention='7 days' ,format="{level}|{time:YY-MM-DD HH:mm:ss}|{file}|{line}|\t{message}")
-logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_ERROR.log",level="ERROR",encoding="utf-8" ,rotation="00:00" ,retention='7 days' ,format="{level}|{time:YY-MM-DD HH:mm:ss}|{file}|{line}|\t{message}")
-
+print("log 所在目录：{}\tsys.path.append 是否需要用全路径".format(os.path.abspath( os.path.join(os.path.dirname(__file__),"../tool") )))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"../tool") ))
+sys.path.append("../tool")
+from log import *
+ 
 class Command: # 执行windows 命令
     def __init__(self,commandText:str,resultContain=str|None) -> None: 
         if not isinstance(commandText,str):

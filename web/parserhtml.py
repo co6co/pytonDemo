@@ -1,4 +1,4 @@
-import optparse
+import optparse,os
 
 from bs4 import BeautifulSoup
 import re
@@ -10,6 +10,7 @@ def _getHtml(url):
     ab.anonymize()
     page=ab.open(url)
     html=page.read()
+    return html
 
 def printLinks(url):
     html =_getHtml(url)
@@ -25,7 +26,7 @@ def printLint2(url):
     html =_getHtml(url)
     try:
         print("\n [+] Printing Links From BeautifulSoup")
-        soup=BeautifulSoup(html)
+        soup=BeautifulSoup(html) 
         links=soup.findAll(name='a')
         for link in links:
             if link.has_key("href"):

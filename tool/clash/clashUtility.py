@@ -1,7 +1,7 @@
-import requests,base64,yaml,sys
-
-sys.path.append("./tool")
-from log import log
+import requests,base64,yaml,sys,os
+sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
+from log import log,logger
+import webutility
 from convert2clash import *
 from parserNode import *
 
@@ -31,6 +31,7 @@ class clash:
                 tmp_list = yml.get('Proxy')
             else:
                 log('clash节点提取失败,clash节点为空') 
+            
             for node in tmp_list:
                 node['name'] = node['name'].strip() if node.get('name') else None
                 # 对clashR的支持
@@ -51,7 +52,7 @@ class clash:
             print ("内容不正确",e)
 
     def parseNodeText(self,text): # 解析 从 base64 解析出来的文本
-        nodes_list = text.splitlines() 
+        nodes_list = text.splitlines()  
         nodes_list.extend(self.vmess)
         clash_node = []
         for node in nodes_list: 
@@ -75,23 +76,24 @@ class clash:
                 else:
                     pass
                 
-                self.proxy_list['proxy_list'].extend(clash_node['proxy_list'])
+                log('可用clash节点{}个'.format(len(clash_node['proxy_list'])))
+                self.proxy_list['proxy_list'].extend(clash_node['proxy_list']) 
                 self.proxy_list['proxy_names'].extend(clash_node['proxy_names'])
             except Exception as e:
                 print(f'出错{e}')
           
-    def genNodeList(self,urlList): #生成 proxy_list
-        headers=   {"User-agent":"'Mozilla/5.0 (X11; U; Linux 2.4.2-2 i586;en-US; m18) Gecko/20010131 Netscape6/6.01"}
-        hideMeProxy={'socks5':"127.0.0.1:9666"}  
-
+    def genNodeList(self,urlList): #生成 proxy_list 
         # 请求订阅地址
-        for url in urlList: 
-            response = requests.get(url, headers=headers, timeout=5000).text
+        for url in urlList:
+            log("订阅：'{}'".format(url))
+            response = webutility.get(url)
+            print(f"https://tt.vg/evIzX:{response.status_code}")
+            response=response.text
             try:
-                raw = base64.b64decode(response) 
+                raw = base64.b64decode(response)
                 self.parseNodeText(raw)
             except Exception as e:
-                log('base64解码失败:{},应当为clash节点'.format(e))
+                log('base64解码失败:"{}",应当为clash节点'.format(e))
                 log('clash节点提取中...')
                 self.parseYaml(response) 
 
@@ -103,15 +105,15 @@ class clash:
             f.close()
             return local_config
         except FileNotFoundError:
-            log('配置文件加载失败')
+            log(f'配置文件{path}加载失败')
             sys.exit(0)
 
     def getTemplateConfig(self,url, path):
         try:
-            raw = requests.get(url, timeout=5000).content.decode('utf-8')
+            raw =   webutility.get(url, timeout=5).content.decode('utf-8')
             template_config = yaml.load(raw, Loader=yaml.FullLoader)
         except requests.exceptions.RequestException:
-            log('网络获取规则配置失败,加载本地配置文件')
+            log(f'网络获取规则{url}配置模板失败,加载本地配置文件')
             template_config =clash.load_local_config(path)
         log('已获取规则配置文件')
         return template_config
@@ -188,35 +190,52 @@ class clash:
         log('成功更新{}个节点'.format(len(data['proxies'])))
 
     def genYamlForClash(self):
-        config_path = './default_config.yaml'
+        config_path = self.opt.backLocalTemplate
         clashOpt=self.opt
         yamlConfig=self.getTemplateConfig(clashOpt.templateUrl,config_path)
-        self.genNodeList(self.subUrlArray)
+        self.genNodeList(self.opt.subUrlArray)
+        log(f'通过模板导出配置文件...')
         final_config =clash.add_proxies_to_model(self.proxy_list, yamlConfig) 
-        clash.save_config(clashOpt.outputPath, final_config)
         print(f'文件已导出至 {clashOpt.outputPath}')
+        clash.save_config(clashOpt.outputPath, final_config)
+        
 
 class clashOption():
-    def __init__(self,yamlTemplateUrl=None,subArray=None,clashYamlOutputPath=None):
-        self.__y=0 # __y 私有属性不能被继承
-        #模板
-        self.templateUrl=yamlTemplateUrl if yamlTemplateUrl!=None else "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/config.yaml" 
+    def __init__(self,subArray=list):
+    
+        #模板 __xxxx 私有属性不能被继承
+        self.__templateUrl="https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/config.yaml" 
+        # 备用本地模板
+        self.__backLocalTemplate="./default_config.yaml"
         self.subUrlArray=subArray
-        if not isinstance(self.subUrlArray,list):
-            log(f"subArray:必须是字符串 list")
-            sys.exit(0)
         #输出
-        self.outputPath=clashYamlOutputPath if clashYamlOutputPath!=None else './file/output.yaml'
+        self.__outputPath='./file/output.yaml'
     
     @property  #像访问属性一样访问方法
-    def y(self): 
-        return self.__y
-    @y.setter
-    def y(self,value):
-        self.__y=value
+    def templateUrl(self): 
+        return self.__templateUrl
+    @templateUrl.setter
+    def templateUrl(self,value:str):
+        self.__templateUrl=value
+
+    @property  #备用本地模板
+    def backLocalTemplate(self): 
+        return self.__backLocalTemplate
+    @backLocalTemplate.setter
+    def backLocalTemplate(self,value:str):
+        self.__backLocalTemplate=value
+    
+    @property
+    def outputPath(self):
+        return self.__outputPath
+    @outputPath.setter
+    def outputPath(self,value:str):
+        self.__outputPath=value
+
+
 
 if __name__ == '__main__': 
-    opt=clashOption(subArray=["https://moes.lnaspiring.com/Moe233-Subs/wel/api/v1/client/subscribe?token=2aeb6746f02ff8ca02a891cc0f43cbe4"])
+    opt=clashOption(subArray=["https://tt.vg/evIzX"])
     cl =clash (opt)
     cl.genYamlForClash()
 

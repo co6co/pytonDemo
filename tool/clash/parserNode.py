@@ -2,9 +2,16 @@
 import sys
 sys.path.append("../")
 from log import log
-from webutility import safe_decode
 import json,base64,re
 import urllib.parse
+
+def safe_decode(s):
+    #print("saft_decode:",s)
+    num = len(s) % 4
+    if num:
+        s += '=' * (4 - num)
+    #print(f"s:{s},num:{num}")
+    return base64.urlsafe_b64decode(s)
 
 # 解析vmess节点
 def decode_v2ray_node(nodes):
