@@ -34,6 +34,7 @@ def v2ray_to_clash(v2rayArr):
             'ws-path': item.get('path'),
             'ws-headers': {'Host': item.get('host')} if item.get('host') else None
         }
+        
         for key in list(obj.keys()):
             if obj.get(key) is None:
                 del obj[key]

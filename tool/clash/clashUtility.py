@@ -1,15 +1,20 @@
-import requests,base64,yaml,sys,os
+import requests,base64,yaml,sys,os,math
 sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
 from log import log,logger
+import tcp
 import webutility
 from convert2clash import *
 from parserNode import *
+import geoip2.database
+import socket,  concurrent.futures
+
+
 
 
 class clash:
     proxy_list = {
-            'proxy_list': [],
-            'proxy_names': []
+        'proxy_list': [],
+        'proxy_names': []
     } 
 
     #命名数字
@@ -20,7 +25,7 @@ class clash:
         pass
     def parseYaml(self,content): # 解析yaml文本
         try:
-            yml = yaml.load(content, Loader=yaml.FullLoader)
+            yml = yaml.load(content, Loader=yaml.FullLoader,)
             nodes_list = []
             tmp_list = []
             # clash新字段
@@ -34,6 +39,7 @@ class clash:
             
             for node in tmp_list:
                 node['name'] = node['name'].strip() if node.get('name') else None
+                
                 # 对clashR的支持
                 if node.get('protocolparam'):
                     node['protocol-param'] = node['protocolparam']
@@ -43,11 +49,14 @@ class clash:
                     del node['obfsparam']
                 node['udp'] = True
                 node['port'] = int(node['port']) 
+                 
+                if node.get('name')==None: continue
                 nodes_list.append(node)
-                node_names = [node.get('name') for node in nodes_list]
-                log('可用clash节点{}个'.format(len(node_names)))
-                self.proxy_list['proxy_list'].extend(nodes_list)
-                self.proxy_list['proxy_names'].extend(node_names)
+
+            node_names = [node.get('name') for node in nodes_list]
+            log('可用clash节点{}个'.format(len(node_names)))
+            self.proxy_list['proxy_list'].extend(nodes_list)
+            self.proxy_list['proxy_names'].extend(node_names)
         except Exception as e:
             print ("内容不正确",e)
 
@@ -81,15 +90,21 @@ class clash:
                 self.proxy_list['proxy_names'].extend(clash_node['proxy_names'])
             except Exception as e:
                 print(f'出错{e}')
-          
+
+    
     def genNodeList(self,urlList): #生成 proxy_list 
         # 请求订阅地址
         for url in urlList:
-            if not url.lower().startswith("http"):
-                continue
+            if not url.lower().startswith("http"):continue
             log("订阅：'{}'".format(url))
-            response = webutility.get(url) 
-            response=response.text
+            try:
+                response = webutility.get(url) 
+                print("Encoding:"+response.apparent_encoding)
+                response.encoding="utf-8"
+                response=response.text
+            except Exception as e:
+                log(f"http请求出现异常：{e}")
+                continue
             try:
                 raw = base64.b64decode(response)
                 self.parseNodeText(raw)
@@ -119,20 +134,132 @@ class clash:
         log('已获取规则配置文件')
         return template_config
     
-    #去重
-    def remove_duplicates(lst):
+    def find_country(server):
+        emoji = {
+            'AD': '🇦🇩', 'AE': '🇦🇪', 'AF': '🇦🇫', 'AG': '🇦🇬',
+            'AI': '🇦🇮', 'AL': '🇦🇱', 'AM': '🇦🇲', 'AO': '🇦🇴',
+            'AQ': '🇦🇶', 'AR': '🇦🇷', 'AS': '🇦🇸', 'AT': '🇦🇹',
+            'AU': '🇦🇺', 'AW': '🇦🇼', 'AX': '🇦🇽', 'AZ': '🇦🇿',
+            'BA': '🇧🇦', 'BB': '🇧🇧', 'BD': '🇧🇩', 'BE': '🇧🇪',
+            'BF': '🇧🇫', 'BG': '🇧🇬', 'BH': '🇧🇭', 'BI': '🇧🇮',
+            'BJ': '🇧🇯', 'BL': '🇧🇱', 'BM': '🇧🇲', 'BN': '🇧🇳',
+            'BO': '🇧🇴', 'BQ': '🇧🇶', 'BR': '🇧🇷', 'BS': '🇧🇸',
+            'BT': '🇧🇹', 'BV': '🇧🇻', 'BW': '🇧🇼', 'BY': '🇧🇾',
+            'BZ': '🇧🇿', 'CA': '🇨🇦', 'CC': '🇨🇨', 'CD': '🇨🇩',
+            'CF': '🇨🇫', 'CG': '🇨🇬', 'CH': '🇨🇭', 'CI': '🇨🇮',
+            'CK': '🇨🇰', 'CL': '🇨🇱', 'CM': '🇨🇲', 'CN': '🇨🇳',
+            'CO': '🇨🇴', 'CR': '🇨🇷', 'CU': '🇨🇺', 'CV': '🇨🇻',
+            'CW': '🇨🇼', 'CX': '🇨🇽', 'CY': '🇨🇾', 'CZ': '🇨🇿',
+            'DE': '🇩🇪', 'DJ': '🇩🇯', 'DK': '🇩🇰', 'DM': '🇩🇲',
+            'DO': '🇩🇴', 'DZ': '🇩🇿', 'EC': '🇪🇨', 'EE': '🇪🇪',
+            'EG': '🇪🇬', 'EH': '🇪🇭', 'ER': '🇪🇷', 'ES': '🇪🇸',
+            'ET': '🇪🇹', 'EU': '🇪🇺', 'FI': '🇫🇮', 'FJ': '🇫🇯',
+            'FK': '🇫🇰', 'FM': '🇫🇲', 'FO': '🇫🇴', 'FR': '🇫🇷',
+            'GA': '🇬🇦', 'GB': '🇬🇧', 'GD': '🇬🇩', 'GE': '🇬🇪',
+            'GF': '🇬🇫', 'GG': '🇬🇬', 'GH': '🇬🇭', 'GI': '🇬🇮',
+            'GL': '🇬🇱', 'GM': '🇬🇲', 'GN': '🇬🇳', 'GP': '🇬🇵',
+            'GQ': '🇬🇶', 'GR': '🇬🇷', 'GS': '🇬🇸', 'GT': '🇬🇹',
+            'GU': '🇬🇺', 'GW': '🇬🇼', 'GY': '🇬🇾', 'HK': '🇭🇰',
+            'HM': '🇭🇲', 'HN': '🇭🇳', 'HR': '🇭🇷', 'HT': '🇭🇹',
+            'HU': '🇭🇺', 'ID': '🇮🇩', 'IE': '🇮🇪', 'IL': '🇮🇱',
+            'IM': '🇮🇲', 'IN': '🇮🇳', 'IO': '🇮🇴', 'IQ': '🇮🇶',
+            'IR': '🇮🇷', 'IS': '🇮🇸', 'IT': '🇮🇹', 'JE': '🇯🇪',
+            'JM': '🇯🇲', 'JO': '🇯🇴', 'JP': '🇯🇵', 'KE': '🇰🇪',
+            'KG': '🇰🇬', 'KH': '🇰🇭', 'KI': '🇰🇮', 'KM': '🇰🇲',
+            'KN': '🇰🇳', 'KP': '🇰🇵', 'KR': '🇰🇷', 'KW': '🇰🇼',
+            'KY': '🇰🇾', 'KZ': '🇰🇿', 'LA': '🇱🇦', 'LB': '🇱🇧',
+            'LC': '🇱🇨', 'LI': '🇱🇮', 'LK': '🇱🇰', 'LR': '🇱🇷',
+            'LS': '🇱🇸', 'LT': '🇱🇹', 'LU': '🇱🇺', 'LV': '🇱🇻',
+            'LY': '🇱🇾', 'MA': '🇲🇦', 'MC': '🇲🇨', 'MD': '🇲🇩',
+            'ME': '🇲🇪', 'MF': '🇲🇫', 'MG': '🇲🇬', 'MH': '🇲🇭',
+            'MK': '🇲🇰', 'ML': '🇲🇱', 'MM': '🇲🇲', 'MN': '🇲🇳',
+            'MO': '🇲🇴', 'MP': '🇲🇵', 'MQ': '🇲🇶', 'MR': '🇲🇷',
+            'MS': '🇲🇸', 'MT': '🇲🇹', 'MU': '🇲🇺', 'MV': '🇲🇻',
+            'MW': '🇲🇼', 'MX': '🇲🇽', 'MY': '🇲🇾', 'MZ': '🇲🇿',
+            'NA': '🇳🇦', 'NC': '🇳🇨', 'NE': '🇳🇪', 'NF': '🇳🇫',
+            'NG': '🇳🇬', 'NI': '🇳🇮', 'NL': '🇳🇱', 'NO': '🇳🇴',
+            'NP': '🇳🇵', 'NR': '🇳🇷', 'NU': '🇳🇺', 'NZ': '🇳🇿',
+            'OM': '🇴🇲', 'PA': '🇵🇦', 'PE': '🇵🇪', 'PF': '🇵🇫',
+            'PG': '🇵🇬', 'PH': '🇵🇭', 'PK': '🇵🇰', 'PL': '🇵🇱',
+            'PM': '🇵🇲', 'PN': '🇵🇳', 'PR': '🇵🇷', 'PS': '🇵🇸',
+            'PT': '🇵🇹', 'PW': '🇵🇼', 'PY': '🇵🇾', 'QA': '🇶🇦',
+            'RE': '🇷🇪', 'RO': '🇷🇴', 'RS': '🇷🇸', 'RU': '🇷🇺',
+            'RW': '🇷🇼', 'SA': '🇸🇦', 'SB': '🇸🇧', 'SC': '🇸🇨',
+            'SD': '🇸🇩', 'SE': '🇸🇪', 'SG': '🇸🇬', 'SH': '🇸🇭',
+            'SI': '🇸🇮', 'SJ': '🇸🇯', 'SK': '🇸🇰', 'SL': '🇸🇱',
+            'SM': '🇸🇲', 'SN': '🇸🇳', 'SO': '🇸🇴', 'SR': '🇸🇷',
+            'SS': '🇸🇸', 'ST': '🇸🇹', 'SV': '🇸🇻', 'SX': '🇸🇽',
+            'SY': '🇸🇾', 'SZ': '🇸🇿', 'TC': '🇹🇨', 'TD': '🇹🇩',
+            'TF': '🇹🇫', 'TG': '🇹🇬', 'TH': '🇹🇭', 'TJ': '🇹🇯',
+            'TK': '🇹🇰', 'TL': '🇹🇱', 'TM': '🇹🇲', 'TN': '🇹🇳',
+            'TO': '🇹🇴', 'TR': '🇹🇷', 'TT': '🇹🇹', 'TV': '🇹🇻',
+            'TW': '🇹🇼', 'TZ': '🇹🇿', 'UA': '🇺🇦', 'UG': '🇺🇬',
+            'UM': '🇺🇲', 'US': '🇺🇸', 'UY': '🇺🇾', 'UZ': '🇺🇿',
+            'VA': '🇻🇦', 'VC': '🇻🇨', 'VE': '🇻🇪', 'VG': '🇻🇬',
+            'VI': '🇻🇮', 'VN': '🇻🇳', 'VU': '🇻🇺', 'WF': '🇼🇫',
+            'WS': '🇼🇸', 'XK': '🇽🇰', 'YE': '🇾🇪', 'YT': '🇾🇹',
+            'ZA': '🇿🇦', 'ZM': '🇿🇲', 'ZW': '🇿🇼',
+            'RELAY': '🏁',
+            'NOWHERE': '🇦🇶',
+        }
+        if server.replace('.', '').isdigit():
+            ip = server
+        else:
+            try:
+                # https://cloud.tencent.com/developer/article/1569841
+                ip = socket.gethostbyname(server)
+            except Exception:
+                ip = server
+        with geoip2.database.Reader('./file/ip/Country.mmdb') as ip_reader:
+            try:
+                response = ip_reader.country(ip)
+                country_code = response.country.iso_code
+            except Exception:
+                ip = '0.0.0.0'
+                country_code = 'NOWHERE'
+
+        if country_code == 'CLOUDFLARE':
+            country_code = 'RELAY'
+        elif country_code == 'PRIVATE':
+            country_code = 'RELAY'
+        if country_code in emoji:
+            name_emoji = emoji[country_code]
+        else:
+            name_emoji = emoji['NOWHERE']
+        return '[' + name_emoji + ']'
+    
+ 
+    def remove_duplicates(lst): # 去重
         result = []
         namesl = []
+        servers = []
         i = 1
         for item in lst:
             if 'name' in item:
+                if 'server' not in item or 'port' not in item:
+                    continue
                 domain = item['server']
+                port = item['port']
+                server=f"{domain}:{port}" 
+                if server in servers:
+                    continue  
+                servers.append(server)
+                #re.match 从字符串开始的地方匹配，
+                #re.search 从给定字符串中寻找第一个匹配的子字符串
+                #都只能匹配一个
+                name=""
+                match=re.search('[\u4e00-\u9fa5]+',item['name'])
+                if match !=None:
+                    name=match.group()
 
+                '''
+                名称转换为指定格式
+                ''' 
+                '''
                 pattern = '[^\u4e00-\u9fa5\d]+'
-                item['name'] = re.sub(pattern, '', item['name'])
+                item['name'] = re.sub(pattern, '', item['name'] ) 
                 item['name'] = re.sub(r'\d', '', item['name'])
-                location = item['name'][:3]
-
+                location = item['name'][:3] 
                 # Check for duplicate names and append an index if needed
                 original_name = location
                 index = 1
@@ -142,6 +269,9 @@ class clash:
 
                 namesl.append(item['name'])
                 item['name'] = location + '_' + str(i)
+                '''
+
+                item['name']=clash.find_country(domain)+ name+'_' + str(i)
                 result.append(item)
             i += 1
         return result
@@ -167,7 +297,6 @@ class clash:
             for item in data['proxy_list']:
                 if item['name'] not in names:
                     names.append(item['name'])
-                    print(item['name'])
             for group in model.get('proxy-groups'):
                 if group.get('proxies') is None:
                     #group['proxies'] = data.get('proxy_names')
@@ -189,16 +318,60 @@ class clash:
         config = yaml.dump(data, sort_keys=False, default_flow_style=False, encoding='utf-8', allow_unicode=True)
         clash.save_to_file(path, config)
         log('成功更新{}个节点'.format(len(data['proxies'])))
-
-    def genYamlForClash(self):
+    
+    def checkNode(node):
+        if 'server' not in node or 'port' not in node or 'password' in node:
+            return False
+                        
+        domain = node['server']
+        port = node['port']
+        result=tcp.check_tcp_port({"host":domain,"port":port})
+        log(f"检测节点结果:{result}")
+        return result["status"]
+    
+    def check_nodes(self):
+        nodeList=[]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            futures={executor.submit(clash.checkNode,item):item for item in self.proxy_list['proxy_list']}
+           
+            for future in concurrent.futures.as_completed(futures):
+                item=futures[future]
+                if(future.result):nodeList.append(item)
+                
+        self.proxy_list['proxy_list']=nodeList
+        self.proxy_list['proxy_names']=[node.get("name") for node in nodeList]
+  
+    def genYamlForClash(self,yamlNodeNum:int):
         config_path = self.opt.backLocalTemplate
         clashOpt=self.opt
+        log("获取导出配置模板...")
         yamlConfig=self.getTemplateConfig(clashOpt.templateUrl,config_path)
+        log("获取导出节点...") 
         self.genNodeList(self.opt.subUrlArray)
-        log(f'通过模板导出配置文件...')
-        final_config =clash.add_proxies_to_model(self.proxy_list, yamlConfig) 
-        print(f'文件已导出至 {clashOpt.outputPath}')
-        clash.save_config(clashOpt.outputPath, final_config)
+        self.check_nodes()
+        log(f'通过模板导出配置文件...{len(self.proxy_list.get("proxy_list"))}')
+        
+        index=math.floor(len(self.proxy_list.get("proxy_list")) / yamlNodeNum)  
+        index+=1 if len(self.proxy_list.get("proxy_list")) % yamlNodeNum >0 else 0
+        i=0
+               
+
+        while i<index:
+            ii=i*yamlNodeNum
+            jj=(i+1)*yamlNodeNum
+            data={"proxy_list":[],"proxy_names":[]}
+            data["proxy_list"]=self.proxy_list['proxy_list'][ii:jj]
+            data["proxy_names"]=self.proxy_list['proxy_names'][ii:jj]
+
+            
+            outputPath=clashOpt.outputPath
+            if i>0: outputPath=os.path.splitext(outputPath)[0]+str(i)+os.path.splitext(outputPath)[1]
+            log("获取导出配置模板...")
+            yamlConfig=self.getTemplateConfig(clashOpt.templateUrl,config_path)
+            final_config =clash.add_proxies_to_model(data, yamlConfig) 
+            log(f'clash文件导出至{outputPath}.')
+            clash.save_config(outputPath, final_config)
+            i+=1
         
 
 class clashOption():

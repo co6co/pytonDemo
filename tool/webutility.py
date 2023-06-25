@@ -34,6 +34,7 @@ def get(url,timeout:int|tuple|None=None):
     if timeout == None:
         timeout=(5, 15)
     resp = requests.get(url,headers=headers, timeout=timeout,allow_redirects=True,proxies=proxies)
+    
     if len(resp.history) > 0: # 存在302 跳转
         location_url = resp.history[len(resp.history) - 1].headers.get('Location')
         resp=requests.get(location_url,headers=headers,timeout=(15, 30),proxies=proxies)
