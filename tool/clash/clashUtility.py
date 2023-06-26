@@ -379,6 +379,7 @@ class clashOption():
     
         #模板 __xxxx 私有属性不能被继承
         self.__templateUrl="https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/config.yaml" 
+        self.__templateUrl="https://raw.githubusercontent.com/co6co/pytonDemo/master/file/clashConfigTemplate.yaml"
         # 备用本地模板
         self.__backLocalTemplate="./default_config.yaml"
         self.subUrlArray=subArray
