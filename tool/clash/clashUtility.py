@@ -91,27 +91,33 @@ class clash:
             except Exception as e:
                 print(f'出错{e}')
 
-    
+    def _genNode(self,subUrl):
+        if not subUrl.lower().startswith("http"):return
+        log(f"订阅：'{subUrl}'...")
+        try:
+            response = webutility.get(subUrl) 
+            print("Encoding:"+response.apparent_encoding)
+            response.encoding="utf-8"
+            response=response.text
+        except Exception as e:
+            log(f"http请求'{subUrl}'出现异常：{e}")
+            return
+        try:
+            raw = base64.b64decode(response)
+            self.parseNodeText(raw)
+        except Exception as e:
+            log('base64解码失败:"{}",应当为clash节点'.format(e))
+            log('clash节点提取中...')
+            self.parseYaml(response) 
     def genNodeList(self,urlList): #生成 proxy_list 
         # 请求订阅地址
-        for url in urlList:
-            if not url.lower().startswith("http"):continue
-            log("订阅：'{}'".format(url))
-            try:
-                response = webutility.get(url) 
-                print("Encoding:"+response.apparent_encoding)
-                response.encoding="utf-8"
-                response=response.text
-            except Exception as e:
-                log(f"http请求出现异常：{e}")
-                continue
-            try:
-                raw = base64.b64decode(response)
-                self.parseNodeText(raw)
-            except Exception as e:
-                log('base64解码失败:"{}",应当为clash节点'.format(e))
-                log('clash节点提取中...')
-                self.parseYaml(response) 
+        
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+            futures={executor.submit(self._genNode,(url)) for url in urlList}
+        concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
+        #for future in concurrent.futures.as_completed(futures):
+        #    future.done()
+            
 
     # 获取本地规则策略的配置文件
     def load_local_config(path):
@@ -130,6 +136,9 @@ class clash:
             template_config = yaml.load(raw, Loader=yaml.FullLoader)
         except requests.exceptions.RequestException:
             log(f'网络获取规则{url}配置模板失败,加载本地配置文件')
+            template_config =clash.load_local_config(path)
+        except Exception as e: 
+            log(f'网络获取规则{url}配置模板失败,加载本地配置文件,异常信息：\n\t{e}')
             template_config =clash.load_local_config(path)
         log('已获取规则配置文件')
         return template_config
@@ -327,7 +336,12 @@ class clash:
         port = node['port']
         result=tcp.check_tcp_port({"host":domain,"port":port})
         log(f"检测节点结果:{result}")
-        return result["status"]
+        status=result["status"]
+        if status:
+            delay=tcp.ping(domain) 
+            log(f"检测网络延迟：{domain}: {delay} ms")
+            if delay== None or delay >2000: status= False
+        return status
     
     def check_nodes(self):
         nodeList=[]
@@ -366,8 +380,6 @@ class clash:
             
             outputPath=clashOpt.outputPath
             if i>0: outputPath=os.path.splitext(outputPath)[0]+str(i)+os.path.splitext(outputPath)[1]
-            log("获取导出配置模板...")
-            yamlConfig=self.getTemplateConfig(clashOpt.templateUrl,config_path)
             final_config =clash.add_proxies_to_model(data, yamlConfig) 
             log(f'clash文件导出至{outputPath}.')
             clash.save_config(outputPath, final_config)

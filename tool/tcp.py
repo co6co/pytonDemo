@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import socket
+from ping3 import ping as pong
 
 '''
 opt:{host:domainName|ip,port:PortNumber}
@@ -22,6 +23,18 @@ def check_tcp_port(opt:dict, timeout=2):
         else:
             return {"status": True, "message": "OK", "info": "tcp check"}
 
+def ping (host):
+    """
+    获取网络的延迟
+    :param domain or ip:
+    :return: delay ms
+    """
+    response = pong(host)
+    if response is not None:
+        delay = int(response*1000 )
+        return delay
+
 if __name__ == "__main__":
     print (check_tcp_port({"host":"www.baidu.com","port":80}))
+    ping("www.baidu.com")
  
