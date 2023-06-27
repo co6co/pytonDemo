@@ -15,8 +15,8 @@ ERROR           40  error()
 CRITICAL        50  critical()
 '''
 
-logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_INFO.log",level="INFO",encoding="utf-8" ,rotation="00:00" ,retention='7 days' ,format="{level}\t|{time:YY-MM-DD HH:mm:ss}\t|{file}\t|{line}\t|\t{message}")
-logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_ERROR.log",level="ERROR",encoding="utf-8" ,rotation="00:00" ,retention='7 days' ,format="{level}\t|{time:YY-MM-DD HH:mm:ss}\t|{file}\t|{line}\t|\t{message}")
+logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_INFO.log",rotation="5 MB",level="INFO",encoding="utf-8" ,retention='7 days' ,format="{level}\t|{time:YY-MM-DD HH:mm:ss}\t|{file}\t|{line}\t|\t{message}")
+logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_ERROR.log",rotation="5 MB",level="ERROR",encoding="utf-8" ,retention='7 days' ,format="{level}\t|{time:YY-MM-DD HH:mm:ss}\t|{file}\t|{line}\t|\t{message}")
 
 
 def log(msg):
