@@ -35,6 +35,6 @@ def ping (host):
         return delay
 
 if __name__ == "__main__":
-    print (check_tcp_port({"host":"www.baidu.com","port":80}))
-    ping("www.baidu.com")
+    print (check_tcp_port({"host":"jp1.520748.xyz","port":80}))
+    print(ping("jp1.520748.xyz"))
  

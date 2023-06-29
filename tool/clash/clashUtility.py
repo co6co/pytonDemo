@@ -134,6 +134,7 @@ class clash:
         try:
             raw =   webutility.get(url, timeout=5).content.decode('utf-8')
             template_config = yaml.load(raw, Loader=yaml.FullLoader)
+            a=1/0
         except requests.exceptions.RequestException:
             log(f'网络获取规则{url}配置模板失败,加载本地配置文件')
             template_config =clash.load_local_config(path)
@@ -335,11 +336,11 @@ class clash:
         domain = node['server']
         port = node['port']
         result=tcp.check_tcp_port({"host":domain,"port":port})
-        log(f"检测节点结果:{result}")
+        #log(f"检测节点结果:{result}")
         status=result["status"]
         if status:
             delay=tcp.ping(domain) 
-            log(f"检测网络延迟：{domain}: {delay} ms")
+            #log(f"检测网络延迟：{domain}: {delay} ms")
             if delay== None or delay >2000: status= False
         return status
     
@@ -347,11 +348,12 @@ class clash:
         nodeList=[]
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
             futures={executor.submit(clash.checkNode,item):item for item in self.proxy_list['proxy_list']}
-           
-            for future in concurrent.futures.as_completed(futures):
-                item=futures[future]
-                if(future.result):nodeList.append(item)
-                
+            log("*"*10)
+            for future in concurrent.futures.as_completed(futures): 
+                item=futures[future] 
+                if(future.result()):nodeList.append(item)
+                else: log(f"检测失败的节点：{item['server']}:{item['port']}.")
+             
         self.proxy_list['proxy_list']=nodeList
         self.proxy_list['proxy_names']=[node.get("name") for node in nodeList]
   
@@ -360,9 +362,9 @@ class clash:
         clashOpt=self.opt
         log("获取导出配置模板...")
         yamlConfig=self.getTemplateConfig(clashOpt.templateUrl,config_path)
-        log("获取导出节点...") 
-        self.genNodeList(self.opt.subUrlArray)
-        self.check_nodes()
+        log(f"获取导出节点...") 
+        self.genNodeList(self.opt.subUrlArray) 
+        self.check_nodes() 
         log(f'通过模板导出配置文件...{len(self.proxy_list.get("proxy_list"))}')
         
         index=math.floor(len(self.proxy_list.get("proxy_list")) / yamlNodeNum)  

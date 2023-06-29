@@ -10,23 +10,30 @@ def _createSoup(url):
     #https://www.jianshu.com/p/424e037c5dd8
     soup=BeautifulSoup(response.text,"html5lib") 
     return soup
-def getUrl(): 
-    log(f"解析快嘴科技的订阅地址...") 
-    soup=_createSoup("https://kkzui.com/#term-6")  
-    list=soup.select('a[href*="https://kkzui.com/"]')
+def kauiZuiKeji(item): 
+    
+    url=item["site"]
+    arg1=item["arg_1"]
+    arg2=item["arg_2"]
+    arg3=item["arg_3"]
+    log(f"解析{item['remarks']}的订阅地址..{arg1}\t{arg2}\t{arg3}.") 
+    soup=_createSoup(url)  
+    list=soup.select(arg1)#'a[href*="https://kkzui.com/"]'
     for item in list:
-        ret="https://kkzui.com/\d+.html"
+        ret=arg2#"https://kkzui.com/\d+.html"
         m=re.search(ret,item["href"])
-        if m:return item["href"]
+        if m:
+            url=item["href"]
+            return getSubUrl(url,arg3)
     return None
 
-def getSubUrl(href):
+def getSubUrl(href,arg):
     log("嘴科技地址为："+href)
     soup=_createSoup(href) 
     ps=soup.select("p")
     for p in ps:
         if p.string:
-            reg="https://tt.vg/\w+"
+            reg=arg #"https://tt.vg/\w+"
             m=re.search(reg,p.string)
             if m:
                 #print(f"{m.group()}")
@@ -35,11 +42,12 @@ def getSubUrl(href):
                   
     
 if __name__ == "__main__":
-    url=getUrl()
+    url=kauiZuiKeji()
     sub=getSubUrl(url)
 
-    log("将订阅地址附加到指定文件。")
-    target=f"G:\Tool\SHARE\yaml\cp\subUrl.txt" 
+    target=f"G:\Tool\SHARE\yaml\cp\subUrl.txt"
+    log(f"将订阅地址附加到指定文件。{target}")
+   
     f=open(target,"r+",encoding="utf-8")
     allSub=f.read().splitlines()
     if sub not in allSub:
