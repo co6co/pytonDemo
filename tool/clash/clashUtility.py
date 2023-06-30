@@ -1,6 +1,7 @@
 import requests,base64,yaml,sys,os,math
 sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
 from log import log,logger
+import secure
 import tcp
 import webutility
 from convert2clash import *
@@ -23,9 +24,10 @@ class clash:
     def __init__(self,clashOption) -> None:
         self.opt=clashOption
         pass
-    def parseYaml(self,content): # 解析yaml文本
+    
+    def parseYaml(yamlContent): # 解析yaml文本
         try:
-            yml = yaml.load(content, Loader=yaml.FullLoader,)
+            yml = yaml.load(yamlContent, Loader=yaml.FullLoader)
             nodes_list = []
             tmp_list = []
             # clash新字段
@@ -52,72 +54,84 @@ class clash:
                  
                 if node.get('name')==None: continue
                 nodes_list.append(node)
+            return nodes_list
+        except:
+            raise
 
-            node_names = [node.get('name') for node in nodes_list]
-            log('可用clash节点{}个'.format(len(node_names)))
-            self.proxy_list['proxy_list'].extend(nodes_list)
-            self.proxy_list['proxy_names'].extend(node_names)
-        except Exception as e:
-            print ("内容不正确",e)
-
-    def parseNodeText(self,text): # 解析 从 base64 解析出来的文本
-        nodes_list = text.splitlines()  
-        nodes_list.extend(self.vmess)
-        clash_node = []
+    def parseNodeText(text:str| bytes): # 解析 从 base64 解析出来的文本 
+        '''
+        解析节点
+        '''
+        nodes_list = text.splitlines() 
+        if type(text) == str:
+            nodes_list=[itm.encode("utf-8") for itm  in nodes_list]
+        clash_node= []
         for node in nodes_list: 
             try:
                 if node.startswith(b'vmess://'):
-                    decode_proxy = decode_v2ray_node([node])
-                    clash_node = v2ray_to_clash(decode_proxy)
+                    decode_proxy = decode_v2ray_node([node]) 
+                    clash_node.extend(v2ray_to_clash(decode_proxy))
  
                 elif node.startswith(b'ss://'):
                     decode_proxy = decode_ss_node([node])
-                    clash_node = ss_to_clash(decode_proxy)
+                    clash_node.extend( ss_to_clash(decode_proxy))
                     
                 elif node.startswith(b'ssr://'):
                     decode_proxy = decode_ssr_node([node])
-                    clash_node = ssr_to_clash(decode_proxy)
+                    clash_node.extend(ssr_to_clash(decode_proxy))
 
                 elif node.startswith(b'trojan://'):
                     decode_proxy = decode_trojan_node([node])
-                    clash_node = trojan_to_clash(decode_proxy)
-                    
+                    clash_node.extend(trojan_to_clash(decode_proxy))
                 else:
-                    pass
-                
-                log('可用clash节点{}个'.format(len(clash_node['proxy_list'])))
-                self.proxy_list['proxy_list'].extend(clash_node['proxy_list']) 
-                self.proxy_list['proxy_names'].extend(clash_node['proxy_names'])
+                    pass 
             except Exception as e:
-                print(f'出错{e}')
+                raise 
+        if len(clash_node)>0:return clash_node
 
     def _genNode(self,subUrl):
         if not subUrl.lower().startswith("http"):return
+        
         log(f"订阅：'{subUrl}'...")
+        nodes_list=[]
         try:
-            response = webutility.get(subUrl) 
-            print("Encoding:"+response.apparent_encoding)
+            response = webutility.get(subUrl)  
+            #print("Encoding:"+response.apparent_encoding,response.encoding)
             response.encoding="utf-8"
             response=response.text
         except Exception as e:
             log(f"http请求'{subUrl}'出现异常：{e}")
             return
+        
         try:
-            raw = base64.b64decode(response)
-            self.parseNodeText(raw)
+            yamlData=yaml.full_load(response) 
+            if type (yamlData) == dict:
+                nodes_list=clash.parseYaml(response)
+            else: 
+                raw = base64.b64decode(response) if secure.base64.isBase64(response) else response 
+                nodes_list=clash.parseNodeText(raw)
         except Exception as e:
-            log('base64解码失败:"{}",应当为clash节点'.format(e))
-            log('clash节点提取中...')
-            self.parseYaml(response) 
+            log('解析节点失败:"{}",{}'.format(e,subUrl))
+            pass 
+        
+        num=0
+        if nodes_list!=None:
+            node_names = [node.get('name') for node in nodes_list] 
+            num=len(node_names)
+            self.proxy_list['proxy_list'].extend(nodes_list)
+            self.proxy_list['proxy_names'].extend(node_names)
+        log(f'{subUrl}解析出来的clash节点数:{num}个')    
+            
+        
+       
+
     def genNodeList(self,urlList): #生成 proxy_list 
         # 请求订阅地址
-        
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
             futures={executor.submit(self._genNode,(url)) for url in urlList}
         concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
         #for future in concurrent.futures.as_completed(futures):
         #    future.done()
-            
 
     # 获取本地规则策略的配置文件
     def load_local_config(path):
@@ -329,10 +343,9 @@ class clash:
         clash.save_to_file(path, config)
         log('成功更新{}个节点'.format(len(data['proxies'])))
     
-    def checkNode(node):
+    def checkNode(node,delay=2000):
         if 'server' not in node or 'port' not in node or 'password' in node:
-            return False
-                        
+            return False 
         domain = node['server']
         port = node['port']
         result=tcp.check_tcp_port({"host":domain,"port":port})
@@ -341,14 +354,13 @@ class clash:
         if status:
             delay=tcp.ping(domain) 
             #log(f"检测网络延迟：{domain}: {delay} ms")
-            if delay== None or delay >2000: status= False
+            if delay== None or delay >delay: status= False
         return status
     
     def check_nodes(self):
         nodeList=[]
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-            futures={executor.submit(clash.checkNode,item):item for item in self.proxy_list['proxy_list']}
-            log("*"*10)
+            futures={executor.submit(clash.checkNode,item,self.opt.delay):item for item in self.proxy_list['proxy_list']}
             for future in concurrent.futures.as_completed(futures): 
                 item=futures[future] 
                 if(future.result()):nodeList.append(item)
@@ -399,6 +411,7 @@ class clashOption():
         self.subUrlArray=subArray
         #输出
         self.__outputPath='./file/output.yaml'
+        self.__delay=1000
     
     @property  #像访问属性一样访问方法
     def templateUrl(self): 
@@ -420,6 +433,13 @@ class clashOption():
     @outputPath.setter
     def outputPath(self,value:str):
         self.__outputPath=value
+
+    @property
+    def delay(self):
+        return self.__delay
+    @delay.setter
+    def delay(self,value:int):
+        self.__delay=value
 
 
 

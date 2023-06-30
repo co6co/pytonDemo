@@ -1,7 +1,7 @@
 import optparse,sys,os,json
 import argparse
 import htmlparser
-from clashUtility import clash,clashOption,logger
+from clashUtility import clash,clashOption,logger,log
 sys.path.append(os.path.dirname(os.path.abspath(sys.argv[0])+"../tool"))
 
 import concurrent.futures;
@@ -34,15 +34,17 @@ def writeJsonFile(filePath,obj):
 
 def parse(item):
     try:
-        print("调用方法STR：",item["method"]) 
-        print("调用方法：", htmlparser.__dict__.get(item["method"]))
-        invoke=htmlparser.__dict__.get(item["method"])
-        if invoke== None: return  
-        url=invoke(item)
-        print("关键URL：",url)
+        enabled=item["enabled"]
+        if not enabled: return
+        methodName=item["method"] 
+        log("'%s' 调用方法：%s"%(item["remarks"],htmlparser.__dict__.get(methodName)))
+        invokeMethod=htmlparser.__dict__.get(methodName)
+        if invokeMethod== None: return  
+        url=invokeMethod(item)
+        log("[+]订阅URL:"+url)
         if url!=None and url !="":item["url"]=url
     except Exception as e:
-        print(item["remarks"],"出错",e)
+        log(item["remarks"]+"出错"+e)
 
 def parseSubUrls(jsonFilePath):
     jsonObj=readJsonFile(jsonFilePath)
@@ -52,25 +54,23 @@ def parseSubUrls(jsonFilePath):
     writeJsonFile(jsonFilePath,jsonObj)
     return jsonObj 
 
-
-
 if __name__ == '__main__': 
     default_output_dir=f'G:\Tool\SHARE\yaml\cp' 
     parser=argparse.ArgumentParser(description="生成clash Yaml文件")
     parser.add_argument("-d",'--folder' , help=f"save yaml file pat,outpu file defalut:{default_output_dir}",default=default_output_dir)
     parser.add_argument("-s",'--subConfigPath' , help=f"sub pach",default=os.path.abspath(os.path.join(default_output_dir,"subUrl.json")))
     parser.add_argument("-n","--number",  help="node num per yaml", type=int, default=150)
+    parser.add_argument("-l","--delay",  help="node delay within 1000ms ", type=int, default=1000)
     args=parser.parse_args()
     
     #urls=readFile(args.subConfigPath)
-    print("解析生成url...")
+    log("解析生成待订阅的url...")
     jsonData=parseSubUrls(args.subConfigPath)
-    urls=[item["url"] for item in jsonData["data"]]
-     
-    clashOpt=clashOption(urls)
-
-    clashOpt.outputPath=os.path.join(args.folder,"output.yaml")
-    clashOpt.backLocalTemplate=os.path.join(default_output_dir,"clashConfigTemplate.yaml")
-    c=clash (clashOpt)
-    c.genYamlForClash(args.number) 
+    urls=[item["url"] for item in jsonData["data"] if item['enabled']]
     
+    clashOpt=clashOption(urls)
+    clashOpt.outputPath=os.path.join(args.folder,"output.yaml")
+    clashOpt.backLocalTemplate=os.path.join(args.folder,"clashConfigTemplate.yaml")
+    clashOpt.delay=args.delay
+    c=clash (clashOpt)
+    c.genYamlForClash(args.number)

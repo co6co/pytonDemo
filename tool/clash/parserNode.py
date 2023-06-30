@@ -12,9 +12,11 @@ def safe_decode(s):
         s += '=' * (4 - num)
     #print(f"s:{s},num:{num}")
     return base64.urlsafe_b64decode(s)
-
-# 解析vmess节点
+ 
 def decode_v2ray_node(nodes):
+    '''
+    解析vmess节点
+    '''
     proxy_list = []
     for node in nodes:
         decode_proxy = node.decode('utf-8')[8:]
@@ -24,11 +26,14 @@ def decode_v2ray_node(nodes):
         proxy_str = base64.b64decode(decode_proxy).decode('utf-8')
         proxy_dict = json.loads(proxy_str)
         proxy_list.append(proxy_dict)
-    #print(proxy_list)
+
     return proxy_list
 
-# 解析ss节点
+ 
 def decode_ss_node(nodes):
+    '''
+    解析ss节点
+    '''
     proxy_list = []
     for node in nodes:
         decode_proxy = node.decode('utf-8')[5:]
@@ -73,12 +78,13 @@ def decode_ss_node(nodes):
             else:
                 continue
         proxy_list.append(info)
-    #print(proxy_list)
+ 
     return proxy_list
 
-
-# 解析ssr节点
 def decode_ssr_node(nodes):
+    '''
+    解析ssr节点
+    '''
     proxy_list = []
     for node in nodes:
         decode_proxy = node.decode('utf-8')[6:]
@@ -88,7 +94,7 @@ def decode_ssr_node(nodes):
         proxy_str = safe_decode(decode_proxy).decode('utf-8')
         parts = proxy_str.split(':')
         if len(parts) != 6:
-            print('该ssr节点解析失败，链接:{}'.format(node))
+            log('该ssr节点解析失败，链接:{}'.format(node))
             continue
         info = {
             'server': parts[0],
@@ -106,8 +112,10 @@ def decode_ssr_node(nodes):
         proxy_list.append(info)
     return proxy_list
 
-#解析Trojan节点
 def decode_trojan_node(nodes):
+    '''
+    解析Trojan节点
+    '''
     proxy_list = []
     info = {}
     for node in nodes:
@@ -142,5 +150,5 @@ def decode_trojan_node(nodes):
             proxy_list.append(info)
         except Exception as e:
             print(f"解析trojan出错{e}")
-    #print(proxy_list)
+
     return proxy_list

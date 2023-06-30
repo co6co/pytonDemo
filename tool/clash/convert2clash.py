@@ -6,12 +6,8 @@ sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),"..")))
 from log import log
 
 # Vmess转换成Clash节点
-def v2ray_to_clash(v2rayArr):
-    log('v2ray节点转换中...')
-    proxies = {
-        'proxy_list': [],
-        'proxy_names': []
-    }
+def v2ray_to_clash(v2rayArr): 
+    proxies =[]
     num = 0
     for item in v2rayArr:
         num += 1
@@ -41,22 +37,15 @@ def v2ray_to_clash(v2rayArr):
         #'''
         if obj.get('alterId') is not None:
             try:
-                proxies['proxy_list'].append(obj)
-                proxies['proxy_names'].append(obj['name'])
+                proxies.append(obj) 
             except Exception as e:
                 log(f'V2ray出错{e}')
-        #'''
-    #print(proxies)
-    log('可用v2ray节点{}个'.format(len(proxies['proxy_names'])))
+        #''' 
     return proxies
 
 # ss转换成Clash节点
-def ss_to_clash(ssArr):
-    log('ss节点转换中...')
-    proxies = {
-        'proxy_list': [],
-        'proxy_names': []
-    }
+def ss_to_clash(ssArr): 
+    proxies =[]
     for item in ssArr:
         obj = {
             'name': item.get('name').strip() if item.get('name') else None,
@@ -76,22 +65,17 @@ def ss_to_clash(ssArr):
             if obj.get(key) is None:
                 del obj[key]
         try:
-            proxies['proxy_list'].append(obj)
-            proxies['proxy_names'].append(obj['name'])
+            proxies.append(obj)
         except Exception as e:
             log(f'出错{e}')
             pass
-    log('可用ss节点{}个'.format(len(proxies['proxy_names'])))
     #print(proxies)
     return proxies
 
 # ssr转换成Clash节点
 def ssr_to_clash(ssrArr):
     log('ssr节点转换中...')
-    proxies = {
-        'proxy_list': [],
-        'proxy_names': []
-    }
+    proxies = []
     for item in ssrArr:
         obj = {
             'name': item.get('remarks').strip() if item.get('remarks') else None,
@@ -114,8 +98,7 @@ def ssr_to_clash(ssrArr):
                 #print(obj['cipher'])
                 if not obj['name'].startswith('剩余流量') and not obj['name'].startswith('过期时间'):
                     if obj['cipher'] == 'aes-128-gcm' or obj['cipher'] == 'aes-192-gcm' or obj['cipher'] == 'aes-256-gcm' or obj['cipher'] == 'aes-128-cfb' or obj['cipher'] == 'aes-192-cfb' or obj['cipher'] == 'aes-256-cfb' or obj['cipher'] == 'aes-128-ctr' or obj['cipher'] == 'aes-192-ctr' or obj['cipher'] == 'aes-256-ctr' or obj['cipher'] == 'rc4-md5' or obj['cipher'] == 'chacha20' or obj['cipher'] == 'chacha20-ietf' or obj['cipher'] == 'xchacha20' or obj['cipher'] == 'chacha20-ietf-poly1305' or obj['cipher'] == 'xchacha20-ietf-poly1305' or obj['cipher'] == 'plain' or obj['cipher'] == 'http_simple' or obj['cipher'] == 'auth_sha1_v4' or obj['cipher'] == 'auth_aes128_md5' or obj['cipher'] == 'auth_aes128_sha1' or obj['cipher'] == 'auth_chain_a auth_chain_b':
-                        proxies['proxy_list'].append(obj)
-                        proxies['proxy_names'].append(obj['name'])
+                        proxies.append(obj) 
                     else:
                         log("不支持的ssr协议")
         except Exception as e:
@@ -124,19 +107,13 @@ def ssr_to_clash(ssrArr):
     return proxies
 
 #将Trojan节点转clash
-def trojan_to_clash(trojanArr):
-    log('trojan节点转换中...')
-    proxies = {
-        'proxy_list': [],
-        'proxy_names': []
-    }
+def trojan_to_clash(trojanArr): 
+    proxies =[]
     for item in trojanArr:
         try:
-            proxies['proxy_list'].append(item)
-            proxies['proxy_names'].append(item['name'])
+           proxies.append(item)
         except Exception as e:
             log(f'出错{e}')
-            pass
-    log('可用trojan节点{}个'.format(len(proxies['proxy_names'])))
+            pass 
     #print(proxies)
     return proxies

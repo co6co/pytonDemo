@@ -1,5 +1,5 @@
 
-import datetime,sys
+import datetime,sys,threading
 from loguru import logger
 
 logger.remove()
@@ -20,5 +20,6 @@ logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_ERROR.log",rotation="5 MB",l
 
 
 def log(msg):
+    t=threading.currentThread()
     time = datetime.datetime.now()
-    print('[' + time.strftime('%Y.%m.%d-%H:%M:%S') + '] ' + msg)
+    print(f"['{time.strftime('%Y.%m.%d-%H:%M:%S')}'] [{t.ident}|{t.name}]\t{msg}"  )
