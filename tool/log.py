@@ -45,6 +45,9 @@ def __log(msg,type:int=0,foregroundColor:int=37,bg=40):
 def log(msg):
     __log(msg)
 
+def info(msg):
+    __log(msg)
+
 def succ(msg):
     __log(msg,7,32,40)
 
@@ -53,3 +56,6 @@ def warn(msg):
 
 def err(msg):
     __log(msg,7,31,40)
+
+def critical(msg):
+    __log(msg,0,37,40)

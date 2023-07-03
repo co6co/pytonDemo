@@ -27,3 +27,4 @@ reload 不能作用于from导入：
 
 import tkinter
 os.popen('xxxx.py',tkinter).read()
+
