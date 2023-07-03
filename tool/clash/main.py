@@ -37,14 +37,14 @@ def parse(item):
         enabled=item["enabled"]
         if not enabled: return
         methodName=item["method"] 
-        log("'%s' 调用方法：%s"%(item["remarks"],htmlparser.__dict__.get(methodName)))
+        #log("'%s' 调用方法：%s"%(item["remarks"],htmlparser.__dict__.get(methodName)))
         invokeMethod=htmlparser.__dict__.get(methodName)
         if invokeMethod== None: return  
         url=invokeMethod(item)
         log("[+]订阅URL:"+url)
         if url!=None and url !="":item["url"]=url
     except Exception as e:
-        log(item["remarks"]+"出错"+e)
+        (item["remarks"]+"出错"+e)
 
 def parseSubUrls(jsonFilePath):
     jsonObj=readJsonFile(jsonFilePath)
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     log("解析生成待订阅的url...")
     jsonData=parseSubUrls(args.subConfigPath)
     urls=[item["url"] for item in jsonData["data"] if item['enabled']]
-    
+    log(f"[+] 订阅节点URL{len(urls)}")
     clashOpt=clashOption(urls)
     clashOpt.outputPath=os.path.join(args.folder,"output.yaml")
     clashOpt.backLocalTemplate=os.path.join(args.folder,"clashConfigTemplate.yaml")

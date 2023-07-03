@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re,sys
 sys.path.append("./tool")
-from log import log
+from log import log,succ
 
 
 def _createSoup(url):
@@ -37,10 +37,9 @@ def getSubUrl(href,arg):
             m=re.search(reg,p.string)
             if m:
                 #print(f"{m.group()}")
-                log("嘴科技订阅地址："+m.group())
+                succ("[+]订阅地址："+m.group())
                 return m.group()
-                  
-    
+            
 if __name__ == "__main__":
     url=kauiZuiKeji()
     sub=getSubUrl(url)
@@ -50,8 +49,7 @@ if __name__ == "__main__":
    
     f=open(target,"r+",encoding="utf-8")
     allSub=f.read().splitlines()
-    if sub not in allSub:
-        allSub.append(sub)
+    if sub not in allSub:allSub.append(sub)
         
     f.seek(0)
     f.truncate()

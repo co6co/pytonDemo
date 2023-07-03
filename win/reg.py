@@ -1,5 +1,6 @@
 # coding=UTF-8
 
+
 import winreg  as _winreg
 
 def val2addr(val):

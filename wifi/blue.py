@@ -35,7 +35,6 @@ def rfcommCon(addr,port):
 
 # Bluetooth Service Discovery Protocol (SDP)
 # 描述和枚举蓝牙配置文件的类型以及设备提供的服务
-
 def dspBrowse(add):
     services=bluetooth.find_service(address=add)
     for service in services:
@@ -80,6 +79,5 @@ while True:
     for port in range(1,30):
         for addr in alreadyFound:
             ret=rfcommCon(addr,port)
-            if ret:
-                blueBug(addr)
+            if ret:blueBug(addr)
             dspBrowse(addr)
