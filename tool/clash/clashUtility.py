@@ -268,8 +268,7 @@ class clash:
         i = 1
         for item in lst:
             if 'name' in item:
-                if 'server' not in item or 'port' not in item:
-                    continue
+                if 'server' not in item or 'port' not in item: continue
                 domain = item['server']
                 port = item['port']
                 server=f"{domain}:{port}" 
@@ -282,8 +281,7 @@ class clash:
                 #都只能匹配一个
                 name=""
                 match=re.search('[\u4e00-\u9fa5]+',item['name'])
-                if match !=None: name=match.group()
-
+                if match !=None: name=match.group() 
                 '''
                 名称转换为指定格式
                 ''' 
@@ -305,17 +303,16 @@ class clash:
 
                 item['name']=clash.find_country(domain)+ name+'_' + str(i)
                 result.append(item)
-            i += 1
+                i += 1
         return result
     # 将代理添加到配置文件
-    def add_proxies_to_model(data, model):
+    def add_proxies_to_model(data, model): 
         if data is None or model is None:
             raise ValueError('Invalid input: data and model cannot be None')
         if 'proxy_list' not in data or 'proxy_names' not in data:
             raise ValueError('Invalid input: data should contain "proxy_list" and "proxy_names" keys')
         
-        try:
-            data['proxy_list'] = clash.remove_duplicates(data['proxy_list'])
+        try: 
             if model.get('proxies') is None:
                 model['proxies'] = data.get('proxy_list')
             else:
@@ -327,8 +324,8 @@ class clash:
             data['proxy_list'] = [d for d in data['proxy_list'] if 'name' in d]
             names = []
             for item in data['proxy_list']:
-                if item['name'] not in names:
-                    names.append(item['name'])
+                if item['name'] not in names:names.append(item['name'])
+
             for group in model.get('proxy-groups'):
                 if group.get('proxies') is None:
                     #group['proxies'] = data.get('proxy_names')
@@ -391,13 +388,14 @@ class clash:
     
     def outputToFile(self,yamlNodeNum:int):
         log.info("获取导出配置模板...")
-        clashOpt=self.opt
-        yamlConfig=self.getTemplateConfig(clashOpt.templateUrl,clashOpt.backLocalTemplate)
-       
+        clashOpt=self.opt        
+        self.proxy_list['proxy_list'] = clash.remove_duplicates(self.proxy_list.get("proxy_list"))
+            
         log.info(f'[+]节点数...{len(self.proxy_list.get("proxy_list"))}')
         index=math.floor(len(self.proxy_list.get("proxy_list")) / yamlNodeNum)  
         index+=1 if len(self.proxy_list.get("proxy_list")) % yamlNodeNum > 0 else 0
         i=0
+
         while i<index:
             ii=i*yamlNodeNum
             jj=(i+1)*yamlNodeNum
@@ -408,6 +406,7 @@ class clash:
             outputPath=clashOpt.outputPath
             if i>0: outputPath=os.path.splitext(outputPath)[0]+str(i)+os.path.splitext(outputPath)[1]
             log.info(f'[+]导导出之前{outputPath}.{len(data["proxy_list"])}')
+            yamlConfig=self.getTemplateConfig(clashOpt.templateUrl,clashOpt.backLocalTemplate)
             final_config =clash.add_proxies_to_model(data, yamlConfig) 
             log.info(f'[+]clash文件导出至{outputPath}.{len(data["proxy_list"])}')
             clash.save_config(outputPath, final_config)
@@ -418,9 +417,8 @@ class clash:
         desc: 生成yaml 文件
         yamlNodeNum: yaml 节点数
         '''
-        log.info(f"获取节点s...") 
         self.genNodeList(self.opt.subUrlArray)  
-        #self.check_nodes() 
+        self.check_nodes() 
         self.outputToFile(yamlNodeNum)
         
             

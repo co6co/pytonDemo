@@ -73,7 +73,7 @@ if __name__ == '__main__':
     urls=[item["url"].split("|") for item in jsonData["data"] if item['enabled']]
     urls = [u for arr in urls for u in arr if u!=""]
 
-    log.info(f"[+] 订阅节点URL{len(urls)},{urls}")
+    log.info(f"[+] 订阅节点URL{len(urls)}")
     clashOpt=clashOption(urls)
     clashOpt.outputPath=os.path.join(args.folder,"output.yaml")
     clashOpt.backLocalTemplate=os.path.join(args.folder,"clashConfigTemplate.yaml")
