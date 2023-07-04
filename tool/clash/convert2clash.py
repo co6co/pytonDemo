@@ -18,7 +18,7 @@ def v2ray_to_clash(v2rayArr):
             'name': item.get('ps').strip() if item.get('ps') else None,
             #'name': f"Auto_proxy{num}",
             'type': 'vmess',
-            'server': item.get('add'),
+            'server': item.get('add').strip(),
             'port': int(item.get('port')),
             'uuid': item.get('id'),
             'alterId': int(item.get('aid')),
@@ -50,7 +50,7 @@ def ss_to_clash(ssArr):
         obj = {
             'name': item.get('name').strip() if item.get('name') else None,
             'type': 'ss',
-            'server': item.get('server'),
+            'server': item.get('server').strip(),
             'port': int(item.get('port')),
             'cipher': item.get('method'),
             'password': item.get('password'),
@@ -80,7 +80,7 @@ def ssr_to_clash(ssrArr):
         obj = {
             'name': item.get('remarks').strip() if item.get('remarks') else None,
             'type': 'ssr',
-            'server': item.get('server'),
+            'server': item.get('server').strip(),
             'port': int(item.get('port')),
             'cipher': item.get('method'),
             'password': item.get('password'),

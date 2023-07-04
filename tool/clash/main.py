@@ -1,7 +1,7 @@
-import optparse,sys,os,json
+import sys,os,json
 import argparse
 import htmlparser
-from clashUtility import clash,clashOption,logger,log
+from clashUtility import clash,clashOption, log
 sys.path.append(os.path.dirname(os.path.abspath(sys.argv[0])+"../tool"))
 
 import concurrent.futures;
@@ -41,12 +41,16 @@ def parse(item):
         invokeMethod=htmlparser.__dict__.get(methodName)
         if invokeMethod== None: return  
         url=invokeMethod(item)
-        log("[+]订阅URL:"+url)
-        if url!=None and url !="":item["url"]=url
+        #log.info(f"[+]解析后URL为:{url}")
+        if type(url) == list:
+            urls=url
+            if len(urls)>0:item["url"]="|".join(urls)
+        else:
+            if url!=None and url !="":item["url"]=url
     except Exception as e:
-        (item["remarks"]+"出错"+e)
+        log.err(item["remarks"]+"出错"+e)
 
-def parseSubUrls(jsonFilePath):
+def parseSubUrls(jsonFilePath): 
     jsonObj=readJsonFile(jsonFilePath)
     with concurrent.futures.ThreadPoolExecutor(max_workers=4)  as executor:
         futures= {executor.submit(parse,item) for item in jsonObj["data"] }
@@ -64,10 +68,12 @@ if __name__ == '__main__':
     args=parser.parse_args()
     
     #urls=readFile(args.subConfigPath)
-    log("解析生成待订阅的url...")
+    log.info("解析订阅的url...") 
     jsonData=parseSubUrls(args.subConfigPath)
-    urls=[item["url"] for item in jsonData["data"] if item['enabled']]
-    log(f"[+] 订阅节点URL{len(urls)}")
+    urls=[item["url"].split("|") for item in jsonData["data"] if item['enabled']]
+    urls = [u for arr in urls for u in arr if u!=""]
+
+    log.info(f"[+] 订阅节点URL{len(urls)},{urls}")
     clashOpt=clashOption(urls)
     clashOpt.outputPath=os.path.join(args.folder,"output.yaml")
     clashOpt.backLocalTemplate=os.path.join(args.folder,"clashConfigTemplate.yaml")

@@ -1,7 +1,7 @@
 
 import sys
 sys.path.append("../")
-from log import log
+import log
 import json,base64,re
 import urllib.parse
 
@@ -21,7 +21,7 @@ def decode_v2ray_node(nodes):
     for node in nodes:
         decode_proxy = node.decode('utf-8')[8:]
         if not decode_proxy or decode_proxy.isspace():
-            log('vmess节点信息为空，跳过该节点')
+            log.info('vmess节点信息为空，跳过该节点')
             continue
         proxy_str = base64.b64decode(decode_proxy).decode('utf-8')
         proxy_dict = json.loads(proxy_str)
@@ -38,7 +38,7 @@ def decode_ss_node(nodes):
     for node in nodes:
         decode_proxy = node.decode('utf-8')[5:]
         if not decode_proxy or decode_proxy.isspace():
-            log('ss节点信息为空，跳过该节点')
+            log.info('ss节点信息为空，跳过该节点')
             continue
         info = dict()
         param = decode_proxy
@@ -56,7 +56,7 @@ def decode_ss_node(nodes):
             matcher = re.match(r'(.*?)@(.*):(.*)', param)
             if matcher:
                 param = matcher.group(1)
-                info['server'] = matcher.group(2)
+                info['server'] = matcher.group(2).strip()
                 info['port'] = matcher.group(3)
             else:
                 continue
@@ -73,7 +73,7 @@ def decode_ss_node(nodes):
             if matcher:
                 info['method'] = matcher.group(1)
                 info['password'] = matcher.group(2)
-                info['server'] = matcher.group(3)
+                info['server'] = matcher.group(3).strip()
                 info['port'] = matcher.group(4)
             else:
                 continue
@@ -89,15 +89,15 @@ def decode_ssr_node(nodes):
     for node in nodes:
         decode_proxy = node.decode('utf-8')[6:]
         if not decode_proxy or decode_proxy.isspace():
-            log('ssr节点信息为空，跳过该节点')
+            log.info('ssr节点信息为空，跳过该节点')
             continue
         proxy_str = safe_decode(decode_proxy).decode('utf-8')
         parts = proxy_str.split(':')
         if len(parts) != 6:
-            log('该ssr节点解析失败，链接:{}'.format(node))
+            log.info('该ssr节点解析失败，链接:{}'.format(node))
             continue
         info = {
-            'server': parts[0],
+            'server': parts[0].strip(),
             'port': parts[1],
             'protocol': parts[2],
             'method': parts[3],
@@ -127,7 +127,7 @@ def decode_trojan_node(nodes):
             info.setdefault('name', part_list[1])
             server_part = part_list[0].replace('trojan://', '')
             server_part_list = re.split(':|@|\?|&', server_part)
-            info.setdefault('server', server_part_list[1])
+            info.setdefault('server', server_part_list[1].strip())
             info.setdefault('port', int(server_part_list[2]))
             info.setdefault('type', 'trojan')
             info.setdefault('password', server_part_list[0])
@@ -149,6 +149,6 @@ def decode_trojan_node(nodes):
             info.setdefault('skip-cert-verify', True)
             proxy_list.append(info)
         except Exception as e:
-            print(f"解析trojan出错{e}")
+            log.err(f"解析trojan出错{e}")
 
     return proxy_list
