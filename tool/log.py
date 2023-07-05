@@ -62,4 +62,4 @@ def critical(msg):
 
 if __name__ =="__main__":
     logger.trace("123456asdf")
-    logger.debug("*arg:{}{}\t\t**kwargs:'ab:{ab},cd:{cd}'","元数据1","元数据2",ab="字典数据1",cd="字典数据2")
+    logger.success("*arg:{}{}\t\t**kwargs:'ab:{ab},cd:{cd}'","元数据1","元数据2",ab="字典数据1",cd="字典数据2")

@@ -1,5 +1,5 @@
 import os ,sys,time
-print("log 所在目录：{}\tsys.path.append 是否需要用全路径".format(os.path.abspath( os.path.join(os.path.dirname(__file__),"../tool") )))
+#print("log 所在目录：{}\tsys.path.append 是否需要用全路径".format(os.path.abspath( os.path.join(os.path.dirname(__file__),"../tool") )))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"../tool") ))
 sys.path.append("../tool")
 from log import *
