@@ -1,8 +1,6 @@
 import requests, yaml,base64,os
 def get_proxies(urls):
-    url_list = urls.split(';')
-    
-  
+    url_list = urls.split(';') 
     headers=   {"User-agent":"'Mozilla/5.0 (X11; U; Linux 2.4.2-2 i586;en-US; m18) Gecko/20010131 Netscape6/6.01"}
     hideMeProxy={'socks5':"127.0.0.1:9666"}
     proxy_list = {
@@ -22,9 +20,7 @@ def get_proxies(urls):
         nodes_list = raw.splitlines() 
         for node in nodes_list:
             print(node)
-
-
-
+ 
 def main():
     url="https://moes.lnaspiring.com/Moe233-Subs/wel/api/v1/client/subscribe?token=2aeb6746f02ff8ca02a891cc0f43cbe4"
     get_proxies(url)

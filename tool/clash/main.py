@@ -32,15 +32,18 @@ def writeJsonFile(filePath,obj):
     file.write(updated_list)
     file.close()
 
-def parse(item):
+def parse(item,proxy:str=None):
     try:
         enabled=item["enabled"]
         if not enabled: return
         methodName=item["method"] 
         #log("'%s' 调用方法：%s"%(item["remarks"],htmlparser.__dict__.get(methodName)))
         invokeMethod=htmlparser.__dict__.get(methodName)
-        if invokeMethod== None: return  
-        url=invokeMethod(item)
+        if invokeMethod== None: return
+
+        url=invokeMethod(item,proxy)
+        #获取到的地址为Nul 不使用代理再尝试一次：
+        if proxy !=None and ( url ==None or (type(url) == list and len(url)==0)):url=invokeMethod(item)
         #log.info(f"[+]解析后URL为:{url}")
         if type(url) == list:
             urls=url
@@ -50,33 +53,43 @@ def parse(item):
     except Exception as e:
         log.err(item["remarks"]+"出错"+e)
 
-def parseSubUrls(jsonFilePath): 
+def parseSubUrls(jsonFilePath,proxy:str=None): 
     jsonObj=readJsonFile(jsonFilePath)
     with concurrent.futures.ThreadPoolExecutor(max_workers=4)  as executor:
-        futures= {executor.submit(parse,item) for item in jsonObj["data"] }
+        futures= {executor.submit(parse,item,proxy) for item in jsonObj["data"] }
     concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
     writeJsonFile(jsonFilePath,jsonObj)
     return jsonObj 
 
 if __name__ == '__main__': 
-    default_output_dir=f'G:\Tool\SHARE\yaml\cp' 
+    default_output_dir=os.path.join(os.path.abspath("."),"sub")
+    default_config_dir=os.path.join(os.path.abspath("."),"file") 
+     
     parser=argparse.ArgumentParser(description="生成clash Yaml文件")
-    parser.add_argument("-d",'--folder' , help=f"save yaml file pat,outpu file defalut:{default_output_dir}",default=default_output_dir)
-    parser.add_argument("-s",'--subConfigPath' , help=f"sub pach",default=os.path.abspath(os.path.join(default_output_dir,"subUrl.json")))
-    parser.add_argument("-n","--number",  help="node num per yaml", type=int, default=150)
-    parser.add_argument("-l","--delay",  help="node delay within 1000ms ", type=int, default=1000)
-    args=parser.parse_args()
+    parser.add_argument("-p","--proxy",help="config proxy address eg. 127.0.0.1:1080")
+
+    config=parser.add_argument_group("config")
+    config.add_argument("-c",'--subConfigFile' , help=f"sub Config JSON File Path,default:\"{ os.path.join(default_config_dir,'subUrl.json')}\"",default= os.path.join(default_config_dir,"subUrl.json"))
+    config.add_argument("-t","--templateFile",help=f"standby clash yaml templcate File,default:\"{os.path.join(default_config_dir,'clashConfigTemplate.yaml')}\"",default=os.path.join(default_config_dir,"clashConfigTemplate.yaml"))
     
-    #urls=readFile(args.subConfigPath)
-    log.info("解析订阅的url...") 
-    jsonData=parseSubUrls(args.subConfigPath)
+    config=parser.add_argument_group("filter")
+    config.add_argument("-d","--delay",  help="node delay within xx ms,default 1000ms ", type=int, default=1000)
+
+    config=parser.add_argument_group("output")
+    config.add_argument("-n","--number",  help="node num per yaml,default 150", type=int, default=150)
+    config.add_argument("-o",'--outputFolder' , help=f"save yaml file Path,defalut:{default_output_dir}",default=default_output_dir)
+
+    args=parser.parse_args()
+    log.info("解析订阅的url...")  
+    jsonData=parseSubUrls(args.subConfigFile,args.proxy)
     urls=[item["url"].split("|") for item in jsonData["data"] if item['enabled']]
     urls = [u for arr in urls for u in arr if u!=""]
 
     log.info(f"[+] 订阅节点URL{len(urls)}")
     clashOpt=clashOption(urls)
-    clashOpt.outputPath=os.path.join(args.folder,"output.yaml")
-    clashOpt.backLocalTemplate=os.path.join(args.folder,"clashConfigTemplate.yaml")
+    clashOpt.outputPath=os.path.join(args.outputFolder,"output.yaml")
+    clashOpt.backLocalTemplate=args.templateFile
     clashOpt.delay=args.delay
+    clashOpt.proxy=args.proxy
     c=clash (clashOpt)
     c.genYamlForClash(args.number)

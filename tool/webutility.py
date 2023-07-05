@@ -9,12 +9,14 @@ def safe_decode(s):
     print(f"s:{s},num:{num}")
     return base64.urlsafe_b64decode(s)
 
-def get(url,timeout:int|tuple|None=None):
-    proxies = {
-        'http': 'http://127.0.0.1:9666',
-        'https': 'https://127.0.0.1:9666'
-    }
+def get(url,timeout:int|tuple|None=None,proxy:str=None):
+    
     proxies={}
+    if proxy!=None:
+        proxies = {
+            'http': f'http://{proxy}',
+            'https': f'https://{proxy}'
+        }
     headers={
         #"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         #"Accept-Encoding":"gzip, deflate, br",

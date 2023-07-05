@@ -89,24 +89,28 @@ class clash:
                 else:
                     pass 
             except Exception as e:
+                log.err(e)
                 raise 
         if len(clash_node)>0:return clash_node
 
-    def _genNode(self,subUrl):
-        if not subUrl.lower().startswith("http"):return
-        
-        log.info(f"订阅：'{subUrl}'...")
-        nodes_list=[]
+
+    def __getHttpContent(url,proxy:str=None):
         try:
-            response = webutility.get(subUrl)  
+            response = webutility.get(url,proxy=proxy)  
             #print("Encoding:"+response.apparent_encoding,response.encoding)
             response.encoding="utf-8"
-            response=response.text
+            return response.text 
         except Exception as e:
-            log.err(f"[-]http请求'{subUrl}'出现异常：{e}")
-            return
-        
+            log.err(f"[-]http请求'{url}'出现异常：{e}")
+            pass
+    def _genNode(self,subUrl):
+        if not subUrl.lower().startswith("http"):return
         try:
+            log.info(f"订阅：'{subUrl}'...")
+            nodes_list=[]
+            response=clash.__getHttpContent(subUrl,self.opt.proxy)
+            if response==None and opt.proxy!=None:response=clash.__getHttpContent(subUrl)
+            if response==None :return 
             yamlData=yaml.full_load(response) 
             if type (yamlData) == dict: #yaml 格式
                 log.succ(f"{type(yamlData)}’yaml dict‘<--{subUrl}")
@@ -129,10 +133,8 @@ class clash:
             num=len(node_names)
             self.proxy_list['proxy_list'].extend(nodes_list)
             self.proxy_list['proxy_names'].extend(node_names)
-            log.succ(f'[+]订阅{subUrl} clash节点数:{num}个')    
+            log.succ(f'[+]订阅{subUrl} clash节点数:{num}个')  
             
-        
-       
 
     def genNodeList(self,urlList): #生成 proxy_list 
         # 请求订阅地址
@@ -157,7 +159,6 @@ class clash:
         try:
             raw =   webutility.get(url, timeout=5).content.decode('utf-8')
             template_config = yaml.load(raw, Loader=yaml.FullLoader)
-            a=1/0
         except requests.exceptions.RequestException:
             log.warn(f'网络获取规则{url}配置模板失败,加载本地配置文件')
             template_config =clash.load_local_config(path)
@@ -373,6 +374,8 @@ class clash:
         '''
         检测节点
         '''
+        # 去重
+        self.proxy_list['proxy_list'] = clash.remove_duplicates(self.proxy_list.get("proxy_list"))  
         nodeList=[]
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
             futures={executor.submit(clash.checkNode,item,self.opt.delay):item for item in self.proxy_list['proxy_list']}
@@ -388,9 +391,8 @@ class clash:
     
     def outputToFile(self,yamlNodeNum:int):
         log.info("获取导出配置模板...")
-        clashOpt=self.opt        
-        self.proxy_list['proxy_list'] = clash.remove_duplicates(self.proxy_list.get("proxy_list"))
-            
+        clashOpt=self.opt
+        
         log.info(f'[+]节点数...{len(self.proxy_list.get("proxy_list"))}')
         index=math.floor(len(self.proxy_list.get("proxy_list")) / yamlNodeNum)  
         index+=1 if len(self.proxy_list.get("proxy_list")) % yamlNodeNum > 0 else 0
@@ -417,7 +419,7 @@ class clash:
         desc: 生成yaml 文件
         yamlNodeNum: yaml 节点数
         '''
-        self.genNodeList(self.opt.subUrlArray)  
+        self.genNodeList(self.opt.subUrlArray) 
         self.check_nodes() 
         self.outputToFile(yamlNodeNum)
         
@@ -434,6 +436,7 @@ class clashOption():
         #输出
         self.__outputPath='./file/output.yaml'
         self.__delay=1000
+        self.__proxy=None
     
     @property  #像访问属性一样访问方法
     def templateUrl(self): 
@@ -462,6 +465,15 @@ class clashOption():
     @delay.setter
     def delay(self,value:int):
         self.__delay=value
+    
+    @property
+    def proxy(self):
+        return self.__proxy
+    @proxy.setter
+    def proxy(self,value:str):
+        self.__proxy=value
+
+    
 
 
 
