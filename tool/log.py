@@ -14,10 +14,10 @@ WARNING         30  warning()
 ERROR           40  error()
 CRITICAL        50  critical()
 '''
-
-logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_INFO.log",rotation="5 MB",level="INFO",encoding="utf-8" ,retention='7 days' ,format="{level}\t|{time:YY-MM-DD HH:mm:ss}\t|{file}\t|{line}\t|\t{message}")
-logger.add("c:\log\python\loguru_{time:YY-MM-DD_HH}_ERROR.log",rotation="5 MB",level="ERROR",encoding="utf-8" ,retention='7 days' ,format="{level}\t|{time:YY-MM-DD HH:mm:ss}\t|{file}\t|{line}\t|\t{message}")
-
+LEVEL_LIST=["TRACE","DEBUG","INFO","SUCCESS","WARNING","ERROR","CRITICAL"] 
+for level in LEVEL_LIST:
+    fileNamePart=f"{level}.log"
+    logger.add("c:\log\python\loguru_{time:YY-MM}_"+fileNamePart,rotation="5 MB",level=level,encoding="utf-8" ,retention='7 days' ,format="{level}\t|{time:YY-MM-DD HH:mm:ss}\t|{file}\t|{line}\t|\t{message}")
 '''
 \033[显示方式;前景色；背景色m*******\033[0m
 \033[显示方式;前景色；背景色m*******\033[0m
@@ -59,3 +59,7 @@ def err(msg):
 
 def critical(msg):
     __log(msg,0,37,40)
+
+if __name__ =="__main__":
+    logger.trace("123456asdf")
+    logger.debug("*arg:{}{}\t\t**kwargs:'ab:{ab},cd:{cd}'","元数据1","元数据2",ab="字典数据1",cd="字典数据2")
