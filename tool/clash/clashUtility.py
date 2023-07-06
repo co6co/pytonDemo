@@ -1,4 +1,4 @@
-import requests,base64,yaml,sys,os,math
+import requests,base64,yaml,sys,os,math,copy
 sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
 import log
 import secure
@@ -103,29 +103,24 @@ class clash:
         except Exception as e:
             log.err(f"[-]http请求'{url}'出现异常：{e}")
             pass
-    def _genNode(self,subUrl):
-        if not subUrl.lower().startswith("http"):return
+    def _genNode(self,nodeContent,nodeContentAddress:str|None): 
         try:
-            log.info(f"订阅：'{subUrl}'...")
             nodes_list=[]
-            response=clash.__getHttpContent(subUrl,self.opt.proxy)
-            if response==None and opt.proxy!=None:response=clash.__getHttpContent(subUrl)
-            if response==None :return 
-            yamlData=yaml.full_load(response) 
+            yamlData=yaml.full_load(nodeContent) 
             if type (yamlData) == dict: #yaml 格式
-                log.succ(f"{type(yamlData)}’yaml dict‘<--{subUrl}")
-                nodes_list=clash.parseYaml(response)
+                log.succ(f"{type(yamlData)}’yaml dict‘<--{nodeContentAddress}")
+                nodes_list=clash.parseYaml(nodeContent)
             elif type (yamlData) == list and type(yamlData[0]) == dict: #yaml 格式中的节点
-                log.succ(f"{type(yamlData)} ’yaml list dict‘<--{subUrl}")
+                log.succ(f"{type(yamlData)} ’yaml list dict‘<--{nodeContentAddress}")
                 nodes_list=clash.parseYamlNode(yamlData)
             else: # base64加密 or node list
-                log.succ(f"{type(yamlData)} ’TEXT‘<--{subUrl}")
-                rawTxt = base64.b64decode(response) if secure.base64.isBase64(response) else response 
+                log.succ(f"{type(yamlData)} ’TEXT‘<--{nodeContentAddress}")
+                rawTxt = base64.b64decode(nodeContent) if secure.base64.isBase64(nodeContent) else nodeContent 
                 #log.err(f"{type(rawTxt)},\n{rawTxt}")
                
                 nodes_list=clash.parseNodeText(rawTxt)
         except Exception as e:
-            log.err('[-]解析节点失败:"{}",{}'.format(e,subUrl))
+            log.err('[-]解析节点失败:"{}",{}'.format(e,nodeContentAddress))
             pass
         num=0
         if nodes_list!=None:
@@ -133,13 +128,41 @@ class clash:
             num=len(node_names)
             self.proxy_list['proxy_list'].extend(nodes_list)
             self.proxy_list['proxy_names'].extend(node_names)
-            log.succ(f'[+]订阅{subUrl} clash节点数:{num}个')  
+            log.succ(f'[+]订阅{nodeContentAddress} clash节点数:{num}个')  
             
 
+    def genNodeByUrl(self,subUrl:str):
+        '''
+        从url中生成节点 
+        subUrl      url地址
+        '''
+    
+        log.info(f"订阅：'{subUrl}'...") 
+        response=clash.__getHttpContent(subUrl,self.opt.proxy)
+        if response==None and opt.proxy!=None:response=clash.__getHttpContent(subUrl)
+        if response==None :return 
+        self._genNode(response,subUrl)
+    
+    def genNodeByFile(self,filePath:str):
+        '''
+        从url中生成节点 
+        subUrl      url地址
+        ''' 
+        log.info(f"订阅：'{filePath}'...") 
+        if not os.path.exists(filePath) or not os.path.isfile(filePath):log.warn(f"输入的文件路径'{filePath}'不存在！")
+        file=open(filePath,"r",encoding="utf-8") 
+        content=file.read()
+        file.close()
+        self._genNode(content,filePath)
+
     def genNodeList(self,urlList): #生成 proxy_list 
+        '''
+        从URL列表中生成节点
+        arg: urlList        base64 url|yaml url node list url
+        '''
         # 请求订阅地址
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-            futures={executor.submit(self._genNode,(url)) for url in urlList}
+            futures={executor.submit(self.genNodeByUrl,(url)) for url in urlList}
         concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
         #for future in concurrent.futures.as_completed(futures):
         #    future.done()
@@ -155,12 +178,12 @@ class clash:
             log.err(f'配置文件{path}加载失败')
             sys.exit(0)
 
-    def getTemplateConfig(self,url, path):
+    def getTemplateConfig(url, path,proxy:str=None):
         try:
-            raw =   webutility.get(url, timeout=5).content.decode('utf-8')
+            raw =   webutility.get(url, timeout=5,proxy=proxy).content.decode('utf-8')
             template_config = yaml.load(raw, Loader=yaml.FullLoader)
-        except requests.exceptions.RequestException:
-            log.warn(f'网络获取规则{url}配置模板失败,加载本地配置文件')
+        except requests.exceptions.RequestException as e:
+            log.warn(f'网络获取规则{url}配置模板失败,加载本地配置文件:\n{e}')
             template_config =clash.load_local_config(path)
         except Exception as e: 
             log.warn(f'网络获取规则{url}配置模板失败,加载本地配置文件,异常信息：\n\t{e}')
@@ -262,12 +285,11 @@ class clash:
         return '[' + name_emoji + ']'
     
  
-    def remove_duplicates(lst): # 去重
+    def remove_duplicates(nodeList): # 去重
         result = []
-        namesl = []
         servers = []
         i = 1
-        for item in lst:
+        for item in nodeList:
             if 'name' in item:
                 if 'server' not in item or 'port' not in item: continue
                 domain = item['server']
@@ -370,47 +392,41 @@ class clash:
             if delay== None or delay >delay: status= False
         return status
     
-    def check_nodes(self):
+    def checkNodes(nodeList,delay:int=1000):
         '''
         检测节点
         '''
-        # 去重
-        self.proxy_list['proxy_list'] = clash.remove_duplicates(self.proxy_list.get("proxy_list"))  
-        nodeList=[]
+        # 去重 
+        _nodeList=[]
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-            futures={executor.submit(clash.checkNode,item,self.opt.delay):item for item in self.proxy_list['proxy_list']}
+            futures={executor.submit(clash.checkNode,item,delay):item for item in nodeList}
             for future in concurrent.futures.as_completed(futures): 
                 item=futures[future] 
                 if(future.result()):
-                    nodeList.append(item)
+                    _nodeList.append(item)
                     log.info(f"[+]'{item['server']}:{item['port']}'.")
                 else: log.info(f"[-]'{item['server']}:{item['port']}'.")
-             
-        self.proxy_list['proxy_list']=nodeList
-        self.proxy_list['proxy_names']=[node.get("name") for node in nodeList]
-    
-    def outputToFile(self,yamlNodeNum:int):
-        log.info("获取导出配置模板...")
-        clashOpt=self.opt
-        
-        log.info(f'[+]节点数...{len(self.proxy_list.get("proxy_list"))}')
-        index=math.floor(len(self.proxy_list.get("proxy_list")) / yamlNodeNum)  
-        index+=1 if len(self.proxy_list.get("proxy_list")) % yamlNodeNum > 0 else 0
-        i=0
 
+        #nameList=[node.get("name") for node in nodeList]     
+        return _nodeList
+    
+    def outputToFile(yamlConfig,nodeList:list,yamlNodeNum:int,outputPath:str): 
+        log.info(f'[+]节点数...{len(nodeList)}')
+        index=math.floor(len(nodeList) / yamlNodeNum)  
+        index+=1 if len(nodeList) % yamlNodeNum > 0 else 0
+        i=0
+       
         while i<index:
             ii=i*yamlNodeNum
             jj=(i+1)*yamlNodeNum
             data={"proxy_list":[],"proxy_names":[]}
-            data["proxy_list"]=self.proxy_list['proxy_list'][ii:jj]
-            data["proxy_names"]=self.proxy_list['proxy_names'][ii:jj]
-
-            outputPath=clashOpt.outputPath
+            data["proxy_list"]=nodeList[ii:jj]
+            data["proxy_names"]=[item["name"] for item in data["proxy_list"]] 
+          
+            #输出文件夹
             if i>0: outputPath=os.path.splitext(outputPath)[0]+str(i)+os.path.splitext(outputPath)[1]
-            log.info(f'[+]导导出之前{outputPath}.{len(data["proxy_list"])}')
-            yamlConfig=self.getTemplateConfig(clashOpt.templateUrl,clashOpt.backLocalTemplate)
-            final_config =clash.add_proxies_to_model(data, yamlConfig) 
-            log.info(f'[+]clash文件导出至{outputPath}.{len(data["proxy_list"])}')
+            _yamlConfig=copy.deepcopy( yamlConfig )
+            final_config =clash.add_proxies_to_model(data, _yamlConfig) 
             clash.save_config(outputPath, final_config)
             i+=1
             
@@ -420,8 +436,11 @@ class clash:
         yamlNodeNum: yaml 节点数
         '''
         self.genNodeList(self.opt.subUrlArray) 
-        self.check_nodes() 
-        self.outputToFile(yamlNodeNum)
+        nodelist=clash.remove_duplicates(self.proxy_list['proxy_list'])
+        nodelist=clash.checkNodes(nodelist) 
+        log.info("获取导出配置模板...")
+        yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy)
+        clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)
         
             
 class clashOption():

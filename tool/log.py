@@ -17,7 +17,7 @@ CRITICAL        50  critical()
 LEVEL_LIST=["TRACE","DEBUG","INFO","SUCCESS","WARNING","ERROR","CRITICAL"] 
 for level in LEVEL_LIST:
     fileNamePart=f"{level}.log"
-    logger.add("c:\log\python\loguru_{time:YY-MM}_"+fileNamePart,rotation="5 MB",level=level,encoding="utf-8" ,retention='7 days' ,format="{level}\t|{time:YY-MM-DD HH:mm:ss}\t|{file}\t|{line}\t|\t{message}")
+    logger.add("c:\log\python\loguru_{time:YY-MM}_"+fileNamePart,rotation="5 MB",level=level,encoding="utf-8" ,retention='7 days' ,format="{time:YY-MM-DD HH:mm:ss}\t{level}\t{file}\t{line}\t{message}")
 '''
 \033[显示方式;前景色；背景色m*******\033[0m
 \033[显示方式;前景色；背景色m*******\033[0m
@@ -42,23 +42,17 @@ def __log(msg,type:int=0,foregroundColor:int=37,bg=40):
     t=threading.currentThread()
     time = datetime.datetime.now()
     print(f"['{time.strftime('%Y.%m.%d-%H:%M:%S')}'] [{t.ident}|{t.name}]\t\033[{type};{foregroundColor};{bg}m{msg}\033[0m")
-def log(msg):
-    __log(msg)
+def log(msg):__log(msg)
 
-def info(msg):
-    __log(msg)
+def info(msg):__log(msg)
 
-def succ(msg):
-    __log(msg,7,32,40)
+def succ(msg): __log(msg,7,32,40)
 
-def warn(msg):
-    __log(msg,7,33,40)
+def warn(msg):__log(msg,7,33,40)
 
-def err(msg):
-    __log(msg,7,31,40)
+def err(msg):__log(msg,7,31,40)
 
-def critical(msg):
-    __log(msg,0,37,40)
+def critical(msg):__log(msg,0,37,40)
 
 if __name__ =="__main__":
     logger.trace("123456asdf")

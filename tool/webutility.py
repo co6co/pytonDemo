@@ -1,7 +1,7 @@
 import base64
 import requests
 
-def safe_decode(s):
+def safe_decode(s:str)->str:
     print("saft_decode:",s)
     num = len(s) % 4
     if num:
@@ -9,7 +9,7 @@ def safe_decode(s):
     print(f"s:{s},num:{num}")
     return base64.urlsafe_b64decode(s)
 
-def get(url,timeout:int|tuple|None=None,proxy:str=None):
+def get(url,timeout:int|tuple|None=None,proxy:str=None)->requests.Response:
     
     proxies={}
     if proxy!=None:
