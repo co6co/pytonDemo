@@ -7,6 +7,7 @@ pip install loguru
 pip install pyyaml
 pip install ping3
 pip install geoip2
+pip install pytz            #时区
 ```
 
 # 包导入3.x 中的变化
