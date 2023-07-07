@@ -16,5 +16,32 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10' 
+      - name: 加载缓存
+        uses: actions/cache@v2
+          with:
+            path: ~/.cache/pip
+            key: ${{ runner.os }}-pip-${{ hashFiles('**/run_in_Actions/pythonModule.txt') }}
+            restore-keys: |
+              ${{ runner.os }}-pip-
+      - name: 设置时区
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+    - name: 安装依赖
+      run: |
+        pip install -r ./pythonModule.txt
+    - name: 执行任务
+      run: |
+        python ./tool/clash/main.py.py -n 300
+
+    - name: 提交更改
+      run: |                 
+        git config --local user.email '${{ secrets.EMAIL }}'
+        git config --local user.name '${{ secrets.NAME }}'
+        git pull origin main
+        git add ./sub/*
+        git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update"
+    - name: 推送更改
+      uses:  ad-m/github-push-action@master
+      with:
+        branch: master
           
      

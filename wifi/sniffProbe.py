@@ -9,7 +9,6 @@ def sniffProbe(p):
         if netName not in probeReqs:
             probeReqs.append(netName)
             print ("[+] Detected New Probe Request:"+ netName)
-
-
+            
 print(conf.ifaces)
 sniff(iface=interface,prn=sniffProbe)
