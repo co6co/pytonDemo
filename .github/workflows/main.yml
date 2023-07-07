@@ -1,0 +1,20 @@
+name: demo
+on:
+  workflow_dispatch:
+  schedule:
+    # - cron: '*/5 * * * *'
+    # 表达式生成  https://crontab.guru/
+    - cron: '*/15 * * * *'
+
+jobs:
+  deploy:
+    runs-on: windiws
+    steps:
+      - name: 迁出代码
+        uses: actions/checkout@v3
+      - name: 安装Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+          
+     
