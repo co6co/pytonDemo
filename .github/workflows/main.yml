@@ -13,35 +13,38 @@ jobs:
       - name: 迁出代码
         uses: actions/checkout@v3
       - name: 安装Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.10' 
-      - name: 加载缓存
-        uses: actions/cache@v2
-          with:
-            path: ~/.cache/pip
-            key: ${{ runner.os }}-pip-${{ hashFiles('**/run_in_Actions/pythonModule.txt') }}
-            restore-keys: |
-              ${{ runner.os }}-pip-
+          python-version: '3.x' 
+          cache: "pip"
+       #- name: 加载缓存
+       # uses: actions/cache@v2
+       #   with:
+       #     path: ~/.cache/pip
+       #     key: ${{ runner.os }}-pip-${{ hashFiles('**/run_in_Actions/pythonModule.txt') }}
+       #     restore-keys: |
+       #       ${{ runner.os }}-pip-
+      - name: install Requuirements
+         
       - name: 设置时区
-      run: sudo timedatectl set-timezone 'Asia/Shanghai'
-    - name: 安装依赖
-      run: |
-        pip install -r ./pythonModule.txt
-    - name: 执行任务
-      run: |
-        python ./tool/clash/main.py.py -n 300
+        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+      - name: 安装依赖
+        run: |
+          pip install -r ./file/pythonModule.txt
+      - name: 执行任务
+        run: |
+          python ./tool/clash/main.py.py -n 300
 
-    - name: 提交更改
-      run: |                 
-        git config --local user.email '${{ secrets.EMAIL }}'
-        git config --local user.name '${{ secrets.NAME }}'
-        git pull origin main
-        git add ./sub/*
-        git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update"
-    - name: 推送更改
-      uses:  ad-m/github-push-action@master
-      with:
-        branch: master
+      - name: 提交更改
+        run: |                 
+          git config --local user.email '${{ secrets.EMAIL }}'
+          git config --local user.name '${{ secrets.NAME }}'
+          git pull origin main
+          git add ./sub/*
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update"
+      - name: 推送更改
+        uses:  ad-m/github-push-action@master
+        with:
+          branch: master
           
      
