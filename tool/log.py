@@ -14,10 +14,14 @@ WARNING         30  warning()
 ERROR           40  error()
 CRITICAL        50  critical()
 '''
+
+'''
 LEVEL_LIST=["TRACE","DEBUG","INFO","SUCCESS","WARNING","ERROR","CRITICAL"] 
 for level in LEVEL_LIST:
     fileNamePart=f"{level}.log"
     logger.add("c:\log\python\loguru_{time:YY-MM}_"+fileNamePart,rotation="5 MB",level=level,encoding="utf-8" ,retention='7 days' ,format="{time:YY-MM-DD HH:mm:ss}\t{level}\t{file}\t{line}\t{message}")
+'''
+
 '''
 \033[显示方式;前景色；背景色m*******\033[0m
 \033[显示方式;前景色；背景色m*******\033[0m
