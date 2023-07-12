@@ -31,7 +31,7 @@ jobs:
           pip install -r ./file/requirements.txt
       - name: 执行任务
         run: |
-          python ./tool/clash/main.py -c ./file/subUrl-test.json -n 300
+          python ./tool/clash/main.py -n 300
       - name: 提交更改
         run: |                 
           git config --local user.email '${{ secrets.EMAIL }}'
