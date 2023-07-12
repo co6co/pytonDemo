@@ -1,0 +1,37 @@
+name: demo
+on:
+  workflow_dispatch:
+  schedule:
+    # - cron: '*/5 * * * *'
+    # 表达式生成  https://crontab.guru/
+    - cron: '*/15 * * * *'
+permissions: write-all
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 迁出代码
+        uses: actions/checkout@v3
+      - name: 安装Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' 
+          cache: "pip"
+       #- name: 加载缓存
+       # uses: actions/cache@v2
+       #   with:
+       #     path: ~/.cache/pip
+       #     key: ${{ runner.os }}-pip-${{ hashFiles('**/run_in_Actions/pythonModule.txt') }}
+       #     restore-keys: |
+       #       ${{ runner.os }}-pip-         
+      - name: 设置时区
+        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+      - name: 安装依赖
+        run: |
+          pip install -r ./file/requirements.txt
+      - name: 执行任务
+        run: |
+          python ./tool/clash/temp.py
+      
+          
+     
