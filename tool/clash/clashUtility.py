@@ -387,7 +387,8 @@ class clash:
         log.info(f"检测节点结果:{result}")
         status=result["status"]
         if status:
-            delay=tcp.ping(domain) 
+            return True
+            delay=tcp.ping(domain) # 在github Action 不支持
             log.info(f"检测网络延迟：{domain}: {delay} ms")
             if delay== None or delay >delay: status= False
         return status
