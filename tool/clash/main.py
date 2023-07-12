@@ -60,7 +60,7 @@ def parseSubUrls(jsonFilePath,proxy:str=None):
     concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
     writeJsonFile(jsonFilePath,jsonObj)
     return jsonObj 
-
+ 
 if __name__ == '__main__': 
     default_output_dir=os.path.join(os.path.abspath("."),"sub")
     default_config_dir=os.path.join(os.path.abspath("."),"file") 
@@ -73,8 +73,9 @@ if __name__ == '__main__':
     config.add_argument("-t","--templateFile",help=f"standby clash yaml templcate File,default:\"{os.path.join(default_config_dir,'clashConfigTemplate.yaml')}\"",default=os.path.join(default_config_dir,"clashConfigTemplate.yaml"))
     
     config=parser.add_argument_group("filter")
-    config.add_argument("-d","--delay",  help="node delay within xx ms,default 1000ms ", type=int, default=1000)
-    config.add_argument("-f","--isCheckNode",  help="check Node network", type=bool, default=True)
+    config.add_argument("-d","--delay",  help="node delay within xx ms,default 1000ms ", type=int, default=1000) 
+    config.add_argument('--checknode', default=True, action=argparse.BooleanOptionalAction ,help="check network connect and check port")
+
 
     config=parser.add_argument_group("output")
     config.add_argument("-n","--number",  help="node num per yaml,default 150", type=int, default=150)
@@ -88,7 +89,7 @@ if __name__ == '__main__':
 
     log.info(f"[+] 订阅节点URL{len(urls)}")
     clashOpt=clashOption(urls)
-    clashOpt.checkNode=args.isCheckNode
+    clashOpt.checkNode=args.checknode
     clashOpt.outputPath=os.path.join(args.outputFolder,"output.yaml")
     clashOpt.backLocalTemplate=args.templateFile
     clashOpt.delay=args.delay

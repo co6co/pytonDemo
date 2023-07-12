@@ -437,6 +437,7 @@ class clash:
         '''
         self.genNodeList(self.opt.subUrlArray) 
         nodelist=clash.remove_duplicates(self.proxy_list['proxy_list'])
+        print("*"*8,self.opt.checkNode)
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy)
@@ -445,7 +446,6 @@ class clash:
             
 class clashOption():
     def __init__(self,subArray=list):
-    
         #模板 __xxxx 私有属性不能被继承
         self.__templateUrl="https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/config.yaml" 
         self.__templateUrl="https://raw.githubusercontent.com/co6co/pytonDemo/master/file/clashConfigTemplate.yaml"
