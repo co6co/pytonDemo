@@ -74,6 +74,7 @@ if __name__ == '__main__':
     
     config=parser.add_argument_group("filter")
     config.add_argument("-d","--delay",  help="node delay within xx ms,default 1000ms ", type=int, default=1000)
+    config.add_argument("-f","--isCheckNode",  help="check Node network", type=bool, default=True)
 
     config=parser.add_argument_group("output")
     config.add_argument("-n","--number",  help="node num per yaml,default 150", type=int, default=150)
@@ -87,6 +88,7 @@ if __name__ == '__main__':
 
     log.info(f"[+] 订阅节点URL{len(urls)}")
     clashOpt=clashOption(urls)
+    clashOpt.checkNode=args.isCheckNode
     clashOpt.outputPath=os.path.join(args.outputFolder,"output.yaml")
     clashOpt.backLocalTemplate=args.templateFile
     clashOpt.delay=args.delay

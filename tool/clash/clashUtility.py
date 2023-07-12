@@ -437,7 +437,7 @@ class clash:
         '''
         self.genNodeList(self.opt.subUrlArray) 
         nodelist=clash.remove_duplicates(self.proxy_list['proxy_list'])
-        nodelist=clash.checkNodes(nodelist) 
+        if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy)
         clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)
@@ -456,6 +456,7 @@ class clashOption():
         self.__outputPath='./file/output.yaml'
         self.__delay=1000
         self.__proxy=None
+        self.__checkNode=False
     
     @property  #像访问属性一样访问方法
     def templateUrl(self): 
@@ -491,6 +492,13 @@ class clashOption():
     @proxy.setter
     def proxy(self,value:str):
         self.__proxy=value
+
+    @property
+    def checkNode(self):
+        return self.__checkNode
+    @checkNode.setter
+    def checkNode(self,value:bool):
+        self.__checkNode=value
 
     
 
