@@ -384,11 +384,11 @@ class clash:
         node['server']=domain
         port = node['port']
         result=tcp.check_tcp_port({"host":domain,"port":port})
-        #log(f"检测节点结果:{result}")
+        log(f"检测节点结果:{result}")
         status=result["status"]
         if status:
             delay=tcp.ping(domain) 
-            #log(f"检测网络延迟：{domain}: {delay} ms")
+            log(f"检测网络延迟：{domain}: {delay} ms")
             if delay== None or delay >delay: status= False
         return status
     
