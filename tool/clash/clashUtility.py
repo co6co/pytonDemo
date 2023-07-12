@@ -384,11 +384,11 @@ class clash:
         node['server']=domain
         port = node['port']
         result=tcp.check_tcp_port({"host":domain,"port":port})
-        log(f"检测节点结果:{result}")
+        log.info(f"检测节点结果:{result}")
         status=result["status"]
         if status:
             delay=tcp.ping(domain) 
-            log(f"检测网络延迟：{domain}: {delay} ms")
+            log.info(f"检测网络延迟：{domain}: {delay} ms")
             if delay== None or delay >delay: status= False
         return status
     
@@ -437,7 +437,6 @@ class clash:
         '''
         self.genNodeList(self.opt.subUrlArray) 
         nodelist=clash.remove_duplicates(self.proxy_list['proxy_list'])
-        print("*"*8,self.opt.checkNode)
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy)
