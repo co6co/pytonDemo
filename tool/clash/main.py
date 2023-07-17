@@ -89,15 +89,7 @@ if __name__ == '__main__':
     urlData=[{"id":item["id"],"data":item["url"].split("|")} for item in jsonData["data"] if item['enabled']]
  
     nodeResources = [nodeResource(str(item["id"]),resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
-    '''
-    for item in urlData:
-        for u in item['data']:
-            nodeResources.append(nodeResource(str(item["id"]),resourceType.http,u))
-    '''
     log.info(f"[+] 解析后订阅资源数：{len(nodeResources)}") 
-    
-    for item in nodeResources:
-        log.warn(vars(item))
     log.flag("解析",f="==",start="\r\n<",end="\r\n\r\n") 
 
     #clashOpt=clashOption([nodeResources[1]])
