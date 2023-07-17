@@ -55,7 +55,7 @@ def parse(item,proxy:str=None):
 
 def parseSubUrls(jsonFilePath,proxy:str=None): 
     jsonObj=readJsonFile(jsonFilePath)
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4)  as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1)  as executor:
         futures= {executor.submit(parse,item,proxy) for item in jsonObj["data"] }
     concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
     writeJsonFile(jsonFilePath,jsonObj)
