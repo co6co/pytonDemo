@@ -90,7 +90,6 @@ if __name__ == '__main__':
  
     nodeResources =[] # [nodeResource(str(item["id"]),resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
     for item in urlData:
-        log.info(vars(item))
         for u in item['data']:
             nodeResources.append(nodeResource(str(item["id"]),resourceType.http,u))
    
