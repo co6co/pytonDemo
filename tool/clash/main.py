@@ -88,9 +88,11 @@ if __name__ == '__main__':
     jsonData=parseSubUrls(args.subConfigFile,args.proxy)
     urlData=[{"id":item["id"],"data":item["url"].split("|")} for item in jsonData["data"] if item['enabled']]
  
-    nodeResources = [nodeResource(str(item["id"]),resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
-    for i in nodeResources:
-        log.info(vars(i))
+    nodeResources =[] # [nodeResource(str(item["id"]),resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
+    for item in urlData:
+        log.info(vars(item))
+        for u in item['data']:
+            nodeResources.append(nodeResource(str(item["id"]),resourceType.http,u))
    
     log.info(f"[+] 解析后订阅资源数：{len(nodeResources)}") 
     log.info(f"\r\n<{'=='*30}\r\n\r\n")
