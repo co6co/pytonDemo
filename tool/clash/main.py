@@ -20,6 +20,8 @@ def readJsonFile(filePath):
     '''
     with  open(filePath,"r",encoding='utf-8') as f:
         result=json.load(f) 
+        log.info(len(result['data']))
+        log.info(vars(result))
         return result
 
 def writeJsonFile(filePath,obj):
@@ -56,7 +58,6 @@ def parse(item,proxy:str=None):
 def parseSubUrls(jsonFilePath,proxy:str=None): 
     jsonObj=readJsonFile(jsonFilePath)
     with concurrent.futures.ThreadPoolExecutor(max_workers=1)  as executor:
-        log.info(len(jsonObj["data"] ))
         futures= {executor.submit(parse,item,proxy) for item in jsonObj["data"] }
     concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
     writeJsonFile(jsonFilePath,jsonObj)
