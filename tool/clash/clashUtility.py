@@ -204,7 +204,7 @@ class clash:
                 tlist=future.result()
                 if self.opt.nodeOutputToFile:self.__saveFile(resource,tlist)
                 log.succ(f'[+]订阅{resource.address} clash节点数:{len(tlist)}个') 
-                node_list.append(tlist)
+                node_list.extend(tlist)
         return node_list
 
     # 获取本地规则策略的配置文件
@@ -480,7 +480,7 @@ class clash:
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         
         log.info("获取导出配置模板...")
-        yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy)
+        yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy) 
         clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)
         
 class resourceType:
