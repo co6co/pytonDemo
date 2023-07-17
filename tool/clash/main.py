@@ -21,7 +21,7 @@ def readJsonFile(filePath):
     with  open(filePath,"r",encoding='utf-8') as f:
         result=json.load(f) 
         log.info(len(result['data']))
-        log.info(vars(result))
+        log.info(vars(result['data']))
         return result
 
 def writeJsonFile(filePath,obj):
