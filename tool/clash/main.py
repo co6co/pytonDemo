@@ -89,7 +89,7 @@ if __name__ == '__main__':
     urlData=[{"id":item["id"],"data":item["url"].split("|")} for item in jsonData["data"] if item['enabled']]
  
     nodeResources = [nodeResource(str(item["id"]),resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
-    for i in nodeResources
+    for i in nodeResources:
         log.info(vars(i))
    
     log.info(f"[+] 解析后订阅资源数：{len(nodeResources)}") 
