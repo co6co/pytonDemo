@@ -8,7 +8,7 @@ from convert2clash import *
 from parserNode import *
 import geoip2.database
 import socket,  concurrent.futures
-
+ 
 
 
 
@@ -96,10 +96,11 @@ class clash:
                 raise 
         if len(nodes_list)>0:return nodes_list
     
-    textIndx=0 
+    textIndx=-1 
     def __saveFile(self,resource,node_list):
         try:
             if len(node_list) ==0 or node_list ==None :return
+            self.textIndx+=1
             # print(f"{'%03d'%3}")
             path= os.path.join(self.opt.outputPath,"txt",f"{self.textIndx:0>3d}_{resource.id}.txt")
             log.warn (f"{path} , {len(node_list)}")
@@ -124,14 +125,10 @@ class clash:
             file.close()
             '''
         except Exception as e:
-           log.err(f"写文件错误:{e}")
+           log.err(f"写文件错误:{e}",e)
            pass
-        finally:
-            self.textIndx+=1
-           
             
-    
-
+           
     def _genNode(self,resource):  
         nodes_list=self.genNode(resource)
         if self.opt.nodeOutputToFile:self.__saveFile(resource,nodes_list)
@@ -162,7 +159,7 @@ class clash:
                
                 nodes_list=clash.parseNodeText(rawTxt)
         except Exception as e:
-            log.err('[-]解析节点失败:"{}",{}'.format(e,addr))
+            log.err('[-]解析节点失败:"{}",{}'.format(e,addr),e)
             pass
         return nodes_list
 
@@ -379,18 +376,20 @@ class clash:
             log.err(f'Error adding proxies to model: {e}')
 
         try:
-            nodeList = [d for d in model['proxies'] if 'name' in d]
-            names =[]
-            for item in nodeList:
-                if item['name'] not in names:names.append(item['name'])
+            groups=model.get('proxy-groups')
+            if groups != None:
+                nodeList = [d for d in model['proxies'] if 'name' in d]
+                names =[]
+                for item in nodeList:
+                    if item['name'] not in names:names.append(item['name'])
 
-            for group in model.get('proxy-groups'):
-                if group.get('proxies') is None:
-                    #group['proxies'] = data.get('proxy_names')
-                    group['proxies'] = names
-                else:
-                    #group['proxies'].extend(data.get('proxy_names'))
-                    group['proxies'].extend(names)
+                for group in groups:
+                    if group.get('proxies') is None:
+                        #group['proxies'] = data.get('proxy_names')
+                        group['proxies'] = names
+                    else:
+                        #group['proxies'].extend(data.get('proxy_names'))
+                        group['proxies'].extend(names)
         except Exception as e:
             log.err(f'Error adding proxy names to groups: {e}')
         return model
@@ -469,11 +468,15 @@ class clash:
         desc: 生成yaml 文件
         yamlNodeNum: yaml 节点数
         ''' 
-        log.info("*"*16)
+        log.info(f"\r\n{'--'*30}>")
         self.genNodeList(self.opt.noderesources) 
-        log.info("--"*16)
+        log.info(f"node<{'==='*30}\r\n")
+
+        log.info(f"\r\nremove{'--'*30}>")
         nodelist=clash.remove_duplicates(self.proxy_list['proxy_list'])
+        log.info(f"\r\nremove<{'==='*30}\r\n\r\n")
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
+        
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy)
         clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)

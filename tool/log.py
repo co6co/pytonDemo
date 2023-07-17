@@ -42,10 +42,12 @@ for level in LEVEL_LIST:
  36           46        青蓝色
  37           47        白色
 '''
-def __log(msg,type:int=0,foregroundColor:int=37,bg=40):
+def __log(msg,type:int=0,foregroundColor:int=37,bg=40,e=None):
     t=threading.currentThread()
-    time = datetime.datetime.now()
-    print(f"['{time.strftime('%Y.%m.%d-%H:%M:%S')}'] [{t.ident}|{t.name}]\t\033[{type};{foregroundColor};{bg}m{msg}\033[0m")
+    time = datetime.datetime.now() 
+    err=e.__traceback__.tb_lineno if e !=None else ""
+    if e!=None:print(vars(e.__traceback__))
+    print(f"['{time.strftime('%Y.%m.%d-%H:%M:%S')}'] [{t.ident}|{t.name}]\t\033[{type};{foregroundColor};{bg}m{msg}{err}\033[0m")
 def log(msg):__log(msg)
 
 def info(msg):__log(msg)
@@ -54,7 +56,7 @@ def succ(msg): __log(msg,7,32,40)
 
 def warn(msg):__log(msg,7,33,40)
 
-def err(msg):__log(msg,7,31,40)
+def err(msg,e=None):__log(msg,7,31,40,e)
 
 def critical(msg):__log(msg,0,37,40)
 
