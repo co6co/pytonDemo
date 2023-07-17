@@ -452,7 +452,7 @@ class clash:
                     #log.info(f"[+]'{item['server']}:{item['port']}'.")
                     s_i+=1
                 else: 
-                    log.info(f"[-]'{item['server']}:{item['port']}'.")
+                    #log.info(f"[-]'{item['server']}:{item['port']}'.")
                     f_i+=1
         log.info(f"[+] success:'{s_i}',[-] fail:'{f_i}'.")
         return _nodeList
