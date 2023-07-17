@@ -105,9 +105,7 @@ class clash:
             log.warn (f"{path} , {len(node_list)}")
             folder=os.path.dirname(path)
              
-            final_config =clash.add_proxies_to_model(node_list,{"proxies":[]}) 
-            clash.save_config(path, final_config)
-
+            final_config =clash.add_proxies_to_model(node_list,{"proxies":[]})  
             if not os.path.exists(folder): os.makedirs(folder)
             clash.save_config(path, final_config)
 
