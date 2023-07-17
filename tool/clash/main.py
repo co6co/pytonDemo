@@ -98,7 +98,7 @@ if __name__ == '__main__':
     
     for item in nodeResources:
         log.warn(vars(item))
-    log.flag("解析",f="==",start="\r\n<") 
+    log.flag("解析",f="==",start="\r\n<",end="\r\n\r\n") 
 
     #clashOpt=clashOption([nodeResources[1]])
     clashOpt=clashOption(nodeResources)

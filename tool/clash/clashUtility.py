@@ -472,18 +472,18 @@ class clash:
         ''' 
         log.flag("gen node")
         node_list=self.genNodeList(self.opt.noderesources) 
-        log.flag("解gen node析",f="==",start="\r\n<")
+        log.flag("解gen node析",f="==",start="\r\n<",end="\r\n\r\n") 
 
         log.flag("remove")
         nodelist=clash.remove_duplicates(node_list)
-        log.flag("remove",f="==",start="\r\n<")
+        log.flag("remove",f="==",start="\r\n<",end="\r\n\r\n") 
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         
         log.flag("导出配置")
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy) 
         clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)
-        log.flag("导出配置",f="==",start="\r\n<")
+        log.flag("导出配置",f="==",start="\r\n<",end="\r\n\r\n") 
         
 class resourceType:
     '''
