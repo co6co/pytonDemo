@@ -17,14 +17,13 @@ class clash:
         'proxy_list': [],
         'proxy_names': []
     } 
-
+    _outputYamlFileName="output.yaml"
     #命名数字
     vmess = [] 
   
     def __init__(self,clashOption) -> None:
         self.opt=clashOption
-        pass
-    
+        pass 
     def parseYamlNode(nodes:list):
         '''
         解析Yaml文件中的node 节点
@@ -49,6 +48,10 @@ class clash:
             nodes_list.append(node)
         return nodes_list
     def parseYaml(yamlContent): # 解析yaml文本
+        '''
+        解析yaml 文本
+        生成 Nodes节点
+        '''
         try:
             yml = yaml.load(yamlContent, Loader=yaml.FullLoader) 
             tmp_list = []
@@ -65,34 +68,105 @@ class clash:
         '''
         解析节点
         '''
-        nodes_list = text.splitlines() 
+        text_list = text.splitlines() 
         if type(text) == str:
-            nodes_list=[itm.encode("utf-8") for itm  in nodes_list]
-        clash_node= []
-        for node in nodes_list: 
+            text_list=[itm.encode("utf-8") for itm  in text_list]
+        nodes_list= []
+        for node in text_list: 
             try:
                 if node.startswith(b'vmess://'):
                     decode_proxy = decode_v2ray_node([node]) 
-                    clash_node.extend(v2ray_to_clash(decode_proxy))
+                    nodes_list.extend(v2ray_to_clash(decode_proxy))
  
                 elif node.startswith(b'ss://'):
                     decode_proxy = decode_ss_node([node])
-                    clash_node.extend( ss_to_clash(decode_proxy))
+                    nodes_list.extend( ss_to_clash(decode_proxy))
                     
                 elif node.startswith(b'ssr://'):
                     decode_proxy = decode_ssr_node([node])
-                    clash_node.extend(ssr_to_clash(decode_proxy))
+                    nodes_list.extend(ssr_to_clash(decode_proxy))
 
                 elif node.startswith(b'trojan://'):
                     decode_proxy = decode_trojan_node([node])
-                    clash_node.extend(trojan_to_clash(decode_proxy))
+                    nodes_list.extend(trojan_to_clash(decode_proxy))
                 else:
                     pass 
             except Exception as e:
                 log.err(e)
                 raise 
-        if len(clash_node)>0:return clash_node
+        if len(nodes_list)>0:return nodes_list
+    
+    textIndx=0 
+    def __saveFile(self,resource,node_list):
+        try:
+            if len(node_list) ==0 or node_list ==None :return
+            # print(f"{'%03d'%3}")
+            path= os.path.join(self.opt.outputPath,"txt",f"{self.textIndx:0>3d}_{resource.id}.txt")
+            log.warn (f"{path} , {len(node_list)}")
+            folder=os.path.dirname(path)
+             
+            final_config =clash.add_proxies_to_model(node_list,{"proxies":[]}) 
+            clash.save_config(path, final_config)
 
+            if not os.path.exists(folder): os.makedirs(folder)
+            clash.save_config(path, final_config)
+
+            # 有 ’+‘ 即为读写模式
+            # a 不存在创建，存在追加
+            # a+ 追加后读，指针移至末尾
+            # w  创建新文件，覆盖
+            # w+ 覆盖
+            # r  文件必须存在
+            # r+  文件必须存在
+            '''
+            file=open(path,"w",encoding="utf-8")
+            updated_list = json.dumps( node_list, sort_keys=False, indent=2, ensure_ascii=False)
+            file.writelines(updated_list)
+            file.flush()
+            file.close()
+            '''
+        except Exception as e:
+           log.err(f"写文件错误:{e}")
+           pass
+        finally:
+            self.textIndx+=1
+           
+            
+    
+
+    def _genNode(self,resource):  
+        nodes_list=self.genNode(resource)
+        if self.opt.nodeOutputToFile:self.__saveFile(resource,nodes_list)
+        addr=resource.address   
+        num=0
+        if nodes_list!=None:
+            node_names = [node.get('name') for node in nodes_list] 
+            num=len(node_names)
+            self.proxy_list['proxy_list'].extend(nodes_list)
+            self.proxy_list['proxy_names'].extend(node_names)
+            log.succ(f'[+]订阅{addr} clash节点数:{num}个')  
+    def genNode(self,resource)->list:
+        nodes_list=[]
+        try:
+            nodeContent=self.getNodeContent(resource)
+            addr=resource.address         
+            yamlData=yaml.full_load(nodeContent) 
+            if type (yamlData) == dict: #yaml 格式
+                log.succ(f"{type(yamlData)}’yaml dict‘<--{addr}")
+                nodes_list=clash.parseYaml(nodeContent)
+            elif type (yamlData) == list and type(yamlData[0]) == dict: #yaml 格式中的节点
+                log.succ(f"{type(yamlData)} ’yaml list dict‘<--{addr}")
+                nodes_list=clash.parseYamlNode(yamlData)
+            else: # base64加密 or node list
+                log.succ(f"{type(yamlData)} ’TEXT‘<--{addr}")
+                rawTxt = base64.b64decode(nodeContent) if secure.base64.isBase64(nodeContent) else nodeContent 
+                #log.err(f"{type(rawTxt)},\n{rawTxt}")
+               
+                nodes_list=clash.parseNodeText(rawTxt)
+        except Exception as e:
+            log.err('[-]解析节点失败:"{}",{}'.format(e,addr))
+            pass
+        return nodes_list
 
     def __getHttpContent(url,proxy:str=None):
         try:
@@ -103,66 +177,33 @@ class clash:
         except Exception as e:
             log.err(f"[-]http请求'{url}'出现异常：{e}")
             pass
-    def _genNode(self,nodeContent,nodeContentAddress:str|None): 
-        try:
-            nodes_list=[]
-            yamlData=yaml.full_load(nodeContent) 
-            if type (yamlData) == dict: #yaml 格式
-                log.succ(f"{type(yamlData)}’yaml dict‘<--{nodeContentAddress}")
-                nodes_list=clash.parseYaml(nodeContent)
-            elif type (yamlData) == list and type(yamlData[0]) == dict: #yaml 格式中的节点
-                log.succ(f"{type(yamlData)} ’yaml list dict‘<--{nodeContentAddress}")
-                nodes_list=clash.parseYamlNode(yamlData)
-            else: # base64加密 or node list
-                log.succ(f"{type(yamlData)} ’TEXT‘<--{nodeContentAddress}")
-                rawTxt = base64.b64decode(nodeContent) if secure.base64.isBase64(nodeContent) else nodeContent 
-                #log.err(f"{type(rawTxt)},\n{rawTxt}")
-               
-                nodes_list=clash.parseNodeText(rawTxt)
-        except Exception as e:
-            log.err('[-]解析节点失败:"{}",{}'.format(e,nodeContentAddress))
-            pass
-        num=0
-        if nodes_list!=None:
-            node_names = [node.get('name') for node in nodes_list] 
-            num=len(node_names)
-            self.proxy_list['proxy_list'].extend(nodes_list)
-            self.proxy_list['proxy_names'].extend(node_names)
-            log.succ(f'[+]订阅{nodeContentAddress} clash节点数:{num}个')  
-            
 
-    def genNodeByUrl(self,subUrl:str):
+    def getNodeContent(self,resource)->str:
         '''
-        从url中生成节点 
-        subUrl      url地址
+        获取节点的文本内容
         '''
+        log.info(f"订阅：'{resource.address}'...") 
+        content=None
+        if(resource.resourceType==resourceType.http):
+            content=clash.__getHttpContent(resource.address,self.opt.proxy)
+            if content==None and opt.proxy!=None:content=clash.__getHttpContent(resource.address)
+            if content==None :return 
+        elif(resource.resourceType==resourceType.file):
+            filePath=resource.address
+            if not os.path.exists(filePath) or not os.path.isfile(filePath):log.warn(f"输入的文件路径'{filePath}'不存在！")
+            file=open(filePath,"r",encoding="utf-8") 
+            content=file.read()
+            file.close() 
+        return content
     
-        log.info(f"订阅：'{subUrl}'...") 
-        response=clash.__getHttpContent(subUrl,self.opt.proxy)
-        if response==None and opt.proxy!=None:response=clash.__getHttpContent(subUrl)
-        if response==None :return 
-        self._genNode(response,subUrl)
-    
-    def genNodeByFile(self,filePath:str):
-        '''
-        从url中生成节点 
-        subUrl      url地址
-        ''' 
-        log.info(f"订阅：'{filePath}'...") 
-        if not os.path.exists(filePath) or not os.path.isfile(filePath):log.warn(f"输入的文件路径'{filePath}'不存在！")
-        file=open(filePath,"r",encoding="utf-8") 
-        content=file.read()
-        file.close()
-        self._genNode(content,filePath)
-
-    def genNodeList(self,urlList): #生成 proxy_list 
+    def genNodeList(self,noderesources:list): #生成 proxy_list 
         '''
         从URL列表中生成节点
         arg: urlList        base64 url|yaml url node list url
         '''
         # 请求订阅地址
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-            futures={executor.submit(self.genNodeByUrl,(url)) for url in urlList}
+            futures={executor.submit(self._genNode,(resource)) for resource in noderesources}
         concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
         #for future in concurrent.futures.as_completed(futures):
         #    future.done()
@@ -329,24 +370,20 @@ class clash:
                 i += 1
         return result
     # 将代理添加到配置文件
-    def add_proxies_to_model(data, model): 
-        if data is None or model is None:
+    def add_proxies_to_model(nodeList:list, model): 
+        if nodeList is None or model is None:
             raise ValueError('Invalid input: data and model cannot be None')
-        if 'proxy_list' not in data or 'proxy_names' not in data:
-            raise ValueError('Invalid input: data should contain "proxy_list" and "proxy_names" keys')
-        
+         
         try: 
-            if model.get('proxies') is None:
-                model['proxies'] = data.get('proxy_list')
-            else:
-                model['proxies'].extend(data.get('proxy_list'))
+            if model.get('proxies') is None:model['proxies'] =nodeList
+            else:model['proxies'].extend(nodeList)
         except Exception as e:
             log.err(f'Error adding proxies to model: {e}')
 
         try:
-            data['proxy_list'] = [d for d in data['proxy_list'] if 'name' in d]
-            names = []
-            for item in data['proxy_list']:
+            nodeList = [d for d in model['proxies'] if 'name' in d]
+            names =[]
+            for item in nodeList:
                 if item['name'] not in names:names.append(item['name'])
 
             for group in model.get('proxy-groups'):
@@ -377,14 +414,13 @@ class clash:
         node : 节点
         delay: 超时 毫秒（超过该时间为失败）
         '''
-        if 'server' not in node or 'port' not in node or 'password' in node:
-            return False 
+        if 'server' not in node or 'port' not in node or 'password' in node:return False 
         domain = node['server']
         domain=domain .strip()
         node['server']=domain
         port = node['port']
         result=tcp.check_tcp_port({"host":domain,"port":port})
-        log.info(f"检测节点结果:{result}")
+        #log.info(f"检测节点结果:{result}")
         status=result["status"]
         if status:
             return True
@@ -411,52 +447,88 @@ class clash:
         #nameList=[node.get("name") for node in nodeList]     
         return _nodeList
     
-    def outputToFile(yamlConfig,nodeList:list,yamlNodeNum:int,outputPath:str): 
+    def outputToFile(yamlConfig,nodeList:list,yamlNodeNum:int,outputFolder:str): 
         log.info(f'[+]节点数...{len(nodeList)}')
         index=math.floor(len(nodeList) / yamlNodeNum)  
         index+=1 if len(nodeList) % yamlNodeNum > 0 else 0
         i=0
-       
+        filePath=os.path.join(outputFolder,clash._outputYamlFileName)
         while i<index:
             ii=i*yamlNodeNum
             jj=(i+1)*yamlNodeNum
-            data={"proxy_list":[],"proxy_names":[]}
-            data["proxy_list"]=nodeList[ii:jj]
-            data["proxy_names"]=[item["name"] for item in data["proxy_list"]] 
+            data=nodeList[ii:jj]
+            #data["proxy_names"]=[item["name"] for item in data["proxy_list"]] 
           
             #输出文件夹
-            if i>0: outputPath=os.path.splitext(outputPath)[0]+str(i)+os.path.splitext(outputPath)[1]
+            if i>0: filePath=os.path.splitext(filePath)[0]+"_"+str(i)+os.path.splitext(filePath)[1]
             _yamlConfig=copy.deepcopy( yamlConfig )
             final_config =clash.add_proxies_to_model(data, _yamlConfig) 
-            clash.save_config(outputPath, final_config)
+            clash.save_config(filePath, final_config)
             i+=1
             
     def genYamlForClash(self,yamlNodeNum:int):
         '''
         desc: 生成yaml 文件
         yamlNodeNum: yaml 节点数
-        '''
-        self.genNodeList(self.opt.subUrlArray) 
+        ''' 
+        log.info("*"*16)
+        self.genNodeList(self.opt.noderesources) 
+        log.info("--"*16)
         nodelist=clash.remove_duplicates(self.proxy_list['proxy_list'])
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy)
         clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)
         
-            
+class resourceType:
+    '''
+    枚举： 资源类型
+    '''
+    http=0,
+    file=1
+class nodeResource:
+    '''
+    节点资源
+    '''
+    def __init__(self,id:str,reType:resourceType,add:str) -> None:
+        self.__id=id
+        self.__type=reType
+        self.__address=add
+    @property
+    def id(self):
+        return self.__id
+    @id.setter
+    def id(self,value:str):
+        self.__id=value
+    @property
+    def resourceType(self):
+        return self.__type
+    @resourceType.setter
+    def resourceType(self,value:resourceType):
+        self.__type=value
+    @property
+    def address(self):
+        return self.__address
+    @address.setter
+    def address(self,value:resourceType):
+        self.__address=value
+
+         
+
 class clashOption():
-    def __init__(self,subArray=list):
+    def __init__(self,noderesources=list ):
         #模板 __xxxx 私有属性不能被继承
         self.__templateUrl="https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/config.yaml" 
         self.__templateUrl="https://raw.githubusercontent.com/co6co/pytonDemo/master/file/clashConfigTemplate.yaml"
         # 备用本地模板
         self.__backLocalTemplate="./default_config.yaml"
-        self.subUrlArray=subArray
+        self.noderesources=noderesources
         #输出
-        self.__outputPath='./file/output.yaml'
+        self.__outputPath='./file'
         self.__delay=1000
         self.__proxy=None
         self.__checkNode=False
+        self.__nodeOutputToFile=False
     
     @property  #像访问属性一样访问方法
     def templateUrl(self): 
@@ -474,6 +546,9 @@ class clashOption():
     
     @property
     def outputPath(self):
+        '''
+        输出文件夹
+        '''
         return self.__outputPath
     @outputPath.setter
     def outputPath(self,value:str):
@@ -499,11 +574,15 @@ class clashOption():
     @checkNode.setter
     def checkNode(self,value:bool):
         self.__checkNode=value
-
     
-
-
-
+    @property
+    def nodeOutputToFile(self):
+        return self.__nodeOutputToFile
+    @nodeOutputToFile.setter
+    def nodeOutputToFile(self,value:bool):
+        self.__nodeOutputToFile=value
+    
+ 
 if __name__ == '__main__': 
     opt=clashOption(subArray=["https://tt.vg/evIzX"])
     cl =clash (opt)

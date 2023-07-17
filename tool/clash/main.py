@@ -1,7 +1,7 @@
 import sys,os,json
 import argparse
 import htmlparser
-from clashUtility import clash,clashOption, log
+from clashUtility import clash,clashOption, log,resourceType,nodeResource
 sys.path.append(os.path.dirname(os.path.abspath(sys.argv[0])+"../tool"))
 
 import concurrent.futures;
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     parser=argparse.ArgumentParser(description="生成clash Yaml文件")
     parser.add_argument("-p","--proxy",help="config proxy address eg. 127.0.0.1:1080")
 
-    config=parser.add_argument_group("config")
+    config=parser.add_argument_group("config") 
     config.add_argument("-c",'--subConfigFile' , help=f"sub Config JSON File Path,default:\"{ os.path.join(default_config_dir,'subUrl.json')}\"",default= os.path.join(default_config_dir,"subUrl.json"))
     config.add_argument("-t","--templateFile",help=f"standby clash yaml templcate File,default:\"{os.path.join(default_config_dir,'clashConfigTemplate.yaml')}\"",default=os.path.join(default_config_dir,"clashConfigTemplate.yaml"))
     
@@ -80,19 +80,22 @@ if __name__ == '__main__':
     config=parser.add_argument_group("output")
     config.add_argument("-n","--number",  help="node num per yaml,default 150", type=int, default=150)
     config.add_argument("-o",'--outputFolder' , help=f"save yaml file Path,defalut:{default_output_dir}",default=default_output_dir)
+    config.add_argument('--nodeOutputTxt' ,default=True, action=argparse.BooleanOptionalAction,help=f"nodes to File default:true")
 
     args=parser.parse_args()
     log.info("解析订阅的url...")  
     jsonData=parseSubUrls(args.subConfigFile,args.proxy)
-    urls=[item["url"].split("|") for item in jsonData["data"] if item['enabled']]
-    urls = [u for arr in urls for u in arr if u!=""]
-
-    log.info(f"[+] 订阅节点URL{len(urls)}")
-    clashOpt=clashOption(urls)
+    urlData=[{"id":item["id"],"data":item["url"].split("|")} for item in jsonData["data"] if item['enabled']]
+ 
+    nodeResources = [nodeResource(str(item["id"]),resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
+   
+    log.info(f"[+] 订阅资源数：{len(nodeResources)}") 
+    clashOpt=clashOption(nodeResources)
     clashOpt.checkNode=args.checknode
-    clashOpt.outputPath=os.path.join(args.outputFolder,"output.yaml")
+    clashOpt.outputPath=args.outputFolder
     clashOpt.backLocalTemplate=args.templateFile
     clashOpt.delay=args.delay
     clashOpt.proxy=args.proxy
+    clashOpt.nodeOutputToFile=args.nodeOutputTxt
     c=clash (clashOpt)
     c.genYamlForClash(args.number)
