@@ -83,19 +83,22 @@ if __name__ == '__main__':
     config.add_argument('--nodeOutputTxt' ,default=True, action=argparse.BooleanOptionalAction,help=f"nodes to File default:true")
 
     args=parser.parse_args()
-    log.info(f"\r\n{'--'*30}>")
-    log.info("解析订阅的url...")  
+    log.flag("解析")
+    log.info("解析订阅的urls...")  
     jsonData=parseSubUrls(args.subConfigFile,args.proxy)
     urlData=[{"id":item["id"],"data":item["url"].split("|")} for item in jsonData["data"] if item['enabled']]
  
-    nodeResources =[] # [nodeResource(str(item["id"]),resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
+    nodeResources = [nodeResource(str(item["id"]),resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
+    '''
     for item in urlData:
         for u in item['data']:
             nodeResources.append(nodeResource(str(item["id"]),resourceType.http,u))
-   
+    '''
     log.info(f"[+] 解析后订阅资源数：{len(nodeResources)}") 
-    log.info(f"\r\n<{'=='*30}\r\n\r\n")
-    sys.exit(0)
+    
+    for item in nodeResources:
+        log.warn(vars(item))
+    log.flag("解析",f="==",start="\r\n<") 
 
     #clashOpt=clashOption([nodeResources[1]])
     clashOpt=clashOption(nodeResources)

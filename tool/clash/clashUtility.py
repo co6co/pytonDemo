@@ -470,18 +470,20 @@ class clash:
         desc: 生成yaml 文件
         yamlNodeNum: yaml 节点数
         ''' 
-        log.info(f"\r\n{'--'*30}>")
+        log.flag("gen node")
         node_list=self.genNodeList(self.opt.noderesources) 
-        log.info(f"node<{'==='*30}\r\n")
+        log.flag("解gen node析",f="==",start="\r\n<")
 
-        log.info(f"\r\nremove{'--'*30}>")
+        log.flag("remove")
         nodelist=clash.remove_duplicates(node_list)
-        log.info(f"\r\nremove<{'==='*30}\r\n\r\n")
+        log.flag("remove",f="==",start="\r\n<")
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         
+        log.flag("导出配置")
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy) 
         clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)
+        log.flag("导出配置",f="==",start="\r\n<")
         
 class resourceType:
     '''

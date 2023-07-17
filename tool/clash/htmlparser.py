@@ -39,7 +39,7 @@ def kauiZuiKeji(item,proxy:str=None):
         arg2=item["arg_2"]
         arg3=item["arg_3"]
         name=item['remarks'] if  'remarks' in item else "未配置remarks" 
-        log.info(f"解析'{name}'的订阅地址..{arg1}\t{arg2}\t{arg3}.") 
+        log.info(f"解析：{name}\t'{url}'")
         soup=_createSoup(url,proxy) 
         log.info(f"1.'{name}'通过参数1,获取包含目标的页面元素..")
         list=soup.select(arg1)#'a[href*="https://kkzui.com/"]'
@@ -68,10 +68,12 @@ def getHubDateTime(item,proxy:str=None):
     urlArr=[]
     try:
         url=item["site"]
+      
         arg1=item["arg_1"]
         arg2=int(item["arg_2"])
         arg3=item["arg_3"]
         name=item['remarks'] if  'remarks' in item else "未配置remarks" 
+        log.info(f"解析：{name}\t'{url}'")
         urlparse=urllib.parse.urlparse(url) 
         soup=_createSoup(url,proxy) 
         list=soup.select(arg1)
