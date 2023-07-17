@@ -13,10 +13,6 @@ import socket,  concurrent.futures
 
 
 class clash:
-    proxy_list = {
-        'proxy_list': [],
-        'proxy_names': []
-    } 
     _outputYamlFileName="output.yaml"
     #命名数字
     vmess = [] 
@@ -129,31 +125,22 @@ class clash:
            pass
             
            
-    def _genNode(self,resource):  
-        nodes_list=self.genNode(resource)
-        if self.opt.nodeOutputToFile:self.__saveFile(resource,nodes_list)
-        addr=resource.address   
-        num=0
-        if nodes_list!=None:
-            node_names = [node.get('name') for node in nodes_list] 
-            num=len(node_names)
-            self.proxy_list['proxy_list'].extend(nodes_list)
-            self.proxy_list['proxy_names'].extend(node_names)
-            log.succ(f'[+]订阅{addr} clash节点数:{num}个')  
+ 
     def genNode(self,resource)->list:
         nodes_list=[]
+        addr=resource.address
         try:
             nodeContent=self.getNodeContent(resource)
-            addr=resource.address         
+                 
             yamlData=yaml.full_load(nodeContent) 
             if type (yamlData) == dict: #yaml 格式
-                log.succ(f"{type(yamlData)}’yaml dict‘<--{addr}")
+                #log.succ(f"{type(yamlData)}’yaml dict‘<--{addr}")
                 nodes_list=clash.parseYaml(nodeContent)
             elif type (yamlData) == list and type(yamlData[0]) == dict: #yaml 格式中的节点
-                log.succ(f"{type(yamlData)} ’yaml list dict‘<--{addr}")
+                #log.succ(f"{type(yamlData)} ’yaml list dict‘<--{addr}")
                 nodes_list=clash.parseYamlNode(yamlData)
             else: # base64加密 or node list
-                log.succ(f"{type(yamlData)} ’TEXT‘<--{addr}")
+                #log.succ(f"{type(yamlData)} ’TEXT‘<--{addr}")
                 rawTxt = base64.b64decode(nodeContent) if secure.base64.isBase64(nodeContent) else nodeContent 
                 #log.err(f"{type(rawTxt)},\n{rawTxt}")
                
@@ -191,17 +178,34 @@ class clash:
             file.close() 
         return content
     
-    def genNodeList(self,noderesources:list): #生成 proxy_list 
+    def genNodeList(self,noderesources:list):  
         '''
         从URL列表中生成节点
-        arg: urlList        base64 url|yaml url node list url
+        arg: noderesources        base64 url|yaml url node list url
         '''
         # 请求订阅地址
+        '''
+        #无返回值使用方法
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
             futures={executor.submit(self._genNode,(resource)) for resource in noderesources}
         concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
+        '''
+        '''
+        未知
         #for future in concurrent.futures.as_completed(futures):
         #    future.done()
+        '''
+       
+        node_list=[]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            futures={executor.submit(self.genNode,resource):resource for resource in noderesources}
+            for future in concurrent.futures.as_completed(futures): 
+                resource=futures[future] 
+                tlist=future.result()
+                if self.opt.nodeOutputToFile:self.__saveFile(resource,tlist)
+                log.succ(f'[+]订阅{resource.address} clash节点数:{len(tlist)}个') 
+                node_list.append(tlist)
+        return node_list
 
     # 获取本地规则策略的配置文件
     def load_local_config(path):
@@ -440,8 +444,6 @@ class clash:
                     _nodeList.append(item)
                     log.info(f"[+]'{item['server']}:{item['port']}'.")
                 else: log.info(f"[-]'{item['server']}:{item['port']}'.")
-
-        #nameList=[node.get("name") for node in nodeList]     
         return _nodeList
     
     def outputToFile(yamlConfig,nodeList:list,yamlNodeNum:int,outputFolder:str): 
@@ -469,11 +471,11 @@ class clash:
         yamlNodeNum: yaml 节点数
         ''' 
         log.info(f"\r\n{'--'*30}>")
-        self.genNodeList(self.opt.noderesources) 
+        node_list=self.genNodeList(self.opt.noderesources) 
         log.info(f"node<{'==='*30}\r\n")
 
         log.info(f"\r\nremove{'--'*30}>")
-        nodelist=clash.remove_duplicates(self.proxy_list['proxy_list'])
+        nodelist=clash.remove_duplicates(node_list)
         log.info(f"\r\nremove<{'==='*30}\r\n\r\n")
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         

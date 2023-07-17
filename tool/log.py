@@ -46,7 +46,6 @@ def __log(msg,type:int=0,foregroundColor:int=37,bg=40,e=None):
     t=threading.currentThread()
     time = datetime.datetime.now() 
     err=e.__traceback__.tb_lineno if e !=None else ""
-    if e!=None:print(vars(e.__traceback__))
     print(f"['{time.strftime('%Y.%m.%d-%H:%M:%S')}'] [{t.ident}|{t.name}]\t\033[{type};{foregroundColor};{bg}m{msg}{err}\033[0m")
 def log(msg):__log(msg)
 

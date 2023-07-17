@@ -1,7 +1,7 @@
 import sys,os,json
 import argparse
 import htmlparser
-from clashUtility import clash,clashOption, log 
+from clashUtility import clash,clashOption,resourceType,nodeResource, log 
 
 if __name__ == '__main__':
     default_output_dir=os.path.join(os.path.abspath("."),"sub")
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     clashOpt.delay=args.delay
     clashOpt.proxy=args.proxy
     c=clash (clashOpt)
-    c.genNodeByFile(args.file)
-    nodeList=clash.checkNodes(c.proxy_list['proxy_list'],clashOpt.delay)
+    nodeList=c.genNode(nodeResource("0",resourceType.file,args.file))
+    nodeList=clash.checkNodes(nodeList,clashOpt.delay)
     yamlConfig=clash.getTemplateConfig(clashOpt.templateUrl,clashOpt.backLocalTemplate)
     clash.outputToFile(yamlConfig,nodeList,args.number,clashOpt.outputPath)
