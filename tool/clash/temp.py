@@ -1,6 +1,6 @@
 import requests,base64,sys
 sys.path.append("./tool")
-from webutility import safe_decode
+from webutility import webutility,safe_decode
 import log,tcp
 try:
     url="https://raw.fastgit.org/Pawdroid/Free-servers/main/sub"
@@ -14,3 +14,13 @@ except:
     pass
 delay=tcp.ping("www.baidu.com") # 在github Action 不支持
 log.info(f"检测网络延迟：{'www.google.com'}: {delay} ms")
+
+webutility.
+ try:
+    response = webutility.get('https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml')  
+    #print("Encoding:"+response.apparent_encoding,response.encoding)
+    response.encoding="utf-8"
+    print(response.text )
+except Exception as e:
+    log.err(f"[-]http请求'{url}'出现异常：{e}")
+    pass
