@@ -329,6 +329,8 @@ class clash:
         result = []
         servers = []
         i = 1
+        f = 0
+     
         for item in nodeList:
             if 'name' in item:
                 if 'server' not in item or 'port' not in item: continue
@@ -336,7 +338,8 @@ class clash:
                 port = item['port']
                 server=f"{domain}:{port}" 
                 if server in servers:
-                    log.warn(f"重复节点：{server}")
+                    f+=1
+                    #log.warn(f"重复节点：{server}")
                     continue  
                 servers.append(server)
                 #re.match 从字符串开始的地方匹配，
@@ -367,6 +370,7 @@ class clash:
                 item['name']=clash.find_country(domain)+ name+'_' + str(i)
                 result.append(item)
                 i += 1
+        log.warn(f"重复节点：{f}个")
         return result
     # 将代理添加到配置文件
     def add_proxies_to_model(nodeList:list, model): 
@@ -436,14 +440,21 @@ class clash:
         '''
         # 去重 
         _nodeList=[]
+        s_i=0
+        f_i=0
+     
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
             futures={executor.submit(clash.checkNode,item,delay):item for item in nodeList}
             for future in concurrent.futures.as_completed(futures): 
                 item=futures[future] 
                 if(future.result()):
                     _nodeList.append(item)
-                    log.info(f"[+]'{item['server']}:{item['port']}'.")
-                else: log.info(f"[-]'{item['server']}:{item['port']}'.")
+                    #log.info(f"[+]'{item['server']}:{item['port']}'.")
+                    s_i+=1
+                else: 
+                    log.info(f"[-]'{item['server']}:{item['port']}'.")
+                    f_i+=1
+        log.info(f"[+] success:'{s_i}',[-] fail:'{f_i}'.")
         return _nodeList
     
     def outputToFile(yamlConfig,nodeList:list,yamlNodeNum:int,outputFolder:str): 
