@@ -49,7 +49,10 @@ def __log(msg,type:int=0,foregroundColor:int=37,bg=40,e=None):
     print(f"['{time.strftime('%Y.%m.%d-%H:%M:%S')}'] [{t.ident}|{t.name}]\t\033[{type};{foregroundColor};{bg}m{msg}{err}\033[0m")
 def log(msg):__log(msg)
 
-def flag(msg,f="--",start:str="\r\n",end:str=">",num:int=50):
+
+def start_mark(msg,f="--",start:str="\r\n",end:str=">",num:int=50):
+    __log(start+f*num+ msg +f*num+end)
+def end_mark(msg,f="==",start:str="\r\n<",end:str="\r\n\r\n",num:int=50):
     __log(start+f*num+ msg +f*num+end)
 
 def info(msg):__log(msg)

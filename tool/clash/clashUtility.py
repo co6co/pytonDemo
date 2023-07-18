@@ -7,18 +7,120 @@ import webutility
 from convert2clash import *
 from parserNode import *
 import geoip2.database
-import socket,  concurrent.futures
+import socket,  concurrent.futures 
+from typing import List
+
+class resourceType:
+    '''
+    枚举： 资源类型
+    '''
+    http=0,
+    file=1
+class nodeResource:
+    '''
+    节点资源
+    '''
+    def __init__(self,id:int,reType:resourceType,add:str) -> None:
+        self.__id=id
+        self.__type=reType
+        self.__address=add
+    @property
+    def id(self):
+        return self.__id
+    @id.setter
+    def id(self,value:int):
+        self.__id=value
+    @property
+    def resourceType(self):
+        return self.__type
+    @resourceType.setter
+    def resourceType(self,value:resourceType):
+        self.__type=value
+    @property
+    def address(self):
+        return self.__address
+    @address.setter
+    def address(self,value:resourceType):
+        self.__address=value
+
+         
+
+class clashOption():
+    def __init__(self,noderesources=list ):
+        #模板 __xxxx 私有属性不能被继承
+        self.__templateUrl="https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/config.yaml" 
+        self.__templateUrl="https://raw.githubusercontent.com/co6co/pytonDemo/master/file/clashConfigTemplate.yaml"
+        # 备用本地模板
+        self.__backLocalTemplate="./default_config.yaml"
+        self.noderesources=noderesources
+        #输出
+        self.__outputPath='./file'
+        self.__delay=1000
+        self.__proxy=None
+        self.__checkNode=False
+        self.__nodeOutputToFile=False
+    
+    @property  #像访问属性一样访问方法
+    def templateUrl(self): 
+        return self.__templateUrl
+    @templateUrl.setter
+    def templateUrl(self,value:str):
+        self.__templateUrl=value
+
+    @property  #备用本地模板
+    def backLocalTemplate(self): 
+        return self.__backLocalTemplate
+    @backLocalTemplate.setter
+    def backLocalTemplate(self,value:str):
+        self.__backLocalTemplate=value
+    
+    @property
+    def outputPath(self):
+        '''
+        输出文件夹
+        '''
+        return self.__outputPath
+    @outputPath.setter
+    def outputPath(self,value:str):
+        self.__outputPath=value
+
+    @property
+    def delay(self):
+        return self.__delay
+    @delay.setter
+    def delay(self,value:int):
+        self.__delay=value
+    
+    @property
+    def proxy(self):
+        return self.__proxy
+    @proxy.setter
+    def proxy(self,value:str):
+        self.__proxy=value
+
+    @property
+    def checkNode(self):
+        return self.__checkNode
+    @checkNode.setter
+    def checkNode(self,value:bool):
+        self.__checkNode=value
+    
+    @property
+    def nodeOutputToFile(self):
+        return self.__nodeOutputToFile
+    @nodeOutputToFile.setter
+    def nodeOutputToFile(self,value:bool):
+        self.__nodeOutputToFile=value
+    
  
-
-
 
 class clash:
     _outputYamlFileName="output.yaml"
     #命名数字
     vmess = [] 
   
-    def __init__(self,clashOption) -> None:
-        self.opt=clashOption
+    def __init__(self,opt:clashOption) -> None:
+        self.opt=opt
         pass 
     def parseYamlNode(nodes:list):
         '''
@@ -93,12 +195,13 @@ class clash:
         if len(nodes_list)>0:return nodes_list
     
     textIndx=-1 
-    def __saveFile(self,resource,node_list):
+    def __saveFile(self,resource:nodeResource,node_list):
         try:
+            
             if len(node_list) ==0 or node_list ==None :return
             self.textIndx+=1
             # print(f"{'%03d'%3}")
-            path= os.path.join(self.opt.outputPath,"txt",f"{self.textIndx:0>3d}_{resource.id}.txt")
+            path= os.path.join(self.opt.outputPath,"txt",f"{resource.id:0>4d}_{self.textIndx:0>3d}.txt")
             log.warn (f"{path} , {len(node_list)}")
             folder=os.path.dirname(path)
              
@@ -178,7 +281,7 @@ class clash:
             file.close() 
         return content
     
-    def genNodeList(self,noderesources:list):  
+    def genNodeList(self,noderesources:list[nodeResource]):  
         '''
         从URL列表中生成节点
         arg: noderesources        base64 url|yaml url node list url
@@ -481,124 +584,22 @@ class clash:
         desc: 生成yaml 文件
         yamlNodeNum: yaml 节点数
         ''' 
-        log.flag("gen node")
+        log.start_mark("gen node")
         node_list=self.genNodeList(self.opt.noderesources) 
-        log.flag("解gen node析",f="==",start="\r\n<",end="\r\n\r\n") 
+        log.end_mark("gen node") 
 
-        log.flag("remove")
+        log.start_mark("remove")
         nodelist=clash.remove_duplicates(node_list)
-        log.flag("remove",f="==",start="\r\n<",end="\r\n\r\n") 
+        log.end_mark("remove") 
         if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
         
-        log.flag("导出配置")
+        log.start_mark("导出配置")
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy) 
         clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)
-        log.flag("导出配置",f="==",start="\r\n<",end="\r\n\r\n") 
+        log.end_mark("导出配置") 
         
-class resourceType:
-    '''
-    枚举： 资源类型
-    '''
-    http=0,
-    file=1
-class nodeResource:
-    '''
-    节点资源
-    '''
-    def __init__(self,id:str,reType:resourceType,add:str) -> None:
-        self.__id=id
-        self.__type=reType
-        self.__address=add
-    @property
-    def id(self):
-        return self.__id
-    @id.setter
-    def id(self,value:str):
-        self.__id=value
-    @property
-    def resourceType(self):
-        return self.__type
-    @resourceType.setter
-    def resourceType(self,value:resourceType):
-        self.__type=value
-    @property
-    def address(self):
-        return self.__address
-    @address.setter
-    def address(self,value:resourceType):
-        self.__address=value
 
-         
-
-class clashOption():
-    def __init__(self,noderesources=list ):
-        #模板 __xxxx 私有属性不能被继承
-        self.__templateUrl="https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/config.yaml" 
-        self.__templateUrl="https://raw.githubusercontent.com/co6co/pytonDemo/master/file/clashConfigTemplate.yaml"
-        # 备用本地模板
-        self.__backLocalTemplate="./default_config.yaml"
-        self.noderesources=noderesources
-        #输出
-        self.__outputPath='./file'
-        self.__delay=1000
-        self.__proxy=None
-        self.__checkNode=False
-        self.__nodeOutputToFile=False
-    
-    @property  #像访问属性一样访问方法
-    def templateUrl(self): 
-        return self.__templateUrl
-    @templateUrl.setter
-    def templateUrl(self,value:str):
-        self.__templateUrl=value
-
-    @property  #备用本地模板
-    def backLocalTemplate(self): 
-        return self.__backLocalTemplate
-    @backLocalTemplate.setter
-    def backLocalTemplate(self,value:str):
-        self.__backLocalTemplate=value
-    
-    @property
-    def outputPath(self):
-        '''
-        输出文件夹
-        '''
-        return self.__outputPath
-    @outputPath.setter
-    def outputPath(self,value:str):
-        self.__outputPath=value
-
-    @property
-    def delay(self):
-        return self.__delay
-    @delay.setter
-    def delay(self,value:int):
-        self.__delay=value
-    
-    @property
-    def proxy(self):
-        return self.__proxy
-    @proxy.setter
-    def proxy(self,value:str):
-        self.__proxy=value
-
-    @property
-    def checkNode(self):
-        return self.__checkNode
-    @checkNode.setter
-    def checkNode(self,value:bool):
-        self.__checkNode=value
-    
-    @property
-    def nodeOutputToFile(self):
-        return self.__nodeOutputToFile
-    @nodeOutputToFile.setter
-    def nodeOutputToFile(self,value:bool):
-        self.__nodeOutputToFile=value
-    
- 
 if __name__ == '__main__': 
     opt=clashOption(subArray=["https://tt.vg/evIzX"])
     cl =clash (opt)

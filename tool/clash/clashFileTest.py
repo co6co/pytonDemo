@@ -28,7 +28,7 @@ if __name__ == '__main__':
     clashOpt.delay=args.delay
     clashOpt.proxy=args.proxy
     c=clash (clashOpt)
-    nodeList=c.genNode(nodeResource("0",resourceType.file,args.file))
+    nodeList=c.genNode(nodeResource(0,resourceType.file,args.file))
     nodeList=clash.checkNodes(nodeList,clashOpt.delay)
     yamlConfig=clash.getTemplateConfig(clashOpt.templateUrl,clashOpt.backLocalTemplate)
     clash.outputToFile(yamlConfig,nodeList,args.number,clashOpt.outputPath)
