@@ -60,7 +60,29 @@ def parseSubUrls(jsonFilePath,proxy:str=None):
     concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
     writeJsonFile(jsonFilePath,jsonObj)
     return jsonObj 
- 
+
+def revisedResource(configJson:dict):
+    '''
+    获取资源
+    配置文件设计时：采用一个订阅 可订阅多个资源
+    在系统中将所有资源分开,ID不可重复.
+    '''
+    urlData=[{"id":item["id"],"data":item["url"].split("|")} for item in configJson["data"] if item['enabled']] 
+    nodeResources = [nodeResource(item["id"],resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
+   
+    
+    # id 转 唯一
+    ids=[]
+    for r in nodeResources:
+        if r.id not in ids:ids.append(r.id)
+    for id in ids:
+        i=0
+        for r in nodeResources:
+            if id==r.id:
+                r.id=int(str(r.id)+f"{i:0>3d}")
+                i+=1
+    return nodeResources
+
 if __name__ == '__main__': 
     default_output_dir=os.path.join(os.path.abspath("."),"sub")
     default_config_dir=os.path.join(os.path.abspath("."),"file") 
@@ -86,12 +108,9 @@ if __name__ == '__main__':
     log.start_mark("解析")
     log.info("解析订阅的urls...")  
     jsonData=parseSubUrls(args.subConfigFile,args.proxy)
-    urlData=[{"id":item["id"],"data":item["url"].split("|")} for item in jsonData["data"] if item['enabled']]
- 
-    nodeResources = [nodeResource(item["id"],resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
+    nodeResources=revisedResource(jsonData)
     log.info(f"[+] 解析后订阅资源数：{len(nodeResources)}") 
-    log.end_mark("解析") 
-
+    log.end_mark("解析")
     #clashOpt=clashOption([nodeResources[1]])
     clashOpt=clashOption(nodeResources)
     clashOpt.checkNode=args.checknode

@@ -193,15 +193,13 @@ class clash:
                 log.err(e)
                 raise 
         if len(nodes_list)>0:return nodes_list
-    
-    textIndx=-1 
+         
     def __saveFile(self,resource:nodeResource,node_list):
         try:
             
             if len(node_list) ==0 or node_list ==None :return
-            self.textIndx+=1
             # print(f"{'%03d'%3}")
-            path= os.path.join(self.opt.outputPath,"txt",f"{resource.id:0>4d}_{self.textIndx:0>3d}.txt")
+            path= os.path.join(self.opt.outputPath,"txt",f"{resource.id:0>7d}.txt")
             log.warn (f"{path} , {len(node_list)}")
             folder=os.path.dirname(path)
              

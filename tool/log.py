@@ -50,9 +50,9 @@ def __log(msg,type:int=0,foregroundColor:int=37,bg=40,e=None):
 def log(msg):__log(msg)
 
 
-def start_mark(msg,f="--",start:str="\r\n",end:str=">",num:int=50):
+def start_mark(msg,f="--",start:str="\r\n",end:str=">",num:int=36):
     __log(start+f*num+ msg +f*num+end)
-def end_mark(msg,f="==",start:str="\r\n<",end:str="\r\n\r\n",num:int=50):
+def end_mark(msg,f="==",start:str="\r\n<",end:str="\r\n\r\n",num:int=36):
     __log(start+f*num+ msg +f*num+end)
 
 def info(msg):__log(msg)
