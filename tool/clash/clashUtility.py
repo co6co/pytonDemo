@@ -200,7 +200,7 @@ class clash:
             if len(node_list) ==0 or node_list ==None :return
             # print(f"{'%03d'%3}")
             path= os.path.join(self.opt.outputPath,"txt",f"{resource.id:0>7d}.txt")
-            log.warn (f"{path} , {len(node_list)}")
+            log.warn (f"保存文件：{path} , 节点数:{len(node_list)}")
             folder=os.path.dirname(path)
              
             final_config =clash.add_proxies_to_model(node_list,{"proxies":[]})  
@@ -303,8 +303,11 @@ class clash:
             for future in concurrent.futures.as_completed(futures): 
                 resource=futures[future] 
                 tlist=future.result()
+                if tlist ==None: 
+                    log.warn(f'[-]订阅{resource.address} clash节点数:\t0个') 
+                    continue
                 if self.opt.nodeOutputToFile:self.__saveFile(resource,tlist)
-                log.succ(f'[+]订阅{resource.address} clash节点数:{len(tlist)}个') 
+                log.succ(f'[+]订阅{resource.address} clash节点数:\t{len(tlist)}个') 
                 node_list.extend(tlist)
         return node_list
 
