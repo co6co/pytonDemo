@@ -9,6 +9,7 @@ from parserNode import *
 import geoip2.database
 import socket,  concurrent.futures 
 from typing import List
+import uuid
 
 class resourceType:
     '''
@@ -197,10 +198,12 @@ class clash:
     def __saveFile(self,resource:nodeResource,node_list):
         try:
             
-            if len(node_list) ==0 or node_list ==None :return
+            if len(node_list) ==0 or node_list ==None:
+                log.warn (f"[-]节点数:0,不保存文件。")
+                return
             # print(f"{'%03d'%3}")
             path= os.path.join(self.opt.outputPath,"txt",f"{resource.id:0>7d}.txt")
-            log.warn (f"保存文件：{path} , 节点数:{len(node_list)}")
+            log.succ (f"[+]保存文件：{path} , 节点数:{len(node_list)}")
             folder=os.path.dirname(path)
              
             final_config =clash.add_proxies_to_model(node_list,{"proxies":[]})  
@@ -490,18 +493,21 @@ class clash:
         try:
             groups=model.get('proxy-groups')
             if groups != None:
-                nodeList = [d for d in model['proxies'] if 'name' in d]
-                names =[]
+                nodeList = [d for d in model['proxies'] if 'name' in d] 
+                nodeNames =[]
+                
                 for item in nodeList:
-                    if item['name'] not in names:names.append(item['name'])
+                    if item['name'] not in nodeNames:nodeNames.append(item['name'])  
+                    #uuidReg="\w{8}[-\w{4}]{3}-\w{12}"#"b74f4afa-1a57-4aff-b7e5-8ad5ea33566f"
+                    item['uuid']=str(uuid.uuid3(uuid.NAMESPACE_DNS,item['name'])) # 根据名称生成UUID ，相同名称生成的UUID相同
 
                 for group in groups:
                     if group.get('proxies') is None:
                         #group['proxies'] = data.get('proxy_names')
-                        group['proxies'] = names
+                        group['proxies'] = nodeNames
                     else:
                         #group['proxies'].extend(data.get('proxy_names'))
-                        group['proxies'].extend(names)
+                        group['proxies'].extend(nodeNames)
         except Exception as e:
             log.err(f'Error adding proxy names to groups: {e}')
         return model

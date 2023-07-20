@@ -42,18 +42,20 @@ for level in LEVEL_LIST:
  36           46        青蓝色
  37           47        白色
 '''
-def __log(msg,type:int=0,foregroundColor:int=37,bg=40,e=None):
+def __log(msg,type:int=0,foregroundColor:int=37,bg=40,e=None,hasPrefix:bool=True):
     t=threading.currentThread()
     time = datetime.datetime.now() 
     err=e.__traceback__.tb_lineno if e !=None else ""
-    print(f"['{time.strftime('%Y.%m.%d-%H:%M:%S')}'] [{t.ident}|{t.name}]\t\033[{type};{foregroundColor};{bg}m{msg}{err}\033[0m")
+    prefix=f"['{time.strftime('%Y.%m.%d-%H:%M:%S')}'] [{t.ident}|{t.name}]\t"
+    if not hasPrefix:prefix=""
+    print(f"{prefix}\033[{type};{foregroundColor};{bg}m{msg}{err}\033[0m")
 def log(msg):__log(msg)
 
 
 def start_mark(msg,f="--",start:str="\r\n",end:str=">",num:int=36):
-    __log(start+f*num+ msg +f*num+end)
+    __log(start+f*num+ msg +f*num+end,hasPrefix=False)
 def end_mark(msg,f="==",start:str="\r\n<",end:str="\r\n\r\n",num:int=36):
-    __log(start+f*num+ msg +f*num+end)
+    __log(start+f*num+ msg +f*num+end,hasPrefix=False)
 
 def info(msg):__log(msg)
 
