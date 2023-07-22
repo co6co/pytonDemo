@@ -46,6 +46,15 @@ proxies:
     headers:
       Host: sg3.sanfencdn2.com
   udp: true
+- name: 🇯🇵 日本特殊|@ripaojiedian
+  server: 54.251.4.81
+  port: 443
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  tfo: false
+  udp: true
 - name: 🇭🇰 香港小火箭|@ripaojiedian
   server: iepl-zh.safetelescope.cc
   port: 11804
@@ -59,18 +68,79 @@ proxies:
   protocol-param: 277239:6Pb1XIMVaW
   obfs-param: ajax.microsoft.com
   udp: true
-- name: 🇰🇷 韩国|tg频道:@ripaojiedian
-  server: 43.202.49.222
-  port: 2333
+- name: 🇰🇷 韩国2
+  server: kr.2022app.xyz
+  port: 443
   client-fingerprint: chrome
-  type: ss
-  cipher: aes-256-cfb
-  password: doub.io
+  type: vmess
+  uuid: 2e361419-b3fd-4a2a-bb65-27c171bf2540
+  alterId: 0
+  cipher: auto
+  tls: true
   tfo: false
+  skip-cert-verify: false
+  servername: kr.2022app.xyz
+  network: ws
+  ws-opts:
+    path: /rws5ebqzpmmqm6v2
+    headers:
+      Host: kr.2022app.xyz
+  udp: true
+- name: 🇺🇸 美国3
+  server: 107.167.4.122
+  port: 46766
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 9838c1b4-c3fd-49b5-8a59-2ff05385f17c
+  alterId: 64
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇬🇧 英国
+  server: 51.195.35.150
+  port: 443
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: www.17920506.xyz
+  network: ws
+  ws-opts:
+    path: /path/283231152720
+    headers:
+      Host: www.17920506.xyz
   udp: true
 - name: 🇺🇸 美国2|@ripaojiedian
   server: 156.249.18.37
   port: 48222
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸 美国|tg频道:@ripaojiedian
+  server: 163.123.192.60
+  port: 443
+  client-fingerprint: chrome
+  type: trojan
+  password: 7ad2a5e0-906b-4b3e-97bb-b5f3992cb19d
+  tfo: false
+  sni: 163.123.192.60
+  skip-cert-verify: false
+  udp: true
+- name: 移动专线|@ripaojiedian
+  server: 120.233.43.75
+  port: 50465
   client-fingerprint: chrome
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
@@ -104,27 +174,14 @@ proxies:
   tfo: false
   skip-cert-verify: false
   udp: true
-- name: 🇺🇸 美国|tg频道:@ripaojiedian
-  server: 163.123.192.60
-  port: 443
+- name: 🇰🇷 韩国|tg频道:@ripaojiedian
+  server: 43.202.49.222
+  port: 2333
   client-fingerprint: chrome
-  type: trojan
-  password: 7ad2a5e0-906b-4b3e-97bb-b5f3992cb19d
+  type: ss
+  cipher: aes-256-cfb
+  password: doub.io
   tfo: false
-  sni: 163.123.192.60
-  skip-cert-verify: false
-  udp: true
-- name: 移动专线|@ripaojiedian
-  server: 120.233.43.75
-  port: 50465
-  client-fingerprint: chrome
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  tfo: false
-  skip-cert-verify: false
   udp: true
 - name: 🏳️‍🌈 不要恶意刷流量
   server: you.are.sb
