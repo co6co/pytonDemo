@@ -9,7 +9,7 @@ from parserNode import *
 import geoip2.database
 import socket,  concurrent.futures 
 from typing import List
-import uuid
+import uuid,random
 
 class resourceType:
     '''
@@ -123,6 +123,16 @@ class clash:
     def __init__(self,opt:clashOption) -> None:
         self.opt=opt
         pass 
+
+    def getName(name)->str:
+        '''
+        取出空白，为None 随机名字
+        '''
+        name=name.strip() if name else None
+        if name ==None: f"未知_{random.randrange(1,100000)}"
+        pattern="\s+"
+        return re.sub(pattern,'',name)
+
     def parseYamlNode(nodes:list):
         '''
         解析Yaml文件中的node 节点
@@ -131,7 +141,7 @@ class clash:
         '''
         nodes_list = []
         for node in nodes:
-            node['name'] = node['name'].strip() if node.get('name') else None
+            node['name'] =clash. getName( node['name'])
             node['server']=node['server'].strip()
             # 对clashR的支持
             if node.get('protocolparam'):
@@ -168,31 +178,32 @@ class clash:
         解析节点
         '''
         text_list = text.splitlines() 
-        if type(text) == str:
-            text_list=[itm.encode("utf-8") for itm  in text_list]
+        if type(text) == str: text_list=[itm.encode("utf-8") for itm  in text_list]
         nodes_list= []
         for node in text_list: 
+            clashNode={}
             try:
                 if node.startswith(b'vmess://'):
                     decode_proxy = decode_v2ray_node([node]) 
-                    nodes_list.extend(v2ray_to_clash(decode_proxy))
- 
+                    clashNode=v2ray_to_clash(decode_proxy)
                 elif node.startswith(b'ss://'):
                     decode_proxy = decode_ss_node([node])
-                    nodes_list.extend( ss_to_clash(decode_proxy))
+                    clashNode=ss_to_clash(decode_proxy)
                     
                 elif node.startswith(b'ssr://'):
                     decode_proxy = decode_ssr_node([node])
-                    nodes_list.extend(ssr_to_clash(decode_proxy))
+                    clashNode=ssr_to_clash(decode_proxy)
 
                 elif node.startswith(b'trojan://'):
                     decode_proxy = decode_trojan_node([node])
-                    nodes_list.extend(trojan_to_clash(decode_proxy))
+                    clashNode=trojan_to_clash(decode_proxy)
                 else:
                     pass 
             except Exception as e:
                 log.err(e)
                 raise 
+            clashNode['name'] =clash. getName( clashNode['name'])
+            nodes_list.extend(clashNode)
         if len(nodes_list)>0:return nodes_list
          
     def __saveFile(self,resource:nodeResource,node_list):
