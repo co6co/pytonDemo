@@ -23,16 +23,23 @@ def check_tcp_port(opt:dict, timeout=2):
         else:
             return {"status": True, "message": "OK", "info": "tcp check"}
 
-def ping (host):
+def ping (host)->int|None:
     """
     获取网络的延迟
     :param domain or ip:
-    :return: delay ms
+    :return: int delay ms
+             None timeout
+             str 错误
     """
-    response = pong(host)
-    if response is not None:
+    # False on error 
+    # None on timeout
+    response = pong(host) 
+    if type(response)== bool: return None
+    elif response==None: return None
+    if response is not None  : 
         delay = int(response*1000 )
         return delay
+    return None
 
 if __name__ == "__main__":
     print (check_tcp_port({"host":"jp1.520748.xyz","port":80}))

@@ -1,5 +1,5 @@
 
-import datetime,sys,threading
+import datetime,sys,threading,os
 from loguru import logger
 
 logger.remove()
@@ -15,12 +15,17 @@ ERROR           40  error()
 CRITICAL        50  critical()
 '''
 
-'''
-LEVEL_LIST=["TRACE","DEBUG","INFO","SUCCESS","WARNING","ERROR","CRITICAL"] 
+ 
+LEVEL_LIST=["TRACE","DEBUG","INFO","SUCCESS","WARNING","ERROR","CRITICAL"]
+folder="."
+if os.name =="nt":folder="c:\log\python"
+elif os.name =="posix":folder="./"
+ 
 for level in LEVEL_LIST:
     fileNamePart=f"{level}.log"
-    logger.add("c:\log\python\loguru_{time:YY-MM}_"+fileNamePart,rotation="5 MB",level=level,encoding="utf-8" ,retention='7 days' ,format="{time:YY-MM-DD HH:mm:ss}\t{level}\t{file}\t{line}\t{message}")
-'''
+    p=os.path.join(folder,"loguru_{time:YY-MM}_"+fileNamePart)
+    logger.add(p ,rotation="5 MB",level=level,encoding="utf-8" ,retention='7 days' ,format="{time:YY-MM-DD HH:mm:ss}\t{level}\t{file}\t{line}\t{message}")
+ 
 
 '''
 \033[显示方式;前景色；背景色m*******\033[0m
