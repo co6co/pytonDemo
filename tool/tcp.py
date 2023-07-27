@@ -32,8 +32,8 @@ def ping (host)->int|None:
              str 错误
     """
     # False on error 
-    # None on timeout
-    response = pong(host) 
+    # None on timeout 
+    response = pong(host) #56 bytes
     if type(response)== bool: return None
     elif response==None: return None
     if response is not None  : 

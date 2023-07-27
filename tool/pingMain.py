@@ -5,7 +5,7 @@ from log import *
 from tcp import *
 import concurrent.futures as futures
 
-class PingService:
+class PingService: 
     ipDict=None #{"127.0.0.1":300}
     def __init__(self,ips:list) -> None:
         self.ipDict={ip:3000 for ip in ips if re.search("(\d{1,3}.){3}\d{1,3}",ip) !=None }
@@ -52,6 +52,7 @@ def main():
     args=parser.parse_args()
 
     ips=readFile(args.file)
+    
     if ips !=None: 
         srv=PingService(ips)
         while(True): 
