@@ -32,6 +32,18 @@ jobs:
       - name: 执行任务
         run: |
           python ./tool/clash/main2.py -u "${{ secrets.RESOURCE }}"
+      - name: 提交更改
+        run: |                 
+          git config --local user.email '${{ secrets.EMAIL }}'
+          git config --local user.name '${{ secrets.NAME }}'
+          git pull origin master
+          git add ./sub/*
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update"
+      - name: 推送更改
+        uses:  ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
       
           
      
