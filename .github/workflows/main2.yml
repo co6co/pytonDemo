@@ -31,7 +31,7 @@ jobs:
           pip install -r ./file/requirements.txt
       - name: 执行任务
         run: |
-          python ./tool/clash/main2.py -u "${{ secrets.RESOURCE }}"
+          python ./tool/clash/main2.py --no-checknode -u "${{ secrets.RESOURCE }}"
       - name: 提交更改
         run: |                 
           git config --local user.email '${{ secrets.EMAIL }}'
