@@ -124,7 +124,7 @@ class clash:
         self.opt=opt
         pass 
 
-    def getName(name)->str:
+    def _getName(name)->str:
         '''
         取出空白，为None 随机名字
         '''
@@ -133,7 +133,7 @@ class clash:
         pattern="\s+"
         return re.sub(pattern,'',name)
 
-    def parseYamlNode(nodes:list):
+    def _parseYamlNode(nodes:list):
         '''
         解析Yaml文件中的node 节点
         nodes: yaml.get('proxies') 或者 yaml.get('Proxy')
@@ -141,7 +141,7 @@ class clash:
         '''
         nodes_list = []
         for node in nodes:
-            node['name'] =clash. getName( node['name'])
+            node['name'] =clash. _getName( node['name'])
             node['server']=node['server'].strip()
             # 对clashR的支持
             if node.get('protocolparam'):
@@ -156,7 +156,7 @@ class clash:
             if node.get('name')==None: continue
             nodes_list.append(node)
         return nodes_list
-    def parseYaml(yamlContent): # 解析yaml文本
+    def _parseYaml(yamlContent): # 解析yaml文本
         '''
         解析yaml 文本
         生成 Nodes节点
@@ -169,11 +169,11 @@ class clash:
             # clash旧字段
             elif yml.get('Proxy'):tmp_list = yml.get('Proxy')
             else:log.warn('clash节点提取失败,clash节点为空') 
-            return clash.parseYamlNode(tmp_list) 
+            return clash._parseYamlNode(tmp_list) 
         except:
             raise
 
-    def parseNodeText(text:str| bytes): # 解析 从 base64 解析出来的文本 
+    def _parseNodeText(text:str| bytes): # 解析 从 base64 解析出来的文本 
         '''
         解析节点
         '''
@@ -202,7 +202,7 @@ class clash:
             except Exception as e:
                 log.err(e)
                 raise 
-            clashNode['name'] =clash. getName( clashNode['name'])
+            clashNode['name'] =clash. _getName( clashNode['name'])
             nodes_list.extend(clashNode)
         if len(nodes_list)>0:return nodes_list
          
@@ -241,25 +241,25 @@ class clash:
             
            
  
-    def genNode(self,resource)->list:
+    def genNode(self,resource:nodeResource)->list:
         nodes_list=[]
         addr=resource.address
         try:
-            nodeContent=self.getNodeContent(resource)
+            nodeContent=self._getNodeContent(resource)
                  
             yamlData=yaml.full_load(nodeContent) 
             if type (yamlData) == dict: #yaml 格式
                 #log.succ(f"{type(yamlData)}’yaml dict‘<--{addr}")
-                nodes_list=clash.parseYaml(nodeContent)
+                nodes_list=clash._parseYaml(nodeContent)
             elif type (yamlData) == list and type(yamlData[0]) == dict: #yaml 格式中的节点
                 #log.succ(f"{type(yamlData)} ’yaml list dict‘<--{addr}")
-                nodes_list=clash.parseYamlNode(yamlData)
+                nodes_list=clash._parseYamlNode(yamlData)
             else: # base64加密 or node list
                 #log.succ(f"{type(yamlData)} ’TEXT‘<--{addr}")
                 rawTxt = base64.b64decode(nodeContent) if secure.base64.isBase64(nodeContent) else nodeContent 
                 #log.err(f"{type(rawTxt)},\n{rawTxt}")
                
-                nodes_list=clash.parseNodeText(rawTxt)
+                nodes_list=clash._parseNodeText(rawTxt)
         except Exception as e:
             log.err('[-]解析节点失败:"{}",{}'.format(e,addr),e)
             pass
@@ -275,7 +275,7 @@ class clash:
             log.err(f"[-]http请求'{url}'出现异常：{e}")
             pass
 
-    def getNodeContent(self,resource)->str:
+    def _getNodeContent(self,resource:nodeResource)->str:
         '''
         获取节点的文本内容
         '''
@@ -578,12 +578,13 @@ class clash:
         log.info(f"[+] success:'{s_i}',[-] fail:'{f_i}'.")
         return _nodeList
     
-    def outputToFile(yamlConfig,nodeList:list,yamlNodeNum:int,outputFolder:str): 
+    def outputToFile(yamlConfig,nodeList:list,yamlNodeNum:int,outputFolder:str,fileName): 
         log.info(f'[+]节点数...{len(nodeList)}')
         index=math.floor(len(nodeList) / yamlNodeNum)  
         index+=1 if len(nodeList) % yamlNodeNum > 0 else 0
         i=0
-        filePath=os.path.join(outputFolder,clash._outputYamlFileName)
+        if not os.path.exists(outputFolder):os.makedirs(outputFolder)
+        filePath=os.path.join(outputFolder,fileName)
         while i<index:
             ii=i*yamlNodeNum
             jj=(i+1)*yamlNodeNum
@@ -614,9 +615,37 @@ class clash:
         log.start_mark("导出配置")
         log.info("获取导出配置模板...")
         yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy) 
-        clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath)
+        clash.outputToFile(yamlConfig,nodelist,yamlNodeNum,  self.opt.outputPath,clash._outputYamlFileName)
         log.end_mark("导出配置") 
-        
+
+    def genYaml(self,resource:nodeResource,templateConfig)->None:
+        '''
+        单个文件输出
+        输出文件名为资源id +.yaml
+        '''
+        log.start_mark("gen node")
+        nodes=self.genNode(resource)
+        log.end_mark(f"gen node : {len(nodes)}")
+        log.start_mark("remove")
+        nodelist=clash.remove_duplicates(nodes)
+        log.end_mark("remove") 
+        if self.opt.checkNode: nodelist=clash.checkNodes(nodelist) 
+        log.start_mark("导出配置")
+        clash.outputToFile(templateConfig,nodelist,3000,self.opt.outputPath,f"{resource.id}.yaml") 
+        log.end_mark("导出配置") 
+
+    def genYamlToFile(self):
+        yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy) 
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+            futures={executor.submit(self.genYaml,r,yamlConfig) for r in self.opt.noderesources}
+            '''
+            for f in concurrent.futures.as_completed(futures):
+                r=f.result()
+            '''
+            # 等待所有任务完成
+            concurrent.futures.wait(futures)
+
+
 
 if __name__ == '__main__': 
     opt=clashOption(subArray=["https://tt.vg/evIzX"])
