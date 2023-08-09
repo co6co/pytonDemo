@@ -19,7 +19,7 @@ CRITICAL        50  critical()
 LEVEL_LIST=["TRACE","DEBUG","INFO","SUCCESS","WARNING","ERROR","CRITICAL"]
 folder="."
 if os.name =="nt":folder="c:\log\python"
-elif os.name =="posix":folder="./"
+elif os.name =="posix":folder="./log"
  
 for level in LEVEL_LIST:
     fileNamePart=f"{level}.log"
