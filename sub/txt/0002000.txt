@@ -1,10 +1,11 @@
 proxies:
 - name: DE_speednode_0001
-  server: 194.233.162.152
-  port: 44460
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 5742394542
+  server: 18.158.162.186
+  port: 22222
+  type: trojan
+  password: telegram-id-directvpn
+  sni: trj.rollingnext.co.uk
+  skip-cert-verify: true
   udp: true
 - name: FR_speednode_0002
   server: 156.249.18.23
@@ -17,31 +18,23 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: GB_speednode_0003
-  server: 51.89.1.53
-  port: 443
-  type: vmess
-  client-fingerprint: chrome
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: www.24416416.xyz
-  network: ws
-  ws-opts:
-    path: /path/282517202535
-    headers:
-      Host: www.24416416.xyz
+  server: 13.40.234.88
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trj.rollingnext.co.uk
+  skip-cert-verify: true
   udp: true
 - name: HK_speednode_0004
   server: 156.245.8.133
   port: 35939
   type: vmess
+  client-fingerprint: chrome
   uuid: bd249e37-7359-41ee-84a7-09e49e0ec5c4
   alterId: 64
   cipher: auto
   tls: false
+  tfo: false
   skip-cert-verify: false
   udp: true
 - name: HK_speednode_0005
@@ -59,12 +52,16 @@ proxies:
     headers:
       Host: www.92873889.xyz
   udp: true
-- name: IS_speednode_0006
-  server: 37.235.49.152
-  port: 989
-  type: ss
+- name: JP_speednode_0006
+  server: jp-am48-6.eqnode.net
+  port: 8081
+  type: ssr
   cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
+  password: eAokbaDN6
+  protocol: origin
+  obfs: tls1.2_ticket_auth
+  protocol-param: None
+  obfs-param: ''
   udp: true
 - name: JP_speednode_0007
   server: jp1.fighting.win
@@ -73,247 +70,257 @@ proxies:
   password: 8861ad96-45d4-42f7-9703-7de363a39a0f
   skip-cert-verify: true
   udp: true
-- name: LV_speednode_0008
+- name: JP_speednode_0008
+  server: jp-am48-6.eqnode.net
+  port: 8081
+  type: ssr
+  cipher: aes-256-cfb
+  password: eAokbaDN6
+  protocol: origin
+  obfs: tls1.2_ticket_auth
+  protocol-param: ''
+  obfs-param: ''
+  udp: true
+- name: JP_speednode_0009
+  server: jp-am48-6.eqnode.net
+  port: 8081
+  type: ssr
+  cipher: aes-256-cfb
+  password: eAokbaDN6
+  protocol: origin
+  obfs: tls1.2_ticket_auth
+  protocol-param: ''
+  obfs-param: None
+  udp: true
+- name: LV_speednode_0010
   server: 185.135.86.173
   port: 9020
   type: ss
   cipher: aes-256-cfb
   password: BNmAXXxAHYpTRdzu
   udp: true
-- name: LV_speednode_0009
-  server: 185.135.86.173
-  port: 9042
-  type: ss
-  client-fingerprint: chrome
-  cipher: aes-256-cfb
-  password: S7KwUu7yBy58S3Ga
-  tfo: false
-  udp: true
-- name: LV_speednode_0010
-  server: 185.135.86.173
-  port: 9043
-  type: ss
-  client-fingerprint: chrome
-  cipher: aes-256-cfb
-  password: HSZuyJQcWe8dxNdF
-  tfo: false
-  udp: true
 - name: LV_speednode_0011
   server: 185.135.86.173
-  port: 9040
+  port: 9031
   type: ss
   cipher: aes-256-cfb
-  password: p9z5BVADH2YFs3MN
+  password: BwcAUZk8hUFAkDGN
   udp: true
 - name: LV_speednode_0012
   server: 185.135.86.173
-  port: 9000
+  port: 9019
   type: ss
   cipher: aes-256-cfb
-  password: a3GFYt36Sm82Vys9
+  password: GA9KzeEgvfxNrgmM
   udp: true
-- name: LV_speednode_0013
-  server: 185.135.86.173
-  port: 9029
-  type: ss
-  cipher: aes-256-cfb
-  password: dU3DSNS8wYPXzEKw
+- name: NL_speednode_0013
+  server: 154.85.1.4
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /path/1683881458407
   udp: true
 - name: NU_speednode_0014
-  server: 162.159.152.0
+  server: 162.159.129.99
   port: 80
   type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: sg.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0015
   server: 162.159.152.0
   port: 80
   type: vmess
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: sg.dabaiyyds.baymax.lol
+  udp: true
+- name: NU_speednode_0016
+  server: 162.159.128.0
+  port: 80
+  type: vmess
   uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: sg.dabaiyyds.baymax.lol
-- name: NU_speednode_0016
-  server: 162.159.129.44
-  port: 80
-  type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
   udp: true
-  ws-opts:
-    path: /videos
-    headers:
-      Host: sg.dabaiyyds.baymax.lol
 - name: NU_speednode_0017
-  server: 162.159.129.50
-  port: 80
-  type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  udp: true
-  ws-opts:
-    path: /videos
-    headers:
-      Host: jp.dabaiyyds.baymax.lol
-- name: NU_speednode_0018
-  server: 162.159.129.51
-  port: 80
-  type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  udp: true
-  ws-opts:
-    path: /videos
-    headers:
-      Host: jp.dabaiyyds.baymax.lol
-- name: NU_speednode_0019
-  server: 162.159.129.50
+  server: 162.159.129.53
   port: 80
   type: vmess
   uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: jp.dabaiyyds.baymax.lol
+  udp: true
+- name: NU_speednode_0018
+  server: 162.159.152.0
+  port: 80
+  type: vmess
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: sg.dabaiyyds.baymax.lol
+  udp: true
+- name: NU_speednode_0019
+  server: 162.159.129.51
+  port: 80
+  type: vmess
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: jp.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0020
+  server: 162.159.129.99
+  port: 80
+  type: vmess
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: sg.dabaiyyds.baymax.lol
+  udp: true
+- name: NU_speednode_0021
+  server: 162.159.128.0
+  port: 80
+  type: vmess
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: sg.dabaiyyds.baymax.lol
+  udp: true
+- name: NU_speednode_0022
   server: 162.159.129.52
   port: 80
   type: vmess
-  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: jp.dabaiyyds.baymax.lol
-- name: NU_speednode_0021
-  server: 162.159.129.51
-  port: 80
-  type: vmess
-  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
   udp: true
-  ws-opts:
-    path: /videos
-    headers:
-      Host: jp.dabaiyyds.baymax.lol
-- name: NU_speednode_0022
-  server: 162.159.129.49
-  port: 80
-  type: vmess
-  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  udp: true
-  ws-opts:
-    path: /videos
-    headers:
-      Host: jp.dabaiyyds.baymax.lol
 - name: NU_speednode_0023
-  server: 162.159.129.51
+  server: 162.159.129.49
   port: 80
   type: vmess
   uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: jp.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0024
   server: 162.159.129.49
   port: 80
   type: vmess
-  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: jp.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0025
-  server: 162.159.152.0
+  server: 162.159.129.51
   port: 80
   type: vmess
   uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: jp.dabaiyyds.baymax.lol
   udp: true
+- name: NU_speednode_0026
+  server: 162.159.129.44
+  port: 80
+  type: vmess
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
   ws-opts:
     path: /videos
     headers:
       Host: sg.dabaiyyds.baymax.lol
-- name: NU_speednode_0026
-  server: 162.159.129.49
-  port: 80
-  type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
   udp: true
-  ws-opts:
-    path: /videos
-    headers:
-      Host: jp.dabaiyyds.baymax.lol
 - name: NU_speednode_0027
   server: 162.159.129.50
   port: 80
@@ -322,119 +329,134 @@ proxies:
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: jp.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0028
-  server: 162.159.128.0
+  server: 162.159.129.53
   port: 80
   type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
-      Host: us.dabaiyyds.baymax.lol
+      Host: jp.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0029
-  server: 162.159.129.96
+  server: 162.159.129.52
   port: 80
   type: vmess
-  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
-      Host: us.dabaiyyds.baymax.lol
+      Host: jp.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0030
-  server: 162.159.128.0
-  port: 80
-  type: vmess
-  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  udp: true
-  ws-opts:
-    path: /videos
-    headers:
-      Host: us.dabaiyyds.baymax.lol
-- name: NU_speednode_0031
-  server: 162.159.129.96
-  port: 80
-  type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  udp: true
-  ws-opts:
-    path: /videos
-    headers:
-      Host: us.dabaiyyds.baymax.lol
-- name: NU_speednode_0032
-  server: 162.159.128.0
+  server: 162.159.129.50
   port: 80
   type: vmess
   uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: jp.dabaiyyds.baymax.lol
   udp: true
+- name: NU_speednode_0031
+  server: 162.159.129.98
+  port: 80
+  type: vmess
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
   ws-opts:
     path: /videos
     headers:
       Host: us.dabaiyyds.baymax.lol
-- name: NU_speednode_0033
-  server: 162.159.129.96
+  udp: true
+- name: NU_speednode_0032
+  server: 162.159.129.98
   port: 80
   type: vmess
   uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: us.dabaiyyds.baymax.lol
+  udp: true
+- name: NU_speednode_0033
+  server: 162.159.129.97
+  port: 80
+  type: vmess
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: us.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0034
   server: 162.159.129.97
   port: 80
   type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: us.dabaiyyds.baymax.lol
+  udp: true
 - name: NU_speednode_0035
+  server: 162.159.129.96
+  port: 80
+  type: vmess
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: us.dabaiyyds.baymax.lol
+  udp: true
+- name: NU_speednode_0036
   server: dg1aaa.qwqa.link
   port: 80
   type: vmess
@@ -442,29 +464,29 @@ proxies:
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /
     headers:
       Host: dg1aaa.qwqa.link
-- name: NU_speednode_0036
-  server: pzl.p237875155.buzz
-  port: 443
+  udp: true
+- name: NU_speednode_0037
+  server: 162.159.129.96
+  port: 80
   type: vmess
-  uuid: 9b78b7fe-47a3-41eb-d695-22692ac835a0
-  alterId: 1
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  alterId: 0
   cipher: auto
-  tls: true
+  tls: false
   skip-cert-verify: true
   network: ws
-  ws-opts:
-    path: /pzl237875155
-    headers:
-      Host: pzl.p237875155.buzz
   udp: true
-- name: RU_speednode_0037
+  ws-opts:
+    path: /videos
+    headers:
+      Host: us.dabaiyyds.baymax.lol
+- name: RU_speednode_0038
   server: 45.144.179.138
   port: 443
   type: vmess
@@ -478,17 +500,6 @@ proxies:
   skip-cert-verify: false
   tls: false
   uuid: 96cbe4a6-5728-42df-dc7a-ceb9b51a3db5
-  udp: true
-- name: SG_speednode_0038
-  server: sg-am3.eqsunshine.com
-  port: 32001
-  type: ssr
-  protocol: origin
-  cipher: aes-256-cfb
-  obfs: tls1.2_ticket_auth
-  password: 3g0dHlKME
-  obfs-param: None
-  protocol-param: None
   udp: true
 - name: SG_speednode_0039
   server: sg-am3.eqsunshine.com
@@ -512,13 +523,35 @@ proxies:
   protocol-param: None
   udp: true
 - name: SG_speednode_0041
+  server: sg-am3.eqsunshine.com
+  port: 32001
+  type: ssr
+  protocol: origin
+  cipher: aes-256-cfb
+  obfs: tls1.2_ticket_auth
+  password: 3g0dHlKME
+  obfs-param: None
+  protocol-param: None
+  udp: true
+- name: SG_speednode_0042
+  server: sg-am3.eqsunshine.com
+  port: 32001
+  type: ssr
+  cipher: aes-256-cfb
+  password: 3g0dHlKME
+  protocol: origin
+  obfs: tls1.2_ticket_auth
+  protocol-param: ''
+  obfs-param: None
+  udp: true
+- name: SG_speednode_0043
   server: 18.141.236.15
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: TW_speednode_0042
+- name: TW_speednode_0044
   server: 103.177.33.180
   port: 443
   type: ss
@@ -535,58 +568,17 @@ proxies:
     mux: true
     skip-cert-verify: false
   udp: true
-- name: US_speednode_0043
-  server: 45.199.138.161
-  port: 46735
-  type: vmess
-  alterId: 64
-  cipher: auto
-  network: tcp
-  tls: false
-  uuid: 9549a2cf-129b-43a1-88db-ef7f648de74a
-  ws-opts:
-    headers:
-      Host: ca.ilovescp.com
-    path: /shirker
-  udp: true
-- name: US_speednode_0044
-  server: 216.52.183.246
-  port: 80
-  type: ss
-  client-fingerprint: chrome
-  cipher: aes-128-gcm
-  password: 83XvX4Vo%*3a
-  tfo: false
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: None
-  udp: true
 - name: US_speednode_0045
-  server: 45.92.160.35
-  port: 41098
+  server: 156.225.67.22
+  port: 48119
   type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  uuid: 375e70f0-5d46-476f-8d69-0fb35c5548a9
   alterId: 64
   cipher: auto
   tls: false
   skip-cert-verify: false
   udp: true
 - name: US_speednode_0046
-  server: 198.200.56.105
-  port: 38410
-  type: vmess
-  alterId: 64
-  cipher: auto
-  network: tcp
-  tls: false
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.87606143.xyz
-    path: /path/1691664136858
-  udp: true
-- name: US_speednode_0047
   server: 45.199.138.189
   port: 43560
   type: vmess
@@ -596,40 +588,66 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: US_speednode_0048
-  server: 64.32.4.53
-  port: 43556
-  type: vmess
-  uuid: 8653004f-de67-44c2-9cce-e0830933fb03
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: US_speednode_0049
-  server: 54.212.14.137
-  port: 443
-  type: ss
-  client-fingerprint: chrome
-  cipher: aes-256-cfb
-  password: amazonskr05
-  tfo: false
-  udp: true
-- name: US_speednode_0050
+- name: US_speednode_0047
   server: 172.67.74.240
   port: 80
   type: vmess
-  uuid: 7af20ea4-35dc-4df2-accb-a04bbb7192ed
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
-  udp: true
   ws-opts:
     path: /videos
     headers:
       Host: sg.dabaiyyds.baymax.lol
+  udp: true
+- name: US_speednode_0048
+  server: 172.67.74.240
+  port: 80
+  type: vmess
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: sg.dabaiyyds.baymax.lol
+  udp: true
+- name: US_speednode_0049
+  server: 156.225.67.224
+  port: 443
+  type: vmess
+  uuid: ebec2adf-e940-446f-bed4-d8c91143b54a
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691664136858
+    headers:
+      Host: www.16658180.xyz
+  udp: true
+- name: US_speednode_0050
+  server: 156.225.67.38
+  port: 443
+  type: vmess
+  uuid: de491802-233e-47f2-8c6c-d19bcf5bd56b
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691664136858
+    headers:
+      Host: www.86139317.xyz
+  udp: true
 - name: US_speednode_0051
   server: 198.2.208.83
   port: 443
@@ -646,53 +664,6 @@ proxies:
       Host: www.71653718.xyz
   udp: true
 - name: US_speednode_0052
-  server: mg1aaa.qwqa.link
-  port: 80
-  type: vmess
-  uuid: a5f86b93-386b-4b2b-ac31-8bf02d9d5128
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  udp: true
-  ws-opts:
-    path: /
-    headers:
-      Host: mg1aaa.qwqa.link
-- name: US_speednode_0053
-  server: cfcdn5.sanfencdn.net
-  port: 2052
-  type: vmess
-  client-fingerprint: chrome
-  uuid: 16582759-3d20-4804-9c9c-a58ad7b260a8
-  alterId: 0
-  cipher: auto
-  tls: false
-  tfo: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /zh-cn
-    headers:
-      Host: jp6.sanfencdn2.com
-  udp: true
-- name: US_speednode_0054
-  server: 45.86.8.21
-  port: 443
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /path/1691318318420
-    headers:
-      Host: www.29004003.xyz
-  udp: true
-- name: US_speednode_0055
   server: 156.225.67.164
   port: 443
   type: vmess
@@ -707,7 +678,220 @@ proxies:
     headers:
       Host: www.75544744.xyz
   udp: true
+- name: US_speednode_0053
+  server: 104.26.0.0
+  port: 80
+  type: vmess
+  uuid: 1a33a8a6-ebf5-432e-b549-071cde0b7e65
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: us.dabaiyyds.baymax.lol
+  udp: true
+- name: US_speednode_0054
+  server: 45.92.160.35
+  port: 41098
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: US_speednode_0055
+  server: 171.22.116.55
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691489542385
+    headers:
+      Host: www.83993175.xyz
+  udp: true
 - name: US_speednode_0056
+  server: 104.26.0.0
+  port: 80
+  type: vmess
+  uuid: 15b5988f-86bc-4621-a064-2fecb25e7fb8
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /videos
+    headers:
+      Host: us.dabaiyyds.baymax.lol
+  udp: true
+- name: US_speednode_0057
+  server: 45.86.8.9
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691664136858
+    headers:
+      Host: www.68844076.xyz
+  udp: true
+- name: US_speednode_0058
+  server: 45.15.166.125
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691664136858
+    headers:
+      Host: www.80817644.xyz
+  udp: true
+- name: US_speednode_0059
+  server: 45.86.8.120
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691575919722
+    headers:
+      Host: www.65307519.xyz
+  udp: true
+- name: US_speednode_0060
+  server: 45.15.166.115
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691575919722
+    headers:
+      Host: www.39960822.xyz
+  udp: true
+- name: US_speednode_0061
+  server: 140.99.49.10
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691575919722
+    headers:
+      Host: www.75435722.xyz
+  udp: true
+- name: US_speednode_0062
+  server: 45.12.144.70
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691664136858
+    headers:
+      Host: www.11232252.xyz
+  udp: true
+- name: US_speednode_0063
+  server: cdnjs.com
+  port: 443
+  type: vmess
+  uuid: 2F094845-E2BD-EBF7-DEB7-995992436FAF
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  udp: true
+  ws-opts:
+    path: /speedtest
+    headers:
+      Host: Dusseldorf.kotick.site
+- name: US_speednode_0064
+  server: 45.12.144.69
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /path/1690341237802
+    headers:
+      Host: www.11232252.xyz
+  udp: true
+- name: US_speednode_0065
+  server: 104.25.192.186
+  port: 2082
+  type: vmess
+  cipher: auto
+  uuid: 0afb8b2c-149a-49a8-e90f-d77884ac922f
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /blue03
+    headers:
+      host: ecc.vtcss.top
+  udp: true
+- name: US_speednode_0066
+  server: 15.204.209.50
+  port: 80
+  type: trojan
+  password: 7ea37e4f-325b-416f-901a-67012367307f
+  sni: telewebion.com
+  skip-cert-verify: true
+  udp: true
+- name: US_speednode_0067
+  server: mg1aaa.qwqa.link
+  port: 80
+  type: vmess
+  uuid: a5f86b93-386b-4b2b-ac31-8bf02d9d5128
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  udp: true
+  ws-opts:
+    path: /
+    headers:
+      Host: mg1aaa.qwqa.link
+- name: US_speednode_0068
   server: 64.32.19.164
   port: 443
   type: vmess
@@ -722,132 +906,7 @@ proxies:
     headers:
       Host: www.74593905.xyz
   udp: true
-- name: US_speednode_0057
-  server: 23.224.255.173
-  port: 443
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /path/1691575919722
-    headers:
-      Host: www.53638055.xyz
-  udp: true
-- name: US_speednode_0058
-  server: 142.0.132.35
-  port: 443
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /path/1691489542385
-    headers:
-      Host: www.45022499.xyz
-  udp: true
-- name: US_speednode_0059
-  server: vless.wyhkaa0.cf
-  port: 80
-  type: vmess
-  alterId: 0
-  cipher: auto
-  network: ws
-  skip-cert-verify: true
-  uuid: 87d0aa5d-09df-4785-d95d-6a0deed473be
-  ws-host: ''
-  ws-opts:
-    path: /@hkaa0
-  udp: true
-- name: US_speednode_0060
-  server: 45.88.160.196
-  port: 443
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /path/1691575919722
-    headers:
-      Host: www.44945510.xyz
-  udp: true
-- name: US_speednode_0061
-  server: 216.52.183.243
-  port: 80
-  type: ss
-  cipher: aes-128-gcm
-  password: 83XvX4Vo%*3a
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: None
-  udp: true
-- name: US_speednode_0062
-  server: 15.204.209.50
-  port: 80
-  type: trojan
-  password: 7ea37e4f-325b-416f-901a-67012367307f
-  sni: telewebion.com
-  skip-cert-verify: true
-  udp: true
-- name: US_speednode_0063
-  server: 216.52.183.242
-  port: 80
-  type: ss
-  cipher: aes-128-gcm
-  password: 83XvX4Vo%*3a
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: None
-  udp: true
-- name: US_speednode_0064
-  server: 216.52.183.245
-  port: 80
-  type: ss
-  cipher: aes-128-gcm
-  password: 83XvX4Vo%*3a
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: None
-  udp: true
-- name: US_speednode_0065
-  server: 171.22.116.55
-  port: 443
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /path/1691489542385
-    headers:
-      Host: www.83993175.xyz
-  udp: true
-- name: US_speednode_0066
-  server: 216.52.183.244
-  port: 80
-  type: ss
-  cipher: aes-128-gcm
-  password: 83XvX4Vo%*3a
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: None
-  udp: true
-- name: US_speednode_0067
+- name: US_speednode_0069
   server: cfcdn3.sanfencdn.net
   port: 2052
   type: vmess
