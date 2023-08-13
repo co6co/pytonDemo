@@ -26,6 +26,36 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇦🇶]美国_1234'
+  server: www.codepen.io
+  port: 443
+  type: vmess
+  uuid: 2d74cf59-995b-3005-9eff-98a8aa3f72ea
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: www.codepen.io
+  udp: true
+- name: '[🇦🇶]美国_1235'
+  server: digitalocean.com
+  port: 8080
+  type: vmess
+  uuid: f3022ab1-b7cc-3c57-a03b-4a0227c829c9
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: digitalocean.com
+  udp: true
 - name: '[🇺🇸]美国_1236'
   server: 172.67.132.15
   port: 443
@@ -79,11 +109,11 @@ proxies:
   ws-opts:
     path: /qwer
   udp: true
-- name: '[🇦🇶]美国_1258'
+- name: '[🇺🇸]美国_1258'
   server: us.mlxg.org
   port: 80
   type: vmess
-  uuid: 1c328faa-5034-3158-8933-c7def59ace17
+  uuid: da8d8b92-9964-3a41-ac03-aa46c778aaa7
   alterId: 0
   cipher: auto
   tls: false
@@ -168,21 +198,6 @@ proxies:
   ws-opts:
     path: /whatever/vmess
   udp: true
-- name: '[🇺🇸]荷兰_1308'
-  server: 23.sanfen001.top
-  port: 8080
-  type: vmess
-  uuid: 85c09294-e0c4-3765-87ae-abbc4525bc1d
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 23.sanfen001.top
-  udp: true
 - name: '[🇺🇸]哥斯达黎加_1309'
   server: 190.93.244.104
   port: 2053
@@ -222,24 +237,11 @@ proxies:
   ws-opts:
     path: /qwer
   udp: true
-- name: '[🇭🇰]香港_1307'
-  server: 103.231.254.149
-  port: 80
+- name: '[🇦🇶]美国_1314'
+  server: 104.16.110.60
+  port: 2086
   type: vmess
-  uuid: c57e059a-2f1c-3ab2-ac23-4c44e37ede81
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-  udp: true
-- name: '[🇦🇶]美国_1313'
-  server: 104.21.234.173
-  port: 2095
-  type: vmess
-  uuid: 3b5924e1-af4a-3d20-80a8-edc15d296620
+  uuid: 815b5d66-1347-3e47-8d31-3f1ec0bb826c
   alterId: 0
   cipher: auto
   tls: false
@@ -248,11 +250,11 @@ proxies:
   ws-opts:
     path: /qwer
   udp: true
-- name: '[🇦🇶]美国_1314'
-  server: 104.16.110.60
-  port: 2086
+- name: '[🇦🇶]美国_1313'
+  server: 104.21.234.173
+  port: 2095
   type: vmess
-  uuid: 815b5d66-1347-3e47-8d31-3f1ec0bb826c
+  uuid: 3b5924e1-af4a-3d20-80a8-edc15d296620
   alterId: 0
   cipher: auto
   tls: false
@@ -300,18 +302,18 @@ proxies:
   ws-opts:
     path: /qwer
   udp: true
-- name: '[🇺🇸]美国_1323'
-  server: 199.188.110.120
-  port: 443
+- name: '[🇭🇰]香港_1307'
+  server: 103.231.254.149
+  port: 80
   type: vmess
-  uuid: 26c3353c-7b8c-3840-b6e1-e933813c209a
-  alterId: 64
+  uuid: c57e059a-2f1c-3ab2-ac23-4c44e37ede81
+  alterId: 0
   cipher: auto
-  tls: true
+  tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /path/1687165779141
+    path: /
   udp: true
 - name: '[🇦🇶]美国_1324'
   server: 104.17.129.231
@@ -356,33 +358,18 @@ proxies:
     headers:
       Host: cfcdn.sanfencdn.net
   udp: true
-- name: '[🇯🇵]日本_1325'
-  server: 131.186.47.138
+- name: '[🇺🇸]美国_1323'
+  server: 199.188.110.120
   port: 443
   type: vmess
-  uuid: a85e026d-0a93-3d85-a8ee-6650a510a641
-  alterId: 0
+  uuid: 26c3353c-7b8c-3840-b6e1-e933813c209a
+  alterId: 64
   cipher: auto
   tls: true
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /
-  udp: true
-- name: '[🇦🇶]澳大利亚_1330'
-  server: 22.sanfen001.top
-  port: 80
-  type: vmess
-  uuid: 6e78efc9-ea85-3c49-8270-61d7dd625f47
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 22.sanfen001.top
+    path: /path/1687165779141
   udp: true
 - name: '[🇨🇷]哥斯达黎加_1332'
   server: 190.93.246.51
@@ -397,20 +384,18 @@ proxies:
   ws-opts:
     path: /qwer
   udp: true
-- name: '[🇺🇸]澳大利亚_1331'
-  server: 24.sanfen001.top
-  port: 8880
+- name: '[🇯🇵]日本_1325'
+  server: 131.186.47.138
+  port: 443
   type: vmess
-  uuid: 558ec80a-63b0-34d3-9850-280177f2f6cc
+  uuid: a85e026d-0a93-3d85-a8ee-6650a510a641
   alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /
-    headers:
-      Host: 24.sanfen001.top
   udp: true
 - name: '[🇫🇷]法国_1334'
   server: 173.245.49.115
@@ -424,67 +409,6 @@ proxies:
   network: ws
   ws-opts:
     path: /qwer
-  udp: true
-- name: '[🇺🇸]_1356'
-  server: cf.thaseunknown.com
-  port: 8080
-  type: vmess
-  uuid: 62c1d491-c3dd-3bc1-aea4-f088a9e05e5b
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  udp: true
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: chinam.eu.org
-- name: '[🇭🇰]香港_1367'
-  server: 103.160.204.204
-  port: 2082
-  type: vmess
-  uuid: fd0ce2f1-5609-3e0b-8d96-4108e8bd1e72
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /blue
-    headers:
-      Host: tui.vtcss.top
-  udp: true
-- name: '[🇺🇸]_1369'
-  server: jp1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: e8d49a94-87cd-3feb-96ff-13bad9b9ff8d
-  alterId: 4
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: jp1.quickerlink.xyz
-  udp: true
-- name: '[🇨🇳]美国_1371'
-  server: a8.wuxianliulianng.xyz
-  port: 8443
-  type: vmess
-  uuid: 18522810-4897-3ab9-8c0e-2ec3b0155116
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  servername: 4.wuxianliulianng.xyz
-  network: ws
-  ws-opts:
-    path: /sometimesnaive
-    headers:
-      Host: 4.wuxianliulianng.xyz
   udp: true
 - name: '[🇦🇶]美国_1327'
   server: cfcdn2.sanfencdn.net
@@ -501,11 +425,11 @@ proxies:
     headers:
       Host: cfcdn2.sanfencdn.net
   udp: true
-- name: '[🇺🇸]英国_1329'
-  server: 19.sanfen001.top
-  port: 80
+- name: '[🇦🇶]荷兰_1308'
+  server: 23.sanfen001.top
+  port: 8080
   type: vmess
-  uuid: f1833bf1-b7a4-3da5-950a-610ed9979237
+  uuid: b8837c6a-94e8-3cec-be73-2eb0d8371e55
   alterId: 0
   cipher: auto
   tls: false
@@ -514,43 +438,13 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: 19.sanfen001.top
+      Host: 23.sanfen001.top
   udp: true
-- name: '[🇻🇳]_1357'
-  server: 103.183.112.11
-  port: 15306
-  type: vmess
-  uuid: d44d51f7-7e9b-3cac-9bb3-563eb22920ed
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  udp: true
-  ws-opts:
-    path: /sdfhk
-    headers:
-      Host: 103.183.112.11
-- name: '[🇺🇸]美国_1379'
-  server: 137.175.3.36
-  port: 443
-  type: vmess
-  uuid: 085e04ac-eeb1-3d7b-9885-c0372317e22a
-  alterId: 64
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /path/1691211678088
-    headers:
-      Host: www.37419052.xyz
-  udp: true
-- name: '[🇦🇶]_1382'
+- name: '[🇦🇶]_1355'
   server: cf-yd-dns.sharecentre.online
   port: 80
   type: vmess
-  uuid: 8d674c61-db0a-396f-8b50-b6c2bab65c86
+  uuid: d286030f-dcb6-345f-8e5f-95a8f7475037
   alterId: 0
   cipher: auto
   tls: false
@@ -559,101 +453,13 @@ proxies:
   ws-opts:
     path: /shirker
     headers:
-      Host: dp3.scproxy.top
+      Host: do.sharecentrepro.com
   udp: true
-- name: '[🇭🇰]香港_1383'
-  server: 103.160.204.162
-  port: 2082
-  type: vmess
-  uuid: d552480d-8221-33d2-94ed-27ac8f089f26
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /blue
-    headers:
-      Host: tui.vtcss.top
-  udp: true
-- name: '[🇨🇷]哥斯达黎加_1384'
-  server: 190.93.247.216
-  port: 2082
-  type: vmess
-  uuid: fe7bcd35-b8e9-389f-b3bf-124c88f44ac3
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /blue
-    headers:
-      Host: tui.vtcss.top
-  udp: true
-- name: '[🇳🇱]荷兰_1385'
-  server: 188.114.97.152
-  port: 80
-  type: vmess
-  uuid: 58fbcb6a-c344-30ed-86fe-52f23c94cce6
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /blue
-    headers:
-      Host: tui.vtcss.top
-  udp: true
-- name: '[🇦🇶]_1394'
-  server: 104.25.252.111
-  port: 2052
-  type: vmess
-  uuid: b388177a-ef3e-313a-aeb4-5900e72f4e48
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /qwer
-    headers:
-      Host: tou.vtcss.top
-  udp: true
-- name: '[🇦🇶]_1395'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: 225951d3-0928-3a66-a00b-721c40f029d7
-  alterId: 4
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: hkd1.quickerlink.xyz
-  udp: true
-- name: '[🇸🇬]_1386'
-  server: 159.223.94.156
-  port: 80
-  type: vmess
-  uuid: a3b407b4-5585-33c9-9bae-5960015838e6
-  alterId: 4
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-  udp: true
-- name: '[🇦🇶]_1400'
+- name: '[🇦🇶]_1356'
   server: zendesk1.grab.com
   port: 443
   type: vmess
-  uuid: e201576b-6493-3f6f-8df6-fa9288e02ea9
+  uuid: 80817482-1d11-3a11-9724-1904f4935f20
   alterId: 0
   cipher: auto
   tls: true
@@ -664,11 +470,41 @@ proxies:
     headers:
       Host: v2ray3.udpgw.com
   udp: true
-- name: '[🇭🇰]香港_1401'
-  server: 103.160.204.123
+- name: '[🇦🇶]_1364'
+  server: 104.25.252.111
+  port: 2052
+  type: vmess
+  uuid: ab5c5395-e7c1-355d-b1c1-49a40c7b87cc
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /qwer
+    headers:
+      Host: tou.vtcss.top
+  udp: true
+- name: '[🇦🇶]英国_1329'
+  server: 19.sanfen001.top
+  port: 80
+  type: vmess
+  uuid: ac48da22-aff9-36cd-b0bb-dde20a74131e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 19.sanfen001.top
+  udp: true
+- name: '[🇭🇰]香港_1375'
+  server: 103.160.204.204
   port: 2082
   type: vmess
-  uuid: 604fe137-1e34-3200-b3b9-6069243da1ea
+  uuid: fde433be-5ef2-3c34-95fc-277881b98f37
   alterId: 0
   cipher: auto
   tls: false
@@ -679,11 +515,186 @@ proxies:
     headers:
       Host: tui.vtcss.top
   udp: true
-- name: '[🇭🇰]香港_1412'
+- name: '[🇦🇶]_1377'
+  server: jp1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: 8fd59afd-1dfa-3159-82cb-7fa6189e838a
+  alterId: 4
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: jp1.quickerlink.xyz
+  udp: true
+- name: '[🇦🇶]澳大利亚_1330'
+  server: 22.sanfen001.top
+  port: 80
+  type: vmess
+  uuid: 6e78efc9-ea85-3c49-8270-61d7dd625f47
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 22.sanfen001.top
+  udp: true
+- name: '[🇭🇰]美国_1379'
+  server: a8.wuxianliulianng.xyz
+  port: 8443
+  type: vmess
+  uuid: 8810657d-963f-3cad-9a58-e4791cf700aa
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: 4.wuxianliulianng.xyz
+  network: ws
+  ws-opts:
+    path: /sometimesnaive
+    headers:
+      Host: 4.wuxianliulianng.xyz
+  udp: true
+- name: '[🇦🇶]澳大利亚_1331'
+  server: 24.sanfen001.top
+  port: 8880
+  type: vmess
+  uuid: c8d01d24-d387-3142-b9e6-aa3c2b21bf65
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 24.sanfen001.top
+  udp: true
+- name: '[🇺🇸]美国_1387'
+  server: 137.175.3.36
+  port: 443
+  type: vmess
+  uuid: f97dc3d8-0870-3693-ab28-74be7c77b0b3
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1691211678088
+    headers:
+      Host: www.37419052.xyz
+  udp: true
+- name: '[🇭🇰]香港_1389'
+  server: 103.160.204.162
+  port: 2082
+  type: vmess
+  uuid: 83e5a801-c288-3859-abe4-c62621f09e93
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /blue
+    headers:
+      Host: tui.vtcss.top
+  udp: true
+- name: '[🇨🇷]哥斯达黎加_1390'
+  server: 190.93.247.216
+  port: 2082
+  type: vmess
+  uuid: b6a48411-17f7-3f7b-8d72-a772c33d9517
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /blue
+    headers:
+      Host: tui.vtcss.top
+  udp: true
+- name: '[🇳🇱]荷兰_1391'
+  server: 188.114.97.152
+  port: 80
+  type: vmess
+  uuid: 4ec57c45-74d0-3c09-b208-14b6d233b568
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /blue
+    headers:
+      Host: tui.vtcss.top
+  udp: true
+- name: '[🇨🇳]匈牙利_1388'
+  server: 3c2h4u04.mcfront.xyz
+  port: 31864
+  type: vmess
+  uuid: e5d6f035-0bd4-3e5c-aa40-14763be44aff
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: hu04.lovemc.xyz
+  udp: true
+- name: '[🇦🇶]_1399'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: b93e1bcd-2f57-3578-987a-1b6b49db3149
+  alterId: 4
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: hkd1.quickerlink.xyz
+  udp: true
+- name: '[🇸🇬]_1392'
+  server: 159.223.94.156
+  port: 80
+  type: vmess
+  uuid: a1945778-710d-306a-99aa-2555188e518f
+  alterId: 4
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+  udp: true
+- name: '[🇭🇰]香港_1404'
+  server: 103.160.204.123
+  port: 2082
+  type: vmess
+  uuid: e85ebc3a-afd9-3c44-91f4-40fd402676a3
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /blue
+    headers:
+      Host: tui.vtcss.top
+  udp: true
+- name: '[🇭🇰]香港_1414'
   server: 103.160.204.37
   port: 80
   type: vmess
-  uuid: 041854e0-9754-3b3d-8e83-35099234532f
+  uuid: 40c4ba2c-e2e6-3232-8821-f203f6a1e0fc
   alterId: 0
   cipher: auto
   tls: false
@@ -709,21 +720,6 @@ proxies:
     headers:
       Host: tui.vtcss.top
   udp: true
-- name: '[🇦🇶]_1442'
-  server: 194.36.55.106
-  port: 443
-  type: vmess
-  uuid: f7506556-dd54-3ec7-9a1e-c03f24687e94
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: delicate-butterfly-93f8.zuhyp4107.workers.dev
-  udp: true
 - name: '[🇫🇷]_1418'
   server: 141.145.196.253
   port: 80
@@ -737,11 +733,56 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: '[🇬🇧]_1453'
+- name: '[🇨🇳]_1419'
+  server: a1.wuxianliulianng.xyz
+  port: 8443
+  type: vmess
+  uuid: b0148e9e-4e80-3cff-895e-53bfa2035c0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  udp: true
+  ws-opts:
+    path: /sometimesnaive
+    headers:
+      Host: 1.wuxianliulianng.xyz
+- name: '[🇭🇰]_1429'
+  server: a6.wuxianliulianng.xyz
+  port: 8443
+  type: vmess
+  uuid: 1397596e-0c69-37db-982d-13ddcdd69d50
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  udp: true
+  ws-opts:
+    path: /sometimesnaive
+    headers:
+      Host: 3.wuxianliulianng.xyz
+- name: '[🇦🇶]_1434'
+  server: 194.36.55.106
+  port: 443
+  type: vmess
+  uuid: 286f64b9-0f2a-3090-bf29-84fb53fd6194
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: delicate-butterfly-93f8.zuhyp4107.workers.dev
+  udp: true
+- name: '[🇬🇧]_1445'
   server: vuk2.0bad.com
   port: 443
   type: vmess
-  uuid: 7eda8499-7dd6-3c55-a7a2-21ba87892923
+  uuid: f085ecea-a4ee-3270-9145-f905bf61223e
   alterId: 0
   cipher: auto
   tls: true
@@ -753,11 +794,11 @@ proxies:
     headers:
       Host: vuk2.0bad.com
   udp: true
-- name: '[🇺🇸]_1457'
+- name: '[🇺🇸]_1449'
   server: 38.63.0.89
   port: 443
   type: vmess
-  uuid: 8363b3f0-8b26-378e-be34-0ee8f63efc2b
+  uuid: de1d2afa-7027-3000-8880-cd994fde1aeb
   alterId: 64
   cipher: auto
   tls: true
@@ -766,11 +807,11 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: '[🇫🇷]_1458'
+- name: '[🇫🇷]_1450'
   server: phosphorylative.aurorainiceland.com
   port: 443
   type: vmess
-  uuid: 81f9ec83-c439-3ce7-a7e7-e4a32f1f1ad1
+  uuid: d83c5988-d171-3db3-88c8-6eaf4bbc2597
   alterId: 0
   cipher: auto
   tls: true
@@ -781,11 +822,11 @@ proxies:
     headers:
       Host: phosphorylative.aurorainiceland.com
   udp: true
-- name: '[🇺🇸]_1459'
+- name: '[🇺🇸]_1451'
   server: 38.63.0.68
   port: 443
   type: vmess
-  uuid: 1c1ccc23-6c51-3058-a267-6cfc1c637c4b
+  uuid: 842cb568-4387-38d2-80d4-fbcc5a38ea17
   alterId: 64
   cipher: auto
   tls: true
@@ -794,26 +835,11 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: '[🇩🇪]_1460'
-  server: vde1.0bad.com
-  port: 443
-  type: vmess
-  uuid: 021d42e0-2906-3582-b242-8a1e95ce4534
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: vde1.0bad.com
-  udp: true
-- name: '[🇨🇦]_1465'
+- name: '[🇨🇦]_1457'
   server: ca1-vmess.greenssh.xyz
   port: 80
   type: vmess
-  uuid: 970c904d-31aa-3a42-bc98-81d4fbca10c4
+  uuid: b046e5ff-256a-3265-bffd-01e813c77ac3
   alterId: 0
   cipher: auto
   tls: false
@@ -824,11 +850,26 @@ proxies:
     headers:
       Host: ca1-vmess.greenssh.xyz
   udp: true
-- name: '[🇷🇺]_1468'
+- name: '[🇩🇪]_1452'
+  server: vde1.0bad.com
+  port: 443
+  type: vmess
+  uuid: d2f821c6-2801-335c-abf8-8a227b0cb430
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vde1.0bad.com
+  udp: true
+- name: '[🇷🇺]_1460'
   server: 185.143.220.25
   port: 443
   type: vmess
-  uuid: 4bedb472-ff88-3925-923e-acd30915a97a
+  uuid: 5e64a791-22d7-3f61-8cd8-1d9286b8541d
   alterId: 0
   cipher: auto
   tls: true
@@ -837,12 +878,62 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: '[🇨🇳]日本_1478'
+- name: '[🇺🇸]香港_1466'
+  server: 192.203.230.183
+  port: 443
+  client-fingerprint: chrome
+  type: vmess
+  uuid: b5568fec-2427-32e2-965a-7a6347e8f7fe
+  alterId: 0
+  cipher: auto
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: dddd.mlbldzz.top
+  network: ws
+  ws-opts:
+    path: /fbf5ddad-8807-400f-93ed-83017aff8bbb
+    headers:
+      Host: dddd.mlbldzz.top
+  udp: true
+- name: '[🇻🇳]越南_1469'
+  server: 103.183.112.11
+  port: 15306
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 262c356f-edeb-369f-8e8e-02d0990a618a
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /sdfhk
+  udp: true
+- name: '[🇦🇶]关注频道每天更新_1470'
+  server: cf.thaseunknown.com
+  port: 8080
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 14532d6c-972b-3607-980b-0915eee60e95
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: chinam.eu.org
+  udp: true
+- name: '[🇭🇰]日本_1472'
   server: a10.wuxianliulianng.xyz
   port: 8443
   client-fingerprint: chrome
   type: vmess
-  uuid: dbb616ac-dd7d-37a1-a8c3-9bb7383cbff6
+  uuid: 3d115b17-0bd6-351a-90bc-23438f6eb2db
   alterId: 0
   cipher: auto
   tls: true
@@ -855,12 +946,262 @@ proxies:
     headers:
       Host: 5.wuxianliulianng.xyz
   udp: true
-- name: '[🇩🇪]德国_1477'
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1475'
+  network: tcp
+  port: 34888
+  server: 23.234.198.83
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: bce19cfd-d154-363e-bdb6-d6b315d99975
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_1477'
+  network: ws
+  port: 2082
+  server: 103.160.204.56
+  skip-cert-verify: true
+  type: vmess
+  uuid: 43ba6250-c4f4-37ed-8195-7180ffdacaa6
+  ws-host: tui.vtcss.top
+  ws-path: /blue
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_1480'
+  network: ws
+  port: 2082
+  server: 103.160.204.187
+  skip-cert-verify: true
+  type: vmess
+  uuid: cfcdedf9-7bc6-3aff-aa18-79a439ac9f42
+  ws-host: tui.vtcss.top
+  ws-path: /blue
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇳]中国_1484'
+  network: ws
+  port: 80
+  server: 103.184.44.18
+  tls: false
+  type: vmess
+  uuid: 8b2b0d9e-001b-3724-a9e0-eb91f6dd29d3
+  ws-opts:
+    headers:
+      Host: ecc.vtcss.top
+    path: /blue
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_1485'
+  network: ws
+  port: 2082
+  server: 103.160.204.95
+  skip-cert-verify: true
+  type: vmess
+  uuid: 4894724f-e12f-3657-82c4-93991849886c
+  ws-host: tui.vtcss.top
+  ws-path: /blue
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]美国_1486'
+  network: ws
+  port: 80
+  server: ydarm.e5outllok.me
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 5284ab21-b555-3ff3-8a3b-872ddf5b695c
+  ws-opts:
+    headers:
+      Host: ydarm.e5outllok.me
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]美国_1487'
+  network: tcp
+  port: 52408
+  server: 129.146.46.181
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: e6a60c14-a8da-3602-a3bb-86dbdbe79351
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇫🇷]法国_1489'
+  network: ws
+  port: 80
+  server: 51.178.44.171
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: ee31d02d-2977-351d-bf7f-760b3a408937
+  ws-opts:
+    headers:
+      Host: france-1vm.mr-radwan-daoud.de
+    path: /vmess
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_1491'
+  network: ws
+  port: 2082
+  server: 103.160.204.246
+  skip-cert-verify: true
+  type: vmess
+  uuid: a4593939-a8fc-3c89-a07f-ec2bfead317d
+  ws-host: tui.vtcss.top
+  ws-path: /blue
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1492'
+  network: tcp
+  port: 45301
+  server: 45.199.138.164
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: a98076de-f5f3-347b-bee0-b99553510947
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]美国_1494'
+  network: tcp
+  port: 8880
+  server: 5.161.212.125
+  skip-cert-verify: true
+  type: vmess
+  uuid: 4d95fb82-3a84-35dd-859a-1f624b76ee86
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_1498'
+  network: ws
+  port: 2082
+  server: 103.160.204.24
+  skip-cert-verify: true
+  type: vmess
+  uuid: baabc28c-525c-3bc7-92cc-1454e29f912c
+  ws-host: tui.vtcss.top
+  ws-path: /blue
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]哥斯达黎加_1499'
+  network: ws
+  port: 2082
+  server: 190.93.245.107
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 5f9436e9-89c4-360e-b656-104ffa81e05b
+  ws-opts:
+    headers:
+      Host: tui.vtcss.top
+    path: /blue
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇳]频道_1501'
+  network: ws
+  port: 80
+  server: 103.184.45.223
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 27fddf74-a60a-3c28-8b06-d30c161b9661
+  ws-opts:
+    headers:
+      Host: ecc.vtcss.top
+    path: /blue
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1503'
+  network: ws
+  port: 443
+  server: 192.74.228.169
+  tls: true
+  type: vmess
+  uuid: 0f75dfbc-1c52-37d2-9b9a-be5f48c7debc
+  ws-opts:
+    headers:
+      Host: www.59274706.xyz
+    path: /path/1691403540577
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1500'
+  network: tcp
+  port: 43560
+  server: 45.199.138.189
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 8eea9f82-4e60-3d8b-add6-9b6e3ea6d470
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]美国_1504'
+  network: tcp
+  port: 8880
+  server: 5.161.206.169
+  tls: false
+  type: vmess
+  uuid: f40a2066-7e2a-3923-91a2-a7694c542ba2
+  ws-opts:
+    headers:
+      Host: 🇺🇸US美国(youtube阿伟科技)
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_1507'
+  network: ws
+  port: 2082
+  server: 103.160.204.223
+  skip-cert-verify: true
+  type: vmess
+  uuid: 2bb57515-86ee-3edb-857c-abc93b627569
+  ws-host: tui.vtcss.top
+  ws-path: /blue
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇺]_1495'
+  network: tcp
+  port: 8881
+  server: 170.64.183.154
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: a68a0023-0530-3807-916a-098db008b41d
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1506'
+  network: tcp
+  port: 46909
+  server: 171.22.116.45
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 4d6ad2be-f04d-3723-9aea-9db52213d124
+  udp: true
+- name: '[🇩🇪]德国_1471'
   server: taidou.link
   port: 2095
   client-fingerprint: chrome
   type: vmess
-  uuid: 9094cef8-c8e9-36bf-af40-91c62d5ce0d0
+  uuid: 4ccb8ad6-4bc0-394e-ba87-ff5a2bb34902
   alterId: 0
   cipher: auto
   tls: false
@@ -872,227 +1213,6 @@ proxies:
     headers:
       Host: de6.tuyoyo.link
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]香港_1482'
-  network: ws
-  port: 2082
-  server: 103.160.204.24
-  skip-cert-verify: true
-  type: vmess
-  uuid: c99c083d-07ca-3066-8a6f-18a7a83be3b5
-  ws-host: tui.vtcss.top
-  ws-path: /blue
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]美国_1483'
-  network: tcp
-  port: 8880
-  server: 5.161.212.125
-  skip-cert-verify: true
-  type: vmess
-  uuid: 5102814e-3f0e-3f3d-8ac2-ab4d3f0d7ba3
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]香港_1486'
-  network: ws
-  port: 2082
-  server: 103.160.204.56
-  skip-cert-verify: true
-  type: vmess
-  uuid: 595e81eb-0b95-39f1-b646-6310f71c0ac4
-  ws-host: tui.vtcss.top
-  ws-path: /blue
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]香港_1487'
-  network: ws
-  port: 2082
-  server: 103.160.204.223
-  skip-cert-verify: true
-  type: vmess
-  uuid: 57c93bb7-fcd9-37c1-9b0c-f4fcbc9bc099
-  ws-host: tui.vtcss.top
-  ws-path: /blue
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]美国_1491'
-  network: ws
-  port: 443
-  server: 192.74.228.169
-  tls: true
-  type: vmess
-  uuid: acfe63e5-5947-31be-bbc3-94dc77887896
-  ws-opts:
-    headers:
-      Host: www.59274706.xyz
-    path: /path/1691403540577
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]香港_1492'
-  network: ws
-  port: 2082
-  server: 103.160.204.187
-  skip-cert-verify: true
-  type: vmess
-  uuid: 5e56edbc-ab96-34b4-9a6a-baec7f8dbf57
-  ws-host: tui.vtcss.top
-  ws-path: /blue
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]香港_1494'
-  network: ws
-  port: 2082
-  server: 103.160.204.95
-  skip-cert-verify: true
-  type: vmess
-  uuid: 6d8d9dd5-ed8a-370e-8bff-5bd05b2c7581
-  ws-host: tui.vtcss.top
-  ws-path: /blue
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]美国_1484'
-  network: tcp
-  port: 44151
-  server: 45.199.138.185
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 4b5b4e8f-3d6a-3657-ae80-82e3af7414ff
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]香港_1500'
-  network: ws
-  port: 2082
-  server: 103.160.204.246
-  skip-cert-verify: true
-  type: vmess
-  uuid: ba678268-bc55-3591-a45c-c64e8a184911
-  ws-host: tui.vtcss.top
-  ws-path: /blue
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]美国加利福尼亚州洛杉_1501'
-  network: tcp
-  port: 34888
-  server: 23.234.198.83
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 3143a37a-51a1-390d-8236-71abd07210a7
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]美国_1493'
-  network: tcp
-  port: 8880
-  server: 5.161.206.169
-  tls: false
-  type: vmess
-  uuid: 18c47124-b826-36bd-8f30-16dcfb9df559
-  ws-opts:
-    headers:
-      Host: 🇺🇸US美国(youtube阿伟科技)
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇸🇬]新加坡_1489'
-  network: ws
-  port: 80
-  server: si4co.09vpn.com
-  servername: si4co.09vpn.com
-  tls: false
-  type: vmess
-  uuid: 4f319710-6d5f-3588-b4cd-a145e003d7cb
-  ws-opts:
-    headers:
-      Host: si4co.09vpn.com
-    path: /vmess/
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]美国_1505'
-  network: tcp
-  port: 46909
-  server: 171.22.116.45
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 776db445-b446-3844-a697-fced7a0738bb
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]美国_1498'
-  network: tcp
-  port: 43560
-  server: 45.199.138.189
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: e69cccb5-8c37-3043-b98f-c19b0503ae4e
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]美国_1502'
-  network: tcp
-  port: 45301
-  server: 45.199.138.164
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7c4a67c1-ee33-34e0-988f-6855bef567ae
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]美国_1509'
-  network: tcp
-  port: 52408
-  server: 129.146.46.181
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 8050e982-6021-3bce-998e-f60c8093f689
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇫🇷]法国_1503'
-  network: ws
-  port: 80
-  server: 51.178.44.171
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 8b704cba-6a8b-3bd1-a0e9-fcf6c7171567
-  ws-opts:
-    headers:
-      Host: france-1vm.mr-radwan-daoud.de
-    path: /vmess
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]哥斯达黎加_1511'
-  network: ws
-  port: 2082
-  server: 190.93.245.107
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 978b5b46-dddb-3d5b-b7a2-f43802a1aba9
-  ws-opts:
-    headers:
-      Host: tui.vtcss.top
-    path: /blue
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -1100,502 +1220,550 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇦🇶]美国_1234'
+  - '[🇦🇶]美国_1235'
   - '[🇺🇸]美国_1236'
   - '[🇺🇸]美国_1248'
   - '[🇦🇶]美国_1250'
   - '[🇦🇶]美国_1253'
-  - '[🇦🇶]美国_1258'
+  - '[🇺🇸]美国_1258'
   - '[🇺🇸]美国_1259'
   - '[🇺🇸]美国_1264'
   - '[🇺🇸]美国_1266'
   - '[🇺🇸]美国_1267'
   - '[🇺🇸]美国_1270'
   - '[🇦🇶]美国_1306'
-  - '[🇺🇸]荷兰_1308'
   - '[🇺🇸]哥斯达黎加_1309'
   - '[🇦🇶]美国_1310'
   - '[🇦🇶]美国_1312'
-  - '[🇭🇰]香港_1307'
-  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1314'
+  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1318'
   - '[🇳🇱]荷兰_1320'
   - '[🇦🇶]美国_1321'
-  - '[🇺🇸]美国_1323'
+  - '[🇭🇰]香港_1307'
   - '[🇦🇶]美国_1324'
   - '[🇦🇶]美国_1326'
   - '[🇦🇶]美国_1328'
-  - '[🇯🇵]日本_1325'
-  - '[🇦🇶]澳大利亚_1330'
+  - '[🇺🇸]美国_1323'
   - '[🇨🇷]哥斯达黎加_1332'
-  - '[🇺🇸]澳大利亚_1331'
+  - '[🇯🇵]日本_1325'
   - '[🇫🇷]法国_1334'
-  - '[🇺🇸]_1356'
-  - '[🇭🇰]香港_1367'
-  - '[🇺🇸]_1369'
-  - '[🇨🇳]美国_1371'
   - '[🇦🇶]美国_1327'
-  - '[🇺🇸]英国_1329'
-  - '[🇻🇳]_1357'
-  - '[🇺🇸]美国_1379'
-  - '[🇦🇶]_1382'
-  - '[🇭🇰]香港_1383'
-  - '[🇨🇷]哥斯达黎加_1384'
-  - '[🇳🇱]荷兰_1385'
-  - '[🇦🇶]_1394'
-  - '[🇦🇶]_1395'
-  - '[🇸🇬]_1386'
-  - '[🇦🇶]_1400'
-  - '[🇭🇰]香港_1401'
-  - '[🇭🇰]香港_1412'
+  - '[🇦🇶]荷兰_1308'
+  - '[🇦🇶]_1355'
+  - '[🇦🇶]_1356'
+  - '[🇦🇶]_1364'
+  - '[🇦🇶]英国_1329'
+  - '[🇭🇰]香港_1375'
+  - '[🇦🇶]_1377'
+  - '[🇦🇶]澳大利亚_1330'
+  - '[🇭🇰]美国_1379'
+  - '[🇦🇶]澳大利亚_1331'
+  - '[🇺🇸]美国_1387'
+  - '[🇭🇰]香港_1389'
+  - '[🇨🇷]哥斯达黎加_1390'
+  - '[🇳🇱]荷兰_1391'
+  - '[🇨🇳]匈牙利_1388'
+  - '[🇦🇶]_1399'
+  - '[🇸🇬]_1392'
+  - '[🇭🇰]香港_1404'
+  - '[🇭🇰]香港_1414'
   - '[🇭🇰]香港_1416'
-  - '[🇦🇶]_1442'
   - '[🇫🇷]_1418'
-  - '[🇬🇧]_1453'
-  - '[🇺🇸]_1457'
-  - '[🇫🇷]_1458'
-  - '[🇺🇸]_1459'
-  - '[🇩🇪]_1460'
-  - '[🇨🇦]_1465'
-  - '[🇷🇺]_1468'
-  - '[🇨🇳]日本_1478'
-  - '[🇩🇪]德国_1477'
-  - '[🇭🇰]香港_1482'
-  - '[🇺🇸]美国_1483'
-  - '[🇭🇰]香港_1486'
-  - '[🇭🇰]香港_1487'
-  - '[🇺🇸]美国_1491'
-  - '[🇭🇰]香港_1492'
-  - '[🇭🇰]香港_1494'
-  - '[🇺🇸]美国_1484'
-  - '[🇭🇰]香港_1500'
-  - '[🇺🇸]美国加利福尼亚州洛杉_1501'
-  - '[🇺🇸]美国_1493'
-  - '[🇸🇬]新加坡_1489'
-  - '[🇺🇸]美国_1505'
-  - '[🇺🇸]美国_1498'
-  - '[🇺🇸]美国_1502'
-  - '[🇺🇸]美国_1509'
-  - '[🇫🇷]法国_1503'
-  - '[🇺🇸]哥斯达黎加_1511'
+  - '[🇨🇳]_1419'
+  - '[🇭🇰]_1429'
+  - '[🇦🇶]_1434'
+  - '[🇬🇧]_1445'
+  - '[🇺🇸]_1449'
+  - '[🇫🇷]_1450'
+  - '[🇺🇸]_1451'
+  - '[🇨🇦]_1457'
+  - '[🇩🇪]_1452'
+  - '[🇷🇺]_1460'
+  - '[🇺🇸]香港_1466'
+  - '[🇻🇳]越南_1469'
+  - '[🇦🇶]关注频道每天更新_1470'
+  - '[🇭🇰]日本_1472'
+  - '[🇺🇸]美国_1475'
+  - '[🇭🇰]香港_1477'
+  - '[🇭🇰]香港_1480'
+  - '[🇨🇳]中国_1484'
+  - '[🇭🇰]香港_1485'
+  - '[🇦🇶]美国_1486'
+  - '[🇺🇸]美国_1487'
+  - '[🇫🇷]法国_1489'
+  - '[🇭🇰]香港_1491'
+  - '[🇺🇸]美国_1492'
+  - '[🇺🇸]美国_1494'
+  - '[🇭🇰]香港_1498'
+  - '[🇺🇸]哥斯达黎加_1499'
+  - '[🇨🇳]频道_1501'
+  - '[🇺🇸]美国_1503'
+  - '[🇺🇸]美国_1500'
+  - '[🇺🇸]美国_1504'
+  - '[🇭🇰]香港_1507'
+  - '[🇦🇺]_1495'
+  - '[🇺🇸]美国_1506'
+  - '[🇩🇪]德国_1471'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]美国_1234'
+  - '[🇦🇶]美国_1235'
   - '[🇺🇸]美国_1236'
   - '[🇺🇸]美国_1248'
   - '[🇦🇶]美国_1250'
   - '[🇦🇶]美国_1253'
-  - '[🇦🇶]美国_1258'
+  - '[🇺🇸]美国_1258'
   - '[🇺🇸]美国_1259'
   - '[🇺🇸]美国_1264'
   - '[🇺🇸]美国_1266'
   - '[🇺🇸]美国_1267'
   - '[🇺🇸]美国_1270'
   - '[🇦🇶]美国_1306'
-  - '[🇺🇸]荷兰_1308'
   - '[🇺🇸]哥斯达黎加_1309'
   - '[🇦🇶]美国_1310'
   - '[🇦🇶]美国_1312'
-  - '[🇭🇰]香港_1307'
-  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1314'
+  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1318'
   - '[🇳🇱]荷兰_1320'
   - '[🇦🇶]美国_1321'
-  - '[🇺🇸]美国_1323'
+  - '[🇭🇰]香港_1307'
   - '[🇦🇶]美国_1324'
   - '[🇦🇶]美国_1326'
   - '[🇦🇶]美国_1328'
-  - '[🇯🇵]日本_1325'
-  - '[🇦🇶]澳大利亚_1330'
+  - '[🇺🇸]美国_1323'
   - '[🇨🇷]哥斯达黎加_1332'
-  - '[🇺🇸]澳大利亚_1331'
+  - '[🇯🇵]日本_1325'
   - '[🇫🇷]法国_1334'
-  - '[🇺🇸]_1356'
-  - '[🇭🇰]香港_1367'
-  - '[🇺🇸]_1369'
-  - '[🇨🇳]美国_1371'
   - '[🇦🇶]美国_1327'
-  - '[🇺🇸]英国_1329'
-  - '[🇻🇳]_1357'
-  - '[🇺🇸]美国_1379'
-  - '[🇦🇶]_1382'
-  - '[🇭🇰]香港_1383'
-  - '[🇨🇷]哥斯达黎加_1384'
-  - '[🇳🇱]荷兰_1385'
-  - '[🇦🇶]_1394'
-  - '[🇦🇶]_1395'
-  - '[🇸🇬]_1386'
-  - '[🇦🇶]_1400'
-  - '[🇭🇰]香港_1401'
-  - '[🇭🇰]香港_1412'
+  - '[🇦🇶]荷兰_1308'
+  - '[🇦🇶]_1355'
+  - '[🇦🇶]_1356'
+  - '[🇦🇶]_1364'
+  - '[🇦🇶]英国_1329'
+  - '[🇭🇰]香港_1375'
+  - '[🇦🇶]_1377'
+  - '[🇦🇶]澳大利亚_1330'
+  - '[🇭🇰]美国_1379'
+  - '[🇦🇶]澳大利亚_1331'
+  - '[🇺🇸]美国_1387'
+  - '[🇭🇰]香港_1389'
+  - '[🇨🇷]哥斯达黎加_1390'
+  - '[🇳🇱]荷兰_1391'
+  - '[🇨🇳]匈牙利_1388'
+  - '[🇦🇶]_1399'
+  - '[🇸🇬]_1392'
+  - '[🇭🇰]香港_1404'
+  - '[🇭🇰]香港_1414'
   - '[🇭🇰]香港_1416'
-  - '[🇦🇶]_1442'
   - '[🇫🇷]_1418'
-  - '[🇬🇧]_1453'
-  - '[🇺🇸]_1457'
-  - '[🇫🇷]_1458'
-  - '[🇺🇸]_1459'
-  - '[🇩🇪]_1460'
-  - '[🇨🇦]_1465'
-  - '[🇷🇺]_1468'
-  - '[🇨🇳]日本_1478'
-  - '[🇩🇪]德国_1477'
-  - '[🇭🇰]香港_1482'
-  - '[🇺🇸]美国_1483'
-  - '[🇭🇰]香港_1486'
-  - '[🇭🇰]香港_1487'
-  - '[🇺🇸]美国_1491'
-  - '[🇭🇰]香港_1492'
-  - '[🇭🇰]香港_1494'
-  - '[🇺🇸]美国_1484'
-  - '[🇭🇰]香港_1500'
-  - '[🇺🇸]美国加利福尼亚州洛杉_1501'
-  - '[🇺🇸]美国_1493'
-  - '[🇸🇬]新加坡_1489'
-  - '[🇺🇸]美国_1505'
-  - '[🇺🇸]美国_1498'
-  - '[🇺🇸]美国_1502'
-  - '[🇺🇸]美国_1509'
-  - '[🇫🇷]法国_1503'
-  - '[🇺🇸]哥斯达黎加_1511'
+  - '[🇨🇳]_1419'
+  - '[🇭🇰]_1429'
+  - '[🇦🇶]_1434'
+  - '[🇬🇧]_1445'
+  - '[🇺🇸]_1449'
+  - '[🇫🇷]_1450'
+  - '[🇺🇸]_1451'
+  - '[🇨🇦]_1457'
+  - '[🇩🇪]_1452'
+  - '[🇷🇺]_1460'
+  - '[🇺🇸]香港_1466'
+  - '[🇻🇳]越南_1469'
+  - '[🇦🇶]关注频道每天更新_1470'
+  - '[🇭🇰]日本_1472'
+  - '[🇺🇸]美国_1475'
+  - '[🇭🇰]香港_1477'
+  - '[🇭🇰]香港_1480'
+  - '[🇨🇳]中国_1484'
+  - '[🇭🇰]香港_1485'
+  - '[🇦🇶]美国_1486'
+  - '[🇺🇸]美国_1487'
+  - '[🇫🇷]法国_1489'
+  - '[🇭🇰]香港_1491'
+  - '[🇺🇸]美国_1492'
+  - '[🇺🇸]美国_1494'
+  - '[🇭🇰]香港_1498'
+  - '[🇺🇸]哥斯达黎加_1499'
+  - '[🇨🇳]频道_1501'
+  - '[🇺🇸]美国_1503'
+  - '[🇺🇸]美国_1500'
+  - '[🇺🇸]美国_1504'
+  - '[🇭🇰]香港_1507'
+  - '[🇦🇺]_1495'
+  - '[🇺🇸]美国_1506'
+  - '[🇩🇪]德国_1471'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]美国_1234'
+  - '[🇦🇶]美国_1235'
   - '[🇺🇸]美国_1236'
   - '[🇺🇸]美国_1248'
   - '[🇦🇶]美国_1250'
   - '[🇦🇶]美国_1253'
-  - '[🇦🇶]美国_1258'
+  - '[🇺🇸]美国_1258'
   - '[🇺🇸]美国_1259'
   - '[🇺🇸]美国_1264'
   - '[🇺🇸]美国_1266'
   - '[🇺🇸]美国_1267'
   - '[🇺🇸]美国_1270'
   - '[🇦🇶]美国_1306'
-  - '[🇺🇸]荷兰_1308'
   - '[🇺🇸]哥斯达黎加_1309'
   - '[🇦🇶]美国_1310'
   - '[🇦🇶]美国_1312'
-  - '[🇭🇰]香港_1307'
-  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1314'
+  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1318'
   - '[🇳🇱]荷兰_1320'
   - '[🇦🇶]美国_1321'
-  - '[🇺🇸]美国_1323'
+  - '[🇭🇰]香港_1307'
   - '[🇦🇶]美国_1324'
   - '[🇦🇶]美国_1326'
   - '[🇦🇶]美国_1328'
-  - '[🇯🇵]日本_1325'
-  - '[🇦🇶]澳大利亚_1330'
+  - '[🇺🇸]美国_1323'
   - '[🇨🇷]哥斯达黎加_1332'
-  - '[🇺🇸]澳大利亚_1331'
+  - '[🇯🇵]日本_1325'
   - '[🇫🇷]法国_1334'
-  - '[🇺🇸]_1356'
-  - '[🇭🇰]香港_1367'
-  - '[🇺🇸]_1369'
-  - '[🇨🇳]美国_1371'
   - '[🇦🇶]美国_1327'
-  - '[🇺🇸]英国_1329'
-  - '[🇻🇳]_1357'
-  - '[🇺🇸]美国_1379'
-  - '[🇦🇶]_1382'
-  - '[🇭🇰]香港_1383'
-  - '[🇨🇷]哥斯达黎加_1384'
-  - '[🇳🇱]荷兰_1385'
-  - '[🇦🇶]_1394'
-  - '[🇦🇶]_1395'
-  - '[🇸🇬]_1386'
-  - '[🇦🇶]_1400'
-  - '[🇭🇰]香港_1401'
-  - '[🇭🇰]香港_1412'
+  - '[🇦🇶]荷兰_1308'
+  - '[🇦🇶]_1355'
+  - '[🇦🇶]_1356'
+  - '[🇦🇶]_1364'
+  - '[🇦🇶]英国_1329'
+  - '[🇭🇰]香港_1375'
+  - '[🇦🇶]_1377'
+  - '[🇦🇶]澳大利亚_1330'
+  - '[🇭🇰]美国_1379'
+  - '[🇦🇶]澳大利亚_1331'
+  - '[🇺🇸]美国_1387'
+  - '[🇭🇰]香港_1389'
+  - '[🇨🇷]哥斯达黎加_1390'
+  - '[🇳🇱]荷兰_1391'
+  - '[🇨🇳]匈牙利_1388'
+  - '[🇦🇶]_1399'
+  - '[🇸🇬]_1392'
+  - '[🇭🇰]香港_1404'
+  - '[🇭🇰]香港_1414'
   - '[🇭🇰]香港_1416'
-  - '[🇦🇶]_1442'
   - '[🇫🇷]_1418'
-  - '[🇬🇧]_1453'
-  - '[🇺🇸]_1457'
-  - '[🇫🇷]_1458'
-  - '[🇺🇸]_1459'
-  - '[🇩🇪]_1460'
-  - '[🇨🇦]_1465'
-  - '[🇷🇺]_1468'
-  - '[🇨🇳]日本_1478'
-  - '[🇩🇪]德国_1477'
-  - '[🇭🇰]香港_1482'
-  - '[🇺🇸]美国_1483'
-  - '[🇭🇰]香港_1486'
-  - '[🇭🇰]香港_1487'
-  - '[🇺🇸]美国_1491'
-  - '[🇭🇰]香港_1492'
-  - '[🇭🇰]香港_1494'
-  - '[🇺🇸]美国_1484'
-  - '[🇭🇰]香港_1500'
-  - '[🇺🇸]美国加利福尼亚州洛杉_1501'
-  - '[🇺🇸]美国_1493'
-  - '[🇸🇬]新加坡_1489'
-  - '[🇺🇸]美国_1505'
-  - '[🇺🇸]美国_1498'
-  - '[🇺🇸]美国_1502'
-  - '[🇺🇸]美国_1509'
-  - '[🇫🇷]法国_1503'
-  - '[🇺🇸]哥斯达黎加_1511'
+  - '[🇨🇳]_1419'
+  - '[🇭🇰]_1429'
+  - '[🇦🇶]_1434'
+  - '[🇬🇧]_1445'
+  - '[🇺🇸]_1449'
+  - '[🇫🇷]_1450'
+  - '[🇺🇸]_1451'
+  - '[🇨🇦]_1457'
+  - '[🇩🇪]_1452'
+  - '[🇷🇺]_1460'
+  - '[🇺🇸]香港_1466'
+  - '[🇻🇳]越南_1469'
+  - '[🇦🇶]关注频道每天更新_1470'
+  - '[🇭🇰]日本_1472'
+  - '[🇺🇸]美国_1475'
+  - '[🇭🇰]香港_1477'
+  - '[🇭🇰]香港_1480'
+  - '[🇨🇳]中国_1484'
+  - '[🇭🇰]香港_1485'
+  - '[🇦🇶]美国_1486'
+  - '[🇺🇸]美国_1487'
+  - '[🇫🇷]法国_1489'
+  - '[🇭🇰]香港_1491'
+  - '[🇺🇸]美国_1492'
+  - '[🇺🇸]美国_1494'
+  - '[🇭🇰]香港_1498'
+  - '[🇺🇸]哥斯达黎加_1499'
+  - '[🇨🇳]频道_1501'
+  - '[🇺🇸]美国_1503'
+  - '[🇺🇸]美国_1500'
+  - '[🇺🇸]美国_1504'
+  - '[🇭🇰]香港_1507'
+  - '[🇦🇺]_1495'
+  - '[🇺🇸]美国_1506'
+  - '[🇩🇪]德国_1471'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]美国_1234'
+  - '[🇦🇶]美国_1235'
   - '[🇺🇸]美国_1236'
   - '[🇺🇸]美国_1248'
   - '[🇦🇶]美国_1250'
   - '[🇦🇶]美国_1253'
-  - '[🇦🇶]美国_1258'
+  - '[🇺🇸]美国_1258'
   - '[🇺🇸]美国_1259'
   - '[🇺🇸]美国_1264'
   - '[🇺🇸]美国_1266'
   - '[🇺🇸]美国_1267'
   - '[🇺🇸]美国_1270'
   - '[🇦🇶]美国_1306'
-  - '[🇺🇸]荷兰_1308'
   - '[🇺🇸]哥斯达黎加_1309'
   - '[🇦🇶]美国_1310'
   - '[🇦🇶]美国_1312'
-  - '[🇭🇰]香港_1307'
-  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1314'
+  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1318'
   - '[🇳🇱]荷兰_1320'
   - '[🇦🇶]美国_1321'
-  - '[🇺🇸]美国_1323'
+  - '[🇭🇰]香港_1307'
   - '[🇦🇶]美国_1324'
   - '[🇦🇶]美国_1326'
   - '[🇦🇶]美国_1328'
-  - '[🇯🇵]日本_1325'
-  - '[🇦🇶]澳大利亚_1330'
+  - '[🇺🇸]美国_1323'
   - '[🇨🇷]哥斯达黎加_1332'
-  - '[🇺🇸]澳大利亚_1331'
+  - '[🇯🇵]日本_1325'
   - '[🇫🇷]法国_1334'
-  - '[🇺🇸]_1356'
-  - '[🇭🇰]香港_1367'
-  - '[🇺🇸]_1369'
-  - '[🇨🇳]美国_1371'
   - '[🇦🇶]美国_1327'
-  - '[🇺🇸]英国_1329'
-  - '[🇻🇳]_1357'
-  - '[🇺🇸]美国_1379'
-  - '[🇦🇶]_1382'
-  - '[🇭🇰]香港_1383'
-  - '[🇨🇷]哥斯达黎加_1384'
-  - '[🇳🇱]荷兰_1385'
-  - '[🇦🇶]_1394'
-  - '[🇦🇶]_1395'
-  - '[🇸🇬]_1386'
-  - '[🇦🇶]_1400'
-  - '[🇭🇰]香港_1401'
-  - '[🇭🇰]香港_1412'
+  - '[🇦🇶]荷兰_1308'
+  - '[🇦🇶]_1355'
+  - '[🇦🇶]_1356'
+  - '[🇦🇶]_1364'
+  - '[🇦🇶]英国_1329'
+  - '[🇭🇰]香港_1375'
+  - '[🇦🇶]_1377'
+  - '[🇦🇶]澳大利亚_1330'
+  - '[🇭🇰]美国_1379'
+  - '[🇦🇶]澳大利亚_1331'
+  - '[🇺🇸]美国_1387'
+  - '[🇭🇰]香港_1389'
+  - '[🇨🇷]哥斯达黎加_1390'
+  - '[🇳🇱]荷兰_1391'
+  - '[🇨🇳]匈牙利_1388'
+  - '[🇦🇶]_1399'
+  - '[🇸🇬]_1392'
+  - '[🇭🇰]香港_1404'
+  - '[🇭🇰]香港_1414'
   - '[🇭🇰]香港_1416'
-  - '[🇦🇶]_1442'
   - '[🇫🇷]_1418'
-  - '[🇬🇧]_1453'
-  - '[🇺🇸]_1457'
-  - '[🇫🇷]_1458'
-  - '[🇺🇸]_1459'
-  - '[🇩🇪]_1460'
-  - '[🇨🇦]_1465'
-  - '[🇷🇺]_1468'
-  - '[🇨🇳]日本_1478'
-  - '[🇩🇪]德国_1477'
-  - '[🇭🇰]香港_1482'
-  - '[🇺🇸]美国_1483'
-  - '[🇭🇰]香港_1486'
-  - '[🇭🇰]香港_1487'
-  - '[🇺🇸]美国_1491'
-  - '[🇭🇰]香港_1492'
-  - '[🇭🇰]香港_1494'
-  - '[🇺🇸]美国_1484'
-  - '[🇭🇰]香港_1500'
-  - '[🇺🇸]美国加利福尼亚州洛杉_1501'
-  - '[🇺🇸]美国_1493'
-  - '[🇸🇬]新加坡_1489'
-  - '[🇺🇸]美国_1505'
-  - '[🇺🇸]美国_1498'
-  - '[🇺🇸]美国_1502'
-  - '[🇺🇸]美国_1509'
-  - '[🇫🇷]法国_1503'
-  - '[🇺🇸]哥斯达黎加_1511'
+  - '[🇨🇳]_1419'
+  - '[🇭🇰]_1429'
+  - '[🇦🇶]_1434'
+  - '[🇬🇧]_1445'
+  - '[🇺🇸]_1449'
+  - '[🇫🇷]_1450'
+  - '[🇺🇸]_1451'
+  - '[🇨🇦]_1457'
+  - '[🇩🇪]_1452'
+  - '[🇷🇺]_1460'
+  - '[🇺🇸]香港_1466'
+  - '[🇻🇳]越南_1469'
+  - '[🇦🇶]关注频道每天更新_1470'
+  - '[🇭🇰]日本_1472'
+  - '[🇺🇸]美国_1475'
+  - '[🇭🇰]香港_1477'
+  - '[🇭🇰]香港_1480'
+  - '[🇨🇳]中国_1484'
+  - '[🇭🇰]香港_1485'
+  - '[🇦🇶]美国_1486'
+  - '[🇺🇸]美国_1487'
+  - '[🇫🇷]法国_1489'
+  - '[🇭🇰]香港_1491'
+  - '[🇺🇸]美国_1492'
+  - '[🇺🇸]美国_1494'
+  - '[🇭🇰]香港_1498'
+  - '[🇺🇸]哥斯达黎加_1499'
+  - '[🇨🇳]频道_1501'
+  - '[🇺🇸]美国_1503'
+  - '[🇺🇸]美国_1500'
+  - '[🇺🇸]美国_1504'
+  - '[🇭🇰]香港_1507'
+  - '[🇦🇺]_1495'
+  - '[🇺🇸]美国_1506'
+  - '[🇩🇪]德国_1471'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇦🇶]美国_1234'
+  - '[🇦🇶]美国_1235'
   - '[🇺🇸]美国_1236'
   - '[🇺🇸]美国_1248'
   - '[🇦🇶]美国_1250'
   - '[🇦🇶]美国_1253'
-  - '[🇦🇶]美国_1258'
+  - '[🇺🇸]美国_1258'
   - '[🇺🇸]美国_1259'
   - '[🇺🇸]美国_1264'
   - '[🇺🇸]美国_1266'
   - '[🇺🇸]美国_1267'
   - '[🇺🇸]美国_1270'
   - '[🇦🇶]美国_1306'
-  - '[🇺🇸]荷兰_1308'
   - '[🇺🇸]哥斯达黎加_1309'
   - '[🇦🇶]美国_1310'
   - '[🇦🇶]美国_1312'
-  - '[🇭🇰]香港_1307'
-  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1314'
+  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1318'
   - '[🇳🇱]荷兰_1320'
   - '[🇦🇶]美国_1321'
-  - '[🇺🇸]美国_1323'
+  - '[🇭🇰]香港_1307'
   - '[🇦🇶]美国_1324'
   - '[🇦🇶]美国_1326'
   - '[🇦🇶]美国_1328'
-  - '[🇯🇵]日本_1325'
-  - '[🇦🇶]澳大利亚_1330'
+  - '[🇺🇸]美国_1323'
   - '[🇨🇷]哥斯达黎加_1332'
-  - '[🇺🇸]澳大利亚_1331'
+  - '[🇯🇵]日本_1325'
   - '[🇫🇷]法国_1334'
-  - '[🇺🇸]_1356'
-  - '[🇭🇰]香港_1367'
-  - '[🇺🇸]_1369'
-  - '[🇨🇳]美国_1371'
   - '[🇦🇶]美国_1327'
-  - '[🇺🇸]英国_1329'
-  - '[🇻🇳]_1357'
-  - '[🇺🇸]美国_1379'
-  - '[🇦🇶]_1382'
-  - '[🇭🇰]香港_1383'
-  - '[🇨🇷]哥斯达黎加_1384'
-  - '[🇳🇱]荷兰_1385'
-  - '[🇦🇶]_1394'
-  - '[🇦🇶]_1395'
-  - '[🇸🇬]_1386'
-  - '[🇦🇶]_1400'
-  - '[🇭🇰]香港_1401'
-  - '[🇭🇰]香港_1412'
+  - '[🇦🇶]荷兰_1308'
+  - '[🇦🇶]_1355'
+  - '[🇦🇶]_1356'
+  - '[🇦🇶]_1364'
+  - '[🇦🇶]英国_1329'
+  - '[🇭🇰]香港_1375'
+  - '[🇦🇶]_1377'
+  - '[🇦🇶]澳大利亚_1330'
+  - '[🇭🇰]美国_1379'
+  - '[🇦🇶]澳大利亚_1331'
+  - '[🇺🇸]美国_1387'
+  - '[🇭🇰]香港_1389'
+  - '[🇨🇷]哥斯达黎加_1390'
+  - '[🇳🇱]荷兰_1391'
+  - '[🇨🇳]匈牙利_1388'
+  - '[🇦🇶]_1399'
+  - '[🇸🇬]_1392'
+  - '[🇭🇰]香港_1404'
+  - '[🇭🇰]香港_1414'
   - '[🇭🇰]香港_1416'
-  - '[🇦🇶]_1442'
   - '[🇫🇷]_1418'
-  - '[🇬🇧]_1453'
-  - '[🇺🇸]_1457'
-  - '[🇫🇷]_1458'
-  - '[🇺🇸]_1459'
-  - '[🇩🇪]_1460'
-  - '[🇨🇦]_1465'
-  - '[🇷🇺]_1468'
-  - '[🇨🇳]日本_1478'
-  - '[🇩🇪]德国_1477'
-  - '[🇭🇰]香港_1482'
-  - '[🇺🇸]美国_1483'
-  - '[🇭🇰]香港_1486'
-  - '[🇭🇰]香港_1487'
-  - '[🇺🇸]美国_1491'
-  - '[🇭🇰]香港_1492'
-  - '[🇭🇰]香港_1494'
-  - '[🇺🇸]美国_1484'
-  - '[🇭🇰]香港_1500'
-  - '[🇺🇸]美国加利福尼亚州洛杉_1501'
-  - '[🇺🇸]美国_1493'
-  - '[🇸🇬]新加坡_1489'
-  - '[🇺🇸]美国_1505'
-  - '[🇺🇸]美国_1498'
-  - '[🇺🇸]美国_1502'
-  - '[🇺🇸]美国_1509'
-  - '[🇫🇷]法国_1503'
-  - '[🇺🇸]哥斯达黎加_1511'
+  - '[🇨🇳]_1419'
+  - '[🇭🇰]_1429'
+  - '[🇦🇶]_1434'
+  - '[🇬🇧]_1445'
+  - '[🇺🇸]_1449'
+  - '[🇫🇷]_1450'
+  - '[🇺🇸]_1451'
+  - '[🇨🇦]_1457'
+  - '[🇩🇪]_1452'
+  - '[🇷🇺]_1460'
+  - '[🇺🇸]香港_1466'
+  - '[🇻🇳]越南_1469'
+  - '[🇦🇶]关注频道每天更新_1470'
+  - '[🇭🇰]日本_1472'
+  - '[🇺🇸]美国_1475'
+  - '[🇭🇰]香港_1477'
+  - '[🇭🇰]香港_1480'
+  - '[🇨🇳]中国_1484'
+  - '[🇭🇰]香港_1485'
+  - '[🇦🇶]美国_1486'
+  - '[🇺🇸]美国_1487'
+  - '[🇫🇷]法国_1489'
+  - '[🇭🇰]香港_1491'
+  - '[🇺🇸]美国_1492'
+  - '[🇺🇸]美国_1494'
+  - '[🇭🇰]香港_1498'
+  - '[🇺🇸]哥斯达黎加_1499'
+  - '[🇨🇳]频道_1501'
+  - '[🇺🇸]美国_1503'
+  - '[🇺🇸]美国_1500'
+  - '[🇺🇸]美国_1504'
+  - '[🇭🇰]香港_1507'
+  - '[🇦🇺]_1495'
+  - '[🇺🇸]美国_1506'
+  - '[🇩🇪]德国_1471'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇦🇶]美国_1234'
+  - '[🇦🇶]美国_1235'
   - '[🇺🇸]美国_1236'
   - '[🇺🇸]美国_1248'
   - '[🇦🇶]美国_1250'
   - '[🇦🇶]美国_1253'
-  - '[🇦🇶]美国_1258'
+  - '[🇺🇸]美国_1258'
   - '[🇺🇸]美国_1259'
   - '[🇺🇸]美国_1264'
   - '[🇺🇸]美国_1266'
   - '[🇺🇸]美国_1267'
   - '[🇺🇸]美国_1270'
   - '[🇦🇶]美国_1306'
-  - '[🇺🇸]荷兰_1308'
   - '[🇺🇸]哥斯达黎加_1309'
   - '[🇦🇶]美国_1310'
   - '[🇦🇶]美国_1312'
-  - '[🇭🇰]香港_1307'
-  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1314'
+  - '[🇦🇶]美国_1313'
   - '[🇦🇶]美国_1318'
   - '[🇳🇱]荷兰_1320'
   - '[🇦🇶]美国_1321'
-  - '[🇺🇸]美国_1323'
+  - '[🇭🇰]香港_1307'
   - '[🇦🇶]美国_1324'
   - '[🇦🇶]美国_1326'
   - '[🇦🇶]美国_1328'
-  - '[🇯🇵]日本_1325'
-  - '[🇦🇶]澳大利亚_1330'
+  - '[🇺🇸]美国_1323'
   - '[🇨🇷]哥斯达黎加_1332'
-  - '[🇺🇸]澳大利亚_1331'
+  - '[🇯🇵]日本_1325'
   - '[🇫🇷]法国_1334'
-  - '[🇺🇸]_1356'
-  - '[🇭🇰]香港_1367'
-  - '[🇺🇸]_1369'
-  - '[🇨🇳]美国_1371'
   - '[🇦🇶]美国_1327'
-  - '[🇺🇸]英国_1329'
-  - '[🇻🇳]_1357'
-  - '[🇺🇸]美国_1379'
-  - '[🇦🇶]_1382'
-  - '[🇭🇰]香港_1383'
-  - '[🇨🇷]哥斯达黎加_1384'
-  - '[🇳🇱]荷兰_1385'
-  - '[🇦🇶]_1394'
-  - '[🇦🇶]_1395'
-  - '[🇸🇬]_1386'
-  - '[🇦🇶]_1400'
-  - '[🇭🇰]香港_1401'
-  - '[🇭🇰]香港_1412'
+  - '[🇦🇶]荷兰_1308'
+  - '[🇦🇶]_1355'
+  - '[🇦🇶]_1356'
+  - '[🇦🇶]_1364'
+  - '[🇦🇶]英国_1329'
+  - '[🇭🇰]香港_1375'
+  - '[🇦🇶]_1377'
+  - '[🇦🇶]澳大利亚_1330'
+  - '[🇭🇰]美国_1379'
+  - '[🇦🇶]澳大利亚_1331'
+  - '[🇺🇸]美国_1387'
+  - '[🇭🇰]香港_1389'
+  - '[🇨🇷]哥斯达黎加_1390'
+  - '[🇳🇱]荷兰_1391'
+  - '[🇨🇳]匈牙利_1388'
+  - '[🇦🇶]_1399'
+  - '[🇸🇬]_1392'
+  - '[🇭🇰]香港_1404'
+  - '[🇭🇰]香港_1414'
   - '[🇭🇰]香港_1416'
-  - '[🇦🇶]_1442'
   - '[🇫🇷]_1418'
-  - '[🇬🇧]_1453'
-  - '[🇺🇸]_1457'
-  - '[🇫🇷]_1458'
-  - '[🇺🇸]_1459'
-  - '[🇩🇪]_1460'
-  - '[🇨🇦]_1465'
-  - '[🇷🇺]_1468'
-  - '[🇨🇳]日本_1478'
-  - '[🇩🇪]德国_1477'
-  - '[🇭🇰]香港_1482'
-  - '[🇺🇸]美国_1483'
-  - '[🇭🇰]香港_1486'
-  - '[🇭🇰]香港_1487'
-  - '[🇺🇸]美国_1491'
-  - '[🇭🇰]香港_1492'
-  - '[🇭🇰]香港_1494'
-  - '[🇺🇸]美国_1484'
-  - '[🇭🇰]香港_1500'
-  - '[🇺🇸]美国加利福尼亚州洛杉_1501'
-  - '[🇺🇸]美国_1493'
-  - '[🇸🇬]新加坡_1489'
-  - '[🇺🇸]美国_1505'
-  - '[🇺🇸]美国_1498'
-  - '[🇺🇸]美国_1502'
-  - '[🇺🇸]美国_1509'
-  - '[🇫🇷]法国_1503'
-  - '[🇺🇸]哥斯达黎加_1511'
+  - '[🇨🇳]_1419'
+  - '[🇭🇰]_1429'
+  - '[🇦🇶]_1434'
+  - '[🇬🇧]_1445'
+  - '[🇺🇸]_1449'
+  - '[🇫🇷]_1450'
+  - '[🇺🇸]_1451'
+  - '[🇨🇦]_1457'
+  - '[🇩🇪]_1452'
+  - '[🇷🇺]_1460'
+  - '[🇺🇸]香港_1466'
+  - '[🇻🇳]越南_1469'
+  - '[🇦🇶]关注频道每天更新_1470'
+  - '[🇭🇰]日本_1472'
+  - '[🇺🇸]美国_1475'
+  - '[🇭🇰]香港_1477'
+  - '[🇭🇰]香港_1480'
+  - '[🇨🇳]中国_1484'
+  - '[🇭🇰]香港_1485'
+  - '[🇦🇶]美国_1486'
+  - '[🇺🇸]美国_1487'
+  - '[🇫🇷]法国_1489'
+  - '[🇭🇰]香港_1491'
+  - '[🇺🇸]美国_1492'
+  - '[🇺🇸]美国_1494'
+  - '[🇭🇰]香港_1498'
+  - '[🇺🇸]哥斯达黎加_1499'
+  - '[🇨🇳]频道_1501'
+  - '[🇺🇸]美国_1503'
+  - '[🇺🇸]美国_1500'
+  - '[🇺🇸]美国_1504'
+  - '[🇭🇰]香港_1507'
+  - '[🇦🇺]_1495'
+  - '[🇺🇸]美国_1506'
+  - '[🇩🇪]德国_1471'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
