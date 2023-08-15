@@ -3,7 +3,7 @@
 import sys,os
 
 sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
-from log import log
+from log import log,warn
 
 # Vmess转换成Clash节点
 def v2ray_to_clash(v2rayArr): 
@@ -75,6 +75,10 @@ def ss_to_clash(ssArr):
 # ssr转换成Clash节点
 def ssr_to_clash(ssrArr):
     log('ssr节点转换中...')
+    cipherArr=("aes-128-gcm","aes-192-gcm","aes-256-gcm","aes-128-cfb","aes-192-cfb","aes-256-cfb","aes-128-ctr","aes-192-ctr","aes-256-ctr",
+               "rc4-md5","rc4",
+               "chacha20","chacha20-ietf","xchacha20","chacha20-ietf-poly1305","plain" ,"http_simple","auth_sha1_v4","auth_aes128_md5",
+               "auth_aes128_sha1","auth_chain_a","auth_chain_b")
     proxies = []
     for item in ssrArr:
         obj = {
@@ -97,13 +101,11 @@ def ssr_to_clash(ssrArr):
             if obj.get('name'):
                 #print(obj['cipher'])
                 if not obj['name'].startswith('剩余流量') and not obj['name'].startswith('过期时间'):
-                    if obj['cipher'] == 'aes-128-gcm' or obj['cipher'] == 'aes-192-gcm' or obj['cipher'] == 'aes-256-gcm' or obj['cipher'] == 'aes-128-cfb' or obj['cipher'] == 'aes-192-cfb' or obj['cipher'] == 'aes-256-cfb' or obj['cipher'] == 'aes-128-ctr' or obj['cipher'] == 'aes-192-ctr' or obj['cipher'] == 'aes-256-ctr' or obj['cipher'] == 'rc4-md5' or obj['cipher'] == 'chacha20' or obj['cipher'] == 'chacha20-ietf' or obj['cipher'] == 'xchacha20' or obj['cipher'] == 'chacha20-ietf-poly1305' or obj['cipher'] == 'xchacha20-ietf-poly1305' or obj['cipher'] == 'plain' or obj['cipher'] == 'http_simple' or obj['cipher'] == 'auth_sha1_v4' or obj['cipher'] == 'auth_aes128_md5' or obj['cipher'] == 'auth_aes128_sha1' or obj['cipher'] == 'auth_chain_a auth_chain_b':
-                        proxies.append(obj) 
-                    else:
-                        log("不支持的ssr协议")
+                    if obj['cipher'] in cipherArr: proxies.append(obj) 
+                    else: log(f"不支持的ssr 算法{ obj['cipher']}")
         except Exception as e:
-            log(f'出错{e}')
-    log('可用ssr节点{}个'.format(len(proxies['proxy_names'])))
+            log(f'ssr 转换出错{e}')  
+    log('可用ssr节点{}个'.format(len(proxies)))
     return proxies
 
 #将Trojan节点转clash

@@ -21,10 +21,10 @@ class nodeResource:
     '''
     节点资源
     '''
-    def __init__(self,id:int,reType:resourceType,add:str) -> None:
+    def __init__(self,id:int,reType:resourceType,add:str ) -> None:
         self.__id=id
         self.__type=reType
-        self.__address=add
+        self.__address=add 
     @property
     def id(self):
         return self.__id
@@ -43,6 +43,7 @@ class nodeResource:
     @address.setter
     def address(self,value:resourceType):
         self.__address=value
+ 
 
          
 
@@ -172,39 +173,45 @@ class clash:
             return clash._parseYamlNode(tmp_list) 
         except:
             raise
+    @staticmethod
+    def convert(nodeUrls:List[str]|List[bytes]): 
+        nodes_list= []
+        for node in nodeUrls: 
+            clashNodes=[]
+            if type(node)==str:node =node.encode("utf-8")
+            try:
+                if node.startswith(b'vmess://'):
+                    decode_proxy = decode_v2ray_node([node]) 
+                    clashNodes=v2ray_to_clash(decode_proxy)
+                elif node.startswith(b'ss://'):
+                    decode_proxy = decode_ss_node([node])
+                    clashNodes=ss_to_clash(decode_proxy)
+                    
+                elif node.startswith(b'ssr://'):
+                    decode_proxy = decode_ssr_node([node])
+                    clashNodes=ssr_to_clash(decode_proxy)
+                    print(clashNodes)
 
+                elif node.startswith(b'trojan://'):
+                    decode_proxy = decode_trojan_node([node])
+                    clashNodes=trojan_to_clash(decode_proxy)
+                else:
+                    continue 
+            except Exception as e:
+                log.err(f'节点转换出错："{node}",{e}') 
+                continue 
+            for node in clashNodes: node['name'] =clash._getName( node['name']  )
+            nodes_list.extend(clashNodes)
+        if len(nodes_list)>0:return nodes_list
+    @staticmethod
     def _parseNodeText(text:str| bytes): # 解析 从 base64 解析出来的文本 
         '''
         解析节点
         '''
         text_list = text.splitlines() 
-        if type(text) == str: text_list=[itm.encode("utf-8") for itm  in text_list]
-        nodes_list= []
-        for node in text_list: 
-            clashNode={}
-            try:
-                if node.startswith(b'vmess://'):
-                    decode_proxy = decode_v2ray_node([node]) 
-                    clashNode=v2ray_to_clash(decode_proxy)
-                elif node.startswith(b'ss://'):
-                    decode_proxy = decode_ss_node([node])
-                    clashNode=ss_to_clash(decode_proxy)
-                    
-                elif node.startswith(b'ssr://'):
-                    decode_proxy = decode_ssr_node([node])
-                    clashNode=ssr_to_clash(decode_proxy)
+        #if type(text) == str: text_list=[itm.encode("utf-8") for itm  in text_list]
+        return clash.convert(text_list)
 
-                elif node.startswith(b'trojan://'):
-                    decode_proxy = decode_trojan_node([node])
-                    clashNode=trojan_to_clash(decode_proxy)
-                else:
-                    pass 
-            except Exception as e:
-                log.err(e)
-                raise 
-            clashNode['name'] =clash. _getName( clashNode['name'])
-            nodes_list.extend(clashNode)
-        if len(nodes_list)>0:return nodes_list
          
     def __saveFile(self,resource:nodeResource,node_list):
         try:
@@ -336,6 +343,7 @@ class clash:
             log.err(f'配置文件{path}加载失败')
             sys.exit(0)
 
+    @staticmethod
     def getTemplateConfig(url, path,proxy:str=None):
         try:
             raw =   webutility.get(url, timeout=5,proxy=proxy).content.decode('utf-8')
@@ -348,6 +356,10 @@ class clash:
             template_config =clash.load_local_config(path)
         log.info('[+]已获取规则配置文件')
         return template_config
+    
+    def templateConfig(self):
+        yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy)
+        return yamlConfig
     
     def find_country(server):
         emoji = {
@@ -554,7 +566,7 @@ class clash:
             log.info(f"检测网络延迟：{domain}: {delay} ms")
             if delay== None or delay >delay: status= False
         return status
-    
+    @staticmethod
     def checkNodes(nodeList,delay:int=1000):
         '''
         检测节点
@@ -578,6 +590,7 @@ class clash:
         log.info(f"[+] success:'{s_i}',[-] fail:'{f_i}'.")
         return _nodeList
     
+    @staticmethod
     def outputToFile(yamlConfig,nodeList:list,yamlNodeNum:int,outputFolder:str,fileName): 
         log.info(f'[+]节点数...{len(nodeList)}')
         index=math.floor(len(nodeList) / yamlNodeNum)  
@@ -635,7 +648,7 @@ class clash:
         log.end_mark("导出配置") 
 
     def genYamlToFile(self):
-        yamlConfig=clash.getTemplateConfig(self.opt.templateUrl,self.opt.backLocalTemplate,self.opt.proxy) 
+        yamlConfig=self.templateConfig( ) 
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
             futures={executor.submit(self.genYaml,r,yamlConfig) for r in self.opt.noderesources}
             '''
@@ -644,8 +657,6 @@ class clash:
             '''
             # 等待所有任务完成
             concurrent.futures.wait(futures)
-
-
 
 if __name__ == '__main__': 
     opt=clashOption(subArray=["https://tt.vg/evIzX"])

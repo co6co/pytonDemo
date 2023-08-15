@@ -5,6 +5,8 @@ from clashUtility import clash,clashOption, log,resourceType,nodeResource
 sys.path.append(os.path.dirname(os.path.abspath(sys.argv[0])+"../tool"))
 
 import concurrent.futures;
+
+ 
 def readFile(filePath):
     '''
     filePath: 文件路径\n
@@ -36,14 +38,11 @@ def parse(item,proxy:str=None):
     try:
         enabled=item["enabled"]
         if not enabled: return
-        methodName=item["method"] 
-        #log("'%s' 调用方法：%s"%(item["remarks"],htmlparser.__dict__.get(methodName)))
-        invokeMethod=htmlparser.__dict__.get(methodName)
-        if invokeMethod== None: return
-
-        url=invokeMethod(item,proxy)
+        methodName=item["method"]  
+        url,_=htmlparser.HtmlParser.getParseContent(item,methodName) 
         #获取到的地址为Nul 不使用代理再尝试一次：
-        if proxy !=None and ( url ==None or (type(url) == list and len(url)==0)):url=invokeMethod(item)
+        if proxy !=None and ( url ==None or (type(url) == list and len(url)==0)):url,_=htmlparser.HtmlParser.getParseContent(item,methodName)
+        
         #log.info(f"[+]解析后URL为:{url}")
         if type(url) == list:
             urls=url
@@ -103,7 +102,7 @@ if __name__ == '__main__':
     config.add_argument("-n","--number",  help="node num per yaml,default 150", type=int, default=150)
     config.add_argument("-o",'--outputFolder' , help=f"save yaml file Path,defalut:{default_output_dir}",default=default_output_dir)
     config.add_argument('--nodeOutputTxt' ,default=True, action=argparse.BooleanOptionalAction,help=f"nodes to File default:true")
-
+ 
     args=parser.parse_args()
     log.start_mark("解析")
     log.info("解析订阅的urls...")  
@@ -111,7 +110,7 @@ if __name__ == '__main__':
     nodeResources=revisedResource(jsonData)
     log.info(f"[+] 解析后订阅资源数：{len(nodeResources)}") 
     log.end_mark("解析")
-    #clashOpt=clashOption([nodeResources[1]])
+    #clashOpt=clashOption([nodeResources[1]]) 
     clashOpt=clashOption(nodeResources)
     clashOpt.checkNode=args.checknode
     clashOpt.outputPath=args.outputFolder
@@ -119,5 +118,7 @@ if __name__ == '__main__':
     clashOpt.delay=args.delay
     clashOpt.proxy=args.proxy
     clashOpt.nodeOutputToFile=args.nodeOutputTxt
-    c=clash (clashOpt)
-    c.genYamlForClash(args.number)
+    c=clash (clashOpt) 
+    #c.genYamlForClash(args.number)
+    nodeList=c.convert(_vmessList)
+    c.genYamlToFile()

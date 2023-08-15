@@ -19,15 +19,10 @@ if __name__ == '__main__':
     parser.add_argument("-u","--urls",help="订阅的URL,多个用 '|'分割") 
     config.add_argument("-t","--templateFile",help=f"standby clash yaml templcate File,default:\"{os.path.join(default_config_dir,'clashConfigTemplate.yaml')}\"",default=os.path.join(default_config_dir,"clashConfigTemplate.yaml"))
 
-     
-
-    
     config=parser.add_argument_group("filter")
     config.add_argument("-d","--delay",  help="node delay within xx ms,default 1000ms ", type=int, default=1000) 
     config.add_argument('--checknode', default=True, action=argparse.BooleanOptionalAction ,help="check network connect and check port")
-    
-    
-
+     
     config=parser.add_argument_group("output")
     config.add_argument("-o",'--outputFolder' , help=f"save yaml file Path,defalut:{default_output_dir}",default=default_output_dir)
 
