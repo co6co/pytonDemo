@@ -47,18 +47,22 @@ def parseSubUrls(jsonFilePath,args:dict):
     with concurrent.futures.ThreadPoolExecutor(max_workers=1)  as executor:
         futures= {executor.submit(parse,item,args.proxy):item for item in jsonObj["data"] }
         for future  in concurrent.futures.as_completed(futures):
-            item=futures[future]
-            result=future.result()
-            if result !=None and len(result)>0:
-                nodes=clash.convert(result) 
-                log.start_mark("remove")
-                nodes=clash.remove_duplicates(nodes)
-                log.end_mark("remove")
-                if args.checknode: 
-                    log.start_mark(f"check Node {len(nodes)}...")
-                    nodes=clash.checkNodes(nodes,args.delay) 
-                    log.start_mark(f"check Node {len(nodes)}.")
-                c.outputToFile(template,nodes,3000,args.outputFolder,f"3_{item['id']}.yaml") 
+            try:
+                item=futures[future]
+                result=future.result()
+                if result !=None and len(result)>0:
+                    nodes=clash.convert(result) 
+                    log.start_mark("remove")
+                    nodes=clash.remove_duplicates(nodes)
+                    log.end_mark("remove")
+                    if args.checknode: 
+                        log.start_mark(f"check Node {len(nodes)}...")
+                        nodes=clash.checkNodes(nodes,args.delay) 
+                        log.start_mark(f"check Node {len(nodes)}.")
+                    c.outputToFile(template,nodes,3000,args.outputFolder,f"3_{item['id']}.yaml") 
+            except Exception as e:
+                log.err(f"parseSubUrls err:{e}")
+                pass
 
 if __name__ == '__main__': 
     default_output_dir=os.path.join(os.path.abspath("."),"sub",'yaml') 
