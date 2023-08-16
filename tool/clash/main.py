@@ -119,6 +119,4 @@ if __name__ == '__main__':
     clashOpt.proxy=args.proxy
     clashOpt.nodeOutputToFile=args.nodeOutputTxt
     c=clash (clashOpt) 
-    #c.genYamlForClash(args.number)
-    nodeList=c.convert(_vmessList)
-    c.genYamlToFile()
+    c.genYamlForClash(args.number) 
