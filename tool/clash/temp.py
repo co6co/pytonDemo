@@ -11,13 +11,14 @@ log.succ('''
     1.sys.path 中的相对路径是： os.getcwd() 的相对路径
     2.sys.path 中不一定包含    os.getcwd()
 ''')
+'''
 from ..webutility import safe_decode
 '''
 sys.path.append("./tool")
 log.warn(f"path:{sys.path}...")
 from webutility import safe_decode
 import  tcp
-'''
+
 
 try:
     url="https://raw.fastgit.org/Pawdroid/Free-servers/main/sub"
