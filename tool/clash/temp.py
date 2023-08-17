@@ -1,7 +1,9 @@
 import requests,base64,sys
 sys.path.append("./tool")
-from webutility import get,safe_decode
-import log,tcp
+from webutility import safe_decode
+from co6co.utils import log
+from co6co.utils.http import get
+import tcp
 try:
     url="https://raw.fastgit.org/Pawdroid/Free-servers/main/sub"
     headers=   {"User-agent":"'Mozilla/5.0 (X11; U; Linux 2.4.2-2 i586;en-US; m18) Gecko/20010131 Netscape6/6.01"}
