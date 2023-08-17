@@ -3,25 +3,12 @@ import argparse
 import htmlparser
 
 #sys.path.append(os.path.dirname(os.path.abspath(sys.argv[0])+"../tool"))
-from clashUtility import clash,clashOption,log 
+from clashUtility import clash,clashOption
+from co6co.utils import log
+from co6co.utils.File import File
+
 import concurrent.futures; 
 
-def readFile(filePath):
-    '''
-    filePath: 文件路径\n
-    return list 
-    '''
-    file=open(filePath,"r",encoding='utf-8') 
-    urls=file.read().splitlines()# readlines() 会存在\n
-    return urls
-def readJsonFile(filePath):
-    '''
-    filePath: 文件路径\n
-    return     json 
-    '''
-    with  open(filePath,"r",encoding='utf-8') as f:
-        result=json.load(f) 
-        return result 
 def parse(item,proxy:str=None):
     try: 
         enabled=item["enabled"]
@@ -36,7 +23,7 @@ def parse(item,proxy:str=None):
         pass
 
 def parseSubUrls(jsonFilePath,args:dict): 
-    jsonObj=readJsonFile(jsonFilePath)
+    jsonObj=File.readJsonFile(jsonFilePath)
 
     clashOpt=clashOption([]) 
     clashOpt.outputPath=args.outputFolder
@@ -61,7 +48,7 @@ def parseSubUrls(jsonFilePath,args:dict):
                         log.start_mark(f"check Node {len(nodes)}.")
                     c.outputToFile(template,nodes,3000,args.outputFolder,f"3_{item['id']}.yaml") 
             except Exception as e:
-                log.err(f"parseSubUrls err:{e}")
+                log.err(f"parseSubUrls err",e)
                 pass
 
 if __name__ == '__main__': 

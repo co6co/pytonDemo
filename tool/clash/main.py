@@ -84,7 +84,7 @@ if __name__ == '__main__':
     log.info(f"[+] 解析后订阅资源数：{len(nodeResources)}") 
     log.end_mark("解析")
     #clashOpt=clashOption([nodeResources[1]]) 
-    clashOpt=clashOption(nodeResources)
+    clashOpt= clashOption(nodeResources)
     clashOpt.checkNode=args.checknode
     clashOpt.outputPath=args.outputFolder
     clashOpt.backLocalTemplate=args.templateFile
