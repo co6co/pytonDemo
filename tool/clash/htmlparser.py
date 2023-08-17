@@ -1,9 +1,9 @@
 import urllib.parse,datetime,pytz
 from bs4 import BeautifulSoup
 import re,sys,typing
-sys.path.append("./tool")
-import log,webutility
 
+import co6co.utils.http as webutility
+import co6co.utils.log as log
 class HtmlParser: 
     @staticmethod
     def _createSoup(url,proxy:str=None): 

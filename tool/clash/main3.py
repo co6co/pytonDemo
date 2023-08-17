@@ -50,7 +50,7 @@ def parseSubUrls(jsonFilePath,args:dict):
             try:
                 item=futures[future]
                 result=future.result()
-                if result !=None and len(result)>0:
+                if result != None and len(result)>0:
                     nodes=clash.convert(result) 
                     log.start_mark("remove")
                     nodes=clash.remove_duplicates(nodes)

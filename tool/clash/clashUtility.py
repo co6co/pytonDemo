@@ -1,15 +1,16 @@
 import requests,base64,yaml,sys,os,math,copy
+
 sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
-import log
 import secure
 import tcp
-import webutility
+import co6co.utils.http as webutility
 from convert2clash import *
 from parserNode import *
 import geoip2.database
 import socket,  concurrent.futures 
 from typing import List
 import uuid,random
+import co6co.utils.log as log
 
 class resourceType:
     '''
@@ -43,9 +44,6 @@ class nodeResource:
     @address.setter
     def address(self,value:resourceType):
         self.__address=value
- 
-
-         
 
 class clashOption():
     def __init__(self,noderesources=list ):

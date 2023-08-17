@@ -1,9 +1,9 @@
 
 import sys
-sys.path.append("../")
-import log
+import  co6co .utils.log as log
 import json,base64,re
 import urllib.parse
+from  typing import  List
 
 def safe_decode(s):
     #print("saft_decode:",s)
@@ -13,7 +13,7 @@ def safe_decode(s):
     #print(f"s:{s},num:{num}")
     return base64.urlsafe_b64decode(s)
  
-def decode_v2ray_node(nodes):
+def decode_v2ray_node(nodes:List[bytes]):
     '''
     解析vmess节点
     '''
@@ -30,7 +30,7 @@ def decode_v2ray_node(nodes):
     return proxy_list
 
  
-def decode_ss_node(nodes):
+def decode_ss_node(nodes:List[bytes]):
     '''
     解析ss节点
     '''
@@ -81,7 +81,7 @@ def decode_ss_node(nodes):
  
     return proxy_list
 
-def decode_ssr_node(nodes):
+def decode_ssr_node(nodes:List[bytes]):
     '''
     解析ssr节点
     '''
@@ -112,7 +112,7 @@ def decode_ssr_node(nodes):
         proxy_list.append(info)
     return proxy_list
 
-def decode_trojan_node(nodes):
+def decode_trojan_node(nodes:List[bytes]):
     '''
     解析Trojan节点
     '''

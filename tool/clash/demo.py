@@ -7,7 +7,7 @@ logDir=os.path.abspath(os.path.join(currentFolder,".."))
 #print(f"curdir:{os.path.curdir},{__file__}") 
 print(f"sys.argv:\t{sys.argv}\n__file__:\t{__file__},\n{os.path.dirname(__file__)}")
 sys.path.append(logDir)
-import log
+import co6co.utils.log as log
 log.log("123456")
 currentFilePath=os.path.abspath(sys.argv[0])
 print(f"当前文件路径：{currentFilePath}\n当前文件目录：{os.path.dirname(currentFilePath)}")

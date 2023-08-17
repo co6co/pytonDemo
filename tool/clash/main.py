@@ -1,38 +1,12 @@
 import sys,os,json
 import argparse
 import htmlparser
-from clashUtility import clash,clashOption, log,resourceType,nodeResource
-sys.path.append(os.path.dirname(os.path.abspath(sys.argv[0])+"../tool"))
+from clashUtility import clash, clashOption, resourceType, nodeResource
 
-import concurrent.futures;
+import concurrent.futures
+from co6co.utils import log
+from co6co.utils.File import File
 
- 
-def readFile(filePath):
-    '''
-    filePath: 文件路径\n
-    return list 
-    '''
-    file=open(filePath,"r",encoding='utf-8') 
-    urls=file.read().splitlines()# readlines() 会存在\n
-    return urls
-def readJsonFile(filePath):
-    '''
-    filePath: 文件路径\n
-    return     json 
-    '''
-    with  open(filePath,"r",encoding='utf-8') as f:
-        result=json.load(f) 
-        return result
-
-def writeJsonFile(filePath,obj):
-    '''
-    filePath: 文件路径\n
-    return     json 
-    '''
-    updated_list = json.dumps( obj, sort_keys=False, indent=2, ensure_ascii=False)
-    file = open(filePath, 'w', encoding='utf-8')
-    file.write(updated_list)
-    file.close()
 
 def parse(item,proxy:str=None):
     try:
@@ -53,11 +27,11 @@ def parse(item,proxy:str=None):
         log.err(item["remarks"]+"出错"+e)
 
 def parseSubUrls(jsonFilePath,proxy:str=None): 
-    jsonObj=readJsonFile(jsonFilePath)
+    jsonObj=File.readJsonFile(jsonFilePath)
     with concurrent.futures.ThreadPoolExecutor(max_workers=1)  as executor:
         futures= {executor.submit(parse,item,proxy) for item in jsonObj["data"] }
     concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
-    writeJsonFile(jsonFilePath,jsonObj)
+    File.writeJsonFile(jsonFilePath,jsonObj)
     return jsonObj 
 
 def revisedResource(configJson:dict):
@@ -68,7 +42,6 @@ def revisedResource(configJson:dict):
     '''
     urlData=[{"id":item["id"],"data":item["url"].split("|")} for item in configJson["data"] if item['enabled']] 
     nodeResources = [nodeResource(item["id"],resourceType.http,u) for item in urlData for u in item["data"] if u!=""]
-   
     
     # id 转 唯一
     ids=[]
@@ -119,6 +92,4 @@ if __name__ == '__main__':
     clashOpt.proxy=args.proxy
     clashOpt.nodeOutputToFile=args.nodeOutputTxt
     c=clash (clashOpt) 
-    #c.genYamlForClash(args.number)
-    nodeList=c.convert(_vmessList)
-    c.genYamlToFile()
+    c.genYamlForClash(args.number) 

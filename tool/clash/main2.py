@@ -1,11 +1,12 @@
 import argparse
 import os,sys
-from clashUtility import log,clashOption,clash,nodeResource,resourceType
-from typing  import List
+from clashUtility import clashOption, clash, nodeResource, resourceType
+from typing import List
+import co6co.utils.log as log
 
 
-def revisedResource(urls)->List[nodeResource] :
-    nodeResources =  [nodeResource(i,resourceType.http,url) for i,url in enumerate(urls)  if url!=""]
+def revisedResource(urls) -> List[nodeResource] :
+    nodeResources = [nodeResource(i, resourceType.http, url) for i, url in enumerate(urls) if url!=""]
     return nodeResources
     
 

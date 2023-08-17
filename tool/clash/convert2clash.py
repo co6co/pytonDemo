@@ -2,11 +2,10 @@
 
 import sys,os
 
-sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
-from log import log,warn
+from  co6co.utils.log import log,warn
 
 # Vmess转换成Clash节点
-def v2ray_to_clash(v2rayArr): 
+def v2ray_to_clash(v2rayArr):
     proxies =[]
     num = 0
     for item in v2rayArr:

@@ -2,7 +2,7 @@
 import math,time,random,sys,os
 import concurrent.futures # 提供异步执行回调高层接口 
 sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
-import log
+import co6co.utils.log as  log
 
 remark='''
 submit:                         异步执行调用方法
