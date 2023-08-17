@@ -1,6 +1,10 @@
 import math,sys,os
-#from .tool import log
-from tool import log
+from co6co.utils import log
+
+log.err(f'CWD:\t{os.getcwd()}')
+log.info(f"__file__\t{__file__}")
+log.warn(f"path:{sys.path[0:5]}...")
+
 print(os.path.abspath( os.path.join( os.path.dirname(__file__),"./tool")))
 #sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),"./tool"))) #引入log所在绝对目录
 #import log

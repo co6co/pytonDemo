@@ -14,6 +14,7 @@ def google(search_term):
 
     ab = anonBrowser(proxies= [ "127.0.0.1:9666"])
     search_term = urllib.parse.quote_plus(search_term)
+    # 过时了
     response =    ab.open('http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=' + search_term)
  
     objects = json.load(response)
@@ -27,7 +28,7 @@ def google(search_term):
     return result
 
 def main():
-    parser = optparse.OptionParser('usage%prog -u <target url>')
+    parser = optparse.OptionParser('usage%prog -k <target url>')
     parser.add_option('-k', dest='key', type='string', help='specify    target url') 
 
     (options, args) = parser.parse_args()
