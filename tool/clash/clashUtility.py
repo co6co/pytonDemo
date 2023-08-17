@@ -603,7 +603,9 @@ class clash:
             #data["proxy_names"]=[item["name"] for item in data["proxy_list"]] 
           
             #输出文件夹
-            if i>0: filePath=os.path.splitext(filePath)[0]+"_"+str(i)+os.path.splitext(filePath)[1]
+            if i>0:
+                name,ext= os.path.splitext(fileName)
+                filePath=os.path.join(outputFolder,name+"_"+str(i)+ext)
             _yamlConfig=copy.deepcopy( yamlConfig )
             final_config =clash.add_proxies_to_model(data, _yamlConfig) 
             clash.save_config(filePath, final_config)
