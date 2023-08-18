@@ -6,6 +6,7 @@ import htmlparser
 from clashUtility import clash,clashOption
 from co6co.utils import log
 from co6co.utils.File import File
+from co6co_clash import nodes as nodesParser
 
 import concurrent.futures; 
 
@@ -38,7 +39,7 @@ def parseSubUrls(jsonFilePath,args:dict):
                 item=futures[future]
                 result=future.result()
                 if result != None and len(result)>0:
-                    nodes=clash.convert(result) 
+                    nodes= nodesParser.parser(result) 
                     log.start_mark("remove")
                     nodes=clash.remove_duplicates(nodes)
                     log.end_mark("remove")
@@ -49,7 +50,7 @@ def parseSubUrls(jsonFilePath,args:dict):
                     c.outputToFile(template,nodes,3000,args.outputFolder,f"3_{item['id']}.yaml") 
             except Exception as e:
                 log.err(f"parseSubUrls err",e)
-                pass
+                raise
 
 if __name__ == '__main__': 
     default_output_dir=os.path.join(os.path.abspath("."),"sub",'yaml') 

@@ -1,15 +1,11 @@
-import requests,base64,yaml,sys,os,math,copy
-
-sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入log所在绝对目录
-import secure
+import requests,yaml,sys,os,math,copy,re
+from co6co_clash import nodes
+sys.path.append(os.path.abspath( os.path.join( os.path.dirname(__file__),".."))) #引入上级目录
 import tcp
-import co6co.utils.http as webutility
-from convert2clash import *
-from parserNode import *
+import co6co.utils.http as webutility 
 import geoip2.database
-import socket,  concurrent.futures 
-from typing import List
-import uuid,random
+import socket,  concurrent.futures
+import uuid
 import co6co.utils.log as log
 
 class resourceType:
@@ -121,96 +117,7 @@ class clash:
   
     def __init__(self,opt:clashOption) -> None:
         self.opt=opt
-        pass 
-
-    def _getName(name)->str:
-        '''
-        取出空白，为None 随机名字
-        '''
-        name=name.strip() if name else None
-        if name ==None: f"未知_{random.randrange(1,100000)}"
-        pattern="\s+"
-        return re.sub(pattern,'',name)
-
-    def _parseYamlNode(nodes:list):
-        '''
-        解析Yaml文件中的node 节点
-        nodes: yaml.get('proxies') 或者 yaml.get('Proxy')
-        return :nodes 基本上也是返回 参数，仅作整理过滤
-        '''
-        nodes_list = []
-        for node in nodes:
-            node['name'] =clash. _getName( node['name'])
-            node['server']=node['server'].strip()
-            # 对clashR的支持
-            if node.get('protocolparam'):
-                node['protocol-param'] = node['protocolparam']
-                del node['protocolparam']
-            if node.get('obfsparam'):
-                node['obfs-param'] = node['obfsparam']
-                del node['obfsparam']
-            node['udp'] = True
-            node['port'] = int(node['port']) 
-                
-            if node.get('name')==None: continue
-            nodes_list.append(node)
-        return nodes_list
-    def _parseYaml(yamlContent): # 解析yaml文本
-        '''
-        解析yaml 文本
-        生成 Nodes节点
-        '''
-        try:
-            yml = yaml.load(yamlContent, Loader=yaml.FullLoader) 
-            tmp_list = []
-            # clash新字段
-            if yml.get('proxies'):tmp_list = yml.get('proxies')
-            # clash旧字段
-            elif yml.get('Proxy'):tmp_list = yml.get('Proxy')
-            else:log.warn('clash节点提取失败,clash节点为空') 
-            return clash._parseYamlNode(tmp_list) 
-        except:
-            raise
-    @staticmethod
-    def convert(nodeUrls:List[str]|List[bytes]): 
-        nodes_list= []
-        for node in nodeUrls: 
-            clashNodes=[]
-            if type(node)==str:node =node.encode("utf-8")
-            try:
-                if node.startswith(b'vmess://'):
-                    decode_proxy = decode_v2ray_node([node]) 
-                    clashNodes=v2ray_to_clash(decode_proxy)
-                elif node.startswith(b'ss://'):
-                    decode_proxy = decode_ss_node([node])
-                    clashNodes=ss_to_clash(decode_proxy)
-                    
-                elif node.startswith(b'ssr://'):
-                    decode_proxy = decode_ssr_node([node])
-                    clashNodes=ssr_to_clash(decode_proxy)
-                    print(clashNodes)
-
-                elif node.startswith(b'trojan://'):
-                    decode_proxy = decode_trojan_node([node])
-                    clashNodes=trojan_to_clash(decode_proxy)
-                else:
-                    continue 
-            except Exception as e:
-                log.err(f'节点转换出错："{node}",{e}') 
-                continue 
-            for node in clashNodes: node['name'] =clash._getName( node['name']  )
-            nodes_list.extend(clashNodes)
-        if len(nodes_list)>0:return nodes_list
-    @staticmethod
-    def _parseNodeText(text:str| bytes): # 解析 从 base64 解析出来的文本 
-        '''
-        解析节点
-        '''
-        text_list = text.splitlines() 
-        #if type(text) == str: text_list=[itm.encode("utf-8") for itm  in text_list]
-        return clash.convert(text_list)
-
-         
+        pass   
     def __saveFile(self,resource:nodeResource,node_list):
         try:
             
@@ -243,28 +150,13 @@ class clash:
         except Exception as e:
            log.err(f"写文件错误:{e}",e)
            pass
-            
-           
- 
+             
     def genNode(self,resource:nodeResource)->list:
         nodes_list=[]
         addr=resource.address
         try:
-            nodeContent=self._getNodeContent(resource)
-                 
-            yamlData=yaml.full_load(nodeContent) 
-            if type (yamlData) == dict: #yaml 格式
-                #log.succ(f"{type(yamlData)}’yaml dict‘<--{addr}")
-                nodes_list=clash._parseYaml(nodeContent)
-            elif type (yamlData) == list and type(yamlData[0]) == dict: #yaml 格式中的节点
-                #log.succ(f"{type(yamlData)} ’yaml list dict‘<--{addr}")
-                nodes_list=clash._parseYamlNode(yamlData)
-            else: # base64加密 or node list
-                #log.succ(f"{type(yamlData)} ’TEXT‘<--{addr}")
-                rawTxt = base64.b64decode(nodeContent) if secure.base64.isBase64(nodeContent) else nodeContent 
-                #log.err(f"{type(rawTxt)},\n{rawTxt}")
-               
-                nodes_list=clash._parseNodeText(rawTxt)
+            nodeContent=self._getNodeContent(resource) 
+            nodes_list=nodes.parser_content(nodeContent) 
         except Exception as e:
             log.err('[-]解析节点失败:"{}",{}'.format(e,addr),e)
             pass
