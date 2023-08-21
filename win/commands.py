@@ -1,8 +1,6 @@
 import os ,sys,time
-#print("log 所在目录：{}\tsys.path.append 是否需要用全路径".format(os.path.abspath( os.path.join(os.path.dirname(__file__),"../tool") )))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"../tool") ))
-sys.path.append("../tool")
-from log import *
+
+from co6co.utils.log  import *
  
 class Command: # 执行windows 命令
     def __init__(self,commandText:str,resultContain=str|None) -> None: 

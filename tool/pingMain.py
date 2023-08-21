@@ -1,7 +1,7 @@
 import argparse
 import os,sys,re,time
 from typing import List 
-from log import *
+from co6co.utils.log import *
 from tcp import *
 import concurrent.futures as futures
 
