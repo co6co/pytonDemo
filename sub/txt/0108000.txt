@@ -9,12 +9,12 @@ proxies:
   tfo: false
   plugin: v2ray-plugin
   plugin-opts:
-    mode: websocket
+    mode: ''
     host: ''
     path: ''
     tls: false
-    mux: true
-    skip-cert-verify: true
+    mux: false
+    skip-cert-verify: false
   udp: true
 - name: 🇹🇼台湾独家|@ripaojiedian
   server: 103.177.33.180
@@ -33,7 +33,42 @@ proxies:
     mux: true
     skip-cert-verify: false
   udp: true
+- name: 🇸🇬狮城特殊|@ripaojiedian
+  server: 13.215.193.27
+  port: 443
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  tfo: false
+  udp: true
+- name: 🇰🇷韩国特殊|@ripaojiedian
+  server: 43.201.116.22
+  port: 443
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  tfo: false
+  udp: true
 - name: 🇯🇵日本KT|@ripaojiedian
+  server: 183.232.170.32
+  port: 30016
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-128-gcm
+  password: g12sQi#ss#&1
+  tfo: false
+  plugin: v2ray-plugin
+  plugin-opts:
+    mode: websocket
+    host: ''
+    path: ''
+    tls: false
+    mux: true
+    skip-cert-verify: true
+  udp: true
+- name: 🇯🇵日本KT2|@ripaojiedian
   server: 183.232.170.32
   port: 20013
   client-fingerprint: chrome
@@ -50,40 +85,23 @@ proxies:
     mux: true
     skip-cert-verify: true
   udp: true
-- name: 🇭🇰香港测试|@ripaojiedian
-  server: 45.11.104.94
-  port: 3306
+- name: 🇺🇸美国A|@ripaojiedian
+  server: 183.56.198.224
+  port: 27450
   client-fingerprint: chrome
-  type: trojan
-  password: 7b06d22a8a7c764f
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: ljqdalu13..
   tfo: false
-  sni: n2.gladns.com
-  skip-cert-verify: false
   udp: true
-- name: 🇭🇰香港|@ripaojiedian
-  server: 120.241.47.99
-  port: 44002
+- name: 🇺🇸美国B|@ripaojiedian
+  server: 65.20.98.25
+  port: 8313
   client-fingerprint: chrome
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: ljqdalu13..
   tfo: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇭🇰香港小火箭|@ripaojiedian
-  server: ieplszhk-03.telescopes.work
-  port: 50805
-  client-fingerprint: chrome
-  type: ssr
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  tfo: false
-  protocol: auth_aes128_md5
-  obfs: tls1.2_ticket_auth
-  protocol-param: 281528:hU0nbdC1T3
-  obfs-param: ajax.microsoft.com
   udp: true
 - name: 🇹🇼台湾|tg频道:@ripaojiedian
   server: tw1-vds1.anyhk.co
@@ -102,43 +120,47 @@ proxies:
     headers:
       Host: tw1-vds1.anyhk.co
   udp: true
-- name: 🇭🇰香港B|@ripaojiedian
-  server: 120.226.50.90
-  port: 40702
+- name: 🇹🇼台湾2|@ripaojiedian
+  server: zfd-twv2.kunlun-one.com
+  port: 16132
   client-fingerprint: chrome
   type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  uuid: f2dc204c-c78a-3a8d-9bcc-a3f13a22c171
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇯🇵日本A|@ripaojiedian
+  server: east.steamdownload.top
+  port: 13004
+  client-fingerprint: chrome
+  type: trojan
+  password: 6aea9c79-688d-49fe-af88-5a3b1fe09f97
+  tfo: false
+  sni: datajp.steamdownload.top
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸美国|tg频道:@ripaojiedian
+  server: 64.32.4.54
+  port: 43556
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 8653004f-de67-44c2-9cce-e0830933fb03
   alterId: 64
   cipher: auto
   tls: false
   tfo: false
   skip-cert-verify: false
   udp: true
-- name: 🇯🇵日本2|@ripaojiedian
-  server: btbu996.icu
-  port: 443
+- name: 🇭🇰香港A|@ripaojiedian
+  server: 120.241.46.111
+  port: 34214
   client-fingerprint: chrome
   type: vmess
-  uuid: 16702ec2-3808-46e6-a7b5-582c062be13d
-  alterId: 0
-  cipher: auto
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: jpnat1.doinb.tk
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: jpnat1.doinb.tk
-  udp: true
-- name: 🇯🇵日本1|@ripaojiedian
-  server: zjcm.pmxu.link
-  port: 63497
-  client-fingerprint: chrome
-  type: vmess
-  uuid: c2721d84-75ee-3492-8804-e1eec390c5a2
-  alterId: 0
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
   cipher: auto
   tls: false
   tfo: false
@@ -162,45 +184,6 @@ proxies:
     headers:
       Host: d.freeh1.xyz
   udp: true
-- name: 🇺🇸美国|tg频道:@ripaojiedian
-  server: 64.32.4.54
-  port: 43556
-  client-fingerprint: chrome
-  type: vmess
-  uuid: 8653004f-de67-44c2-9cce-e0830933fb03
-  alterId: 64
-  cipher: auto
-  tls: false
-  tfo: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇸🇬狮城特殊|@ripaojiedian
-  server: 13.215.193.27
-  port: 443
-  client-fingerprint: chrome
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  tfo: false
-  udp: true
-- name: 🇷🇺俄罗斯|@ripaojiedian
-  server: ru2.longyun.buzz
-  port: 50404
-  client-fingerprint: chrome
-  type: vmess
-  uuid: fc2038b4-ed83-38e7-a123-17e717c2e543
-  alterId: 0
-  cipher: auto
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: ru2.longyun.buzz
-  network: ws
-  ws-opts:
-    path: /vv
-    headers:
-      Host: ru2.longyun.buzz
-  udp: true
 - name: 🇺🇸美国2|@ripaojiedian
   server: yd1.992688.xyz
   port: 8880
@@ -218,48 +201,35 @@ proxies:
     headers:
       Host: vcus1.vpn66.eu.org
   udp: true
-- name: 🇪🇸西班牙|@ripaojiedian
-  server: sp1.connecton.surf
-  port: 443
+- name: 🇺🇸美国1|@ripaojiedian
+  server: 86.38.4.73
+  port: 8881
   client-fingerprint: chrome
-  type: trojan
-  password: 41dbabe59a
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
   tfo: false
-  sni: sp1.connecton.surf
-  skip-cert-verify: false
   udp: true
-- name: 🇭🇰香港特殊|@ripaojiedian
-  server: fd7fe5d.h1.gladns.com
-  port: 2377
+- name: 🇭🇰香港小火箭|@ripaojiedian
+  server: ieplszhk-03.telescopes.work
+  port: 50805
+  client-fingerprint: chrome
+  type: ssr
+  cipher: aes-256-cfb
+  password: hGkQ6915tD
+  tfo: false
+  protocol: auth_aes128_md5
+  obfs: tls1.2_ticket_auth
+  protocol-param: 281528:hU0nbdC1T3
+  obfs-param: ajax.microsoft.com
+  udp: true
+- name: 🇭🇰香港B|@ripaojiedian
+  server: 222.187.232.189
+  port: 25334
   client-fingerprint: chrome
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  tfo: false
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: (tg频道:@ripaojiedian)c27821f:16708
-  udp: true
-- name: 🇭🇰香港A|@ripaojiedian
-  server: 120.241.46.111
-  port: 34214
-  client-fingerprint: chrome
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  tfo: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇰🇷韩国特殊|@ripaojiedian
-  server: 43.201.116.22
-  port: 443
-  client-fingerprint: chrome
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+  password: 32db5366-c353-430b-ba55-35d8f608a1cf
   tfo: false
   udp: true
 - name: 🏳️‍🌈不要恶意刷流量
@@ -279,12 +249,42 @@ proxies:
     headers:
       Host: you.are.sb
   udp: true
-- name: 🇯🇵日本特殊|@ripaojiedian
-  server: 54.95.169.40
-  port: 443
+- name: 🇸🇬狮城测试|@ripaojiedian
+  server: 0bee9ed.s1.gladns.com
+  port: 2377
   client-fingerprint: chrome
   type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
   tfo: false
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: (tg@ripaojiedian)c27821f:16708
+  udp: true
+- name: 🇭🇰香港测试|@ripaojiedian
+  server: fd7fe5d.h3.gladns.com
+  port: 2377
+  client-fingerprint: chrome
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  tfo: false
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: (tg@ripaojiedian)c27821f:16708
+  udp: true
+- name: 🇹🇼台湾测试|@ripaojiedian
+  server: 0bee9ed.t1.gladns.com
+  port: 2377
+  client-fingerprint: chrome
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  tfo: false
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: (tg@ripaojiedian)c27821f:16708
   udp: true
