@@ -26,44 +26,26 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 0
+- alterId: 64
   cipher: auto
-  name: '[🇩🇪]_1640'
-  network: ws
-  port: 2087
-  server: 192.248.178.174
+  name: '[🇺🇸]美国_1644'
+  network: tcp
+  port: 51009
+  server: 142.4.112.29
   servername: ''
   tls: false
   type: vmess
-  uuid: de51162e-afdf-3b2e-918b-0cbe7818b2ae
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
+  uuid: ee9b0a03-4f0e-39e4-81ac-5a3868d14b3c
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇵🇭]_1637'
+  name: '[🇦🇶]_1645'
   network: ws
-  port: 29064
-  server: 109.248.25.59
+  port: 80
+  server: 104.21.63.185
   tls: false
   type: vmess
-  uuid: def5934c-7d10-315e-a5d8-09d7888f796f
-  ws-opts:
-    headers:
-      Host: ''
-    path: /ss
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇩🇪]_1642'
-  network: ws
-  port: 2053
-  server: 199.247.3.208
-  tls: false
-  type: vmess
-  uuid: a14ea41a-a822-3e68-917e-52fd87dfd93b
+  uuid: b0f55948-fd91-34c7-a4f5-cea6dc1e56a6
   ws-opts:
     headers:
       Host: ''
@@ -82,6 +64,20 @@ proxies:
     headers:
       Host: maous3.wzgmail.com
     path: /maohk3
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇩🇪]_1642'
+  network: ws
+  port: 2053
+  server: 199.247.3.208
+  tls: false
+  type: vmess
+  uuid: a14ea41a-a822-3e68-917e-52fd87dfd93b
+  ws-opts:
+    headers:
+      Host: ''
+    path: /
   udp: true
 - alterId: 0
   cipher: auto
@@ -104,10 +100,10 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇩🇪]_1640'
-  - '[🇵🇭]_1637'
-  - '[🇩🇪]_1642'
+  - '[🇺🇸]美国_1644'
+  - '[🇦🇶]_1645'
   - '[🇺🇸]_1646'
+  - '[🇩🇪]_1642'
   - '[🇺🇸]_1649'
 - name: 🎯 负载均衡
   type: load-balance
@@ -115,10 +111,10 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1640'
-  - '[🇵🇭]_1637'
-  - '[🇩🇪]_1642'
+  - '[🇺🇸]美国_1644'
+  - '[🇦🇶]_1645'
   - '[🇺🇸]_1646'
+  - '[🇩🇪]_1642'
   - '[🇺🇸]_1649'
 - name: ♻️ 自动选择
   type: fallback
@@ -126,10 +122,10 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1640'
-  - '[🇵🇭]_1637'
-  - '[🇩🇪]_1642'
+  - '[🇺🇸]美国_1644'
+  - '[🇦🇶]_1645'
   - '[🇺🇸]_1646'
+  - '[🇩🇪]_1642'
   - '[🇺🇸]_1649'
 - name: 🔰 延迟最低
   type: url-test
@@ -137,19 +133,19 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1640'
-  - '[🇵🇭]_1637'
-  - '[🇩🇪]_1642'
+  - '[🇺🇸]美国_1644'
+  - '[🇦🇶]_1645'
   - '[🇺🇸]_1646'
+  - '[🇩🇪]_1642'
   - '[🇺🇸]_1649'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇩🇪]_1640'
-  - '[🇵🇭]_1637'
-  - '[🇩🇪]_1642'
+  - '[🇺🇸]美国_1644'
+  - '[🇦🇶]_1645'
   - '[🇺🇸]_1646'
+  - '[🇩🇪]_1642'
   - '[🇺🇸]_1649'
 - name: 🎯 全球直连
   type: select
@@ -157,10 +153,10 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇩🇪]_1640'
-  - '[🇵🇭]_1637'
-  - '[🇩🇪]_1642'
+  - '[🇺🇸]美国_1644'
+  - '[🇦🇶]_1645'
   - '[🇺🇸]_1646'
+  - '[🇩🇪]_1642'
   - '[🇺🇸]_1649'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
