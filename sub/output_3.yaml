@@ -28,44 +28,34 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]中转_1899'
+  name: '[🇭🇰]_1899'
   network: tcp
-  port: 11130
-  server: www.zhongxin1.xyz
+  port: 40819
+  server: 156.245.8.151
   tls: false
   type: vmess
-  uuid: 5ea9e9a7-1030-3a7b-9fd6-24c687028092
+  uuid: eee4698a-508d-311e-ba2f-b1a3a1a65d6a
   udp: true
 - alterId: 64
   cipher: auto
-  name: '[🇺🇸]美国_1901'
+  name: '[🇺🇸]美国_1903'
   network: tcp
   port: 50433
   server: 8.45.51.237
   servername: ''
   tls: false
   type: vmess
-  uuid: 2f159448-9e42-3671-9dd9-71092336e83b
+  uuid: f6e33ff6-a88f-3c01-9470-8ae8b08c7a19
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]中转_1908'
-  network: tcp
-  port: 11888
-  server: www.zhongxin1.xyz
-  tls: false
-  type: vmess
-  uuid: 37afafe8-7ef1-34d0-ba8a-09126e87e21c
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇩🇪]_1912'
+  name: '[🇩🇪]_1913'
   network: ws
   port: 443
   server: 89.163.150.44
   tls: true
   type: vmess
-  uuid: cfb80cd2-a992-3af5-96e6-8b84f1e2d354
+  uuid: 3b398ddb-5f21-3c5d-9e6f-6cc480dc56f0
   ws-opts:
     headers:
       Host: ''
@@ -73,39 +63,40 @@ proxies:
   udp: true
 - alterId: 64
   cipher: auto
-  name: '[🇺🇸]美国_1920'
+  name: '[🇫🇷]_1919'
+  network: ws
+  port: 443
+  server: 156.249.18.9
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: dcc674b8-04ee-3600-9021-ecf535e46495
+  ws-opts:
+    headers:
+      Host: www.48643700.xyz
+    path: /path/1692789157600
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1921'
   network: tcp
   port: 53797
   server: 156.225.67.102
   servername: ''
   tls: false
   type: vmess
-  uuid: 8af81462-f1c3-3875-838a-9d7e4abcf570
+  uuid: 73a4ca3d-e998-3cc4-8b43-6370939e778e
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇭🇰]_1933'
-  network: ws
-  port: 443
-  server: dp.tntbooms.com
-  tls: true
-  type: vmess
-  uuid: 1042ba07-254b-3efa-ae50-abb6c1131b9f
-  ws-opts:
-    headers:
-      Host: dp.tntbooms.com
-    path: /ttf
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇰🇷]韩国_1934'
+  name: '[🇰🇷]韩国_1935'
   network: ws
   port: 20952
   server: kr1.xujason.tk
   servername: ''
   tls: false
   type: vmess
-  uuid: 37c988c2-61a8-36db-8b2a-2fbbedd7fe52
+  uuid: bdf246e1-9ccc-3923-bae7-13addd71cdb3
   ws-opts:
     headers:
       Host: kr1.xujason.tk
@@ -113,13 +104,17 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]中转_1935'
-  network: tcp
-  port: 11999
-  server: www.zhongxin1.xyz
-  tls: false
+  name: '[🇭🇰]_1934'
+  network: ws
+  port: 443
+  server: dp.tntbooms.com
+  tls: true
   type: vmess
-  uuid: 3aeae829-589e-3d20-b9b4-0595191f32b5
+  uuid: b2465c2e-73bf-3fa0-bce5-b7146de93329
+  ws-opts:
+    headers:
+      Host: dp.tntbooms.com
+    path: /ttf
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -128,82 +123,76 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇨🇳]中转_1899'
-  - '[🇺🇸]美国_1901'
-  - '[🇨🇳]中转_1908'
-  - '[🇩🇪]_1912'
-  - '[🇺🇸]美国_1920'
-  - '[🇭🇰]_1933'
-  - '[🇰🇷]韩国_1934'
-  - '[🇨🇳]中转_1935'
+  - '[🇭🇰]_1899'
+  - '[🇺🇸]美国_1903'
+  - '[🇩🇪]_1913'
+  - '[🇫🇷]_1919'
+  - '[🇺🇸]美国_1921'
+  - '[🇰🇷]韩国_1935'
+  - '[🇭🇰]_1934'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]中转_1899'
-  - '[🇺🇸]美国_1901'
-  - '[🇨🇳]中转_1908'
-  - '[🇩🇪]_1912'
-  - '[🇺🇸]美国_1920'
-  - '[🇭🇰]_1933'
-  - '[🇰🇷]韩国_1934'
-  - '[🇨🇳]中转_1935'
+  - '[🇭🇰]_1899'
+  - '[🇺🇸]美国_1903'
+  - '[🇩🇪]_1913'
+  - '[🇫🇷]_1919'
+  - '[🇺🇸]美国_1921'
+  - '[🇰🇷]韩国_1935'
+  - '[🇭🇰]_1934'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]中转_1899'
-  - '[🇺🇸]美国_1901'
-  - '[🇨🇳]中转_1908'
-  - '[🇩🇪]_1912'
-  - '[🇺🇸]美国_1920'
-  - '[🇭🇰]_1933'
-  - '[🇰🇷]韩国_1934'
-  - '[🇨🇳]中转_1935'
+  - '[🇭🇰]_1899'
+  - '[🇺🇸]美国_1903'
+  - '[🇩🇪]_1913'
+  - '[🇫🇷]_1919'
+  - '[🇺🇸]美国_1921'
+  - '[🇰🇷]韩国_1935'
+  - '[🇭🇰]_1934'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]中转_1899'
-  - '[🇺🇸]美国_1901'
-  - '[🇨🇳]中转_1908'
-  - '[🇩🇪]_1912'
-  - '[🇺🇸]美国_1920'
-  - '[🇭🇰]_1933'
-  - '[🇰🇷]韩国_1934'
-  - '[🇨🇳]中转_1935'
+  - '[🇭🇰]_1899'
+  - '[🇺🇸]美国_1903'
+  - '[🇩🇪]_1913'
+  - '[🇫🇷]_1919'
+  - '[🇺🇸]美国_1921'
+  - '[🇰🇷]韩国_1935'
+  - '[🇭🇰]_1934'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇨🇳]中转_1899'
-  - '[🇺🇸]美国_1901'
-  - '[🇨🇳]中转_1908'
-  - '[🇩🇪]_1912'
-  - '[🇺🇸]美国_1920'
-  - '[🇭🇰]_1933'
-  - '[🇰🇷]韩国_1934'
-  - '[🇨🇳]中转_1935'
+  - '[🇭🇰]_1899'
+  - '[🇺🇸]美国_1903'
+  - '[🇩🇪]_1913'
+  - '[🇫🇷]_1919'
+  - '[🇺🇸]美国_1921'
+  - '[🇰🇷]韩国_1935'
+  - '[🇭🇰]_1934'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇨🇳]中转_1899'
-  - '[🇺🇸]美国_1901'
-  - '[🇨🇳]中转_1908'
-  - '[🇩🇪]_1912'
-  - '[🇺🇸]美国_1920'
-  - '[🇭🇰]_1933'
-  - '[🇰🇷]韩国_1934'
-  - '[🇨🇳]中转_1935'
+  - '[🇭🇰]_1899'
+  - '[🇺🇸]美国_1903'
+  - '[🇩🇪]_1913'
+  - '[🇫🇷]_1919'
+  - '[🇺🇸]美国_1921'
+  - '[🇰🇷]韩国_1935'
+  - '[🇭🇰]_1934'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
