@@ -28,10 +28,48 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]中转_1194'
+  name: '[🇨🇳]中转_1191'
   network: tcp
   port: 50007
   server: 36.140.102.11
+  tls: false
+  type: vmess
+  uuid: 9b65ef18-87e4-3108-b917-b1174aebbfb6
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]_1197'
+  network: ws
+  port: 80
+  server: 162.159.142.224
+  tls: false
+  type: vmess
+  uuid: e9dcdb0b-11a2-3e23-8b85-2c20363af91a
+  ws-opts:
+    headers:
+      Host: ''
+    path: /1654431
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇰🇷]_1192'
+  network: ws
+  port: 2053
+  server: 158.180.70.132
+  tls: true
+  type: vmess
+  uuid: e84c0ad3-27ca-3116-bf8a-592bc22ae395
+  ws-opts:
+    headers:
+      Host: ''
+    path: /blue
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇳]中转_1194'
+  network: tcp
+  port: 50007
+  server: 07.kccic2pa.xyz
   tls: false
   type: vmess
   uuid: ca9d5d27-b914-3155-b351-795b7638d4f2
@@ -40,49 +78,11 @@ proxies:
   cipher: auto
   name: '[🇦🇶]_1200'
   network: ws
-  port: 80
-  server: 162.159.142.224
-  tls: false
-  type: vmess
-  uuid: 6e1c2988-7878-3ca6-8cb2-9c80229f79c9
-  ws-opts:
-    headers:
-      Host: ''
-    path: /1654431
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇰🇷]_1195'
-  network: ws
-  port: 2053
-  server: 158.180.70.132
-  tls: true
-  type: vmess
-  uuid: 43aa738c-41f5-3f85-9dce-5f368ccf1aca
-  ws-opts:
-    headers:
-      Host: ''
-    path: /blue
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇳]中转_1197'
-  network: tcp
-  port: 50007
-  server: 07.kccic2pa.xyz
-  tls: false
-  type: vmess
-  uuid: 0d830a8c-dfe5-3294-bc48-5b1c30d56dd6
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]_1203'
-  network: ws
   port: 2082
   server: ca-01.cloudlion.me
   tls: false
   type: vmess
-  uuid: 65904915-84bb-344e-8b58-47f36f5e6299
+  uuid: 6e1c2988-7878-3ca6-8cb2-9c80229f79c9
   ws-opts:
     headers:
       Host: ca-01.cloudlion.me
@@ -90,13 +90,13 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]中转_1201'
+  name: '[🇨🇳]中转_1198'
   network: tcp
   port: 50027
   server: 27.kccic2pa.xyz
   tls: false
   type: vmess
-  uuid: 80a0b1c0-84e0-34e8-bcf9-18574e1b1939
+  uuid: 87b457b7-f98c-3872-91b3-911b8a8820cd
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -105,70 +105,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇨🇳]中转_1191'
+  - '[🇦🇶]_1197'
+  - '[🇰🇷]_1192'
   - '[🇨🇳]中转_1194'
   - '[🇦🇶]_1200'
-  - '[🇰🇷]_1195'
-  - '[🇨🇳]中转_1197'
-  - '[🇺🇸]_1203'
-  - '[🇨🇳]中转_1201'
+  - '[🇨🇳]中转_1198'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇨🇳]中转_1191'
+  - '[🇦🇶]_1197'
+  - '[🇰🇷]_1192'
   - '[🇨🇳]中转_1194'
   - '[🇦🇶]_1200'
-  - '[🇰🇷]_1195'
-  - '[🇨🇳]中转_1197'
-  - '[🇺🇸]_1203'
-  - '[🇨🇳]中转_1201'
+  - '[🇨🇳]中转_1198'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇨🇳]中转_1191'
+  - '[🇦🇶]_1197'
+  - '[🇰🇷]_1192'
   - '[🇨🇳]中转_1194'
   - '[🇦🇶]_1200'
-  - '[🇰🇷]_1195'
-  - '[🇨🇳]中转_1197'
-  - '[🇺🇸]_1203'
-  - '[🇨🇳]中转_1201'
+  - '[🇨🇳]中转_1198'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇨🇳]中转_1191'
+  - '[🇦🇶]_1197'
+  - '[🇰🇷]_1192'
   - '[🇨🇳]中转_1194'
   - '[🇦🇶]_1200'
-  - '[🇰🇷]_1195'
-  - '[🇨🇳]中转_1197'
-  - '[🇺🇸]_1203'
-  - '[🇨🇳]中转_1201'
+  - '[🇨🇳]中转_1198'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇨🇳]中转_1191'
+  - '[🇦🇶]_1197'
+  - '[🇰🇷]_1192'
   - '[🇨🇳]中转_1194'
   - '[🇦🇶]_1200'
-  - '[🇰🇷]_1195'
-  - '[🇨🇳]中转_1197'
-  - '[🇺🇸]_1203'
-  - '[🇨🇳]中转_1201'
+  - '[🇨🇳]中转_1198'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇨🇳]中转_1191'
+  - '[🇦🇶]_1197'
+  - '[🇰🇷]_1192'
   - '[🇨🇳]中转_1194'
   - '[🇦🇶]_1200'
-  - '[🇰🇷]_1195'
-  - '[🇨🇳]中转_1197'
-  - '[🇺🇸]_1203'
-  - '[🇨🇳]中转_1201'
+  - '[🇨🇳]中转_1198'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
