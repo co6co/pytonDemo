@@ -26,68 +26,36 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1296'
-  network: ws
-  port: 443
-  server: downloadvip.cfd
-  tls: true
-  type: vmess
-  uuid: 3dbb4f18-f222-3f1f-959b-784f09192f27
-  ws-opts:
-    headers:
-      Host: downloadvip.cfd
-    path: /djjc/us3
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]_1298'
-  network: ws
-  port: 80
-  server: mtlr.shabijichang.com
-  tls: false
-  type: vmess
-  uuid: a8253bc0-5291-3500-8683-915eb804a35e
-  ws-opts:
-    headers:
-      Host: mtlr.shabijichang.com
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1181'
-  network: ws
-  port: 443
-  server: vn4.4gspeed.me
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: e3e8aa75-263d-360b-8935-cc158749f1b0
-  ws-opts:
-    headers:
-      Host: dl.kgvn.garenanow.com
-    path: /4gspeed.me
 - alterId: 64
   cipher: auto
-  name: '[🇺🇸]美国_1284'
+  name: '[🇺🇸]美国_1288'
   network: tcp
   port: 45592
   server: 7263join.outline-vpn.cloud
   tls: false
   type: vmess
-  uuid: 32e021e7-d393-30e9-8a27-b892077c3896
+  uuid: 332e5f63-108f-34e9-8d5f-6703abe04777
+  udp: true
+- name: '[🇰🇷]_1259'
+  server: 144.24.88.101
+  port: 16833
+  type: vmess
+  uuid: 5d47459b-bd2e-35e8-bd06-e6b9a8ba88ee
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: 144.24.88.101
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇯🇵]_1262'
+  name: '[🇸🇬]_1266'
   network: ws
   port: 80
   server: cdn.anycast.eu.org
   tls: false
   type: vmess
-  uuid: b124ac9a-2382-3f37-8662-6747fd4af701
+  uuid: 52e9c2b2-737e-3bbf-b327-7612acea96dc
   ws-opts:
     headers:
       Host: cdn.anycast.eu.org
@@ -95,13 +63,13 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]_1279'
+  name: '[🇦🇶]_1283'
   network: ws
   port: 443
   server: ip.yydsii.com
   tls: true
   type: vmess
-  uuid: 40c8baca-ba6f-3110-973a-e3d7454512fa
+  uuid: dd96b490-331e-3c48-9493-d332adb6446e
   ws-opts:
     headers:
       Host: ip.yydsii.com
@@ -114,70 +82,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_1296'
-  - '[🇺🇸]_1298'
-  - '[🇦🇶]_1181'
-  - '[🇺🇸]美国_1284'
-  - '[🇯🇵]_1262'
-  - '[🇦🇶]_1279'
+  - '[🇺🇸]美国_1288'
+  - '[🇰🇷]_1259'
+  - '[🇸🇬]_1266'
+  - '[🇦🇶]_1283'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1296'
-  - '[🇺🇸]_1298'
-  - '[🇦🇶]_1181'
-  - '[🇺🇸]美国_1284'
-  - '[🇯🇵]_1262'
-  - '[🇦🇶]_1279'
+  - '[🇺🇸]美国_1288'
+  - '[🇰🇷]_1259'
+  - '[🇸🇬]_1266'
+  - '[🇦🇶]_1283'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1296'
-  - '[🇺🇸]_1298'
-  - '[🇦🇶]_1181'
-  - '[🇺🇸]美国_1284'
-  - '[🇯🇵]_1262'
-  - '[🇦🇶]_1279'
+  - '[🇺🇸]美国_1288'
+  - '[🇰🇷]_1259'
+  - '[🇸🇬]_1266'
+  - '[🇦🇶]_1283'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1296'
-  - '[🇺🇸]_1298'
-  - '[🇦🇶]_1181'
-  - '[🇺🇸]美国_1284'
-  - '[🇯🇵]_1262'
-  - '[🇦🇶]_1279'
+  - '[🇺🇸]美国_1288'
+  - '[🇰🇷]_1259'
+  - '[🇸🇬]_1266'
+  - '[🇦🇶]_1283'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_1296'
-  - '[🇺🇸]_1298'
-  - '[🇦🇶]_1181'
-  - '[🇺🇸]美国_1284'
-  - '[🇯🇵]_1262'
-  - '[🇦🇶]_1279'
+  - '[🇺🇸]美国_1288'
+  - '[🇰🇷]_1259'
+  - '[🇸🇬]_1266'
+  - '[🇦🇶]_1283'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_1296'
-  - '[🇺🇸]_1298'
-  - '[🇦🇶]_1181'
-  - '[🇺🇸]美国_1284'
-  - '[🇯🇵]_1262'
-  - '[🇦🇶]_1279'
+  - '[🇺🇸]美国_1288'
+  - '[🇰🇷]_1259'
+  - '[🇸🇬]_1266'
+  - '[🇦🇶]_1283'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
