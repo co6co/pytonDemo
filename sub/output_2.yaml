@@ -28,20 +28,6 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1295'
-  network: ws
-  port: 80
-  server: 8745.outline-vpn.cloud
-  tls: false
-  type: vmess
-  uuid: c2ad7472-77c4-368b-8e99-1006c20cac15
-  ws-opts:
-    headers:
-      Host: 8745.outline-vpn.cloud
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇦🇶]_1296'
   network: ws
   port: 443
@@ -53,20 +39,6 @@ proxies:
     headers:
       Host: downloadvip.cfd
     path: /djjc/us3
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1297'
-  network: ws
-  port: 80
-  server: bl.shabijichang.com
-  tls: false
-  type: vmess
-  uuid: 3a1b26a4-4171-383f-a728-1cfa3365d114
-  ws-opts:
-    headers:
-      Host: bl.shabijichang.com
-    path: /
   udp: true
 - alterId: 0
   cipher: auto
@@ -82,19 +54,30 @@ proxies:
       Host: mtlr.shabijichang.com
     path: /
   udp: true
-- name: '[🇯🇵]_1253'
-  server: jpcdn.bh8189.eu.org
-  port: 2087
-  type: vmess
-  uuid: cbbdae33-bab8-3872-9412-ba5ad2d45ebd
-  alterId: 0
+- alterId: 0
   cipher: auto
-  tls: true
+  name: '[🇦🇶]_1181'
+  network: ws
+  port: 443
+  server: vn4.4gspeed.me
   skip-cert-verify: false
-  servername: hostodo.galenet.online
-  network: grpc
-  grpc-opts:
-    grpc-service-name: hostodo.galenet.online
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e3e8aa75-263d-360b-8935-cc158749f1b0
+  ws-opts:
+    headers:
+      Host: dl.kgvn.garenanow.com
+    path: /4gspeed.me
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1284'
+  network: tcp
+  port: 45592
+  server: 7263join.outline-vpn.cloud
+  tls: false
+  type: vmess
+  uuid: 32e021e7-d393-30e9-8a27-b892077c3896
   udp: true
 - alterId: 0
   cipher: auto
@@ -124,21 +107,6 @@ proxies:
       Host: ip.yydsii.com
     path: /
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1180'
-  network: ws
-  port: 443
-  server: vn3.4gspeed.me
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 32dbf4db-5942-3f02-aa17-83822414b677
-  ws-opts:
-    headers:
-      Host: dl.kgvn.garenanow.com
-    path: /4gspeed.me
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -146,82 +114,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1295'
   - '[🇦🇶]_1296'
-  - '[🇦🇶]_1297'
   - '[🇺🇸]_1298'
-  - '[🇯🇵]_1253'
+  - '[🇦🇶]_1181'
+  - '[🇺🇸]美国_1284'
   - '[🇯🇵]_1262'
   - '[🇦🇶]_1279'
-  - '[🇦🇶]_1180'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1295'
   - '[🇦🇶]_1296'
-  - '[🇦🇶]_1297'
   - '[🇺🇸]_1298'
-  - '[🇯🇵]_1253'
+  - '[🇦🇶]_1181'
+  - '[🇺🇸]美国_1284'
   - '[🇯🇵]_1262'
   - '[🇦🇶]_1279'
-  - '[🇦🇶]_1180'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1295'
   - '[🇦🇶]_1296'
-  - '[🇦🇶]_1297'
   - '[🇺🇸]_1298'
-  - '[🇯🇵]_1253'
+  - '[🇦🇶]_1181'
+  - '[🇺🇸]美国_1284'
   - '[🇯🇵]_1262'
   - '[🇦🇶]_1279'
-  - '[🇦🇶]_1180'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1295'
   - '[🇦🇶]_1296'
-  - '[🇦🇶]_1297'
   - '[🇺🇸]_1298'
-  - '[🇯🇵]_1253'
+  - '[🇦🇶]_1181'
+  - '[🇺🇸]美国_1284'
   - '[🇯🇵]_1262'
   - '[🇦🇶]_1279'
-  - '[🇦🇶]_1180'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1295'
   - '[🇦🇶]_1296'
-  - '[🇦🇶]_1297'
   - '[🇺🇸]_1298'
-  - '[🇯🇵]_1253'
+  - '[🇦🇶]_1181'
+  - '[🇺🇸]美国_1284'
   - '[🇯🇵]_1262'
   - '[🇦🇶]_1279'
-  - '[🇦🇶]_1180'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1295'
   - '[🇦🇶]_1296'
-  - '[🇦🇶]_1297'
   - '[🇺🇸]_1298'
-  - '[🇯🇵]_1253'
+  - '[🇦🇶]_1181'
+  - '[🇺🇸]美国_1284'
   - '[🇯🇵]_1262'
   - '[🇦🇶]_1279'
-  - '[🇦🇶]_1180'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
