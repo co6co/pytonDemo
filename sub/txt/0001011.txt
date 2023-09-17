@@ -1,20 +1,5 @@
 proxies:
 - name: 🇺🇸美国CloudFlare节点
-  server: yd1.992688.xyz
-  port: 8880
-  type: vmess
-  uuid: 782e0824-df3e-4c32-de48-beb41c0dadcf
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: euserv2.vpn66.eu.org
-  udp: true
-- name: 🇺🇸美国CloudFlare节点2
   server: iran01.biqibao.site
   port: 2052
   type: vmess
@@ -29,11 +14,18 @@ proxies:
     headers:
       Host: de2.biqibao.site
   udp: true
-- name: 🇺🇸美国CloudFlare节点3
-  server: v117.runba.gq
+- name: 安徽省移动数据上网公共出口
+  server: hefei.chiguayun.cc
+  port: 27145
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 788c06bf-83b0-4186-b45d-8966efc7c3fc
+  udp: true
+- name: 🇺🇸美国CloudFlare节点2
+  server: sg.wyhkaa0.cf
   port: 80
   type: vmess
-  uuid: 892ebb75-7055-3007-8d16-356e65c6a49a
+  uuid: 0ba28c05-7bd9-4cad-c329-482386a8e7a3
   alterId: 0
   cipher: auto
   tls: false
@@ -42,19 +34,24 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: v117.runba.gq
+      Host: sg.wyhkaa0.cf
   udp: true
-- name: 🇿🇦南非V2CROSS.COM
-  server: 156.225.67.23
-  port: 51181
+- name: 🇺🇸美国CloudFlare节点3
+  server: 162.159.137.22
+  port: 443
   type: vmess
-  uuid: 375e70f0-5d46-476f-8d69-0fb35c5548a9
-  alterId: 64
+  uuid: 5b655ae0-9937-4a07-8cd3-9ff50cdb2c48
+  alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: jp.denny.cf
   udp: true
-- name: 安徽省移动数据上网公共出口
+- name: 安徽省移动数据上网公共出口2
   server: hefei.chiguayun.cc
   port: 27124
   type: ss
