@@ -15,6 +15,31 @@ proxies:
       Host: media-exp1.licdn.com
   udp: true
 - name: CN_speednode_0002
+  server: 120.226.50.78
+  port: 53300
+  type: vmess
+  client-fingerprint: chrome
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: CN_speednode_0003
+  server: 110.72.99.118
+  port: 3306
+  type: trojan
+  password: 8a1ab0df6abea549
+  sni: n2.gladns.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /gateway/connect
+    headers:
+      Host: n2.gladns.com
+  udp: true
+- name: CN_speednode_0004
   server: jpd.ginf.me
   port: 30204
   type: ssr
@@ -25,7 +50,7 @@ proxies:
   protocol-param: 502:DzrH8M
   obfs-param: 0f2a3502.ikea.com
   udp: true
-- name: CN_speednode_0003
+- name: CN_speednode_0005
   server: 6q59.cdn.node.a.tddns-ounk.com
   port: 40261
   type: vmess
@@ -40,22 +65,41 @@ proxies:
     headers:
       Host: 6q59.cdn.node.a.tddns-ounk.com
   udp: true
-- name: CN_speednode_0004
-  server: free.node.kk-proxy.pro
-  port: 54455
+- name: CN_speednode_0006
+  server: 183.232.170.32
+  port: 20014
   type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 6b95fbcf-2e3e-472e-b3ad-b7ff33b7afce
+  client-fingerprint: chrome
+  cipher: aes-128-gcm
+  password: g12sQi#ss#&1
+  tfo: false
+  plugin: v2ray-plugin
+  plugin-opts:
+    mode: websocket
+    host: ''
+    path: ''
+    tls: false
+    mux: true
+    skip-cert-verify: true
   udp: true
-- name: DE_speednode_0005
-  server: 18.198.112.251
-  port: 22222
-  type: trojan
-  password: telegram-id-directvpn
-  sni: trj.rollingnext.co.uk
-  skip-cert-verify: true
+- name: CN_speednode_0007
+  server: 183.232.170.32
+  port: 20014
+  type: ss
+  cipher: aes-128-gcm
+  client-fingerprint: chrome
+  password: g12sQi#ss#&1
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: ''
+    mode: websocket
+    mux: true
+    path: ''
+    skip-cert-verify: true
+    tls: false
+  tfo: false
   udp: true
-- name: DE_speednode_0006
+- name: DE_speednode_0008
   server: 3.65.223.30
   port: 22222
   type: trojan
@@ -63,7 +107,7 @@ proxies:
   sni: trj.rollingnext.co.uk
   skip-cert-verify: true
   udp: true
-- name: FR_speednode_0007
+- name: FR_speednode_0009
   server: 51.38.99.96
   port: 443
   type: trojan
@@ -71,21 +115,21 @@ proxies:
   sni: sourceforge.net
   skip-cert-verify: true
   udp: true
-- name: GB_speednode_0008
+- name: GB_speednode_0010
   server: 51.38.71.175
   port: 80
   type: trojan
   password: b640d791-ff83-4300-b509-c2a02f97f167
   skip-cert-verify: true
   udp: true
-- name: GB_speednode_0009
+- name: GB_speednode_0011
   server: uk1.trojanvh.xyz
   port: 80
   type: trojan
   password: b640d791-ff83-4300-b509-c2a02f97f167
   skip-cert-verify: true
   udp: true
-- name: HK_speednode_0010
+- name: HK_speednode_0012
   server: 45.11.104.94
   port: 3306
   type: trojan
@@ -100,16 +144,35 @@ proxies:
     headers:
       Host: n2.gladns.com
   udp: true
-- name: SG_speednode_0011
-  server: 54.255.178.208
-  port: 443
-  type: ss
-  client-fingerprint: chrome
-  cipher: aes-256-cfb
-  password: amazonskr05
-  tfo: false
+- name: JP_speednode_0013
+  server: 103.168.155.69
+  port: 3306
+  type: trojan
   udp: true
-- name: US_speednode_0012
+  password: 3febb05ea76a940f
+  sni: n2.gladns.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /gateway/connect
+    headers:
+      host: n2.gladns.com
+- name: SG_speednode_0014
+  server: 5.44.249.42
+  port: 3306
+  type: trojan
+  client-fingerprint: chrome
+  password: 36fe28a331638747
+  tfo: false
+  sni: n2.gladns.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /gateway/connect
+    headers:
+      Host: n2.gladns.com
+  udp: true
+- name: US_speednode_0015
   server: 216.52.183.244
   port: 443
   type: ss
@@ -126,7 +189,24 @@ proxies:
     mux: true
     skip-cert-verify: true
   udp: true
-- name: US_speednode_0013
+- name: US_speednode_0016
+  server: 216.52.183.244
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  client-fingerprint: chrome
+  password: 83XvX4Vo%*3a
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: ''
+    mode: websocket
+    mux: true
+    path: ''
+    skip-cert-verify: true
+    tls: false
+  tfo: false
+  udp: true
+- name: US_speednode_0017
   server: 137.175.57.4
   port: 443
   type: vmess
@@ -140,36 +220,4 @@ proxies:
     path: /path/1685695848459
     headers:
       Host: www.37419052.xyz
-  udp: true
-- name: US_speednode_0014
-  server: ahsorathiyaa.fly.dev
-  port: 443
-  type: vmess
-  uuid: de04add9-5c68-8bab-950c-08cd5320df18
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: ahsorathiyaa.fly.dev
-  udp: true
-- name: US_speednode_0015
-  server: 216.52.183.244
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  client-fingerprint: chrome
-  password: 83XvX4Vo%*3a
-  plugin: v2ray-plugin
-  plugin-opts:
-    host: ''
-    mode: websocket
-    mux: true
-    path: ''
-    skip-cert-verify: true
-    tls: false
-  tfo: false
   udp: true
