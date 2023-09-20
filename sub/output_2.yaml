@@ -28,41 +28,17 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1334'
-  network: ws
-  port: 80
-  server: 172.64.199.158
-  tls: false
-  type: vmess
-  uuid: 94028dc5-4459-3169-9f10-4ac4b39bf0fb
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]_1341'
+  name: '[🇺🇸]_1342'
   network: ws
   port: 2052
   server: free1.6114514.xyz
   tls: false
   type: vmess
-  uuid: f0b48417-54ee-3226-ad44-f68362d0dd91
+  uuid: 2310ba64-e20a-3bcf-b47c-59be2f81e2fb
   ws-opts:
     headers:
       Host: free1.6114514.xyz
     path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇳]中转_1345'
-  network: tcp
-  port: 50012
-  server: 12.kccic2pa.xyz
-  tls: false
-  type: vmess
-  uuid: 3cda03fc-2c59-360d-8e06-bac625711733
   udp: true
 - alterId: 0
   cipher: auto
@@ -86,9 +62,7 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1334'
-  - '[🇺🇸]_1341'
-  - '[🇨🇳]中转_1345'
+  - '[🇺🇸]_1342'
   - '[🇺🇸]英国_1348'
 - name: 🎯 负载均衡
   type: load-balance
@@ -96,9 +70,7 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1334'
-  - '[🇺🇸]_1341'
-  - '[🇨🇳]中转_1345'
+  - '[🇺🇸]_1342'
   - '[🇺🇸]英国_1348'
 - name: ♻️ 自动选择
   type: fallback
@@ -106,9 +78,7 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1334'
-  - '[🇺🇸]_1341'
-  - '[🇨🇳]中转_1345'
+  - '[🇺🇸]_1342'
   - '[🇺🇸]英国_1348'
 - name: 🔰 延迟最低
   type: url-test
@@ -116,17 +86,13 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1334'
-  - '[🇺🇸]_1341'
-  - '[🇨🇳]中转_1345'
+  - '[🇺🇸]_1342'
   - '[🇺🇸]英国_1348'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1334'
-  - '[🇺🇸]_1341'
-  - '[🇨🇳]中转_1345'
+  - '[🇺🇸]_1342'
   - '[🇺🇸]英国_1348'
 - name: 🎯 全球直连
   type: select
@@ -134,9 +100,7 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1334'
-  - '[🇺🇸]_1341'
-  - '[🇨🇳]中转_1345'
+  - '[🇺🇸]_1342'
   - '[🇺🇸]英国_1348'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
