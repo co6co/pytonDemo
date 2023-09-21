@@ -26,43 +26,73 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 0
-  cipher: auto
-  name: '[🇮🇳]_1292'
-  network: ws
+- name: '[🇺🇸]_1302'
+  server: vus5.0bad.com
   port: 443
-  server: vin1.0bad.com
-  servername: vin1.0bad.com
-  skip-cert-verify: false
-  tls: true
   type: vmess
-  uuid: 1e06d6f2-a18a-384a-a759-b6a4589051f6
+  uuid: cd2579c3-38e7-3604-9f18-84f4f56dc6ba
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
   ws-opts:
+    path: /chat
+    headers:
+      Host: vus5.0bad.com
+  udp: true
+- name: '[🇮🇳]_1298'
+  server: vin1.0bad.com
+  port: 443
+  type: vmess
+  uuid: 6b833116-782a-35b8-a167-749f97380c64
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: vin1.0bad.com
+  network: ws
+  ws-opts:
+    path: /chat
     headers:
       Host: vin1.0bad.com
-    path: /chat
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇺]_1295'
-  network: ws
+- name: '[🇬🇧]_1300'
+  server: vuk1.0bad.com
   port: 443
-  server: vau1.0bad.com
-  servername: vau1.0bad.com
-  skip-cert-verify: false
-  tls: true
   type: vmess
-  uuid: 1844ba65-3710-3027-a11a-81b5132f2b2a
+  uuid: 36b5471f-9183-3537-a737-00ae45b845f2
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
   ws-opts:
-    headers:
-      Host: vau1.0bad.com
     path: /chat
+    headers:
+      Host: vuk1.0bad.com
   udp: true
-- name: '[🇦🇶]_1325'
+- name: '[🇺🇸]_1312'
+  server: vus3.0bad.com
+  port: 443
+  type: vmess
+  uuid: 8e6f4239-8037-3ab9-a392-67749b95ca05
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: vus3.0bad.com
+  network: ws
+  ws-opts:
+    path: /chat
+    headers:
+      Host: vus3.0bad.com
+  udp: true
+- name: '[🇺🇸]_1325'
   server: hkd1.quickerlink.xyz
   port: 443
   type: vmess
-  uuid: e70bb5fd-104c-3e53-9be7-8bce2bf909d3
+  uuid: 1f34afd4-a46e-3515-ab70-ef7478ff66c7
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -71,6 +101,22 @@ proxies:
   tls: true
   ws-headers:
     Host: hkd1.quickerlink.xyz
+  udp: true
+- name: '[🇦🇺]_1301'
+  server: vau1.0bad.com
+  port: 443
+  type: vmess
+  uuid: fe26dd89-b19a-3d43-8c6d-bf0f1e9c56ec
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: vau1.0bad.com
+  network: ws
+  ws-opts:
+    path: /chat
+    headers:
+      Host: vau1.0bad.com
   udp: true
 - name: '[🇸🇬]_1324'
   server: 159.223.94.156
@@ -88,16 +134,6 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]中转_1328'
-  network: tcp
-  port: 50016
-  server: 16.kccic2pa.xyz
-  tls: false
-  type: vmess
-  uuid: a7947d89-5173-3d93-a403-b1e89c284e01
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇺🇸]_1330'
   network: ws
   port: 80
@@ -109,6 +145,16 @@ proxies:
     headers:
       Host: ''
     path: /shirker
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇳]中转_1328'
+  network: tcp
+  port: 50016
+  server: 16.kccic2pa.xyz
+  tls: false
+  type: vmess
+  uuid: a7947d89-5173-3d93-a403-b1e89c284e01
   udp: true
 - alterId: 0
   cipher: auto
@@ -127,14 +173,14 @@ proxies:
   udp: true
 - alterId: 1
   cipher: aes-128-gcm
-  name: '[🇺🇸]_1334'
+  name: '[🇦🇶]_1334'
   network: ws
   port: 443
   server: edeen.makeup
   servername: edeen.makeup
   tls: true
   type: vmess
-  uuid: 94028dc5-4459-3169-9f10-4ac4b39bf0fb
+  uuid: edce93d7-f0ab-3ef4-9bce-5dedfea93284
   ws-opts:
     headers:
       Host: edeen.makeup
@@ -175,14 +221,17 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇮🇳]_1292'
-  - '[🇦🇺]_1295'
-  - '[🇦🇶]_1325'
+  - '[🇺🇸]_1302'
+  - '[🇮🇳]_1298'
+  - '[🇬🇧]_1300'
+  - '[🇺🇸]_1312'
+  - '[🇺🇸]_1325'
+  - '[🇦🇺]_1301'
   - '[🇸🇬]_1324'
-  - '[🇨🇳]中转_1328'
   - '[🇺🇸]_1330'
+  - '[🇨🇳]中转_1328'
   - '[🇦🇶]美国_1333'
-  - '[🇺🇸]_1334'
+  - '[🇦🇶]_1334'
   - '[🇺🇸]_1337'
   - '[🇺🇸]美国_1338'
 - name: 🎯 负载均衡
@@ -191,14 +240,17 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇳]_1292'
-  - '[🇦🇺]_1295'
-  - '[🇦🇶]_1325'
+  - '[🇺🇸]_1302'
+  - '[🇮🇳]_1298'
+  - '[🇬🇧]_1300'
+  - '[🇺🇸]_1312'
+  - '[🇺🇸]_1325'
+  - '[🇦🇺]_1301'
   - '[🇸🇬]_1324'
-  - '[🇨🇳]中转_1328'
   - '[🇺🇸]_1330'
+  - '[🇨🇳]中转_1328'
   - '[🇦🇶]美国_1333'
-  - '[🇺🇸]_1334'
+  - '[🇦🇶]_1334'
   - '[🇺🇸]_1337'
   - '[🇺🇸]美国_1338'
 - name: ♻️ 自动选择
@@ -207,14 +259,17 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇳]_1292'
-  - '[🇦🇺]_1295'
-  - '[🇦🇶]_1325'
+  - '[🇺🇸]_1302'
+  - '[🇮🇳]_1298'
+  - '[🇬🇧]_1300'
+  - '[🇺🇸]_1312'
+  - '[🇺🇸]_1325'
+  - '[🇦🇺]_1301'
   - '[🇸🇬]_1324'
-  - '[🇨🇳]中转_1328'
   - '[🇺🇸]_1330'
+  - '[🇨🇳]中转_1328'
   - '[🇦🇶]美国_1333'
-  - '[🇺🇸]_1334'
+  - '[🇦🇶]_1334'
   - '[🇺🇸]_1337'
   - '[🇺🇸]美国_1338'
 - name: 🔰 延迟最低
@@ -223,28 +278,34 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇳]_1292'
-  - '[🇦🇺]_1295'
-  - '[🇦🇶]_1325'
+  - '[🇺🇸]_1302'
+  - '[🇮🇳]_1298'
+  - '[🇬🇧]_1300'
+  - '[🇺🇸]_1312'
+  - '[🇺🇸]_1325'
+  - '[🇦🇺]_1301'
   - '[🇸🇬]_1324'
-  - '[🇨🇳]中转_1328'
   - '[🇺🇸]_1330'
+  - '[🇨🇳]中转_1328'
   - '[🇦🇶]美国_1333'
-  - '[🇺🇸]_1334'
+  - '[🇦🇶]_1334'
   - '[🇺🇸]_1337'
   - '[🇺🇸]美国_1338'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇮🇳]_1292'
-  - '[🇦🇺]_1295'
-  - '[🇦🇶]_1325'
+  - '[🇺🇸]_1302'
+  - '[🇮🇳]_1298'
+  - '[🇬🇧]_1300'
+  - '[🇺🇸]_1312'
+  - '[🇺🇸]_1325'
+  - '[🇦🇺]_1301'
   - '[🇸🇬]_1324'
-  - '[🇨🇳]中转_1328'
   - '[🇺🇸]_1330'
+  - '[🇨🇳]中转_1328'
   - '[🇦🇶]美国_1333'
-  - '[🇺🇸]_1334'
+  - '[🇦🇶]_1334'
   - '[🇺🇸]_1337'
   - '[🇺🇸]美国_1338'
 - name: 🎯 全球直连
@@ -253,14 +314,17 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇮🇳]_1292'
-  - '[🇦🇺]_1295'
-  - '[🇦🇶]_1325'
+  - '[🇺🇸]_1302'
+  - '[🇮🇳]_1298'
+  - '[🇬🇧]_1300'
+  - '[🇺🇸]_1312'
+  - '[🇺🇸]_1325'
+  - '[🇦🇺]_1301'
   - '[🇸🇬]_1324'
-  - '[🇨🇳]中转_1328'
   - '[🇺🇸]_1330'
+  - '[🇨🇳]中转_1328'
   - '[🇦🇶]美国_1333'
-  - '[🇺🇸]_1334'
+  - '[🇦🇶]_1334'
   - '[🇺🇸]_1337'
   - '[🇺🇸]美国_1338'
 rules:
