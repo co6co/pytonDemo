@@ -26,75 +26,11 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇩🇪]美国_894'
-  type: vmess
-  server: hk.mlxg.org
-  port: 80
-  uuid: 49f4d18b-e1ed-3d82-a7b6-5f9208cf8c9b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /
-  ws-headers:
-    Host: us1.mlxg.org
-- name: '[🇦🇶]美国_913'
-  type: vmess
-  server: digitalocean.com
-  port: 8080
-  uuid: eef94084-ba83-336c-aa75-ded94f12f0ce
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /
-  ws-headers:
-    Host: vceu.vpn66.eu.org
-- name: '[🇦🇶]美国_917'
-  type: vmess
-  server: www.noice.id
-  port: 443
-  uuid: fc708dff-ed17-3bac-8cd1-6398fcad5c1f
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-path: /vmess
-  ws-headers:
-    Host: sgmws.mainssh.xyz
-- name: '[🇩🇪]美国_921'
-  type: vmess
-  server: us.mlxg.org
-  port: 80
-  uuid: af17b686-eb88-3da6-839c-b7621cd8ebe6
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /
-  ws-headers:
-    Host: us1.mlxg.org
-- name: '[🇦🇶]加拿大_846'
-  server: hkgsdz.66666654.xyz
-  port: 80
-  type: vmess
-  uuid: 450d7c0a-72ef-3d9e-9f66-8d052a4725ad
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /xingsuyun
-    headers:
-      Host: fryd1.xingsu.fun
-  udp: true
-- name: '[🇦🇶]_1020'
+- name: '[🇺🇸]_1020'
   server: 51fly11.win
   port: 443
   type: vmess
-  uuid: cea0e6f0-ba4e-365b-a084-6741c2211b47
+  uuid: 4e40884e-f1bf-3282-8e4e-51637ae05df9
   alterId: 0
   cipher: auto
   tls: true
@@ -104,16 +40,6 @@ proxies:
     path: /myblog
     headers:
       Host: 51fly11.win
-  udp: true
-- name: '[🇩🇪]_972'
-  server: 130.61.111.167
-  port: 21872
-  type: vmess
-  uuid: b64dd8ac-5790-3c23-9063-fcd2c2293641
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
   udp: true
 - name: '[🇺🇸]_1022'
   server: 67.21.64.85
@@ -127,6 +53,16 @@ proxies:
   network: ws
   ws-opts:
     path: /path/1691318318420
+  udp: true
+- name: '[🇩🇪]_972'
+  server: 130.61.111.167
+  port: 21872
+  type: vmess
+  uuid: b64dd8ac-5790-3c23-9063-fcd2c2293641
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
   udp: true
 - name: '[🇺🇸]_1023'
   server: 144.34.186.135
@@ -149,6 +85,16 @@ proxies:
   skip-cert-verify: false
   servername: facet.x31416.top
   udp: true
+- name: '[🇭🇰]_978'
+  server: 156.245.8.144
+  port: 42952
+  type: vmess
+  uuid: afcbbf93-fcce-30eb-8acc-bde7206f8ad7
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
 - name: '[🇨🇳]_970'
   server: 175.27.154.61
   port: 50002
@@ -159,16 +105,6 @@ proxies:
   tls: false
   skip-cert-verify: false
   servername: 175.27.154.61
-  udp: true
-- name: '[🇭🇰]_978'
-  server: 156.245.8.144
-  port: 42952
-  type: vmess
-  uuid: afcbbf93-fcce-30eb-8acc-bde7206f8ad7
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
   udp: true
 - name: '[🇺🇸]蛋挞云_1052'
   server: 154.17.8.16
@@ -292,18 +228,19 @@ proxies:
   ws-opts:
     path: /db
   udp: true
-- name: '[🇨🇳]中转_1140'
-  server: 183.249.20.142
-  port: 61005
+- name: '[🇫🇷]_1150'
+  server: hdfy1d1.cpi2hidd.eu.org
+  port: 443
   type: vmess
-  uuid: 5878ee5e-f549-38c1-b47c-b889b38faf8b
+  uuid: d07ada05-66e6-359d-9b19-e6a5a354c092
   alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /db
+  tls: true
+  skip-cert-verify: true
+  network: grpc
+  servername: hdfy1d1.cpi2hidd.eu.org
+  grpc-opts:
+    grpc-service-name: kWNsYSByc82sNvvsPqovsnh
   udp: true
 - name: '[🇩🇪]_1146'
   server: 164.90.219.112
@@ -330,65 +267,64 @@ proxies:
     headers:
       Host: sg.wyhkaa0.cf
   udp: true
-- name: '[🇫🇷]_1150'
-  server: hdfy1d1.cpi2hidd.eu.org
-  port: 443
+- name: '[🇨🇳]中转_1140'
+  server: 183.249.20.142
+  port: 61005
   type: vmess
-  uuid: d07ada05-66e6-359d-9b19-e6a5a354c092
+  uuid: 5878ee5e-f549-38c1-b47c-b889b38faf8b
   alterId: 0
   cipher: auto
-  tls: true
-  skip-cert-verify: true
-  network: grpc
-  servername: hdfy1d1.cpi2hidd.eu.org
-  grpc-opts:
-    grpc-service-name: kWNsYSByc82sNvvsPqovsnh
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /db
   udp: true
-- name: '[🇺🇸]_1169'
+- name: '[🇺🇸]_1172'
   server: 137.175.86.187
   port: 37399
   type: vmess
-  uuid: 47752242-9f96-3060-b18b-80e76e968ba8
+  uuid: d3c8ab2b-33a1-3c32-82fe-5c8fac76cb8e
   alterId: 64
   cipher: auto
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[🇧🇬]_1170'
+- name: '[🇧🇬]_1173'
   server: 91.247.37.149
   port: 10631
   type: vmess
-  uuid: 691e06a1-ec5f-31dc-bd8c-6cee504c50b8
+  uuid: 9b8bd73a-63be-306a-ad90-2ebdb12a6634
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[🇬🇧]_1198'
+- name: '[🇬🇧]_1201'
   server: 172.99.190.12
   port: 22324
   type: vmess
-  uuid: 17a43f52-2a4a-3d33-98e6-11554209571a
+  uuid: ef8e889c-e52a-3b04-8c60-a67fdbaec958
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[🇺🇸]_1199'
+- name: '[🇺🇸]_1202'
   server: 107.167.16.34
   port: 45592
   type: vmess
-  uuid: 4d1b20c6-5fa2-3f71-b0b2-4ca57b673eed
+  uuid: 57f05365-f4dd-32a8-addc-1b0e7fa59904
   alterId: 64
   cipher: auto
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[🇺🇸]_1205'
+- name: '[🇺🇸]_1208'
   server: 38.26.135.18
   port: 443
   type: vmess
-  uuid: 8b4c301b-63ce-3140-a664-04212077e40c
+  uuid: 844e5d46-6f47-3fb0-aac7-4e64d8216fe4
   alterId: 64
   cipher: auto
   tls: true
@@ -398,26 +334,11 @@ proxies:
   ws-opts:
     path: /path/1693992821776
   udp: true
-- name: '[🇦🇶]_1195'
+- name: '[🇦🇶]_1198'
   server: vn4.4gspeed.me
   port: 80
   type: vmess
-  uuid: 2e0832eb-ecf0-3e61-a8dc-fb900d9c89fe
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /4gspeed.me
-    headers:
-      Host: dl.kgvn.garenanow.com
-  udp: true
-- name: '[🇦🇶]_1196'
-  server: vn4.4gspeed.me
-  port: 443
-  type: vmess
-  uuid: 4a752fa5-7fb6-32ae-b9dc-da74a28c68ea
+  uuid: 638329c0-1f92-3eca-9bd6-25b1047551ef
   alterId: 0
   cipher: auto
   tls: false
@@ -442,15 +363,87 @@ proxies:
   ws-headers:
     Host: hkd1.quickerlink.xyz
   udp: true
+- name: '[🇦🇶]_1199'
+  server: vn4.4gspeed.me
+  port: 443
+  type: vmess
+  uuid: a9051671-32d7-3453-9161-965dc9669825
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /4gspeed.me
+    headers:
+      Host: dl.kgvn.garenanow.com
+  udp: true
 - alterId: 0
   cipher: auto
   name: '[🇺🇸]_1223'
-  network: tcp
-  port: 44094
-  server: 45.199.138.205
-  tls: false
+  network: ws
+  port: 443
+  server: 38.26.135.20
+  tls: true
   type: vmess
   uuid: 40accec8-662a-363a-9068-9a4617e0b975
+  ws-opts:
+    headers:
+      Host: ''
+    path: /path/1694859605321
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1226'
+  network: ws
+  port: 8080
+  server: 172.67.34.218
+  tls: false
+  type: vmess
+  uuid: d799d666-4f2e-3411-8dd8-2f9a1071ccbf
+  ws-opts:
+    headers:
+      Host: ''
+    path: /?ed=2048
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇩🇪]_1224'
+  network: tcp
+  port: 443
+  server: 142.132.176.143
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 0bddf2c4-5c35-3bde-9a4e-fd4170767815
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇳]中转_1222'
+  network: ws
+  port: 61009
+  server: 183.249.20.142
+  tls: false
+  type: vmess
+  uuid: 24ac034f-343b-363a-8d62-7a1cbb055726
+  ws-opts:
+    headers:
+      Host: ''
+    path: /db
+  udp: true
+- alterId: 2
+  cipher: auto
+  name: '[🇦🇶]美国_1231'
+  network: ws
+  port: 80
+  server: free.qdns.live
+  tls: false
+  type: vmess
+  uuid: 17ca1111-c0b8-3fb4-8322-93bd2c56124f
+  ws-opts:
+    headers:
+      Host: free-us.qdns.live
+    path: /
   udp: true
 - name: '[🇸🇬]_1219'
   server: 159.223.94.156
@@ -466,15 +459,105 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1230'
+  network: tcp
+  port: 37399
+  server: 137.175.86.189
+  tls: false
+  type: vmess
+  uuid: 90a3b3dd-72a8-346b-9e19-ec4ff4539a03
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇮🇱]_1232'
+  network: ws
+  port: 80
+  server: 194.62.42.77
+  tls: false
+  type: vmess
+  uuid: 7afbdea0-2636-3166-85fb-151fa89b7e90
+  ws-opts:
+    headers:
+      Host: ''
+    path: /vmess
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]_1235'
+  network: ws
+  port: 57231
+  server: 156.251.176.119
+  tls: true
+  type: vmess
+  uuid: 9306df35-dee6-3114-a89f-c8e6aaf838a7
+  ws-opts:
+    headers:
+      Host: ''
+    path: /vm?ed=2048
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇻🇳]_1233'
+  network: ws
+  port: 80
+  server: dn1.4ghatde.com
+  tls: false
+  type: vmess
+  uuid: 1859ee79-565b-3e84-aaff-3b6b26e2551a
+  ws-opts:
+    headers:
+      Host: dn1.4ghatde.com
+    path: /4ghatde.com
+  udp: true
 - alterId: 64
   cipher: auto
-  name: '[🇺🇸]美国_1224'
+  name: '[🇺🇸]美国_1238'
+  network: ws
+  port: 443
+  server: 137.175.82.150
+  tls: true
+  type: vmess
+  uuid: 15ec5ae6-d1c6-31bd-84e8-69282f0cb76e
+  ws-opts:
+    headers:
+      Host: www.66699852.xyz
+    path: /path/1695652618025
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1240'
+  network: tcp
+  port: 53986
+  server: 192.74.224.161
+  tls: false
+  type: vmess
+  uuid: 377c1fd8-026c-3f92-b593-d0bc6278e7d1
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇸🇬]_1242'
+  network: ws
+  port: 80
+  server: 8.219.205.190
+  tls: false
+  type: vmess
+  uuid: 1ad33a52-ce41-3479-a527-f42aff153cd4
+  ws-opts:
+    headers:
+      Host: ''
+    path: /vm?ed=2048
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1245'
   network: ws
   port: 443
   server: 156.225.67.80
   tls: true
   type: vmess
-  uuid: b5bc72ea-493f-3260-86d6-d95408036c1e
+  uuid: d2cd0fed-f41c-3510-ad4c-d0f8c17cc30f
   ws-opts:
     headers:
       Host: www.13340198.xyz
@@ -482,73 +565,17 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇸🇬]_1225'
+  name: '[🇦🇶]_1239'
   network: ws
   port: 80
-  server: cdn.anycast.eu.org
+  server: yd.xingsu.fun
   tls: false
   type: vmess
-  uuid: a41d14a1-04cf-3eec-8a70-8e7940a484b8
+  uuid: 9f6c6abf-71b4-30a6-bfe0-d0978b49c5f7
   ws-opts:
     headers:
-      Host: cdn.anycast.eu.org
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇯🇵]_1227'
-  network: ws
-  port: 11427
-  server: 212.50.244.206
-  tls: true
-  type: vmess
-  uuid: d3348e1b-7d6e-3b11-9494-61728ee7ac69
-  ws-opts:
-    headers:
-      Host: ''
-    path: /vm?ed=2048
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]_1230'
-  network: ws
-  port: 80
-  server: 172.67.146.22
-  tls: false
-  type: vmess
-  uuid: 90a3b3dd-72a8-346b-9e19-ec4ff4539a03
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇳]中转_1229'
-  network: ws
-  port: 64051
-  server: 183.249.20.142
-  tls: false
-  type: vmess
-  uuid: 59c4ece4-626b-3c7d-8c07-d3d2a23c3d04
-  ws-opts:
-    headers:
-      Host: ''
-    path: /db
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇰🇷]_1232'
-  network: ws
-  port: 37229
-  server: 193.122.126.173
-  tls: true
-  type: vmess
-  uuid: 12aa6298-c523-3a47-9466-a8d004c8f810
-  ws-opts:
-    headers:
-      Host: ''
-    path: /vm?ed=2048
+      Host: yd.xingsu.fun
+    path: /xingsu
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -557,18 +584,13 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇩🇪]美国_894'
-  - '[🇦🇶]美国_913'
-  - '[🇦🇶]美国_917'
-  - '[🇩🇪]美国_921'
-  - '[🇦🇶]加拿大_846'
-  - '[🇦🇶]_1020'
-  - '[🇩🇪]_972'
+  - '[🇺🇸]_1020'
   - '[🇺🇸]_1022'
+  - '[🇩🇪]_972'
   - '[🇺🇸]_1023'
   - '[🇺🇸]_1021'
-  - '[🇨🇳]_970'
   - '[🇭🇰]_978'
+  - '[🇨🇳]_970'
   - '[🇺🇸]蛋挞云_1052'
   - '[🇹🇷]_1057'
   - '[🇭🇰]_1059'
@@ -579,44 +601,46 @@ proxy-groups:
   - '[🇦🇺]_1107'
   - '[🇹🇼]台湾_1119'
   - '[🇨🇳]中转_1121'
-  - '[🇨🇳]中转_1140'
+  - '[🇫🇷]_1150'
   - '[🇩🇪]_1146'
   - '[🇺🇸]_1155'
-  - '[🇫🇷]_1150'
-  - '[🇺🇸]_1169'
-  - '[🇧🇬]_1170'
-  - '[🇬🇧]_1198'
-  - '[🇺🇸]_1199'
-  - '[🇺🇸]_1205'
-  - '[🇦🇶]_1195'
-  - '[🇦🇶]_1196'
+  - '[🇨🇳]中转_1140'
+  - '[🇺🇸]_1172'
+  - '[🇧🇬]_1173'
+  - '[🇬🇧]_1201'
+  - '[🇺🇸]_1202'
+  - '[🇺🇸]_1208'
+  - '[🇦🇶]_1198'
   - '[🇺🇸]_1220'
+  - '[🇦🇶]_1199'
   - '[🇺🇸]_1223'
+  - '[🇺🇸]_1226'
+  - '[🇩🇪]_1224'
+  - '[🇨🇳]中转_1222'
+  - '[🇦🇶]美国_1231'
   - '[🇸🇬]_1219'
-  - '[🇺🇸]美国_1224'
-  - '[🇸🇬]_1225'
-  - '[🇯🇵]_1227'
   - '[🇺🇸]_1230'
-  - '[🇨🇳]中转_1229'
-  - '[🇰🇷]_1232'
+  - '[🇮🇱]_1232'
+  - '[🇭🇰]_1235'
+  - '[🇻🇳]_1233'
+  - '[🇺🇸]美国_1238'
+  - '[🇺🇸]_1240'
+  - '[🇸🇬]_1242'
+  - '[🇺🇸]美国_1245'
+  - '[🇦🇶]_1239'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]美国_894'
-  - '[🇦🇶]美国_913'
-  - '[🇦🇶]美国_917'
-  - '[🇩🇪]美国_921'
-  - '[🇦🇶]加拿大_846'
-  - '[🇦🇶]_1020'
-  - '[🇩🇪]_972'
+  - '[🇺🇸]_1020'
   - '[🇺🇸]_1022'
+  - '[🇩🇪]_972'
   - '[🇺🇸]_1023'
   - '[🇺🇸]_1021'
-  - '[🇨🇳]_970'
   - '[🇭🇰]_978'
+  - '[🇨🇳]_970'
   - '[🇺🇸]蛋挞云_1052'
   - '[🇹🇷]_1057'
   - '[🇭🇰]_1059'
@@ -627,44 +651,46 @@ proxy-groups:
   - '[🇦🇺]_1107'
   - '[🇹🇼]台湾_1119'
   - '[🇨🇳]中转_1121'
-  - '[🇨🇳]中转_1140'
+  - '[🇫🇷]_1150'
   - '[🇩🇪]_1146'
   - '[🇺🇸]_1155'
-  - '[🇫🇷]_1150'
-  - '[🇺🇸]_1169'
-  - '[🇧🇬]_1170'
-  - '[🇬🇧]_1198'
-  - '[🇺🇸]_1199'
-  - '[🇺🇸]_1205'
-  - '[🇦🇶]_1195'
-  - '[🇦🇶]_1196'
+  - '[🇨🇳]中转_1140'
+  - '[🇺🇸]_1172'
+  - '[🇧🇬]_1173'
+  - '[🇬🇧]_1201'
+  - '[🇺🇸]_1202'
+  - '[🇺🇸]_1208'
+  - '[🇦🇶]_1198'
   - '[🇺🇸]_1220'
+  - '[🇦🇶]_1199'
   - '[🇺🇸]_1223'
+  - '[🇺🇸]_1226'
+  - '[🇩🇪]_1224'
+  - '[🇨🇳]中转_1222'
+  - '[🇦🇶]美国_1231'
   - '[🇸🇬]_1219'
-  - '[🇺🇸]美国_1224'
-  - '[🇸🇬]_1225'
-  - '[🇯🇵]_1227'
   - '[🇺🇸]_1230'
-  - '[🇨🇳]中转_1229'
-  - '[🇰🇷]_1232'
+  - '[🇮🇱]_1232'
+  - '[🇭🇰]_1235'
+  - '[🇻🇳]_1233'
+  - '[🇺🇸]美国_1238'
+  - '[🇺🇸]_1240'
+  - '[🇸🇬]_1242'
+  - '[🇺🇸]美国_1245'
+  - '[🇦🇶]_1239'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]美国_894'
-  - '[🇦🇶]美国_913'
-  - '[🇦🇶]美国_917'
-  - '[🇩🇪]美国_921'
-  - '[🇦🇶]加拿大_846'
-  - '[🇦🇶]_1020'
-  - '[🇩🇪]_972'
+  - '[🇺🇸]_1020'
   - '[🇺🇸]_1022'
+  - '[🇩🇪]_972'
   - '[🇺🇸]_1023'
   - '[🇺🇸]_1021'
-  - '[🇨🇳]_970'
   - '[🇭🇰]_978'
+  - '[🇨🇳]_970'
   - '[🇺🇸]蛋挞云_1052'
   - '[🇹🇷]_1057'
   - '[🇭🇰]_1059'
@@ -675,44 +701,46 @@ proxy-groups:
   - '[🇦🇺]_1107'
   - '[🇹🇼]台湾_1119'
   - '[🇨🇳]中转_1121'
-  - '[🇨🇳]中转_1140'
+  - '[🇫🇷]_1150'
   - '[🇩🇪]_1146'
   - '[🇺🇸]_1155'
-  - '[🇫🇷]_1150'
-  - '[🇺🇸]_1169'
-  - '[🇧🇬]_1170'
-  - '[🇬🇧]_1198'
-  - '[🇺🇸]_1199'
-  - '[🇺🇸]_1205'
-  - '[🇦🇶]_1195'
-  - '[🇦🇶]_1196'
+  - '[🇨🇳]中转_1140'
+  - '[🇺🇸]_1172'
+  - '[🇧🇬]_1173'
+  - '[🇬🇧]_1201'
+  - '[🇺🇸]_1202'
+  - '[🇺🇸]_1208'
+  - '[🇦🇶]_1198'
   - '[🇺🇸]_1220'
+  - '[🇦🇶]_1199'
   - '[🇺🇸]_1223'
+  - '[🇺🇸]_1226'
+  - '[🇩🇪]_1224'
+  - '[🇨🇳]中转_1222'
+  - '[🇦🇶]美国_1231'
   - '[🇸🇬]_1219'
-  - '[🇺🇸]美国_1224'
-  - '[🇸🇬]_1225'
-  - '[🇯🇵]_1227'
   - '[🇺🇸]_1230'
-  - '[🇨🇳]中转_1229'
-  - '[🇰🇷]_1232'
+  - '[🇮🇱]_1232'
+  - '[🇭🇰]_1235'
+  - '[🇻🇳]_1233'
+  - '[🇺🇸]美国_1238'
+  - '[🇺🇸]_1240'
+  - '[🇸🇬]_1242'
+  - '[🇺🇸]美国_1245'
+  - '[🇦🇶]_1239'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]美国_894'
-  - '[🇦🇶]美国_913'
-  - '[🇦🇶]美国_917'
-  - '[🇩🇪]美国_921'
-  - '[🇦🇶]加拿大_846'
-  - '[🇦🇶]_1020'
-  - '[🇩🇪]_972'
+  - '[🇺🇸]_1020'
   - '[🇺🇸]_1022'
+  - '[🇩🇪]_972'
   - '[🇺🇸]_1023'
   - '[🇺🇸]_1021'
-  - '[🇨🇳]_970'
   - '[🇭🇰]_978'
+  - '[🇨🇳]_970'
   - '[🇺🇸]蛋挞云_1052'
   - '[🇹🇷]_1057'
   - '[🇭🇰]_1059'
@@ -723,42 +751,44 @@ proxy-groups:
   - '[🇦🇺]_1107'
   - '[🇹🇼]台湾_1119'
   - '[🇨🇳]中转_1121'
-  - '[🇨🇳]中转_1140'
+  - '[🇫🇷]_1150'
   - '[🇩🇪]_1146'
   - '[🇺🇸]_1155'
-  - '[🇫🇷]_1150'
-  - '[🇺🇸]_1169'
-  - '[🇧🇬]_1170'
-  - '[🇬🇧]_1198'
-  - '[🇺🇸]_1199'
-  - '[🇺🇸]_1205'
-  - '[🇦🇶]_1195'
-  - '[🇦🇶]_1196'
+  - '[🇨🇳]中转_1140'
+  - '[🇺🇸]_1172'
+  - '[🇧🇬]_1173'
+  - '[🇬🇧]_1201'
+  - '[🇺🇸]_1202'
+  - '[🇺🇸]_1208'
+  - '[🇦🇶]_1198'
   - '[🇺🇸]_1220'
+  - '[🇦🇶]_1199'
   - '[🇺🇸]_1223'
+  - '[🇺🇸]_1226'
+  - '[🇩🇪]_1224'
+  - '[🇨🇳]中转_1222'
+  - '[🇦🇶]美国_1231'
   - '[🇸🇬]_1219'
-  - '[🇺🇸]美国_1224'
-  - '[🇸🇬]_1225'
-  - '[🇯🇵]_1227'
   - '[🇺🇸]_1230'
-  - '[🇨🇳]中转_1229'
-  - '[🇰🇷]_1232'
+  - '[🇮🇱]_1232'
+  - '[🇭🇰]_1235'
+  - '[🇻🇳]_1233'
+  - '[🇺🇸]美国_1238'
+  - '[🇺🇸]_1240'
+  - '[🇸🇬]_1242'
+  - '[🇺🇸]美国_1245'
+  - '[🇦🇶]_1239'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇩🇪]美国_894'
-  - '[🇦🇶]美国_913'
-  - '[🇦🇶]美国_917'
-  - '[🇩🇪]美国_921'
-  - '[🇦🇶]加拿大_846'
-  - '[🇦🇶]_1020'
-  - '[🇩🇪]_972'
+  - '[🇺🇸]_1020'
   - '[🇺🇸]_1022'
+  - '[🇩🇪]_972'
   - '[🇺🇸]_1023'
   - '[🇺🇸]_1021'
-  - '[🇨🇳]_970'
   - '[🇭🇰]_978'
+  - '[🇨🇳]_970'
   - '[🇺🇸]蛋挞云_1052'
   - '[🇹🇷]_1057'
   - '[🇭🇰]_1059'
@@ -769,44 +799,46 @@ proxy-groups:
   - '[🇦🇺]_1107'
   - '[🇹🇼]台湾_1119'
   - '[🇨🇳]中转_1121'
-  - '[🇨🇳]中转_1140'
+  - '[🇫🇷]_1150'
   - '[🇩🇪]_1146'
   - '[🇺🇸]_1155'
-  - '[🇫🇷]_1150'
-  - '[🇺🇸]_1169'
-  - '[🇧🇬]_1170'
-  - '[🇬🇧]_1198'
-  - '[🇺🇸]_1199'
-  - '[🇺🇸]_1205'
-  - '[🇦🇶]_1195'
-  - '[🇦🇶]_1196'
+  - '[🇨🇳]中转_1140'
+  - '[🇺🇸]_1172'
+  - '[🇧🇬]_1173'
+  - '[🇬🇧]_1201'
+  - '[🇺🇸]_1202'
+  - '[🇺🇸]_1208'
+  - '[🇦🇶]_1198'
   - '[🇺🇸]_1220'
+  - '[🇦🇶]_1199'
   - '[🇺🇸]_1223'
+  - '[🇺🇸]_1226'
+  - '[🇩🇪]_1224'
+  - '[🇨🇳]中转_1222'
+  - '[🇦🇶]美国_1231'
   - '[🇸🇬]_1219'
-  - '[🇺🇸]美国_1224'
-  - '[🇸🇬]_1225'
-  - '[🇯🇵]_1227'
   - '[🇺🇸]_1230'
-  - '[🇨🇳]中转_1229'
-  - '[🇰🇷]_1232'
+  - '[🇮🇱]_1232'
+  - '[🇭🇰]_1235'
+  - '[🇻🇳]_1233'
+  - '[🇺🇸]美国_1238'
+  - '[🇺🇸]_1240'
+  - '[🇸🇬]_1242'
+  - '[🇺🇸]美国_1245'
+  - '[🇦🇶]_1239'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇩🇪]美国_894'
-  - '[🇦🇶]美国_913'
-  - '[🇦🇶]美国_917'
-  - '[🇩🇪]美国_921'
-  - '[🇦🇶]加拿大_846'
-  - '[🇦🇶]_1020'
-  - '[🇩🇪]_972'
+  - '[🇺🇸]_1020'
   - '[🇺🇸]_1022'
+  - '[🇩🇪]_972'
   - '[🇺🇸]_1023'
   - '[🇺🇸]_1021'
-  - '[🇨🇳]_970'
   - '[🇭🇰]_978'
+  - '[🇨🇳]_970'
   - '[🇺🇸]蛋挞云_1052'
   - '[🇹🇷]_1057'
   - '[🇭🇰]_1059'
@@ -817,26 +849,33 @@ proxy-groups:
   - '[🇦🇺]_1107'
   - '[🇹🇼]台湾_1119'
   - '[🇨🇳]中转_1121'
-  - '[🇨🇳]中转_1140'
+  - '[🇫🇷]_1150'
   - '[🇩🇪]_1146'
   - '[🇺🇸]_1155'
-  - '[🇫🇷]_1150'
-  - '[🇺🇸]_1169'
-  - '[🇧🇬]_1170'
-  - '[🇬🇧]_1198'
-  - '[🇺🇸]_1199'
-  - '[🇺🇸]_1205'
-  - '[🇦🇶]_1195'
-  - '[🇦🇶]_1196'
+  - '[🇨🇳]中转_1140'
+  - '[🇺🇸]_1172'
+  - '[🇧🇬]_1173'
+  - '[🇬🇧]_1201'
+  - '[🇺🇸]_1202'
+  - '[🇺🇸]_1208'
+  - '[🇦🇶]_1198'
   - '[🇺🇸]_1220'
+  - '[🇦🇶]_1199'
   - '[🇺🇸]_1223'
+  - '[🇺🇸]_1226'
+  - '[🇩🇪]_1224'
+  - '[🇨🇳]中转_1222'
+  - '[🇦🇶]美国_1231'
   - '[🇸🇬]_1219'
-  - '[🇺🇸]美国_1224'
-  - '[🇸🇬]_1225'
-  - '[🇯🇵]_1227'
   - '[🇺🇸]_1230'
-  - '[🇨🇳]中转_1229'
-  - '[🇰🇷]_1232'
+  - '[🇮🇱]_1232'
+  - '[🇭🇰]_1235'
+  - '[🇻🇳]_1233'
+  - '[🇺🇸]美国_1238'
+  - '[🇺🇸]_1240'
+  - '[🇸🇬]_1242'
+  - '[🇺🇸]美国_1245'
+  - '[🇦🇶]_1239'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
