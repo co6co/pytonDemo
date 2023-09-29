@@ -26,6 +26,34 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇦🇶]_993'
+  server: vn5.4gspeed.me
+  port: 443
+  type: vmess
+  uuid: 36811718-fb82-3e62-a1f7-aff771cacc7f
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /4gspeed.me
+    headers:
+      Host: vn5.4gspeed.me
+  udp: true
+- name: '[🇨🇳]中国_996'
+  server: 39.164.141.100
+  port: 8886
+  type: vmess
+  uuid: de467b90-1eac-3035-9ec1-9f084787ab64
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+  udp: true
 - name: '[🇭🇰]蛋挞云_1006'
   server: 183.178.194.228
   port: 4443
@@ -99,21 +127,6 @@ proxies:
     headers:
       Host: www.71653718.xyz
   udp: true
-- name: '[🇷🇺]_1068'
-  server: ru1a.ai88888.top
-  port: 80
-  type: vmess
-  uuid: fe8e65b7-48d2-353d-b06a-48a9b15f511f
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /ru1a-Rayj8xxW9bW
-    headers:
-      Host: ru1a.ai88888.top
-  udp: true
 - name: '[🇰🇷]_1050'
   server: 146.56.184.135
   port: 8880
@@ -129,81 +142,25 @@ proxies:
     headers:
       Host: b.cn-db.top
   udp: true
-- name: '[🇵🇭]_1110'
+- name: '[🇵🇭]_1060'
   server: 109.248.25.59
   port: 29064
   type: vmess
-  uuid: f3ca9331-2880-3346-929c-1e2a6652efb1
+  uuid: cbdb8074-55c0-3e9b-b97c-12fe4fe7d509
   alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
+  skip-cert-verify: true
   network: ws
-  ws-opts:
-    path: /ss
-    headers:
-      Host: 109.248.25.59
-  udp: true
-- name: '[🇺🇸]_1113'
-  server: 192.74.238.232
-  port: 41772
-  type: vmess
-  uuid: 349dea6a-9c99-3fc8-9f48-e02ac49fceba
-  alterId: 64
-  cipher: auto
+  ws-path: /ss
   tls: false
-  skip-cert-verify: false
+  ws-headers:
+    Host: 109.248.25.59
   udp: true
-- name: '[🇦🇶]_1111'
-  server: vn3.4gspeed.me
-  port: 80
-  type: vmess
-  uuid: 71664d37-71eb-38f0-89b5-aad59eb4fba6
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /4gspeed.me
-    headers:
-      Host: dl.kgvn.garenanow.com
-  udp: true
-- name: '[🇦🇶]_1112'
-  server: vn4.4gspeed.me
-  port: 80
-  type: vmess
-  uuid: a1322efc-80d1-3ed5-ad56-92e937a696c9
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /4gspeed.me
-    headers:
-      Host: dl.kgvn.garenanow.com
-  udp: true
-- name: '[🇻🇳]_1124'
-  server: vn1.4gspeed.me
-  port: 80
-  type: vmess
-  uuid: 4f2bfaee-553d-358d-a9b5-45519e7c3a3e
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /4gspeed.me
-    headers:
-      Host: dl.kgvn.garenanow.com
-  udp: true
-- name: '[🇦🇶]_1134'
+- name: '[🇦🇶]_1068'
   server: hkd1.quickerlink.xyz
   port: 443
   type: vmess
-  uuid: c449fd91-d3c1-3bdc-8ecd-28c2d84ce6f4
+  uuid: d1b1072e-acac-30ce-8852-a48958b86536
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -213,11 +170,11 @@ proxies:
   ws-headers:
     Host: hkd1.quickerlink.xyz
   udp: true
-- name: '[🇸🇬]_1133'
+- name: '[🇸🇬]_1067'
   server: 159.223.94.156
   port: 80
   type: vmess
-  uuid: ad8aaaf5-b31f-3940-8b42-d02a05eda35d
+  uuid: a3a81855-1639-351f-b484-c944c5c17cc2
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -226,6 +183,76 @@ proxies:
   tls: false
   ws-headers:
     Host: 159.223.94.156
+  udp: true
+- name: '[🇷🇺]_1079'
+  server: ru1a.ai88888.top
+  port: 80
+  type: vmess
+  uuid: 26ff8b03-4c57-34a7-a463-948a0a2fb29d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /ru1a-Rayj8xxW9bW
+    headers:
+      Host: ru1a.ai88888.top
+  udp: true
+- name: '[🇺🇸]_1123'
+  server: 192.74.238.232
+  port: 41772
+  type: vmess
+  uuid: 42ef1bf2-636a-3103-b10f-351b6792629d
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇦🇶]_1121'
+  server: vn3.4gspeed.me
+  port: 80
+  type: vmess
+  uuid: 01717564-213c-37a6-9aa3-df8384c149da
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /4gspeed.me
+    headers:
+      Host: dl.kgvn.garenanow.com
+  udp: true
+- name: '[🇦🇶]_1122'
+  server: vn4.4gspeed.me
+  port: 80
+  type: vmess
+  uuid: 3061f592-7777-3fc4-8fc2-ec336c252304
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /4gspeed.me
+    headers:
+      Host: dl.kgvn.garenanow.com
+  udp: true
+- name: '[🇻🇳]_1133'
+  server: vn1.4gspeed.me
+  port: 80
+  type: vmess
+  uuid: 00a3afbd-6aa9-3eb4-95bb-34f25dd8f022
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /4gspeed.me
+    headers:
+      Host: dl.kgvn.garenanow.com
   udp: true
 - alterId: 0
   cipher: auto
@@ -267,13 +294,13 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1148'
+  name: '[🇦🇶]_1148'
   network: ws
   port: 80
   server: dld.shabijichang.com
   tls: false
   type: vmess
-  uuid: 51f43502-5221-32af-9fcd-a161ff46d0b1
+  uuid: d349c990-7143-3bae-85f0-d63e1ca1d7f0
   ws-opts:
     headers:
       Host: dld.shabijichang.com
@@ -300,24 +327,26 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇦🇶]_993'
+  - '[🇨🇳]中国_996'
   - '[🇭🇰]蛋挞云_1006'
   - '[🇻🇳]越南_1020'
   - '[🇺🇸]美国_1032'
   - '[🇺🇸]美国_1036'
   - '[🇺🇸]美国_1041'
-  - '[🇷🇺]_1068'
   - '[🇰🇷]_1050'
-  - '[🇵🇭]_1110'
-  - '[🇺🇸]_1113'
-  - '[🇦🇶]_1111'
-  - '[🇦🇶]_1112'
-  - '[🇻🇳]_1124'
-  - '[🇦🇶]_1134'
-  - '[🇸🇬]_1133'
+  - '[🇵🇭]_1060'
+  - '[🇦🇶]_1068'
+  - '[🇸🇬]_1067'
+  - '[🇷🇺]_1079'
+  - '[🇺🇸]_1123'
+  - '[🇦🇶]_1121'
+  - '[🇦🇶]_1122'
+  - '[🇻🇳]_1133'
   - '[🇺🇸]_1142'
   - '[🇦🇶]_1144'
   - '[🇸🇬]_1141'
-  - '[🇺🇸]_1148'
+  - '[🇦🇶]_1148'
   - '[🇦🇶]_1154'
 - name: 🎯 负载均衡
   type: load-balance
@@ -325,24 +354,26 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]_993'
+  - '[🇨🇳]中国_996'
   - '[🇭🇰]蛋挞云_1006'
   - '[🇻🇳]越南_1020'
   - '[🇺🇸]美国_1032'
   - '[🇺🇸]美国_1036'
   - '[🇺🇸]美国_1041'
-  - '[🇷🇺]_1068'
   - '[🇰🇷]_1050'
-  - '[🇵🇭]_1110'
-  - '[🇺🇸]_1113'
-  - '[🇦🇶]_1111'
-  - '[🇦🇶]_1112'
-  - '[🇻🇳]_1124'
-  - '[🇦🇶]_1134'
-  - '[🇸🇬]_1133'
+  - '[🇵🇭]_1060'
+  - '[🇦🇶]_1068'
+  - '[🇸🇬]_1067'
+  - '[🇷🇺]_1079'
+  - '[🇺🇸]_1123'
+  - '[🇦🇶]_1121'
+  - '[🇦🇶]_1122'
+  - '[🇻🇳]_1133'
   - '[🇺🇸]_1142'
   - '[🇦🇶]_1144'
   - '[🇸🇬]_1141'
-  - '[🇺🇸]_1148'
+  - '[🇦🇶]_1148'
   - '[🇦🇶]_1154'
 - name: ♻️ 自动选择
   type: fallback
@@ -350,24 +381,26 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]_993'
+  - '[🇨🇳]中国_996'
   - '[🇭🇰]蛋挞云_1006'
   - '[🇻🇳]越南_1020'
   - '[🇺🇸]美国_1032'
   - '[🇺🇸]美国_1036'
   - '[🇺🇸]美国_1041'
-  - '[🇷🇺]_1068'
   - '[🇰🇷]_1050'
-  - '[🇵🇭]_1110'
-  - '[🇺🇸]_1113'
-  - '[🇦🇶]_1111'
-  - '[🇦🇶]_1112'
-  - '[🇻🇳]_1124'
-  - '[🇦🇶]_1134'
-  - '[🇸🇬]_1133'
+  - '[🇵🇭]_1060'
+  - '[🇦🇶]_1068'
+  - '[🇸🇬]_1067'
+  - '[🇷🇺]_1079'
+  - '[🇺🇸]_1123'
+  - '[🇦🇶]_1121'
+  - '[🇦🇶]_1122'
+  - '[🇻🇳]_1133'
   - '[🇺🇸]_1142'
   - '[🇦🇶]_1144'
   - '[🇸🇬]_1141'
-  - '[🇺🇸]_1148'
+  - '[🇦🇶]_1148'
   - '[🇦🇶]_1154'
 - name: 🔰 延迟最低
   type: url-test
@@ -375,47 +408,51 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]_993'
+  - '[🇨🇳]中国_996'
   - '[🇭🇰]蛋挞云_1006'
   - '[🇻🇳]越南_1020'
   - '[🇺🇸]美国_1032'
   - '[🇺🇸]美国_1036'
   - '[🇺🇸]美国_1041'
-  - '[🇷🇺]_1068'
   - '[🇰🇷]_1050'
-  - '[🇵🇭]_1110'
-  - '[🇺🇸]_1113'
-  - '[🇦🇶]_1111'
-  - '[🇦🇶]_1112'
-  - '[🇻🇳]_1124'
-  - '[🇦🇶]_1134'
-  - '[🇸🇬]_1133'
+  - '[🇵🇭]_1060'
+  - '[🇦🇶]_1068'
+  - '[🇸🇬]_1067'
+  - '[🇷🇺]_1079'
+  - '[🇺🇸]_1123'
+  - '[🇦🇶]_1121'
+  - '[🇦🇶]_1122'
+  - '[🇻🇳]_1133'
   - '[🇺🇸]_1142'
   - '[🇦🇶]_1144'
   - '[🇸🇬]_1141'
-  - '[🇺🇸]_1148'
+  - '[🇦🇶]_1148'
   - '[🇦🇶]_1154'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇦🇶]_993'
+  - '[🇨🇳]中国_996'
   - '[🇭🇰]蛋挞云_1006'
   - '[🇻🇳]越南_1020'
   - '[🇺🇸]美国_1032'
   - '[🇺🇸]美国_1036'
   - '[🇺🇸]美国_1041'
-  - '[🇷🇺]_1068'
   - '[🇰🇷]_1050'
-  - '[🇵🇭]_1110'
-  - '[🇺🇸]_1113'
-  - '[🇦🇶]_1111'
-  - '[🇦🇶]_1112'
-  - '[🇻🇳]_1124'
-  - '[🇦🇶]_1134'
-  - '[🇸🇬]_1133'
+  - '[🇵🇭]_1060'
+  - '[🇦🇶]_1068'
+  - '[🇸🇬]_1067'
+  - '[🇷🇺]_1079'
+  - '[🇺🇸]_1123'
+  - '[🇦🇶]_1121'
+  - '[🇦🇶]_1122'
+  - '[🇻🇳]_1133'
   - '[🇺🇸]_1142'
   - '[🇦🇶]_1144'
   - '[🇸🇬]_1141'
-  - '[🇺🇸]_1148'
+  - '[🇦🇶]_1148'
   - '[🇦🇶]_1154'
 - name: 🎯 全球直连
   type: select
@@ -423,24 +460,26 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇦🇶]_993'
+  - '[🇨🇳]中国_996'
   - '[🇭🇰]蛋挞云_1006'
   - '[🇻🇳]越南_1020'
   - '[🇺🇸]美国_1032'
   - '[🇺🇸]美国_1036'
   - '[🇺🇸]美国_1041'
-  - '[🇷🇺]_1068'
   - '[🇰🇷]_1050'
-  - '[🇵🇭]_1110'
-  - '[🇺🇸]_1113'
-  - '[🇦🇶]_1111'
-  - '[🇦🇶]_1112'
-  - '[🇻🇳]_1124'
-  - '[🇦🇶]_1134'
-  - '[🇸🇬]_1133'
+  - '[🇵🇭]_1060'
+  - '[🇦🇶]_1068'
+  - '[🇸🇬]_1067'
+  - '[🇷🇺]_1079'
+  - '[🇺🇸]_1123'
+  - '[🇦🇶]_1121'
+  - '[🇦🇶]_1122'
+  - '[🇻🇳]_1133'
   - '[🇺🇸]_1142'
   - '[🇦🇶]_1144'
   - '[🇸🇬]_1141'
-  - '[🇺🇸]_1148'
+  - '[🇦🇶]_1148'
   - '[🇦🇶]_1154'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
