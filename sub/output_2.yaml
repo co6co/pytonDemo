@@ -26,17 +26,23 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇨🇳]香港直连_1035'
-  server: 183.240.232.82
-  port: 39971
+- name: '[🇨🇾]美国_1042'
+  server: csgo.com
+  port: 443
   client-fingerprint: chrome
   type: vmess
-  uuid: 78f5ddbf-562a-3e61-99e3-aab652830175
-  alterId: 64
+  uuid: 24c7c682-64e3-3b2b-ba28-293ef22700a4
+  alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   tfo: false
   skip-cert-verify: false
+  servername: scp.cloudflare88.eu.org
+  network: ws
+  ws-opts:
+    path: /scp比赛专用节点
+    headers:
+      Host: scp.cloudflare88.eu.org
   udp: true
 - name: '[🇨🇳]香港_1040'
   server: 112.29.94.22
@@ -68,21 +74,6 @@ proxies:
     headers:
       Host: www.50918290.xyz
   udp: true
-- name: '[🇺🇸]_1065'
-  server: racknerd.gorgorchicken.one
-  port: 8443
-  type: vmess
-  uuid: dafef298-d6b1-3bda-a1f3-7f53d87320b0
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /racknerd
-    headers:
-      Host: racknerd.gorgorchicken.one
-  udp: true
 - name: '[🇸🇬]新加坡_1043'
   server: 23.108.99.83
   port: 443
@@ -101,22 +92,47 @@ proxies:
     headers:
       Host: www.43047115.xyz
   udp: true
-- name: '[🇺🇸]_1064'
-  server: 192.74.238.228
-  port: 41772
-  type: vmess
-  uuid: c9988faf-8e82-34f0-84bb-7ac31fe84f04
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
 - name: '[🇹🇼]_1049'
   server: twpaopao4.dskjahf.xyz
   port: 228
   type: vmess
   uuid: 08f4b8bb-f588-3cb3-97c7-a92b2940b87b
   alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇺🇸]_1065'
+  server: racknerd.gorgorchicken.one
+  port: 8443
+  type: vmess
+  uuid: dafef298-d6b1-3bda-a1f3-7f53d87320b0
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /racknerd
+    headers:
+      Host: racknerd.gorgorchicken.one
+  udp: true
+- name: '[🇹🇼]_1051'
+  server: 111.249.52.155
+  port: 230
+  type: vmess
+  uuid: aabec7fb-1709-303c-a590-b5ebc379ab9a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇺🇸]_1064'
+  server: 192.74.238.228
+  port: 41772
+  type: vmess
+  uuid: c9988faf-8e82-34f0-84bb-7ac31fe84f04
+  alterId: 64
   cipher: auto
   tls: false
   skip-cert-verify: false
@@ -135,16 +151,6 @@ proxies:
     path: /index
     headers:
       Host: jp-81-ln.p9m.net
-  udp: true
-- name: '[🇹🇼]_1051'
-  server: 111.249.52.155
-  port: 230
-  type: vmess
-  uuid: aabec7fb-1709-303c-a590-b5ebc379ab9a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
   udp: true
 - name: '[🇲🇾]_1109'
   server: my-83-gg.p9m.net
@@ -191,6 +197,24 @@ proxies:
     headers:
       Host: sg-81-ln.p9m.net
   udp: true
+- name: '[🇭🇰]香港_1036'
+  server: 112.120.244.81
+  port: 55455
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 6b361388-783e-313d-b36c-2e7188e28ad8
+  alterId: 0
+  cipher: auto
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: hkt.123ddns.xyz
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: hkt.123ddns.xyz
+  udp: true
 - name: '[🇹🇼]_1048'
   server: hinet1.applebench.tech
   port: 56568
@@ -217,95 +241,95 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]_1135'
-  network: ws
-  port: 80
-  server: 162.159.142.237
-  skip-cert-verify: true
+  name: '[🇺🇸]_1134'
+  network: tcp
+  port: 41772
+  server: 192.74.238.231
   tls: false
   type: vmess
+  uuid: 398e48a8-9d86-37d0-9f42-43ade62d8cd5
   udp: true
-  uuid: 8f891da3-73b4-360e-b345-c34aac4104a5
-  ws-opts:
-    path: /1654431
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]_1136'
+  name: '[🇨🇳]中转_1141'
   network: ws
-  port: 80
-  server: 162.159.142.238
+  port: 23618
+  server: 18.v2-ray.cyou
   skip-cert-verify: true
   tls: false
   type: vmess
   udp: true
-  uuid: a9705731-b0c5-3d25-8d86-a877be3507b6
+  uuid: d67d7551-e7c3-36f5-82cc-54c95be16459
   ws-opts:
-    path: /1654431
-- alterId: 0
-  cipher: auto
-  name: '[🇬🇧]_1138'
-  network: ws
-  port: 80
-  server: 54.38.79.75
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: eedd8d88-195a-33f1-bcd9-82e19229fa61
-  ws-opts:
-    path: /5fe9v7or
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1142'
-  network: ws
-  port: 2052
-  server: 162.159.140.6
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: ea0e2b4b-1f3c-32e6-945e-08e480748c2b
-  ws-opts:
+    headers:
+      Host: 18.v2-ray.cyou
     path: /
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]_1143'
+  name: '[🇨🇳]中转_1142'
   network: ws
-  port: 80
-  server: 104.19.81.78
+  port: 41197
+  server: 120.241.47.4
+  servername: b.cn-db.top
   skip-cert-verify: true
-  tls: false
+  tls: true
   type: vmess
   udp: true
-  uuid: d80f5cf1-8227-3a8d-a309-d7e91c2e3674
+  uuid: 712891e1-8779-3700-a648-93daa29b6f53
   ws-opts:
-    path: /
+    path: /db00
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1144'
+  name: '[🇻🇳]越南_1150'
   network: ws
   port: 80
-  server: 172.67.78.109
-  skip-cert-verify: true
+  server: hcm02.4ghatde.com
+  servername: ''
   tls: false
   type: vmess
-  udp: true
-  uuid: dbe6b660-cfcb-32e7-81a0-09e8b620165b
+  uuid: d2e40928-11fd-3b77-9467-46e74f529fd8
   ws-opts:
-    path: /
+    headers:
+      Host: ''
+    path: /svip2.4ghatde.com
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1152'
+  network: ws
+  port: 443
+  server: 199.188.107.152
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 793779e5-c3a6-3e99-8dd2-b32bc074e381
+  ws-opts:
+    headers:
+      Host: www.66880458.xyz
+    path: /path/1695652618025
+  udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇻🇳]_1140'
-  network: ws
-  port: 80
-  server: 103.67.197.134
-  skip-cert-verify: true
+  name: '[🇹🇼]台湾_1151'
+  network: tcp
+  port: 228
+  server: 111.249.50.95
+  servername: ''
   tls: false
   type: vmess
+  uuid: 9258d2c2-8a98-31c7-8399-feb79f5e50ec
   udp: true
-  uuid: 4bd27f91-19bc-3731-9396-d1ebede684dd
-  ws-opts:
-    path: /4gspeed.me
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]_1153'
+  network: tcp
+  port: 41478
+  server: 45.199.138.233
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: a14c70c0-be1b-399c-8c1d-d8725f18ea25
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -313,160 +337,166 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇨🇳]香港直连_1035'
+  - '[🇨🇾]美国_1042'
   - '[🇨🇳]香港_1040'
   - '[🇭🇰]香港_1041'
-  - '[🇺🇸]_1065'
   - '[🇸🇬]新加坡_1043'
-  - '[🇺🇸]_1064'
   - '[🇹🇼]_1049'
-  - '[🇯🇵]_1108'
+  - '[🇺🇸]_1065'
   - '[🇹🇼]_1051'
+  - '[🇺🇸]_1064'
+  - '[🇯🇵]_1108'
   - '[🇲🇾]_1109'
   - '[🇺🇸]_1110'
   - '[🇸🇬]_1111'
+  - '[🇭🇰]香港_1036'
   - '[🇹🇼]_1048'
   - '[🇺🇸]_1126'
-  - '[🇦🇶]_1135'
-  - '[🇦🇶]_1136'
-  - '[🇬🇧]_1138'
-  - '[🇦🇶]_1142'
-  - '[🇦🇶]_1143'
-  - '[🇺🇸]_1144'
-  - '[🇻🇳]_1140'
+  - '[🇺🇸]_1134'
+  - '[🇨🇳]中转_1141'
+  - '[🇨🇳]中转_1142'
+  - '[🇻🇳]越南_1150'
+  - '[🇺🇸]美国_1152'
+  - '[🇹🇼]台湾_1151'
+  - '[🇺🇸]_1153'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]香港直连_1035'
+  - '[🇨🇾]美国_1042'
   - '[🇨🇳]香港_1040'
   - '[🇭🇰]香港_1041'
-  - '[🇺🇸]_1065'
   - '[🇸🇬]新加坡_1043'
-  - '[🇺🇸]_1064'
   - '[🇹🇼]_1049'
-  - '[🇯🇵]_1108'
+  - '[🇺🇸]_1065'
   - '[🇹🇼]_1051'
+  - '[🇺🇸]_1064'
+  - '[🇯🇵]_1108'
   - '[🇲🇾]_1109'
   - '[🇺🇸]_1110'
   - '[🇸🇬]_1111'
+  - '[🇭🇰]香港_1036'
   - '[🇹🇼]_1048'
   - '[🇺🇸]_1126'
-  - '[🇦🇶]_1135'
-  - '[🇦🇶]_1136'
-  - '[🇬🇧]_1138'
-  - '[🇦🇶]_1142'
-  - '[🇦🇶]_1143'
-  - '[🇺🇸]_1144'
-  - '[🇻🇳]_1140'
+  - '[🇺🇸]_1134'
+  - '[🇨🇳]中转_1141'
+  - '[🇨🇳]中转_1142'
+  - '[🇻🇳]越南_1150'
+  - '[🇺🇸]美国_1152'
+  - '[🇹🇼]台湾_1151'
+  - '[🇺🇸]_1153'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]香港直连_1035'
+  - '[🇨🇾]美国_1042'
   - '[🇨🇳]香港_1040'
   - '[🇭🇰]香港_1041'
-  - '[🇺🇸]_1065'
   - '[🇸🇬]新加坡_1043'
-  - '[🇺🇸]_1064'
   - '[🇹🇼]_1049'
-  - '[🇯🇵]_1108'
+  - '[🇺🇸]_1065'
   - '[🇹🇼]_1051'
+  - '[🇺🇸]_1064'
+  - '[🇯🇵]_1108'
   - '[🇲🇾]_1109'
   - '[🇺🇸]_1110'
   - '[🇸🇬]_1111'
+  - '[🇭🇰]香港_1036'
   - '[🇹🇼]_1048'
   - '[🇺🇸]_1126'
-  - '[🇦🇶]_1135'
-  - '[🇦🇶]_1136'
-  - '[🇬🇧]_1138'
-  - '[🇦🇶]_1142'
-  - '[🇦🇶]_1143'
-  - '[🇺🇸]_1144'
-  - '[🇻🇳]_1140'
+  - '[🇺🇸]_1134'
+  - '[🇨🇳]中转_1141'
+  - '[🇨🇳]中转_1142'
+  - '[🇻🇳]越南_1150'
+  - '[🇺🇸]美国_1152'
+  - '[🇹🇼]台湾_1151'
+  - '[🇺🇸]_1153'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]香港直连_1035'
+  - '[🇨🇾]美国_1042'
   - '[🇨🇳]香港_1040'
   - '[🇭🇰]香港_1041'
-  - '[🇺🇸]_1065'
   - '[🇸🇬]新加坡_1043'
-  - '[🇺🇸]_1064'
   - '[🇹🇼]_1049'
-  - '[🇯🇵]_1108'
+  - '[🇺🇸]_1065'
   - '[🇹🇼]_1051'
+  - '[🇺🇸]_1064'
+  - '[🇯🇵]_1108'
   - '[🇲🇾]_1109'
   - '[🇺🇸]_1110'
   - '[🇸🇬]_1111'
+  - '[🇭🇰]香港_1036'
   - '[🇹🇼]_1048'
   - '[🇺🇸]_1126'
-  - '[🇦🇶]_1135'
-  - '[🇦🇶]_1136'
-  - '[🇬🇧]_1138'
-  - '[🇦🇶]_1142'
-  - '[🇦🇶]_1143'
-  - '[🇺🇸]_1144'
-  - '[🇻🇳]_1140'
+  - '[🇺🇸]_1134'
+  - '[🇨🇳]中转_1141'
+  - '[🇨🇳]中转_1142'
+  - '[🇻🇳]越南_1150'
+  - '[🇺🇸]美国_1152'
+  - '[🇹🇼]台湾_1151'
+  - '[🇺🇸]_1153'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇨🇳]香港直连_1035'
+  - '[🇨🇾]美国_1042'
   - '[🇨🇳]香港_1040'
   - '[🇭🇰]香港_1041'
-  - '[🇺🇸]_1065'
   - '[🇸🇬]新加坡_1043'
-  - '[🇺🇸]_1064'
   - '[🇹🇼]_1049'
-  - '[🇯🇵]_1108'
+  - '[🇺🇸]_1065'
   - '[🇹🇼]_1051'
+  - '[🇺🇸]_1064'
+  - '[🇯🇵]_1108'
   - '[🇲🇾]_1109'
   - '[🇺🇸]_1110'
   - '[🇸🇬]_1111'
+  - '[🇭🇰]香港_1036'
   - '[🇹🇼]_1048'
   - '[🇺🇸]_1126'
-  - '[🇦🇶]_1135'
-  - '[🇦🇶]_1136'
-  - '[🇬🇧]_1138'
-  - '[🇦🇶]_1142'
-  - '[🇦🇶]_1143'
-  - '[🇺🇸]_1144'
-  - '[🇻🇳]_1140'
+  - '[🇺🇸]_1134'
+  - '[🇨🇳]中转_1141'
+  - '[🇨🇳]中转_1142'
+  - '[🇻🇳]越南_1150'
+  - '[🇺🇸]美国_1152'
+  - '[🇹🇼]台湾_1151'
+  - '[🇺🇸]_1153'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇨🇳]香港直连_1035'
+  - '[🇨🇾]美国_1042'
   - '[🇨🇳]香港_1040'
   - '[🇭🇰]香港_1041'
-  - '[🇺🇸]_1065'
   - '[🇸🇬]新加坡_1043'
-  - '[🇺🇸]_1064'
   - '[🇹🇼]_1049'
-  - '[🇯🇵]_1108'
+  - '[🇺🇸]_1065'
   - '[🇹🇼]_1051'
+  - '[🇺🇸]_1064'
+  - '[🇯🇵]_1108'
   - '[🇲🇾]_1109'
   - '[🇺🇸]_1110'
   - '[🇸🇬]_1111'
+  - '[🇭🇰]香港_1036'
   - '[🇹🇼]_1048'
   - '[🇺🇸]_1126'
-  - '[🇦🇶]_1135'
-  - '[🇦🇶]_1136'
-  - '[🇬🇧]_1138'
-  - '[🇦🇶]_1142'
-  - '[🇦🇶]_1143'
-  - '[🇺🇸]_1144'
-  - '[🇻🇳]_1140'
+  - '[🇺🇸]_1134'
+  - '[🇨🇳]中转_1141'
+  - '[🇨🇳]中转_1142'
+  - '[🇻🇳]越南_1150'
+  - '[🇺🇸]美国_1152'
+  - '[🇹🇼]台湾_1151'
+  - '[🇺🇸]_1153'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
