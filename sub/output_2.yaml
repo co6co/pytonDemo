@@ -28,19 +28,17 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1371'
+  name: '[🇵🇭]_1354'
   network: ws
-  port: 12000
-  server: ph-25-ln.p9m.net
-  skip-cert-verify: false
-  tls: true
+  port: 29064
+  server: 109.248.25.59
+  skip-cert-verify: true
+  tls: false
   type: vmess
   udp: true
-  uuid: 5fd39898-7737-33da-8d13-101b565fa236
+  uuid: ed84a868-2864-3d16-9fd9-256359b8f790
   ws-opts:
-    headers:
-      Host: ph-25-ln.p9m.net
-    path: /index
+    path: /ss
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -48,40 +46,40 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1371'
+  - '[🇵🇭]_1354'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1371'
+  - '[🇵🇭]_1354'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1371'
+  - '[🇵🇭]_1354'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1371'
+  - '[🇵🇭]_1354'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1371'
+  - '[🇵🇭]_1354'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1371'
+  - '[🇵🇭]_1354'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
