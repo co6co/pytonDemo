@@ -1,70 +1,36 @@
 proxies:
 - name: CN_speednode_0001
-  server: 36.134.173.71
-  port: 888
-  type: vmess
-  uuid: 600fba7f-1dcb-4a2c-8aaf-3a9bd41eca0b
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /TS/recharge/tzUrl.html
-    headers:
-      Host: tms.dingtalk.com
+  server: starspeed.tbh.iosds.com
+  port: 26963
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 371e55dc-0549-4d75-b7c3-6ce9e44ef989
   udp: true
 - name: CN_speednode_0002
-  server: ydyh.nanbei.info
-  port: 26905
+  server: starspeed.tbh.iosds.com
+  port: 25854
   type: ss
-  password: 7dee6bcb-0d47-4f50-97b7-a1af2566bc96
   cipher: chacha20-ietf-poly1305
+  password: 371e55dc-0549-4d75-b7c3-6ce9e44ef989
   udp: true
 - name: CN_speednode_0003
-  server: ydyh.nanbei.info
-  port: 26903
-  type: ss
-  password: 7dee6bcb-0d47-4f50-97b7-a1af2566bc96
-  cipher: chacha20-ietf-poly1305
-  udp: true
-- name: CN_speednode_0004
-  server: hefei.chiguayun.cc
-  port: 27108
-  type: ss
-  password: 89805270-c3ab-4d75-9ad5-9448aff5d3c8
-  cipher: chacha20-ietf-poly1305
-  udp: true
-- name: CN_speednode_0005
-  server: hefei.chiguayun.cc
-  port: 27103
-  type: ss
-  password: 89805270-c3ab-4d75-9ad5-9448aff5d3c8
-  cipher: chacha20-ietf-poly1305
-  udp: true
-- name: CN_speednode_0006
-  server: hefei.chiguayun.cc
-  port: 27133
-  type: ss
-  password: 89805270-c3ab-4d75-9ad5-9448aff5d3c8
-  cipher: chacha20-ietf-poly1305
-  udp: true
-- name: CN_speednode_0007
   server: 183.232.170.32
   port: 20022
   type: ss
+  client-fingerprint: chrome
   cipher: aes-128-gcm
   password: g12sQi#ss#&1
+  tfo: false
   plugin: v2ray-plugin
   plugin-opts:
     mode: websocket
     host: ''
-    path: /
+    path: ''
     tls: false
     mux: true
     skip-cert-verify: true
   udp: true
-- name: CN_speednode_0008
+- name: CN_speednode_0004
   server: 183.232.170.32
   port: 20013
   type: ss
@@ -79,40 +45,101 @@ proxies:
     mux: true
     skip-cert-verify: true
   udp: true
-- name: FR_speednode_0009
-  server: fr-am1-5.eqsunshine.com
-  port: 8181
-  type: ssr
-  cipher: aes-256-cfb
-  password: RcfVcDzzB
-  protocol: origin
-  obfs: tls1.2_ticket_auth
-  protocol-param: Non%
-  obfs-param: None
+- name: CN_speednode_0005
+  server: aws-hk03.aikun.online
+  port: 443
+  type: trojan
+  password: fa9a512a-eab5-4cdf-b559-14922eb3948e
+  sni: cdn-65135431546231.78321.xyz
+  skip-cert-verify: true
   udp: true
-- name: FR_speednode_0010
-  server: fr-am1-5.eqsunshine.com
-  port: 8181
-  type: ssr
-  cipher: aes-256-cfb
-  password: RcfVcDzzB
-  protocol: origin
-  obfs: tls1.2_ticket_auth
-  protocol-param: None
-  obfs-param: ''
+- name: CN_speednode_0006
+  server: hefei.chiguayun.cc
+  port: 27133
+  type: ss
+  password: 89805270-c3ab-4d75-9ad5-9448aff5d3c8
+  cipher: chacha20-ietf-poly1305
+  udp: true
+- name: CN_speednode_0007
+  server: ydyh.nanbei.info
+  port: 26902
+  type: ss
+  password: 7dee6bcb-0d47-4f50-97b7-a1af2566bc96
+  cipher: chacha20-ietf-poly1305
+  udp: true
+- name: CN_speednode_0008
+  server: ydyh.nanbei.info
+  port: 26906
+  type: ss
+  client-fingerprint: chrome
+  cipher: chacha20-ietf-poly1305
+  password: 7dee6bcb-0d47-4f50-97b7-a1af2566bc96
+  tfo: false
+  udp: true
+- name: CN_speednode_0009
+  server: ydyh.nanbei.info
+  port: 26903
+  type: ss
+  password: 7dee6bcb-0d47-4f50-97b7-a1af2566bc96
+  cipher: chacha20-ietf-poly1305
+  udp: true
+- name: CN_speednode_0010
+  server: ydyh.nanbei.info
+  port: 26910
+  type: ss
+  password: 7dee6bcb-0d47-4f50-97b7-a1af2566bc96
+  cipher: chacha20-ietf-poly1305
   udp: true
 - name: FR_speednode_0011
+  server: 51.195.41.122
+  port: 2087
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: kjVmMRhktk0komOc
+  udp: true
+- name: FR_speednode_0012
   server: fr-am1-5.eqsunshine.com
   port: 8181
   type: ssr
-  cipher: aes-256-cfb
-  password: RcfVcDzzB
   protocol: origin
+  cipher: aes-256-cfb
   obfs: tls1.2_ticket_auth
+  password: RcfVcDzzB
   protocol-param: Non%%
-  obfs-param: ''
   udp: true
-- name: NU_speednode_0012
+- name: FR_speednode_0013
+  server: fr-am1-5.eqsunshine.com
+  port: 8181
+  type: ssr
+  protocol: origin
+  cipher: aes-256-cfb
+  obfs: tls1.2_ticket_auth
+  password: RcfVcDzzB
+  protocol-param: None
+  udp: true
+- name: GB_speednode_0014
+  server: 198.244.231.25
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: asdKkaskJKfnsa
+  udp: true
+- name: GB_speednode_0015
+  server: 2023-10.cfcdn.link
+  port: 80
+  type: vmess
+  uuid: 11111189-0502-48ab-f493-5e0f663a700c
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: us04.cctvvip.tk
+  udp: true
+- name: NU_speednode_0016
   server: cdn-downloads.000023.xyz
   port: 443
   type: trojan
@@ -125,7 +152,7 @@ proxies:
     path: /3f5h8j4k6p0r2t4v6x9z1b3d5f6h8j
     headers:
       host: downloads.000023.xyz
-- name: SG_speednode_0013
+- name: SG_speednode_0017
   server: sg-am3.eqsunshine.com
   port: 32001
   type: ssr
@@ -135,40 +162,15 @@ proxies:
   password: 3g0dHlKME
   protocol-param: None
   udp: true
-- name: SG_speednode_0014
-  server: sg-am3.eqsunshine.com
-  port: 32001
-  type: ssr
-  protocol: origin
-  cipher: aes-256-cfb
-  obfs: tls1.2_ticket_auth
-  password: 3g0dHlKME
-  obfs-param: None
-  protocol-param: None
+- name: TW_speednode_0018
+  server: rzuee-1075-tr-0.d-hinet-02.ddll.bond
+  port: 889
+  type: trojan
+  password: PJUKhmVpDDqtAvMHDvmMpoQYChiuwjgv
+  sni: cdn.cjhh.lol
+  skip-cert-verify: false
   udp: true
-- name: SG_speednode_0015
-  server: sg-am3.eqsunshine.com
-  port: 32001
-  type: ssr
-  cipher: aes-256-cfb
-  password: 3g0dHlKME
-  protocol: origin
-  obfs: tls1.2_ticket_auth
-  protocol-param: ''
-  obfs-param: ''
-  udp: true
-- name: SG_speednode_0016
-  server: sg-am3.eqsunshine.com
-  port: 32001
-  type: ssr
-  cipher: aes-256-cfb
-  password: 3g0dHlKME
-  protocol: origin
-  obfs: tls1.2_ticket_auth
-  protocol-param: ''
-  obfs-param: None
-  udp: true
-- name: US_speednode_0017
+- name: US_speednode_0019
   server: 5.161.220.124
   port: 2083
   type: vmess
@@ -183,38 +185,8 @@ proxies:
   tls: false
   udp: true
   uuid: 47b93627-da5f-4f2a-bcd6-f44ac26b90c4
-- name: US_speednode_0018
-  server: 5.161.191.195
-  port: 2083
-  type: vmess
-  alterId: 0
-  cipher: auto
-  http-opts:
-    method: GET
-    path:
-    - /
-  network: http
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  uuid: 1c5cd450-a5cc-4803-d0ef-1ea424cc4ba2
-- name: US_speednode_0019
-  server: 45.199.138.191
-  port: 30000
-  type: vmess
-  alterId: 64
-  cipher: auto
-  network: ws
-  skip-cert-verify: true
-  tls: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.42077230.xyz
-    path: /path/1696251522438
-  udp: true
 - name: US_speednode_0020
-  server: 5.161.58.40
+  server: 5.161.204.222
   port: 2083
   type: vmess
   alterId: 0
@@ -229,6 +201,36 @@ proxies:
   udp: true
   uuid: 47b93627-da5f-4f2a-bcd6-f44ac26b90c4
 - name: US_speednode_0021
+  server: 5.161.58.40
+  port: 2083
+  type: vmess
+  alterId: 0
+  cipher: auto
+  http-opts:
+    method: GET
+    path:
+    - /
+  network: http
+  skip-cert-verify: true
+  tls: false
+  udp: true
+  uuid: 47b93627-da5f-4f2a-bcd6-f44ac26b90c4
+- name: US_speednode_0022
+  server: 45.199.138.191
+  port: 30000
+  type: vmess
+  alterId: 64
+  cipher: auto
+  network: ws
+  skip-cert-verify: true
+  tls: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.42077230.xyz
+    path: /path/1696251522438
+  udp: true
+- name: US_speednode_0023
   server: 45.199.138.191
   port: 30000
   type: vmess
@@ -243,4 +245,38 @@ proxies:
     path: /path/1696251522438
     headers:
       host: www.42077230.xyz
+  udp: true
+- name: US_speednode_0024
+  server: 216.52.183.243
+  port: 1001
+  type: ss
+  client-fingerprint: chrome
+  cipher: aes-128-gcm
+  password: 83XvX4Vo%*3a
+  tfo: false
+  plugin: v2ray-plugin
+  plugin-opts:
+    mode: websocket
+    host: ''
+    path: ''
+    tls: false
+    mux: true
+    skip-cert-verify: true
+  udp: true
+- name: US_speednode_0025
+  server: 216.52.183.243
+  port: 1001
+  type: ss
+  cipher: aes-128-gcm
+  client-fingerprint: chrome
+  password: 83XvX4Vo%*3a
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: ''
+    mode: websocket
+    mux: true
+    path: ''
+    skip-cert-verify: true
+    tls: false
+  tfo: false
   udp: true
