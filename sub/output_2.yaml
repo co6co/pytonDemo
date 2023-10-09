@@ -26,18 +26,33 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇻🇳]_1411'
-  server: 103.161.173.61
-  port: 80
+- name: '[🇮🇷]_1612'
+  server: unlimited1.mamaanderson.com
+  port: 26295
   type: vmess
-  uuid: 4e4abf9b-744e-3270-ad7c-aaa415601563
+  uuid: a44d2c58-6559-3217-bc5b-b109a540e2e6
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /svip1.4ghatde.com
+    path: /
+    headers:
+      Host: unlimited1.mamaanderson.com
+  udp: true
+- name: '[🇵🇭]_1619'
+  server: 109.248.25.59
+  port: 29064
+  type: vmess
+  uuid: 8fdb53b7-1ec5-3d64-b3ad-5bd7aca1c696
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /ss
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,40 +61,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇻🇳]_1411'
+  - '[🇮🇷]_1612'
+  - '[🇵🇭]_1619'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1411'
+  - '[🇮🇷]_1612'
+  - '[🇵🇭]_1619'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1411'
+  - '[🇮🇷]_1612'
+  - '[🇵🇭]_1619'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1411'
+  - '[🇮🇷]_1612'
+  - '[🇵🇭]_1619'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇻🇳]_1411'
+  - '[🇮🇷]_1612'
+  - '[🇵🇭]_1619'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇻🇳]_1411'
+  - '[🇮🇷]_1612'
+  - '[🇵🇭]_1619'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
