@@ -28,6 +28,34 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
+  name: '[🇦🇶]_1688'
+  network: ws
+  port: 443
+  server: 104.31.16.65
+  servername: Amsterdam.bobbykotick.rip
+  tls: true
+  type: vmess
+  uuid: e65010a7-0b02-31d0-b11f-70eb27758d7e
+  ws-opts:
+    headers:
+      Host: Amsterdam.bobbykotick.rip
+    path: /speedtest
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇮🇷]_1615'
+  network: ws
+  port: 26295
+  server: 31.14.114.56
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 65c6bea7-2895-3c28-8c71-890664a31fde
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
   name: '[🇦🇶]频道_1690'
   network: ws
   port: 443
@@ -41,6 +69,21 @@ proxies:
       Host: us-v.sshmax.xyz
     path: /vmess
   udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]_1678'
+  network: ws
+  port: 30000
+  server: 38.26.135.24
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 8141e8d4-b88d-30ae-8488-ff5330d14051
+  ws-opts:
+    headers:
+      Host: www.39838266.xyz
+    path: /path/1696339269262
 - alterId: 64
   cipher: auto
   name: '[🇺🇸]美国_1691'
@@ -58,17 +101,19 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇵🇭]_1622'
+  name: '[🇰🇷]韩国_1689'
   network: ws
-  port: 29064
-  server: 109.248.25.59
-  skip-cert-verify: false
+  port: 31235
+  server: kr-cdn-6273819.starnetcn.top
+  servername: ''
   tls: false
   type: vmess
-  udp: true
-  uuid: a8dd9af2-781b-3ed4-9d15-2706e3443b0f
+  uuid: a5277268-f497-389a-b374-eab9b0ad8cbe
   ws-opts:
-    path: /ss
+    headers:
+      Host: jxhoisldy718922.starnetcn.top
+    path: /315d825893fc34aca0231ab967157986
+  udp: true
 - alterId: 0
   cipher: auto
   name: '[🇻🇳]_1659'
@@ -85,33 +130,17 @@ proxies:
     path: /4ghatde.com
 - alterId: 0
   cipher: auto
-  name: '[🇰🇷]韩国_1689'
+  name: '[🇵🇭]_1622'
   network: ws
-  port: 31235
-  server: kr-cdn-6273819.starnetcn.top
-  servername: ''
+  port: 29064
+  server: 109.248.25.59
+  skip-cert-verify: false
   tls: false
   type: vmess
-  uuid: a5277268-f497-389a-b374-eab9b0ad8cbe
-  ws-opts:
-    headers:
-      Host: jxhoisldy718922.starnetcn.top
-    path: /315d825893fc34aca0231ab967157986
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇳]美国_1697'
-  network: ws
-  port: 62684
-  server: gzdx.jcnode.top
-  tls: false
-  type: vmess
-  uuid: 4343ba29-264a-350d-be84-3e2953ec08cd
+  uuid: a8dd9af2-781b-3ed4-9d15-2706e3443b0f
   ws-opts:
-    headers:
-      Host: ''
-    path: ''
-  udp: true
+    path: /ss
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -119,70 +148,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇦🇶]_1688'
+  - '[🇮🇷]_1615'
   - '[🇦🇶]频道_1690'
+  - '[🇺🇸]_1678'
   - '[🇺🇸]美国_1691'
-  - '[🇵🇭]_1622'
-  - '[🇻🇳]_1659'
   - '[🇰🇷]韩国_1689'
-  - '[🇨🇳]美国_1697'
+  - '[🇻🇳]_1659'
+  - '[🇵🇭]_1622'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]_1688'
+  - '[🇮🇷]_1615'
   - '[🇦🇶]频道_1690'
+  - '[🇺🇸]_1678'
   - '[🇺🇸]美国_1691'
-  - '[🇵🇭]_1622'
-  - '[🇻🇳]_1659'
   - '[🇰🇷]韩国_1689'
-  - '[🇨🇳]美国_1697'
+  - '[🇻🇳]_1659'
+  - '[🇵🇭]_1622'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]_1688'
+  - '[🇮🇷]_1615'
   - '[🇦🇶]频道_1690'
+  - '[🇺🇸]_1678'
   - '[🇺🇸]美国_1691'
-  - '[🇵🇭]_1622'
-  - '[🇻🇳]_1659'
   - '[🇰🇷]韩国_1689'
-  - '[🇨🇳]美国_1697'
+  - '[🇻🇳]_1659'
+  - '[🇵🇭]_1622'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇦🇶]_1688'
+  - '[🇮🇷]_1615'
   - '[🇦🇶]频道_1690'
+  - '[🇺🇸]_1678'
   - '[🇺🇸]美国_1691'
-  - '[🇵🇭]_1622'
-  - '[🇻🇳]_1659'
   - '[🇰🇷]韩国_1689'
-  - '[🇨🇳]美国_1697'
+  - '[🇻🇳]_1659'
+  - '[🇵🇭]_1622'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇦🇶]_1688'
+  - '[🇮🇷]_1615'
   - '[🇦🇶]频道_1690'
+  - '[🇺🇸]_1678'
   - '[🇺🇸]美国_1691'
-  - '[🇵🇭]_1622'
-  - '[🇻🇳]_1659'
   - '[🇰🇷]韩国_1689'
-  - '[🇨🇳]美国_1697'
+  - '[🇻🇳]_1659'
+  - '[🇵🇭]_1622'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇦🇶]_1688'
+  - '[🇮🇷]_1615'
   - '[🇦🇶]频道_1690'
+  - '[🇺🇸]_1678'
   - '[🇺🇸]美国_1691'
-  - '[🇵🇭]_1622'
-  - '[🇻🇳]_1659'
   - '[🇰🇷]韩国_1689'
-  - '[🇨🇳]美国_1697'
+  - '[🇻🇳]_1659'
+  - '[🇵🇭]_1622'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
