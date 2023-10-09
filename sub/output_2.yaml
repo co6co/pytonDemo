@@ -26,6 +26,21 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇺🇸]_1676'
+  server: 38.26.135.24
+  port: 30000
+  type: vmess
+  uuid: fb37f7b9-a7dc-3285-91d2-7956f1e8c5cb
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/1696339269262
+    headers:
+      Host: www.39838266.xyz
+  udp: true
 - name: '[🇮🇷]_1612'
   server: unlimited1.mamaanderson.com
   port: 26295
@@ -40,6 +55,21 @@ proxies:
     path: /
     headers:
       Host: unlimited1.mamaanderson.com
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇰🇷]韩国_1680'
+  network: ws
+  port: 31235
+  server: kr-cdn-6273819.starnetcn.top
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: e6e86d64-f1c3-32f7-a3b3-b7b33d5d9d34
+  ws-opts:
+    headers:
+      Host: jxhoisldy718922.starnetcn.top
+    path: /315d825893fc34aca0231ab967157986
   udp: true
 - name: '[🇵🇭]_1619'
   server: 109.248.25.59
@@ -61,7 +91,9 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇺🇸]_1676'
   - '[🇮🇷]_1612'
+  - '[🇰🇷]韩国_1680'
   - '[🇵🇭]_1619'
 - name: 🎯 负载均衡
   type: load-balance
@@ -69,7 +101,9 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1676'
   - '[🇮🇷]_1612'
+  - '[🇰🇷]韩国_1680'
   - '[🇵🇭]_1619'
 - name: ♻️ 自动选择
   type: fallback
@@ -77,7 +111,9 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1676'
   - '[🇮🇷]_1612'
+  - '[🇰🇷]韩国_1680'
   - '[🇵🇭]_1619'
 - name: 🔰 延迟最低
   type: url-test
@@ -85,13 +121,17 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1676'
   - '[🇮🇷]_1612'
+  - '[🇰🇷]韩国_1680'
   - '[🇵🇭]_1619'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇺🇸]_1676'
   - '[🇮🇷]_1612'
+  - '[🇰🇷]韩国_1680'
   - '[🇵🇭]_1619'
 - name: 🎯 全球直连
   type: select
@@ -99,7 +139,9 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇺🇸]_1676'
   - '[🇮🇷]_1612'
+  - '[🇰🇷]韩国_1680'
   - '[🇵🇭]_1619'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
