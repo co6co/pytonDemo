@@ -28,31 +28,89 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇰🇷]韩国_1681'
+  name: '[🇦🇶]频道_1690'
+  network: ws
+  port: 443
+  server: 104.16.176.44
+  servername: us-v.sshmax.xyz
+  tls: true
+  type: vmess
+  uuid: 16992b37-217c-30a4-b458-579e667ca58c
+  ws-opts:
+    headers:
+      Host: us-v.sshmax.xyz
+    path: /vmess
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]美国_1691'
+  network: ws
+  port: 443
+  server: 198.2.202.85
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 74a1b6fd-6d58-3754-8263-cf83f786b1df
+  ws-opts:
+    headers:
+      Host: www.65825524.xyz
+    path: /path/1695032909164
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇵🇭]_1622'
+  network: ws
+  port: 29064
+  server: 109.248.25.59
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: a8dd9af2-781b-3ed4-9d15-2706e3443b0f
+  ws-opts:
+    path: /ss
+- alterId: 0
+  cipher: auto
+  name: '[🇻🇳]_1659'
+  network: ws
+  port: 80
+  server: 103.149.252.174
+  servername: dn1.4ghatde.com
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: da11a85a-0d86-3152-8864-29836309eb4b
+  ws-opts:
+    path: /4ghatde.com
+- alterId: 0
+  cipher: auto
+  name: '[🇰🇷]韩国_1689'
   network: ws
   port: 31235
   server: kr-cdn-6273819.starnetcn.top
   servername: ''
   tls: false
   type: vmess
-  uuid: 7e26f0ef-3ca4-3a4c-ba9d-44a349c826e9
+  uuid: a5277268-f497-389a-b374-eab9b0ad8cbe
   ws-opts:
     headers:
       Host: jxhoisldy718922.starnetcn.top
     path: /315d825893fc34aca0231ab967157986
   udp: true
-- name: '[🇵🇭]_1620'
-  server: 109.248.25.59
-  port: 29064
-  type: vmess
-  uuid: 4be095be-6813-34a4-b8c2-a051a4e81864
-  alterId: 0
+- alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
+  name: '[🇨🇳]美国_1697'
   network: ws
+  port: 62684
+  server: gzdx.jcnode.top
+  tls: false
+  type: vmess
+  uuid: 4343ba29-264a-350d-be84-3e2953ec08cd
   ws-opts:
-    path: /ss
+    headers:
+      Host: ''
+    path: ''
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -61,46 +119,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇰🇷]韩国_1681'
-  - '[🇵🇭]_1620'
+  - '[🇦🇶]频道_1690'
+  - '[🇺🇸]美国_1691'
+  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1659'
+  - '[🇰🇷]韩国_1689'
+  - '[🇨🇳]美国_1697'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇰🇷]韩国_1681'
-  - '[🇵🇭]_1620'
+  - '[🇦🇶]频道_1690'
+  - '[🇺🇸]美国_1691'
+  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1659'
+  - '[🇰🇷]韩国_1689'
+  - '[🇨🇳]美国_1697'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇰🇷]韩国_1681'
-  - '[🇵🇭]_1620'
+  - '[🇦🇶]频道_1690'
+  - '[🇺🇸]美国_1691'
+  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1659'
+  - '[🇰🇷]韩国_1689'
+  - '[🇨🇳]美国_1697'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇰🇷]韩国_1681'
-  - '[🇵🇭]_1620'
+  - '[🇦🇶]频道_1690'
+  - '[🇺🇸]美国_1691'
+  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1659'
+  - '[🇰🇷]韩国_1689'
+  - '[🇨🇳]美国_1697'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇰🇷]韩国_1681'
-  - '[🇵🇭]_1620'
+  - '[🇦🇶]频道_1690'
+  - '[🇺🇸]美国_1691'
+  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1659'
+  - '[🇰🇷]韩国_1689'
+  - '[🇨🇳]美国_1697'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇰🇷]韩国_1681'
-  - '[🇵🇭]_1620'
+  - '[🇦🇶]频道_1690'
+  - '[🇺🇸]美国_1691'
+  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1659'
+  - '[🇰🇷]韩国_1689'
+  - '[🇨🇳]美国_1697'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
