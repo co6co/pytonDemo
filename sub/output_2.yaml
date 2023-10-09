@@ -26,11 +26,26 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇵🇭]_1619'
+- alterId: 0
+  cipher: auto
+  name: '[🇰🇷]韩国_1681'
+  network: ws
+  port: 31235
+  server: kr-cdn-6273819.starnetcn.top
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 7e26f0ef-3ca4-3a4c-ba9d-44a349c826e9
+  ws-opts:
+    headers:
+      Host: jxhoisldy718922.starnetcn.top
+    path: /315d825893fc34aca0231ab967157986
+  udp: true
+- name: '[🇵🇭]_1620'
   server: 109.248.25.59
   port: 29064
   type: vmess
-  uuid: 8fdb53b7-1ec5-3d64-b3ad-5bd7aca1c696
+  uuid: 4be095be-6813-34a4-b8c2-a051a4e81864
   alterId: 0
   cipher: auto
   tls: false
@@ -46,40 +61,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇵🇭]_1619'
+  - '[🇰🇷]韩国_1681'
+  - '[🇵🇭]_1620'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇵🇭]_1619'
+  - '[🇰🇷]韩国_1681'
+  - '[🇵🇭]_1620'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇵🇭]_1619'
+  - '[🇰🇷]韩国_1681'
+  - '[🇵🇭]_1620'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇵🇭]_1619'
+  - '[🇰🇷]韩国_1681'
+  - '[🇵🇭]_1620'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇵🇭]_1619'
+  - '[🇰🇷]韩国_1681'
+  - '[🇵🇭]_1620'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇵🇭]_1619'
+  - '[🇰🇷]韩国_1681'
+  - '[🇵🇭]_1620'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
