@@ -26,64 +26,21 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1688'
-  network: ws
-  port: 443
-  server: 104.31.16.65
-  servername: Amsterdam.bobbykotick.rip
-  tls: true
-  type: vmess
-  uuid: e65010a7-0b02-31d0-b11f-70eb27758d7e
-  ws-opts:
-    headers:
-      Host: Amsterdam.bobbykotick.rip
-    path: /speedtest
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇮🇷]_1615'
-  network: ws
-  port: 26295
-  server: 31.14.114.56
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 65c6bea7-2895-3c28-8c71-890664a31fde
-  ws-opts:
-    path: /
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]频道_1690'
-  network: ws
-  port: 443
-  server: 104.16.176.44
-  servername: us-v.sshmax.xyz
-  tls: true
-  type: vmess
-  uuid: 16992b37-217c-30a4-b458-579e667ca58c
-  ws-opts:
-    headers:
-      Host: us-v.sshmax.xyz
-    path: /vmess
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]_1678'
-  network: ws
-  port: 30000
+- name: '[🇺🇸]_1680'
   server: 38.26.135.24
-  skip-cert-verify: false
-  tls: true
+  port: 30000
   type: vmess
-  udp: true
-  uuid: 8141e8d4-b88d-30ae-8488-ff5330d14051
+  uuid: 496d6fdf-e6b7-3b3d-9942-45c82e03b2a3
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
   ws-opts:
+    path: /path/1696339269262
     headers:
       Host: www.39838266.xyz
-    path: /path/1696339269262
+  udp: true
 - alterId: 64
   cipher: auto
   name: '[🇺🇸]美国_1691'
@@ -98,6 +55,21 @@ proxies:
     headers:
       Host: www.65825524.xyz
     path: /path/1695032909164
+  udp: true
+- name: '[🇰🇷]_1160'
+  server: b3.wuxianliulianng.xyz
+  port: 443
+  type: vmess
+  uuid: 605d3e14-4df7-39bc-bec3-030c30a9b1b6
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /sometimesnaive
+    headers:
+      Host: 3.wuxianliulianng.xyz
   udp: true
 - alterId: 0
   cipher: auto
@@ -114,33 +86,33 @@ proxies:
       Host: jxhoisldy718922.starnetcn.top
     path: /315d825893fc34aca0231ab967157986
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇻🇳]_1659'
-  network: ws
-  port: 80
+- name: '[🇻🇳]_1661'
   server: 103.149.252.174
-  servername: dn1.4ghatde.com
-  skip-cert-verify: false
-  tls: false
+  port: 80
   type: vmess
-  udp: true
-  uuid: da11a85a-0d86-3152-8864-29836309eb4b
+  uuid: 3e508199-7558-3352-a9de-9dede76e256c
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: dn1.4ghatde.com
+  network: ws
   ws-opts:
     path: /4ghatde.com
-- alterId: 0
-  cipher: auto
-  name: '[🇵🇭]_1622'
-  network: ws
-  port: 29064
-  server: 109.248.25.59
-  skip-cert-verify: false
-  tls: false
-  type: vmess
   udp: true
-  uuid: a8dd9af2-781b-3ed4-9d15-2706e3443b0f
+- name: '[🇵🇭]_1624'
+  server: 109.248.25.59
+  port: 29064
+  type: vmess
+  uuid: c36b271a-896b-3160-b94a-ced4a981f9f6
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
   ws-opts:
     path: /ss
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -148,82 +120,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_1688'
-  - '[🇮🇷]_1615'
-  - '[🇦🇶]频道_1690'
-  - '[🇺🇸]_1678'
+  - '[🇺🇸]_1680'
   - '[🇺🇸]美国_1691'
+  - '[🇰🇷]_1160'
   - '[🇰🇷]韩国_1689'
-  - '[🇻🇳]_1659'
-  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1661'
+  - '[🇵🇭]_1624'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1688'
-  - '[🇮🇷]_1615'
-  - '[🇦🇶]频道_1690'
-  - '[🇺🇸]_1678'
+  - '[🇺🇸]_1680'
   - '[🇺🇸]美国_1691'
+  - '[🇰🇷]_1160'
   - '[🇰🇷]韩国_1689'
-  - '[🇻🇳]_1659'
-  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1661'
+  - '[🇵🇭]_1624'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1688'
-  - '[🇮🇷]_1615'
-  - '[🇦🇶]频道_1690'
-  - '[🇺🇸]_1678'
+  - '[🇺🇸]_1680'
   - '[🇺🇸]美国_1691'
+  - '[🇰🇷]_1160'
   - '[🇰🇷]韩国_1689'
-  - '[🇻🇳]_1659'
-  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1661'
+  - '[🇵🇭]_1624'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1688'
-  - '[🇮🇷]_1615'
-  - '[🇦🇶]频道_1690'
-  - '[🇺🇸]_1678'
+  - '[🇺🇸]_1680'
   - '[🇺🇸]美国_1691'
+  - '[🇰🇷]_1160'
   - '[🇰🇷]韩国_1689'
-  - '[🇻🇳]_1659'
-  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1661'
+  - '[🇵🇭]_1624'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_1688'
-  - '[🇮🇷]_1615'
-  - '[🇦🇶]频道_1690'
-  - '[🇺🇸]_1678'
+  - '[🇺🇸]_1680'
   - '[🇺🇸]美国_1691'
+  - '[🇰🇷]_1160'
   - '[🇰🇷]韩国_1689'
-  - '[🇻🇳]_1659'
-  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1661'
+  - '[🇵🇭]_1624'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_1688'
-  - '[🇮🇷]_1615'
-  - '[🇦🇶]频道_1690'
-  - '[🇺🇸]_1678'
+  - '[🇺🇸]_1680'
   - '[🇺🇸]美国_1691'
+  - '[🇰🇷]_1160'
   - '[🇰🇷]韩国_1689'
-  - '[🇻🇳]_1659'
-  - '[🇵🇭]_1622'
+  - '[🇻🇳]_1661'
+  - '[🇵🇭]_1624'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
