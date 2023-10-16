@@ -26,20 +26,116 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇸🇬]_1695'
-  server: si2.09vpn.com
-  port: 80
+- name: '[🇺🇸]_1682'
+  server: cold-dawn-9246.fly.dev
+  port: 443
   type: vmess
-  uuid: cde8bbfb-53b1-3b90-b80c-88a274a3f9da
+  uuid: 7da75b3e-24b5-38bf-b2f7-e3702c5d5c56
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /ea4909ef-7ca6-4b46-bf2e-6c07896ef338-vm
+    headers:
+      Host: cold-dawn-9246.fly.dev
+  udp: true
+- name: '[🇺🇸]_1659'
+  server: la01.platinumzebra230408.top
+  port: 18878
+  type: vmess
+  uuid: e5ebc5ab-bd60-3778-9059-dd8b050f1dfc
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  udp: true
+- name: '[🇸🇬]_1632'
+  server: 18.141.192.165
+  port: 15916
+  type: vmess
+  uuid: 7477f2a3-4230-3a37-91d6-ddaafbc17102
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /vmess/
+    path: /
     headers:
-      Host: si2.09vpn.com
+      Host: tms.dingtalk.com
+  udp: true
+- name: '[🇯🇵]_1658'
+  server: mofaxueyuanjp.360ddns.online
+  port: 80
+  type: vmess
+  uuid: 7c7cfbdb-6424-3024-b9bf-0f699258058e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: mofaxueyuanjp.360ddns.online
+  udp: true
+- name: '[🇮🇷]_1635'
+  server: 31.14.114.56
+  port: 26295
+  type: vmess
+  uuid: 18fc0cc0-8cd3-36ea-8dd2-a40f46e4e9a2
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+  udp: true
+- name: '[🇮🇷]_1637'
+  server: unlimited1.mamaanderson.com
+  port: 26295
+  type: vmess
+  uuid: e1ad69e4-72b5-38ac-962b-acfded29f273
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: unlimited1.mamaanderson.com
+  udp: true
+- name: '[🇲🇾]_1654'
+  server: my3.encrypted.my.id
+  port: 80
+  type: vmess
+  uuid: 9257c3e1-8ae2-39a5-9f3f-c7915f647274
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /p1AZ3HpVDQHqOyY40R9qgg3E
+    headers:
+      Host: my3.encrypted.my.id
+  udp: true
+- name: '[🇳🇱]_1687'
+  server: 185.162.235.250
+  port: 2054
+  type: vmess
+  uuid: 1d6a0bd3-69fb-34db-b07e-8b96d8ebe5a3
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /socket.io
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,40 +144,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇸🇬]_1695'
+  - '[🇺🇸]_1682'
+  - '[🇺🇸]_1659'
+  - '[🇸🇬]_1632'
+  - '[🇯🇵]_1658'
+  - '[🇮🇷]_1635'
+  - '[🇮🇷]_1637'
+  - '[🇲🇾]_1654'
+  - '[🇳🇱]_1687'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1695'
+  - '[🇺🇸]_1682'
+  - '[🇺🇸]_1659'
+  - '[🇸🇬]_1632'
+  - '[🇯🇵]_1658'
+  - '[🇮🇷]_1635'
+  - '[🇮🇷]_1637'
+  - '[🇲🇾]_1654'
+  - '[🇳🇱]_1687'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1695'
+  - '[🇺🇸]_1682'
+  - '[🇺🇸]_1659'
+  - '[🇸🇬]_1632'
+  - '[🇯🇵]_1658'
+  - '[🇮🇷]_1635'
+  - '[🇮🇷]_1637'
+  - '[🇲🇾]_1654'
+  - '[🇳🇱]_1687'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1695'
+  - '[🇺🇸]_1682'
+  - '[🇺🇸]_1659'
+  - '[🇸🇬]_1632'
+  - '[🇯🇵]_1658'
+  - '[🇮🇷]_1635'
+  - '[🇮🇷]_1637'
+  - '[🇲🇾]_1654'
+  - '[🇳🇱]_1687'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇸🇬]_1695'
+  - '[🇺🇸]_1682'
+  - '[🇺🇸]_1659'
+  - '[🇸🇬]_1632'
+  - '[🇯🇵]_1658'
+  - '[🇮🇷]_1635'
+  - '[🇮🇷]_1637'
+  - '[🇲🇾]_1654'
+  - '[🇳🇱]_1687'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇸🇬]_1695'
+  - '[🇺🇸]_1682'
+  - '[🇺🇸]_1659'
+  - '[🇸🇬]_1632'
+  - '[🇯🇵]_1658'
+  - '[🇮🇷]_1635'
+  - '[🇮🇷]_1637'
+  - '[🇲🇾]_1654'
+  - '[🇳🇱]_1687'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
