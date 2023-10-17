@@ -36,21 +36,21 @@ proxies:
   type: vmess
   uuid: bb6fb610-0ecd-3285-931e-bd81300af641
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇲🇾]_1700'
-  network: ws
-  port: 80
-  server: my3.encrypted.my.id
-  skip-cert-verify: false
-  tls: false
+- name: '[🇦🇶]_1717'
+  server: hkgsdz.66666654.xyz
+  port: 8880
   type: vmess
-  udp: true
-  uuid: 08cf602f-d210-3b5f-867c-929930ac63ca
+  uuid: 0b5a4bc0-af2b-3be3-acf7-d4678c13bdfd
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
   ws-opts:
+    path: /hgcefomn
     headers:
-      Host: my3.encrypted.my.id
-    path: /p1AZ3HpVDQHqOyY40R9qgg3E
+      Host: hkg.66666654.xyz
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -59,7 +59,7 @@ proxy-groups:
   - ♻️ 自动选择
   - 🔰 延迟最低
   - '[🇳🇱]_1730'
-  - '[🇲🇾]_1700'
+  - '[🇦🇶]_1717'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
@@ -67,7 +67,7 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇳🇱]_1730'
-  - '[🇲🇾]_1700'
+  - '[🇦🇶]_1717'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -75,7 +75,7 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇳🇱]_1730'
-  - '[🇲🇾]_1700'
+  - '[🇦🇶]_1717'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -83,13 +83,13 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇳🇱]_1730'
-  - '[🇲🇾]_1700'
+  - '[🇦🇶]_1717'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
   - '[🇳🇱]_1730'
-  - '[🇲🇾]_1700'
+  - '[🇦🇶]_1717'
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -97,7 +97,7 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - '[🇳🇱]_1730'
-  - '[🇲🇾]_1700'
+  - '[🇦🇶]_1717'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
