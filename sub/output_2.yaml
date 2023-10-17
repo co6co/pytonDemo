@@ -28,28 +28,39 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇳🇱]_1730'
+  name: '[🇳🇱]_1749'
   network: tcp
   port: 14740
   server: 178.208.87.97
   tls: false
   type: vmess
-  uuid: bb6fb610-0ecd-3285-931e-bd81300af641
+  uuid: 65d5c375-f87b-3fd9-be08-41cf89f4eab2
   udp: true
-- name: '[🇦🇶]_1717'
-  server: hkgsdz.66666654.xyz
-  port: 8880
-  type: vmess
-  uuid: 0b5a4bc0-af2b-3be3-acf7-d4678c13bdfd
-  alterId: 0
+- alterId: 0
   cipher: auto
+  name: '[🇩🇪]_1751'
+  network: tcp
+  port: 24383
+  server: 128.140.113.188
+  servername: ''
   tls: false
-  skip-cert-verify: false
+  type: vmess
+  uuid: ea3a0509-e3ba-3e9e-b5da-d2077cc3fa3f
+  udp: true
+- alterId: 0
+  cipher: none
+  name: '[🇮🇩]_1748'
   network: ws
+  port: 2095
+  server: 103.253.24.44
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: c2d14a65-5dc1-363c-ad0a-e63580522a23
   ws-opts:
-    path: /hgcefomn
     headers:
-      Host: hkg.66666654.xyz
+      Host: ''
+    path: /vmws
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,46 +69,52 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇳🇱]_1730'
-  - '[🇦🇶]_1717'
+  - '[🇳🇱]_1749'
+  - '[🇩🇪]_1751'
+  - '[🇮🇩]_1748'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1730'
-  - '[🇦🇶]_1717'
+  - '[🇳🇱]_1749'
+  - '[🇩🇪]_1751'
+  - '[🇮🇩]_1748'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1730'
-  - '[🇦🇶]_1717'
+  - '[🇳🇱]_1749'
+  - '[🇩🇪]_1751'
+  - '[🇮🇩]_1748'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1730'
-  - '[🇦🇶]_1717'
+  - '[🇳🇱]_1749'
+  - '[🇩🇪]_1751'
+  - '[🇮🇩]_1748'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇳🇱]_1730'
-  - '[🇦🇶]_1717'
+  - '[🇳🇱]_1749'
+  - '[🇩🇪]_1751'
+  - '[🇮🇩]_1748'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇳🇱]_1730'
-  - '[🇦🇶]_1717'
+  - '[🇳🇱]_1749'
+  - '[🇩🇪]_1751'
+  - '[🇮🇩]_1748'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
