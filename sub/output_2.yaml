@@ -26,6 +26,21 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇲🇾]_1736'
+  server: my3.encrypted.my.id
+  port: 80
+  type: vmess
+  uuid: a7f381fa-b101-385f-a6c0-8fed642125e0
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /p1AZ3HpVDQHqOyY40R9qgg3E
+    headers:
+      Host: my3.encrypted.my.id
+  udp: true
 - alterId: 0
   cipher: auto
   name: '[🇦🇶]提供不限时套餐_1765'
@@ -42,17 +57,6 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1762'
-  network: tcp
-  port: 3389
-  server: 209.145.56.225
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: a6d99262-464c-38ab-90cd-463a32d86087
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇩🇪]_1761'
   network: tcp
   port: 443
@@ -61,6 +65,22 @@ proxies:
   tls: false
   type: vmess
   uuid: 8781240a-6f2c-32b3-8cf6-1e022c3699a4
+  udp: true
+- name: '[🇸🇬]_1737'
+  server: si4co.09vpn.com
+  port: 80
+  type: vmess
+  uuid: c152e660-4683-3bd0-a60d-bd633480f0a5
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: si4co.09vpn.com
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: si4co.09vpn.com
   udp: true
 - alterId: 0
   cipher: auto
@@ -73,20 +93,6 @@ proxies:
   type: vmess
   uuid: 310780f7-703f-3d1c-b19a-94f60cb65d74
   udp: true
-- name: '[🇭🇰]_1418'
-  server: 182.16.1.194
-  port: 80
-  type: vmess
-  uuid: 2995ed45-53bb-3b9e-8987-1e5e40e88054
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: internet.life.com.by
-  network: ws
-  ws-opts:
-    path: /opt/video/images
-  udp: true
 - alterId: 0
   cipher: auto
   name: '[🇺🇸]_1763'
@@ -97,21 +103,6 @@ proxies:
   type: vmess
   uuid: e643b52f-43fa-37e7-ba69-20f5fe258b5e
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇳]频道_1766'
-  network: ws
-  port: 30909
-  server: attwa10016.cdn.node.a.tddns-ounk.com
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7c2b6a71-fa33-3040-a540-dd5fd10f5d4e
-  ws-opts:
-    headers:
-      Host: ''
-    path: /009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -119,76 +110,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇲🇾]_1736'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇺🇸]_1762'
   - '[🇩🇪]_1761'
+  - '[🇸🇬]_1737'
   - '[🇩🇪]_1767'
-  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
-  - '[🇨🇳]频道_1766'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇲🇾]_1736'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇺🇸]_1762'
   - '[🇩🇪]_1761'
+  - '[🇸🇬]_1737'
   - '[🇩🇪]_1767'
-  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
-  - '[🇨🇳]频道_1766'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇲🇾]_1736'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇺🇸]_1762'
   - '[🇩🇪]_1761'
+  - '[🇸🇬]_1737'
   - '[🇩🇪]_1767'
-  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
-  - '[🇨🇳]频道_1766'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇲🇾]_1736'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇺🇸]_1762'
   - '[🇩🇪]_1761'
+  - '[🇸🇬]_1737'
   - '[🇩🇪]_1767'
-  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
-  - '[🇨🇳]频道_1766'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇲🇾]_1736'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇺🇸]_1762'
   - '[🇩🇪]_1761'
+  - '[🇸🇬]_1737'
   - '[🇩🇪]_1767'
-  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
-  - '[🇨🇳]频道_1766'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇲🇾]_1736'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇺🇸]_1762'
   - '[🇩🇪]_1761'
+  - '[🇸🇬]_1737'
   - '[🇩🇪]_1767'
-  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
-  - '[🇨🇳]频道_1766'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
