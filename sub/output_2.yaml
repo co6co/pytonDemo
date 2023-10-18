@@ -28,31 +28,6 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇩🇪]_1761'
-  network: tcp
-  port: 443
-  server: 91.107.179.0
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 8781240a-6f2c-32b3-8cf6-1e022c3699a4
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]更新订阅_1764'
-  network: ws
-  port: 2052
-  server: x.36d.gay
-  tls: false
-  type: vmess
-  uuid: 5acab256-9a4a-3e45-a61d-b550d6b7c9e8
-  ws-opts:
-    headers:
-      Host: x.36d.gay
-    path: /xtsmol
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇦🇶]提供不限时套餐_1765'
   network: ws
   port: 2095
@@ -65,36 +40,27 @@ proxies:
       Host: x.36d.gay
     path: /xtsmol
   udp: true
-- name: '[🇲🇾]_1736'
-  server: my3.encrypted.my.id
-  port: 80
-  type: vmess
-  uuid: a7f381fa-b101-385f-a6c0-8fed642125e0
-  alterId: 0
+- alterId: 0
   cipher: auto
+  name: '[🇺🇸]_1762'
+  network: tcp
+  port: 3389
+  server: 209.145.56.225
+  servername: ''
   tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /p1AZ3HpVDQHqOyY40R9qgg3E
-    headers:
-      Host: my3.encrypted.my.id
+  type: vmess
+  uuid: a6d99262-464c-38ab-90cd-463a32d86087
   udp: true
-- name: '[🇸🇬]_1737'
-  server: si4co.09vpn.com
-  port: 80
-  type: vmess
-  uuid: c152e660-4683-3bd0-a60d-bd633480f0a5
-  alterId: 0
+- alterId: 0
   cipher: auto
+  name: '[🇩🇪]_1761'
+  network: tcp
+  port: 443
+  server: 91.107.179.0
+  servername: ''
   tls: false
-  skip-cert-verify: false
-  servername: si4co.09vpn.com
-  network: ws
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: si4co.09vpn.com
+  type: vmess
+  uuid: 8781240a-6f2c-32b3-8cf6-1e022c3699a4
   udp: true
 - alterId: 0
   cipher: auto
@@ -106,6 +72,20 @@ proxies:
   tls: false
   type: vmess
   uuid: 310780f7-703f-3d1c-b19a-94f60cb65d74
+  udp: true
+- name: '[🇭🇰]_1418'
+  server: 182.16.1.194
+  port: 80
+  type: vmess
+  uuid: 2995ed45-53bb-3b9e-8987-1e5e40e88054
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: internet.life.com.by
+  network: ws
+  ws-opts:
+    path: /opt/video/images
   udp: true
 - alterId: 0
   cipher: auto
@@ -139,12 +119,11 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇩🇪]_1761'
-  - '[🇺🇸]更新订阅_1764'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇲🇾]_1736'
-  - '[🇸🇬]_1737'
+  - '[🇺🇸]_1762'
+  - '[🇩🇪]_1761'
   - '[🇩🇪]_1767'
+  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
   - '[🇨🇳]频道_1766'
 - name: 🎯 负载均衡
@@ -153,12 +132,11 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1761'
-  - '[🇺🇸]更新订阅_1764'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇲🇾]_1736'
-  - '[🇸🇬]_1737'
+  - '[🇺🇸]_1762'
+  - '[🇩🇪]_1761'
   - '[🇩🇪]_1767'
+  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
   - '[🇨🇳]频道_1766'
 - name: ♻️ 自动选择
@@ -167,12 +145,11 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1761'
-  - '[🇺🇸]更新订阅_1764'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇲🇾]_1736'
-  - '[🇸🇬]_1737'
+  - '[🇺🇸]_1762'
+  - '[🇩🇪]_1761'
   - '[🇩🇪]_1767'
+  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
   - '[🇨🇳]频道_1766'
 - name: 🔰 延迟最低
@@ -181,24 +158,22 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1761'
-  - '[🇺🇸]更新订阅_1764'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇲🇾]_1736'
-  - '[🇸🇬]_1737'
+  - '[🇺🇸]_1762'
+  - '[🇩🇪]_1761'
   - '[🇩🇪]_1767'
+  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
   - '[🇨🇳]频道_1766'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇩🇪]_1761'
-  - '[🇺🇸]更新订阅_1764'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇲🇾]_1736'
-  - '[🇸🇬]_1737'
+  - '[🇺🇸]_1762'
+  - '[🇩🇪]_1761'
   - '[🇩🇪]_1767'
+  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
   - '[🇨🇳]频道_1766'
 - name: 🎯 全球直连
@@ -207,12 +182,11 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇩🇪]_1761'
-  - '[🇺🇸]更新订阅_1764'
   - '[🇦🇶]提供不限时套餐_1765'
-  - '[🇲🇾]_1736'
-  - '[🇸🇬]_1737'
+  - '[🇺🇸]_1762'
+  - '[🇩🇪]_1761'
   - '[🇩🇪]_1767'
+  - '[🇭🇰]_1418'
   - '[🇺🇸]_1763'
   - '[🇨🇳]频道_1766'
 rules:
