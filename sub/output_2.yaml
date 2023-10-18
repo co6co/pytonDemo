@@ -26,41 +26,78 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 0
-  cipher: auto
-  name: '[🇳🇱]_1749'
-  network: tcp
-  port: 14740
-  server: 178.208.87.97
-  tls: false
+- name: '[🇮🇷]_1715'
+  server: 31.14.114.56
+  port: 26295
   type: vmess
-  uuid: 65d5c375-f87b-3fd9-be08-41cf89f4eab2
-  udp: true
-- alterId: 0
+  uuid: ad2f7106-175c-34e9-a8f1-550db6c39f00
+  alterId: 0
   cipher: auto
-  name: '[🇩🇪]_1751'
-  network: tcp
-  port: 24383
-  server: 128.140.113.188
-  servername: ''
   tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+  udp: true
+- name: '[🇲🇾]_1735'
+  server: my3.encrypted.my.id
+  port: 80
+  type: vmess
+  uuid: 325c7146-bf93-3100-811a-2eb455adb72b
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /p1AZ3HpVDQHqOyY40R9qgg3E
+    headers:
+      Host: my3.encrypted.my.id
+  udp: true
+- name: '[🇮🇷]_1716'
+  server: unlimited1.mamaanderson.com
+  port: 26295
+  type: vmess
+  uuid: c18bf4da-0f07-3226-a485-e77b5431133d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: unlimited1.mamaanderson.com
+  udp: true
+- name: '[🇸🇬]_1745'
+  server: f02.bzshare.com
+  port: 443
+  type: vmess
+  uuid: d4a07637-c012-3c9d-934b-b5e9ce088ddc
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /D26xvdqUdCpvvPTz4R
+    headers:
+      Host: h10-fr.wypay.org
+  udp: true
+- name: '[🇩🇪]_1751'
+  server: gd03.host2go.net
+  port: 443
   type: vmess
   uuid: ea3a0509-e3ba-3e9e-b5da-d2077cc3fa3f
-  udp: true
-- alterId: 0
-  cipher: none
-  name: '[🇮🇩]_1748'
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
   network: ws
-  port: 2095
-  server: 103.253.24.44
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: c2d14a65-5dc1-363c-ad0a-e63580522a23
   ws-opts:
+    path: /D26xvdqUdCpvvPTz4R
     headers:
-      Host: ''
-    path: /vmws
+      Host: gc.clashfree.eu.org
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -69,52 +106,64 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇳🇱]_1749'
+  - '[🇮🇷]_1715'
+  - '[🇲🇾]_1735'
+  - '[🇮🇷]_1716'
+  - '[🇸🇬]_1745'
   - '[🇩🇪]_1751'
-  - '[🇮🇩]_1748'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1749'
+  - '[🇮🇷]_1715'
+  - '[🇲🇾]_1735'
+  - '[🇮🇷]_1716'
+  - '[🇸🇬]_1745'
   - '[🇩🇪]_1751'
-  - '[🇮🇩]_1748'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1749'
+  - '[🇮🇷]_1715'
+  - '[🇲🇾]_1735'
+  - '[🇮🇷]_1716'
+  - '[🇸🇬]_1745'
   - '[🇩🇪]_1751'
-  - '[🇮🇩]_1748'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1749'
+  - '[🇮🇷]_1715'
+  - '[🇲🇾]_1735'
+  - '[🇮🇷]_1716'
+  - '[🇸🇬]_1745'
   - '[🇩🇪]_1751'
-  - '[🇮🇩]_1748'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇳🇱]_1749'
+  - '[🇮🇷]_1715'
+  - '[🇲🇾]_1735'
+  - '[🇮🇷]_1716'
+  - '[🇸🇬]_1745'
   - '[🇩🇪]_1751'
-  - '[🇮🇩]_1748'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇳🇱]_1749'
+  - '[🇮🇷]_1715'
+  - '[🇲🇾]_1735'
+  - '[🇮🇷]_1716'
+  - '[🇸🇬]_1745'
   - '[🇩🇪]_1751'
-  - '[🇮🇩]_1748'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
