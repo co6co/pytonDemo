@@ -28,52 +28,110 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇫🇷]_1768'
+  name: '[🇩🇪]_1761'
   network: tcp
-  port: 8442
-  server: 51.255.49.192
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: de17e6bf-d51e-3b5f-ad06-7b4b2e1f2a47
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇫🇷]_1772'
-  network: tcp
-  port: 8880
-  server: 38.180.0.175
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 4a41d180-c420-3d3e-8c6c-a43aa8b903de
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]_1776'
-  network: tcp
-  port: 59614
-  server: 142.4.125.84
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 428dee6d-a56a-3de3-b9a7-e9802cf8edaf
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1762'
-  network: ws
   port: 443
-  server: v4.cfnode.eu.org
-  skip-cert-verify: true
-  tls: true
+  server: 91.107.179.0
+  servername: ''
+  tls: false
   type: vmess
+  uuid: 8781240a-6f2c-32b3-8cf6-1e022c3699a4
   udp: true
-  uuid: d4a56533-2a3b-3387-9d68-0691bdd0d8fa
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]更新订阅_1764'
+  network: ws
+  port: 2052
+  server: x.36d.gay
+  tls: false
+  type: vmess
+  uuid: 5acab256-9a4a-3e45-a61d-b550d6b7c9e8
   ws-opts:
     headers:
-      Host: v4.cfnode.eu.org
-    path: /it1?ed=2048
+      Host: x.36d.gay
+    path: /xtsmol
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]提供不限时套餐_1765'
+  network: ws
+  port: 2095
+  server: 104.26.7.180
+  tls: false
+  type: vmess
+  uuid: a9e9dbed-8eff-343e-8a85-47ccec1bdf34
+  ws-opts:
+    headers:
+      Host: x.36d.gay
+    path: /xtsmol
+  udp: true
+- name: '[🇲🇾]_1736'
+  server: my3.encrypted.my.id
+  port: 80
+  type: vmess
+  uuid: a7f381fa-b101-385f-a6c0-8fed642125e0
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /p1AZ3HpVDQHqOyY40R9qgg3E
+    headers:
+      Host: my3.encrypted.my.id
+  udp: true
+- name: '[🇸🇬]_1737'
+  server: si4co.09vpn.com
+  port: 80
+  type: vmess
+  uuid: c152e660-4683-3bd0-a60d-bd633480f0a5
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: si4co.09vpn.com
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: si4co.09vpn.com
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇩🇪]_1767'
+  network: tcp
+  port: 40989
+  server: 128.140.65.160
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 310780f7-703f-3d1c-b19a-94f60cb65d74
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1763'
+  network: tcp
+  port: 45101
+  server: 62.60.178.17
+  tls: false
+  type: vmess
+  uuid: e643b52f-43fa-37e7-ba69-20f5fe258b5e
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇳]频道_1766'
+  network: ws
+  port: 30909
+  server: attwa10016.cdn.node.a.tddns-ounk.com
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 7c2b6a71-fa33-3040-a540-dd5fd10f5d4e
+  ws-opts:
+    headers:
+      Host: ''
+    path: /009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -81,58 +139,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇫🇷]_1768'
-  - '[🇫🇷]_1772'
-  - '[🇺🇸]_1776'
-  - '[🇦🇶]_1762'
+  - '[🇩🇪]_1761'
+  - '[🇺🇸]更新订阅_1764'
+  - '[🇦🇶]提供不限时套餐_1765'
+  - '[🇲🇾]_1736'
+  - '[🇸🇬]_1737'
+  - '[🇩🇪]_1767'
+  - '[🇺🇸]_1763'
+  - '[🇨🇳]频道_1766'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇫🇷]_1768'
-  - '[🇫🇷]_1772'
-  - '[🇺🇸]_1776'
-  - '[🇦🇶]_1762'
+  - '[🇩🇪]_1761'
+  - '[🇺🇸]更新订阅_1764'
+  - '[🇦🇶]提供不限时套餐_1765'
+  - '[🇲🇾]_1736'
+  - '[🇸🇬]_1737'
+  - '[🇩🇪]_1767'
+  - '[🇺🇸]_1763'
+  - '[🇨🇳]频道_1766'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇫🇷]_1768'
-  - '[🇫🇷]_1772'
-  - '[🇺🇸]_1776'
-  - '[🇦🇶]_1762'
+  - '[🇩🇪]_1761'
+  - '[🇺🇸]更新订阅_1764'
+  - '[🇦🇶]提供不限时套餐_1765'
+  - '[🇲🇾]_1736'
+  - '[🇸🇬]_1737'
+  - '[🇩🇪]_1767'
+  - '[🇺🇸]_1763'
+  - '[🇨🇳]频道_1766'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇫🇷]_1768'
-  - '[🇫🇷]_1772'
-  - '[🇺🇸]_1776'
-  - '[🇦🇶]_1762'
+  - '[🇩🇪]_1761'
+  - '[🇺🇸]更新订阅_1764'
+  - '[🇦🇶]提供不限时套餐_1765'
+  - '[🇲🇾]_1736'
+  - '[🇸🇬]_1737'
+  - '[🇩🇪]_1767'
+  - '[🇺🇸]_1763'
+  - '[🇨🇳]频道_1766'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇫🇷]_1768'
-  - '[🇫🇷]_1772'
-  - '[🇺🇸]_1776'
-  - '[🇦🇶]_1762'
+  - '[🇩🇪]_1761'
+  - '[🇺🇸]更新订阅_1764'
+  - '[🇦🇶]提供不限时套餐_1765'
+  - '[🇲🇾]_1736'
+  - '[🇸🇬]_1737'
+  - '[🇩🇪]_1767'
+  - '[🇺🇸]_1763'
+  - '[🇨🇳]频道_1766'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇫🇷]_1768'
-  - '[🇫🇷]_1772'
-  - '[🇺🇸]_1776'
-  - '[🇦🇶]_1762'
+  - '[🇩🇪]_1761'
+  - '[🇺🇸]更新订阅_1764'
+  - '[🇦🇶]提供不限时套餐_1765'
+  - '[🇲🇾]_1736'
+  - '[🇸🇬]_1737'
+  - '[🇩🇪]_1767'
+  - '[🇺🇸]_1763'
+  - '[🇨🇳]频道_1766'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
