@@ -17,12 +17,12 @@ jobs:
         with:
           python-version: '3.x' 
        #   cache: "pip"
-       - name: 加载缓存
-         uses: actions/cache@v2
-         with:
-           path: ~/.cache/pip
-           key: ${{ runner.os }}-pip-${{ hashFiles('**/run_in_Actions/pythonModule.txt') }}
-           restore-keys: |
+      - name: 加载缓存
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/run_in_Actions/pythonModule.txt') }}
+          restore-keys: |
            ${{ runner.os }}-pip-         
       - name: 设置时区
         run: sudo timedatectl set-timezone 'Asia/Shanghai'
