@@ -1,16 +1,26 @@
 proxies:
-- name: 🇮🇷伊朗V2CROSS.COM
-  server: 37.27.21.225
-  port: 18855
+- name: 湖南省长沙市联通
+  server: bjcu.xzyunjiasu.icu
+  port: 33952
+  type: ss
+  cipher: aes-256-gcm
+  password: 5c8b210a-2f00-4292-964b-05281c7ad5d1
+  udp: true
+- name: 🇺🇸美国加利福尼亚州圣何塞PEGTECH数据中心
+  server: 192.74.228.162
+  port: 443
   type: vmess
-  uuid: 59cdb3eb-13de-436d-9b6a-6c815863baf4
-  alterId: 0
+  uuid: 051b844f-efe3-4847-92aa-66b5de0b6d4e
+  alterId: 64
   cipher: auto
-  tls: false
+  tls: true
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
   udp: true
 - name: 🇺🇸美国CloudFlare节点
-  server: cc3.shabijichang.com
+  server: ml3.shabijichang.com
   port: 80
   type: vmess
   uuid: c458695d-6908-45c3-9512-e0c46418454c
@@ -22,29 +32,28 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: cc3.shabijichang.com
+      Host: ml3.shabijichang.com
   udp: true
 - name: 🇺🇸美国V2CROSS.COM
-  server: hk1-reality.fp3kemyh-cm4s-2hak-2gb9-w3534umy2sq5.9d8f269f96b25232-759cbb36d6548597.kaufen
-  port: 443
-  type: trojan
-  password: 56a00699-1857-46ac-a861-60d3c17e1b9f
-  sni: 13-231-155-134.nhost.00cdn.com
-  skip-cert-verify: false
-  udp: true
-- name: 🇺🇸美国俄勒冈州波特兰Amazon数据中心
-  server: 54.185.128.159
-  port: 22222
-  type: trojan
-  password: telegram-id-directvpn
-  sni: trj.rollingnext.co.uk
-  skip-cert-verify: false
-  udp: true
-- name: 🇰🇷韩国KT电信
-  server: cdn.anycast.eu.org
-  port: 80
+  server: 146.190.94.141
+  port: 42358
   type: vmess
-  uuid: ffffffff-ffff-ffff-ffff-ffffffffffff
+  uuid: 6e4edbd8-7854-4ef5-c9c6-49e95822e4fc
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /@ONHIT_EHI
+    headers:
+      Host: media-exp1.licdn.com
+  udp: true
+- name: 🇺🇸美国CloudFlare节点2
+  server: us-new01.gujuji.top
+  port: 8080
+  type: vmess
+  uuid: 1bf9efb2-cf30-4878-a01e-acd8bfacc54a
   alterId: 0
   cipher: auto
   tls: false
@@ -53,5 +62,5 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: warp.chigua.tk
+      Host: us-new01.gujuji.top
   udp: true
