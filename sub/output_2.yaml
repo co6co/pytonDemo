@@ -26,30 +26,26 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇭🇰]_1840'
-  server: 182.16.1.194
-  port: 80
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇦]_1853'
+  network: tcp
+  port: 3389
+  server: 178.128.237.6
+  servername: ''
+  tls: false
   type: vmess
-  uuid: 961a0af8-ed15-334e-84b3-5da9f848fa01
+  uuid: d102ad28-bad0-3c62-97c5-60eadd0da2c5
+  udp: true
+- name: '[🇯🇵]_1842'
+  server: jp04-vm0.entry.srthdw.art
+  port: 447
+  type: vmess
+  uuid: 33a7551e-2743-3e68-9d9d-e08ae7f095eb
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
-  servername: internet.life.com.by
-  network: ws
-  ws-opts:
-    path: /opt/video/images
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇫🇮]_1854'
-  network: tcp
-  port: 42769
-  server: 37.143.129.140
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7eb74f13-474b-3084-97dd-1045114b3525
   udp: true
 - alterId: 0
   cipher: auto
@@ -63,18 +59,15 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇯🇵]_1802'
-  network: ws
-  port: 12345
-  server: 152.69.197.74
-  servername: 152.69.197.74
-  skip-cert-verify: false
+  name: '[🇫🇮]_1854'
+  network: tcp
+  port: 42769
+  server: 37.143.129.140
+  servername: ''
   tls: false
   type: vmess
+  uuid: 7eb74f13-474b-3084-97dd-1045114b3525
   udp: true
-  uuid: 27a6b615-1d84-3171-999e-8e9c3e81e1cf
-  ws-opts:
-    path: /bb
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -82,58 +75,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇭🇰]_1840'
-  - '[🇫🇮]_1854'
+  - '[🇨🇦]_1853'
+  - '[🇯🇵]_1842'
   - '[🇹🇷]_1851'
-  - '[🇯🇵]_1802'
+  - '[🇫🇮]_1854'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]_1840'
-  - '[🇫🇮]_1854'
+  - '[🇨🇦]_1853'
+  - '[🇯🇵]_1842'
   - '[🇹🇷]_1851'
-  - '[🇯🇵]_1802'
+  - '[🇫🇮]_1854'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]_1840'
-  - '[🇫🇮]_1854'
+  - '[🇨🇦]_1853'
+  - '[🇯🇵]_1842'
   - '[🇹🇷]_1851'
-  - '[🇯🇵]_1802'
+  - '[🇫🇮]_1854'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]_1840'
-  - '[🇫🇮]_1854'
+  - '[🇨🇦]_1853'
+  - '[🇯🇵]_1842'
   - '[🇹🇷]_1851'
-  - '[🇯🇵]_1802'
+  - '[🇫🇮]_1854'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇭🇰]_1840'
-  - '[🇫🇮]_1854'
+  - '[🇨🇦]_1853'
+  - '[🇯🇵]_1842'
   - '[🇹🇷]_1851'
-  - '[🇯🇵]_1802'
+  - '[🇫🇮]_1854'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇭🇰]_1840'
-  - '[🇫🇮]_1854'
+  - '[🇨🇦]_1853'
+  - '[🇯🇵]_1842'
   - '[🇹🇷]_1851'
-  - '[🇯🇵]_1802'
+  - '[🇫🇮]_1854'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
