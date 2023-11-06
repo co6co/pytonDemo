@@ -28,42 +28,19 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇮🇳]_1776'
-  port: 8443
-  server: bangalore.yourdisha.in
+  name: '[🇸🇬]_1751'
+  network: ws
+  port: 8080
+  server: 139.180.143.251
   skip-cert-verify: false
-  tls: true
+  tls: false
   type: vmess
   udp: true
-  uuid: 48662b5a-991b-3dda-a472-58735052993b
-- alterId: 64
-  cipher: auto
-  name: '[🇳🇱]_1778'
-  network: ws
-  port: 30000
-  server: 154.85.1.129
-  servername: www.42077230.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vmess
-  udp: true
-  uuid: c46ec80f-20ea-3cf8-ac0e-583aa0a0620a
+  uuid: 82845f7a-a47d-3cc1-ac60-9089de4f8a71
   ws-opts:
-    path: /path/1698579913173
-- name: '[🇳🇱]_1805'
-  server: 193.235.147.233
-  port: 26830
-  type: vmess
-  uuid: 33af91cd-a761-3649-9049-6dc3d46f7e23
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  servername: v-nl1.ngvip.net
-  network: ws
-  ws-opts:
+    headers:
+      Host: tms.dingtalk.com
     path: /
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -71,52 +48,40 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇮🇳]_1776'
-  - '[🇳🇱]_1778'
-  - '[🇳🇱]_1805'
+  - '[🇸🇬]_1751'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇳]_1776'
-  - '[🇳🇱]_1778'
-  - '[🇳🇱]_1805'
+  - '[🇸🇬]_1751'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇳]_1776'
-  - '[🇳🇱]_1778'
-  - '[🇳🇱]_1805'
+  - '[🇸🇬]_1751'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇳]_1776'
-  - '[🇳🇱]_1778'
-  - '[🇳🇱]_1805'
+  - '[🇸🇬]_1751'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇮🇳]_1776'
-  - '[🇳🇱]_1778'
-  - '[🇳🇱]_1805'
+  - '[🇸🇬]_1751'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇮🇳]_1776'
-  - '[🇳🇱]_1778'
-  - '[🇳🇱]_1805'
+  - '[🇸🇬]_1751'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
