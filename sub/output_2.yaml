@@ -28,24 +28,38 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1807'
+  name: '[🇦🇶]美国_1802'
   network: ws
-  port: 443
-  server: 172.67.183.110
-  servername: waynn.makeup
-  tls: true
+  port: 2095
+  server: cdnikuan2.ikuan.dev
+  tls: false
   type: vmess
-  uuid: e7857023-960e-3706-956c-0a22bc8db617
+  uuid: c65f4d2b-dd7b-3245-a873-bf1157e98dc7
   ws-opts:
     headers:
-      Host: waynn.makeup
-    path: linkvws
+      Host: de-data-02.ikuan.dev
+    path: /cloudvideo?ed=1024
   udp: true
-- name: '[🇸🇬]_1795'
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]英国_1803'
+  network: ws
+  port: 443
+  server: 104.18.72.238
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 7adc4cf5-cb3f-30ba-954a-a54e1b511d0f
+  ws-opts:
+    headers:
+      Host: uk-cf-gy.115cloud.link
+    path: /E6QkCpqXGX5EUZJdAACD
+  udp: true
+- name: '[🇸🇬]_1796'
   server: f02.bzshare.com
   port: 443
   type: vmess
-  uuid: e312b88c-ed67-3476-a9ca-1288d18ef475
+  uuid: eb02eac1-ef5b-3322-8332-a7120bd5464f
   alterId: 0
   cipher: auto
   tls: true
@@ -56,30 +70,81 @@ proxies:
     headers:
       Host: fs.appls.eu.org
   udp: true
-- name: '[🇸🇬]_1796'
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]美国_1805'
+  network: ws
+  port: 8880
+  server: cdnikuan2.ikuan.dev
+  tls: false
+  type: vmess
+  uuid: 3d90ea40-d47f-34c6-af67-05bc66395e9f
+  ws-opts:
+    headers:
+      Host: losangeles.freenode.pro
+    path: /microsoft?ed=1024
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]_1807'
+  network: ws
+  port: 8880
+  server: 104.17.219.222
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 09dc036a-9c44-3304-90e1-0266fc02c156
+  ws-opts:
+    headers:
+      Host: losangeles.freenode.pro
+    path: /microsoft?ed=1024
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1808'
+  network: ws
+  port: 443
+  server: 172.67.183.110
+  servername: waynn.makeup
+  tls: true
+  type: vmess
+  uuid: 2d3fdcf3-53d8-3aa9-b9b5-8ae7b085ba9b
+  ws-opts:
+    headers:
+      Host: waynn.makeup
+    path: linkvws
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1801'
+  network: tcp
+  port: 3456
+  server: 89.116.38.195
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: c869396a-97e1-3dd4-8fe4-586cb7e86015
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1804'
+  network: tcp
+  port: 3456
+  server: 89.116.38.170
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: ff95ab4a-82a1-349c-a1d5-4d2826432f9e
+  udp: true
+- name: '[🇸🇬]_1797'
   server: ora-sg4.cou.gay
   port: 23502
   type: vmess
-  uuid: eb02eac1-ef5b-3322-8332-a7120bd5464f
+  uuid: 5fbea5e9-5cad-33f4-a770-2c5d79d41a55
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
-  udp: true
-- name: '[🇸🇬]_1427'
-  server: si2.09vpn.com
-  port: 80
-  type: vmess
-  uuid: 9972cf0f-1da1-35ad-9cd6-4042c7ae5591
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: si2.09vpn.com
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -88,58 +153,88 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1807'
-  - '[🇸🇬]_1795'
+  - '[🇦🇶]美国_1802'
+  - '[🇦🇶]英国_1803'
   - '[🇸🇬]_1796'
-  - '[🇸🇬]_1427'
+  - '[🇦🇶]美国_1805'
+  - '[🇦🇶]_1807'
+  - '[🇺🇸]_1808'
+  - '[🇺🇸]_1801'
+  - '[🇺🇸]_1804'
+  - '[🇸🇬]_1797'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1807'
-  - '[🇸🇬]_1795'
+  - '[🇦🇶]美国_1802'
+  - '[🇦🇶]英国_1803'
   - '[🇸🇬]_1796'
-  - '[🇸🇬]_1427'
+  - '[🇦🇶]美国_1805'
+  - '[🇦🇶]_1807'
+  - '[🇺🇸]_1808'
+  - '[🇺🇸]_1801'
+  - '[🇺🇸]_1804'
+  - '[🇸🇬]_1797'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1807'
-  - '[🇸🇬]_1795'
+  - '[🇦🇶]美国_1802'
+  - '[🇦🇶]英国_1803'
   - '[🇸🇬]_1796'
-  - '[🇸🇬]_1427'
+  - '[🇦🇶]美国_1805'
+  - '[🇦🇶]_1807'
+  - '[🇺🇸]_1808'
+  - '[🇺🇸]_1801'
+  - '[🇺🇸]_1804'
+  - '[🇸🇬]_1797'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1807'
-  - '[🇸🇬]_1795'
+  - '[🇦🇶]美国_1802'
+  - '[🇦🇶]英国_1803'
   - '[🇸🇬]_1796'
-  - '[🇸🇬]_1427'
+  - '[🇦🇶]美国_1805'
+  - '[🇦🇶]_1807'
+  - '[🇺🇸]_1808'
+  - '[🇺🇸]_1801'
+  - '[🇺🇸]_1804'
+  - '[🇸🇬]_1797'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1807'
-  - '[🇸🇬]_1795'
+  - '[🇦🇶]美国_1802'
+  - '[🇦🇶]英国_1803'
   - '[🇸🇬]_1796'
-  - '[🇸🇬]_1427'
+  - '[🇦🇶]美国_1805'
+  - '[🇦🇶]_1807'
+  - '[🇺🇸]_1808'
+  - '[🇺🇸]_1801'
+  - '[🇺🇸]_1804'
+  - '[🇸🇬]_1797'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1807'
-  - '[🇸🇬]_1795'
+  - '[🇦🇶]美国_1802'
+  - '[🇦🇶]英国_1803'
   - '[🇸🇬]_1796'
-  - '[🇸🇬]_1427'
+  - '[🇦🇶]美国_1805'
+  - '[🇦🇶]_1807'
+  - '[🇺🇸]_1808'
+  - '[🇺🇸]_1801'
+  - '[🇺🇸]_1804'
+  - '[🇸🇬]_1797'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
