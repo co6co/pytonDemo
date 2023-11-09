@@ -1,49 +1,26 @@
 proxies:
-- name: CA_speednode_0001
-  server: 165.227.44.89
-  port: 3389
-  type: vmess
-  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-    headers:
-      Host:
-      - 165.227.44.89
+- name: CN_speednode_0001
+  server: 223.95.40.85
+  port: 20299
+  type: ss
+  cipher: aes-128-gcm
+  password: a-wym4ovY4Yw
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: ''
+    mode: websocket
+    mux: true
+    path: ''
+    skip-cert-verify: true
+    tls: false
+  tfo: false
   udp: true
 - name: CN_speednode_0002
-  server: hz.888898.beauty
-  port: 30671
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 568576e9-bc6e-47b3-94b6-a7ed61757c1b
-  udp: true
-- name: CN_speednode_0003
-  server: gz.888898.beauty
-  port: 47410
+  server: 223.95.40.85
+  port: 20299
   type: ss
   cipher: aes-128-gcm
-  password: 568576e9-bc6e-47b3-94b6-a7ed61757c1b
-  udp: true
-- name: CN_speednode_0004
-  server: proxy1.fanqiecloud.top
-  port: 26202
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: a1509da8-c602-4616-9214-76ef0605e445
-  udp: true
-- name: CN_speednode_0005
-  server: 183.232.170.32
-  port: 20023
-  type: ss
-  cipher: aes-128-gcm
-  password: g12sQi#ss#&1
+  password: a-wym4ovY4Yw
   plugin: v2ray-plugin
   plugin-opts:
     mode: websocket
@@ -53,12 +30,12 @@ proxies:
     mux: true
     skip-cert-verify: true
   udp: true
-- name: CN_speednode_0006
-  server: 183.232.170.32
-  port: 20023
+- name: CN_speednode_0003
+  server: 223.95.40.85
+  port: 20299
   type: ss
   cipher: aes-128-gcm
-  password: g12sQi#ss#&1
+  password: a-wym4ovY4Yw
   tfo: false
   plugin: v2ray-plugin
   plugin-opts:
@@ -69,16 +46,51 @@ proxies:
     mux: true
     skip-cert-verify: true
   udp: true
-- name: CN_speednode_0007
-  server: cnah2.lanyunshi.cc
-  port: 60010
+- name: CN_speednode_0004
+  server: cnzz02.fastbiubiu.com
+  port: 6421
   type: vmess
+  uuid: bfe00cfc-5ecc-38a6-99ef-4c965305f982
+  alterId: 0
   cipher: auto
-  uuid: 0b192ff2-7718-3206-93f4-6a260a422cc8
-  alterId: 2
   tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /6
+    headers:
+      Host: cnzz02.fastbiubiu.com
+  udp: true
+- name: CN_speednode_0005
+  server: gz.888898.beauty
+  port: 47410
+  type: ss
+  cipher: aes-128-gcm
+  password: 568576e9-bc6e-47b3-94b6-a7ed61757c1b
+  udp: true
+- name: CN_speednode_0006
+  server: hz.888898.beauty
+  port: 30671
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 568576e9-bc6e-47b3-94b6-a7ed61757c1b
+  udp: true
+- name: CN_speednode_0007
+  server: cnzz02.fastbiubiu.com
+  port: 6421
+  type: vmess
+  uuid: bfe00cfc-5ecc-38a6-99ef-4c965305f982
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
   skip-cert-verify: true
-  network: tcp
+  servername: cnzz02.fastbiubiu.com
+  network: ws
+  ws-opts:
+    path: /6
+    headers:
+      Host: cnzz02.fastbiubiu.com
   udp: true
 - name: CN_speednode_0008
   server: 183.232.170.32
@@ -97,17 +109,70 @@ proxies:
   tfo: false
   udp: true
 - name: CN_speednode_0009
-  server: iepl2.airtcp.vip
-  port: 12316
-  type: vmess
-  cipher: auto
-  uuid: 0b192ff2-7718-3206-93f4-6a260a422cc8
-  alterId: 2
-  tls: false
-  skip-cert-verify: true
-  network: tcp
+  server: 183.232.170.32
+  port: 20023
+  type: ss
+  cipher: aes-128-gcm
+  password: g12sQi#ss#&1
+  tfo: false
+  plugin: v2ray-plugin
+  plugin-opts:
+    mode: websocket
+    host: ''
+    path: ''
+    tls: false
+    mux: true
+    skip-cert-verify: true
   udp: true
 - name: CN_speednode_0010
+  server: 183.232.170.32
+  port: 20023
+  type: ss
+  cipher: aes-128-gcm
+  password: g12sQi#ss#&1
+  plugin: v2ray-plugin
+  plugin-opts:
+    mode: websocket
+    host: ''
+    path: /
+    tls: false
+    mux: true
+    skip-cert-verify: true
+  udp: true
+- name: CN_speednode_0011
+  server: yd-03.paofunlink.com
+  port: 1076
+  type: ssr
+  cipher: chacha20-ietf
+  password: bxsnucrgk6hfish
+  protocol: auth_aes128_sha1
+  obfs: plain
+  protocol-param: 7521:12HsOu
+  obfs-param: fb7bc7521.microsoft.com
+  udp: true
+- name: CN_speednode_0012
+  server: yd-05.paofunlink.com
+  port: 1072
+  type: ssr
+  cipher: chacha20-ietf
+  password: bxsnucrgk6hfish
+  protocol: auth_aes128_sha1
+  obfs: plain
+  protocol-param: 7521:12HsOu
+  obfs-param: fb7bc7521.microsoft.com
+  udp: true
+- name: CN_speednode_0013
+  server: yd-03.paofunlink.com
+  port: 1097
+  type: ssr
+  cipher: chacha20-ietf
+  password: bxsnucrgk6hfish
+  protocol: auth_aes128_sha1
+  obfs: plain
+  protocol-param: 7521:12HsOu
+  obfs-param: fb7bc7521.microsoft.com
+  udp: true
+- name: CN_speednode_0014
   server: cnzz05.fastbiubiu.com
   port: 16401
   type: vmess
@@ -122,7 +187,34 @@ proxies:
     headers:
       Host: cnzz05.fastbiubiu.com
   udp: true
-- name: CN_speednode_0011
+- name: CN_speednode_0015
+  server: a.01.tw.name.ga
+  port: 45614
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: ae4a6239-d3f2-499e-989d-c0d0c833e2c8
+  tfo: false
+  udp: true
+- name: CN_speednode_0016
+  server: cnah2.lanyunshi.cc
+  port: 60010
+  type: vmess
+  cipher: auto
+  uuid: 0b192ff2-7718-3206-93f4-6a260a422cc8
+  alterId: 2
+  tls: false
+  skip-cert-verify: true
+  network: tcp
+  udp: true
+- name: CN_speednode_0017
+  server: sg.kunlun-ppg.com
+  port: 10833
+  type: trojan
+  password: 86bf7b8a-b8af-478f-99fc-7054813c32aa
+  sni: alibaba-node.cn
+  skip-cert-verify: true
+  udp: true
+- name: CN_speednode_0018
   server: oracle.accessconnect.cc
   port: 1127
   type: ssr
@@ -133,7 +225,7 @@ proxies:
   protocol-param: 203723:kS6Oji
   obfs-param: 72106203723.www.gov.hk
   udp: true
-- name: CN_speednode_0012
+- name: CN_speednode_0019
   server: cnah.lanyunshi.cc
   port: 60009
   type: vmess
@@ -144,21 +236,86 @@ proxies:
   skip-cert-verify: true
   network: tcp
   udp: true
-- name: DE_speednode_0013
+- name: CN_speednode_0020
+  server: 36.133.1.43
+  port: 38000
+  type: trojan
+  password: 29ea82cf-f956-42b2-a5dc-35feea39e7ff
+  udp: true
+  skip-cert-verify: true
+  sni: glc-sg1.windowsupdatea.com
+  network: tcp
+- name: CN_speednode_0021
+  server: iepl2.airtcp.vip
+  port: 12316
+  type: vmess
+  cipher: auto
+  uuid: 0b192ff2-7718-3206-93f4-6a260a422cc8
+  alterId: 2
+  tls: false
+  skip-cert-verify: true
+  network: tcp
+  udp: true
+- name: DE_speednode_0022
   server: 89.187.169.38
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: asdKkaskJKfnsa
   udp: true
-- name: DE_speednode_0014
+- name: DE_speednode_0023
   server: beecomf.xyz
   port: 8080
   type: ss
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: FI_speednode_0015
+- name: DE_speednode_0024
+  server: v2line.telegram.channel.1321.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  port: 80
+  type: vmess
+  uuid: 9d5e69d2-46cf-4865-95fe-a2ee8c52a013
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: v2line.telegram.channel.1321.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  udp: true
+- name: DE_speednode_0025
+  server: 45.155.249.151
+  port: 80
+  type: vmess
+  uuid: 9d5e69d2-46cf-4865-95fe-a2ee8c52a013
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: tms.dingtalk.com
+  udp: true
+- name: DE_speednode_0026
+  server: v2line.telegram.channel.1344.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  port: 80
+  type: vmess
+  uuid: 9d5e69d2-46cf-4865-95fe-a2ee8c52a013
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: v2line.telegram.channel.1344.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  udp: true
+- name: FI_speednode_0027
   server: 95.217.219.28
   port: 3389
   type: vmess
@@ -176,25 +333,7 @@ proxies:
       Host:
       - 95.217.219.28
   udp: true
-- name: FI_speednode_0016
-  server: 95.216.147.138
-  port: 3389
-  type: vmess
-  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-    headers:
-      Host:
-      - 95.216.147.138
-  udp: true
-- name: FI_speednode_0017
+- name: FI_speednode_0028
   server: 65.109.218.111
   port: 443
   type: vmess
@@ -212,15 +351,40 @@ proxies:
       Host:
       - 65.109.218.111
   udp: true
-- name: GB_speednode_0018
+- name: FI_speednode_0029
+  server: 95.216.147.138
+  port: 3389
+  type: vmess
+  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+    headers:
+      Host:
+      - 95.216.147.138
+  udp: true
+- name: GB_speednode_0030
+  server: 212.102.53.198
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: GB_speednode_0031
   server: 13.87.74.71
   port: 14564
   type: ss
   cipher: chacha20-ietf-poly1305
   password: Q1qlRknoN9PwGeExWVyTKg
   udp: true
-- name: HK_speednode_0019
-  server: 8.217.135.205
+- name: HK_speednode_0032
+  server: 8.217.94.208
   port: 443
   type: ss
   cipher: aes-128-gcm
@@ -235,76 +399,30 @@ proxies:
     mux: true
     skip-cert-verify: true
   udp: true
-- name: HK_speednode_0020
-  server: 123.254.105.107
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 20544f92a1fb
-  tfo: false
-  plugin: v2ray-plugin
-  plugin-opts:
-    mode: websocket
-    host: jyn42.xjhssba.today
-    path: /vtprtcemdw
-    tls: true
-    mux: true
-    skip-cert-verify: true
-  udp: true
-- name: HK_speednode_0021
-  server: 123.254.105.107
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 20544f92a1fb
-  plugin: v2ray-plugin
-  plugin-opts:
-    mode: websocket
-    host: jyn42.xjhssba.today
-    path: /vtprtcemdw
-    tls: true
-    mux: true
-  udp: true
-- name: HK_speednode_0022
-  server: 43.240.15.69
-  port: 443
-  type: ss
-  cipher: aes-256-gcm
-  password: 3cda32d5cda5
-  tfo: false
-  plugin: v2ray-plugin
-  plugin-opts:
-    mode: websocket
-    host: jjy11.jurtcs.com
-    path: /dxlvkpmlvqsi
-    tls: true
-    mux: true
-    skip-cert-verify: true
-  udp: true
-- name: IT_speednode_0023
+- name: IT_speednode_0033
   server: it.fanqiecloud.top
   port: 22802
   type: ss
   cipher: chacha20-ietf-poly1305
   password: f7d8e806-7b5c-4450-bda7-98c4bc7d2aab
   udp: true
-- name: KR_speednode_0024
-  server: ko2.lianpi.xyz
-  port: 64123
-  type: trojan
-  password: a0043275-5033-4923-9f22-b2f466a8794a
-  sni: apple.com
-  skip-cert-verify: true
-  udp: true
-- name: SG_speednode_0025
-  server: 13.213.13.113
+- name: JP_speednode_0034
+  server: 35.72.2.78
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   tfo: false
   udp: true
-- name: US_speednode_0026
+- name: KR_speednode_0035
+  server: 43.202.42.168
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  tfo: false
+  udp: true
+- name: US_speednode_0036
   server: 216.52.183.243
   port: 80
   type: ss
@@ -316,7 +434,7 @@ proxies:
     mode: http
     host: None
   udp: true
-- name: US_speednode_0027
+- name: US_speednode_0037
   server: 216.52.183.243
   port: 1002
   type: ss
@@ -332,7 +450,7 @@ proxies:
     mux: true
     skip-cert-verify: true
   udp: true
-- name: US_speednode_0028
+- name: US_speednode_0038
   server: 192.74.236.153
   port: 443
   type: vmess
@@ -347,36 +465,7 @@ proxies:
       Host: None
     path: /path/1699280099138
   udp: true
-- name: US_speednode_0029
-  server: 192.74.236.153
-  port: 443
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /path/1699280099138
-    headers:
-      Host: www.53752665.xyz
-  udp: true
-- name: US_speednode_0030
-  server: 216.52.183.243
-  port: 1002
-  type: ss
-  cipher: aes-128-gcm
-  password: 83XvX4Vo%*3a
-  plugin: v2ray-plugin
-  plugin-opts:
-    mode: websocket
-    host: ''
-    path: ''
-    tls: false
-    mux: true
-  udp: true
-- name: US_speednode_0031
+- name: US_speednode_0039
   server: 216.52.183.243
   port: 1002
   type: ss
@@ -390,4 +479,33 @@ proxies:
     tls: false
     mux: true
     skip-cert-verify: true
+  udp: true
+- name: US_speednode_0040
+  server: 216.52.183.243
+  port: 1002
+  type: ss
+  cipher: aes-128-gcm
+  password: 83XvX4Vo%*3a
+  plugin: v2ray-plugin
+  plugin-opts:
+    mode: websocket
+    host: ''
+    path: ''
+    tls: false
+    mux: true
+  udp: true
+- name: US_speednode_0041
+  server: 192.74.236.153
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /path/1699280099138
+    headers:
+      Host: www.53752665.xyz
   udp: true
