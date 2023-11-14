@@ -26,24 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_1217'
-  server: emwq-156-t.privetpack.site
-  port: 30020
-  type: vmess
-  uuid: 5885e879-b373-3899-a76f-0847ab4b1472
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-    headers:
-      Host:
-      - emwq-156-t.privetpack.site
-  udp: true
 - name: '[🇨🇳]香港_1222'
   server: 183.237.20.154
   port: 40095
@@ -72,6 +54,17 @@ proxies:
     headers:
       Host: www.20718697.xyz
   udp: true
+- name: '[🇨🇳]德国_1224'
+  server: 120.210.205.220
+  port: 47009
+  type: vmess
+  uuid: 985a7f73-34e4-36be-b9bd-01ba8da2222e
+  alterId: 64
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
 - name: '[🇩🇪]_1239'
   server: 78.46.201.146
   port: 23496
@@ -81,20 +74,6 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-  udp: true
-- name: '[🇩🇪]_1240'
-  server: 104.238.158.152
-  port: 2096
-  type: vmess
-  uuid: 7242c953-3fca-3b72-9790-972861779143
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: internet.life.com.by
   network: ws
   ws-opts:
     path: /
@@ -113,6 +92,20 @@ proxies:
   ws-opts:
     path: /
   udp: true
+- name: '[🇩🇪]_1240'
+  server: 104.238.158.152
+  port: 2096
+  type: vmess
+  uuid: 7242c953-3fca-3b72-9790-972861779143
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: internet.life.com.by
+  network: ws
+  ws-opts:
+    path: /
+  udp: true
 - name: '[🇰🇷]_1280'
   server: 144.24.88.101
   port: 16833
@@ -123,15 +116,19 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[🇺🇸]_1322'
-  server: 37.1.211.52
-  port: 3000
+- name: '[🇭🇰]_1281'
+  server: 182.16.1.194
+  port: 80
   type: vmess
-  uuid: a02c4d5b-75ab-3755-96dd-45d79cda7cfa
+  uuid: a1a86e61-acd6-364e-b874-530321d74619
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
+  servername: internet.life.com.by
+  network: ws
+  ws-opts:
+    path: /opt/video/images
   udp: true
 - name: '[🇵🇭]_1292'
   server: 109.248.25.59
@@ -145,6 +142,47 @@ proxies:
   network: ws
   ws-opts:
     path: /ss
+  udp: true
+- name: '[🇺🇸]_1322'
+  server: 37.1.211.52
+  port: 3000
+  type: vmess
+  uuid: a02c4d5b-75ab-3755-96dd-45d79cda7cfa
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇵🇭]_1293'
+  server: v2line.telegram.channel.1334.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  port: 29064
+  type: vmess
+  uuid: e5976346-3e27-368c-903b-9b1f57d88b8c
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: internet.life.com.by
+  network: ws
+  ws-opts:
+    path: /ss
+    headers:
+      Host: v2line.telegram.channel.1334.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  udp: true
+- name: '[🇺🇸]_1329'
+  server: 172.67.142.191
+  port: 443
+  type: vmess
+  uuid: 7118c45f-63d2-3daf-91d9-51808ea43835
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: linkvws
+    headers:
+      Host: edeen.makeup
   udp: true
 - name: '[🇵🇭]_1291'
   server: v2line.telegram.channel.1283.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
@@ -162,26 +200,11 @@ proxies:
     headers:
       Host: v2line.telegram.channel.1283.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
   udp: true
-- name: '[🇺🇸]_1329'
-  server: 172.67.142.191
-  port: 443
+- name: '[🇵🇭]_1294'
+  server: vc-109.248.25.59.nip.io
+  port: 29064
   type: vmess
-  uuid: 7118c45f-63d2-3daf-91d9-51808ea43835
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: edeen.makeup
-  udp: true
-- name: '[🇭🇰]_1281'
-  server: 182.16.1.194
-  port: 80
-  type: vmess
-  uuid: a1a86e61-acd6-364e-b874-530321d74619
+  uuid: 0078ced7-e125-31aa-a9ea-5fbc301b065a
   alterId: 0
   cipher: auto
   tls: false
@@ -189,7 +212,9 @@ proxies:
   servername: internet.life.com.by
   network: ws
   ws-opts:
-    path: /opt/video/images
+    path: /ss
+    headers:
+      Host: vc-109.248.25.59.nip.io
   udp: true
 - name: '[🇺🇸]_1339'
   server: v118a.ai88888.top
@@ -234,38 +259,6 @@ proxies:
   network: ws
   ws-opts:
     path: /GSoTl9ZoYG5V2R0k4tUTGI8k
-  udp: true
-- name: '[🇵🇭]_1293'
-  server: v2line.telegram.channel.1334.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
-  port: 29064
-  type: vmess
-  uuid: e5976346-3e27-368c-903b-9b1f57d88b8c
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: internet.life.com.by
-  network: ws
-  ws-opts:
-    path: /ss
-    headers:
-      Host: v2line.telegram.channel.1334.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
-  udp: true
-- name: '[🇵🇭]_1294'
-  server: vc-109.248.25.59.nip.io
-  port: 29064
-  type: vmess
-  uuid: 0078ced7-e125-31aa-a9ea-5fbc301b065a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: internet.life.com.by
-  network: ws
-  ws-opts:
-    path: /ss
-    headers:
-      Host: vc-109.248.25.59.nip.io
   udp: true
 - name: '[🇺🇸]_1409'
   server: 47.88.89.106
@@ -325,6 +318,20 @@ proxies:
   ws-opts:
     path: /4a5yXsGODBM1cvl9TzyF0SHR3v
   udp: true
+- name: '[🇺🇸]_1410'
+  server: 45.39.70.180
+  port: 443
+  type: vmess
+  uuid: b503073e-7418-3651-a319-a65d74e4a0da
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: idc.kmoljklj.top
+  network: ws
+  ws-opts:
+    path: /9iqvy4a0bZ
+  udp: true
 - name: '[🇺🇸]_1414'
   server: 47.88.106.47
   port: 80
@@ -361,35 +368,6 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[🇺🇸]_1410'
-  server: 45.39.70.180
-  port: 443
-  type: vmess
-  uuid: b503073e-7418-3651-a319-a65d74e4a0da
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  servername: idc.kmoljklj.top
-  network: ws
-  ws-opts:
-    path: /9iqvy4a0bZ
-  udp: true
-- name: '[🇺🇸]_1802'
-  server: 172.233.194.102
-  port: 80
-  type: vmess
-  uuid: a76a70f0-ba09-329a-b1fe-0476f128e935
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: tms.dingtalk.com
-  udp: true
 - name: '[🇨🇦]_1796'
   server: 198.57.27.212
   port: 22324
@@ -399,21 +377,6 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
-  udp: true
-- name: '[🇸🇬]_1335'
-  server: si2.09vpn.com
-  port: 80
-  type: vmess
-  uuid: 8f5e0824-9041-305c-a38e-a1a80fb57205
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: si2.09vpn.com
   udp: true
 - name: '[🇸🇬]_1411'
   server: 152.69.211.235
@@ -430,6 +393,21 @@ proxies:
     path:
     - /
   udp: true
+- name: '[🇸🇬]_1335'
+  server: si2.09vpn.com
+  port: 80
+  type: vmess
+  uuid: 8f5e0824-9041-305c-a38e-a1a80fb57205
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: si2.09vpn.com
+  udp: true
 - name: '[🇸🇬]_1413'
   server: 146.190.94.141
   port: 27817
@@ -443,6 +421,21 @@ proxies:
   network: ws
   ws-opts:
     path: /ONHIT
+  udp: true
+- name: '[🇺🇸]_1802'
+  server: 172.233.194.102
+  port: 80
+  type: vmess
+  uuid: a76a70f0-ba09-329a-b1fe-0476f128e935
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: tms.dingtalk.com
   udp: true
 - name: '[🇯🇵]_1840'
   server: us-v.sshmax.xyz
@@ -459,38 +452,6 @@ proxies:
     path: /vmess
     headers:
       Host: us-v.sshmax.xyz
-  udp: true
-- name: '[🇳🇱]_1829'
-  server: v2line.telegram.channel.1344.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
-  port: 80
-  type: vmess
-  uuid: 2165e0ee-8dbc-3760-95fa-897ace34058f
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: internet.life.com.by
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: v2line.telegram.channel.1344.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
-  udp: true
-- name: '[🇳🇱]_1830'
-  server: v2line.telegram.channel.1321.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
-  port: 80
-  type: vmess
-  uuid: 2563d0a8-3263-3a73-9951-acb76e2425d4
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: internet.life.com.by
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: v2line.telegram.channel.1321.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
   udp: true
 - name: '[🇺🇸]_1852'
   server: 2F59C05E.nip.io
@@ -556,37 +517,6 @@ proxies:
     headers:
       Host: us56.encrypted.my.id
   udp: true
-- name: '[🇺🇸]_1848'
-  server: 5FA43ECC.nip.io
-  port: 80
-  type: vmess
-  uuid: fd702c3f-9e31-3687-89f7-13957c5e6135
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: internet.life.com.by
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: 5FA43ECC.nip.io
-  udp: true
-- name: '[🇮🇹]_1847'
-  server: it1.xv2ray.net
-  port: 80
-  type: vmess
-  uuid: 3df9c5a3-7391-33a4-85de-d0fd8152e902
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: it1.xv2ray.net
-  udp: true
 - name: '[🇺🇸]_1856'
   server: us53.encrypted.my.id
   port: 80
@@ -602,6 +532,38 @@ proxies:
     path: /GSoTl9ZoYG5V2R0k4tUTGI8k
     headers:
       Host: us53.encrypted.my.id
+  udp: true
+- name: '[🇳🇱]_1829'
+  server: v2line.telegram.channel.1344.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  port: 80
+  type: vmess
+  uuid: 2165e0ee-8dbc-3760-95fa-897ace34058f
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: internet.life.com.by
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: v2line.telegram.channel.1344.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  udp: true
+- name: '[🇳🇱]_1830'
+  server: v2line.telegram.channel.1321.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+  port: 80
+  type: vmess
+  uuid: 2563d0a8-3263-3a73-9951-acb76e2425d4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: internet.life.com.by
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: v2line.telegram.channel.1321.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
   udp: true
 - name: '[🇦🇺]_1828'
   server: au1-vmess.greenssh.xyz
@@ -619,16 +581,6 @@ proxies:
     headers:
       Host: au1-vmess.greenssh.xyz
   udp: true
-- name: '[🇮🇳]_1839'
-  server: bangalore.yourdisha.in
-  port: 8443
-  type: vmess
-  uuid: e00cb412-573e-3b72-a2e6-c9921e83e6a0
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
 - alterId: 0
   cipher: auto
   name: '[🇺🇸]_1867'
@@ -640,16 +592,15 @@ proxies:
   type: vmess
   uuid: fb8e290b-5612-3834-80bb-4406ef1609fd
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇩🇪]_1869'
-  network: tcp
-  port: 53298
-  server: 168.119.162.103
-  servername: ''
-  tls: false
+- name: '[🇮🇳]_1839'
+  server: bangalore.yourdisha.in
+  port: 8443
   type: vmess
-  uuid: 1c731ff0-3106-3b1c-9433-607004d82b5c
+  uuid: e00cb412-573e-3b72-a2e6-c9921e83e6a0
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
   udp: true
 - name: '[🇸🇬]_1846'
   server: si4co.09vpn.com
@@ -667,34 +618,36 @@ proxies:
     headers:
       Host: si4co.09vpn.com
   udp: true
-- name: '[🇭🇰]_1866'
-  server: hrgdvpn.flycdnedc55.vip
+- name: '[🇮🇹]_1847'
+  server: it1.xv2ray.net
   port: 80
   type: vmess
-  uuid: c2e66c2a-ba0e-328e-8c30-a85f92adc7e5
-  alterId: 32
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /opt/video/images
-    headers:
-      Host: hrgdvpn.flycdnedc55.vip
-  udp: true
-- name: '[🇯🇵]_1865'
-  server: 152.69.197.74
-  port: 12345
-  type: vmess
-  uuid: 4672b7cf-7077-31ac-a3c1-18dc5068bfb0
+  uuid: 3df9c5a3-7391-33a4-85de-d0fd8152e902
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
-  servername: 152.69.197.74
   network: ws
   ws-opts:
-    path: /bb
+    path: /vmess
+    headers:
+      Host: it1.xv2ray.net
+  udp: true
+- name: '[🇺🇸]_1848'
+  server: 5FA43ECC.nip.io
+  port: 80
+  type: vmess
+  uuid: fd702c3f-9e31-3687-89f7-13957c5e6135
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: internet.life.com.by
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: 5FA43ECC.nip.io
   udp: true
 - name: '[🇸🇬]_1864'
   server: 194.233.95.180
@@ -710,6 +663,17 @@ proxies:
   ws-opts:
     path: /vmess/
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇩🇪]_1869'
+  network: tcp
+  port: 53298
+  server: 168.119.162.103
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 1c731ff0-3106-3b1c-9433-607004d82b5c
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -717,322 +681,310 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1217'
   - '[🇨🇳]香港_1222'
   - '[🇺🇸]美国_1225'
+  - '[🇨🇳]德国_1224'
   - '[🇩🇪]_1239'
-  - '[🇩🇪]_1240'
   - '[🇳🇱]_1241'
+  - '[🇩🇪]_1240'
   - '[🇰🇷]_1280'
-  - '[🇺🇸]_1322'
-  - '[🇵🇭]_1292'
-  - '[🇵🇭]_1291'
-  - '[🇺🇸]_1329'
   - '[🇭🇰]_1281'
+  - '[🇵🇭]_1292'
+  - '[🇺🇸]_1322'
+  - '[🇵🇭]_1293'
+  - '[🇺🇸]_1329'
+  - '[🇵🇭]_1291'
+  - '[🇵🇭]_1294'
   - '[🇺🇸]_1339'
   - '[🇺🇸]_1340'
   - '[🇺🇸]_1408'
-  - '[🇵🇭]_1293'
-  - '[🇵🇭]_1294'
   - '[🇺🇸]_1409'
   - '[🇷🇺]_1327'
   - '[🇵🇱]_1333'
   - '[🇺🇸]_1412'
+  - '[🇺🇸]_1410'
   - '[🇺🇸]_1414'
   - '[🇺🇸]_1415'
   - '[🇺🇸]_1794'
-  - '[🇺🇸]_1410'
-  - '[🇺🇸]_1802'
   - '[🇨🇦]_1796'
-  - '[🇸🇬]_1335'
   - '[🇸🇬]_1411'
+  - '[🇸🇬]_1335'
   - '[🇸🇬]_1413'
+  - '[🇺🇸]_1802'
   - '[🇯🇵]_1840'
-  - '[🇳🇱]_1829'
-  - '[🇳🇱]_1830'
   - '[🇺🇸]_1852'
   - '[🇺🇸]_1853'
   - '[🇺🇸]_1854'
   - '[🇺🇸]_1855'
-  - '[🇺🇸]_1848'
-  - '[🇮🇹]_1847'
   - '[🇺🇸]_1856'
+  - '[🇳🇱]_1829'
+  - '[🇳🇱]_1830'
   - '[🇦🇺]_1828'
-  - '[🇮🇳]_1839'
   - '[🇺🇸]_1867'
-  - '[🇩🇪]_1869'
+  - '[🇮🇳]_1839'
   - '[🇸🇬]_1846'
-  - '[🇭🇰]_1866'
-  - '[🇯🇵]_1865'
+  - '[🇮🇹]_1847'
+  - '[🇺🇸]_1848'
   - '[🇸🇬]_1864'
+  - '[🇩🇪]_1869'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1217'
   - '[🇨🇳]香港_1222'
   - '[🇺🇸]美国_1225'
+  - '[🇨🇳]德国_1224'
   - '[🇩🇪]_1239'
-  - '[🇩🇪]_1240'
   - '[🇳🇱]_1241'
+  - '[🇩🇪]_1240'
   - '[🇰🇷]_1280'
-  - '[🇺🇸]_1322'
-  - '[🇵🇭]_1292'
-  - '[🇵🇭]_1291'
-  - '[🇺🇸]_1329'
   - '[🇭🇰]_1281'
+  - '[🇵🇭]_1292'
+  - '[🇺🇸]_1322'
+  - '[🇵🇭]_1293'
+  - '[🇺🇸]_1329'
+  - '[🇵🇭]_1291'
+  - '[🇵🇭]_1294'
   - '[🇺🇸]_1339'
   - '[🇺🇸]_1340'
   - '[🇺🇸]_1408'
-  - '[🇵🇭]_1293'
-  - '[🇵🇭]_1294'
   - '[🇺🇸]_1409'
   - '[🇷🇺]_1327'
   - '[🇵🇱]_1333'
   - '[🇺🇸]_1412'
+  - '[🇺🇸]_1410'
   - '[🇺🇸]_1414'
   - '[🇺🇸]_1415'
   - '[🇺🇸]_1794'
-  - '[🇺🇸]_1410'
-  - '[🇺🇸]_1802'
   - '[🇨🇦]_1796'
-  - '[🇸🇬]_1335'
   - '[🇸🇬]_1411'
+  - '[🇸🇬]_1335'
   - '[🇸🇬]_1413'
+  - '[🇺🇸]_1802'
   - '[🇯🇵]_1840'
-  - '[🇳🇱]_1829'
-  - '[🇳🇱]_1830'
   - '[🇺🇸]_1852'
   - '[🇺🇸]_1853'
   - '[🇺🇸]_1854'
   - '[🇺🇸]_1855'
-  - '[🇺🇸]_1848'
-  - '[🇮🇹]_1847'
   - '[🇺🇸]_1856'
+  - '[🇳🇱]_1829'
+  - '[🇳🇱]_1830'
   - '[🇦🇺]_1828'
-  - '[🇮🇳]_1839'
   - '[🇺🇸]_1867'
-  - '[🇩🇪]_1869'
+  - '[🇮🇳]_1839'
   - '[🇸🇬]_1846'
-  - '[🇭🇰]_1866'
-  - '[🇯🇵]_1865'
+  - '[🇮🇹]_1847'
+  - '[🇺🇸]_1848'
   - '[🇸🇬]_1864'
+  - '[🇩🇪]_1869'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1217'
   - '[🇨🇳]香港_1222'
   - '[🇺🇸]美国_1225'
+  - '[🇨🇳]德国_1224'
   - '[🇩🇪]_1239'
-  - '[🇩🇪]_1240'
   - '[🇳🇱]_1241'
+  - '[🇩🇪]_1240'
   - '[🇰🇷]_1280'
-  - '[🇺🇸]_1322'
-  - '[🇵🇭]_1292'
-  - '[🇵🇭]_1291'
-  - '[🇺🇸]_1329'
   - '[🇭🇰]_1281'
+  - '[🇵🇭]_1292'
+  - '[🇺🇸]_1322'
+  - '[🇵🇭]_1293'
+  - '[🇺🇸]_1329'
+  - '[🇵🇭]_1291'
+  - '[🇵🇭]_1294'
   - '[🇺🇸]_1339'
   - '[🇺🇸]_1340'
   - '[🇺🇸]_1408'
-  - '[🇵🇭]_1293'
-  - '[🇵🇭]_1294'
   - '[🇺🇸]_1409'
   - '[🇷🇺]_1327'
   - '[🇵🇱]_1333'
   - '[🇺🇸]_1412'
+  - '[🇺🇸]_1410'
   - '[🇺🇸]_1414'
   - '[🇺🇸]_1415'
   - '[🇺🇸]_1794'
-  - '[🇺🇸]_1410'
-  - '[🇺🇸]_1802'
   - '[🇨🇦]_1796'
-  - '[🇸🇬]_1335'
   - '[🇸🇬]_1411'
+  - '[🇸🇬]_1335'
   - '[🇸🇬]_1413'
+  - '[🇺🇸]_1802'
   - '[🇯🇵]_1840'
-  - '[🇳🇱]_1829'
-  - '[🇳🇱]_1830'
   - '[🇺🇸]_1852'
   - '[🇺🇸]_1853'
   - '[🇺🇸]_1854'
   - '[🇺🇸]_1855'
-  - '[🇺🇸]_1848'
-  - '[🇮🇹]_1847'
   - '[🇺🇸]_1856'
+  - '[🇳🇱]_1829'
+  - '[🇳🇱]_1830'
   - '[🇦🇺]_1828'
-  - '[🇮🇳]_1839'
   - '[🇺🇸]_1867'
-  - '[🇩🇪]_1869'
+  - '[🇮🇳]_1839'
   - '[🇸🇬]_1846'
-  - '[🇭🇰]_1866'
-  - '[🇯🇵]_1865'
+  - '[🇮🇹]_1847'
+  - '[🇺🇸]_1848'
   - '[🇸🇬]_1864'
+  - '[🇩🇪]_1869'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1217'
   - '[🇨🇳]香港_1222'
   - '[🇺🇸]美国_1225'
+  - '[🇨🇳]德国_1224'
   - '[🇩🇪]_1239'
-  - '[🇩🇪]_1240'
   - '[🇳🇱]_1241'
+  - '[🇩🇪]_1240'
   - '[🇰🇷]_1280'
-  - '[🇺🇸]_1322'
-  - '[🇵🇭]_1292'
-  - '[🇵🇭]_1291'
-  - '[🇺🇸]_1329'
   - '[🇭🇰]_1281'
+  - '[🇵🇭]_1292'
+  - '[🇺🇸]_1322'
+  - '[🇵🇭]_1293'
+  - '[🇺🇸]_1329'
+  - '[🇵🇭]_1291'
+  - '[🇵🇭]_1294'
   - '[🇺🇸]_1339'
   - '[🇺🇸]_1340'
   - '[🇺🇸]_1408'
-  - '[🇵🇭]_1293'
-  - '[🇵🇭]_1294'
   - '[🇺🇸]_1409'
   - '[🇷🇺]_1327'
   - '[🇵🇱]_1333'
   - '[🇺🇸]_1412'
+  - '[🇺🇸]_1410'
   - '[🇺🇸]_1414'
   - '[🇺🇸]_1415'
   - '[🇺🇸]_1794'
-  - '[🇺🇸]_1410'
-  - '[🇺🇸]_1802'
   - '[🇨🇦]_1796'
-  - '[🇸🇬]_1335'
   - '[🇸🇬]_1411'
+  - '[🇸🇬]_1335'
   - '[🇸🇬]_1413'
+  - '[🇺🇸]_1802'
   - '[🇯🇵]_1840'
-  - '[🇳🇱]_1829'
-  - '[🇳🇱]_1830'
   - '[🇺🇸]_1852'
   - '[🇺🇸]_1853'
   - '[🇺🇸]_1854'
   - '[🇺🇸]_1855'
-  - '[🇺🇸]_1848'
-  - '[🇮🇹]_1847'
   - '[🇺🇸]_1856'
+  - '[🇳🇱]_1829'
+  - '[🇳🇱]_1830'
   - '[🇦🇺]_1828'
-  - '[🇮🇳]_1839'
   - '[🇺🇸]_1867'
-  - '[🇩🇪]_1869'
+  - '[🇮🇳]_1839'
   - '[🇸🇬]_1846'
-  - '[🇭🇰]_1866'
-  - '[🇯🇵]_1865'
+  - '[🇮🇹]_1847'
+  - '[🇺🇸]_1848'
   - '[🇸🇬]_1864'
+  - '[🇩🇪]_1869'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1217'
   - '[🇨🇳]香港_1222'
   - '[🇺🇸]美国_1225'
+  - '[🇨🇳]德国_1224'
   - '[🇩🇪]_1239'
-  - '[🇩🇪]_1240'
   - '[🇳🇱]_1241'
+  - '[🇩🇪]_1240'
   - '[🇰🇷]_1280'
-  - '[🇺🇸]_1322'
-  - '[🇵🇭]_1292'
-  - '[🇵🇭]_1291'
-  - '[🇺🇸]_1329'
   - '[🇭🇰]_1281'
+  - '[🇵🇭]_1292'
+  - '[🇺🇸]_1322'
+  - '[🇵🇭]_1293'
+  - '[🇺🇸]_1329'
+  - '[🇵🇭]_1291'
+  - '[🇵🇭]_1294'
   - '[🇺🇸]_1339'
   - '[🇺🇸]_1340'
   - '[🇺🇸]_1408'
-  - '[🇵🇭]_1293'
-  - '[🇵🇭]_1294'
   - '[🇺🇸]_1409'
   - '[🇷🇺]_1327'
   - '[🇵🇱]_1333'
   - '[🇺🇸]_1412'
+  - '[🇺🇸]_1410'
   - '[🇺🇸]_1414'
   - '[🇺🇸]_1415'
   - '[🇺🇸]_1794'
-  - '[🇺🇸]_1410'
-  - '[🇺🇸]_1802'
   - '[🇨🇦]_1796'
-  - '[🇸🇬]_1335'
   - '[🇸🇬]_1411'
+  - '[🇸🇬]_1335'
   - '[🇸🇬]_1413'
+  - '[🇺🇸]_1802'
   - '[🇯🇵]_1840'
-  - '[🇳🇱]_1829'
-  - '[🇳🇱]_1830'
   - '[🇺🇸]_1852'
   - '[🇺🇸]_1853'
   - '[🇺🇸]_1854'
   - '[🇺🇸]_1855'
-  - '[🇺🇸]_1848'
-  - '[🇮🇹]_1847'
   - '[🇺🇸]_1856'
+  - '[🇳🇱]_1829'
+  - '[🇳🇱]_1830'
   - '[🇦🇺]_1828'
-  - '[🇮🇳]_1839'
   - '[🇺🇸]_1867'
-  - '[🇩🇪]_1869'
+  - '[🇮🇳]_1839'
   - '[🇸🇬]_1846'
-  - '[🇭🇰]_1866'
-  - '[🇯🇵]_1865'
+  - '[🇮🇹]_1847'
+  - '[🇺🇸]_1848'
   - '[🇸🇬]_1864'
+  - '[🇩🇪]_1869'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1217'
   - '[🇨🇳]香港_1222'
   - '[🇺🇸]美国_1225'
+  - '[🇨🇳]德国_1224'
   - '[🇩🇪]_1239'
-  - '[🇩🇪]_1240'
   - '[🇳🇱]_1241'
+  - '[🇩🇪]_1240'
   - '[🇰🇷]_1280'
-  - '[🇺🇸]_1322'
-  - '[🇵🇭]_1292'
-  - '[🇵🇭]_1291'
-  - '[🇺🇸]_1329'
   - '[🇭🇰]_1281'
+  - '[🇵🇭]_1292'
+  - '[🇺🇸]_1322'
+  - '[🇵🇭]_1293'
+  - '[🇺🇸]_1329'
+  - '[🇵🇭]_1291'
+  - '[🇵🇭]_1294'
   - '[🇺🇸]_1339'
   - '[🇺🇸]_1340'
   - '[🇺🇸]_1408'
-  - '[🇵🇭]_1293'
-  - '[🇵🇭]_1294'
   - '[🇺🇸]_1409'
   - '[🇷🇺]_1327'
   - '[🇵🇱]_1333'
   - '[🇺🇸]_1412'
+  - '[🇺🇸]_1410'
   - '[🇺🇸]_1414'
   - '[🇺🇸]_1415'
   - '[🇺🇸]_1794'
-  - '[🇺🇸]_1410'
-  - '[🇺🇸]_1802'
   - '[🇨🇦]_1796'
-  - '[🇸🇬]_1335'
   - '[🇸🇬]_1411'
+  - '[🇸🇬]_1335'
   - '[🇸🇬]_1413'
+  - '[🇺🇸]_1802'
   - '[🇯🇵]_1840'
-  - '[🇳🇱]_1829'
-  - '[🇳🇱]_1830'
   - '[🇺🇸]_1852'
   - '[🇺🇸]_1853'
   - '[🇺🇸]_1854'
   - '[🇺🇸]_1855'
-  - '[🇺🇸]_1848'
-  - '[🇮🇹]_1847'
   - '[🇺🇸]_1856'
+  - '[🇳🇱]_1829'
+  - '[🇳🇱]_1830'
   - '[🇦🇺]_1828'
-  - '[🇮🇳]_1839'
   - '[🇺🇸]_1867'
-  - '[🇩🇪]_1869'
+  - '[🇮🇳]_1839'
   - '[🇸🇬]_1846'
-  - '[🇭🇰]_1866'
-  - '[🇯🇵]_1865'
+  - '[🇮🇹]_1847'
+  - '[🇺🇸]_1848'
   - '[🇸🇬]_1864'
+  - '[🇩🇪]_1869'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
