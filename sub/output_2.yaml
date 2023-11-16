@@ -28,6 +28,21 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
+  http-opts:
+    method: GET
+    path:
+    - /
+  name: '[🇸🇬]_1349'
+  network: http
+  port: 80
+  server: 152.69.211.235
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: f3dac05a-ee96-3061-8249-a6adba03a127
+- alterId: 0
+  cipher: auto
   name: '[🇺🇸]_1751'
   network: ws
   port: 80
@@ -44,6 +59,21 @@ proxies:
     path: /4a5yXsGODBM1cvl9TzyF0SHR3v
 - alterId: 0
   cipher: auto
+  name: '[🇮🇹]_1750'
+  network: ws
+  port: 80
+  server: it1.xv2ray.net
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 981742ac-3865-31e0-a892-749c08fc12ae
+  ws-opts:
+    headers:
+      Host: it1.xv2ray.net
+    path: /vmess
+- alterId: 0
+  cipher: auto
   name: '[🇺🇸]_1752'
   network: ws
   port: 80
@@ -58,21 +88,6 @@ proxies:
     headers:
       Host: us53.encrypted.my.id
     path: /GSoTl9ZoYG5V2R0k4tUTGI8k
-- alterId: 0
-  cipher: auto
-  name: '[🇮🇹]_1750'
-  network: ws
-  port: 80
-  server: it1.xv2ray.net
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 981742ac-3865-31e0-a892-749c08fc12ae
-  ws-opts:
-    headers:
-      Host: it1.xv2ray.net
-    path: /vmess
 - alterId: 0
   cipher: auto
   name: '[🇺🇸]_1753'
@@ -123,36 +138,6 @@ proxies:
     path: /qRV8zMMajQyex4KWUBkia1vvH
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1756'
-  network: ws
-  port: 80
-  server: us52.encrypted.my.id
-  servername: us52.encrypted.my.id
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: ac85e2f6-d1e6-3e5d-be81-f8ab57fef2c0
-  ws-opts:
-    headers:
-      Host: us52.encrypted.my.id
-    path: /OFglbcWQ8P3dJUA7yf
-- alterId: 64
-  cipher: auto
-  name: '[🇺🇸]_1757'
-  network: ws
-  port: 30000
-  server: 198.2.195.202
-  servername: www.78814579.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 171d1445-0dc5-3a56-bb29-310bdf210ad3
-  ws-opts:
-    path: /path/1698239888914
-- alterId: 0
-  cipher: auto
   name: '[🇦🇺]_1729'
   network: ws
   port: 80
@@ -169,6 +154,22 @@ proxies:
     path: /vmess
 - alterId: 0
   cipher: auto
+  name: '[🇺🇸]_1756'
+  network: ws
+  port: 80
+  server: us52.encrypted.my.id
+  servername: us52.encrypted.my.id
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: ac85e2f6-d1e6-3e5d-be81-f8ab57fef2c0
+  ws-opts:
+    headers:
+      Host: us52.encrypted.my.id
+    path: /OFglbcWQ8P3dJUA7yf
+- alterId: 0
+  cipher: auto
   name: '[🇮🇳]_1743'
   port: 8443
   server: bangalore.yourdisha.in
@@ -177,6 +178,20 @@ proxies:
   type: vmess
   udp: true
   uuid: cfa25f22-5c20-3834-86cd-c717a2a89170
+- alterId: 64
+  cipher: auto
+  name: '[🇺🇸]_1757'
+  network: ws
+  port: 30000
+  server: 198.2.195.202
+  servername: www.78814579.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 171d1445-0dc5-3a56-bb29-310bdf210ad3
+  ws-opts:
+    path: /path/1698239888914
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -184,94 +199,100 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇸🇬]_1349'
   - '[🇺🇸]_1751'
-  - '[🇺🇸]_1752'
   - '[🇮🇹]_1750'
+  - '[🇺🇸]_1752'
   - '[🇺🇸]_1753'
   - '[🇺🇸]_1754'
   - '[🇺🇸]_1755'
-  - '[🇺🇸]_1756'
-  - '[🇺🇸]_1757'
   - '[🇦🇺]_1729'
+  - '[🇺🇸]_1756'
   - '[🇮🇳]_1743'
+  - '[🇺🇸]_1757'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇸🇬]_1349'
   - '[🇺🇸]_1751'
-  - '[🇺🇸]_1752'
   - '[🇮🇹]_1750'
+  - '[🇺🇸]_1752'
   - '[🇺🇸]_1753'
   - '[🇺🇸]_1754'
   - '[🇺🇸]_1755'
-  - '[🇺🇸]_1756'
-  - '[🇺🇸]_1757'
   - '[🇦🇺]_1729'
+  - '[🇺🇸]_1756'
   - '[🇮🇳]_1743'
+  - '[🇺🇸]_1757'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇸🇬]_1349'
   - '[🇺🇸]_1751'
-  - '[🇺🇸]_1752'
   - '[🇮🇹]_1750'
+  - '[🇺🇸]_1752'
   - '[🇺🇸]_1753'
   - '[🇺🇸]_1754'
   - '[🇺🇸]_1755'
-  - '[🇺🇸]_1756'
-  - '[🇺🇸]_1757'
   - '[🇦🇺]_1729'
+  - '[🇺🇸]_1756'
   - '[🇮🇳]_1743'
+  - '[🇺🇸]_1757'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇸🇬]_1349'
   - '[🇺🇸]_1751'
-  - '[🇺🇸]_1752'
   - '[🇮🇹]_1750'
+  - '[🇺🇸]_1752'
   - '[🇺🇸]_1753'
   - '[🇺🇸]_1754'
   - '[🇺🇸]_1755'
-  - '[🇺🇸]_1756'
-  - '[🇺🇸]_1757'
   - '[🇦🇺]_1729'
+  - '[🇺🇸]_1756'
   - '[🇮🇳]_1743'
+  - '[🇺🇸]_1757'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇸🇬]_1349'
   - '[🇺🇸]_1751'
-  - '[🇺🇸]_1752'
   - '[🇮🇹]_1750'
+  - '[🇺🇸]_1752'
   - '[🇺🇸]_1753'
   - '[🇺🇸]_1754'
   - '[🇺🇸]_1755'
-  - '[🇺🇸]_1756'
-  - '[🇺🇸]_1757'
   - '[🇦🇺]_1729'
+  - '[🇺🇸]_1756'
   - '[🇮🇳]_1743'
+  - '[🇺🇸]_1757'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇸🇬]_1349'
   - '[🇺🇸]_1751'
-  - '[🇺🇸]_1752'
   - '[🇮🇹]_1750'
+  - '[🇺🇸]_1752'
   - '[🇺🇸]_1753'
   - '[🇺🇸]_1754'
   - '[🇺🇸]_1755'
-  - '[🇺🇸]_1756'
-  - '[🇺🇸]_1757'
   - '[🇦🇺]_1729'
+  - '[🇺🇸]_1756'
   - '[🇮🇳]_1743'
+  - '[🇺🇸]_1757'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
