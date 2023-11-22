@@ -1,20 +1,132 @@
 proxies:
-- name: 🇫🇷法国格拉沃利讷OVH数据中心
-  server: 54.36.174.181
-  port: 8118
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
+- name: 🇺🇸美国CloudFlare节点
+  server: 172.67.132.209
+  port: 80
+  type: vmess
+  uuid: 7e67dfca-3f0d-4ba1-a7e8-b272bcfc156f
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: is2-vmess.sshmax.xyz
   udp: true
-- name: 🇫🇷法国格拉沃利讷OVH数据中心2
-  server: 54.36.174.181
-  port: 8000
+- name: 🇫🇷法国OVH机房SAS硬盘BGP主机
+  server: 149.202.82.172
+  port: 5500
   type: ss
   cipher: aes-256-gcm
   password: KixLvKzwjekG00rm
   udp: true
-- name: 🇺🇸美国CloudFlare节点
-  server: Singapore.MFA.EE
+- name: 🇷🇺俄罗斯V2CROSS.COM
+  server: 212.113.106.243
+  port: 13022
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: w5drAL7PfCIwQ2ycUuoDsV2Ls
+  udp: true
+- name: 🇨🇳台湾省桃园市中华电信
+  server: nbq12.ntbq.dynu.net
+  port: 443
+  type: vmess
+  uuid: b3d43a0b-9ef8-4f87-a5c6-8da062e02620
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /b12
+    headers:
+      Host: nbq12.ntbq.dynu.net
+  udp: true
+- name: 🇺🇸美国CloudFlare节点2
+  server: cf1.openxai.link
+  port: 8080
+  type: vmess
+  uuid: 218996e0-5a6e-4806-8106-6b7b42e6d0d6
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: eu4.openxai.link
+  udp: true
+- name: 湖南省联通
+  server: bjcu.xzyunjiasu.icu
+  port: 33952
+  type: ss
+  cipher: aes-256-gcm
+  password: 5c8b210a-2f00-4292-964b-05281c7ad5d1
+  udp: true
+- name: 🇨🇳台湾省新北市中华电信
+  server: b21.ntbq.dynu.net
+  port: 443
+  type: vmess
+  uuid: b1fd7844-4c95-4316-9a15-c7b415e9d84c
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /b21
+    headers:
+      Host: b21.ntbq.dynu.net
+  udp: true
+- name: 🇺🇸美国V2CROSS.COM
+  server: aa8.wuxianliulianng.xyz
+  port: 443
+  type: vmess
+  uuid: b0e43362-72b7-49ac-8eb6-fff69e07cfae
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /apple
+    headers:
+      Host: 4444.golinkwuxian.top
+  udp: true
+- name: 🇧🇷巴西圣保罗CloudFlare节点
+  server: 188.114.96.2
+  port: 443
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 1
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: linkvws
+    headers:
+      Host: ophelia.mom
+  udp: true
+- name: 乌克兰V2CROSS.COM
+  server: uk1-vmess.greenssh.xyz
+  port: 80
+  type: vmess
+  uuid: b5aafe8c-3527-4502-8add-9ca7417cfc88
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: uk1-vmess.greenssh.xyz
+  udp: true
+- name: 🇺🇸美国CloudFlare节点3
+  server: 172.67.68.136
   port: 80
   type: vmess
   uuid: 08b2ceb1-5917-42da-b02c-0f942754aac6
@@ -28,106 +140,42 @@ proxies:
     headers:
       Host: buyvm.iiio.wiki
   udp: true
-- name: 🇨🇳台湾省中华电信(HiNet)数据中心
-  server: b23.ntbq.dynu.net
+- name: 🇨🇳台湾省台北市中华电信
+  server: b22.ntbq.dynu.net
   port: 443
   type: vmess
-  uuid: b4224a4d-6754-47e5-99ef-124697d24b4e
+  uuid: b91e2e5c-47cd-4cb1-bff3-f4a063c2bfd7
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: b22.ntbq.dynu.net
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: b22.ntbq.dynu.net
+  udp: true
+- name: 🇨🇳台湾省中华电信(HiNet)数据中心
+  server: nbq13.ntbq.dynu.net
+  port: 443
+  type: vmess
+  uuid: d6bc538d-2496-4818-b160-2d5875ba9a91
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /b23
+    path: /b13
     headers:
-      Host: b23.ntbq.dynu.net
-  udp: true
-- name: 湖南省联通
-  server: bjcu.xzyunjiasu.icu
-  port: 33952
-  type: ss
-  cipher: aes-256-gcm
-  password: 5c8b210a-2f00-4292-964b-05281c7ad5d1
-  udp: true
-- name: 🇨🇳广东省深圳市移动
-  server: 11.kccic2pa.xyz
-  port: 50011
-  type: vmess
-  uuid: 0d5dc15e-0b62-4e7a-821c-d462d8e35ea2
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇨🇳广东省广州市电信IDC机房
-  server: 49.kccic2pa.xyz
-  port: 50049
-  type: vmess
-  uuid: 0d5dc15e-0b62-4e7a-821c-d462d8e35ea2
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇫🇷法国格拉沃利讷OVH数据中心3
-  server: 54.36.174.181
-  port: 8119
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
-  udp: true
-- name: 🇺🇸美国CloudFlare节点2
-  server: cf2.openxai.link
-  port: 8080
-  type: vmess
-  uuid: 47396f9c-365d-4b99-ad1f-f7927164b4c5
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: eu3.openxai.link
-  udp: true
-- name: 安徽省移动数据上网公共出口
-  server: 112.29.94.23
-  port: 49223
-  type: vmess
-  uuid: 21a9bff2-72de-4e62-93ff-8b159f66d875
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇫🇷法国格拉沃利讷OVH数据中心4
-  server: 54.36.174.181
-  port: 5500
-  type: ss
-  cipher: aes-256-gcm
-  password: KixLvKzwjekG00rm
-  udp: true
-- name: 🇫🇷法国格拉沃利讷OVH数据中心5
-  server: 54.36.174.181
-  port: 5003
-  type: ss
-  cipher: aes-256-gcm
-  password: g5MeD6Ft3CWlJId
-  udp: true
-- name: 🇫🇷法国格拉沃利讷OVH数据中心6
-  server: 54.36.174.181
-  port: 2376
-  type: ss
-  cipher: aes-256-gcm
-  password: faBAoD54k87UJG7
+      Host: nbq13.ntbq.dynu.net
   udp: true
 - name: 🇨🇳台湾省中华电信(HiNet)数据中心2
   server: b24.ntbq.dynu.net
   port: 443
   type: vmess
-  uuid: d201923c-daa9-4459-8e98-9b3ea0435926
+  uuid: b1fd7844-4c95-4316-9a15-c7b415e9d84c
   alterId: 0
   cipher: auto
   tls: true
@@ -135,60 +183,6 @@ proxies:
   network: ws
   ws-opts:
     path: /b24
-    headers:
-      Host: b24.ntbq.dynu.net
-  udp: true
-- name: 🇫🇷法国格拉沃利讷OVH数据中心7
-  server: 54.36.174.181
-  port: 5004
-  type: ss
-  cipher: aes-256-gcm
-  password: g5MeD6Ft3CWlJId
-  udp: true
-- name: 甘肃省兰州市移动
-  server: 36.141.40.59
-  port: 55002
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇺🇸美国CloudFlare节点3
-  server: octavi.cfd
-  port: 443
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: octavi.cfd
-  udp: true
-- name: 🇫🇷法国格拉沃利讷OVH数据中心8
-  server: ak1751.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
-  port: 5600
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  udp: true
-- name: 🇨🇳台湾省中华电信(HiNet)数据中心3
-  server: b24.ntbq.dynu.net
-  port: 443
-  type: vmess
-  uuid: 450cd674-1411-4ea1-979b-bf56da87b21d
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
     headers:
       Host: b24.ntbq.dynu.net
   udp: true
