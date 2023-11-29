@@ -26,38 +26,24 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇻🇳]_1412'
-  server: 14.225.252.43
+- name: '[🇻🇳]_1442'
+  server: 103.30.11.90
   port: 80
   type: vmess
-  uuid: 00c0c08f-02d4-30ee-8bb2-827a86420a48
+  uuid: 5fc1ecd6-28b1-3411-b081-f5cd2c987259
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /
+    path: /zingfast.vn
   udp: true
-- name: '[🇺🇸]_1458'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: 26504163-11ca-30c2-a40f-fa3410ebaf69
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
-  tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
-  udp: true
-- name: '[🇸🇬]_1414'
+- name: '[🇸🇬]_1446'
   server: sgpublic1.zf.id.vn
   port: 80
   type: vmess
-  uuid: 4b2fbe51-c906-345d-ba6d-0d4aab3a7b5b
+  uuid: a5bda5a0-2a10-33fc-919d-85e50d5f691e
   alterId: 0
   cipher: auto
   tls: false
@@ -68,11 +54,11 @@ proxies:
     headers:
       Host: dl.kgvn.garenanow.com
   udp: true
-- name: '[🇺🇸]_1440'
-  server: 158.101.7.8
+- name: '[🇻🇳]_1444'
+  server: 14.225.252.43
   port: 80
   type: vmess
-  uuid: dddfbbdc-6ec3-3fd8-a1b6-57e11658c7d4
+  uuid: 1c4a3f93-1541-3d91-b334-2bbacf90023a
   alterId: 0
   cipher: auto
   tls: false
@@ -81,26 +67,11 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: '[🇰🇷]_1422'
-  server: 152.67.218.38
-  port: 443
-  type: vmess
-  uuid: 5bddee2a-fd39-329f-a176-6a2b943897eb
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 152.67.218.38
-  udp: true
-- name: '[🇻🇳]_1417'
+- name: '[🇻🇳]_1449'
   server: vt3.phuonglien4g.com
   port: 80
   type: vmess
-  uuid: 5ad2e593-0845-3236-83b8-6e5da7a4b750
+  uuid: d77bf65f-f712-3693-bb8b-440a9933ac4d
   alterId: 0
   cipher: auto
   tls: false
@@ -132,12 +103,10 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇻🇳]_1412'
-  - '[🇺🇸]_1458'
-  - '[🇸🇬]_1414'
-  - '[🇺🇸]_1440'
-  - '[🇰🇷]_1422'
-  - '[🇻🇳]_1417'
+  - '[🇻🇳]_1442'
+  - '[🇸🇬]_1446'
+  - '[🇻🇳]_1444'
+  - '[🇻🇳]_1449'
   - '[🇸🇬]_1457'
 - name: 🎯 负载均衡
   type: load-balance
@@ -145,12 +114,10 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1412'
-  - '[🇺🇸]_1458'
-  - '[🇸🇬]_1414'
-  - '[🇺🇸]_1440'
-  - '[🇰🇷]_1422'
-  - '[🇻🇳]_1417'
+  - '[🇻🇳]_1442'
+  - '[🇸🇬]_1446'
+  - '[🇻🇳]_1444'
+  - '[🇻🇳]_1449'
   - '[🇸🇬]_1457'
 - name: ♻️ 自动选择
   type: fallback
@@ -158,12 +125,10 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1412'
-  - '[🇺🇸]_1458'
-  - '[🇸🇬]_1414'
-  - '[🇺🇸]_1440'
-  - '[🇰🇷]_1422'
-  - '[🇻🇳]_1417'
+  - '[🇻🇳]_1442'
+  - '[🇸🇬]_1446'
+  - '[🇻🇳]_1444'
+  - '[🇻🇳]_1449'
   - '[🇸🇬]_1457'
 - name: 🔰 延迟最低
   type: url-test
@@ -171,23 +136,19 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1412'
-  - '[🇺🇸]_1458'
-  - '[🇸🇬]_1414'
-  - '[🇺🇸]_1440'
-  - '[🇰🇷]_1422'
-  - '[🇻🇳]_1417'
+  - '[🇻🇳]_1442'
+  - '[🇸🇬]_1446'
+  - '[🇻🇳]_1444'
+  - '[🇻🇳]_1449'
   - '[🇸🇬]_1457'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇻🇳]_1412'
-  - '[🇺🇸]_1458'
-  - '[🇸🇬]_1414'
-  - '[🇺🇸]_1440'
-  - '[🇰🇷]_1422'
-  - '[🇻🇳]_1417'
+  - '[🇻🇳]_1442'
+  - '[🇸🇬]_1446'
+  - '[🇻🇳]_1444'
+  - '[🇻🇳]_1449'
   - '[🇸🇬]_1457'
 - name: 🎯 全球直连
   type: select
@@ -195,12 +156,10 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇻🇳]_1412'
-  - '[🇺🇸]_1458'
-  - '[🇸🇬]_1414'
-  - '[🇺🇸]_1440'
-  - '[🇰🇷]_1422'
-  - '[🇻🇳]_1417'
+  - '[🇻🇳]_1442'
+  - '[🇸🇬]_1446'
+  - '[🇻🇳]_1444'
+  - '[🇻🇳]_1449'
   - '[🇸🇬]_1457'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
