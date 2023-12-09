@@ -26,11 +26,53 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_1464'
+- name: '[🇸🇬]_1457'
+  server: 159.223.94.156
+  port: 80
+  type: vmess
+  uuid: 99f1aff3-6354-3ee8-80dd-45f05dee5172
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /anti13.zingfast.vn
+  tls: false
+  ws-headers:
+    Host: 159.223.94.156
+  udp: true
+- name: '[🇲🇾]_1459'
+  server: 166.88.35.36
+  port: 40969
+  type: vmess
+  uuid: b5edf5ea-d728-3cc2-ab9b-bf128996e321
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 166.88.35.36
+  udp: true
+- name: '[🇬🇧]_1464'
+  server: 89.213.144.82
+  port: 16065
+  type: vmess
+  uuid: 165a0b73-fdab-31c3-9cde-7dc45717cc7e
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 89.213.144.82
+  udp: true
+- name: '[🇺🇸]_1465'
   server: 107.182.189.201
   port: 55187
   type: vmess
-  uuid: e2150bf6-d66f-367a-8914-6f19aae129b1
+  uuid: a58ca545-86f0-35ad-8b4a-17a6ac90a4a6
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -40,11 +82,11 @@ proxies:
   ws-headers:
     Host: 107.182.189.201
   udp: true
-- name: '[🇵🇭]_1465'
-  server: 38.54.36.181
-  port: 50674
+- name: '[🇵🇭]_1463'
+  server: 38.54.36.65
+  port: 31057
   type: vmess
-  uuid: 2164c83d-64f1-36dc-bb1d-c438b976aaf1
+  uuid: 389ba3a6-0e76-3274-9468-df8e22b6cf4a
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -52,24 +94,13 @@ proxies:
   ws-path: /
   tls: false
   ws-headers:
-    Host: 38.54.36.181
+    Host: 38.54.36.65
   udp: true
-- name: '[🇮🇩]亚太地区_1470'
-  server: 103.177.94.138
-  port: 22843
-  type: vmess
-  uuid: 499b1147-4a16-35f1-9bc0-65b8946fe7e7
-  alterId: 0
-  cipher: auto
-  tls: false
-  tfo: false
-  skip-cert-verify: false
-  udp: true
-- name: '[🇦🇶]美国_1473'
+- name: '[🇦🇶]美国_1475'
   server: 104.26.13.140
   port: 8880
   type: vmess
-  uuid: 7b95002e-e9fc-35a5-8aef-fc93a76aa0ae
+  uuid: b6c2f69d-8321-3890-86e8-c448d9d9767f
   alterId: 0
   cipher: auto
   tls: false
@@ -81,11 +112,11 @@ proxies:
     headers:
       Host: ssrsub.v001.ssrsub.com
   udp: true
-- name: '[🇦🇶]美国_1475'
+- name: '[🇦🇶]美国_1477'
   server: cf.fovi.tk
   port: 443
   type: vmess
-  uuid: b6c2f69d-8321-3890-86e8-c448d9d9767f
+  uuid: 927df4f4-2f04-3316-ad1e-d247d32b9b98
   alterId: 0
   cipher: auto
   tls: true
@@ -97,27 +128,36 @@ proxies:
     headers:
       Host: foxlux.fovi.tk
   udp: true
-- name: '[🇮🇳]印度_1471'
-  server: 103.114.201.44
-  port: 45233
+- name: '[🇵🇭]_1466'
+  server: 38.54.36.181
+  port: 50674
   type: vmess
-  uuid: a8e7bf8d-5ca9-33e5-aec8-8fd93b914ba7
+  uuid: 055ea406-cddc-3f94-a847-9783feacf17c
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 38.54.36.181
+  udp: true
+- name: '[🇮🇩]亚太地区_1473'
+  server: 103.177.94.138
+  port: 22843
+  type: vmess
+  uuid: 8e4f354f-6134-327a-9ccd-6db9d5aafa86
   alterId: 0
   cipher: auto
   tls: false
   tfo: false
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 103.114.201.44
   udp: true
-- name: '[🇮🇳]印度_1472'
+- name: '[🇮🇳]印度_1474'
   server: 103.114.201.143
   port: 59487
   type: vmess
-  uuid: 09bbaae5-3950-32e9-a67f-74cfbb55c5e8
+  uuid: b7105b1c-4bc5-3db3-993e-bb2aac12c893
   alterId: 0
   cipher: auto
   tls: false
@@ -131,76 +171,94 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1464'
-  - '[🇵🇭]_1465'
-  - '[🇮🇩]亚太地区_1470'
-  - '[🇦🇶]美国_1473'
+  - '[🇸🇬]_1457'
+  - '[🇲🇾]_1459'
+  - '[🇬🇧]_1464'
+  - '[🇺🇸]_1465'
+  - '[🇵🇭]_1463'
   - '[🇦🇶]美国_1475'
-  - '[🇮🇳]印度_1471'
-  - '[🇮🇳]印度_1472'
+  - '[🇦🇶]美国_1477'
+  - '[🇵🇭]_1466'
+  - '[🇮🇩]亚太地区_1473'
+  - '[🇮🇳]印度_1474'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1464'
-  - '[🇵🇭]_1465'
-  - '[🇮🇩]亚太地区_1470'
-  - '[🇦🇶]美国_1473'
+  - '[🇸🇬]_1457'
+  - '[🇲🇾]_1459'
+  - '[🇬🇧]_1464'
+  - '[🇺🇸]_1465'
+  - '[🇵🇭]_1463'
   - '[🇦🇶]美国_1475'
-  - '[🇮🇳]印度_1471'
-  - '[🇮🇳]印度_1472'
+  - '[🇦🇶]美国_1477'
+  - '[🇵🇭]_1466'
+  - '[🇮🇩]亚太地区_1473'
+  - '[🇮🇳]印度_1474'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1464'
-  - '[🇵🇭]_1465'
-  - '[🇮🇩]亚太地区_1470'
-  - '[🇦🇶]美国_1473'
+  - '[🇸🇬]_1457'
+  - '[🇲🇾]_1459'
+  - '[🇬🇧]_1464'
+  - '[🇺🇸]_1465'
+  - '[🇵🇭]_1463'
   - '[🇦🇶]美国_1475'
-  - '[🇮🇳]印度_1471'
-  - '[🇮🇳]印度_1472'
+  - '[🇦🇶]美国_1477'
+  - '[🇵🇭]_1466'
+  - '[🇮🇩]亚太地区_1473'
+  - '[🇮🇳]印度_1474'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1464'
-  - '[🇵🇭]_1465'
-  - '[🇮🇩]亚太地区_1470'
-  - '[🇦🇶]美国_1473'
+  - '[🇸🇬]_1457'
+  - '[🇲🇾]_1459'
+  - '[🇬🇧]_1464'
+  - '[🇺🇸]_1465'
+  - '[🇵🇭]_1463'
   - '[🇦🇶]美国_1475'
-  - '[🇮🇳]印度_1471'
-  - '[🇮🇳]印度_1472'
+  - '[🇦🇶]美国_1477'
+  - '[🇵🇭]_1466'
+  - '[🇮🇩]亚太地区_1473'
+  - '[🇮🇳]印度_1474'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1464'
-  - '[🇵🇭]_1465'
-  - '[🇮🇩]亚太地区_1470'
-  - '[🇦🇶]美国_1473'
+  - '[🇸🇬]_1457'
+  - '[🇲🇾]_1459'
+  - '[🇬🇧]_1464'
+  - '[🇺🇸]_1465'
+  - '[🇵🇭]_1463'
   - '[🇦🇶]美国_1475'
-  - '[🇮🇳]印度_1471'
-  - '[🇮🇳]印度_1472'
+  - '[🇦🇶]美国_1477'
+  - '[🇵🇭]_1466'
+  - '[🇮🇩]亚太地区_1473'
+  - '[🇮🇳]印度_1474'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1464'
-  - '[🇵🇭]_1465'
-  - '[🇮🇩]亚太地区_1470'
-  - '[🇦🇶]美国_1473'
+  - '[🇸🇬]_1457'
+  - '[🇲🇾]_1459'
+  - '[🇬🇧]_1464'
+  - '[🇺🇸]_1465'
+  - '[🇵🇭]_1463'
   - '[🇦🇶]美国_1475'
-  - '[🇮🇳]印度_1471'
-  - '[🇮🇳]印度_1472'
+  - '[🇦🇶]美国_1477'
+  - '[🇵🇭]_1466'
+  - '[🇮🇩]亚太地区_1473'
+  - '[🇮🇳]印度_1474'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
