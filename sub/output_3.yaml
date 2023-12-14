@@ -28,17 +28,6 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇮🇷]_1528'
-  network: tcp
-  port: 14553
-  server: 77.237.66.9
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 78a7d9cc-0c0b-3e09-b990-85903dffa4c3
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇺🇸]_1527'
   network: ws
   port: 20875
@@ -52,6 +41,17 @@ proxies:
       Host: ''
     path: /
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇮🇷]_1528'
+  network: tcp
+  port: 14553
+  server: 77.237.66.9
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 78a7d9cc-0c0b-3e09-b990-85903dffa4c3
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -59,46 +59,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇮🇷]_1528'
   - '[🇺🇸]_1527'
+  - '[🇮🇷]_1528'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇷]_1528'
   - '[🇺🇸]_1527'
+  - '[🇮🇷]_1528'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇷]_1528'
   - '[🇺🇸]_1527'
+  - '[🇮🇷]_1528'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇮🇷]_1528'
   - '[🇺🇸]_1527'
+  - '[🇮🇷]_1528'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇮🇷]_1528'
   - '[🇺🇸]_1527'
+  - '[🇮🇷]_1528'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇮🇷]_1528'
   - '[🇺🇸]_1527'
+  - '[🇮🇷]_1528'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
