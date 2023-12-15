@@ -28,29 +28,35 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1527'
-  network: ws
-  port: 20875
-  server: 154.90.34.225
-  servername: ''
+  name: '[🇮🇷]关注电报_1508'
+  network: tcp
+  port: 58768
+  server: 81.12.27.2
   tls: false
   type: vmess
-  uuid: 9ad3edaa-3e40-3444-aa44-611093e14a02
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
+  uuid: cc712439-ea0e-3f15-a070-6132e4b5b259
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇮🇷]_1528'
-  network: tcp
-  port: 14553
-  server: 77.237.66.9
-  servername: ''
+  name: '[🇸🇬]_1521'
+  network: ''
+  port: 30839
+  server: 158.178.227.16
   tls: false
   type: vmess
-  uuid: 78a7d9cc-0c0b-3e09-b990-85903dffa4c3
+  uuid: e03f04d0-a34f-3c5f-848d-2c2771b63bd0
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1524'
+  network: ws
+  port: 20875
+  server: 154.90.34.225
+  tls: false
+  type: vmess
+  uuid: 230e163e-3f46-3d65-9d2b-ad73a18aa307
+  ws-opts:
+    path: /
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -59,46 +65,52 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1527'
-  - '[🇮🇷]_1528'
+  - '[🇮🇷]关注电报_1508'
+  - '[🇸🇬]_1521'
+  - '[🇺🇸]_1524'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1527'
-  - '[🇮🇷]_1528'
+  - '[🇮🇷]关注电报_1508'
+  - '[🇸🇬]_1521'
+  - '[🇺🇸]_1524'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1527'
-  - '[🇮🇷]_1528'
+  - '[🇮🇷]关注电报_1508'
+  - '[🇸🇬]_1521'
+  - '[🇺🇸]_1524'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1527'
-  - '[🇮🇷]_1528'
+  - '[🇮🇷]关注电报_1508'
+  - '[🇸🇬]_1521'
+  - '[🇺🇸]_1524'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1527'
-  - '[🇮🇷]_1528'
+  - '[🇮🇷]关注电报_1508'
+  - '[🇸🇬]_1521'
+  - '[🇺🇸]_1524'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1527'
-  - '[🇮🇷]_1528'
+  - '[🇮🇷]关注电报_1508'
+  - '[🇸🇬]_1521'
+  - '[🇺🇸]_1524'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
