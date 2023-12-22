@@ -26,124 +26,30 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇦🇶]_1871'
-  server: 141.101.114.33
-  port: 443
-  type: vmess
-  uuid: c69fdf6b-519f-34a6-b65e-2dbbd8129f80
-  alterId: 0
+- alterId: 0
   cipher: auto
-  skip-cert-verify: true
+  name: '[🇻🇳]_1632'
   network: ws
-  ws-path: /dongtaiwang.com
-  tls: true
-  ws-headers:
-    Host: v2ray1.zhujicn2.org
-  udp: true
-- name: '[🇦🇶]_3094'
-  server: 104.24.31.0
   port: 80
-  type: vmess
-  uuid: 042709a3-e7d3-39c3-8b50-cbd877501ba8
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /ray
-  tls: false
-  ws-headers:
-    Host: localhoster.ml
-  udp: true
-- name: '[🇦🇶]_3105'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: e7c08d03-9a6e-30ee-9a77-99e519b1af73
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
-  tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇬🇧]_3108'
-  network: tcp
-  port: 4000
-  server: England.meberplus.site
-  servername: ''
+  server: hnvip5.shopvpn4g.vn
   tls: false
   type: vmess
-  uuid: 6b983480-8176-311b-95bc-e189e3b8b730
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]_3109'
-  network: ws
-  port: 8443
-  server: 172.67.162.149
-  servername: rf.rafalion.ir
-  tls: true
-  type: vmess
-  uuid: ab0f5d92-b35d-3a6e-9837-07148d8496fb
+  uuid: a938cdd3-b93d-349c-93a2-e41ff26697c8
   ws-opts:
     headers:
-      Host: rf.rafalion.ir
-    path: /
-  udp: true
-- name: '[🇸🇬]_3104'
-  server: 159.223.94.156
-  port: 80
-  type: vmess
-  uuid: a7c2c705-0947-3e8f-9c39-732d40916d20
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /anti13.zingfast.vn
-  tls: false
-  ws-headers:
-    Host: 159.223.94.156
+      Host: lienquan.garena.vn
+    path: /dt3shopvpn4g
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇩🇪]_3110'
+  name: '[🇹🇼]台中_1633'
   network: tcp
-  port: 4000
-  server: Germany.meberplus.site
+  port: 6122
+  server: c12.twtc.dynu.net
   servername: ''
   tls: false
   type: vmess
-  uuid: ab40bed0-f0fc-31de-b4c7-691fbd72dc53
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇫🇷]_3111'
-  network: tcp
-  port: 8088
-  server: 145.239.24.180
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: ba4487b9-6ed2-378e-87be-dac57e2647da
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇰🇷]_3113'
-  network: ws
-  port: 42040
-  server: 38.60.220.214
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 3aa54f2c-82f4-3e4b-b515-8ae0db0333bb
-  ws-opts:
-    headers:
-      Host: internet.life.com.by
-    path: /
+  uuid: 9a9f02d0-c748-34ce-a73c-485e1f7c23e2
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -152,88 +58,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_1871'
-  - '[🇦🇶]_3094'
-  - '[🇦🇶]_3105'
-  - '[🇬🇧]_3108'
-  - '[🇺🇸]_3109'
-  - '[🇸🇬]_3104'
-  - '[🇩🇪]_3110'
-  - '[🇫🇷]_3111'
-  - '[🇰🇷]_3113'
+  - '[🇻🇳]_1632'
+  - '[🇹🇼]台中_1633'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1871'
-  - '[🇦🇶]_3094'
-  - '[🇦🇶]_3105'
-  - '[🇬🇧]_3108'
-  - '[🇺🇸]_3109'
-  - '[🇸🇬]_3104'
-  - '[🇩🇪]_3110'
-  - '[🇫🇷]_3111'
-  - '[🇰🇷]_3113'
+  - '[🇻🇳]_1632'
+  - '[🇹🇼]台中_1633'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1871'
-  - '[🇦🇶]_3094'
-  - '[🇦🇶]_3105'
-  - '[🇬🇧]_3108'
-  - '[🇺🇸]_3109'
-  - '[🇸🇬]_3104'
-  - '[🇩🇪]_3110'
-  - '[🇫🇷]_3111'
-  - '[🇰🇷]_3113'
+  - '[🇻🇳]_1632'
+  - '[🇹🇼]台中_1633'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1871'
-  - '[🇦🇶]_3094'
-  - '[🇦🇶]_3105'
-  - '[🇬🇧]_3108'
-  - '[🇺🇸]_3109'
-  - '[🇸🇬]_3104'
-  - '[🇩🇪]_3110'
-  - '[🇫🇷]_3111'
-  - '[🇰🇷]_3113'
+  - '[🇻🇳]_1632'
+  - '[🇹🇼]台中_1633'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_1871'
-  - '[🇦🇶]_3094'
-  - '[🇦🇶]_3105'
-  - '[🇬🇧]_3108'
-  - '[🇺🇸]_3109'
-  - '[🇸🇬]_3104'
-  - '[🇩🇪]_3110'
-  - '[🇫🇷]_3111'
-  - '[🇰🇷]_3113'
+  - '[🇻🇳]_1632'
+  - '[🇹🇼]台中_1633'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_1871'
-  - '[🇦🇶]_3094'
-  - '[🇦🇶]_3105'
-  - '[🇬🇧]_3108'
-  - '[🇺🇸]_3109'
-  - '[🇸🇬]_3104'
-  - '[🇩🇪]_3110'
-  - '[🇫🇷]_3111'
-  - '[🇰🇷]_3113'
+  - '[🇻🇳]_1632'
+  - '[🇹🇼]台中_1633'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
