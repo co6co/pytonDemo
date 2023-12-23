@@ -28,42 +28,65 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇻🇳]_1631'
-  network: ws
-  port: 80
-  server: data2hn1.shopvpn4g.vn
-  tls: false
-  type: vmess
-  uuid: 48a71cd2-baa4-3505-8665-172e322691d7
-  ws-opts:
-    headers:
-      Host: lienquan.garena.vn
-    path: /dt2shopvpn4g
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇹🇼]台中_1633'
+  name: '[🇯🇵]_1643'
   network: tcp
-  port: 6122
-  server: c12.twtc.dynu.net
+  port: 12626
+  server: 202.182.107.52
   servername: ''
   tls: false
   type: vmess
-  uuid: 9a9f02d0-c748-34ce-a73c-485e1f7c23e2
+  uuid: 98a7f129-78ce-31bb-8db1-0a1e29a0a0ee
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇻🇳]_1632'
-  network: ws
-  port: 80
-  server: hnvip5.shopvpn4g.vn
+  name: '[🇺🇸]_1646'
+  network: tcp
+  port: 11397
+  server: 172.233.188.166
+  servername: ''
   tls: false
   type: vmess
-  uuid: a938cdd3-b93d-349c-93a2-e41ff26697c8
+  uuid: 14a666d4-c27e-357d-bbcb-0c10b2587d7d
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇻🇳]_1644'
+  network: ws
+  port: 80
+  server: data2hcm1.shopvpn4g.vn
+  tls: false
+  type: vmess
+  uuid: 99d855dc-329a-3218-a03e-2964705a1a2a
   ws-opts:
     headers:
       Host: lienquan.garena.vn
-    path: /dt3shopvpn4g
+    path: /dt1shopvpn4g
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]美国_1648'
+  network: ws
+  port: 443
+  server: 92.223.107.56
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: ea4f7d85-c5d5-39ba-9e20-39311bbb19e6
+  ws-opts:
+    headers:
+      Host: m3hdio1.zapto.org
+    path: /@FORWARDV2RAY
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇮🇷]德国_1647'
+  network: tcp
+  port: 20404
+  server: 81.12.27.3
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: d6210e7b-c6ee-3ac5-a6c8-16aaa8b28bbb
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -72,52 +95,64 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇻🇳]_1631'
-  - '[🇹🇼]台中_1633'
-  - '[🇻🇳]_1632'
+  - '[🇯🇵]_1643'
+  - '[🇺🇸]_1646'
+  - '[🇻🇳]_1644'
+  - '[🇺🇸]美国_1648'
+  - '[🇮🇷]德国_1647'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1631'
-  - '[🇹🇼]台中_1633'
-  - '[🇻🇳]_1632'
+  - '[🇯🇵]_1643'
+  - '[🇺🇸]_1646'
+  - '[🇻🇳]_1644'
+  - '[🇺🇸]美国_1648'
+  - '[🇮🇷]德国_1647'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1631'
-  - '[🇹🇼]台中_1633'
-  - '[🇻🇳]_1632'
+  - '[🇯🇵]_1643'
+  - '[🇺🇸]_1646'
+  - '[🇻🇳]_1644'
+  - '[🇺🇸]美国_1648'
+  - '[🇮🇷]德国_1647'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇻🇳]_1631'
-  - '[🇹🇼]台中_1633'
-  - '[🇻🇳]_1632'
+  - '[🇯🇵]_1643'
+  - '[🇺🇸]_1646'
+  - '[🇻🇳]_1644'
+  - '[🇺🇸]美国_1648'
+  - '[🇮🇷]德国_1647'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇻🇳]_1631'
-  - '[🇹🇼]台中_1633'
-  - '[🇻🇳]_1632'
+  - '[🇯🇵]_1643'
+  - '[🇺🇸]_1646'
+  - '[🇻🇳]_1644'
+  - '[🇺🇸]美国_1648'
+  - '[🇮🇷]德国_1647'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇻🇳]_1631'
-  - '[🇹🇼]台中_1633'
-  - '[🇻🇳]_1632'
+  - '[🇯🇵]_1643'
+  - '[🇺🇸]_1646'
+  - '[🇻🇳]_1644'
+  - '[🇺🇸]美国_1648'
+  - '[🇮🇷]德国_1647'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
