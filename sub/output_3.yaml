@@ -26,78 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇹🇼]_1622'
-  server: nbq11.ntbq.dynu.net
-  port: 443
-  type: vmess
-  uuid: 6d41aac6-5933-3855-b172-64ad170392bc
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /b11
-    headers:
-      Host: nbq11.ntbq.dynu.net
-  udp: true
-- name: '[🇹🇼]_1624'
-  server: b23.ntbq.dynu.net
-  port: 443
-  type: vmess
-  uuid: 9d34a05c-b574-3d75-b7d2-3646d1a3fbd8
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /b23
-    headers:
-      Host: b23.ntbq.dynu.net
-  udp: true
-- name: '[🇺🇸]_1636'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: d7832fed-90d9-3031-a568-49ed8e539858
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
-  tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
-  udp: true
-- name: '[🇻🇳]_1627'
-  server: data1hn1.shopvpn4g.vn
-  port: 80
-  type: vmess
-  uuid: 456445cf-81c9-3b44-8a8e-05fc0a31f708
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /dt1shopvpn4g
-  tls: false
-  ws-headers:
-    Host: lienquan.garena.vn
-  udp: true
-- name: '[🇻🇳]_1628'
-  server: data2hn3.shopvpn4g.vn
-  port: 80
-  type: vmess
-  uuid: 000ed937-57d8-3eaf-9d52-7261bb90303b
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /dt2shopvpn4g
-  tls: false
-  ws-headers:
-    Host: lienquan.garena.vn
-  udp: true
 - name: '[🇮🇶]_1640'
   server: 37.236.95.2
   port: 443
@@ -126,21 +54,6 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
-- name: '[🇹🇼]_1625'
-  server: b21.ntbq.dynu.net
-  port: 443
-  type: vmess
-  uuid: 95727ef5-2c64-399d-b333-2313005c5e02
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /b21
-    headers:
-      Host: b21.ntbq.dynu.net
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -148,82 +61,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇹🇼]_1622'
-  - '[🇹🇼]_1624'
-  - '[🇺🇸]_1636'
-  - '[🇻🇳]_1627'
-  - '[🇻🇳]_1628'
   - '[🇮🇶]_1640'
   - '[🇸🇬]_1635'
-  - '[🇹🇼]_1625'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1622'
-  - '[🇹🇼]_1624'
-  - '[🇺🇸]_1636'
-  - '[🇻🇳]_1627'
-  - '[🇻🇳]_1628'
   - '[🇮🇶]_1640'
   - '[🇸🇬]_1635'
-  - '[🇹🇼]_1625'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1622'
-  - '[🇹🇼]_1624'
-  - '[🇺🇸]_1636'
-  - '[🇻🇳]_1627'
-  - '[🇻🇳]_1628'
   - '[🇮🇶]_1640'
   - '[🇸🇬]_1635'
-  - '[🇹🇼]_1625'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1622'
-  - '[🇹🇼]_1624'
-  - '[🇺🇸]_1636'
-  - '[🇻🇳]_1627'
-  - '[🇻🇳]_1628'
   - '[🇮🇶]_1640'
   - '[🇸🇬]_1635'
-  - '[🇹🇼]_1625'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇹🇼]_1622'
-  - '[🇹🇼]_1624'
-  - '[🇺🇸]_1636'
-  - '[🇻🇳]_1627'
-  - '[🇻🇳]_1628'
   - '[🇮🇶]_1640'
   - '[🇸🇬]_1635'
-  - '[🇹🇼]_1625'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇹🇼]_1622'
-  - '[🇹🇼]_1624'
-  - '[🇺🇸]_1636'
-  - '[🇻🇳]_1627'
-  - '[🇻🇳]_1628'
   - '[🇮🇶]_1640'
   - '[🇸🇬]_1635'
-  - '[🇹🇼]_1625'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
