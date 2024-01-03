@@ -28,43 +28,14 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1667'
-  network: ws
-  port: 80
-  server: 47.89.211.175
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 6e9b2ae0-5b37-37da-8def-a3cb4ce6398b
-  ws-opts:
-    headers:
-      Host: ''
-    path: /84BxD2shFYFpsiRGXACUPqWt
-  udp: true
-- name: '[🇸🇬]_1651'
-  server: 159.223.94.156
-  port: 80
-  type: vmess
-  uuid: 44a00c64-8c4c-3f0e-8f7f-5fe3b46db563
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /anti13.zingfast.vn
-  tls: false
-  ws-headers:
-    Host: 159.223.94.156
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇳]中国_1659'
+  name: '[🇨🇳]中国_1638'
   network: ws
   port: 63001
   server: 112.26.46.141
   servername: ''
   tls: false
   type: vmess
-  uuid: fcfff623-eb0a-34ef-ae1e-a7c37a92a542
+  uuid: 64635110-ed6c-38f9-82c8-71803efe33ab
   ws-opts:
     headers:
       Host: cache-hk-2.cn-db.top
@@ -72,14 +43,14 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_1670'
+  name: '[🇺🇸]_1647'
   network: ws
   port: 443
   server: 47.254.17.235
   servername: ''
   tls: true
   type: vmess
-  uuid: fee27b5e-51e4-38f0-ab31-a62ef94eab71
+  uuid: 784e5e6b-f50e-31e6-94b5-7fecb145994d
   ws-opts:
     headers:
       Host: ''
@@ -87,29 +58,39 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇸🇪]_1669'
+  name: '[🇸🇪]_1646'
   network: tcp
   port: 43921
   server: 16.171.13.95
   servername: ''
   tls: false
   type: vmess
-  uuid: 356e4851-2dbe-3216-9dad-10d4102993af
+  uuid: 4d5e5712-4e1c-3e0f-b856-c3e32cf5cc16
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]永久免费节点机场_1666'
+  name: '[🇨🇳]永久免费节点机场_1643'
   network: ws
   port: 14099
   server: dnspsdhaitun.ncsuwei.top
   servername: ''
   tls: false
   type: vmess
-  uuid: eaec159c-7e52-3472-b257-a7c13a596e80
+  uuid: 0ff6119e-696c-3387-8567-bb1a3476d8bb
   ws-opts:
     headers:
       Host: dnspsdhaitun.ncsuwei.top
     path: /ef483582-6269-468c-93af-c511eccb8a69
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇦]_1645'
+  network: tcp
+  port: 14635
+  server: 91.247.171.70
+  tls: false
+  type: vmess
+  uuid: cc122775-fcc4-363b-abaf-3f51f267067f
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -118,70 +99,64 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1667'
-  - '[🇸🇬]_1651'
-  - '[🇨🇳]中国_1659'
-  - '[🇺🇸]_1670'
-  - '[🇸🇪]_1669'
-  - '[🇨🇳]永久免费节点机场_1666'
+  - '[🇨🇳]中国_1638'
+  - '[🇺🇸]_1647'
+  - '[🇸🇪]_1646'
+  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇦]_1645'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1667'
-  - '[🇸🇬]_1651'
-  - '[🇨🇳]中国_1659'
-  - '[🇺🇸]_1670'
-  - '[🇸🇪]_1669'
-  - '[🇨🇳]永久免费节点机场_1666'
+  - '[🇨🇳]中国_1638'
+  - '[🇺🇸]_1647'
+  - '[🇸🇪]_1646'
+  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇦]_1645'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1667'
-  - '[🇸🇬]_1651'
-  - '[🇨🇳]中国_1659'
-  - '[🇺🇸]_1670'
-  - '[🇸🇪]_1669'
-  - '[🇨🇳]永久免费节点机场_1666'
+  - '[🇨🇳]中国_1638'
+  - '[🇺🇸]_1647'
+  - '[🇸🇪]_1646'
+  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇦]_1645'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1667'
-  - '[🇸🇬]_1651'
-  - '[🇨🇳]中国_1659'
-  - '[🇺🇸]_1670'
-  - '[🇸🇪]_1669'
-  - '[🇨🇳]永久免费节点机场_1666'
+  - '[🇨🇳]中国_1638'
+  - '[🇺🇸]_1647'
+  - '[🇸🇪]_1646'
+  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇦]_1645'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1667'
-  - '[🇸🇬]_1651'
-  - '[🇨🇳]中国_1659'
-  - '[🇺🇸]_1670'
-  - '[🇸🇪]_1669'
-  - '[🇨🇳]永久免费节点机场_1666'
+  - '[🇨🇳]中国_1638'
+  - '[🇺🇸]_1647'
+  - '[🇸🇪]_1646'
+  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇦]_1645'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1667'
-  - '[🇸🇬]_1651'
-  - '[🇨🇳]中国_1659'
-  - '[🇺🇸]_1670'
-  - '[🇸🇪]_1669'
-  - '[🇨🇳]永久免费节点机场_1666'
+  - '[🇨🇳]中国_1638'
+  - '[🇺🇸]_1647'
+  - '[🇸🇪]_1646'
+  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇦]_1645'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
