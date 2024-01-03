@@ -26,42 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇯🇵]_1638'
-  server: dir01.netorigins2u.site
-  port: 30864
-  type: vmess
-  uuid: 482ea137-5976-3c8f-8f2d-98b56c4687ff
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  servername: hu01.tomoony.xyz
-  udp: true
-- name: '[🇯🇵]_1639'
-  server: dir01.netorigins2u.site
-  port: 30201
-  type: vmess
-  uuid: e236d5b5-3099-3c6e-bdea-71a2402cd1a5
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  servername: sg01.tomoony.xyz
-  udp: true
-- name: '[🇦🇶]_1652'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: d03c0cdb-e8fa-3ce4-b594-2a3dc1ec7070
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
-  tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
-  udp: true
 - name: '[🇯🇵]_1640'
   server: dir01.netorigins2u.site
   port: 30501
@@ -72,6 +36,21 @@ proxies:
   tls: true
   skip-cert-verify: false
   servername: us01.tomoony.xyz
+  udp: true
+- name: '[🇺🇸]_1644'
+  server: de1e-transfer.v2freevpn.com
+  port: 80
+  type: vmess
+  uuid: e636c0cb-b9ee-3d3a-b64c-82393c65066d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /v1893298323Py
+    headers:
+      Host: de1e-transfer.v2freevpn.com
   udp: true
 - name: '[🇺🇸]_1641'
   server: tls.0000000054b.node-for-bigairport.win
@@ -105,19 +84,19 @@ proxies:
     headers:
       Host: tls.0000000056b.node-for-bigairport.win
   udp: true
-- name: '[🇯🇵]_1656'
-  server: 64.176.39.31
-  port: 56262
+- name: '[🇦🇶]_1652'
+  server: hkd1.quickerlink.xyz
+  port: 443
   type: vmess
-  uuid: d7f5dc3b-c81f-3454-943c-9742dce64966
-  alterId: 0
+  uuid: d03c0cdb-e8fa-3ce4-b594-2a3dc1ec7070
+  alterId: 64
   cipher: auto
   skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: false
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
   ws-headers:
-    Host: 64.176.39.31
+    Host: hkd1.quickerlink.xyz
   udp: true
 - name: '[🇸🇬]_1651'
   server: 159.223.94.156
@@ -133,6 +112,20 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
+- name: '[🇯🇵]_1656'
+  server: 64.176.39.31
+  port: 56262
+  type: vmess
+  uuid: d7f5dc3b-c81f-3454-943c-9742dce64966
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 64.176.39.31
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -140,82 +133,76 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇯🇵]_1638'
-  - '[🇯🇵]_1639'
-  - '[🇦🇶]_1652'
   - '[🇯🇵]_1640'
+  - '[🇺🇸]_1644'
   - '[🇺🇸]_1641'
   - '[🇺🇸]_1642'
-  - '[🇯🇵]_1656'
+  - '[🇦🇶]_1652'
   - '[🇸🇬]_1651'
+  - '[🇯🇵]_1656'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇯🇵]_1638'
-  - '[🇯🇵]_1639'
-  - '[🇦🇶]_1652'
   - '[🇯🇵]_1640'
+  - '[🇺🇸]_1644'
   - '[🇺🇸]_1641'
   - '[🇺🇸]_1642'
-  - '[🇯🇵]_1656'
+  - '[🇦🇶]_1652'
   - '[🇸🇬]_1651'
+  - '[🇯🇵]_1656'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇯🇵]_1638'
-  - '[🇯🇵]_1639'
-  - '[🇦🇶]_1652'
   - '[🇯🇵]_1640'
+  - '[🇺🇸]_1644'
   - '[🇺🇸]_1641'
   - '[🇺🇸]_1642'
-  - '[🇯🇵]_1656'
+  - '[🇦🇶]_1652'
   - '[🇸🇬]_1651'
+  - '[🇯🇵]_1656'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇯🇵]_1638'
-  - '[🇯🇵]_1639'
-  - '[🇦🇶]_1652'
   - '[🇯🇵]_1640'
+  - '[🇺🇸]_1644'
   - '[🇺🇸]_1641'
   - '[🇺🇸]_1642'
-  - '[🇯🇵]_1656'
+  - '[🇦🇶]_1652'
   - '[🇸🇬]_1651'
+  - '[🇯🇵]_1656'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇯🇵]_1638'
-  - '[🇯🇵]_1639'
-  - '[🇦🇶]_1652'
   - '[🇯🇵]_1640'
+  - '[🇺🇸]_1644'
   - '[🇺🇸]_1641'
   - '[🇺🇸]_1642'
-  - '[🇯🇵]_1656'
+  - '[🇦🇶]_1652'
   - '[🇸🇬]_1651'
+  - '[🇯🇵]_1656'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇯🇵]_1638'
-  - '[🇯🇵]_1639'
-  - '[🇦🇶]_1652'
   - '[🇯🇵]_1640'
+  - '[🇺🇸]_1644'
   - '[🇺🇸]_1641'
   - '[🇺🇸]_1642'
-  - '[🇯🇵]_1656'
+  - '[🇦🇶]_1652'
   - '[🇸🇬]_1651'
+  - '[🇯🇵]_1656'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
