@@ -28,46 +28,6 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]加拿大_1662'
-  network: ws
-  port: 80
-  server: 162.159.200.5
-  tls: false
-  type: vmess
-  uuid: 7ac94e9b-5441-376c-ab12-7a6cd6a46632
-  ws-opts:
-    headers:
-      Host: ca3.889611.com
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1664'
-  network: ws
-  port: 8080
-  server: 104.26.15.229
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 198cd87b-2b45-3e19-a3f5-446cd97de628
-  ws-opts:
-    headers:
-      Host: uk-new01.gujuji.top
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇦]_1665'
-  network: tcp
-  port: 3389
-  server: 142.93.144.99
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7ed989ec-6f1c-397b-b2d4-c285eb7cc62e
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇺🇸]_1667'
   network: ws
   port: 80
@@ -80,20 +40,6 @@ proxies:
     headers:
       Host: ''
     path: /84BxD2shFYFpsiRGXACUPqWt
-  udp: true
-- name: '[🇯🇵]_1656'
-  server: 64.176.39.31
-  port: 56262
-  type: vmess
-  uuid: d7f5dc3b-c81f-3454-943c-9742dce64966
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: 64.176.39.31
   udp: true
 - name: '[🇸🇬]_1651'
   server: 159.223.94.156
@@ -141,6 +87,17 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
+  name: '[🇸🇪]_1669'
+  network: tcp
+  port: 43921
+  server: 16.171.13.95
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 356e4851-2dbe-3216-9dad-10d4102993af
+  udp: true
+- alterId: 0
+  cipher: auto
   name: '[🇨🇳]永久免费节点机场_1666'
   network: ws
   port: 14099
@@ -154,27 +111,6 @@ proxies:
       Host: dnspsdhaitun.ncsuwei.top
     path: /ef483582-6269-468c-93af-c511eccb8a69
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇸🇪]_1669'
-  network: tcp
-  port: 43921
-  server: 16.171.13.95
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 356e4851-2dbe-3216-9dad-10d4102993af
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇦]_1668'
-  network: tcp
-  port: 14635
-  server: 91.247.171.70
-  tls: false
-  type: vmess
-  uuid: ea73fd94-543e-3680-91ed-86f6e9a431e5
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -182,100 +118,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]加拿大_1662'
-  - '[🇦🇶]_1664'
-  - '[🇨🇦]_1665'
   - '[🇺🇸]_1667'
-  - '[🇯🇵]_1656'
   - '[🇸🇬]_1651'
   - '[🇨🇳]中国_1659'
   - '[🇺🇸]_1670'
-  - '[🇨🇳]永久免费节点机场_1666'
   - '[🇸🇪]_1669'
-  - '[🇺🇦]_1668'
+  - '[🇨🇳]永久免费节点机场_1666'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]加拿大_1662'
-  - '[🇦🇶]_1664'
-  - '[🇨🇦]_1665'
   - '[🇺🇸]_1667'
-  - '[🇯🇵]_1656'
   - '[🇸🇬]_1651'
   - '[🇨🇳]中国_1659'
   - '[🇺🇸]_1670'
-  - '[🇨🇳]永久免费节点机场_1666'
   - '[🇸🇪]_1669'
-  - '[🇺🇦]_1668'
+  - '[🇨🇳]永久免费节点机场_1666'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]加拿大_1662'
-  - '[🇦🇶]_1664'
-  - '[🇨🇦]_1665'
   - '[🇺🇸]_1667'
-  - '[🇯🇵]_1656'
   - '[🇸🇬]_1651'
   - '[🇨🇳]中国_1659'
   - '[🇺🇸]_1670'
-  - '[🇨🇳]永久免费节点机场_1666'
   - '[🇸🇪]_1669'
-  - '[🇺🇦]_1668'
+  - '[🇨🇳]永久免费节点机场_1666'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]加拿大_1662'
-  - '[🇦🇶]_1664'
-  - '[🇨🇦]_1665'
   - '[🇺🇸]_1667'
-  - '[🇯🇵]_1656'
   - '[🇸🇬]_1651'
   - '[🇨🇳]中国_1659'
   - '[🇺🇸]_1670'
-  - '[🇨🇳]永久免费节点机场_1666'
   - '[🇸🇪]_1669'
-  - '[🇺🇦]_1668'
+  - '[🇨🇳]永久免费节点机场_1666'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]加拿大_1662'
-  - '[🇦🇶]_1664'
-  - '[🇨🇦]_1665'
   - '[🇺🇸]_1667'
-  - '[🇯🇵]_1656'
   - '[🇸🇬]_1651'
   - '[🇨🇳]中国_1659'
   - '[🇺🇸]_1670'
-  - '[🇨🇳]永久免费节点机场_1666'
   - '[🇸🇪]_1669'
-  - '[🇺🇦]_1668'
+  - '[🇨🇳]永久免费节点机场_1666'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]加拿大_1662'
-  - '[🇦🇶]_1664'
-  - '[🇨🇦]_1665'
   - '[🇺🇸]_1667'
-  - '[🇯🇵]_1656'
   - '[🇸🇬]_1651'
   - '[🇨🇳]中国_1659'
   - '[🇺🇸]_1670'
-  - '[🇨🇳]永久免费节点机场_1666'
   - '[🇸🇪]_1669'
-  - '[🇺🇦]_1668'
+  - '[🇨🇳]永久免费节点机场_1666'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
