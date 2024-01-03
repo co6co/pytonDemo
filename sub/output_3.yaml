@@ -28,6 +28,62 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
+  name: '[🇺🇸]_1644'
+  network: ws
+  port: 80
+  server: 47.89.211.175
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: e636c0cb-b9ee-3d3a-b64c-82393c65066d
+  ws-opts:
+    headers:
+      Host: ''
+    path: /84BxD2shFYFpsiRGXACUPqWt
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]_1647'
+  network: ws
+  port: 443
+  server: 47.254.17.235
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 784e5e6b-f50e-31e6-94b5-7fecb145994d
+  ws-opts:
+    headers:
+      Host: ''
+    path: /Ogl9djGbo2NTAt3Ovj1NvwjJ
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇸🇪]_1646'
+  network: tcp
+  port: 43921
+  server: 16.171.13.95
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 4d5e5712-4e1c-3e0f-b856-c3e32cf5cc16
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇳]中国_1638'
+  network: ws
+  port: 63001
+  server: 112.26.46.141
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 64635110-ed6c-38f9-82c8-71803efe33ab
+  ws-opts:
+    headers:
+      Host: cache-hk-2.cn-db.top
+    path: /db00
+  udp: true
+- alterId: 0
+  cipher: auto
   name: '[🇨🇳]永久免费节点机场_1643'
   network: ws
   port: 14099
@@ -40,17 +96,6 @@ proxies:
     headers:
       Host: dnspsdhaitun.ncsuwei.top
     path: /ef483582-6269-468c-93af-c511eccb8a69
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇸🇪]_1646'
-  network: tcp
-  port: 43921
-  server: 16.171.13.95
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 4d5e5712-4e1c-3e0f-b856-c3e32cf5cc16
   udp: true
 - alterId: 0
   cipher: auto
@@ -69,8 +114,11 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇸]_1644'
+  - '[🇺🇸]_1647'
   - '[🇸🇪]_1646'
+  - '[🇨🇳]中国_1638'
+  - '[🇨🇳]永久免费节点机场_1643'
   - '[🇺🇦]_1645'
 - name: 🎯 负载均衡
   type: load-balance
@@ -78,8 +126,11 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇸]_1644'
+  - '[🇺🇸]_1647'
   - '[🇸🇪]_1646'
+  - '[🇨🇳]中国_1638'
+  - '[🇨🇳]永久免费节点机场_1643'
   - '[🇺🇦]_1645'
 - name: ♻️ 自动选择
   type: fallback
@@ -87,8 +138,11 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇸]_1644'
+  - '[🇺🇸]_1647'
   - '[🇸🇪]_1646'
+  - '[🇨🇳]中国_1638'
+  - '[🇨🇳]永久免费节点机场_1643'
   - '[🇺🇦]_1645'
 - name: 🔰 延迟最低
   type: url-test
@@ -96,15 +150,21 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇸]_1644'
+  - '[🇺🇸]_1647'
   - '[🇸🇪]_1646'
+  - '[🇨🇳]中国_1638'
+  - '[🇨🇳]永久免费节点机场_1643'
   - '[🇺🇦]_1645'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇸]_1644'
+  - '[🇺🇸]_1647'
   - '[🇸🇪]_1646'
+  - '[🇨🇳]中国_1638'
+  - '[🇨🇳]永久免费节点机场_1643'
   - '[🇺🇦]_1645'
 - name: 🎯 全球直连
   type: select
@@ -112,8 +172,11 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇨🇳]永久免费节点机场_1643'
+  - '[🇺🇸]_1644'
+  - '[🇺🇸]_1647'
   - '[🇸🇪]_1646'
+  - '[🇨🇳]中国_1638'
+  - '[🇨🇳]永久免费节点机场_1643'
   - '[🇺🇦]_1645'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
