@@ -26,36 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇸🇨]_1621'
-  server: us01.h.csznet.eu.org
-  port: 443
-  type: vmess
-  uuid: d644673f-6578-3d1c-9cb2-c7dc4872742c
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /admin
-    headers:
-      Host: us01.h.csznet.eu.org
-  udp: true
-- name: '[🇺🇸]_1635'
-  server: de1e-transfer.v2freevpn.com
-  port: 80
-  type: vmess
-  uuid: 76fa1f6a-ff17-3690-b27f-49eb62e82b94
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /v1893298323Py
-    headers:
-      Host: de1e-transfer.v2freevpn.com
-  udp: true
 - name: '[🇺🇸]_1612'
   server: tls.0000000053b.node-for-bigairport.win
   port: 443
@@ -87,6 +57,36 @@ proxies:
     headers:
       Host: iij2.csznet.eu.org
   udp: true
+- name: '[🇺🇸]_1635'
+  server: de1e-transfer.v2freevpn.com
+  port: 80
+  type: vmess
+  uuid: 76fa1f6a-ff17-3690-b27f-49eb62e82b94
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /v1893298323Py
+    headers:
+      Host: de1e-transfer.v2freevpn.com
+  udp: true
+- name: '[🇸🇨]_1621'
+  server: us01.h.csznet.eu.org
+  port: 443
+  type: vmess
+  uuid: d644673f-6578-3d1c-9cb2-c7dc4872742c
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /admin
+    headers:
+      Host: us01.h.csznet.eu.org
+  udp: true
 - name: '[🇭🇰]_1615'
   server: hk01.host.csznet.eu.org
   port: 443
@@ -102,6 +102,16 @@ proxies:
     headers:
       Host: hk01.host.csznet.eu.org
   udp: true
+- name: '[🇺🇸]香港_1428'
+  type: vmess
+  server: 154.90.39.63
+  port: 45343
+  uuid: a20faa84-47cf-3aaa-9346-416460261d6b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: tcp
+  ws-path: ''
 - name: '[🇯🇵]_1636'
   server: dir01.netorigins2u.site
   port: 30864
@@ -112,6 +122,20 @@ proxies:
   tls: true
   skip-cert-verify: false
   servername: hu01.tomoony.xyz
+  udp: true
+- name: '[🇺🇸]_1649'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: 13ab2c8c-f0bf-3d2e-ac2a-464e92329393
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
   udp: true
 - name: '[🇻🇳]_1641'
   server: hn1.4gmienphi.asia
@@ -127,20 +151,6 @@ proxies:
     path: /4gmienphi.asia
     headers:
       Host: hn1.4gmienphi.asia
-  udp: true
-- name: '[🇺🇸]_1649'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: 13ab2c8c-f0bf-3d2e-ac2a-464e92329393
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
-  tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
   udp: true
 - name: '[🇸🇬]_1648'
   server: 159.223.94.156
@@ -163,14 +173,15 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇸🇨]_1621'
-  - '[🇺🇸]_1635'
   - '[🇺🇸]_1612'
   - '[🇯🇵]_1617'
+  - '[🇺🇸]_1635'
+  - '[🇸🇨]_1621'
   - '[🇭🇰]_1615'
+  - '[🇺🇸]香港_1428'
   - '[🇯🇵]_1636'
-  - '[🇻🇳]_1641'
   - '[🇺🇸]_1649'
+  - '[🇻🇳]_1641'
   - '[🇸🇬]_1648'
 - name: 🎯 负载均衡
   type: load-balance
@@ -178,14 +189,15 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇨]_1621'
-  - '[🇺🇸]_1635'
   - '[🇺🇸]_1612'
   - '[🇯🇵]_1617'
+  - '[🇺🇸]_1635'
+  - '[🇸🇨]_1621'
   - '[🇭🇰]_1615'
+  - '[🇺🇸]香港_1428'
   - '[🇯🇵]_1636'
-  - '[🇻🇳]_1641'
   - '[🇺🇸]_1649'
+  - '[🇻🇳]_1641'
   - '[🇸🇬]_1648'
 - name: ♻️ 自动选择
   type: fallback
@@ -193,14 +205,15 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇨]_1621'
-  - '[🇺🇸]_1635'
   - '[🇺🇸]_1612'
   - '[🇯🇵]_1617'
+  - '[🇺🇸]_1635'
+  - '[🇸🇨]_1621'
   - '[🇭🇰]_1615'
+  - '[🇺🇸]香港_1428'
   - '[🇯🇵]_1636'
-  - '[🇻🇳]_1641'
   - '[🇺🇸]_1649'
+  - '[🇻🇳]_1641'
   - '[🇸🇬]_1648'
 - name: 🔰 延迟最低
   type: url-test
@@ -208,27 +221,29 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇨]_1621'
-  - '[🇺🇸]_1635'
   - '[🇺🇸]_1612'
   - '[🇯🇵]_1617'
+  - '[🇺🇸]_1635'
+  - '[🇸🇨]_1621'
   - '[🇭🇰]_1615'
+  - '[🇺🇸]香港_1428'
   - '[🇯🇵]_1636'
-  - '[🇻🇳]_1641'
   - '[🇺🇸]_1649'
+  - '[🇻🇳]_1641'
   - '[🇸🇬]_1648'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇸🇨]_1621'
-  - '[🇺🇸]_1635'
   - '[🇺🇸]_1612'
   - '[🇯🇵]_1617'
+  - '[🇺🇸]_1635'
+  - '[🇸🇨]_1621'
   - '[🇭🇰]_1615'
+  - '[🇺🇸]香港_1428'
   - '[🇯🇵]_1636'
-  - '[🇻🇳]_1641'
   - '[🇺🇸]_1649'
+  - '[🇻🇳]_1641'
   - '[🇸🇬]_1648'
 - name: 🎯 全球直连
   type: select
@@ -236,14 +251,15 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇸🇨]_1621'
-  - '[🇺🇸]_1635'
   - '[🇺🇸]_1612'
   - '[🇯🇵]_1617'
+  - '[🇺🇸]_1635'
+  - '[🇸🇨]_1621'
   - '[🇭🇰]_1615'
+  - '[🇺🇸]香港_1428'
   - '[🇯🇵]_1636'
-  - '[🇻🇳]_1641'
   - '[🇺🇸]_1649'
+  - '[🇻🇳]_1641'
   - '[🇸🇬]_1648'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
