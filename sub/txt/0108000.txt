@@ -1,6 +1,6 @@
 proxies:
 - name: 🇯🇵日本KT|@ripaojiedian
-  server: 61.224.79.211
+  server: 61.224.64.246
   port: 10016
   type: ss
   cipher: aes-128-gcm
@@ -15,7 +15,7 @@ proxies:
     skip-cert-verify: true
   udp: true
 - name: 🇯🇵日本KT2|@ripaojiedian
-  server: 61.224.79.211
+  server: 61.224.64.246
   port: 10012
   type: ss
   cipher: aes-128-gcm
@@ -55,9 +55,16 @@ proxies:
     mode: http
     host: ''
   udp: true
-- name: 🇭🇰香港1|@ripaojiedian
-  server: 112.28.208.10
-  port: 45055
+- name: 🇹🇼台湾|频道:@ripaojiedian
+  server: service.ouluyun9803.com
+  port: 20005
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 7f821ff8-2ef2-4433-b810-f0ce77fd5491
+  udp: true
+- name: 🇭🇰香港|@ripaojiedian
+  server: 183.240.232.93
+  port: 53942
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   alterId: 64
@@ -66,15 +73,8 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: 🇭🇰香港2|@ripaojiedian
-  server: service.ouluyun9803.com
-  port: 20001
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7f821ff8-2ef2-4433-b810-f0ce77fd5491
-  udp: true
-- name: 🇭🇰香港3|@ripaojiedian
-  server: 112.28.208.10
-  port: 46602
+  server: 112.28.208.11
+  port: 53300
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   alterId: 64
@@ -114,7 +114,7 @@ proxies:
   udp: true
 - name: 🇺🇸美国3|@ripaojiedian
   server: service.ouluyun9803.com
-  port: 50003
+  port: 20003
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 7f821ff8-2ef2-4433-b810-f0ce77fd5491
@@ -124,24 +124,32 @@ proxies:
   port: 20009
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: 0cb14ab8-b3b8-44a1-8b4a-5a6f8317de01
+  password: 7f821ff8-2ef2-4433-b810-f0ce77fd5491
   udp: true
-- name: 🇯🇵日本|频道:@ripaojiedian
-  server: jp04-alt-vm0.entry.srthdw.art
-  port: 446
-  type: vmess
-  uuid: 604010bd-80fa-36e7-8095-23aef19529bb
-  alterId: 1
-  cipher: auto
-  tls: false
+- name: 🇸🇬新加坡2|@ripaojiedian
+  server: sg2.djjsvip.cfd
+  port: 443
+  type: trojan
+  password: 1bc5547d-59d2-45c7-8eec-b7d92cad8a43
+  sni: download.xn--mes358acgm99l.com
   skip-cert-verify: false
   udp: true
-- name: 🇯🇵日本2|@ripaojiedian
+- name: 🇯🇵日本|@ripaojiedian
   server: service.ouluyun9803.com
-  port: 26668
+  port: 50005
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 7f821ff8-2ef2-4433-b810-f0ce77fd5491
+  udp: true
+- name: 🇯🇵日本2|@ripaojiedian
+  server: jp03-alt-vm0.entry.srthdw.art
+  port: 21581
+  type: vmess
+  uuid: fa15e11b-8828-3276-b845-2811aa169f3a
+  alterId: 1
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
   udp: true
 - name: 🇰🇷韩国|@ripaojiedian
   server: p110.panda001.net
@@ -151,28 +159,35 @@ proxies:
   password: qwerREWQ@@
   udp: true
 - name: 🇰🇷韩国2|@ripaojiedian
-  server: p235.panda004.net
-  port: 2212
+  server: service.ouluyun9803.com
+  port: 26667
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 7f821ff8-2ef2-4433-b810-f0ce77fd5491
+  udp: true
+- name: 🇰🇷韩国3|@ripaojiedian
+  server: p229.panda004.net
+  port: 57428
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
   udp: true
 - name: 🇸🇬狮城特殊|@ripaojiedian
-  server: 43.207.172.144
+  server: 3.112.29.118
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
 - name: 🇸🇬狮城特殊2|@ripaojiedian
-  server: 54.251.150.231
+  server: 43.202.52.93
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
 - name: 🇯🇵日本特殊|@ripaojiedian
-  server: 13.125.156.251
+  server: 3.35.231.162
   port: 443
   type: ss
   cipher: aes-256-cfb
@@ -198,17 +213,18 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: 🇬🇧英国|频道:@ripaojiedian
-  server: service.ouluyun9803.com
-  port: 50002
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7f821ff8-2ef2-4433-b810-f0ce77fd5491
-  udp: true
-- name: 🇮🇳印度|频道:@ripaojiedian
-  server: service.ouluyun9803.com
-  port: 21003
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7f821ff8-2ef2-4433-b810-f0ce77fd5491
+- name: 🇫🇷法国|频道:@ripaojiedian
+  server: fr-01.jikuai.xyz
+  port: 2082
+  type: vmess
+  uuid: 2108facb-cddc-4c62-88b3-26c79f308d2e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: fr-01.jikuai.xyz
   udp: true
