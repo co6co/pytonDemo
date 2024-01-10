@@ -28,36 +28,28 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇹🇼]台湾_1634'
+  name: '[🇹🇼]_1770'
   network: tcp
-  port: 4211
-  server: nb36.ntbq.dynu.net
+  port: 10001
+  server: 45.121.48.172
   servername: ''
   tls: false
   type: vmess
-  uuid: aa37598a-0219-3bab-94f2-3eeda3b6420e
+  uuid: 7ac57652-0754-32bc-93b7-cb11c7149264
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇻🇳]_1636'
+  name: '[🇵🇸]资源分享师_1800'
   network: ws
   port: 80
-  server: 103.154.62.202
+  server: 82.213.5.50
   tls: false
   type: vmess
-  uuid: 0bd170ae-3646-3b03-86f2-421f6efcf132
+  uuid: fbb5647b-51dd-3cdf-9f21-aadaea31fa29
   ws-opts:
-    path: /texpn.me?ed=2048
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇮🇷]_1635'
-  network: tcp
-  port: 42836
-  server: 185.158.175.20
-  tls: false
-  type: vmess
-  uuid: 18fc0cc0-8cd3-36ea-8dd2-a40f46e4e9a2
+    headers:
+      Host: mizban888.servecounterstrike.com
+    path: /@forwardv2ray
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -66,52 +58,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇹🇼]台湾_1634'
-  - '[🇻🇳]_1636'
-  - '[🇮🇷]_1635'
+  - '[🇹🇼]_1770'
+  - '[🇵🇸]资源分享师_1800'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]台湾_1634'
-  - '[🇻🇳]_1636'
-  - '[🇮🇷]_1635'
+  - '[🇹🇼]_1770'
+  - '[🇵🇸]资源分享师_1800'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]台湾_1634'
-  - '[🇻🇳]_1636'
-  - '[🇮🇷]_1635'
+  - '[🇹🇼]_1770'
+  - '[🇵🇸]资源分享师_1800'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]台湾_1634'
-  - '[🇻🇳]_1636'
-  - '[🇮🇷]_1635'
+  - '[🇹🇼]_1770'
+  - '[🇵🇸]资源分享师_1800'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇹🇼]台湾_1634'
-  - '[🇻🇳]_1636'
-  - '[🇮🇷]_1635'
+  - '[🇹🇼]_1770'
+  - '[🇵🇸]资源分享师_1800'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇹🇼]台湾_1634'
-  - '[🇻🇳]_1636'
-  - '[🇮🇷]_1635'
+  - '[🇹🇼]_1770'
+  - '[🇵🇸]资源分享师_1800'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
