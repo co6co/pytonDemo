@@ -28,28 +28,28 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇹🇼]_1770'
+  name: '[🇩🇪]资源分享师_1802'
+  network: ws
+  port: 80
+  server: 92.223.124.34
+  tls: false
+  type: vmess
+  uuid: 0eac0f8f-ae75-3a26-bf45-b43e01023607
+  ws-opts:
+    headers:
+      Host: best.servecounterstrike.com
+    path: /@forwardv2ray
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇹🇼]_1800'
   network: tcp
   port: 10001
   server: 45.121.48.172
   servername: ''
   tls: false
   type: vmess
-  uuid: 7ac57652-0754-32bc-93b7-cb11c7149264
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇵🇸]资源分享师_1800'
-  network: ws
-  port: 80
-  server: 82.213.5.50
-  tls: false
-  type: vmess
-  uuid: fbb5647b-51dd-3cdf-9f21-aadaea31fa29
-  ws-opts:
-    headers:
-      Host: mizban888.servecounterstrike.com
-    path: /@forwardv2ray
+  uuid: 04e1d8ad-8117-3a98-8b5b-875ab5f591ff
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,46 +58,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇹🇼]_1770'
-  - '[🇵🇸]资源分享师_1800'
+  - '[🇩🇪]资源分享师_1802'
+  - '[🇹🇼]_1800'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1770'
-  - '[🇵🇸]资源分享师_1800'
+  - '[🇩🇪]资源分享师_1802'
+  - '[🇹🇼]_1800'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1770'
-  - '[🇵🇸]资源分享师_1800'
+  - '[🇩🇪]资源分享师_1802'
+  - '[🇹🇼]_1800'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1770'
-  - '[🇵🇸]资源分享师_1800'
+  - '[🇩🇪]资源分享师_1802'
+  - '[🇹🇼]_1800'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇹🇼]_1770'
-  - '[🇵🇸]资源分享师_1800'
+  - '[🇩🇪]资源分享师_1802'
+  - '[🇹🇼]_1800'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇹🇼]_1770'
-  - '[🇵🇸]资源分享师_1800'
+  - '[🇩🇪]资源分享师_1802'
+  - '[🇹🇼]_1800'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
