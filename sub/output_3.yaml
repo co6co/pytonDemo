@@ -26,27 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇸🇬]新加坡_1708'
-  server: 47.128.249.213
-  port: 25097
-  type: vmess
-  uuid: 66fb2230-fab4-3ea7-9168-11ff31d9454f
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇬🇧]_1712'
-  network: tcp
-  port: 8081
-  server: 178.79.161.229
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 62e86c27-c34e-344d-b58c-a18763559997
-  udp: true
 - alterId: 0
   cipher: auto
   name: '[🇭🇰]长期更新节点_1710'
@@ -62,20 +41,20 @@ proxies:
       Host: hk02.xpoti.online
     path: /
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇸🇬]_1709'
-  network: ws
-  port: 23753
-  server: 139.180.133.28
-  servername: ''
-  tls: false
+- name: '[🇦🇶]_1691'
+  server: go.gujuji.top
+  port: 8080
   type: vmess
-  uuid: d0803390-c528-3313-adf2-a7504dc1a819
+  uuid: fa3c9f88-ac47-362c-85aa-0a148b529705
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
   ws-opts:
+    path: /
     headers:
-      Host: web.whatsapp.com
-    path: /boonzer
+      Host: ca-new01.gujuji.top
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -84,58 +63,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇸🇬]新加坡_1708'
-  - '[🇬🇧]_1712'
   - '[🇭🇰]长期更新节点_1710'
-  - '[🇸🇬]_1709'
+  - '[🇦🇶]_1691'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]新加坡_1708'
-  - '[🇬🇧]_1712'
   - '[🇭🇰]长期更新节点_1710'
-  - '[🇸🇬]_1709'
+  - '[🇦🇶]_1691'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]新加坡_1708'
-  - '[🇬🇧]_1712'
   - '[🇭🇰]长期更新节点_1710'
-  - '[🇸🇬]_1709'
+  - '[🇦🇶]_1691'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]新加坡_1708'
-  - '[🇬🇧]_1712'
   - '[🇭🇰]长期更新节点_1710'
-  - '[🇸🇬]_1709'
+  - '[🇦🇶]_1691'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇸🇬]新加坡_1708'
-  - '[🇬🇧]_1712'
   - '[🇭🇰]长期更新节点_1710'
-  - '[🇸🇬]_1709'
+  - '[🇦🇶]_1691'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇸🇬]新加坡_1708'
-  - '[🇬🇧]_1712'
   - '[🇭🇰]长期更新节点_1710'
-  - '[🇸🇬]_1709'
+  - '[🇦🇶]_1691'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
