@@ -26,30 +26,71 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 0
+- name: '[🇯🇵]_1704'
+  server: jp.littleqqq.co
+  port: 62193
+  type: vmess
+  uuid: 006aa221-feb9-34ae-9d07-cea07b8c8793
+  alterId: 0
   cipher: auto
-  name: '[🇩🇪]资源分享师_1802'
+  tls: false
+  skip-cert-verify: false
   network: ws
-  port: 80
-  server: 92.223.124.34
-  tls: false
-  type: vmess
-  uuid: 0eac0f8f-ae75-3a26-bf45-b43e01023607
   ws-opts:
+    path: /live/UKPZrSI3K7dtNJmn
     headers:
-      Host: best.servecounterstrike.com
-    path: /@forwardv2ray
+      Host: www.tmall.com
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇹🇼]_1800'
-  network: tcp
-  port: 10001
-  server: 45.121.48.172
-  servername: ''
-  tls: false
+- name: '[🇭🇰]_1701'
+  server: hkt.littleqqq.co
+  port: 20759
   type: vmess
-  uuid: 04e1d8ad-8117-3a98-8b5b-875ab5f591ff
+  uuid: c1f8bbe1-bff0-3eed-b6df-a178848c2b59
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: hkt.littleqqq.co
+  udp: true
+- name: '[🇭🇰]_1702'
+  server: hk01.host.csznet.eu.org
+  port: 443
+  type: vmess
+  uuid: 3969fcd3-850a-3aec-8fe6-4753fbf396f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /admin
+    headers:
+      Host: hk01.host.csznet.eu.org
+  udp: true
+- name: '[🇸🇬]_1713'
+  server: 00000000000000000000000000000000000000000000000000000000000046.bgroup-node-for-bigairport.sbs
+  port: 52353
+  type: vmess
+  uuid: fe898531-a89c-35de-9486-de7d4b980a28
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: 00000000000000000000000000000000000000000000000000000000000046.bgroup-node-for-bigairport.sbs
+  udp: true
+- name: '[🇸🇬]_1714'
+  server: agroup.node3.v.nodelist-gfwairport2.top
+  port: 50001
+  type: vmess
+  uuid: 33d4adf2-de56-3180-b5b1-6ef9ea098fd7
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,46 +99,64 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇩🇪]资源分享师_1802'
-  - '[🇹🇼]_1800'
+  - '[🇯🇵]_1704'
+  - '[🇭🇰]_1701'
+  - '[🇭🇰]_1702'
+  - '[🇸🇬]_1713'
+  - '[🇸🇬]_1714'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]资源分享师_1802'
-  - '[🇹🇼]_1800'
+  - '[🇯🇵]_1704'
+  - '[🇭🇰]_1701'
+  - '[🇭🇰]_1702'
+  - '[🇸🇬]_1713'
+  - '[🇸🇬]_1714'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]资源分享师_1802'
-  - '[🇹🇼]_1800'
+  - '[🇯🇵]_1704'
+  - '[🇭🇰]_1701'
+  - '[🇭🇰]_1702'
+  - '[🇸🇬]_1713'
+  - '[🇸🇬]_1714'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]资源分享师_1802'
-  - '[🇹🇼]_1800'
+  - '[🇯🇵]_1704'
+  - '[🇭🇰]_1701'
+  - '[🇭🇰]_1702'
+  - '[🇸🇬]_1713'
+  - '[🇸🇬]_1714'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇩🇪]资源分享师_1802'
-  - '[🇹🇼]_1800'
+  - '[🇯🇵]_1704'
+  - '[🇭🇰]_1701'
+  - '[🇭🇰]_1702'
+  - '[🇸🇬]_1713'
+  - '[🇸🇬]_1714'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇩🇪]资源分享师_1802'
-  - '[🇹🇼]_1800'
+  - '[🇯🇵]_1704'
+  - '[🇭🇰]_1701'
+  - '[🇭🇰]_1702'
+  - '[🇸🇬]_1713'
+  - '[🇸🇬]_1714'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
