@@ -26,21 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇸🇬]_1693'
-  server: sg2.ip8.shop
-  port: 64952
-  type: vmess
-  uuid: 76549352-dea7-3e17-b890-63773b2c350c
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sg2.ip8.shop
-  udp: true
 - name: '[🇦🇶]_1699'
   server: cc3.shabijichang.com
   port: 80
@@ -57,6 +42,21 @@ proxies:
     headers:
       Host: cc3.shabijichang.com
   udp: true
+- name: '[🇮🇳]_1691'
+  server: inmm1.ip8.shop
+  port: 21152
+  type: vmess
+  uuid: ec3521de-b3dc-376a-836b-ea9c617e019d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: inmm1.ip8.shop
+  udp: true
 - name: '[🇮🇹]_1694'
   server: itml1.ip8.shop
   port: 54252
@@ -71,6 +71,46 @@ proxies:
     path: /
     headers:
       Host: itml1.ip8.shop
+  udp: true
+- name: '[🇹🇼]_1683'
+  server: 114.37.130.69
+  port: 2024
+  type: vmess
+  uuid: ed2c5d1c-6f52-3acf-9b39-4b73436c410f
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇹🇼]_1689'
+  server: aktwv4.cco.icu
+  port: 22250
+  type: vmess
+  uuid: 80f77230-895d-399e-8b27-a4440afdb945
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: aktwv4.cco.icu
+  udp: true
+- name: '[🇸🇬]_1693'
+  server: sg2.ip8.shop
+  port: 64952
+  type: vmess
+  uuid: 76549352-dea7-3e17-b890-63773b2c350c
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sg2.ip8.shop
   udp: true
 - name: '[🇰🇷]_1695'
   server: krse1.ip8.shop
@@ -106,9 +146,12 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇸🇬]_1693'
   - '[🇦🇶]_1699'
+  - '[🇮🇳]_1691'
   - '[🇮🇹]_1694'
+  - '[🇹🇼]_1683'
+  - '[🇹🇼]_1689'
+  - '[🇸🇬]_1693'
   - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: 🎯 负载均衡
@@ -117,9 +160,12 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1693'
   - '[🇦🇶]_1699'
+  - '[🇮🇳]_1691'
   - '[🇮🇹]_1694'
+  - '[🇹🇼]_1683'
+  - '[🇹🇼]_1689'
+  - '[🇸🇬]_1693'
   - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: ♻️ 自动选择
@@ -128,9 +174,12 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1693'
   - '[🇦🇶]_1699'
+  - '[🇮🇳]_1691'
   - '[🇮🇹]_1694'
+  - '[🇹🇼]_1683'
+  - '[🇹🇼]_1689'
+  - '[🇸🇬]_1693'
   - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: 🔰 延迟最低
@@ -139,18 +188,24 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1693'
   - '[🇦🇶]_1699'
+  - '[🇮🇳]_1691'
   - '[🇮🇹]_1694'
+  - '[🇹🇼]_1683'
+  - '[🇹🇼]_1689'
+  - '[🇸🇬]_1693'
   - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇸🇬]_1693'
   - '[🇦🇶]_1699'
+  - '[🇮🇳]_1691'
   - '[🇮🇹]_1694'
+  - '[🇹🇼]_1683'
+  - '[🇹🇼]_1689'
+  - '[🇸🇬]_1693'
   - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: 🎯 全球直连
@@ -159,9 +214,12 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇸🇬]_1693'
   - '[🇦🇶]_1699'
+  - '[🇮🇳]_1691'
   - '[🇮🇹]_1694'
+  - '[🇹🇼]_1683'
+  - '[🇹🇼]_1689'
+  - '[🇸🇬]_1693'
   - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 rules:
