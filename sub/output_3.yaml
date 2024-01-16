@@ -26,6 +26,67 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇸🇬]_1693'
+  server: sg2.ip8.shop
+  port: 64952
+  type: vmess
+  uuid: 76549352-dea7-3e17-b890-63773b2c350c
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sg2.ip8.shop
+  udp: true
+- name: '[🇦🇶]_1699'
+  server: cc3.shabijichang.com
+  port: 80
+  type: vmess
+  uuid: cf73e4f7-31d0-3a5d-be88-0d71c4725fe3
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: cc3.shabijichang.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cc3.shabijichang.com
+  udp: true
+- name: '[🇮🇹]_1694'
+  server: itml1.ip8.shop
+  port: 54252
+  type: vmess
+  uuid: 015b989f-e50e-3cbb-8c4d-ee2915ce800d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: itml1.ip8.shop
+  udp: true
+- name: '[🇰🇷]_1695'
+  server: krse1.ip8.shop
+  port: 26752
+  type: vmess
+  uuid: 9c448116-bc33-3c00-b76e-9bb55a6f9f25
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: krse1.ip8.shop
+  udp: true
 - alterId: 0
   cipher: auto
   name: '[🇻🇳]越南_1702'
@@ -45,6 +106,10 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇸🇬]_1693'
+  - '[🇦🇶]_1699'
+  - '[🇮🇹]_1694'
+  - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: 🎯 负载均衡
   type: load-balance
@@ -52,6 +117,10 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇸🇬]_1693'
+  - '[🇦🇶]_1699'
+  - '[🇮🇹]_1694'
+  - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: ♻️ 自动选择
   type: fallback
@@ -59,6 +128,10 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇸🇬]_1693'
+  - '[🇦🇶]_1699'
+  - '[🇮🇹]_1694'
+  - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: 🔰 延迟最低
   type: url-test
@@ -66,11 +139,19 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇸🇬]_1693'
+  - '[🇦🇶]_1699'
+  - '[🇮🇹]_1694'
+  - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇸🇬]_1693'
+  - '[🇦🇶]_1699'
+  - '[🇮🇹]_1694'
+  - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 - name: 🎯 全球直连
   type: select
@@ -78,6 +159,10 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇸🇬]_1693'
+  - '[🇦🇶]_1699'
+  - '[🇮🇹]_1694'
+  - '[🇰🇷]_1695'
   - '[🇻🇳]越南_1702'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
