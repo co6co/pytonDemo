@@ -26,67 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇬🇧]_1689'
-  server: ukld2.ip8.shop
-  port: 36902
-  type: vmess
-  uuid: edf635b3-7454-3807-ac2b-f1c0c3a9365c
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ukld2.ip8.shop
-  udp: true
-- name: '[🇮🇳]_1688'
-  server: inmm1.ip8.shop
-  port: 21152
-  type: vmess
-  uuid: bf95b6a4-97e0-3c36-b787-e72136fc4e28
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: inmm1.ip8.shop
-  udp: true
-- name: '[🇺🇸]_1696'
-  server: cc3.shabijichang.com
-  port: 80
-  type: vmess
-  uuid: a84d4ff1-939a-34c1-969c-269d1553c45e
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: cc3.shabijichang.com
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: cc3.shabijichang.com
-  udp: true
-- name: '[🇮🇹]_1691'
-  server: itml1.ip8.shop
-  port: 54252
-  type: vmess
-  uuid: 153d1a3f-5db9-3b71-959f-354315812df7
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: itml1.ip8.shop
-  udp: true
 - name: '[🇸🇬]_1690'
   server: sg2.ip8.shop
   port: 64952
@@ -117,6 +56,89 @@ proxies:
     headers:
       Host: krse1.ip8.shop
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]美国_1700'
+  network: ws
+  port: 80
+  server: us3.36routes.online
+  tls: false
+  type: vmess
+  uuid: 4bdf4405-d8d9-34e3-a21d-db2966666f4a
+  ws-opts:
+    headers:
+      Host: us3.36routes.online
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]美国_1704'
+  network: ws
+  port: 80
+  server: 104.17.25.1
+  tls: false
+  type: vmess
+  uuid: 40a91c86-7915-3b52-b743-d94aa32ad2e8
+  ws-opts:
+    headers:
+      Host: 1.catnipballs.gay
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]美国_1701'
+  network: ws
+  port: 80
+  server: us4.36routes.online
+  tls: false
+  type: vmess
+  uuid: 67deb568-d184-3d38-a835-4ae8914ba9a4
+  ws-opts:
+    headers:
+      Host: us4.36routes.online
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇰🇷]韩国_1698'
+  network: ws
+  port: 80
+  server: kr3.36routes.online
+  tls: false
+  type: vmess
+  uuid: de8f4f38-99da-3502-bfdf-5b720b85f84b
+  ws-opts:
+    headers:
+      Host: kr3.36routes.online
+    path: /
+  udp: true
+- name: '[🇮🇹]_1691'
+  server: itml1.ip8.shop
+  port: 54252
+  type: vmess
+  uuid: 153d1a3f-5db9-3b71-959f-354315812df7
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: itml1.ip8.shop
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇻🇳]越南_1703'
+  network: ws
+  port: 80
+  server: free.mang5g.me
+  tls: false
+  type: vmess
+  uuid: 6590eefc-3692-3177-b937-22b8689e036b
+  ws-opts:
+    path: /mang5g.me
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -124,70 +146,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇬🇧]_1689'
-  - '[🇮🇳]_1688'
-  - '[🇺🇸]_1696'
-  - '[🇮🇹]_1691'
   - '[🇸🇬]_1690'
   - '[🇰🇷]_1692'
+  - '[🇺🇸]美国_1700'
+  - '[🇦🇶]美国_1704'
+  - '[🇺🇸]美国_1701'
+  - '[🇰🇷]韩国_1698'
+  - '[🇮🇹]_1691'
+  - '[🇻🇳]越南_1703'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇬🇧]_1689'
-  - '[🇮🇳]_1688'
-  - '[🇺🇸]_1696'
-  - '[🇮🇹]_1691'
   - '[🇸🇬]_1690'
   - '[🇰🇷]_1692'
+  - '[🇺🇸]美国_1700'
+  - '[🇦🇶]美国_1704'
+  - '[🇺🇸]美国_1701'
+  - '[🇰🇷]韩国_1698'
+  - '[🇮🇹]_1691'
+  - '[🇻🇳]越南_1703'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇬🇧]_1689'
-  - '[🇮🇳]_1688'
-  - '[🇺🇸]_1696'
-  - '[🇮🇹]_1691'
   - '[🇸🇬]_1690'
   - '[🇰🇷]_1692'
+  - '[🇺🇸]美国_1700'
+  - '[🇦🇶]美国_1704'
+  - '[🇺🇸]美国_1701'
+  - '[🇰🇷]韩国_1698'
+  - '[🇮🇹]_1691'
+  - '[🇻🇳]越南_1703'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇬🇧]_1689'
-  - '[🇮🇳]_1688'
-  - '[🇺🇸]_1696'
-  - '[🇮🇹]_1691'
   - '[🇸🇬]_1690'
   - '[🇰🇷]_1692'
+  - '[🇺🇸]美国_1700'
+  - '[🇦🇶]美国_1704'
+  - '[🇺🇸]美国_1701'
+  - '[🇰🇷]韩国_1698'
+  - '[🇮🇹]_1691'
+  - '[🇻🇳]越南_1703'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇬🇧]_1689'
-  - '[🇮🇳]_1688'
-  - '[🇺🇸]_1696'
-  - '[🇮🇹]_1691'
   - '[🇸🇬]_1690'
   - '[🇰🇷]_1692'
+  - '[🇺🇸]美国_1700'
+  - '[🇦🇶]美国_1704'
+  - '[🇺🇸]美国_1701'
+  - '[🇰🇷]韩国_1698'
+  - '[🇮🇹]_1691'
+  - '[🇻🇳]越南_1703'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇬🇧]_1689'
-  - '[🇮🇳]_1688'
-  - '[🇺🇸]_1696'
-  - '[🇮🇹]_1691'
   - '[🇸🇬]_1690'
   - '[🇰🇷]_1692'
+  - '[🇺🇸]美国_1700'
+  - '[🇦🇶]美国_1704'
+  - '[🇺🇸]美国_1701'
+  - '[🇰🇷]韩国_1698'
+  - '[🇮🇹]_1691'
+  - '[🇻🇳]越南_1703'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
