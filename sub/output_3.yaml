@@ -41,40 +41,11 @@ proxies:
     headers:
       Host: aktwv4.cco.icu
   udp: true
-- name: '[🇦🇺]_1682'
-  server: 188.253.6.35
-  port: 20009
+- name: '[🇸🇬]_1685'
+  server: sg2.ip8.shop
+  port: 64952
   type: vmess
-  uuid: e258dcfb-93ee-306a-85d4-946353dceca9
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-  udp: true
-- name: '[🇺🇸]_1691'
-  server: cc3.shabijichang.com
-  port: 80
-  type: vmess
-  uuid: bfb5155c-0766-3d05-b5c0-b03460a415a9
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: cc3.shabijichang.com
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: cc3.shabijichang.com
-  udp: true
-- name: '[🇬🇧]_1684'
-  server: ukld2.ip8.shop
-  port: 36902
-  type: vmess
-  uuid: 0e6629ba-90e1-37f3-9816-75f7cc14f0df
+  uuid: eaa745fc-6427-3f57-877b-91e4dc5a7859
   alterId: 0
   cipher: auto
   tls: false
@@ -83,37 +54,7 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: ukld2.ip8.shop
-  udp: true
-- name: '[🇰🇷]_1687'
-  server: krse1.ip8.shop
-  port: 26752
-  type: vmess
-  uuid: 8019180f-fa1a-39fe-8ca1-f3d12cae0501
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: krse1.ip8.shop
-  udp: true
-- name: '[🇮🇹]_1686'
-  server: itml1.ip8.shop
-  port: 54252
-  type: vmess
-  uuid: d561bd09-f0d5-3484-b13e-eabc1d7d93f8
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: itml1.ip8.shop
+      Host: sg2.ip8.shop
   udp: true
 - name: '[🇮🇳]_1683'
   server: inmm1.ip8.shop
@@ -130,11 +71,11 @@ proxies:
     headers:
       Host: inmm1.ip8.shop
   udp: true
-- name: '[🇸🇬]_1685'
-  server: sg2.ip8.shop
-  port: 64952
+- name: '[🇮🇹]_1686'
+  server: itml1.ip8.shop
+  port: 54252
   type: vmess
-  uuid: eaa745fc-6427-3f57-877b-91e4dc5a7859
+  uuid: d561bd09-f0d5-3484-b13e-eabc1d7d93f8
   alterId: 0
   cipher: auto
   tls: false
@@ -143,7 +84,22 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: sg2.ip8.shop
+      Host: itml1.ip8.shop
+  udp: true
+- name: '[🇰🇷]_1687'
+  server: krse1.ip8.shop
+  port: 26752
+  type: vmess
+  uuid: 8019180f-fa1a-39fe-8ca1-f3d12cae0501
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: krse1.ip8.shop
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -153,13 +109,10 @@ proxy-groups:
   - ♻️ 自动选择
   - 🔰 延迟最低
   - '[🇹🇼]_1681'
-  - '[🇦🇺]_1682'
-  - '[🇺🇸]_1691'
-  - '[🇬🇧]_1684'
-  - '[🇰🇷]_1687'
-  - '[🇮🇹]_1686'
-  - '[🇮🇳]_1683'
   - '[🇸🇬]_1685'
+  - '[🇮🇳]_1683'
+  - '[🇮🇹]_1686'
+  - '[🇰🇷]_1687'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
@@ -167,13 +120,10 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇹🇼]_1681'
-  - '[🇦🇺]_1682'
-  - '[🇺🇸]_1691'
-  - '[🇬🇧]_1684'
-  - '[🇰🇷]_1687'
-  - '[🇮🇹]_1686'
-  - '[🇮🇳]_1683'
   - '[🇸🇬]_1685'
+  - '[🇮🇳]_1683'
+  - '[🇮🇹]_1686'
+  - '[🇰🇷]_1687'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -181,13 +131,10 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇹🇼]_1681'
-  - '[🇦🇺]_1682'
-  - '[🇺🇸]_1691'
-  - '[🇬🇧]_1684'
-  - '[🇰🇷]_1687'
-  - '[🇮🇹]_1686'
-  - '[🇮🇳]_1683'
   - '[🇸🇬]_1685'
+  - '[🇮🇳]_1683'
+  - '[🇮🇹]_1686'
+  - '[🇰🇷]_1687'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -195,25 +142,19 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇹🇼]_1681'
-  - '[🇦🇺]_1682'
-  - '[🇺🇸]_1691'
-  - '[🇬🇧]_1684'
-  - '[🇰🇷]_1687'
-  - '[🇮🇹]_1686'
-  - '[🇮🇳]_1683'
   - '[🇸🇬]_1685'
+  - '[🇮🇳]_1683'
+  - '[🇮🇹]_1686'
+  - '[🇰🇷]_1687'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
   - '[🇹🇼]_1681'
-  - '[🇦🇺]_1682'
-  - '[🇺🇸]_1691'
-  - '[🇬🇧]_1684'
-  - '[🇰🇷]_1687'
-  - '[🇮🇹]_1686'
-  - '[🇮🇳]_1683'
   - '[🇸🇬]_1685'
+  - '[🇮🇳]_1683'
+  - '[🇮🇹]_1686'
+  - '[🇰🇷]_1687'
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -221,13 +162,10 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - '[🇹🇼]_1681'
-  - '[🇦🇺]_1682'
-  - '[🇺🇸]_1691'
-  - '[🇬🇧]_1684'
-  - '[🇰🇷]_1687'
-  - '[🇮🇹]_1686'
-  - '[🇮🇳]_1683'
   - '[🇸🇬]_1685'
+  - '[🇮🇳]_1683'
+  - '[🇮🇹]_1686'
+  - '[🇰🇷]_1687'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
