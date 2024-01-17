@@ -1,5 +1,5 @@
 proxies:
-- name: 更新于:01-1800:00-byBuLink.xyz-以下节点不计流量
+- name: 更新于:01-1804:00-byBuLink.xyz-以下节点不计流量
   type: vmess
   server: 使用前记得更新订阅
   port: 0
@@ -9,59 +9,60 @@ proxies:
   udp: true
   network: tcp
   ws-path: ''
-- name: github.com/freefq-美国Amazon数据中心1
-  type: ss
-  server: series-a2-mec.samanehha.co
+- name: github.com/freefq-台湾省台中市中华电信1
+  type: vmess
+  server: c12.twtc.dynu.net
+  port: 6122
+  uuid: 60ab817e-0566-44cb-becd-6b51698d5672
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: tcp
+  ws-path: /
+  ws-headers:
+    Host: c12.twtc.dynu.net
+- name: github.com/freefq-美国CloudFlare公司CDN节点2
+  type: vmess
+  server: 104.17.25.1
+  port: 80
+  uuid: d87339e4-d57d-4475-ef76-a78205daa90e
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /
+  ws-headers:
+    Host: 1.catnipballs.gay
+- name: github.com/freefq-台湾省新北市中华电信3
+  type: vmess
+  server: nb22.ntbq.dynu.net
+  port: 12002
+  uuid: 60ab817e-0566-44cb-becd-6b51698d5672
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: tcp
+  ws-path: /
+  ws-headers:
+    Host: nb22.ntbq.dynu.net
+- name: github.com/freefq-北美地区4
+  server: los16.ttddd.xyz
   port: 443
-  cipher: chacha20-ietf-poly1305
-  password: u17T3BvpYaaiuW2c
-- name: github.com/freefq-广东省移动2
-  type: ss
-  server: nc.cn2.go002.xyz
-  port: 19511
-  cipher: chacha20-ietf-poly1305
-  password: 893562d2-2e36-4c87-aebc-3ca3fc78de3e
-- name: github.com/freefq-英国伦敦Linode数据中心3
-  type: ss
-  server: 178.79.187.120
-  port: 80
-  cipher: chacha20-ietf-poly1305
-  password: ufMbYaRNfmOzFfAz55Chw3
-- name: github.com/freefq-美国CloudFlare节点4
+  type: trojan
+  password: 27876_t7d7f4e3f
+  skip-cert-verify: true
+- name: github.com/freefq-美国5
   type: vmess
-  server: world12.freedomisnear.fun
-  port: 2095
-  uuid: d9ea8cee-678b-4703-bab5-cdf2c423b72d
+  server: 172.99.190.109
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /@forwardv2ray
-- name: github.com/freefq-美国CloudFlare公司CDN节点5
-  type: vmess
-  server: cfcdn3.sanfencdn9.com
-  port: 80
-  uuid: dab86579-d197-431b-8e72-3d8a75968040
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /video/P7EExoE2
-  ws-headers:
-    Host: oA5FSz9Tjp1.yofnhkfc.xyz
-- name: github.com/freefq-广东省移动6
-  type: vmess
-  server: data-us-v1.shwjfkw.cn
-  port: 20401
-  uuid: b1478e24-4916-3abe-8f17-15931012ecbe
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /debian
-  ws-headers:
-    Host: data-us-v1.shwjfkw.cn
-- name: github.com/freefq-美国CloudFlare公司CDN节点7
+  tls: true
+  ws-path: linkvws
+- name: github.com/freefq-美国CloudFlare公司CDN节点6
   type: vmess
   server: glaSco.fx-trAder.shop
   port: 80
@@ -73,25 +74,39 @@ proxies:
   ws-path: /
   ws-headers:
     Host: vvv2vayo2.everythingisreve.shop
-- name: github.com/freefq-美国Amazon数据中心8
-  type: ss
-  server: series-a1.samanehha.co
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: W74XFALLLuw6m5IA
-- name: github.com/freefq-美国麻省理工学院9
-  type: ss
-  server: 18.132.32.43
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: u17T3BvpYaaiuW2c
-- name: github.com/freefq-美国CloudFlare公司CDN节点10
+- name: github.com/freefq-广东省移动7
   type: vmess
-  server: world17.freedomisnear.fun
-  port: 2095
-  uuid: eebad79d-5eca-47bf-bfa9-f8f3e2143eb3
+  server: data-us-v1.shwjfkw.cn
+  port: 20401
+  uuid: b1478e24-4916-3abe-8f17-15931012ecbe
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /@forwardv2ray
+  ws-path: /debian
+  ws-headers:
+    Host: data-us-v1.shwjfkw.cn
+- name: github.com/freefq-美国CloudFlare节点8
+  type: vmess
+  server: cfcdn3.sanfencdn9.com
+  port: 80
+  uuid: dab86579-d197-431b-8e72-3d8a75968040
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /video/P7EExoE2
+  ws-headers:
+    Host: oA5FSz9Tjp1.yofnhkfc.xyz
+- name: github.com/freefq-美国CloudFlare公司CDN节点9
+  type: vmess
+  server: 104.17.2.183
+  port: 80
+  uuid: f256a3ae-0f85-4a1d-d0cd-2d0b4b73f4f1
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /
+  ws-headers:
+    Host: v3ra3do.wakeuptimerap.shop
