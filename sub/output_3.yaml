@@ -41,21 +41,6 @@ proxies:
     headers:
       Host: inmm1.ip8.shop
   udp: true
-- name: '[🇹🇼]_1726'
-  server: aktwv4.cco.icu
-  port: 22250
-  type: vmess
-  uuid: 1a5d57a5-90fd-3a13-92bb-bd8c6bf0f8eb
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: aktwv4.cco.icu
-  udp: true
 - name: '[🇰🇷]_1732'
   server: krse1.ip8.shop
   port: 26752
@@ -71,11 +56,11 @@ proxies:
     headers:
       Host: krse1.ip8.shop
   udp: true
-- name: '[🇸🇬]_1730'
+- name: '[🇸🇪]_1730'
   server: sg2.ip8.shop
   port: 64952
   type: vmess
-  uuid: 6d7f13bd-232d-3514-ba82-60861b9f2f1c
+  uuid: a9bf11d4-fe49-3d7f-8ef9-af93dec57d5c
   alterId: 0
   cipher: auto
   tls: false
@@ -86,6 +71,37 @@ proxies:
     headers:
       Host: sg2.ip8.shop
   udp: true
+- name: '[🇺🇸]美国_1672'
+  server: 108.165.113.99
+  port: 443
+  type: vmess
+  uuid: 724c3f4e-5710-3222-a6d6-f9e0d383e229
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 108.165.113.99
+  udp: true
+- name: '[🇺🇸]_1707'
+  server: 38.207.161.127
+  port: 36632
+  type: vmess
+  uuid: cb4685b5-9a11-3b0a-ade3-9ae1d4659f70
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: 🇭🇰HK-38.207.161.127-0145 | 11.533MB
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: testray.zanylee.uk
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -94,9 +110,10 @@ proxy-groups:
   - ♻️ 自动选择
   - 🔰 延迟最低
   - '[🇮🇳]_1728'
-  - '[🇹🇼]_1726'
   - '[🇰🇷]_1732'
-  - '[🇸🇬]_1730'
+  - '[🇸🇪]_1730'
+  - '[🇺🇸]美国_1672'
+  - '[🇺🇸]_1707'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
@@ -104,9 +121,10 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇮🇳]_1728'
-  - '[🇹🇼]_1726'
   - '[🇰🇷]_1732'
-  - '[🇸🇬]_1730'
+  - '[🇸🇪]_1730'
+  - '[🇺🇸]美国_1672'
+  - '[🇺🇸]_1707'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -114,9 +132,10 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇮🇳]_1728'
-  - '[🇹🇼]_1726'
   - '[🇰🇷]_1732'
-  - '[🇸🇬]_1730'
+  - '[🇸🇪]_1730'
+  - '[🇺🇸]美国_1672'
+  - '[🇺🇸]_1707'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -124,17 +143,19 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇮🇳]_1728'
-  - '[🇹🇼]_1726'
   - '[🇰🇷]_1732'
-  - '[🇸🇬]_1730'
+  - '[🇸🇪]_1730'
+  - '[🇺🇸]美国_1672'
+  - '[🇺🇸]_1707'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
   - '[🇮🇳]_1728'
-  - '[🇹🇼]_1726'
   - '[🇰🇷]_1732'
-  - '[🇸🇬]_1730'
+  - '[🇸🇪]_1730'
+  - '[🇺🇸]美国_1672'
+  - '[🇺🇸]_1707'
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -142,9 +163,10 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - '[🇮🇳]_1728'
-  - '[🇹🇼]_1726'
   - '[🇰🇷]_1732'
-  - '[🇸🇬]_1730'
+  - '[🇸🇪]_1730'
+  - '[🇺🇸]美国_1672'
+  - '[🇺🇸]_1707'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
