@@ -26,11 +26,46 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]美国_1530'
+- name: '[🇦🇶]加拿大_1411'
+  server: go.snangua.com
+  port: 8880
+  type: vmess
+  uuid: 05d62e67-0fb4-3fc7-b87d-0507dab7d984
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: us-01.snangua.com
+  udp: true
+- name: '[🇩🇪]德国_1421'
+  server: 49.13.193.20
+  port: 20880
+  type: vmess
+  uuid: 4389f4a2-796a-3dd2-877f-054b6be3ef96
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇩🇪]德国_1426'
+  server: 167.235.65.233
+  port: 34310
+  type: vmess
+  uuid: 3d3bf325-e3ed-3668-8d3a-24374f5b1637
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇺🇸]美国_1429'
   server: 172.64.204.174
   port: 2086
   type: vmess
-  uuid: 1b07c310-55f7-32a2-824a-9ec2111b50ec
+  uuid: a8b1637a-a28a-3128-b537-0e5523cd65d1
   alterId: 0
   cipher: auto
   tls: false
@@ -41,31 +76,31 @@ proxies:
     headers:
       Host: cf-tr.fanqiecloud.top
   udp: true
-- name: '[🇨🇭]瑞士_1529'
-  server: 94.131.99.8
-  port: 47182
-  type: vmess
-  uuid: dd300d2a-4bb0-3891-befb-c8ff71f9675c
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: '[🇮🇷]伊朗_1526'
+- name: '[🇮🇷]伊朗_1425'
   server: 194.26.3.166
   port: 16825
   type: vmess
-  uuid: cdb9588d-55ff-35f2-8dad-cc7ff8d2dc61
+  uuid: 16402906-1e5a-3bcb-b142-e3d4debfebb4
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[🇫🇷]法国_1531'
+- name: '[🇨🇭]瑞士_1428'
+  server: 94.131.99.8
+  port: 47182
+  type: vmess
+  uuid: 8d7827c4-3285-3dfd-ad40-341ec6682d03
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇫🇷]法国_1430'
   server: 37.187.75.40
   port: 80
   type: vmess
-  uuid: 6fe4f4c1-b2ba-3fea-8376-7bbc5796a312
+  uuid: 9995e534-dd4f-396e-8bad-8564e6d910bd
   alterId: 0
   cipher: auto
   tls: false
@@ -75,6 +110,16 @@ proxies:
     path: /
     headers:
       Host: fr1.c8898496-adb6-4073-9ee4-ff4e4984415b.polycdn.com
+  udp: true
+- name: '[🇯🇵]_1527'
+  server: 138.2.44.211
+  port: 20081
+  type: vmess
+  uuid: b4d01bf7-7eb2-3661-a7ac-ced41dbfa17b
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
   udp: true
 - name: '[🇧🇷]美国_1534'
   type: vmess
@@ -115,6 +160,18 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: tabyan777.sytes.net
+- name: '[🇺🇦]美国_1538'
+  type: vmess
+  server: 185.158.211.186
+  port: 80
+  uuid: 43505fc5-74bd-307b-92e2-01b67c6bc6d7
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /@forwardv2ray
+  ws-headers:
+    Host: irisoft.servecounterstrike.com
 - name: '[🇧🇷]美国_1539'
   type: vmess
   server: 92.223.12.4
@@ -128,18 +185,6 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: soft99.gotdns.ch
-- name: '[🇺🇦]美国_1538'
-  type: vmess
-  server: 185.158.211.186
-  port: 80
-  uuid: 43505fc5-74bd-307b-92e2-01b67c6bc6d7
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /@forwardv2ray
-  ws-headers:
-    Host: irisoft.servecounterstrike.com
 - name: '[🇧🇷]美国_1544'
   type: vmess
   server: 95.85.92.7
@@ -165,18 +210,19 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: tabyan205.serveftp.com
-- name: '[🇪🇨]美国_1551'
+- name: '[🇧🇩]美国_1547'
   type: vmess
-  server: 190.95.248.34
-  port: 80
-  uuid: c932dcda-3b0d-3d8a-a016-65279da2a1de
+  server: 43.245.140.2
+  port: 443
+  uuid: b333dbea-f760-3ebc-b3cf-6a8270c2c1dc
   alterId: 0
   cipher: auto
   udp: true
   network: ws
+  tls: true
   ws-path: /@forwardv2ray
   ws-headers:
-    Host: softiri.serveirc.com
+    Host: yasoft8889.zapto.org
 - name: '[🇦🇶]美国_1555'
   type: vmess
   server: yhnsb3.shabijichang.com
@@ -189,6 +235,18 @@ proxies:
   ws-path: /
   ws-headers:
     Host: yhnsb3.shabijichang.com
+- name: '[🇪🇨]美国_1551'
+  type: vmess
+  server: 190.95.248.34
+  port: 80
+  uuid: c932dcda-3b0d-3d8a-a016-65279da2a1de
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /@forwardv2ray
+  ws-headers:
+    Host: softiri.serveirc.com
 - name: '[🇰🇬]美国_1548'
   type: vmess
   server: 185.48.136.150
@@ -214,19 +272,6 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: tabyan205.serveftp.com
-- name: '[🇧🇩]美国_1547'
-  type: vmess
-  server: 43.245.140.2
-  port: 443
-  uuid: b333dbea-f760-3ebc-b3cf-6a8270c2c1dc
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-path: /@forwardv2ray
-  ws-headers:
-    Host: yasoft8889.zapto.org
 - name: '[🇱🇾]美国_1557'
   type: vmess
   server: 197.215.140.235
@@ -275,11 +320,24 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: tabyan205.serveftp.com
-- name: '[🇰🇿]美国_1563'
+- name: '[🇲🇳]美国_1566'
   type: vmess
-  server: 217.76.64.195
+  server: 180.149.90.66
+  port: 443
+  uuid: 889f1fbd-3eb8-37a7-b021-954cc6d407e1
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-path: /@forwardv2ray
+  ws-headers:
+    Host: irisoft.servecounterstrike.com
+- name: '[🇱🇺]印度_1577'
+  type: vmess
+  server: 202.78.162.6
   port: 80
-  uuid: de64f515-e91a-3e49-a7cf-be3dedbca652
+  uuid: 14fb1a09-ac37-311f-bb2d-d251370a51e4
   alterId: 0
   cipher: auto
   udp: true
@@ -299,19 +357,19 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: softiri.serveirc.com
-- name: '[🇲🇳]美国_1566'
+- name: '[🇯🇵]_1642'
+  server: 183.181.36.194
+  port: 41597
   type: vmess
-  server: 180.149.90.66
-  port: 443
-  uuid: 889f1fbd-3eb8-37a7-b021-954cc6d407e1
+  uuid: 888df8b2-e804-35a0-9047-97b071e331d3
   alterId: 0
   cipher: auto
-  udp: true
+  tls: false
+  skip-cert-verify: false
   network: ws
-  tls: true
-  ws-path: /@forwardv2ray
-  ws-headers:
-    Host: irisoft.servecounterstrike.com
+  ws-opts:
+    path: /
+  udp: true
 - name: '[🇰🇿]美国_1573'
   type: vmess
   server: 92.46.108.106
@@ -325,11 +383,11 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: tabyan777.sytes.net
-- name: '[🇱🇺]印度_1577'
+- name: '[🇰🇿]美国_1563'
   type: vmess
-  server: 202.78.162.6
+  server: 217.76.64.195
   port: 80
-  uuid: 14fb1a09-ac37-311f-bb2d-d251370a51e4
+  uuid: de64f515-e91a-3e49-a7cf-be3dedbca652
   alterId: 0
   cipher: auto
   udp: true
@@ -337,16 +395,6 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: irisoft.servecounterstrike.com
-- name: '[🇺🇸]_1648'
-  server: 38.180.33.136
-  port: 50104
-  type: vmess
-  uuid: a9e491f0-8a3f-355c-b23d-b62a9855c9e4
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
 - name: '[🇰🇿]美国_1574'
   type: vmess
   server: 217.76.64.195
@@ -360,21 +408,21 @@ proxies:
   ws-path: /@forwardv2ray
   ws-headers:
     Host: skuone.serveminecraft.net
-- name: '[🇫🇷]_1653'
+- name: '[🇫🇷]_1646'
   server: 57.129.16.96
   port: 8080
   type: vmess
-  uuid: 29615df1-cb65-3d75-b965-52b1808eda4f
+  uuid: b06df4c2-c4fe-31d4-9168-5ba8db02057e
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[🇳🇱]_1654'
+- name: '[🇳🇱]_1647'
   server: 93.123.17.140
   port: 443
   type: vmess
-  uuid: 3d7312b0-2937-3504-8127-496c7002f485
+  uuid: 9796015f-d133-33f2-8e75-5765ec6bd219
   alterId: 0
   cipher: auto
   tls: true
@@ -384,24 +432,11 @@ proxies:
   ws-opts:
     path: /@forwardv2ray
   udp: true
-- name: '[🇯🇵]_1649'
-  server: 183.181.36.194
-  port: 41597
-  type: vmess
-  uuid: d7d1ccd0-ba33-3c94-a92a-e8e91cc5aea8
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-  udp: true
-- name: '[🇳🇱]_1655'
+- name: '[🇳🇱]_1648'
   server: 93.123.17.143
   port: 80
   type: vmess
-  uuid: a9028d7c-4839-3f41-aa2a-9ac978197873
+  uuid: d707c587-0bd6-3c2d-b949-4067309ac6a3
   alterId: 0
   cipher: auto
   tls: false
@@ -411,11 +446,11 @@ proxies:
   ws-opts:
     path: /@forwardv2ray
   udp: true
-- name: '[🇩🇪]_1656'
+- name: '[🇩🇪]_1649'
   server: 92.223.124.30
   port: 443
   type: vmess
-  uuid: edab4369-0767-30fe-9cf0-0f906dd4296d
+  uuid: 1ff0684b-2b51-364f-a41a-f2732fe34b01
   alterId: 0
   cipher: auto
   tls: true
@@ -425,11 +460,11 @@ proxies:
   ws-opts:
     path: /@forwardv2ray
   udp: true
-- name: '[🇺🇦]_1668'
+- name: '[🇺🇦]_1662'
   server: 45.87.155.70
   port: 80
   type: vmess
-  uuid: ea73fd94-543e-3680-91ed-86f6e9a431e5
+  uuid: 172fc166-e788-38b2-b64f-123c72c99ec8
   alterId: 0
   cipher: auto
   tls: false
@@ -438,11 +473,11 @@ proxies:
   ws-opts:
     path: /vmess
   udp: true
-- name: '[🇺🇸]_1682'
+- name: '[🇺🇸]_1676'
   server: 185.101.136.8
   port: 443
   type: vmess
-  uuid: 7da75b3e-24b5-38bf-b2f7-e3702c5d5c56
+  uuid: fb37f7b9-a7dc-3285-91d2-7956f1e8c5cb
   alterId: 0
   cipher: auto
   tls: true
@@ -452,11 +487,11 @@ proxies:
   ws-opts:
     path: /@forwardv2ray
   udp: true
-- name: '[🇺🇸]_1686'
+- name: '[🇺🇸]_1680'
   server: 185.101.136.9
   port: 443
   type: vmess
-  uuid: 133a6187-3aa3-30d6-8f4a-00a6c1eee226
+  uuid: 496d6fdf-e6b7-3b3d-9942-45c82e03b2a3
   alterId: 0
   cipher: auto
   tls: true
@@ -466,11 +501,21 @@ proxies:
   ws-opts:
     path: /@forwardv2ray
   udp: true
-- name: '[🇺🇸]_1685'
+- name: '[🇰🇿]_1643'
+  server: kz-v2ray.ipracevpn.com
+  port: 8443
+  type: vmess
+  uuid: c674f616-58e1-36f4-8830-4832327b3ddb
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  udp: true
+- name: '[🇺🇸]_1679'
   server: 92.223.107.40
   port: 443
   type: vmess
-  uuid: 469eff11-cd47-33e1-82d6-c31e01e62043
+  uuid: 513e9c6b-38ae-3384-89ff-dc4f4b3394c0
   alterId: 0
   cipher: auto
   tls: true
@@ -480,64 +525,21 @@ proxies:
   ws-opts:
     path: /@forwardv2ray
   udp: true
-- name: '[🇰🇿]_1650'
-  server: kz-v2ray.ipracevpn.com
-  port: 8443
+- name: '[🇸🇬]_1664'
+  server: 00000000000000000000000000000000000000000000000000000000000032.agroup-node-for-bigairport.sbs
+  port: 38752
   type: vmess
-  uuid: 0da48703-c28d-3139-baf7-b7a9a21f144a
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
-- name: '[🇺🇸]_1692'
-  server: 172.67.196.112
-  port: 443
-  type: vmess
-  uuid: 64be6ff4-160b-3f56-a2d5-86c6896292e2
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  servername: kellie.makeup
-  network: ws
-  ws-opts:
-    path: /linkvws
-  udp: true
-- name: '[🇺🇸]_1690'
-  server: 97.node-for-bigairport.win
-  port: 443
-  type: vmess
-  uuid: 60e02116-e082-3031-b29d-1c1410a0f42e
+  uuid: b69c6ae7-8579-36c8-aa6e-059f94e3c31a
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 97.node-for-bigairport.win
   udp: true
-- name: '[🇿🇦]_1695'
-  server: 206.238.236.36
-  port: 2086
-  type: vmess
-  uuid: d4de56a2-2afa-3153-a26e-db50b4b3c351
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: mysan2.jaquay22.workers.dev
-  network: ws
-  ws-opts:
-    path: /adenc35.fixedlfoat.top/linkws
-  udp: true
-- name: '[🇸🇬]_1669'
+- name: '[🇸🇬]_1663'
   server: sing.5gsieutocdo.com
   port: 80
   type: vmess
-  uuid: cd46691c-16d4-319a-a2df-90b589bb6dc6
+  uuid: 26177fec-a1cc-3184-a0f8-8dfacf64abf0
   alterId: 0
   cipher: auto
   tls: false
@@ -548,21 +550,54 @@ proxies:
     headers:
       Host: sing.5gsieutocdo.com
   udp: true
-- name: '[🇸🇬]_1670'
-  server: 00000000000000000000000000000000000000000000000000000000000032.agroup-node-for-bigairport.sbs
-  port: 38752
+- name: '[🇺🇸]_1686'
+  server: 172.67.196.112
+  port: 443
   type: vmess
-  uuid: fb710a50-e7a9-3a57-b02a-187b6e0b2e8a
+  uuid: 133a6187-3aa3-30d6-8f4a-00a6c1eee226
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: kellie.makeup
+  network: ws
+  ws-opts:
+    path: /linkvws
+  udp: true
+- name: '[🇺🇸]_1684'
+  server: 97.node-for-bigairport.win
+  port: 443
+  type: vmess
+  uuid: 8cf3bbf2-4a60-3a14-94c9-9e1c562cfe16
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 97.node-for-bigairport.win
   udp: true
-- name: '[🇺🇸]_1696'
+- name: '[🇿🇦]_1689'
+  server: 206.238.236.36
+  port: 2086
+  type: vmess
+  uuid: f2566b61-d910-3e03-8f2b-ed398a947bf6
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: mysan2.jaquay22.workers.dev
+  network: ws
+  ws-opts:
+    path: /adenc35.fixedlfoat.top/linkws
+  udp: true
+- name: '[🇺🇸]_1690'
   server: 92.223.120.12
   port: 443
   type: vmess
-  uuid: a84d4ff1-939a-34c1-969c-269d1553c45e
+  uuid: 60e02116-e082-3031-b29d-1c1410a0f42e
   alterId: 0
   cipher: auto
   tls: true
@@ -572,11 +607,24 @@ proxies:
   ws-opts:
     path: /@forwardv2ray
   udp: true
-- name: '[🇦🇶]_1699'
+- name: '[🇸🇬]_1665'
+  server: 139.162.6.248
+  port: 80
+  type: vmess
+  uuid: 9402acd2-f3c9-3a7c-ab60-21109c09973e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /5gsieutocdo.club
+  udp: true
+- name: '[🇦🇶]_1693'
   server: 104.21.44.200
   port: 8880
   type: vmess
-  uuid: cf73e4f7-31d0-3a5d-be88-0d71c4725fe3
+  uuid: 3423ebf2-abfb-3d3e-ac90-5854b7b21fc0
   alterId: 0
   cipher: auto
   tls: false
@@ -586,11 +634,11 @@ proxies:
   ws-opts:
     path: /r8ykwif5rffiqJeJ49zLQtAUESmka7PbhWz3wiHs8cSeiRyZL
   udp: true
-- name: '[🇺🇸]_1700'
+- name: '[🇺🇸]_1694'
   server: 172.67.229.14
   port: 80
   type: vmess
-  uuid: 81d5cab6-72a5-382d-89c2-c06d132e3d92
+  uuid: bfd68e44-1376-3ccc-87a8-bfd9345e23c3
   alterId: 0
   cipher: auto
   tls: false
@@ -600,24 +648,24 @@ proxies:
   ws-opts:
     path: /Jnv8ViZOUVgijjOh0p5uGjHnXIiY
   udp: true
-- name: '[🇸🇬]_1671'
-  server: 139.162.6.248
-  port: 80
+- name: '[🇬🇷]_1678'
+  server: 94.131.8.32
+  port: 2082
   type: vmess
-  uuid: 012355b2-4107-35a5-b253-1476d2565040
+  uuid: 63a1912c-254d-3455-b013-d0d7a0757241
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /5gsieutocdo.club
+    path: /vmess
   udp: true
-- name: '[🇸🇨]_1714'
+- name: '[🇸🇨]_1708'
   server: 156.251.189.113
   port: 443
   type: vmess
-  uuid: d798abc5-ad56-3ec5-aae6-1186ddfbd02e
+  uuid: bf80e8df-576f-358f-b875-ce64e2a3889c
   alterId: 0
   cipher: auto
   tls: true
@@ -627,21 +675,11 @@ proxies:
   ws-opts:
     path: /admin
   udp: true
-- name: '[🇸🇬]_1691'
-  server: 00000000000000000000000000000000000000000000000000000000000026.agroup-node-for-bigairport.sbs
-  port: 38756
-  type: vmess
-  uuid: 5ba10070-f320-3973-8584-6789d2f8b961
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: '[🇺🇸]_1697'
+- name: '[🇺🇸]_1691'
   server: JAPAN62.5GTOCDOCAO.COM
   port: 80
   type: vmess
-  uuid: 79923070-bc9a-3167-985a-7519bc52b5f4
+  uuid: bfb5155c-0766-3d05-b5c0-b03460a415a9
   alterId: 0
   cipher: auto
   tls: false
@@ -652,26 +690,11 @@ proxies:
     headers:
       Host: JAPAN62.5GTOCDOCAO.COM
   udp: true
-- name: '[🇸🇬]_1694'
-  server: A011.STANDARD-NODES-CHICKENFARMS.TOP
-  port: 443
-  type: vmess
-  uuid: fc50f87d-8a51-38d2-863e-3dbb8b4fae0d
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: A011.STANDARD-NODES-CHICKENFARMS.TOP
-  udp: true
-- name: '[🇺🇸]_1701'
+- name: '[🇺🇸]_1695'
   server: 82.node-for-bigairport.win
   port: 443
   type: vmess
-  uuid: f58247c1-3e88-36ec-acf5-fc45127767c0
+  uuid: 497098ed-f5ad-3fc6-ac78-d4e3947909bb
   alterId: 0
   cipher: auto
   tls: false
@@ -682,11 +705,11 @@ proxies:
     headers:
       Host: 82.node-for-bigairport.win
   udp: true
-- name: '[🇬🇷]_1684'
+- name: '[🇬🇷]_1682'
   server: 94.131.8.32
-  port: 2082
+  port: 8080
   type: vmess
-  uuid: df919723-214b-3ce5-8e3c-07a83be1cce1
+  uuid: 65943b31-cb41-3056-a8ea-a2261caf07da
   alterId: 0
   cipher: auto
   tls: false
@@ -695,7 +718,45 @@ proxies:
   ws-opts:
     path: /vmess
   udp: true
-- name: '[🇻🇳]_1792'
+- name: '[🇸🇬]_1685'
+  server: 00000000000000000000000000000000000000000000000000000000000026.agroup-node-for-bigairport.sbs
+  port: 38756
+  type: vmess
+  uuid: eaa745fc-6427-3f57-877b-91e4dc5a7859
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇸🇬]_1688'
+  server: A011.STANDARD-NODES-CHICKENFARMS.TOP
+  port: 443
+  type: vmess
+  uuid: e9a75737-41af-34e3-8747-3ab678ef2b6e
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: A011.STANDARD-NODES-CHICKENFARMS.TOP
+  udp: true
+- name: '[🇬🇷]_1692'
+  server: 94.131.8.32
+  port: 80
+  type: vmess
+  uuid: ea4a45a7-e555-3e8e-a1e9-1a3678c190cf
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+  udp: true
+- name: '[🇻🇳]_1835'
   server: vn11.4gchill.com
   port: 443
   type: vmess
@@ -707,13 +768,13 @@ proxies:
   servername: vn11.4gchill.com
   skip-cert-verify: true
   tls: true
-  uuid: df433921-24b3-3bb3-b358-0924584afaf1
+  uuid: 62e083b6-ce97-3b2c-84c6-47624efbe5c7
   udp: true
-- name: '[🇩🇪]_1804'
+- name: '[🇩🇪]_1847'
   server: 185.206.69.43
   port: 80
   type: vmess
-  uuid: ec9d9582-a932-3c5e-a4b3-333616380c8e
+  uuid: 587c92ef-3680-30b1-a99f-8615c0a9c80e
   alterId: 0
   cipher: auto
   tls: false
@@ -723,11 +784,84 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: '[🇦🇶]_1832'
+- name: '[🇹🇼]_1862'
+  server: aktwv4.cco.icu
+  port: 22250
+  type: vmess
+  uuid: 06d6c85d-1dbe-3ce0-8018-ec91fbc6b841
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: aktwv4.cco.icu
+  udp: true
+- name: '[🇦🇺]_1863'
+  server: 188.253.6.35
+  port: 20009
+  type: vmess
+  uuid: 7a462400-931f-37f3-a35e-7c63ca1e9734
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+  udp: true
+- name: '[🇮🇳]_1864'
+  server: inmm1.ip8.shop
+  port: 21152
+  type: vmess
+  uuid: 38e959bf-c26a-385c-bd89-7488c1c7fdd5
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: inmm1.ip8.shop
+  udp: true
+- name: '[🇬🇧]_1865'
+  server: ukld2.ip8.shop
+  port: 36902
+  type: vmess
+  uuid: 4c04588f-b468-3195-afd3-b76ee8b1288a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ukld2.ip8.shop
+  udp: true
+- name: '[🇸🇬]_1866'
+  server: sg2.ip8.shop
+  port: 64952
+  type: vmess
+  uuid: 6dd5b47c-f10e-30e0-87fe-8284804d75cf
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sg2.ip8.shop
+  udp: true
+- name: '[🇺🇸]_1875'
   server: cc3.shabijichang.com
   port: 80
   type: vmess
-  uuid: 8ee76685-57c5-3c8e-afc8-6a45c2c1b9d8
+  uuid: 8fe28632-52bf-3210-b822-2079e991f1e9
   alterId: 0
   cipher: auto
   tls: false
@@ -739,68 +873,11 @@ proxies:
     headers:
       Host: cc3.shabijichang.com
   udp: true
-- name: '[🇹🇼]_1819'
-  server: aktwv4.cco.icu
-  port: 22250
-  type: vmess
-  uuid: ec9bdb60-a2ce-33ae-8bf0-656d2b7eece7
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: aktwv4.cco.icu
-  udp: true
-- name: '[🇬🇧]_1822'
-  server: ukld2.ip8.shop
-  port: 36902
-  type: vmess
-  uuid: 54a61ed5-309c-3503-9697-9a169f8851c5
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ukld2.ip8.shop
-  udp: true
-- name: '[🇦🇺]_1820'
-  server: 188.253.6.35
-  port: 20009
-  type: vmess
-  uuid: 9bcecfbd-cf28-33e0-9651-f569d0d936a3
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-  udp: true
-- name: '[🇺🇸]_1884'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: f61ab9ec-a29d-3367-9349-920fbedd372c
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
-  tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
-  udp: true
-- name: '[🇮🇹]_1824'
+- name: '[🇮🇹]_1867'
   server: itml1.ip8.shop
   port: 54252
   type: vmess
-  uuid: 6507b5ba-27e9-3410-97e7-193f168375ce
+  uuid: cc0bd97d-d5cd-307f-8064-ed4906a414d1
   alterId: 0
   cipher: auto
   tls: false
@@ -811,11 +888,11 @@ proxies:
     headers:
       Host: itml1.ip8.shop
   udp: true
-- name: '[🇰🇷]_1825'
+- name: '[🇰🇷]_1868'
   server: krse1.ip8.shop
   port: 26752
   type: vmess
-  uuid: 8ef09b4d-2f7e-32fc-87d0-6be491009d53
+  uuid: ff4720ee-d2f1-3d53-b834-52cc0f68f635
   alterId: 0
   cipher: auto
   tls: false
@@ -826,41 +903,25 @@ proxies:
     headers:
       Host: krse1.ip8.shop
   udp: true
-- name: '[🇮🇳]_1821'
-  server: inmm1.ip8.shop
-  port: 21152
+- name: '[🇺🇸]_1885'
+  server: hkd1.quickerlink.xyz
+  port: 443
   type: vmess
-  uuid: cc0997c9-eb79-30fc-82ab-887be5382064
-  alterId: 0
+  uuid: bf827cd7-013e-3b4f-b9fc-3e302612d609
+  alterId: 64
   cipher: auto
-  tls: false
-  skip-cert-verify: false
+  skip-cert-verify: true
   network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: inmm1.ip8.shop
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
   udp: true
-- name: '[🇸🇬]_1823'
-  server: sg2.ip8.shop
-  port: 64952
-  type: vmess
-  uuid: 36d90002-6a29-3ec3-9ee3-522a20026bf4
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sg2.ip8.shop
-  udp: true
-- name: '[🇸🇬]_1883'
+- name: '[🇸🇬]_1884'
   server: 159.223.94.156
   port: 80
   type: vmess
-  uuid: f6ec08f1-c5bf-39ff-a1b8-ff8a8a28edf9
+  uuid: f2e6ca09-a01b-3b23-9815-8aab3131488b
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -877,418 +938,448 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]美国_1530'
-  - '[🇨🇭]瑞士_1529'
-  - '[🇮🇷]伊朗_1526'
-  - '[🇫🇷]法国_1531'
+  - '[🇦🇶]加拿大_1411'
+  - '[🇩🇪]德国_1421'
+  - '[🇩🇪]德国_1426'
+  - '[🇺🇸]美国_1429'
+  - '[🇮🇷]伊朗_1425'
+  - '[🇨🇭]瑞士_1428'
+  - '[🇫🇷]法国_1430'
+  - '[🇯🇵]_1527'
   - '[🇧🇷]美国_1534'
   - '[🇧🇷]美国_1535'
   - '[🇧🇷]美国_1537'
-  - '[🇧🇷]美国_1539'
   - '[🇺🇦]美国_1538'
+  - '[🇧🇷]美国_1539'
   - '[🇧🇷]美国_1544'
   - '[🇺🇿]美国_1542'
-  - '[🇪🇨]美国_1551'
+  - '[🇧🇩]美国_1547'
   - '[🇦🇶]美国_1555'
+  - '[🇪🇨]美国_1551'
   - '[🇰🇬]美国_1548'
   - '[🇵🇸]美国_1553'
-  - '[🇧🇩]美国_1547'
   - '[🇱🇾]美国_1557'
   - '[🇬🇪]美国_1554'
   - '[🇧🇷]美国_1560'
   - '[🇶🇦]美国_1562'
-  - '[🇰🇿]美国_1563'
-  - '[🇰🇿]美国_1568'
   - '[🇲🇳]美国_1566'
-  - '[🇰🇿]美国_1573'
   - '[🇱🇺]印度_1577'
-  - '[🇺🇸]_1648'
+  - '[🇰🇿]美国_1568'
+  - '[🇯🇵]_1642'
+  - '[🇰🇿]美国_1573'
+  - '[🇰🇿]美国_1563'
   - '[🇰🇿]美国_1574'
-  - '[🇫🇷]_1653'
-  - '[🇳🇱]_1654'
-  - '[🇯🇵]_1649'
-  - '[🇳🇱]_1655'
-  - '[🇩🇪]_1656'
-  - '[🇺🇦]_1668'
-  - '[🇺🇸]_1682'
+  - '[🇫🇷]_1646'
+  - '[🇳🇱]_1647'
+  - '[🇳🇱]_1648'
+  - '[🇩🇪]_1649'
+  - '[🇺🇦]_1662'
+  - '[🇺🇸]_1676'
+  - '[🇺🇸]_1680'
+  - '[🇰🇿]_1643'
+  - '[🇺🇸]_1679'
+  - '[🇸🇬]_1664'
+  - '[🇸🇬]_1663'
   - '[🇺🇸]_1686'
-  - '[🇺🇸]_1685'
-  - '[🇰🇿]_1650'
-  - '[🇺🇸]_1692'
+  - '[🇺🇸]_1684'
+  - '[🇿🇦]_1689'
   - '[🇺🇸]_1690'
-  - '[🇿🇦]_1695'
-  - '[🇸🇬]_1669'
-  - '[🇸🇬]_1670'
-  - '[🇺🇸]_1696'
-  - '[🇦🇶]_1699'
-  - '[🇺🇸]_1700'
-  - '[🇸🇬]_1671'
-  - '[🇸🇨]_1714'
-  - '[🇸🇬]_1691'
-  - '[🇺🇸]_1697'
-  - '[🇸🇬]_1694'
-  - '[🇺🇸]_1701'
-  - '[🇬🇷]_1684'
-  - '[🇻🇳]_1792'
-  - '[🇩🇪]_1804'
-  - '[🇦🇶]_1832'
-  - '[🇹🇼]_1819'
-  - '[🇬🇧]_1822'
-  - '[🇦🇺]_1820'
-  - '[🇺🇸]_1884'
-  - '[🇮🇹]_1824'
-  - '[🇰🇷]_1825'
-  - '[🇮🇳]_1821'
-  - '[🇸🇬]_1823'
-  - '[🇸🇬]_1883'
+  - '[🇸🇬]_1665'
+  - '[🇦🇶]_1693'
+  - '[🇺🇸]_1694'
+  - '[🇬🇷]_1678'
+  - '[🇸🇨]_1708'
+  - '[🇺🇸]_1691'
+  - '[🇺🇸]_1695'
+  - '[🇬🇷]_1682'
+  - '[🇸🇬]_1685'
+  - '[🇸🇬]_1688'
+  - '[🇬🇷]_1692'
+  - '[🇻🇳]_1835'
+  - '[🇩🇪]_1847'
+  - '[🇹🇼]_1862'
+  - '[🇦🇺]_1863'
+  - '[🇮🇳]_1864'
+  - '[🇬🇧]_1865'
+  - '[🇸🇬]_1866'
+  - '[🇺🇸]_1875'
+  - '[🇮🇹]_1867'
+  - '[🇰🇷]_1868'
+  - '[🇺🇸]_1885'
+  - '[🇸🇬]_1884'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_1530'
-  - '[🇨🇭]瑞士_1529'
-  - '[🇮🇷]伊朗_1526'
-  - '[🇫🇷]法国_1531'
+  - '[🇦🇶]加拿大_1411'
+  - '[🇩🇪]德国_1421'
+  - '[🇩🇪]德国_1426'
+  - '[🇺🇸]美国_1429'
+  - '[🇮🇷]伊朗_1425'
+  - '[🇨🇭]瑞士_1428'
+  - '[🇫🇷]法国_1430'
+  - '[🇯🇵]_1527'
   - '[🇧🇷]美国_1534'
   - '[🇧🇷]美国_1535'
   - '[🇧🇷]美国_1537'
-  - '[🇧🇷]美国_1539'
   - '[🇺🇦]美国_1538'
+  - '[🇧🇷]美国_1539'
   - '[🇧🇷]美国_1544'
   - '[🇺🇿]美国_1542'
-  - '[🇪🇨]美国_1551'
+  - '[🇧🇩]美国_1547'
   - '[🇦🇶]美国_1555'
+  - '[🇪🇨]美国_1551'
   - '[🇰🇬]美国_1548'
   - '[🇵🇸]美国_1553'
-  - '[🇧🇩]美国_1547'
   - '[🇱🇾]美国_1557'
   - '[🇬🇪]美国_1554'
   - '[🇧🇷]美国_1560'
   - '[🇶🇦]美国_1562'
-  - '[🇰🇿]美国_1563'
-  - '[🇰🇿]美国_1568'
   - '[🇲🇳]美国_1566'
-  - '[🇰🇿]美国_1573'
   - '[🇱🇺]印度_1577'
-  - '[🇺🇸]_1648'
+  - '[🇰🇿]美国_1568'
+  - '[🇯🇵]_1642'
+  - '[🇰🇿]美国_1573'
+  - '[🇰🇿]美国_1563'
   - '[🇰🇿]美国_1574'
-  - '[🇫🇷]_1653'
-  - '[🇳🇱]_1654'
-  - '[🇯🇵]_1649'
-  - '[🇳🇱]_1655'
-  - '[🇩🇪]_1656'
-  - '[🇺🇦]_1668'
-  - '[🇺🇸]_1682'
+  - '[🇫🇷]_1646'
+  - '[🇳🇱]_1647'
+  - '[🇳🇱]_1648'
+  - '[🇩🇪]_1649'
+  - '[🇺🇦]_1662'
+  - '[🇺🇸]_1676'
+  - '[🇺🇸]_1680'
+  - '[🇰🇿]_1643'
+  - '[🇺🇸]_1679'
+  - '[🇸🇬]_1664'
+  - '[🇸🇬]_1663'
   - '[🇺🇸]_1686'
-  - '[🇺🇸]_1685'
-  - '[🇰🇿]_1650'
-  - '[🇺🇸]_1692'
+  - '[🇺🇸]_1684'
+  - '[🇿🇦]_1689'
   - '[🇺🇸]_1690'
-  - '[🇿🇦]_1695'
-  - '[🇸🇬]_1669'
-  - '[🇸🇬]_1670'
-  - '[🇺🇸]_1696'
-  - '[🇦🇶]_1699'
-  - '[🇺🇸]_1700'
-  - '[🇸🇬]_1671'
-  - '[🇸🇨]_1714'
-  - '[🇸🇬]_1691'
-  - '[🇺🇸]_1697'
-  - '[🇸🇬]_1694'
-  - '[🇺🇸]_1701'
-  - '[🇬🇷]_1684'
-  - '[🇻🇳]_1792'
-  - '[🇩🇪]_1804'
-  - '[🇦🇶]_1832'
-  - '[🇹🇼]_1819'
-  - '[🇬🇧]_1822'
-  - '[🇦🇺]_1820'
-  - '[🇺🇸]_1884'
-  - '[🇮🇹]_1824'
-  - '[🇰🇷]_1825'
-  - '[🇮🇳]_1821'
-  - '[🇸🇬]_1823'
-  - '[🇸🇬]_1883'
+  - '[🇸🇬]_1665'
+  - '[🇦🇶]_1693'
+  - '[🇺🇸]_1694'
+  - '[🇬🇷]_1678'
+  - '[🇸🇨]_1708'
+  - '[🇺🇸]_1691'
+  - '[🇺🇸]_1695'
+  - '[🇬🇷]_1682'
+  - '[🇸🇬]_1685'
+  - '[🇸🇬]_1688'
+  - '[🇬🇷]_1692'
+  - '[🇻🇳]_1835'
+  - '[🇩🇪]_1847'
+  - '[🇹🇼]_1862'
+  - '[🇦🇺]_1863'
+  - '[🇮🇳]_1864'
+  - '[🇬🇧]_1865'
+  - '[🇸🇬]_1866'
+  - '[🇺🇸]_1875'
+  - '[🇮🇹]_1867'
+  - '[🇰🇷]_1868'
+  - '[🇺🇸]_1885'
+  - '[🇸🇬]_1884'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_1530'
-  - '[🇨🇭]瑞士_1529'
-  - '[🇮🇷]伊朗_1526'
-  - '[🇫🇷]法国_1531'
+  - '[🇦🇶]加拿大_1411'
+  - '[🇩🇪]德国_1421'
+  - '[🇩🇪]德国_1426'
+  - '[🇺🇸]美国_1429'
+  - '[🇮🇷]伊朗_1425'
+  - '[🇨🇭]瑞士_1428'
+  - '[🇫🇷]法国_1430'
+  - '[🇯🇵]_1527'
   - '[🇧🇷]美国_1534'
   - '[🇧🇷]美国_1535'
   - '[🇧🇷]美国_1537'
-  - '[🇧🇷]美国_1539'
   - '[🇺🇦]美国_1538'
+  - '[🇧🇷]美国_1539'
   - '[🇧🇷]美国_1544'
   - '[🇺🇿]美国_1542'
-  - '[🇪🇨]美国_1551'
+  - '[🇧🇩]美国_1547'
   - '[🇦🇶]美国_1555'
+  - '[🇪🇨]美国_1551'
   - '[🇰🇬]美国_1548'
   - '[🇵🇸]美国_1553'
-  - '[🇧🇩]美国_1547'
   - '[🇱🇾]美国_1557'
   - '[🇬🇪]美国_1554'
   - '[🇧🇷]美国_1560'
   - '[🇶🇦]美国_1562'
-  - '[🇰🇿]美国_1563'
-  - '[🇰🇿]美国_1568'
   - '[🇲🇳]美国_1566'
-  - '[🇰🇿]美国_1573'
   - '[🇱🇺]印度_1577'
-  - '[🇺🇸]_1648'
+  - '[🇰🇿]美国_1568'
+  - '[🇯🇵]_1642'
+  - '[🇰🇿]美国_1573'
+  - '[🇰🇿]美国_1563'
   - '[🇰🇿]美国_1574'
-  - '[🇫🇷]_1653'
-  - '[🇳🇱]_1654'
-  - '[🇯🇵]_1649'
-  - '[🇳🇱]_1655'
-  - '[🇩🇪]_1656'
-  - '[🇺🇦]_1668'
-  - '[🇺🇸]_1682'
+  - '[🇫🇷]_1646'
+  - '[🇳🇱]_1647'
+  - '[🇳🇱]_1648'
+  - '[🇩🇪]_1649'
+  - '[🇺🇦]_1662'
+  - '[🇺🇸]_1676'
+  - '[🇺🇸]_1680'
+  - '[🇰🇿]_1643'
+  - '[🇺🇸]_1679'
+  - '[🇸🇬]_1664'
+  - '[🇸🇬]_1663'
   - '[🇺🇸]_1686'
-  - '[🇺🇸]_1685'
-  - '[🇰🇿]_1650'
-  - '[🇺🇸]_1692'
+  - '[🇺🇸]_1684'
+  - '[🇿🇦]_1689'
   - '[🇺🇸]_1690'
-  - '[🇿🇦]_1695'
-  - '[🇸🇬]_1669'
-  - '[🇸🇬]_1670'
-  - '[🇺🇸]_1696'
-  - '[🇦🇶]_1699'
-  - '[🇺🇸]_1700'
-  - '[🇸🇬]_1671'
-  - '[🇸🇨]_1714'
-  - '[🇸🇬]_1691'
-  - '[🇺🇸]_1697'
-  - '[🇸🇬]_1694'
-  - '[🇺🇸]_1701'
-  - '[🇬🇷]_1684'
-  - '[🇻🇳]_1792'
-  - '[🇩🇪]_1804'
-  - '[🇦🇶]_1832'
-  - '[🇹🇼]_1819'
-  - '[🇬🇧]_1822'
-  - '[🇦🇺]_1820'
-  - '[🇺🇸]_1884'
-  - '[🇮🇹]_1824'
-  - '[🇰🇷]_1825'
-  - '[🇮🇳]_1821'
-  - '[🇸🇬]_1823'
-  - '[🇸🇬]_1883'
+  - '[🇸🇬]_1665'
+  - '[🇦🇶]_1693'
+  - '[🇺🇸]_1694'
+  - '[🇬🇷]_1678'
+  - '[🇸🇨]_1708'
+  - '[🇺🇸]_1691'
+  - '[🇺🇸]_1695'
+  - '[🇬🇷]_1682'
+  - '[🇸🇬]_1685'
+  - '[🇸🇬]_1688'
+  - '[🇬🇷]_1692'
+  - '[🇻🇳]_1835'
+  - '[🇩🇪]_1847'
+  - '[🇹🇼]_1862'
+  - '[🇦🇺]_1863'
+  - '[🇮🇳]_1864'
+  - '[🇬🇧]_1865'
+  - '[🇸🇬]_1866'
+  - '[🇺🇸]_1875'
+  - '[🇮🇹]_1867'
+  - '[🇰🇷]_1868'
+  - '[🇺🇸]_1885'
+  - '[🇸🇬]_1884'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_1530'
-  - '[🇨🇭]瑞士_1529'
-  - '[🇮🇷]伊朗_1526'
-  - '[🇫🇷]法国_1531'
+  - '[🇦🇶]加拿大_1411'
+  - '[🇩🇪]德国_1421'
+  - '[🇩🇪]德国_1426'
+  - '[🇺🇸]美国_1429'
+  - '[🇮🇷]伊朗_1425'
+  - '[🇨🇭]瑞士_1428'
+  - '[🇫🇷]法国_1430'
+  - '[🇯🇵]_1527'
   - '[🇧🇷]美国_1534'
   - '[🇧🇷]美国_1535'
   - '[🇧🇷]美国_1537'
-  - '[🇧🇷]美国_1539'
   - '[🇺🇦]美国_1538'
+  - '[🇧🇷]美国_1539'
   - '[🇧🇷]美国_1544'
   - '[🇺🇿]美国_1542'
-  - '[🇪🇨]美国_1551'
+  - '[🇧🇩]美国_1547'
   - '[🇦🇶]美国_1555'
+  - '[🇪🇨]美国_1551'
   - '[🇰🇬]美国_1548'
   - '[🇵🇸]美国_1553'
-  - '[🇧🇩]美国_1547'
   - '[🇱🇾]美国_1557'
   - '[🇬🇪]美国_1554'
   - '[🇧🇷]美国_1560'
   - '[🇶🇦]美国_1562'
-  - '[🇰🇿]美国_1563'
-  - '[🇰🇿]美国_1568'
   - '[🇲🇳]美国_1566'
-  - '[🇰🇿]美国_1573'
   - '[🇱🇺]印度_1577'
-  - '[🇺🇸]_1648'
+  - '[🇰🇿]美国_1568'
+  - '[🇯🇵]_1642'
+  - '[🇰🇿]美国_1573'
+  - '[🇰🇿]美国_1563'
   - '[🇰🇿]美国_1574'
-  - '[🇫🇷]_1653'
-  - '[🇳🇱]_1654'
-  - '[🇯🇵]_1649'
-  - '[🇳🇱]_1655'
-  - '[🇩🇪]_1656'
-  - '[🇺🇦]_1668'
-  - '[🇺🇸]_1682'
+  - '[🇫🇷]_1646'
+  - '[🇳🇱]_1647'
+  - '[🇳🇱]_1648'
+  - '[🇩🇪]_1649'
+  - '[🇺🇦]_1662'
+  - '[🇺🇸]_1676'
+  - '[🇺🇸]_1680'
+  - '[🇰🇿]_1643'
+  - '[🇺🇸]_1679'
+  - '[🇸🇬]_1664'
+  - '[🇸🇬]_1663'
   - '[🇺🇸]_1686'
-  - '[🇺🇸]_1685'
-  - '[🇰🇿]_1650'
-  - '[🇺🇸]_1692'
+  - '[🇺🇸]_1684'
+  - '[🇿🇦]_1689'
   - '[🇺🇸]_1690'
-  - '[🇿🇦]_1695'
-  - '[🇸🇬]_1669'
-  - '[🇸🇬]_1670'
-  - '[🇺🇸]_1696'
-  - '[🇦🇶]_1699'
-  - '[🇺🇸]_1700'
-  - '[🇸🇬]_1671'
-  - '[🇸🇨]_1714'
-  - '[🇸🇬]_1691'
-  - '[🇺🇸]_1697'
-  - '[🇸🇬]_1694'
-  - '[🇺🇸]_1701'
-  - '[🇬🇷]_1684'
-  - '[🇻🇳]_1792'
-  - '[🇩🇪]_1804'
-  - '[🇦🇶]_1832'
-  - '[🇹🇼]_1819'
-  - '[🇬🇧]_1822'
-  - '[🇦🇺]_1820'
-  - '[🇺🇸]_1884'
-  - '[🇮🇹]_1824'
-  - '[🇰🇷]_1825'
-  - '[🇮🇳]_1821'
-  - '[🇸🇬]_1823'
-  - '[🇸🇬]_1883'
+  - '[🇸🇬]_1665'
+  - '[🇦🇶]_1693'
+  - '[🇺🇸]_1694'
+  - '[🇬🇷]_1678'
+  - '[🇸🇨]_1708'
+  - '[🇺🇸]_1691'
+  - '[🇺🇸]_1695'
+  - '[🇬🇷]_1682'
+  - '[🇸🇬]_1685'
+  - '[🇸🇬]_1688'
+  - '[🇬🇷]_1692'
+  - '[🇻🇳]_1835'
+  - '[🇩🇪]_1847'
+  - '[🇹🇼]_1862'
+  - '[🇦🇺]_1863'
+  - '[🇮🇳]_1864'
+  - '[🇬🇧]_1865'
+  - '[🇸🇬]_1866'
+  - '[🇺🇸]_1875'
+  - '[🇮🇹]_1867'
+  - '[🇰🇷]_1868'
+  - '[🇺🇸]_1885'
+  - '[🇸🇬]_1884'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]美国_1530'
-  - '[🇨🇭]瑞士_1529'
-  - '[🇮🇷]伊朗_1526'
-  - '[🇫🇷]法国_1531'
+  - '[🇦🇶]加拿大_1411'
+  - '[🇩🇪]德国_1421'
+  - '[🇩🇪]德国_1426'
+  - '[🇺🇸]美国_1429'
+  - '[🇮🇷]伊朗_1425'
+  - '[🇨🇭]瑞士_1428'
+  - '[🇫🇷]法国_1430'
+  - '[🇯🇵]_1527'
   - '[🇧🇷]美国_1534'
   - '[🇧🇷]美国_1535'
   - '[🇧🇷]美国_1537'
-  - '[🇧🇷]美国_1539'
   - '[🇺🇦]美国_1538'
+  - '[🇧🇷]美国_1539'
   - '[🇧🇷]美国_1544'
   - '[🇺🇿]美国_1542'
-  - '[🇪🇨]美国_1551'
+  - '[🇧🇩]美国_1547'
   - '[🇦🇶]美国_1555'
+  - '[🇪🇨]美国_1551'
   - '[🇰🇬]美国_1548'
   - '[🇵🇸]美国_1553'
-  - '[🇧🇩]美国_1547'
   - '[🇱🇾]美国_1557'
   - '[🇬🇪]美国_1554'
   - '[🇧🇷]美国_1560'
   - '[🇶🇦]美国_1562'
-  - '[🇰🇿]美国_1563'
-  - '[🇰🇿]美国_1568'
   - '[🇲🇳]美国_1566'
-  - '[🇰🇿]美国_1573'
   - '[🇱🇺]印度_1577'
-  - '[🇺🇸]_1648'
+  - '[🇰🇿]美国_1568'
+  - '[🇯🇵]_1642'
+  - '[🇰🇿]美国_1573'
+  - '[🇰🇿]美国_1563'
   - '[🇰🇿]美国_1574'
-  - '[🇫🇷]_1653'
-  - '[🇳🇱]_1654'
-  - '[🇯🇵]_1649'
-  - '[🇳🇱]_1655'
-  - '[🇩🇪]_1656'
-  - '[🇺🇦]_1668'
-  - '[🇺🇸]_1682'
+  - '[🇫🇷]_1646'
+  - '[🇳🇱]_1647'
+  - '[🇳🇱]_1648'
+  - '[🇩🇪]_1649'
+  - '[🇺🇦]_1662'
+  - '[🇺🇸]_1676'
+  - '[🇺🇸]_1680'
+  - '[🇰🇿]_1643'
+  - '[🇺🇸]_1679'
+  - '[🇸🇬]_1664'
+  - '[🇸🇬]_1663'
   - '[🇺🇸]_1686'
-  - '[🇺🇸]_1685'
-  - '[🇰🇿]_1650'
-  - '[🇺🇸]_1692'
+  - '[🇺🇸]_1684'
+  - '[🇿🇦]_1689'
   - '[🇺🇸]_1690'
-  - '[🇿🇦]_1695'
-  - '[🇸🇬]_1669'
-  - '[🇸🇬]_1670'
-  - '[🇺🇸]_1696'
-  - '[🇦🇶]_1699'
-  - '[🇺🇸]_1700'
-  - '[🇸🇬]_1671'
-  - '[🇸🇨]_1714'
-  - '[🇸🇬]_1691'
-  - '[🇺🇸]_1697'
-  - '[🇸🇬]_1694'
-  - '[🇺🇸]_1701'
-  - '[🇬🇷]_1684'
-  - '[🇻🇳]_1792'
-  - '[🇩🇪]_1804'
-  - '[🇦🇶]_1832'
-  - '[🇹🇼]_1819'
-  - '[🇬🇧]_1822'
-  - '[🇦🇺]_1820'
-  - '[🇺🇸]_1884'
-  - '[🇮🇹]_1824'
-  - '[🇰🇷]_1825'
-  - '[🇮🇳]_1821'
-  - '[🇸🇬]_1823'
-  - '[🇸🇬]_1883'
+  - '[🇸🇬]_1665'
+  - '[🇦🇶]_1693'
+  - '[🇺🇸]_1694'
+  - '[🇬🇷]_1678'
+  - '[🇸🇨]_1708'
+  - '[🇺🇸]_1691'
+  - '[🇺🇸]_1695'
+  - '[🇬🇷]_1682'
+  - '[🇸🇬]_1685'
+  - '[🇸🇬]_1688'
+  - '[🇬🇷]_1692'
+  - '[🇻🇳]_1835'
+  - '[🇩🇪]_1847'
+  - '[🇹🇼]_1862'
+  - '[🇦🇺]_1863'
+  - '[🇮🇳]_1864'
+  - '[🇬🇧]_1865'
+  - '[🇸🇬]_1866'
+  - '[🇺🇸]_1875'
+  - '[🇮🇹]_1867'
+  - '[🇰🇷]_1868'
+  - '[🇺🇸]_1885'
+  - '[🇸🇬]_1884'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]美国_1530'
-  - '[🇨🇭]瑞士_1529'
-  - '[🇮🇷]伊朗_1526'
-  - '[🇫🇷]法国_1531'
+  - '[🇦🇶]加拿大_1411'
+  - '[🇩🇪]德国_1421'
+  - '[🇩🇪]德国_1426'
+  - '[🇺🇸]美国_1429'
+  - '[🇮🇷]伊朗_1425'
+  - '[🇨🇭]瑞士_1428'
+  - '[🇫🇷]法国_1430'
+  - '[🇯🇵]_1527'
   - '[🇧🇷]美国_1534'
   - '[🇧🇷]美国_1535'
   - '[🇧🇷]美国_1537'
-  - '[🇧🇷]美国_1539'
   - '[🇺🇦]美国_1538'
+  - '[🇧🇷]美国_1539'
   - '[🇧🇷]美国_1544'
   - '[🇺🇿]美国_1542'
-  - '[🇪🇨]美国_1551'
+  - '[🇧🇩]美国_1547'
   - '[🇦🇶]美国_1555'
+  - '[🇪🇨]美国_1551'
   - '[🇰🇬]美国_1548'
   - '[🇵🇸]美国_1553'
-  - '[🇧🇩]美国_1547'
   - '[🇱🇾]美国_1557'
   - '[🇬🇪]美国_1554'
   - '[🇧🇷]美国_1560'
   - '[🇶🇦]美国_1562'
-  - '[🇰🇿]美国_1563'
-  - '[🇰🇿]美国_1568'
   - '[🇲🇳]美国_1566'
-  - '[🇰🇿]美国_1573'
   - '[🇱🇺]印度_1577'
-  - '[🇺🇸]_1648'
+  - '[🇰🇿]美国_1568'
+  - '[🇯🇵]_1642'
+  - '[🇰🇿]美国_1573'
+  - '[🇰🇿]美国_1563'
   - '[🇰🇿]美国_1574'
-  - '[🇫🇷]_1653'
-  - '[🇳🇱]_1654'
-  - '[🇯🇵]_1649'
-  - '[🇳🇱]_1655'
-  - '[🇩🇪]_1656'
-  - '[🇺🇦]_1668'
-  - '[🇺🇸]_1682'
+  - '[🇫🇷]_1646'
+  - '[🇳🇱]_1647'
+  - '[🇳🇱]_1648'
+  - '[🇩🇪]_1649'
+  - '[🇺🇦]_1662'
+  - '[🇺🇸]_1676'
+  - '[🇺🇸]_1680'
+  - '[🇰🇿]_1643'
+  - '[🇺🇸]_1679'
+  - '[🇸🇬]_1664'
+  - '[🇸🇬]_1663'
   - '[🇺🇸]_1686'
-  - '[🇺🇸]_1685'
-  - '[🇰🇿]_1650'
-  - '[🇺🇸]_1692'
+  - '[🇺🇸]_1684'
+  - '[🇿🇦]_1689'
   - '[🇺🇸]_1690'
-  - '[🇿🇦]_1695'
-  - '[🇸🇬]_1669'
-  - '[🇸🇬]_1670'
-  - '[🇺🇸]_1696'
-  - '[🇦🇶]_1699'
-  - '[🇺🇸]_1700'
-  - '[🇸🇬]_1671'
-  - '[🇸🇨]_1714'
-  - '[🇸🇬]_1691'
-  - '[🇺🇸]_1697'
-  - '[🇸🇬]_1694'
-  - '[🇺🇸]_1701'
-  - '[🇬🇷]_1684'
-  - '[🇻🇳]_1792'
-  - '[🇩🇪]_1804'
-  - '[🇦🇶]_1832'
-  - '[🇹🇼]_1819'
-  - '[🇬🇧]_1822'
-  - '[🇦🇺]_1820'
-  - '[🇺🇸]_1884'
-  - '[🇮🇹]_1824'
-  - '[🇰🇷]_1825'
-  - '[🇮🇳]_1821'
-  - '[🇸🇬]_1823'
-  - '[🇸🇬]_1883'
+  - '[🇸🇬]_1665'
+  - '[🇦🇶]_1693'
+  - '[🇺🇸]_1694'
+  - '[🇬🇷]_1678'
+  - '[🇸🇨]_1708'
+  - '[🇺🇸]_1691'
+  - '[🇺🇸]_1695'
+  - '[🇬🇷]_1682'
+  - '[🇸🇬]_1685'
+  - '[🇸🇬]_1688'
+  - '[🇬🇷]_1692'
+  - '[🇻🇳]_1835'
+  - '[🇩🇪]_1847'
+  - '[🇹🇼]_1862'
+  - '[🇦🇺]_1863'
+  - '[🇮🇳]_1864'
+  - '[🇬🇧]_1865'
+  - '[🇸🇬]_1866'
+  - '[🇺🇸]_1875'
+  - '[🇮🇹]_1867'
+  - '[🇰🇷]_1868'
+  - '[🇺🇸]_1885'
+  - '[🇸🇬]_1884'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
