@@ -26,6 +26,18 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇺🇸]付费推荐_4'
+  type: vmess
+  server: singapore.com
+  port: 8880
+  uuid: 7ca0e975-08e7-3b22-abcd-fe4798f438f0
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /api/v3/download.getFile
+  ws-headers:
+    Host: ssrsub.v001.ssrsub.com
 - name: '[🇺🇸]付费推荐_6'
   type: vmess
   server: cf-lt.sharecentre.online
@@ -38,30 +50,6 @@ proxies:
   ws-path: /api/v3/download.getFile
   ws-headers:
     Host: ssrsub.v001.ssrsub.com
-- name: '[🇦🇶]付费推荐_3'
-  type: vmess
-  server: cf-lt.sharecentre.online
-  port: 80
-  uuid: 921e8e95-7cfa-369e-8b85-ff49e7f5edf7
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /api/v3/download.getFile
-  ws-headers:
-    Host: ssrsub.v006.ssrsub.com
-- name: '[🇺🇸]付费推荐_1'
-  type: vmess
-  server: singapore.com
-  port: 80
-  uuid: a266df47-d993-3a49-99e3-f1d35607bbaf
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /api/v3/download.getFile
-  ws-headers:
-    Host: ssrsub.v006.ssrsub.com
 - name: '[🇦🇶]付费推荐_2'
   type: vmess
   server: ns1.v2-vip.fun
@@ -74,18 +62,6 @@ proxies:
   ws-path: /api/v3/download.getFile
   ws-headers:
     Host: ssrsub.v006.ssrsub.com
-- name: '[🇦🇶]付费推荐_4'
-  type: vmess
-  server: singapore.com
-  port: 8880
-  uuid: 2a2a1eee-face-3222-9f4b-f05ce692d762
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /api/v3/download.getFile
-  ws-headers:
-    Host: ssrsub.v001.ssrsub.com
 - name: '[🇦🇶]付费推荐_5'
   type: vmess
   server: ns1.v2-vip.fun
@@ -98,6 +74,30 @@ proxies:
   ws-path: /api/v3/download.getFile
   ws-headers:
     Host: ssrsub.v001.ssrsub.com
+- name: '[🇺🇸]付费推荐_1'
+  type: vmess
+  server: singapore.com
+  port: 80
+  uuid: a266df47-d993-3a49-99e3-f1d35607bbaf
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /api/v3/download.getFile
+  ws-headers:
+    Host: ssrsub.v006.ssrsub.com
+- name: '[🇺🇸]付费推荐_3'
+  type: vmess
+  server: cf-lt.sharecentre.online
+  port: 80
+  uuid: 96b48a6d-f7c3-3fcc-9ad8-fbcf73c853cc
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /api/v3/download.getFile
+  ws-headers:
+    Host: ssrsub.v006.ssrsub.com
 - name: '[🇺🇸]_12'
   type: vmess
   server: 107.172.157.103
@@ -380,11 +380,11 @@ proxies:
   ws-path: /
   ws-headers:
     Host: icu.mac2win.top
-- name: '[🇺🇸]_262'
+- name: '[🇦🇶]_262'
   type: vmess
   server: moon.chanell.mci.v-x4ssd.space
   port: 8080
-  uuid: 3618aef4-6a7e-3582-b2eb-a0a4a91bab65
+  uuid: 9709dc49-8156-3a0b-8625-d53b20a75c63
   alterId: 0
   cipher: auto
   udp: true
@@ -409,12 +409,12 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇺🇸]付费推荐_4'
   - '[🇺🇸]付费推荐_6'
-  - '[🇦🇶]付费推荐_3'
-  - '[🇺🇸]付费推荐_1'
   - '[🇦🇶]付费推荐_2'
-  - '[🇦🇶]付费推荐_4'
   - '[🇦🇶]付费推荐_5'
+  - '[🇺🇸]付费推荐_1'
+  - '[🇺🇸]付费推荐_3'
   - '[🇺🇸]_12'
   - '[🇯🇵]频道_25'
   - '[🇺🇸]频道_51'
@@ -443,7 +443,7 @@ proxy-groups:
   - '[🇺🇸]频道_245'
   - '[🇨🇿]_258'
   - '[🇺🇸]_260'
-  - '[🇺🇸]_262'
+  - '[🇦🇶]_262'
   - '[🇦🇶]_263'
 - name: 🎯 负载均衡
   type: load-balance
@@ -451,12 +451,12 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]付费推荐_4'
   - '[🇺🇸]付费推荐_6'
-  - '[🇦🇶]付费推荐_3'
-  - '[🇺🇸]付费推荐_1'
   - '[🇦🇶]付费推荐_2'
-  - '[🇦🇶]付费推荐_4'
   - '[🇦🇶]付费推荐_5'
+  - '[🇺🇸]付费推荐_1'
+  - '[🇺🇸]付费推荐_3'
   - '[🇺🇸]_12'
   - '[🇯🇵]频道_25'
   - '[🇺🇸]频道_51'
@@ -485,7 +485,7 @@ proxy-groups:
   - '[🇺🇸]频道_245'
   - '[🇨🇿]_258'
   - '[🇺🇸]_260'
-  - '[🇺🇸]_262'
+  - '[🇦🇶]_262'
   - '[🇦🇶]_263'
 - name: ♻️ 自动选择
   type: fallback
@@ -493,12 +493,12 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]付费推荐_4'
   - '[🇺🇸]付费推荐_6'
-  - '[🇦🇶]付费推荐_3'
-  - '[🇺🇸]付费推荐_1'
   - '[🇦🇶]付费推荐_2'
-  - '[🇦🇶]付费推荐_4'
   - '[🇦🇶]付费推荐_5'
+  - '[🇺🇸]付费推荐_1'
+  - '[🇺🇸]付费推荐_3'
   - '[🇺🇸]_12'
   - '[🇯🇵]频道_25'
   - '[🇺🇸]频道_51'
@@ -527,7 +527,7 @@ proxy-groups:
   - '[🇺🇸]频道_245'
   - '[🇨🇿]_258'
   - '[🇺🇸]_260'
-  - '[🇺🇸]_262'
+  - '[🇦🇶]_262'
   - '[🇦🇶]_263'
 - name: 🔰 延迟最低
   type: url-test
@@ -535,12 +535,12 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]付费推荐_4'
   - '[🇺🇸]付费推荐_6'
-  - '[🇦🇶]付费推荐_3'
-  - '[🇺🇸]付费推荐_1'
   - '[🇦🇶]付费推荐_2'
-  - '[🇦🇶]付费推荐_4'
   - '[🇦🇶]付费推荐_5'
+  - '[🇺🇸]付费推荐_1'
+  - '[🇺🇸]付费推荐_3'
   - '[🇺🇸]_12'
   - '[🇯🇵]频道_25'
   - '[🇺🇸]频道_51'
@@ -569,18 +569,18 @@ proxy-groups:
   - '[🇺🇸]频道_245'
   - '[🇨🇿]_258'
   - '[🇺🇸]_260'
-  - '[🇺🇸]_262'
+  - '[🇦🇶]_262'
   - '[🇦🇶]_263'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇺🇸]付费推荐_4'
   - '[🇺🇸]付费推荐_6'
-  - '[🇦🇶]付费推荐_3'
-  - '[🇺🇸]付费推荐_1'
   - '[🇦🇶]付费推荐_2'
-  - '[🇦🇶]付费推荐_4'
   - '[🇦🇶]付费推荐_5'
+  - '[🇺🇸]付费推荐_1'
+  - '[🇺🇸]付费推荐_3'
   - '[🇺🇸]_12'
   - '[🇯🇵]频道_25'
   - '[🇺🇸]频道_51'
@@ -609,7 +609,7 @@ proxy-groups:
   - '[🇺🇸]频道_245'
   - '[🇨🇿]_258'
   - '[🇺🇸]_260'
-  - '[🇺🇸]_262'
+  - '[🇦🇶]_262'
   - '[🇦🇶]_263'
 - name: 🎯 全球直连
   type: select
@@ -617,12 +617,12 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇺🇸]付费推荐_4'
   - '[🇺🇸]付费推荐_6'
-  - '[🇦🇶]付费推荐_3'
-  - '[🇺🇸]付费推荐_1'
   - '[🇦🇶]付费推荐_2'
-  - '[🇦🇶]付费推荐_4'
   - '[🇦🇶]付费推荐_5'
+  - '[🇺🇸]付费推荐_1'
+  - '[🇺🇸]付费推荐_3'
   - '[🇺🇸]_12'
   - '[🇯🇵]频道_25'
   - '[🇺🇸]频道_51'
@@ -651,7 +651,7 @@ proxy-groups:
   - '[🇺🇸]频道_245'
   - '[🇨🇿]_258'
   - '[🇺🇸]_260'
-  - '[🇺🇸]_262'
+  - '[🇦🇶]_262'
   - '[🇦🇶]_263'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
