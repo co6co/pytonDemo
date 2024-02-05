@@ -26,11 +26,50 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇸🇬]_1096'
+- name: '[🇹🇼]_1083'
+  server: nb22.ntbq.dynu.net
+  port: 12002
+  type: vmess
+  uuid: f6466d81-f6c7-33cc-872b-0a2ef7737de2
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇬🇧]_1081'
+  server: 185.76.48.122
+  port: 443
+  type: vmess
+  uuid: 78f883fe-8e93-3cb4-8fd5-f5408c51c332
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /@forwardv2ray
+    headers:
+      Host: kosar.serveminecraft.net
+  udp: true
+- name: '[🇦🇶]_1098'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: c9f54f13-799b-326c-9c35-213111f1a5ed
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
+  udp: true
+- name: '[🇸🇬]_1097'
   server: 159.223.94.156
   port: 80
   type: vmess
-  uuid: b4062684-12ef-301b-9c81-2c046cdd14fa
+  uuid: 2c5caea0-c8b1-368f-af60-4c3965bde9b1
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -47,40 +86,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇸🇬]_1096'
+  - '[🇹🇼]_1083'
+  - '[🇬🇧]_1081'
+  - '[🇦🇶]_1098'
+  - '[🇸🇬]_1097'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1096'
+  - '[🇹🇼]_1083'
+  - '[🇬🇧]_1081'
+  - '[🇦🇶]_1098'
+  - '[🇸🇬]_1097'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1096'
+  - '[🇹🇼]_1083'
+  - '[🇬🇧]_1081'
+  - '[🇦🇶]_1098'
+  - '[🇸🇬]_1097'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1096'
+  - '[🇹🇼]_1083'
+  - '[🇬🇧]_1081'
+  - '[🇦🇶]_1098'
+  - '[🇸🇬]_1097'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇸🇬]_1096'
+  - '[🇹🇼]_1083'
+  - '[🇬🇧]_1081'
+  - '[🇦🇶]_1098'
+  - '[🇸🇬]_1097'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇸🇬]_1096'
+  - '[🇹🇼]_1083'
+  - '[🇬🇧]_1081'
+  - '[🇦🇶]_1098'
+  - '[🇸🇬]_1097'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
