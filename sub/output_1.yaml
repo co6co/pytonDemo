@@ -26,15 +26,33 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇹🇼]_1083'
-  server: nb22.ntbq.dynu.net
-  port: 12002
-  type: vmess
-  uuid: f6466d81-f6c7-33cc-872b-0a2ef7737de2
-  alterId: 0
+- alterId: 0
   cipher: auto
+  country: RU
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇷🇺]_1109'
+  network: tcp
+  port: 80
+  server: 193.104.57.136
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 89277177-8e27-354f-8133-859fce3a03f6
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]宇航员_1110'
+  network: ws
+  port: 80
+  server: hke9016a-9c15-ce43.xn--jsrz0o258a.online
   tls: false
-  skip-cert-verify: false
+  type: vmess
+  uuid: b8467ad6-4e06-3661-a18d-abd06f23c172
+  ws-opts:
+    headers:
+      Host: bilibili.com
+    path: /?ed=2048
   udp: true
 - name: '[🇸🇬]_1097'
   server: 159.223.94.156
@@ -50,6 +68,70 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇭]_1119'
+  network: tcp
+  port: 47182
+  server: 94.131.99.8
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 2990e6a6-e7f4-3d4e-a5cf-d803996a7932
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇵🇱]_1116'
+  network: tcp
+  port: 50378
+  server: 51.83.251.144
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: fdbb204a-042a-32af-9e75-51c2a4f33e57
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇹🇼]宇航员_1115'
+  network: ws
+  port: 80
+  server: twa877-4e18-b158-bc88c4bb2e2d.xn--jsrz0o258a.online
+  tls: false
+  type: vmess
+  uuid: f3dfc1a6-c046-30aa-a4bb-6c18f73c0ec5
+  ws-opts:
+    headers:
+      Host: bilibili.com
+    path: /?ed=2048
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇯🇵]宇航员_1118'
+  network: ws
+  port: 80
+  server: jpcd07-4c4e-9945-219dfebd1776.xn--jsrz0o258a.online
+  tls: false
+  type: vmess
+  uuid: 917b1332-bb9b-3a83-98bf-0d3e14c27052
+  ws-opts:
+    headers:
+      Host: bilibili.com
+    path: /?ed=2048
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]宇航员_1117'
+  network: ws
+  port: 80
+  server: hkb12a8e-36fc-a36f-5a2.xn--jsrz0o258a.online
+  tls: false
+  type: vmess
+  uuid: 53d039fb-599d-3c03-913a-5e44f47bf933
+  ws-opts:
+    headers:
+      Host: bilibili.com
+    path: /?ed=2048
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -57,46 +139,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇹🇼]_1083'
+  - '[🇷🇺]_1109'
+  - '[🇭🇰]宇航员_1110'
   - '[🇸🇬]_1097'
+  - '[🇨🇭]_1119'
+  - '[🇵🇱]_1116'
+  - '[🇹🇼]宇航员_1115'
+  - '[🇯🇵]宇航员_1118'
+  - '[🇭🇰]宇航员_1117'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1083'
+  - '[🇷🇺]_1109'
+  - '[🇭🇰]宇航员_1110'
   - '[🇸🇬]_1097'
+  - '[🇨🇭]_1119'
+  - '[🇵🇱]_1116'
+  - '[🇹🇼]宇航员_1115'
+  - '[🇯🇵]宇航员_1118'
+  - '[🇭🇰]宇航员_1117'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1083'
+  - '[🇷🇺]_1109'
+  - '[🇭🇰]宇航员_1110'
   - '[🇸🇬]_1097'
+  - '[🇨🇭]_1119'
+  - '[🇵🇱]_1116'
+  - '[🇹🇼]宇航员_1115'
+  - '[🇯🇵]宇航员_1118'
+  - '[🇭🇰]宇航员_1117'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1083'
+  - '[🇷🇺]_1109'
+  - '[🇭🇰]宇航员_1110'
   - '[🇸🇬]_1097'
+  - '[🇨🇭]_1119'
+  - '[🇵🇱]_1116'
+  - '[🇹🇼]宇航员_1115'
+  - '[🇯🇵]宇航员_1118'
+  - '[🇭🇰]宇航员_1117'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇹🇼]_1083'
+  - '[🇷🇺]_1109'
+  - '[🇭🇰]宇航员_1110'
   - '[🇸🇬]_1097'
+  - '[🇨🇭]_1119'
+  - '[🇵🇱]_1116'
+  - '[🇹🇼]宇航员_1115'
+  - '[🇯🇵]宇航员_1118'
+  - '[🇭🇰]宇航员_1117'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇹🇼]_1083'
+  - '[🇷🇺]_1109'
+  - '[🇭🇰]宇航员_1110'
   - '[🇸🇬]_1097'
+  - '[🇨🇭]_1119'
+  - '[🇵🇱]_1116'
+  - '[🇹🇼]宇航员_1115'
+  - '[🇯🇵]宇航员_1118'
+  - '[🇭🇰]宇航员_1117'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
