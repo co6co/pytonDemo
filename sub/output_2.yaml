@@ -28,51 +28,6 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇸🇬]_1292'
-  network: ws
-  port: 29001
-  server: 146.190.105.70
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: c5d90d0e-efc0-3c7d-be32-3e4947bf6a23
-  ws-opts:
-    headers:
-      Host: m.instagram.com
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇯🇵]日本_1294'
-  network: ws
-  port: 80
-  server: 47.245.54.58
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 99492176-4c4c-32b3-9c2d-bcb4aee8e243
-  ws-opts:
-    headers:
-      Host: my1.tooters.ir
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇯🇵]日本_1295'
-  network: ws
-  port: 80
-  server: 138.2.6.15
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 2de3f03f-ffde-347d-b4e0-83b370a25587
-  ws-opts:
-    headers:
-      Host: my1.tooters.ir
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇯🇵]日本_1296'
   network: ws
   port: 80
@@ -108,9 +63,6 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇸🇬]_1292'
-  - '[🇯🇵]日本_1294'
-  - '[🇯🇵]日本_1295'
   - '[🇯🇵]日本_1296'
   - '[🇯🇵]日本_1297'
 - name: 🎯 负载均衡
@@ -119,9 +71,6 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1292'
-  - '[🇯🇵]日本_1294'
-  - '[🇯🇵]日本_1295'
   - '[🇯🇵]日本_1296'
   - '[🇯🇵]日本_1297'
 - name: ♻️ 自动选择
@@ -130,9 +79,6 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1292'
-  - '[🇯🇵]日本_1294'
-  - '[🇯🇵]日本_1295'
   - '[🇯🇵]日本_1296'
   - '[🇯🇵]日本_1297'
 - name: 🔰 延迟最低
@@ -141,18 +87,12 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_1292'
-  - '[🇯🇵]日本_1294'
-  - '[🇯🇵]日本_1295'
   - '[🇯🇵]日本_1296'
   - '[🇯🇵]日本_1297'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇸🇬]_1292'
-  - '[🇯🇵]日本_1294'
-  - '[🇯🇵]日本_1295'
   - '[🇯🇵]日本_1296'
   - '[🇯🇵]日本_1297'
 - name: 🎯 全球直连
@@ -161,9 +101,6 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇸🇬]_1292'
-  - '[🇯🇵]日本_1294'
-  - '[🇯🇵]日本_1295'
   - '[🇯🇵]日本_1296'
   - '[🇯🇵]日本_1297'
 rules:
