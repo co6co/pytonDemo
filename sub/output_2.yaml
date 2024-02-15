@@ -26,131 +26,33 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 0
-  cipher: auto
-  name: '[🇩🇪]_1362'
-  network: tcp
-  port: 21872
-  server: 130.61.111.167
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 8493cb5a-e2ab-3894-ad1e-533da0503dc5
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]_1365'
-  network: ws
+- name: '[🇦🇶]_1277'
+  server: hkd1.quickerlink.xyz
   port: 443
-  server: 172.67.207.26
-  servername: glweidf.sbs
+  type: vmess
+  uuid: 1a42a30c-04b8-37f7-bc01-7ab7da1b6951
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
   tls: true
-  type: vmess
-  uuid: 212b9f58-b47b-3abe-85e2-d5e376959cde
-  ws-opts:
-    headers:
-      Host: glweidf.sbs
-    path: /linkws
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]美国_1366'
-  network: ws
+- name: '[🇸🇬]_1276'
+  server: 159.223.94.156
   port: 80
-  server: 104.18.154.42
-  tls: false
   type: vmess
-  uuid: b2d6fa4d-8c68-3e1a-a908-6972b3f25906
-  ws-opts:
-    headers:
-      Host: us3.visaapp.top
-    path: /
-  udp: true
-- alterId: 0
+  uuid: 93cc2e5b-142f-377d-9f8d-0d200efba9b9
+  alterId: 64
   cipher: auto
-  name: '[🇹🇼]_1360'
+  skip-cert-verify: true
   network: ws
-  port: 18840
-  server: 1.162.134.176
-  servername: ''
+  ws-path: /anti13.zingfast.vn
   tls: false
-  type: vmess
-  uuid: b55cd52d-08fb-360d-8025-9af55d55d1cf
-  ws-opts:
-    headers:
-      Host: www.dtku40.xyz
-    path: /9tEYTPFN/
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇯🇵]_1363'
-  network: ws
-  port: 41597
-  server: 183.181.36.194
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 8034bb4a-7613-334c-b9f9-3be056635ee6
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇸🇬]_1364'
-  network: ws
-  port: 29001
-  server: 146.190.105.70
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: b861b673-1437-3e8d-bef7-57cfbbfeb312
-  ws-opts:
-    headers:
-      Host: m.instagram.com
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇮🇷]_1368'
-  network: tcp
-  port: 59388
-  server: 31.14.118.43
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 35410dd3-40c6-385b-aa8e-7bd0e856d9a4
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇯🇵]日本_1369'
-  network: ws
-  port: 80
-  server: 155.248.176.28
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 63e762f2-2cec-3170-8382-d785023f1755
-  ws-opts:
-    headers:
-      Host: my1.tooters.ir
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]_1370'
-  network: ws
-  port: 80
-  server: 182.16.1.194
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 29194ca3-c57f-3950-ab66-a7e330767bd2
-  ws-opts:
-    headers:
-      Host: ''
-    path: /opt/video/images
+  ws-headers:
+    Host: 159.223.94.156
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -159,88 +61,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇩🇪]_1362'
-  - '[🇺🇸]_1365'
-  - '[🇦🇶]美国_1366'
-  - '[🇹🇼]_1360'
-  - '[🇯🇵]_1363'
-  - '[🇸🇬]_1364'
-  - '[🇮🇷]_1368'
-  - '[🇯🇵]日本_1369'
-  - '[🇭🇰]_1370'
+  - '[🇦🇶]_1277'
+  - '[🇸🇬]_1276'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1362'
-  - '[🇺🇸]_1365'
-  - '[🇦🇶]美国_1366'
-  - '[🇹🇼]_1360'
-  - '[🇯🇵]_1363'
-  - '[🇸🇬]_1364'
-  - '[🇮🇷]_1368'
-  - '[🇯🇵]日本_1369'
-  - '[🇭🇰]_1370'
+  - '[🇦🇶]_1277'
+  - '[🇸🇬]_1276'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1362'
-  - '[🇺🇸]_1365'
-  - '[🇦🇶]美国_1366'
-  - '[🇹🇼]_1360'
-  - '[🇯🇵]_1363'
-  - '[🇸🇬]_1364'
-  - '[🇮🇷]_1368'
-  - '[🇯🇵]日本_1369'
-  - '[🇭🇰]_1370'
+  - '[🇦🇶]_1277'
+  - '[🇸🇬]_1276'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]_1362'
-  - '[🇺🇸]_1365'
-  - '[🇦🇶]美国_1366'
-  - '[🇹🇼]_1360'
-  - '[🇯🇵]_1363'
-  - '[🇸🇬]_1364'
-  - '[🇮🇷]_1368'
-  - '[🇯🇵]日本_1369'
-  - '[🇭🇰]_1370'
+  - '[🇦🇶]_1277'
+  - '[🇸🇬]_1276'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇩🇪]_1362'
-  - '[🇺🇸]_1365'
-  - '[🇦🇶]美国_1366'
-  - '[🇹🇼]_1360'
-  - '[🇯🇵]_1363'
-  - '[🇸🇬]_1364'
-  - '[🇮🇷]_1368'
-  - '[🇯🇵]日本_1369'
-  - '[🇭🇰]_1370'
+  - '[🇦🇶]_1277'
+  - '[🇸🇬]_1276'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇩🇪]_1362'
-  - '[🇺🇸]_1365'
-  - '[🇦🇶]美国_1366'
-  - '[🇹🇼]_1360'
-  - '[🇯🇵]_1363'
-  - '[🇸🇬]_1364'
-  - '[🇮🇷]_1368'
-  - '[🇯🇵]日本_1369'
-  - '[🇭🇰]_1370'
+  - '[🇦🇶]_1277'
+  - '[🇸🇬]_1276'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
