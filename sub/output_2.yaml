@@ -28,17 +28,16 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇯🇵]日本_1290'
+  name: '[🇦🇶]美国_1297'
   network: ws
-  port: 80
-  server: 141.147.178.135
-  servername: ''
+  port: 8880
+  server: us-01.snangua.com
   tls: false
   type: vmess
-  uuid: 3c83f3af-9d9c-3bfc-b94f-2c110c188a0b
+  uuid: 78f766ea-f5c4-3c93-940c-915c51136f34
   ws-opts:
     headers:
-      Host: kr03.36routes.online
+      Host: us-01.snangua.com
     path: /
   udp: true
 - alterId: 0
@@ -58,31 +57,6 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]美国_1297'
-  network: ws
-  port: 8880
-  server: us-01.snangua.com
-  tls: false
-  type: vmess
-  uuid: 47ab1801-b1bc-3aa0-bd2b-76644e68804d
-  ws-opts:
-    headers:
-      Host: us-01.snangua.com
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇹🇷]_1296'
-  network: tcp
-  port: 448
-  server: 212.64.193.98
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 2352f606-e0c9-375c-9fe3-228e0ba4e057
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇯🇵]日本_1298'
   network: ws
   port: 80
@@ -96,6 +70,17 @@ proxies:
       Host: kr01.travisdependable.online
     path: /
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇹🇷]_1296'
+  network: tcp
+  port: 448
+  server: 212.64.193.98
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 2352f606-e0c9-375c-9fe3-228e0ba4e057
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -103,64 +88,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇯🇵]日本_1290'
+  - '[🇦🇶]美国_1297'
   - '[🇸🇬]_1295'
-  - '[🇺🇸]美国_1297'
-  - '[🇹🇷]_1296'
   - '[🇯🇵]日本_1298'
+  - '[🇹🇷]_1296'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇯🇵]日本_1290'
+  - '[🇦🇶]美国_1297'
   - '[🇸🇬]_1295'
-  - '[🇺🇸]美国_1297'
-  - '[🇹🇷]_1296'
   - '[🇯🇵]日本_1298'
+  - '[🇹🇷]_1296'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇯🇵]日本_1290'
+  - '[🇦🇶]美国_1297'
   - '[🇸🇬]_1295'
-  - '[🇺🇸]美国_1297'
-  - '[🇹🇷]_1296'
   - '[🇯🇵]日本_1298'
+  - '[🇹🇷]_1296'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇯🇵]日本_1290'
+  - '[🇦🇶]美国_1297'
   - '[🇸🇬]_1295'
-  - '[🇺🇸]美国_1297'
-  - '[🇹🇷]_1296'
   - '[🇯🇵]日本_1298'
+  - '[🇹🇷]_1296'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇯🇵]日本_1290'
+  - '[🇦🇶]美国_1297'
   - '[🇸🇬]_1295'
-  - '[🇺🇸]美国_1297'
-  - '[🇹🇷]_1296'
   - '[🇯🇵]日本_1298'
+  - '[🇹🇷]_1296'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇯🇵]日本_1290'
+  - '[🇦🇶]美国_1297'
   - '[🇸🇬]_1295'
-  - '[🇺🇸]美国_1297'
-  - '[🇹🇷]_1296'
   - '[🇯🇵]日本_1298'
+  - '[🇹🇷]_1296'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
