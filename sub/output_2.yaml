@@ -28,18 +28,58 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  country: US
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇵🇹]_1295'
+  name: '[🇺🇸]_1295'
   network: ws
-  port: 2082
-  server: 94.131.10.135
-  skip-cert-verify: true
+  port: 80
+  server: de.arvanping.ir
+  servername: ''
+  tls: false
   type: vmess
-  uuid: 92242689-0829-3288-ad73-0436833372e4
+  uuid: c2ad7472-77c4-368b-8e99-1006c20cac15
   ws-opts:
-    path: /vmess
+    headers:
+      Host: ''
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇸🇬]_1291'
+  network: ws
+  port: 11000
+  server: 146.190.105.70
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 96b4a905-47a5-394b-89ca-f9cd84e3da5f
+  ws-opts:
+    headers:
+      Host: android.googleapis.com
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇹🇷]_1293'
+  network: tcp
+  port: 448
+  server: 212.64.193.98
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 3b3d4ed0-9e92-3787-a0a2-7049e17565bc
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇵🇭]_1294'
+  network: ws
+  port: 29064
+  server: 109.248.25.59
+  tls: false
+  type: vmess
+  uuid: 0078ced7-e125-31aa-a9ea-5fbc301b065a
+  ws-opts:
+    headers:
+      Host: ''
+    path: /ss
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,40 +88,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇵🇹]_1295'
+  - '[🇺🇸]_1295'
+  - '[🇸🇬]_1291'
+  - '[🇹🇷]_1293'
+  - '[🇵🇭]_1294'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇵🇹]_1295'
+  - '[🇺🇸]_1295'
+  - '[🇸🇬]_1291'
+  - '[🇹🇷]_1293'
+  - '[🇵🇭]_1294'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇵🇹]_1295'
+  - '[🇺🇸]_1295'
+  - '[🇸🇬]_1291'
+  - '[🇹🇷]_1293'
+  - '[🇵🇭]_1294'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇵🇹]_1295'
+  - '[🇺🇸]_1295'
+  - '[🇸🇬]_1291'
+  - '[🇹🇷]_1293'
+  - '[🇵🇭]_1294'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇵🇹]_1295'
+  - '[🇺🇸]_1295'
+  - '[🇸🇬]_1291'
+  - '[🇹🇷]_1293'
+  - '[🇵🇭]_1294'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇵🇹]_1295'
+  - '[🇺🇸]_1295'
+  - '[🇸🇬]_1291'
+  - '[🇹🇷]_1293'
+  - '[🇵🇭]_1294'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
