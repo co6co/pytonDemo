@@ -26,11 +26,87 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇦🇶]美国_1983'
-  server: 104.21.225.85
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]美国_1986'
+  network: ws
   port: 80
+  server: 104.21.233.67
+  tls: false
   type: vmess
-  uuid: 0cef159e-a358-3fc9-abb8-3f32f8d7b279
+  uuid: 9057bee8-902b-34be-9d32-f76f0a414416
+  ws-opts:
+    headers:
+      Host: a.prapt5.ir
+    path: /?ed=2048
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]美国_1987'
+  network: ws
+  port: 80
+  server: 104.21.229.29
+  tls: false
+  type: vmess
+  uuid: 456a22f0-aa2c-32a3-8c71-c188624b79a7
+  ws-opts:
+    headers:
+      Host: a.prapt5.ir
+    path: /?ed=2048
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇦🇶]_1990'
+  network: ws
+  port: 80
+  server: 18arcims.ir
+  servername: dk1.xv2ray.net
+  skip-cert-verify: true
+  type: vmess
+  uuid: 492e79d5-72e2-3e47-95b3-999c5b3b9f37
+  ws-opts:
+    headers:
+      HOST: dk1.xv2ray.net
+    path: /vmess
+  udp: true
+- name: '[🇯🇵]_1973'
+  server: jp.littleqqq.co
+  port: 62193
+  type: vmess
+  uuid: 1024ea9e-9835-3eff-929b-fd5611611dfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /live/UKPZrSI3K7dtNJmn
+    headers:
+      Host: www.tmall.com
+  udp: true
+- name: '[🇭🇰]_1971'
+  server: hkt.littleqqq.co
+  port: 20759
+  type: vmess
+  uuid: cfe42c28-6fee-3991-ade3-9ffce085cf92
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: hkt.littleqqq.co
+  udp: true
+- name: '[🇦🇺]_1976'
+  server: 188.253.6.35
+  port: 20009
+  type: vmess
+  uuid: ad5550f9-28be-35b7-a333-b77ca53ef857
   alterId: 0
   cipher: auto
   tls: false
@@ -38,8 +114,53 @@ proxies:
   network: ws
   ws-opts:
     path: /
+  udp: true
+- name: '[🇹🇼]_1978'
+  server: c12.twtc.dynu.net
+  port: 14431
+  type: vmess
+  uuid: 2dab864d-37b5-3fd2-a492-0dcb083bff11
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇹🇼]台湾省_1992'
+  network: tcp
+  port: 3278
+  server: 118.167.70.124
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 8f02cf53-404c-3ea3-8df2-0a9197176e7c
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇹🇼]台湾省_1991'
+  network: tcp
+  port: 12002
+  server: 118.167.71.64
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: ba2c4709-60ff-3546-835a-4c55f924d336
+  udp: true
+- name: '[🇪🇸]_1972'
+  server: 185.214.103.249
+  port: 8002
+  type: vmess
+  uuid: 263ca769-3a93-352b-83d2-475dc1ae6f20
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /db00
     headers:
-      Host: a.prapt5.ir
+      Host: cache-hk-1.cn-db.top
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,40 +169,94 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]美国_1983'
+  - '[🇦🇶]美国_1986'
+  - '[🇦🇶]美国_1987'
+  - '[🇦🇶]_1990'
+  - '[🇯🇵]_1973'
+  - '[🇭🇰]_1971'
+  - '[🇦🇺]_1976'
+  - '[🇹🇼]_1978'
+  - '[🇹🇼]台湾省_1992'
+  - '[🇹🇼]台湾省_1991'
+  - '[🇪🇸]_1972'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_1983'
+  - '[🇦🇶]美国_1986'
+  - '[🇦🇶]美国_1987'
+  - '[🇦🇶]_1990'
+  - '[🇯🇵]_1973'
+  - '[🇭🇰]_1971'
+  - '[🇦🇺]_1976'
+  - '[🇹🇼]_1978'
+  - '[🇹🇼]台湾省_1992'
+  - '[🇹🇼]台湾省_1991'
+  - '[🇪🇸]_1972'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_1983'
+  - '[🇦🇶]美国_1986'
+  - '[🇦🇶]美国_1987'
+  - '[🇦🇶]_1990'
+  - '[🇯🇵]_1973'
+  - '[🇭🇰]_1971'
+  - '[🇦🇺]_1976'
+  - '[🇹🇼]_1978'
+  - '[🇹🇼]台湾省_1992'
+  - '[🇹🇼]台湾省_1991'
+  - '[🇪🇸]_1972'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_1983'
+  - '[🇦🇶]美国_1986'
+  - '[🇦🇶]美国_1987'
+  - '[🇦🇶]_1990'
+  - '[🇯🇵]_1973'
+  - '[🇭🇰]_1971'
+  - '[🇦🇺]_1976'
+  - '[🇹🇼]_1978'
+  - '[🇹🇼]台湾省_1992'
+  - '[🇹🇼]台湾省_1991'
+  - '[🇪🇸]_1972'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]美国_1983'
+  - '[🇦🇶]美国_1986'
+  - '[🇦🇶]美国_1987'
+  - '[🇦🇶]_1990'
+  - '[🇯🇵]_1973'
+  - '[🇭🇰]_1971'
+  - '[🇦🇺]_1976'
+  - '[🇹🇼]_1978'
+  - '[🇹🇼]台湾省_1992'
+  - '[🇹🇼]台湾省_1991'
+  - '[🇪🇸]_1972'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]美国_1983'
+  - '[🇦🇶]美国_1986'
+  - '[🇦🇶]美国_1987'
+  - '[🇦🇶]_1990'
+  - '[🇯🇵]_1973'
+  - '[🇭🇰]_1971'
+  - '[🇦🇺]_1976'
+  - '[🇹🇼]_1978'
+  - '[🇹🇼]台湾省_1992'
+  - '[🇹🇼]台湾省_1991'
+  - '[🇪🇸]_1972'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
