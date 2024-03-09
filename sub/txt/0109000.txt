@@ -1,7 +1,7 @@
 proxies:
 - alterId: 0
   cipher: auto
-  name: 0,3,4,8,9,20|🇺🇸_US_美国#17
+  name: 0,3,4,8,9,20|🇺🇸_US_美国#16
   network: ws
   port: 8080
   server: 104.21.54.252
@@ -15,7 +15,7 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 0,3,4,8,9,16,20|🇺🇸_US_美国#18
+  name: 0,3,4,8,9,20|🇺🇸_US_美国#17
   network: ws
   port: 8080
   server: www.velvetmountain.shop
@@ -29,7 +29,7 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 0,3,4,8,16,20|🇺🇸_US_美国#16
+  name: 0,3,4,8,20|🇺🇸_US_美国#15
   network: ws
   port: 80
   server: cloudflare.cfgo.cc
@@ -43,7 +43,7 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 0,3,4,8,9,20|🇺🇸_US_美国#19
+  name: 0,3,4,8,9,20|🇺🇸_US_美国#18
   network: ws
   port: 8080
   server: 172.67.143.192
@@ -299,15 +299,39 @@ proxies:
       host: dibanqd.cxzntq.tech
     path: /apopop
   udp: true
-- cipher: chacha20-ietf-poly1305
+- cipher: aes-128-gcm
   name: 6|-https://t.me/MrXbin-1
+  password: a-wym4ovY4Yw
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: ''
+    mode: websocket
+    mux: true
+    path: ''
+    skip-cert-verify: true
+    tls: false
+  port: 443
+  server: 47.243.196.229
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 6|-https://t.me/MrXbin-2
   password: W74XFALLLuw6m5IA
   port: 443
   server: java.ct.arvancode.eu.Org
   type: ss
   udp: true
+- cipher: aes-256-cfb
+  name: 6|-https://t.me/MrXbin-7
+  obfs: tls1.2_ticket_auth
+  password: fou8MBGij
+  port: 8081
+  protocol: origin
+  server: us-am3.eqnode.net
+  type: ssr
+  udp: true
 - cipher: aes-256-ctr
-  name: 6|-https://t.me/MrXbin-5
+  name: 6|-https://t.me/MrXbin-9
   obfs: tls1.2_ticket_auth
   obfs-param: cdn.appsflyer.com
   password: NewBypasser2023
@@ -316,60 +340,36 @@ proxies:
   server: 163.172.218.164
   type: ssr
   udp: true
-- cipher: aes-256-cfb
-  name: 6|-https://t.me/MrXbin-10
-  obfs: tls1.2_ticket_auth
-  password: fou8MBGij
-  port: 8081
-  protocol: origin
-  server: us-am3.eqnode.net
-  type: ssr
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  country: CN
-  name: 6|-https://t.me/MrXbin-12
-  password: d7bee830-09aa-43b2-8945-3b341b8787db
-  port: 24103
-  server: p1.bxy-fun2.com
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  country: CN
-  name: 6|-https://t.me/MrXbin-14
-  password: d7bee830-09aa-43b2-8945-3b341b8787db
-  port: 26107
-  server: p1.bxy-fun2.com
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  country: CN
-  name: 6|-https://t.me/MrXbin-15
-  password: d7bee830-09aa-43b2-8945-3b341b8787db
-  port: 23105
-  server: p1.bxy-fun2.com
-  type: ss
-  udp: true
-- alterId: 64
-  cipher: auto
-  client-fingerprint: chrome
-  country: CN
-  name: 6,18|🇭🇰香港2|@ripaojiedian
-  password: 6c74f352-c5e3-43ae-abfa-4b9750085b74
-  port: 41492
-  server: 120.232.242.93
-  skip-cert-verify: false
-  sni: hkbn-02.oneok.link
-  tfo: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - cipher: chacha20-ietf-poly1305
   country: GB
-  name: 6|-https://t.me/MrXbin-52
+  name: 6|-https://t.me/MrXbin-47
   password: mps3FwmDjLrWaOVg
   port: 443
-  server: v1.arvancode.eu.org
+  server: series-a2.samanehha.co
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  country: US
+  name: 6|-https://t.me/MrXbin-48
+  password: RexnBgU7EV5ADxG
+  port: 7001
+  server: 38.121.43.65
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  country: US
+  name: 6|-https://t.me/MrXbin-49
+  password: faBAoD54k87UJG7
+  port: 2375
+  server: 38.121.43.65
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  country: US
+  name: 6|-https://t.me/MrXbin-50
+  password: Y6R9pAtvxxzmGC
+  port: 8888
+  server: 38.121.43.65
   type: ss
   udp: true
 - alterId: 0
@@ -377,18 +377,18 @@ proxies:
   country: US
   h2-opts: {}
   http-opts: {}
-  name: 6|-https://t.me/MrXbin-53
+  name: 6|-https://t.me/MrXbin-51
   network: ws
   port: 80
-  server: cdn.ahdark.gay
-  servername: hytron.aresboot.io
+  server: 172.67.217.144
+  servername: lv1.xv2ray.net
   skip-cert-verify: true
   type: vmess
-  uuid: caa995ed-86a9-4968-a332-9c11e7e13107
+  uuid: 85674552-ce41-44d9-bb2a-50f76450b3d8
   ws-opts:
     headers:
-      HOST: hytron.aresboot.io
-    path: /
+      HOST: lv1.xv2ray.net
+    path: /vmess
   udp: true
 - alterId: 0
   cipher: auto
@@ -437,91 +437,105 @@ proxies:
   udp: true
 - alterId: 64
   cipher: auto
-  name: 12|美国西雅圖|Github搜索TrojanLinks
+  name: 12|荷兰乌得勒支|Github搜索TrojanLinks
+  network: ws
+  port: 41000
+  server: 46.182.107.112
+  tls: true
+  type: vmess
+  uuid: 3a3c8a9c-334e-4360-adb8-a80a57ddcbbf
+  ws-opts:
+    headers:
+      Host: www.45436752.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国聖荷西|Github搜索TrojanLinks
   network: ws
   port: 37000
-  server: 198.2.219.252
+  server: 142.0.131.157
   tls: true
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   ws-opts:
     headers:
-      Host: www.41912208.xyz
+      Host: www.72594139.xyz
     path: /path/153428133302
   udp: true
 - alterId: 64
   cipher: auto
-  name: 12|荷兰阿姆斯特丹|Github搜索TrojanLinks
+  name: 12|美国紐約|Github搜索TrojanLinks
   network: ws
-  port: 41000
-  server: 154.85.1.246
+  port: 443
+  server: 172.111.57.130
   tls: true
   type: vmess
-  uuid: fe5f69e7-e183-439b-950b-9661ef0651f2
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   ws-opts:
     headers:
-      Host: www.43747414.xyz
+      Host: www.88268904.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国紐約|Github搜索TrojanLinks#1
+  network: ws
+  port: 443
+  server: 172.111.57.163
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.11886159.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国聖荷西|Github搜索TrojanLinks#1
+  network: ws
+  port: 38100
+  server: 38.14.107.237
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.23179753.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国聖荷西|Github搜索TrojanLinks#2
+  network: ws
+  port: 38000
+  server: 142.4.101.170
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.94152251.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国紐約|Github搜索TrojanLinks#2
+  network: ws
+  port: 443
+  server: 172.111.57.195
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.88166954.xyz
     path: /path/153428133302
   udp: true
 - alterId: 64
   cipher: auto
   name: 12|美国洛杉矶|Github搜索TrojanLinks
-  network: ws
-  port: 37001
-  server: 74.48.156.199
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.60493269.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|荷兰阿姆斯特丹|Github搜索TrojanLinks#1
-  network: ws
-  port: 41000
-  server: 156.249.18.160
-  tls: true
-  type: vmess
-  uuid: 63b4b829-7f01-4e26-b037-f04b1f098765
-  ws-opts:
-    headers:
-      Host: www.32159877.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|美国洛杉矶|Github搜索TrojanLinks#1
-  network: ws
-  port: 443
-  server: 148.135.31.172
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.72672771.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|中国重庆市|Github搜索TrojanLinks
-  network: ws
-  port: 38000
-  server: 198.2.196.182
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.53062560.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|美国洛杉矶|Github搜索TrojanLinks#2
   network: ws
   port: 443
   server: 148.135.14.107
@@ -535,161 +549,21 @@ proxies:
   udp: true
 - alterId: 64
   cipher: auto
-  name: 12|美国聖荷西|Github搜索TrojanLinks
-  network: ws
-  port: 30000
-  server: 38.38.169.112
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.87044255.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|美国西雅圖|Github搜索TrojanLinks#1
-  network: ws
-  port: 38001
-  server: 142.4.116.164
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.33586067.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|中国南京|Github搜索TrojanLinks
-  network: ws
-  port: 37000
-  server: 142.4.103.188
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.84675006.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|美国聖荷西|Github搜索TrojanLinks#1
-  network: ws
-  port: 37000
-  server: 198.2.203.116
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.43537463.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|美国洛杉矶|Github搜索TrojanLinks#3
-  network: ws
-  port: 37000
-  server: 38.48.191.111
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.96128725.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|美国聖荷西|Github搜索TrojanLinks#2
-  network: ws
-  port: 37000
-  server: 38.173.196.12
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.47643999.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|荷兰乌得勒支|Github搜索TrojanLinks
-  network: ws
-  port: 41000
-  server: 46.182.107.23
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.26595897.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|荷兰乌得勒支|Github搜索TrojanLinks#1
-  network: ws
-  port: 41000
-  server: 46.182.107.118
-  tls: true
-  type: vmess
-  uuid: 990006bd-cb20-482f-9c97-f5fc65359605
-  ws-opts:
-    headers:
-      Host: www.29155169.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
   name: 12|美国聖荷西|Github搜索TrojanLinks#3
   network: ws
-  port: 36000
-  server: 198.2.215.105
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.59977650.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|美国聖荷西|Github搜索TrojanLinks#4
-  network: ws
   port: 37000
-  server: 38.14.123.189
+  server: 142.4.99.36
   tls: true
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   ws-opts:
     headers:
-      Host: www.33756710.xyz
+      Host: www.86222404.xyz
     path: /path/153428133302
   udp: true
 - alterId: 64
   cipher: auto
-  name: 12|荷兰阿姆斯特丹|Github搜索TrojanLinks#2
-  network: ws
-  port: 41001
-  server: 154.85.1.202
-  tls: true
-  type: vmess
-  uuid: d3133484-f2bf-4b0c-8d38-f8e645b65687
-  ws-opts:
-    headers:
-      Host: www.54241651.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 12|美国洛杉矶|Github搜索TrojanLinks#4
+  name: 12|美国洛杉矶|Github搜索TrojanLinks#1
   network: ws
   port: 38000
   server: 38.48.166.228
@@ -701,6 +575,104 @@ proxies:
       Host: www.87137277.xyz
     path: /path/153428133302
   udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国聖荷西|Github搜索TrojanLinks#4
+  network: ws
+  port: 37000
+  server: 38.38.165.103
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.84056064.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国洛杉矶|Github搜索TrojanLinks#2
+  network: ws
+  port: 37000
+  server: 38.48.148.100
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.64102475.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|中国景德镇市|Github搜索TrojanLinks
+  network: ws
+  port: 37000
+  server: 137.175.12.69
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.86052077.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|中国重庆市|Github搜索TrojanLinks
+  network: ws
+  port: 36000
+  server: 198.2.196.168
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.54701745.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国聖荷西|Github搜索TrojanLinks#5
+  network: ws
+  port: 36000
+  server: 38.14.100.177
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.80150658.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|荷兰阿姆斯特丹|Github搜索TrojanLinks
+  network: ws
+  port: 41000
+  server: 156.249.18.169
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.34668845.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 12|美国聖荷西|Github搜索TrojanLinks#6
+  network: ws
+  port: 37000
+  server: 38.14.124.108
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.39179186.xyz
+    path: /path/153428133302
+  udp: true
 - alterId: 0
   cipher: auto
   name: 13|🇯🇵日本04
@@ -710,7 +682,7 @@ proxies:
   servername: jp04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -721,7 +693,7 @@ proxies:
   servername: jp05.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -732,7 +704,7 @@ proxies:
   servername: jp06.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -743,7 +715,7 @@ proxies:
   servername: sg04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -754,7 +726,7 @@ proxies:
   servername: sg05.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -765,7 +737,7 @@ proxies:
   servername: sg06.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -776,7 +748,7 @@ proxies:
   servername: us04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -787,7 +759,7 @@ proxies:
   servername: us05.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -798,7 +770,7 @@ proxies:
   servername: us06.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -809,7 +781,7 @@ proxies:
   servername: ru04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -820,7 +792,7 @@ proxies:
   servername: my04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -831,7 +803,7 @@ proxies:
   servername: th04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -842,7 +814,7 @@ proxies:
   servername: ph04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -853,7 +825,7 @@ proxies:
   servername: kr04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -864,7 +836,7 @@ proxies:
   servername: in04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -875,7 +847,7 @@ proxies:
   servername: br04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -886,7 +858,7 @@ proxies:
   servername: vn04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -897,7 +869,7 @@ proxies:
   servername: hu04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -908,7 +880,7 @@ proxies:
   servername: ar04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -919,7 +891,7 @@ proxies:
   servername: tr04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -930,7 +902,7 @@ proxies:
   servername: ua04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -941,7 +913,7 @@ proxies:
   servername: au04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -952,7 +924,7 @@ proxies:
   servername: uk04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -963,7 +935,7 @@ proxies:
   servername: de04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -974,7 +946,7 @@ proxies:
   servername: ca04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -985,7 +957,7 @@ proxies:
   servername: es04.abpilot.xyz
   tls: true
   type: vmess
-  uuid: 2f542198-e285-4b2c-80f7-84a1c8424f23
+  uuid: 08d90f3b-9213-4c64-bedc-4838f9f5cebf
   udp: true
 - alterId: 0
   cipher: auto
@@ -1019,11 +991,10 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 14,16|US_7022212
+  name: 14|美国CloudFlare节点#2
   network: ws
   port: 80
   server: 104.21.225.7
-  servername: ''
   tls: false
   type: vmess
   uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
@@ -1094,11 +1065,10 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 14,16|US_702222
+  name: 14|美国CloudFlare节点#8
   network: ws
   port: 80
   server: 104.21.224.3
-  servername: ''
   tls: false
   type: vmess
   uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
@@ -1152,7 +1122,7 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 14,16|🇺🇸US_7022#29
+  name: 14|美国CloudFlare节点#12
   network: ws
   port: 80
   server: 104.21.234.74
@@ -1167,11 +1137,10 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 14,16|US_702271
+  name: 14|美国CloudFlare节点#14
   network: ws
   port: 80
   server: 104.21.228.44
-  servername: ''
   tls: false
   type: vmess
   uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
@@ -1211,7 +1180,7 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 14,16|🇨🇿|CZ|捷克|@wxgqlfx|37
+  name: 14|西班牙v2rayfree.eu.org
   network: ws
   port: 80
   server: 77.75.230.125
@@ -1220,6 +1189,8 @@ proxies:
   type: vmess
   uuid: d466dd36-8b86-48b7-b0f0-67e7d128de6c
   ws-opts:
+    headers:
+      Host: ''
     path: /vmess
   udp: true
 - alterId: 0
@@ -1313,197 +1284,36 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022
+  client-fingerprint: chrome
+  name: 16,18,19|美国3|@ripaojiedian
   network: ws
-  port: 80
-  server: 104.21.224.21
+  port: 2052
+  server: cfcdn1.sanfencdn9.com
   servername: ''
+  skip-cert-verify: false
+  tfo: false
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 6ad77d6b-7a45-4ed3-b65d-1c3ec0226603
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
+      Host: us1cPZiz8nb.fzbqfrse.xyz
+    path: /video/6VBhAkCtV4/
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_youtube@资源分享师_159
-  network: ws
-  port: 8080
-  server: www.brightocean.lol
-  tls: false
-  type: vmess
-  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
-  ws-opts:
-    headers:
-      Host: www.brightocean.lol
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|美国050
-  network: ws
-  port: 2053
-  server: 47.76.80.72
-  servername: cfhk.393930.xyz
-  tls: true
-  type: vmess
-  uuid: 5840ab2d-ab59-4eb0-9dea-122d0fbbd2d9
-  ws-opts:
-    headers:
-      Host: cfhk.393930.xyz
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|美国013
+  name: 16|加拿大014
   network: ws
   port: 443
-  server: 172.67.196.110
+  server: 104.16.216.241
   servername: ''
   tls: true
   type: vmess
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: kellie.makeup
+      Host: nelly.homes
     path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022196
-  network: ws
-  port: 80
-  server: 104.21.235.78
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022214
-  network: ws
-  port: 80
-  server: 104.21.228.41
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702281
-  network: ws
-  port: 80
-  server: 104.21.236.63
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#1
-  network: ws
-  port: 80
-  server: 104.21.225.27
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702261
-  network: ws
-  port: 80
-  server: 104.21.235.77
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702293
-  network: ws
-  port: 80
-  server: 104.21.224.2
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022257
-  network: ws
-  port: 80
-  server: 104.21.235.76
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022232
-  network: ws
-  port: 80
-  server: 104.21.237.85
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702246
-  network: ws
-  port: 80
-  server: 104.21.233.68
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
   udp: true
 - alterId: 0
   cipher: auto
@@ -1522,78 +1332,33 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702231
+  name: 16|澳大利亚002
   network: ws
-  port: 80
-  server: 104.21.231.58
+  port: 52184
+  server: 170.64.205.32
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 67be35e4-d5e4-4468-8c21-797db958ef5b
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: m.instagram.com
+    path: /Shalana
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_7022166
+  name: 16|🔒VM-WS-NA🇨🇦CA-23.26.239.147...
   network: ws
-  port: 80
-  server: 104.21.228.42
+  port: 46768
+  server: 23.26.239.147
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 1362cc37-0917-4e40-dce4-c689609d9e82
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022174
-  network: ws
-  port: 80
-  server: 104.21.228.21
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702290
-  network: ws
-  port: 80
-  server: 104.21.233.69
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|加拿大022
-  network: ws
-  port: 443
-  server: 104.21.25.94
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: 4d74f126-0ef1-4579-b0a3-78e7b48ef067
-  ws-opts:
-    headers:
-      Host: de2-vmess.sshmax.xyz
-    path: /vmess
+      Host: 23.26.239.147
+    path: /
   udp: true
 - alterId: 0
   cipher: auto
@@ -1612,33 +1377,48 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702212
+  name: 16|俄罗斯002
   network: ws
-  port: 80
-  server: 104.21.238.94
+  port: 443
+  server: 185.221.160.163
   servername: ''
-  tls: false
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: worker-lingering-fog-c021.gesofog870.workers.dev
+    path: /kellie.makeup/linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#2
+  name: 16|🌸24@oneclickvpnkeys
   network: ws
-  port: 80
-  server: 104.21.226.32
-  servername: ''
-  tls: false
+  port: 443
+  server: 188.114.96.3
+  servername: oliv.beauty
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
+      Host: oliv.beauty
+    path: linkvws
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|加拿大011
+  network: ws
+  port: 443
+  server: 104.20.39.186
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 441da342-ce90-441e-bff9-d2ceb55e68ca
+  ws-opts:
+    headers:
+      Host: vmess.taxar71054.workers.dev
+    path: /ivideos.sbs/linkws
   udp: true
 - alterId: 0
   cipher: auto
@@ -1657,167 +1437,160 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_7022180
+  name: 16|Channelid:@ShadowProxy66🇨🇦
   network: ws
-  port: 80
-  server: 104.21.230.34
-  servername: ''
-  tls: false
+  port: 443
+  server: 104.21.75.246
+  servername: cf.tonyluk.link
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: cf.tonyluk.link
+    path: /ophelia.mom:443/linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702295
+  name: 16|🌸27@oneclickvpnkeys
   network: ws
-  port: 80
-  server: 104.21.237.68
-  servername: ''
-  tls: false
+  port: 443
+  server: 104.21.50.177
+  servername: alvvin.click
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: alvvin.click
+    path: linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702250
+  name: 16|🔒VM-WS-NA🏴‍☠️NA-104.19.250....
   network: ws
-  port: 80
-  server: 104.21.229.28
+  port: 2052
+  server: 104.19.250.132
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 6ad77d6b-7a45-4ed3-b65d-1c3ec0226603
   ws-opts:
     headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: us1cPZiz8nb.fzbqfrse.xyz
+    path: /video/6VBhAkCtV4/
+  udp: true
+- alterId: 1
+  cipher: auto
+  name: 16|Channelid:@ShadowProxy66🇺🇸
+  network: ws
+  port: 443
+  server: 172.67.164.184
+  servername: alvvin.click
+  tls: true
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: alvvin.click
+    path: linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#3
+  name: 16|加拿大020
   network: ws
-  port: 80
-  server: 104.21.234.72
+  port: 443
+  server: 104.24.0.11
   servername: ''
-  tls: false
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
+      Host: vip2323.cfd
+    path: /linkvws
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 16|🔒VM-WS-TLS🇺🇸US-38.14.107.23...
+  network: ws
+  port: 38100
+  server: 38.14.107.233
+  servername: www.23179753.xyz
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.23179753.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 1
+  cipher: auto
+  name: 16|Channelid:@ShadowProxy66🇨🇦#1
+  network: ws
+  port: 443
+  server: 104.21.4.29
+  servername: oliv.beauty
+  tls: true
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: oliv.beauty
+    path: linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#4
-  network: ws
-  port: 80
-  server: 104.21.236.81
+  name: 16|🔒VM-TCP-NA🇫🇷FR-162.19.25.20...
+  network: tcp
+  port: 44513
+  server: 162.19.25.207
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
+  uuid: 4552bdb6-e008-43ac-926d-c6c6c5a6fc76
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#5
+  name: 16|加拿大016
   network: ws
-  port: 80
-  server: 104.21.236.60
+  port: 443
+  server: 104.16.217.241
   servername: ''
-  tls: false
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
+      Host: nelly.homes
+    path: /linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_7022223
+  name: 16|🔒VM-WS-NA🇰🇷KR-140.238.18.10...
   network: ws
-  port: 80
-  server: 104.21.225.29
+  port: 42752
+  server: 140.238.18.105
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: b551aa22-22af-11ee-b8d8-f23c932eb68d
   ws-opts:
     headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#6
-  network: ws
-  port: 80
-  server: 104.21.225.26
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|加拿大004
-  network: ws
-  port: 8080
-  server: www.ywnouvbale.biz
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
-  ws-opts:
-    headers:
-      Host: www.ywnouvbale.biz
+      Host: kr.yydsii.com
     path: /
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#7
-  network: ws
-  port: 80
-  server: 104.21.226.31
+  name: 16|🔒VM-TCP-NA🇩🇪DE-193.36.84.67...
+  network: tcp
+  port: 41731
+  server: 193.36.84.67
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸美国CloudFlare节点
-  network: ws
-  port: 80
-  server: us65.netfilx.live
-  tls: false
-  type: vmess
-  uuid: 60f12435-bb55-4da2-cb7d-4fea34ecfa37
-  ws-opts:
-    headers:
-      Host: us65.netfilx.live
-    path: /
+  uuid: d7d122fa-76b8-41f8-8436-9f2b6cbac1ff
   udp: true
 - alterId: 64
   cipher: auto
@@ -1832,24 +1605,56 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|关注电报https://t.me/aifenxiang202...#1
+  client-fingerprint: chrome
+  name: 16,18,19|新加坡3|@ripaojiedian
   network: ws
-  port: 80
-  server: 104.21.225.121
+  port: 2052
+  server: cfcdn2.sanfencdn9.com
+  servername: ''
+  skip-cert-verify: false
+  tfo: false
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 6ad77d6b-7a45-4ed3-b65d-1c3ec0226603
   ws-opts:
     headers:
-      Host: a.prapt5.ir
+      Host: jpafzyhfsg3.yofnhkfc.xyz
+    path: /video/u4eCZTxW
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|🔒VM-WS-NA🏴‍☠️NA-104.21.63.5...
+  network: ws
+  port: 80
+  server: 104.21.63.52
+  tls: false
+  type: vmess
+  uuid: 60f12435-bb55-4da2-cb7d-4fea34ecfa37
+  ws-opts:
+    headers:
+      Host: us65.netfilx.live
     path: /
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_7022187
+  name: 16|🇺🇸美国045
   network: ws
   port: 80
-  server: 104.21.224.20
+  server: 151.101.193.57
+  tls: false
+  type: vmess
+  uuid: 66ccb11f-75a7-4282-8a60-31fed447401d
+  ws-opts:
+    headers:
+      Host: nmsl.kp
+    path: /aries?ed=2048
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|US_7022155
+  network: ws
+  port: 80
+  server: 104.21.224.23
   servername: ''
   tls: false
   type: vmess
@@ -1861,47 +1666,63 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|NL_youtube@资源分享师_37
+  name: 16|@Hope_Net-join-us-on-Telegram
   network: ws
-  port: 80
-  server: 188.114.96.113
-  tls: false
+  port: 8443
+  server: 172.67.183.26
+  servername: hk-b.funhub.cc
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: b33155f0-7429-4f1c-97c4-a9ba24a3b1cf
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: /
+      Host: hk-b.funhub.cc
+    path: /hk-b
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702269
+  name: 16|@Hope_Net-join-us-on-Telegram#1
   network: ws
-  port: 80
-  server: 104.21.231.35
-  servername: ''
-  tls: false
+  port: 443
+  server: 172.67.166.170
+  servername: irene.lat
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: irene.lat
+    path: /linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702280
+  name: 16|@Hope_Net-join-us-on-Telegram#2
   network: ws
-  port: 80
-  server: 104.21.230.52
-  servername: ''
-  tls: false
+  port: 443
+  server: 172.67.131.108
+  servername: glweidf.cfd
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 1052f24e-7b09-45eb-b0c5-d858eb124192
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: glweidf.cfd
+    path: /linkws
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 16|美国032
+  network: ws
+  port: 38100
+  server: 38.14.107.234
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.23179753.xyz
+    path: /path/153428133302
   udp: true
 - alterId: 0
   cipher: auto
@@ -1920,70 +1741,167 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_7022122
-  network: ws
-  port: 80
-  server: 104.21.230.31
+  name: 16|🌸20@oneclickvpnkeys
+  network: tcp
+  port: 24208
+  server: 195.201.29.238
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
+  uuid: 1d244b9d-ce0f-49d5-99fd-da3f1e80ee59
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|【TG：@ccbaohe}定时更新节点订阅US00301
+  name: 16|关注电报https://t.me/aifenxiang202...
   network: ws
-  port: 80
-  server: 104.21.225.135
-  servername: ''
+  port: 8080
+  server: www.coldstone.club
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
   ws-opts:
     headers:
-      Host: a.prapt5.ir
+      Host: www.coldstone.club
     path: /
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_7022266
+  name: 16|US_youtube@资源分享师_4
+  network: ws
+  port: 8080
+  server: 104.21.46.66
+  tls: false
+  type: vmess
+  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
+  ws-opts:
+    headers:
+      Host: www.ywnouvbale.biz
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|Channelid:@ShadowProxy66🇺🇸#1
+  network: ws
+  port: 443
+  server: 172.67.158.126
+  servername: nelly.homes
+  tls: true
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: nelly.homes
+    path: /linkvws
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|🇭🇰香港001
+  network: ws
+  port: 4431
+  server: 152.32.190.239
+  tls: true
+  type: vmess
+  uuid: 5840ab2d-ab59-4eb0-9dea-122d0fbbd2d9
+  ws-opts:
+    headers:
+      Host: cfhk.393930.xyz
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|@Hope_Net-join-us-on-Telegram#3
   network: ws
   port: 80
-  server: 104.21.237.69
+  server: de3-vmess.sshmax.xyz
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 4ec2f1b0-b45d-41bf-b1d1-ec6ad7206cc8
+  ws-opts:
+    headers:
+      Host: de3-vmess.sshmax.xyz
+    path: /vmess
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: 16|美国065
+  network: ws
+  port: 38100
+  server: 38.14.107.236
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  ws-opts:
+    headers:
+      Host: www.23179753.xyz
+    path: /path/153428133302
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|🔒VM-WS-TLS🏴‍☠️NA-104.21.51....
+  network: ws
+  port: 443
+  server: 104.21.51.208
+  servername: nina.bond
+  tls: true
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: nina.bond
+    path: /linkvws
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|加拿大004
+  network: ws
+  port: 8080
+  server: www.ywnouvbale.biz
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
+  ws-opts:
+    headers:
+      Host: www.ywnouvbale.biz
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|🇺🇸美国CloudFlare节点
+  network: ws
+  port: 80
+  server: us65.netfilx.live
+  tls: false
+  type: vmess
+  uuid: 60f12435-bb55-4da2-cb7d-4fea34ecfa37
+  ws-opts:
+    headers:
+      Host: us65.netfilx.live
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|US_7022211
+  network: ws
+  port: 80
+  server: 104.21.235.58
   servername: ''
   tls: false
   type: vmess
   uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
   ws-opts:
     headers:
-      Host: a.prapt1.ir
+      Host: a.prapt4.ir
     path: /?ed=2048&Telegram🇨🇳
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#8
+  name: 16|US_702232
   network: ws
   port: 80
-  server: 104.21.239.99
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702245
-  network: ws
-  port: 80
-  server: 104.21.227.16
+  server: 104.21.233.49
   servername: ''
   tls: false
   type: vmess
@@ -2006,81 +1924,21 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702218
+  name: 16|🇺🇸美国080
   network: ws
-  port: 80
-  server: 104.21.230.50
-  servername: ''
+  port: 2052
+  server: 172.64.161.60
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 6ad77d6b-7a45-4ed3-b65d-1c3ec0226603
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: us1cPZiz8nb.fzbqfrse.xyz
+    path: /video/6VBhAkCtV4/
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#9
-  network: ws
-  port: 80
-  server: 104.21.232.63
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022219
-  network: ws
-  port: 80
-  server: 104.21.235.59
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_youtube@资源分享师_4
-  network: ws
-  port: 8080
-  server: 104.21.46.66
-  tls: false
-  type: vmess
-  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
-  ws-opts:
-    headers:
-      Host: www.ywnouvbale.biz
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#10
-  network: ws
-  port: 80
-  server: 104.21.228.24
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇩🇪德国
+  name: 16|🔒VM-WS-NA🇩🇪DE-92.223.124.34...
   network: ws
   port: 80
   server: 92.223.124.34
@@ -2095,743 +1953,7 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#11
-  network: ws
-  port: 80
-  server: 104.21.226.14
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022227
-  network: ws
-  port: 80
-  server: 104.21.238.71
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#12
-  network: ws
-  port: 80
-  server: 104.21.229.47
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702285
-  network: ws
-  port: 80
-  server: 104.21.229.25
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022120
-  network: ws
-  port: 80
-  server: 104.21.238.93
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022102
-  network: ws
-  port: 80
-  server: 104.21.237.67
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702210
-  network: ws
-  port: 80
-  server: 104.21.237.65
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#13
-  network: ws
-  port: 80
-  server: 104.21.238.90
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702216
-  network: ws
-  port: 80
-  server: 104.21.226.13
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#14
-  network: ws
-  port: 80
-  server: 104.21.238.91
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702268
-  network: ws
-  port: 80
-  server: 104.21.236.62
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 1
-  cipher: auto
-  name: 16|🌸28@oneclickvpnkeys
-  network: ws
-  port: 443
-  server: 172.67.207.114
-  servername: ophelia.mom
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: ophelia.mom
-    path: linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-WS-NA🏴‍☠️NA-104.21.63.5...
-  network: ws
-  port: 80
-  server: 104.21.63.52
-  tls: false
-  type: vmess
-  uuid: 60f12435-bb55-4da2-cb7d-4fea34ecfa37
-  ws-opts:
-    headers:
-      Host: us65.netfilx.live
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#15
-  network: ws
-  port: 80
-  server: 104.21.235.57
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#16
-  network: ws
-  port: 80
-  server: 104.21.235.79
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🌸21@oneclickvpnkeys
-  network: ws
-  port: 443
-  server: 188.114.97.18
-  servername: odelia.autos
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: odelia.autos
-    path: linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#17
-  network: ws
-  port: 80
-  server: 104.21.234.51
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#18
-  network: ws
-  port: 80
-  server: 104.21.225.6
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|@Hope_Net-join-us-on-Telegram
-  network: ws
-  port: 443
-  server: upload.ir
-  servername: afrhms16v.bestxray.buzz
-  tls: true
-  type: vmess
-  uuid: f584de15-2034-4170-a723-f48c2bae5e0f
-  ws-opts:
-    headers:
-      Host: afrhms16v.bestxray.buzz
-    path: /linkws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|加拿大011
-  network: ws
-  port: 443
-  server: 104.20.39.186
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: 441da342-ce90-441e-bff9-d2ceb55e68ca
-  ws-opts:
-    headers:
-      Host: vmess.taxar71054.workers.dev
-    path: /ivideos.sbs/linkws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#19
-  network: ws
-  port: 80
-  server: 104.21.239.77
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#20
-  network: ws
-  port: 80
-  server: 104.21.225.9
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_youtube@资源分享师_181
-  network: ws
-  port: 80
-  server: 104.21.232.61
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳 @WangCai_8
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸|US|美国|@wxgqlfx|43
-  network: ws
-  port: 80
-  server: 104.21.230.30
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022142
-  network: ws
-  port: 80
-  server: 104.21.225.5
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇷🇺俄罗斯002
-  network: ws
-  port: 443
-  server: 185.221.160.163
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: worker-lingering-fog-c021.gesofog870.workers.dev
-    path: /kellie.makeup/linkvws
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 16|🔒VM-WS-TLS🇺🇸US-38.14.107.23...
-  network: ws
-  port: 38100
-  server: 38.14.107.233
-  servername: www.23179753.xyz
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.23179753.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#21
-  network: ws
-  port: 80
-  server: 104.21.234.71
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🌼33@oneclickvpnkeys
-  network: ws
-  port: 4431
-  server: 152.32.190.239
-  servername: cfhk.393930.xyz
-  tls: true
-  type: vmess
-  uuid: 5840ab2d-ab59-4eb0-9dea-122d0fbbd2d9
-  ws-opts:
-    headers:
-      Host: cfhk.393930.xyz
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-TCP-NA🇩🇪DE-193.36.84.67...
-  network: tcp
-  port: 41731
-  server: 193.36.84.67
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: d7d122fa-76b8-41f8-8436-9f2b6cbac1ff
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022281
-  network: ws
-  port: 80
-  server: 104.21.226.10
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702236
-  network: ws
-  port: 80
-  server: 104.21.224.4
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022101
-  network: ws
-  port: 80
-  server: 104.21.236.82
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 16|美国038
-  network: ws
-  port: 37000
-  server: 38.14.120.227
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.65825524.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702292
-  network: ws
-  port: 80
-  server: 104.21.227.15
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#22
-  network: ws
-  port: 80
-  server: 104.21.239.96
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022139
-  network: ws
-  port: 80
-  server: 104.21.236.64
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022182
-  network: ws
-  port: 80
-  server: 104.21.233.65
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-TCP-NA🇹🇷TR-62.133.63.40...
-  network: tcp
-  port: 14220
-  server: 62.133.63.40
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 2546df95-d3ea-4c93-88f8-b29ddac5690f
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702249
-  network: ws
-  port: 80
-  server: 104.21.239.97
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸|US|美国|@wxgqlfx|42
-  network: ws
-  port: 80
-  server: 104.21.234.53
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#23
-  network: ws
-  port: 80
-  server: 104.21.232.44
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|关注电报https://t.me/aifenxiang202...#2
-  network: ws
-  port: 80
-  server: 104.21.225.122
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt5.ir
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702288
-  network: ws
-  port: 80
-  server: 104.21.239.76
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702213
-  network: ws
-  port: 80
-  server: 104.21.234.73
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702275
-  network: ws
-  port: 80
-  server: 104.21.232.62
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-WS-NA🇰🇷KR-140.238.18.10...
-  network: ws
-  port: 42752
-  server: 140.238.18.105
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: b551aa22-22af-11ee-b8d8-f23c932eb68d
-  ws-opts:
-    headers:
-      Host: kr.yydsii.com
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-WS-TLS🇺🇸US-172.67.155.8...
-  network: ws
-  port: 443
-  server: 172.67.155.82
-  servername: kristin.makeup
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: kristin.makeup
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702252
-  network: ws
-  port: 80
-  server: 104.21.232.60
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022151
-  network: ws
-  port: 80
-  server: 104.21.224.24
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#24
+  name: 16|🇺🇸US_7022
   network: ws
   port: 80
   server: 104.21.228.43
@@ -2846,143 +1968,77 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702286
+  name: 16|@Hope_Net-join-us-on-Telegram#4
   network: ws
   port: 80
-  server: 104.21.229.49
+  server: 81.28.12.12
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 5e529016-d961-438e-9a99-0dcc5c0df208
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: rahyaft.serveirc.com
+    path: /@forwardv2ray
   udp: true
 - alterId: 0
   cipher: auto
-  client-fingerprint: chrome
-  name: 16,18,19|美国2|@ripaojiedian
+  name: 16|🇺🇸美国013
   network: ws
-  port: 80
-  server: 104.21.69.44
-  servername: ''
-  skip-cert-verify: false
-  tfo: false
-  tls: false
+  port: 443
+  server: 172.67.196.110
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt4.ir
-    path: /
+      Host: kellie.makeup
+    path: /linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#25
-  network: ws
-  port: 80
-  server: 104.21.229.46
+  name: 16|🔒VM-TCP-NA🇺🇸US-38.75.137.27...
+  network: tcp
+  port: 22324
+  server: 38.75.137.27
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702219
+  name: 16|加拿大022
   network: ws
-  port: 80
-  server: 104.21.239.95
+  port: 443
+  server: 104.21.25.94
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 4d74f126-0ef1-4579-b0a3-78e7b48ef067
+  ws-opts:
+    headers:
+      Host: de2-vmess.sshmax.xyz
+    path: /vmess
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 16|🇺🇸|US|美国|@wxgqlfx|51
+  network: ws
+  port: 8080
+  server: 162.159.134.23
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 9b196b50-37f2-4f4b-b175-06273adc6207
   ws-opts:
     headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: championship-bidding-oxygen-brochure.trycloudflare.com
+    path: 9b196b50-37f2-4f4b-b175-06273adc6207-vm
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_702270
-  network: ws
-  port: 80
-  server: 104.21.237.87
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022117
-  network: ws
-  port: 80
-  server: 104.21.226.34
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|VPN招代理电报联系@xiaoying229
-  network: ws
-  port: 80
-  server: 104.21.225.113
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt5.ir
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇦🇺澳大利亚002
-  network: ws
-  port: 52184
-  server: 170.64.205.32
-  tls: false
-  type: vmess
-  uuid: 67be35e4-d5e4-4468-8c21-797db958ef5b
-  ws-opts:
-    headers:
-      Host: m.instagram.com
-    path: /Shalana
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702228
-  network: ws
-  port: 80
-  server: 104.21.233.48
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|@Hope_Net-join-us-on-Telegram#1
+  name: 16|@Hope_Net-join-us-on-Telegram#5
   network: ws
   port: 443
   server: 172.67.152.214
@@ -2997,44 +2053,18 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|US_7022250
-  network: ws
-  port: 80
-  server: 104.21.231.57
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🌸20@oneclickvpnkeys
-  network: tcp
-  port: 24208
-  server: 195.201.29.238
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 1d244b9d-ce0f-49d5-99fd-da3f1e80ee59
-  udp: true
-- alterId: 1
-  cipher: auto
-  name: 16|🌸30@oneclickvpnkeys
+  name: 16|美国【TG：@ccbaohe】定时更新节点订阅
   network: ws
   port: 443
-  server: 172.67.179.37
-  servername: octavi.cfd
+  server: jader.fun
+  servername: ''
   tls: true
   type: vmess
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: octavi.cfd
-    path: linkvws
+      Host: jader.fun
+    path: /linkvws
   udp: true
 - alterId: 0
   cipher: auto
@@ -3052,1407 +2082,11 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#26
-  network: ws
-  port: 80
-  server: 104.21.228.23
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#27
-  network: ws
-  port: 80
-  server: 104.21.233.66
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#28
-  network: ws
-  port: 80
-  server: 104.21.232.64
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022126
-  network: ws
-  port: 80
-  server: 104.21.229.48
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#30
-  network: ws
-  port: 80
-  server: 104.21.227.38
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#31
-  network: ws
-  port: 80
-  server: 104.21.231.39
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022189
-  network: ws
-  port: 80
-  server: 104.21.229.29
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 1
-  cipher: auto
-  name: 16|Channelid:@ShadowProxy66🇺🇸
-  network: ws
-  port: 443
-  server: 172.67.164.184
-  servername: alvvin.click
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: alvvin.click
-    path: linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022275
-  network: ws
-  port: 80
-  server: 104.21.231.56
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-WS-NA🇨🇿CZ-77.75.230.125...
-  network: ws
-  port: 8080
-  server: 77.75.230.125
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: d466dd36-8b86-48b7-b0f0-67e7d128de6c
-  ws-opts:
-    headers:
-      Host: ''
-    path: /vmess
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#32
-  network: ws
-  port: 80
-  server: 104.21.232.41
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#33
-  network: ws
-  port: 80
-  server: 104.21.227.39
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022239
-  network: ws
-  port: 80
-  server: 104.21.233.46
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702232
-  network: ws
-  port: 80
-  server: 104.21.233.49
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#34
-  network: ws
-  port: 80
-  server: 104.21.226.11
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022119
-  network: ws
-  port: 80
-  server: 104.21.231.38
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702217
-  network: ws
-  port: 80
-  server: 104.21.236.84
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🌸17@oneclickvpnkeys
-  network: ws
-  port: 443
-  server: 198.41.202.5
-  servername: kittiy.sbs
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: kittiy.sbs
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702274
-  network: ws
-  port: 80
-  server: 104.21.237.66
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022197
-  network: ws
-  port: 80
-  server: 104.21.230.32
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022
-  network: ws
-  port: 80
-  server: 104.21.232.40
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022185
-  network: ws
-  port: 80
-  server: 104.21.230.53
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🌸24@oneclickvpnkeys
-  network: ws
-  port: 443
-  server: 188.114.96.3
-  servername: oliv.beauty
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: oliv.beauty
-    path: linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702298
-  network: ws
-  port: 80
-  server: 104.21.225.25
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702289
-  network: ws
-  port: 80
-  server: 104.21.236.83
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|加拿大020
-  network: ws
-  port: 443
-  server: 104.24.0.11
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: vip2323.cfd
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸|US|美国|@wxgqlfx|46
-  network: ws
-  port: 80
-  server: 104.21.233.45
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#35
-  network: ws
-  port: 80
-  server: 104.21.227.17
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702256
-  network: ws
-  port: 80
-  server: 104.21.227.18
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-WS-NA🇺🇸US-172.64.161.60...
-  network: ws
-  port: 2052
-  server: 172.64.161.60
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 6ad77d6b-7a45-4ed3-b65d-1c3ec0226603
-  ws-opts:
-    headers:
-      Host: us1cPZiz8nb.fzbqfrse.xyz
-    path: /video/6VBhAkCtV4/
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022113
-  network: ws
-  port: 80
-  server: 104.21.225.28
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#36
-  network: ws
-  port: 80
-  server: 104.21.235.75
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022203
-  network: ws
-  port: 80
-  server: 104.21.238.73
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022104
-  network: ws
-  port: 80
-  server: 104.21.228.40
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|@Hope_Net-join-us-on-Telegram#2
-  network: ws
-  port: 443
-  server: mtn-----join.outline-vpn.cloud
-  servername: vip2323.cfd
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: vip2323.cfd
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|VPN招代理电报联系@xiaoying229#1
-  network: ws
-  port: 80
-  server: 104.21.225.195
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt5.ir
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022159
-  network: ws
-  port: 80
-  server: 104.21.238.74
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 1
-  cipher: auto
-  name: 16|Channelid:@ShadowProxy66🇨🇦
-  network: ws
-  port: 443
-  server: 104.21.4.29
-  servername: oliv.beauty
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: oliv.beauty
-    path: linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇮🇶|IQ|伊拉克|@wxgqlfx|41
-  network: ws
-  port: 443
-  server: 109.230.114.2
-  servername: rahyaft.serveirc.com
-  tls: true
-  type: vmess
-  uuid: 5e529016-d961-438e-9a99-0dcc5c0df208
-  ws-opts:
-    headers:
-      Host: rahyaft.serveirc.com
-    path: /@forwardv2ray
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702299
-  network: ws
-  port: 80
-  server: 104.21.232.43
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022243
-  network: ws
-  port: 80
-  server: 104.21.237.88
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
-  name: 16,18,19|美国3|@ripaojiedian
-  network: ws
-  port: 2052
-  server: cfcdn1.sanfencdn9.com
-  servername: ''
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: 6ad77d6b-7a45-4ed3-b65d-1c3ec0226603
-  ws-opts:
-    headers:
-      Host: us1cPZiz8nb.fzbqfrse.xyz
-    path: /video/6VBhAkCtV4/
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702251
-  network: ws
-  port: 80
-  server: 104.21.239.98
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#37
-  network: ws
-  port: 80
-  server: 104.21.236.61
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🌸27@oneclickvpnkeys
-  network: ws
-  port: 443
-  server: 104.21.50.177
-  servername: alvvin.click
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: alvvin.click
-    path: linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_youtube@资源分享师_100
-  network: ws
-  port: 80
-  server: 104.21.225.8
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳 @WangCai_8
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-WS-TLS🏴‍☠️NA-104.21.51....
-  network: ws
-  port: 443
-  server: 104.21.51.208
-  servername: nina.bond
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: nina.bond
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|关注电报https://t.me/aifenxiang202...#3
-  network: ws
-  port: 8080
-  server: www.coldstone.club
-  tls: false
-  type: vmess
-  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
-  ws-opts:
-    headers:
-      Host: www.coldstone.club
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#38
-  network: ws
-  port: 80
-  server: 104.21.231.36
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#39
-  network: ws
-  port: 80
-  server: 104.21.224.22
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇮🇶|IQ|伊拉克|@wxgqlfx|38
-  network: ws
-  port: 80
-  server: 109.230.114.2
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 5e529016-d961-438e-9a99-0dcc5c0df208
-  ws-opts:
-    headers:
-      Host: rahyaft.serveirc.com
-    path: /@forwardv2ray
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_youtube@资源分享师_108
-  network: ws
-  port: 80
-  server: 104.21.237.86
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳 @WangCai_8
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_youtube@资源分享师_160
-  network: ws
-  port: 80
-  server: 104.21.227.19
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳 @WangCai_8
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022192
-  network: ws
-  port: 80
-  server: 104.21.238.92
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#40
-  network: ws
-  port: 80
-  server: 104.21.227.36
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|@Hope_Net-join-us-on-Telegram#4
-  network: ws
-  port: 443
-  server: 104.26.8.202
-  servername: vip2323.cfd
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: vip2323.cfd
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#41
-  network: ws
-  port: 80
-  server: 104.21.234.50
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702263
-  network: ws
-  port: 80
-  server: 104.21.236.80
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702214
-  network: ws
-  port: 80
-  server: 104.21.232.42
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|Channelid:@ShadowProxy66🇺🇸#1
-  network: ws
-  port: 443
-  server: 172.67.158.126
-  servername: nelly.homes
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: nelly.homes
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🌸19@oneclickvpnkeys
+  name: 16|Channelid:@ShadowProxy66🇨🇦#2
   network: ws
   port: 443
   server: 104.21.33.32
   servername: nelly.homes
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: nelly.homes
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|@Hope_Net-join-us-on-Telegram#5
-  network: ws
-  port: 443
-  server: 172.67.166.170
-  servername: irene.lat
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: irene.lat
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-TCP-NA🇺🇸US-51.81.210.17...
-  network: tcp
-  port: 12350
-  server: 51.81.210.176
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: fe7ad68e-6770-49b3-b0a8-40e694125662
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022111
-  network: ws
-  port: 80
-  server: 104.21.230.54
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022110
-  network: ws
-  port: 80
-  server: 104.21.233.67
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022165
-  network: ws
-  port: 80
-  server: 104.21.224.0
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022211
-  network: ws
-  port: 80
-  server: 104.21.235.58
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|VPN招代理电报联系@xiaoying229#2
-  network: ws
-  port: 8880
-  server: 217.160.45.31
-  tls: false
-  type: vmess
-  uuid: 4e186678-fcca-4325-e4bc-b2916bdf6708
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702254
-  network: ws
-  port: 80
-  server: 104.21.238.72
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#42
-  network: ws
-  port: 80
-  server: 104.21.235.55
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_youtube@资源分享师_34
-  network: ws
-  port: 80
-  server: 104.21.226.12
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳 @WangCai_8
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#43
-  network: ws
-  port: 80
-  server: 104.21.231.59
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|VPN招代理电报联系@xiaoying229#3
-  network: ws
-  port: 80
-  server: 104.21.225.34
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt5.ir
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸美国045
-  network: ws
-  port: 80
-  server: 151.101.193.57
-  tls: false
-  type: vmess
-  uuid: 66ccb11f-75a7-4282-8a60-31fed447401d
-  ws-opts:
-    headers:
-      Host: nmsl.kp
-    path: /aries?ed=2048
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702260
-  network: ws
-  port: 80
-  server: 104.21.229.45
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702242
-  network: ws
-  port: 80
-  server: 104.21.229.26
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
-  name: 16,18,19|新加坡3|@ripaojiedian
-  network: ws
-  port: 2052
-  server: cfcdn2.sanfencdn9.com
-  servername: ''
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: 6ad77d6b-7a45-4ed3-b65d-1c3ec0226603
-  ws-opts:
-    headers:
-      Host: jpafzyhfsg3.yofnhkfc.xyz
-    path: /video/u4eCZTxW
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022210
-  network: ws
-  port: 80
-  server: 104.21.230.33
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|加拿大014
-  network: ws
-  port: 443
-  server: 104.16.216.241
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: nelly.homes
-    path: /linkvws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#44
-  network: ws
-  port: 80
-  server: 104.21.239.75
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🔒VM-TCP-NA🇺🇸US-38.75.137.27...
-  network: tcp
-  port: 22324
-  server: 38.75.137.27
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸美国CloudFlare节点#1
-  network: ws
-  port: 80
-  server: 104.21.234.54
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|Channelid:@ShadowProxy66🇸🇪
-  network: ws
-  port: 443
-  server: 185.146.173.129
-  servername: nt-haze-7dad.rogap16875.workers.dev
-  tls: true
-  type: vmess
-  uuid: f584de15-2034-4170-a723-f48c2bae5e0f
-  ws-opts:
-    headers:
-      Host: nt-haze-7dad.rogap16875.workers.dev
-    path: /afrhms16v.bestxray.buzz/linkws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#45
-  network: ws
-  port: 80
-  server: 104.21.228.20
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022155
-  network: ws
-  port: 80
-  server: 104.21.224.23
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#46
-  network: ws
-  port: 80
-  server: 104.21.238.70
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 16|美国051
-  network: ws
-  port: 37000
-  server: 38.14.120.229
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    headers:
-      Host: www.65825524.xyz
-    path: /path/153428133302
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702278
-  network: ws
-  port: 80
-  server: 104.21.231.37
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸|US|美国|@wxgqlfx|53
-  network: ws
-  port: 80
-  server: 104.21.234.52
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_7022183
-  network: ws
-  port: 80
-  server: 104.21.228.22
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|🇺🇸US_7022#47
-  network: ws
-  port: 80
-  server: 104.21.235.56
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702239
-  network: ws
-  port: 80
-  server: 104.21.224.1
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_70223
-  network: ws
-  port: 80
-  server: 104.21.233.47
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_youtube@资源分享师_306
-  network: ws
-  port: 80
-  server: 104.21.234.70
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳 @WangCai_8
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|加拿大016
-  network: ws
-  port: 443
-  server: 104.16.217.241
-  servername: ''
   tls: true
   type: vmess
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
@@ -4472,155 +2106,57 @@ proxies:
   type: vmess
   uuid: 04621bae-ab36-11ec-b909-0242ac120002
   udp: true
-- alterId: 0
+- alterId: 1
   cipher: auto
-  name: 16|US_7022112
-  network: ws
-  port: 80
-  server: 104.21.239.78
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702247
-  network: ws
-  port: 80
-  server: 104.21.231.55
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702240
-  network: ws
-  port: 80
-  server: 104.21.239.79
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702264
-  network: ws
-  port: 80
-  server: 104.21.230.51
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702223
-  network: ws
-  port: 80
-  server: 104.21.226.30
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|Channelid:@ShadowProxy66🇨🇦#1
+  name: 16|🌸30@oneclickvpnkeys
   network: ws
   port: 443
-  server: 104.21.75.246
-  servername: cf.tonyluk.link
+  server: 172.67.179.37
+  servername: octavi.cfd
   tls: true
   type: vmess
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: cf.tonyluk.link
-    path: /ophelia.mom:443/linkvws
+      Host: octavi.cfd
+    path: linkvws
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🇺🇸US_7022#48
-  network: ws
-  port: 80
-  server: 104.21.226.33
+  name: 16|🔒VM-TCP-NA🇩🇪DE-168.119.49.2...
+  network: tcp
+  port: 47119
+  server: 168.119.49.232
   servername: ''
   tls: false
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt4.ir
-    path: '/?ed=2048&Telegram🇨🇳 '
+  uuid: f0e2af6c-f2bc-43a9-a367-5bb3adcfcb98
   udp: true
 - alterId: 0
   cipher: auto
-  name: 16|🔒VM-WS-NA🇨🇦CA-23.26.239.147...
-  network: ws
-  port: 46768
-  server: 23.26.239.147
+  name: 16|🔒VM-TCP-NA🇹🇷TR-62.133.63.40...
+  network: tcp
+  port: 14220
+  server: 62.133.63.40
   servername: ''
   tls: false
   type: vmess
-  uuid: 1362cc37-0917-4e40-dce4-c689609d9e82
-  ws-opts:
-    headers:
-      Host: 23.26.239.147
-    path: /
+  uuid: 2546df95-d3ea-4c93-88f8-b29ddac5690f
   udp: true
-- alterId: 0
+- alterId: 1
   cipher: auto
-  name: 16|US_70225
+  name: 16|🌸28@oneclickvpnkeys
   network: ws
-  port: 80
-  server: 104.21.229.27
-  servername: ''
-  tls: false
+  port: 443
+  server: 172.67.207.114
+  servername: ophelia.mom
+  tls: true
   type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 16|US_702287
-  network: ws
-  port: 80
-  server: 104.21.237.89
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
-  ws-opts:
-    headers:
-      Host: a.prapt1.ir
-    path: /?ed=2048&Telegram🇨🇳
+      Host: ophelia.mom
+    path: linkvws
   udp: true
 - alterId: 0
   cipher: auto
@@ -4631,7 +2167,7 @@ proxies:
   servername: jp04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4642,7 +2178,7 @@ proxies:
   servername: jp05.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4653,7 +2189,7 @@ proxies:
   servername: jp06.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4664,7 +2200,7 @@ proxies:
   servername: sg04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4675,7 +2211,7 @@ proxies:
   servername: sg05.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4686,7 +2222,7 @@ proxies:
   servername: sg06.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4697,7 +2233,7 @@ proxies:
   servername: us04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4708,7 +2244,7 @@ proxies:
   servername: us05.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4719,7 +2255,7 @@ proxies:
   servername: us06.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4730,7 +2266,7 @@ proxies:
   servername: kr04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4741,7 +2277,7 @@ proxies:
   servername: ph04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4752,7 +2288,7 @@ proxies:
   servername: ru04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4763,7 +2299,7 @@ proxies:
   servername: my04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4774,7 +2310,7 @@ proxies:
   servername: th04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4785,7 +2321,7 @@ proxies:
   servername: ar04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4796,7 +2332,7 @@ proxies:
   servername: hu04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4807,7 +2343,7 @@ proxies:
   servername: tr04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4818,7 +2354,7 @@ proxies:
   servername: ua04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4829,7 +2365,7 @@ proxies:
   servername: vn04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4840,7 +2376,7 @@ proxies:
   servername: br04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4851,7 +2387,7 @@ proxies:
   servername: in04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4862,7 +2398,7 @@ proxies:
   servername: au04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4873,7 +2409,7 @@ proxies:
   servername: uk04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4884,7 +2420,7 @@ proxies:
   servername: de04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4895,7 +2431,7 @@ proxies:
   servername: ca04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - alterId: 0
   cipher: auto
@@ -4906,7 +2442,7 @@ proxies:
   servername: es04.lovemc.xyz
   tls: true
   type: vmess
-  uuid: 54bd8dbb-e91c-4691-a1bd-b39343f32e85
+  uuid: 8a4d1ecf-4893-4437-941b-a18581236598
   udp: true
 - cipher: aes-128-gcm
   client-fingerprint: chrome
@@ -4941,6 +2477,18 @@ proxies:
   server: 42.2.115.231
   tfo: false
   type: ss
+  udp: true
+- alterId: 64
+  cipher: auto
+  client-fingerprint: chrome
+  name: 18|🇭🇰香港2|@ripaojiedian
+  port: 41492
+  server: 120.232.242.93
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   udp: true
 - cipher: aes-128-gcm
   client-fingerprint: chrome
@@ -5030,6 +2578,24 @@ proxies:
   ws-opts:
     headers:
       Host: bing.com
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  client-fingerprint: chrome
+  name: 18,19|美国2|@ripaojiedian
+  network: ws
+  port: 80
+  server: 104.21.69.44
+  servername: ''
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 7022982f-da4c-48c9-c660-b2315abdcf7e
+  ws-opts:
+    headers:
+      Host: a.prapt4.ir
     path: /
   udp: true
 - alterId: 0
