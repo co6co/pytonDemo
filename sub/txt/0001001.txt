@@ -1,17 +1,4 @@
 proxies:
-- name: 🇭🇰_CH_瑞士->🇭🇰_HK_香港_1
-  server: 64.110.65.177
-  port: 25857
-  type: vmess
-  uuid: 414365d6-12fb-3530-8135-ad14b8ad7726
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /db00
-  udp: true
 - name: 🇺🇸_CN_中国->🇺🇸_US_美国_1
   server: 183.232.170.22
   port: 30139
@@ -22,101 +9,28 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇭🇰_KR_韩国->🇭🇰_HK_香港_1
-  server: 130.162.151.122
-  port: 32454
-  type: vmess
-  uuid: 414365d6-12fb-3530-8135-ad14b8ad7726
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /db00
-  udp: true
-- name: 🇺🇸_US_美国_1
-  server: 2.namesilo123.top
-  port: 80
-  type: vmess
-  uuid: 4d68da82-e8d0-4eaa-aec9-0df4a23e1a04
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: 2.namesilo123.top
-  udp: true
-- name: 🇺🇸_US_美国_2
-  server: cfcdn1.sanfencdn9.com
-  port: 2052
-  type: vmess
-  uuid: 8e0fc6e0-1313-4767-b51c-5506680d534e
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /video/QXjZG5u4F2
-    headers:
-      Host: cfcdn1.sanfencdn9.com
-  udp: true
 - name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
-  server: yh1.freeh1.xyz
+  server: 162.159.1.33
   port: 8080
   type: vmess
-  uuid: ef8c954e-014f-4b36-8273-9b5086afab34
+  uuid: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
-    headers:
-      Host: yh1.freeh1.xyz
-  udp: true
-- name: 🇫🇷_FR_法国
-  server: 51.159.155.52
-  port: 3389
-  type: vmess
-  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
+    path: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96-vm
   udp: true
 - name: 🇺🇸_CN_中国->🇺🇸_US_美国_2
   server: 183.232.170.22
-  port: 30061
+  port: 30013
   type: vmess
   uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
-  udp: true
-- name: 🇺🇸_CA_加拿大->🇺🇸_US_美国_1
-  server: 23.227.38.22
-  port: 8080
-  type: vmess
-  uuid: 9258153a-dc97-4e39-9037-009abfc4fed0
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
   udp: true
 - name: _CN_中国->🇵🇸_PS_巴勒斯坦
   server: 183.232.170.22
@@ -128,131 +42,69 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
-  server: yh3.freeh1.xyz
-  port: 8080
+- name: 🇺🇸_US_美国->🇩🇪_DE_德国
+  server: 104.21.20.19
+  port: 80
   type: vmess
-  uuid: 82cb93a3-65a9-4dac-a2a7-d997b6c26d6a
+  uuid: 4be6650b-41be-4878-a28e-553fc4fb73e8
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: 82cb93a3-65a9-4dac-a2a7-d997b6c26d6a-vm
+    path: /
+  udp: true
+- name: 🇭🇰_CN_中国->🇭🇰_HK_香港
+  server: 223.113.130.55
+  port: 52052
+  type: vmess
+  uuid: c7395784-c77d-390a-9db6-67152462b95b
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /db00
+  udp: true
+- name: 🇺🇸_CA_加拿大->🇺🇸_US_美国
+  server: 23.227.38.11
+  port: 443
+  type: trojan
+  password: b17fa17d-13a0-4e8a-a398-8e549ea8b208
+  sni: syndication-statutes-wanted-logo.trycloudflare.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /argox-tr
     headers:
-      Host: yh3.freeh1.xyz
+      Host: syndication-statutes-wanted-logo.trycloudflare.com
+  udp: true
+- name: 🇬🇧_GB_英国
+  server: 18.135.242.0
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: false
+  udp: true
+- name: _CN_中国
+  server: 223.113.130.55
+  port: 58080
+  type: vmess
+  uuid: 75a68200-4d76-3eb6-b510-39b8e63b7823
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /db00
   udp: true
 - name: 🇺🇸_CN_中国->🇺🇸_US_美国_3
   server: 183.232.170.22
-  port: 30145
-  type: vmess
-  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇱🇺_LU_卢森堡_1
-  server: 78.111.102.232
-  port: 3389
-  type: vmess
-  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-  udp: true
-- name: 🇺🇸_CN_中国->🇺🇸_US_美国_4
-  server: 183.232.170.22
-  port: 30032
-  type: vmess
-  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇱🇺_LU_卢森堡_2
-  server: 45.82.31.164
-  port: 3389
-  type: vmess
-  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-  udp: true
-- name: 🇺🇸_CN_中国->🇺🇸_US_美国_5
-  server: 183.232.170.22
-  port: 30129
-  type: vmess
-  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇭🇰_CH_瑞士->🇭🇰_HK_香港_2
-  server: 64.110.78.246
-  port: 21203
-  type: vmess
-  uuid: 414365d6-12fb-3530-8135-ad14b8ad7726
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /db00
-  udp: true
-- name: 🇭🇰_KR_韩国->🇭🇰_HK_香港_2
-  server: 130.162.151.122
-  port: 32453
-  type: vmess
-  uuid: 414365d6-12fb-3530-8135-ad14b8ad7726
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /db00
-  udp: true
-- name: 🇺🇸_US_美国->🇷🇺_RU_俄罗斯联邦
-  server: 172.67.204.84
-  port: 443
-  type: trojan
-  password: qj1Dz1CJmFQRhWr1SP80aA
-  sni: cdn-21.gsmxreality.com
-  skip-cert-verify: false
-  network: grpc
-  grpc-opts:
-    grpc-service-name: 443trojan
-  udp: true
-- name: 🇺🇸_CN_中国->🇺🇸_US_美国_6
-  server: 183.232.170.22
-  port: 30013
-  type: vmess
-  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇺🇸_CN_中国->🇺🇸_US_美国_7
-  server: 183.232.170.22
-  port: 30058
+  port: 30147
   type: vmess
   uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
   alterId: 0
@@ -275,21 +127,51 @@ proxies:
     path:
     - /
   udp: true
-- name: 🇺🇸_US_美国_3
-  server: 172.64.161.60
-  port: 2052
+- name: 🇺🇸_CN_中国->🇺🇸_US_美国_4
+  server: 183.232.170.22
+  port: 30137
   type: vmess
-  uuid: 8e0fc6e0-1313-4767-b51c-5506680d534e
+  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸_CN_中国->🇺🇸_US_美国_5
+  server: 183.232.170.22
+  port: 30141
+  type: vmess
+  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸_US_美国_1
+  server: 104.26.4.57
+  port: 2095
+  type: vmess
+  uuid: 6658a3a6-225a-4d33-a5d2-82cfde565b4e
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /video/QXjZG5u4F2
+    path: /api/v3/download.getFile
   udp: true
-- name: 🇨🇦_CA_加拿大_2
-  server: 23.227.39.24
+- name: 🇺🇸_CN_中国->🇺🇸_US_美国_6
+  server: 183.232.170.22
+  port: 30129
+  type: vmess
+  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸_US_美国_2
+  server: yh1.dtku41.xyz
   port: 8080
   type: vmess
   uuid: 9258153a-dc97-4e39-9037-009abfc4fed0
@@ -300,10 +182,12 @@ proxies:
   network: ws
   ws-opts:
     path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
+    headers:
+      Host: yh1.dtku41.xyz
   udp: true
-- name: 🇺🇸_CN_中国->🇺🇸_US_美国_8
+- name: 🇺🇸_CN_中国->🇺🇸_US_美国_7
   server: 183.232.170.22
-  port: 30137
+  port: 30032
   type: vmess
   uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
   alterId: 0
@@ -311,30 +195,93 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇩🇪_DE_德国
-  server: cloudflare.cfgo.cc
-  port: 80
+- name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  server: yh3.freeh1.xyz
+  port: 8080
   type: vmess
-  uuid: 22a13aa2-4854-44cb-e090-ec71ab84b1ff
+  uuid: 82cb93a3-65a9-4dac-a2a7-d997b6c26d6a
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /
+    path: 82cb93a3-65a9-4dac-a2a7-d997b6c26d6a-vm
     headers:
-      Host: cloudflare.cfgo.cc
+      Host: yh3.freeh1.xyz
   udp: true
-- name: 🇺🇸_CN_中国->🇺🇸_US_美国_9
+- name: 🇺🇸_CN_中国->🇺🇸_US_美国_8
   server: 183.232.170.22
-  port: 30141
+  port: 30051
   type: vmess
   uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
+  udp: true
+- name: 🇺🇸_CN_中国->🇺🇸_US_美国_9
+  server: 183.232.170.22
+  port: 30058
+  type: vmess
+  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  server: yh2.freeh1.xyz
+  port: 8080
+  type: vmess
+  uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
+    headers:
+      Host: yh2.freeh1.xyz
+  udp: true
+- name: 🇺🇸_CN_中国->🇺🇸_US_美国_10
+  server: 183.232.170.22
+  port: 30145
+  type: vmess
+  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇨🇦_CA_加拿大_2
+  server: 23.227.38.23
+  port: 8080
+  type: vmess
+  uuid: 34c0bb5e-c120-432d-9c58-bd7d82c7397b
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: 34c0bb5e-c120-432d-9c58-bd7d82c7397b-vm
+  udp: true
+- name: 🇫🇷_FR_法国
+  server: 51.159.155.52
+  port: 3389
+  type: vmess
+  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
   udp: true
 - name: 🇦🇪_AE_阿联酋->🇬🇧_GB_英国
   server: 94.140.0.110
@@ -349,98 +296,18 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: 🇭🇰_CH_瑞士->🇭🇰_HK_香港_3
-  server: 64.110.65.177
-  port: 25856
+- name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  server: fbi.gov
+  port: 8080
   type: vmess
-  uuid: 414365d6-12fb-3530-8135-ad14b8ad7726
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /db00
-  udp: true
-- name: 🇺🇸_CN_中国->🇺🇸_US_美国_10
-  server: 183.232.170.22
-  port: 30051
-  type: vmess
-  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇭🇰_CH_瑞士->🇭🇰_HK_香港_4
-  server: 64.110.78.246
-  port: 21205
-  type: vmess
-  uuid: 414365d6-12fb-3530-8135-ad14b8ad7726
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /db00
-  udp: true
-- name: 🇺🇸_CN_中国->🇺🇸_US_美国_11
-  server: 183.232.170.22
-  port: 30147
-  type: vmess
-  uuid: 5635bc13-e51c-4381-ae56-949406fbd3ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇭🇰_CH_瑞士->🇭🇰_HK_香港_5
-  server: 64.110.78.246
-  port: 45703
-  type: vmess
-  uuid: 414365d6-12fb-3530-8135-ad14b8ad7726
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /db00
-  udp: true
-- name: 🇺🇸_US_美国->🇫🇷_FR_法国
-  server: s1c.v2.v001sss.xyz
-  port: 2082
-  type: vmess
-  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
+  uuid: ef8c954e-014f-4b36-8273-9b5086afab34
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /
+    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
     headers:
-      Host: s1c.v2.v001sss.xyz
-  udp: true
-- name: 🇺🇸_US_美国_4
-  server: 2usmax01.170203.xyz
-  port: 7454
-  type: trojan
-  password: 7e5f9c76-bda8-4f0c-8113-36078efec3c9
-  sni: 2usmax01.170203.xyz
-  skip-cert-verify: false
-  udp: true
-- name: 🇺🇸_CA_加拿大->🇺🇸_US_美国_2
-  server: 23.227.38.11
-  port: 443
-  type: trojan
-  password: b17fa17d-13a0-4e8a-a398-8e549ea8b208
-  sni: syndication-statutes-wanted-logo.trycloudflare.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /argox-tr
-    headers:
-      Host: syndication-statutes-wanted-logo.trycloudflare.com
+      Host: fbi.gov
   udp: true
