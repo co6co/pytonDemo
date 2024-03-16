@@ -28,13 +28,13 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]资源分享师_1164'
+  name: '[🇦🇶]资源分享师_1185'
   network: ws
   port: 80
   server: 104.21.224.249
   tls: false
   type: vmess
-  uuid: 2ff33502-b7d7-35ff-99a1-032950e3fd62
+  uuid: b2434f9b-7b0a-3ff6-a92f-4100eb6fe219
   ws-opts:
     headers:
       Host: a.prapt1.ir
@@ -42,14 +42,14 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]_1165'
+  name: '[🇦🇶]_1186'
   network: ws
   port: 80
   server: 104.21.226.12
   servername: ''
   tls: false
   type: vmess
-  uuid: c098ba23-f304-3b88-96f7-1e62451f538d
+  uuid: d531ef8b-c888-335d-aafc-6fb5f95aa45b
   ws-opts:
     headers:
       Host: a.prapt4.ir
@@ -57,29 +57,18 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]美国_1166'
+  name: '[🇦🇶]美国_1187'
   network: ws
   port: 80
   server: 104.21.226.32
   servername: ''
   tls: false
   type: vmess
-  uuid: 152dd26d-39a2-3bfa-8af7-60271772825f
+  uuid: 7c6405e7-05f1-34ac-8eac-cf58242ae35f
   ws-opts:
     headers:
       Host: a.prapt4.ir
     path: /?ed=2048&Telegram🇨🇳
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇬🇧]_1138'
-  network: tcp
-  port: 22324
-  server: 172.99.190.12
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: eedd8d88-195a-33f1-bcd9-82e19229fa61
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -88,58 +77,52 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]资源分享师_1164'
-  - '[🇦🇶]_1165'
-  - '[🇦🇶]美国_1166'
-  - '[🇬🇧]_1138'
+  - '[🇦🇶]资源分享师_1185'
+  - '[🇦🇶]_1186'
+  - '[🇦🇶]美国_1187'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]资源分享师_1164'
-  - '[🇦🇶]_1165'
-  - '[🇦🇶]美国_1166'
-  - '[🇬🇧]_1138'
+  - '[🇦🇶]资源分享师_1185'
+  - '[🇦🇶]_1186'
+  - '[🇦🇶]美国_1187'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]资源分享师_1164'
-  - '[🇦🇶]_1165'
-  - '[🇦🇶]美国_1166'
-  - '[🇬🇧]_1138'
+  - '[🇦🇶]资源分享师_1185'
+  - '[🇦🇶]_1186'
+  - '[🇦🇶]美国_1187'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]资源分享师_1164'
-  - '[🇦🇶]_1165'
-  - '[🇦🇶]美国_1166'
-  - '[🇬🇧]_1138'
+  - '[🇦🇶]资源分享师_1185'
+  - '[🇦🇶]_1186'
+  - '[🇦🇶]美国_1187'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]资源分享师_1164'
-  - '[🇦🇶]_1165'
-  - '[🇦🇶]美国_1166'
-  - '[🇬🇧]_1138'
+  - '[🇦🇶]资源分享师_1185'
+  - '[🇦🇶]_1186'
+  - '[🇦🇶]美国_1187'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]资源分享师_1164'
-  - '[🇦🇶]_1165'
-  - '[🇦🇶]美国_1166'
-  - '[🇬🇧]_1138'
+  - '[🇦🇶]资源分享师_1185'
+  - '[🇦🇶]_1186'
+  - '[🇦🇶]美国_1187'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
