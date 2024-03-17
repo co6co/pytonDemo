@@ -1,6 +1,36 @@
 proxies:
+- name: 🇦🇪-AE-001
+  server: 94.140.0.110
+  port: 8880
+  type: vmess
+  uuid: 0d1bf26a-ce97-4707-a270-7f4d2ae37334
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: food.zhaal.ir
+  udp: true
 - name: 🇺🇸-US-001
-  server: 151.101.3.10
+  server: cf.openxai.link
+  port: 8080
+  type: vmess
+  uuid: 477af724-de79-40dc-80ef-bf3bca0be3ce
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: eu3.openxai.link
+  udp: true
+- name: 🇺🇸-US-002
+  server: 151.101.193.57
   port: 80
   type: vmess
   uuid: 66ccb11f-75a7-4282-8a60-31fed447401d
@@ -13,6 +43,13 @@ proxies:
     path: /aries?ed=2048
     headers:
       Host: nmsl.kp
+  udp: true
+- name: 🇮🇪-IE-001
+  server: 52.169.6.50
+  port: 26396
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: AX3dBHFCyWsryCOz7TtZJ6
   udp: true
 - name: 🇨🇦-CA-001
   server: 134.122.41.160
@@ -29,22 +66,7 @@ proxies:
     path:
     - /
   udp: true
-- name: 🇦🇪-AE-001
-  server: 94.140.0.110
-  port: 8880
-  type: vmess
-  uuid: 0d1bf26a-ce97-4707-a270-7f4d2ae37334
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: food.zhaal.ir
-  udp: true
-- name: 🇺🇸-US-002
+- name: 🇺🇸-US-003
   server: yh3.freeh1.xyz
   port: 8080
   type: vmess
@@ -77,6 +99,21 @@ proxies:
       Host:
       - internet.life.com.by
   udp: true
+- name: 🇬🇷-GR-001
+  server: hk01.cao.gay
+  port: 443
+  type: vmess
+  uuid: bfef2469-9d59-4111-b54b-4d58e819a808
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /ws?ed=2048
+    headers:
+      Host: gw.alicdn.com
+  udp: true
 - name: 🇧🇷-BR-001
   server: 78.111.102.232
   port: 3389
@@ -94,20 +131,6 @@ proxies:
     headers:
       Host:
       - internet.life.com.by
-  udp: true
-- name: 🇺🇸-US-003
-  server: clean2.freelines.net
-  port: 443
-  type: vmess
-  uuid: 01a7ed92-3ff7-4872-84a8-fcb4757783c7
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: grpc
-  servername: rsfrndc.cpionline.co
-  grpc-opts:
-    grpc-service-name: fY8WXbLpF7tOInMZQZNim
   udp: true
 - name: 🇺🇸-US-004
   server: channel.hopev2ray.link
@@ -142,21 +165,6 @@ proxies:
       Host:
       - internet.life.com.by
   udp: true
-- name: 🇸🇬-SG-001
-  server: 01.appleid.bf
-  port: 443
-  type: vmess
-  uuid: bfef2469-9d59-4111-b54b-4d58e819a808
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /ws?ed=2048
-    headers:
-      Host: gw.alicdn.com
-  udp: true
 - name: 🇫🇷-FR-001
   server: 51.159.155.52
   port: 3389
@@ -176,6 +184,88 @@ proxies:
       - internet.life.com.by
   udp: true
 - name: 🇺🇸-US-005
+  server: aws.appleid.bf
+  port: 443
+  type: vmess
+  uuid: bfef2469-9d59-4111-b54b-4d58e819a808
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /CAT
+    headers:
+      Host: gw.alicdn.com
+  udp: true
+- name: 🇫🇷-FR-002
+  server: 146.59.102.109
+  port: 35230
+  type: ss
+  cipher: aes-256-gcm
+  password: lSreYGyaPfCsJQWf
+  udp: true
+- name: 🇨🇳-TW-001
+  server: tw.appleid.bf
+  port: 443
+  type: vmess
+  uuid: bfef2469-9d59-4111-b54b-4d58e819a808
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: gw.alicdn.com
+  network: ws
+  ws-opts:
+    path: /ws?ed=2048
+    headers:
+      Host: tw.appleid.bf
+  udp: true
+- name: 🇯🇵-JP-001
+  server: 13.113.90.205
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇸🇬-SG-001
+  server: 18.142.56.221
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇺🇸-US-006
+  server: 108.181.23.161
+  port: 8080
+  type: vmess
+  uuid: 969f1909-c0d3-4c30-813d-3aec5c838b7d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /1IKYjV0r/
+    headers:
+      Host: internet.life.com.by
+  udp: true
+- name: 🇨🇦-CA-002
+  server: 23.227.38.22
+  port: 8080
+  type: vmess
+  uuid: 9258153a-dc97-4e39-9037-009abfc4fed0
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
+    headers:
+      Host: per-essex-patterns-bowling.trycloudflare.com
+  udp: true
+- name: 🇺🇸-US-007
   server: fastly.com
   port: 80
   type: vmess
@@ -190,102 +280,21 @@ proxies:
     headers:
       Host: nmsl.kp
   udp: true
-- name: 🇮🇪-IE-001
-  server: 52.169.6.50
-  port: 26396
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: AX3dBHFCyWsryCOz7TtZJ6
-  udp: true
-- name: 🇻🇳-VN-001
-  server: 103.252.94.224
-  port: 80
-  type: vmess
-  uuid: 5278f5d3-f001-4459-94b6-7e0915238998
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: bs2.loadingip.com
-  network: ws
-  ws-opts:
-    path: /bs
-  udp: true
-- name: 🇫🇷-FR-002
-  server: 146.59.102.109
-  port: 35230
-  type: ss
-  cipher: aes-256-gcm
-  password: lSreYGyaPfCsJQWf
-  udp: true
-- name: 🇺🇸-US-006
-  server: us65.netfilx.live
-  port: 80
-  type: vmess
-  uuid: 60f12435-bb55-4da2-cb7d-4fea34ecfa37
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: us65.netfilx.live
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: us65.netfilx.live
-  udp: true
-- name: 🇰🇷-KR-001
-  server: p231.panda004.net
-  port: 4375
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-  udp: true
-- name: 🇯🇵-JP-001
-  server: 52.196.70.160
+- name: 🇯🇵-JP-002
+  server: 54.238.10.235
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇯🇵-JP-002
-  server: fastly.alipay.ovh
-  port: 80
-  type: vmess
-  uuid: 66ccb11f-75a7-4282-8a60-31fed447401d
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /aries?ed=2048
-    headers:
-      Host: nmsl.kp
-  udp: true
-- name: 🇺🇸-US-007
-  server: russia.com
-  port: 8880
-  type: vmess
-  uuid: 6658a3a6-225a-4d33-a5d2-82cfde565b4e
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /api/v3/download.getFile
-    headers:
-      Host: ssrsub.v03.ssrsub.com
-  udp: true
-- name: 🇰🇷-KR-002
+- name: 🇰🇷-KR-001
   server: p110.panda001.net
   port: 54345
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
   udp: true
-- name: 🇰🇷-KR-003
+- name: 🇰🇷-KR-002
   server: 211.201.169.70
   port: 54345
   type: ss
