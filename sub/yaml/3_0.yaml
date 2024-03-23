@@ -50,6 +50,17 @@ proxies:
   ws-path: /
   ws-headers:
     Host: mahilu.site
+- name: '[🇺🇸]北美地区_5'
+  type: vmess
+  server: houdezaiwu.cycmpr.com
+  port: 43215
+  uuid: f52b335a-e383-3cca-ae06-94825bbfb895
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-path: /a0b3595c
 - name: '[🇦🇶]美国_3'
   type: vmess
   server: 104.21.224.202
@@ -62,17 +73,6 @@ proxies:
   ws-path: /?ed=2048&Telegram🇨🇳@WangCai_8
   ws-headers:
     Host: a.prapt1.ir
-- name: '[🇺🇸]北美地区_5'
-  type: vmess
-  server: houdezaiwu.cycmpr.com
-  port: 43215
-  uuid: f52b335a-e383-3cca-ae06-94825bbfb895
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-path: /a0b3595c
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -82,8 +82,8 @@ proxy-groups:
   - 🔰 延迟最低
   - '[🇦🇶]美国_2'
   - '[🇺🇸]美国_10'
-  - '[🇦🇶]美国_3'
   - '[🇺🇸]北美地区_5'
+  - '[🇦🇶]美国_3'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
@@ -92,8 +92,8 @@ proxy-groups:
   - REJECT
   - '[🇦🇶]美国_2'
   - '[🇺🇸]美国_10'
-  - '[🇦🇶]美国_3'
   - '[🇺🇸]北美地区_5'
+  - '[🇦🇶]美国_3'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -102,8 +102,8 @@ proxy-groups:
   - REJECT
   - '[🇦🇶]美国_2'
   - '[🇺🇸]美国_10'
-  - '[🇦🇶]美国_3'
   - '[🇺🇸]北美地区_5'
+  - '[🇦🇶]美国_3'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -112,16 +112,16 @@ proxy-groups:
   - REJECT
   - '[🇦🇶]美国_2'
   - '[🇺🇸]美国_10'
-  - '[🇦🇶]美国_3'
   - '[🇺🇸]北美地区_5'
+  - '[🇦🇶]美国_3'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
   - '[🇦🇶]美国_2'
   - '[🇺🇸]美国_10'
-  - '[🇦🇶]美国_3'
   - '[🇺🇸]北美地区_5'
+  - '[🇦🇶]美国_3'
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -130,8 +130,8 @@ proxy-groups:
   - ♻️ 自动选择
   - '[🇦🇶]美国_2'
   - '[🇺🇸]美国_10'
-  - '[🇦🇶]美国_3'
   - '[🇺🇸]北美地区_5'
+  - '[🇦🇶]美国_3'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
