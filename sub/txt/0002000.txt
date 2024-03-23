@@ -1,5 +1,38 @@
 proxies:
-- name: CA_speednode_0001
+- name: BR_speednode_0001
+  server: 78.111.102.232
+  port: 3389
+  type: vmess
+  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+  udp: true
+- name: BR_speednode_0002
+  server: 78.111.102.232
+  port: 3389
+  type: vmess
+  alterId: 0
+  cipher: auto
+  h2-opts: {}
+  http-opts:
+    headers:
+      Host:
+      - 78.111.102.232
+    method: GET
+    path:
+    - /
+  network: http
+  skip-cert-verify: true
+  udp: true
+  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
+- name: CA_speednode_0003
   server: 134.122.41.160
   port: 3389
   type: vmess
@@ -17,7 +50,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
-- name: CA_speednode_0002
+- name: CA_speednode_0004
   server: 134.122.41.160
   port: 3389
   type: vmess
@@ -32,66 +65,77 @@ proxies:
     path:
     - /
   udp: true
-- name: CN_speednode_0003
+- name: CN_speednode_0005
+  server: hk-auto-console.suya.ink
+  port: 8024
+  type: ss
+  cipher: aes-256-gcm
+  password: 8F0544B4-40A9-4EA5-AB45-DF155034884E
+  udp: true
+- name: CN_speednode_0006
+  server: gzyd.pmxu.link
+  port: 26841
+  type: vmess
+  alterId: 0
+  cipher: auto
+  tls: false
+  uuid: 32cd139b-237d-3574-bc52-64428e3e238d
+  udp: true
+- name: CN_speednode_0007
   server: v3-js-jp.as9929.uk
   port: 53495
   type: ss
   cipher: aes-128-gcm
   password: e41b8b00-d940-4006-80ff-bc7865b3b5e0
   udp: true
-- name: CN_speednode_0004
+- name: CN_speednode_0008
+  server: 90778990.okc94l-zleouxmco-tw01.my777999.top
+  port: 34999
+  type: vmess
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
+  tls: false
+  uuid: bea2e265-0bb1-4426-b339-cb2e6160ab3e
+  udp: true
+- name: CN_speednode_0009
+  server: gran.efnwgood.top
+  port: 28894
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 9bc1eddf-1674-40f1-ad64-00a6fc5c2054
+  udp: true
+- name: CN_speednode_0010
   server: south.eeeeeef998.buzz
   port: 14001
   type: trojan
   password: b5628d68-b5c7-4007-b4f6-c45ef909fa82
   skip-cert-verify: true
   udp: true
-- name: CN_speednode_0005
-  server: sui.forlive.live
-  port: 19446
-  type: vmess
-  alterId: 0
-  cipher: auto
-  network: ws
-  skip-cert-verify: true
-  tls: false
-  uuid: 2642df7e-42bd-4325-95a6-758f631f98b2
-  ws-opts:
-    path: /
-  udp: true
-- name: CN_speednode_0006
+- name: CN_speednode_0011
   server: v3-js-jp.as9929.uk
   port: 33861
   type: ss
   cipher: aes-128-gcm
   password: e41b8b00-d940-4006-80ff-bc7865b3b5e0
-  delay: 1734
+  delay: 1845
   udp: true
-- name: CN_speednode_0007
+- name: CN_speednode_0012
   server: vip.basicnode.host
-  port: 11802
+  port: 11851
   type: ssr
   cipher: chacha20-ietf
+  client-fingerprint: chrome
   obfs: tls1.2_ticket_auth
-  obfs-param: b91a022997.microsoft.com
+  obfs-param: 880e226272.microsoft.com
   password: Fhbe0z
   protocol: auth_aes128_sha1
-  protocol-param: 22997:JeHHT2
+  protocol-param: 26272:09kp3qPzKiKRsAqm
   udp: true
-- name: CN_speednode_0008
-  server: vip3.niuniupremium.xyz
-  port: 11421
-  type: ssr
-  cipher: chacha20-ietf
-  obfs: tls1.2_ticket_auth
-  obfs-param: b91a022997.microsoft.com
-  password: Fhbe0z
-  protocol: auth_aes128_sha1
-  protocol-param: 22997:JeHHT2
-  udp: true
-- name: CN_speednode_0009
-  server: vip3.niuniupremium.xyz
-  port: 11428
+- name: CN_speednode_0013
+  server: vip.basicnode.host
+  port: 11806
   type: ssr
   cipher: chacha20-ietf
   client-fingerprint: chrome
@@ -101,83 +145,18 @@ proxies:
   protocol: auth_aes128_sha1
   protocol-param: 10182:Ed7u0G
   udp: true
-- name: CN_speednode_0010
-  server: gzyd.pmxu.link
-  port: 26841
-  type: vmess
-  alterId: 0
-  cipher: auto
-  network: tcp
-  skip-cert-verify: true
-  tls: false
-  uuid: 32cd139b-237d-3574-bc52-64428e3e238d
-  udp: true
-- name: CN_speednode_0011
-  server: ddbcb0bb-0765-dacc-887b-bf8c113b6d02.xn--37qy2m7z0cohn.xn--6qq986b3xl
-  port: 20030
-  type: vmess
-  alterId: 0
-  cipher: auto
-  network: ws
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  uuid: 2c715d12-69d4-468b-8c24-e631cf5aeb95
-  ws-opts:
-    headers:
-      Host: ddbcb0bb-0765-dacc-887b-bf8c113b6d02.xn--37qy2m7z0cohn.xn--6qq986b3xl
-    path: /
-- name: CN_speednode_0012
+- name: CN_speednode_0014
   server: vip.basicnode.host
-  port: 11803
+  port: 11806
   type: ssr
   cipher: chacha20-ietf
-  obfs: tls1.2_ticket_auth
-  obfs-param: 880e226272.microsoft.com
-  password: Fhbe0z
-  protocol: auth_aes128_sha1
-  protocol-param: 26272:09kp3qPzKiKRsAqm
-  udp: true
-- name: CN_speednode_0013
-  server: vip3.niuniupremium.xyz
-  port: 11424
-  type: ssr
-  cipher: chacha20-ietf
-  client-fingerprint: chrome
   obfs: tls1.2_ticket_auth
   obfs-param: b91a022997.microsoft.com
   password: Fhbe0z
   protocol: auth_aes128_sha1
   protocol-param: 22997:JeHHT2
   udp: true
-- name: CN_speednode_0014
-  server: 183.232.170.22
-  port: 30061
-  type: vmess
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  uuid: 54fc2504-f8d1-46f9-9ff5-f419953d02fb
 - name: CN_speednode_0015
-  server: vip3.niuniupremium.xyz
-  port: 16928
-  type: vmess
-  alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
-  network: ws
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  uuid: 2ab54438-8af9-3711-bf1a-676fcc144586
-  ws-opts:
-    headers:
-      Host: 193.25.215.160
-    path: /v2ray
-  udp: true
-- name: CN_speednode_0016
   server: 223.113.130.55
   port: 58080
   type: vmess
@@ -192,243 +171,229 @@ proxies:
       Host: cache-hk-1.cn-db.top
     path: /db00
   udp: true
+- name: CN_speednode_0016
+  server: ddns.olucloud.subapi.cc
+  port: 20009
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 55a021e6-30f6-46c5-8297-a2b74d0b3031
+  udp: true
 - name: CN_speednode_0017
-  server: hk.lianjianode.cc
-  port: 21032
-  type: vmess
-  uuid: 2e009a5a-5329-46cc-a69e-097b94323328
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /hongkong
-    headers:
-      Host: hk1.luodi.xyz
+  server: vip3.niuniupremium.xyz
+  port: 11428
+  type: ssr
+  cipher: chacha20-ietf
+  obfs: tls1.2_ticket_auth
+  obfs-param: 5db9910182.microsoft.com
+  password: Fhbe0z
+  protocol: auth_aes128_sha1
+  protocol-param: 10182:Ed7u0G
   udp: true
 - name: CN_speednode_0018
-  server: hk01.kkp.wtf
-  port: 24883
+  server: gtm1.ktmwan.com
+  port: 27262
   type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
+  cipher: chacha20-ietf-poly1305
+  password: d6f0ebb1-cfc3-4f7b-ae8c-6a1374cfaa06
   udp: true
 - name: CN_speednode_0019
-  server: ru03.kkp.wtf
-  port: 24883
+  server: v3-js-us.as9929.uk
+  port: 19387
   type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
+  cipher: aes-128-gcm
+  password: e41b8b00-d940-4006-80ff-bc7865b3b5e0
   udp: true
 - name: CN_speednode_0020
-  server: sgp01.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
+  server: vip3.niuniupremium.xyz
+  port: 11424
+  type: ssr
+  cipher: chacha20-ietf
+  obfs: tls1.2_ticket_auth
+  obfs-param: b91a022997.microsoft.com
+  password: Fhbe0z
+  protocol: auth_aes128_sha1
+  protocol-param: 22997:JeHHT2
   udp: true
 - name: CN_speednode_0021
-  server: in01.kkp.wtf
-  port: 24883
+  server: v3-js-sg.as9929.uk
+  port: 22466
   type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
+  cipher: aes-128-gcm
+  password: e41b8b00-d940-4006-80ff-bc7865b3b5e0
+  delay: 1429
   udp: true
 - name: CN_speednode_0022
-  server: tw17.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
+  server: vip.basicnode.host
+  port: 11803
+  type: ssr
+  LLC - 5: None
+  cipher: chacha20-ietf
+  country: 🇨🇳CN
+  delay: 1571
+  obfs: tls1.2_ticket_auth
+  obfs-param: 880e226272.microsoft.com
+  password: Fhbe0z
+  protocol: auth_aes128_sha1
+  protocol-param: 26272:09kp3qPzKiKRsAqm
   udp: true
 - name: CN_speednode_0023
-  server: kr01.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
-  udp: true
-- name: CN_speednode_0024
-  server: jp19.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
-  udp: true
-- name: CN_speednode_0025
-  server: au01.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
-  udp: true
-- name: CN_speednode_0026
-  server: sui.forlive.live
-  port: 19700
+  server: ddbcb0bb-0765-dacc-887b-bf8c113b6d02.xn--37qy2m7z0cohn.xn--6qq986b3xl
+  port: 20014
   type: vmess
-  uuid: 2642df7e-42bd-4325-95a6-758f631f98b2
+  alterId: 0
+  cipher: auto
+  network: ws
+  skip-cert-verify: true
+  tls: false
+  udp: true
+  uuid: 2c715d12-69d4-468b-8c24-e631cf5aeb95
+  ws-opts:
+    headers:
+      Host: ddbcb0bb-0765-dacc-887b-bf8c113b6d02.xn--37qy2m7z0cohn.xn--6qq986b3xl
+    path: /
+- name: CN_speednode_0024
+  server: v3-js-hk.as9929.uk
+  port: 34936
+  type: ss
+  cipher: aes-128-gcm
+  password: e41b8b00-d940-4006-80ff-bc7865b3b5e0
+  udp: true
+- name: CZ_speednode_0025
+  server: 77.75.230.125
+  port: 8880
+  type: vmess
+  uuid: d466dd36-8b86-48b7-b0f0-67e7d128de6c
   alterId: 0
   cipher: auto
   tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+  udp: true
+- name: DE_speednode_0026
+  server: de2.trojanvpn.de
+  port: 2053
+  type: trojan
+  password: f37a931d-7092-48fe-b82f-a98da3040eb2
   skip-cert-verify: true
+  sni: ftp.debian.org
+  udp: true
+- name: DE_speednode_0027
+  server: 95.164.68.116
+  port: 2053
+  type: trojan
+  password: f37a931d-7092-48fe-b82f-a98da3040eb2
+  skip-cert-verify: true
+  udp: true
+  delay: 1104
+- name: DE_speednode_0028
+  server: 95.164.68.116
+  port: 2053
+  type: trojan
+  country: 🏁 ZZ
+  password: f37a931d-7092-48fe-b82f-a98da3040eb2
+  skip-cert-verify: true
+  sni: ftp.debian.org
+  udp: true
+- name: FI_speednode_0029
+  server: 78.153.139.25
+  port: 32147
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: i7NSWSkDRfecVB0PVaIOhv
+  udp: true
+- name: FR_speednode_0030
+  server: 213.32.63.176
+  port: 3586
+  type: vmess
+  alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - zula.ir
+    method: GET
+    path:
+    - /OUIpxwwmtpJGIWzraW7dl5
+  network: http
+  skip-cert-verify: true
+  tls: false
+  udp: true
+  uuid: 763d2999-6321-4e4a-9eea-574820d0a547
+- name: FR_speednode_0031
+  server: 213.32.63.176
+  port: 3586
+  type: vmess
+  alterId: 0
+  cipher: chacha20-poly1305
+  http-opts:
+    headers:
+      Host:
+      - zula.ir
+    method: GET
+    path:
+    - /OUIpxwwmtpJGIWzraW7dl5
+  network: http
+  skip-cert-verify: true
+  tls: false
+  udp: true
+  uuid: 763d2999-6321-4e4a-9eea-574820d0a547
+- name: FR_speednode_0032
+  server: 51.178.206.74
+  port: 42905
+  type: ss
+  cipher: aes-256-gcm
+  password: Q3j8V3jIENkzs8ZE
+  udp: true
+- name: HK_speednode_0033
+  server: 43.154.34.74
+  port: 1935
+  type: vmess
+  alterId: 0
+  cipher: auto
+  network: ws
+  skip-cert-verify: true
+  tls: true
+  uuid: da622f9b-9a8f-4aca-8421-064b41fb898f
+  ws-opts:
+    headers:
+      host: hks1.mac2winer.cfd
+    path: /
+  udp: true
+- name: HK_speednode_0034
+  server: 47.243.28.9
+  port: 26927
+  type: vmess
+  alterId: 0
+  cipher: auto
+  network: ws
+  skip-cert-verify: true
+  tls: true
+  uuid: 4db02294-d433-4ffa-ee5c-50fbc9e8f28f
+  ws-opts:
+    headers:
+      host: wapmiandian.mac2winer.cfd
+    path: /4db02294
+  udp: true
+- name: HK_speednode_0035
+  server: 43.154.96.33
+  port: 443
+  type: vmess
+  19|香港6|@ripaojiedian: None
+  uuid: 5840ab2d-ab59-4eb0-9dea-122d0fbbd2d9
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: sui.forlive.live
+      Host: cfhk.393930.xyz
   udp: true
-- name: CN_speednode_0027
-  server: ge02.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
-  udp: true
-- name: CN_speednode_0028
-  server: 183.240.220.84
-  port: 11845
-  type: ssr
-  cipher: chacha20-ietf
-  password: Fhbe0z
-  protocol: auth_aes128_sha1
-  obfs: tls1.2_ticket_auth
-  protocol-param: 9890:cqtnFi
-  obfs-param: ac3669890.microsoft.com
-  udp: true
-- name: CN_speednode_0029
-  server: ca01.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
-  udp: true
-- name: CN_speednode_0030
-  server: uk01.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
-  udp: true
-- name: CN_speednode_0031
-  server: fr08.kkp.wtf
-  port: 24883
-  type: ss
-  cipher: aes-256-cfb
-  password: 9xJYMv
-  udp: true
-- name: DE_speednode_0032
-  server: 95.164.68.116
-  port: 2053
-  type: trojan
-  alterId: 0
-  cipher: auto
-  network: tcp
-  password: f37a931d-7092-48fe-b82f-a98da3040eb2
-  skip-cert-verify: true
-  sni: ftp.debian.org
-  tls: true
-  udp: true
-- name: FR_speednode_0033
-  server: 213.32.63.176
-  port: 3586
-  type: vmess
-  alterId: 0
-  cipher: auto
-  http-opts:
-    headers:
-      Host:
-      - zula.ir
-    method: GET
-    path:
-    - /OUIpxwwmtpJGIWzraW7dl5
-  network: http
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  uuid: 763d2999-6321-4e4a-9eea-574820d0a547
-- name: FR_speednode_0034
-  server: 213.32.63.176
-  port: 3586
-  type: vmess
-  alterId: 0
-  cipher: chacha20-poly1305
-  http-opts:
-    headers:
-      Host:
-      - zula.ir
-    method: GET
-    path:
-    - /OUIpxwwmtpJGIWzraW7dl5
-  network: http
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  uuid: 763d2999-6321-4e4a-9eea-574820d0a547
-- name: FR_speednode_0035
-  server: max-ip.hiroman5445.ir
-  port: 3586
-  type: vmess
-  alterId: 0
-  cipher: chacha20-poly1305
-  http-opts:
-    headers:
-      Host:
-      - zula.ir
-    method: GET
-    path:
-    - /OUIpxwwmtpJGIWzraW7dl5
-  network: http
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  uuid: a663bbab-4e9e-4080-b8ab-edd59fe1fdce
-- name: GB_speednode_0036
-  server: 51.143.181.129
-  port: 17415
-  type: ss
-  password: 7TztWGKUcKJn68XtI5Yj04
-  cipher: chacha20-ietf-poly1305
-  udp: true
-- name: GB_speednode_0037
-  server: 51.143.142.225
-  port: 2104
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: tWgBHRg1EzdeRha7R2A2Tp
-  udp: true
-- name: HK_speednode_0038
-  server: 194.104.147.80
-  port: 443
-  type: vmess
-  alterId: 0
-  cipher: auto
-  network: ws
-  skip-cert-verify: true
-  tls: true
-  uuid: 3f4d6dd8-0ea2-4ce4-8e30-6a581e13cc4d
-  ws-opts:
-    headers:
-      Host: hk.pdda.me
-    path: /pdd?ed=2048
-  udp: true
-- name: HK_speednode_0039
-  server: 43.154.230.30
-  port: 443
-  type: vmess
-  alterId: 0
-  cipher: auto
-  network: ws
-  skip-cert-verify: true
-  tls: true
-  uuid: 3f4d6dd8-0ea2-4ce4-8e30-6a581e13cc4d
-  ws-opts:
-    headers:
-      Host: jp.pddf.buzz
-    path: /pdd?ed=2048
-  udp: true
-- name: HK_speednode_0040
-  server: 8.218.71.80
+- name: HK_speednode_0036
+  server: 8.218.82.85
   port: 443
   type: ss
   cipher: aes-128-gcm
@@ -440,46 +405,112 @@ proxies:
     mode: websocket
     tls: false
   udp: true
-- name: JP_speednode_0041
-  server: 52.194.214.99
+- name: HK_speednode_0037
+  server: 16.162.152.191
+  port: 443
+  type: vmess
+  Inc. - 9: None
+  uuid: e5ab61c2-5e8f-4473-dafa-833fa50edd51
+  alterId: 0
+  cipher: auto
+  network: ws
+  http-opts: {}
+  h2-opts: {}
+  tls: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /e5ab61c2
+    headers:
+      host: waphk.mac2winer.cfd
+  delay: 728
+  udp: true
+- name: HK_speednode_0038
+  server: 8.218.71.80
   port: 443
   type: ss
-  password: amazonskr05
+  cipher: aes-128-gcm
+  password: a-wym4ovY4Yw
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: ''
+    mode: websocket
+    mux: true
+    path: ''
+    skip-cert-verify: true
+    tls: false
+  udp: true
+- name: HK_speednode_0039
+  server: 47.243.196.229
+  port: 443
+  type: ss
+  Ltd. - 1: None
+  country: 🇺🇸 US
+  password: a-wym4ovY4Yw
+  cipher: aes-128-gcm
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: ''
+    mode: websocket
+    tls: false
+  delay: 486
+  udp: true
+- name: HK_speednode_0040
+  server: 118.107.244.82
+  port: 443
+  type: vmess
+  19|香港3|@ripaojiedian: None
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/311227222808
+    headers:
+      Host: www.37420790.xyz
+  udp: true
+- name: IS_speednode_0041
+  server: 37.235.49.152
+  port: 989
+  type: ss
   cipher: aes-256-cfb
-  delay: 608
+  country: 🇮🇸IS
+  password: f8f7aCzcPKbsF8p3
   udp: true
 - name: JP_speednode_0042
   server: 54.248.173.222
   port: 443
   type: ss
-  Inc. - 8: None
+  Inc. - 7: None
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-  delay: 364
+  delay: 187
 - name: JP_speednode_0043
-  server: 13.115.234.77
-  port: 443
-  type: ss
-  password: amazonskr05
-  cipher: aes-256-cfb
-  delay: 304
-  udp: true
-- name: JP_speednode_0044
-  server: 18.183.101.186
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: JP_speednode_0045
   server: 54.249.1.223
   port: 443
   type: ss
-  Inc. - 2: None
-  password: amazonskr05
+  Inc. - 4: None
   cipher: aes-256-cfb
-  delay: 205
+  password: amazonskr05
+  delay: 287
+  udp: true
+- name: JP_speednode_0044
+  server: 35.77.89.124
+  port: 443
+  type: ss
+  Inc. - 1: None
+  cipher: aes-256-cfb
+  password: amazonskr05
+  delay: 184
+  udp: true
+- name: JP_speednode_0045
+  server: 13.231.154.132
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
   udp: true
 - name: JP_speednode_0046
   server: jp2trojan.cloudbb.loan
@@ -490,58 +521,63 @@ proxies:
   skip-cert-verify: true
   udp: true
 - name: JP_speednode_0047
-  server: 52.69.81.42
+  server: 43.207.80.176
   port: 443
   type: ss
+  Inc. - 2: None
+  client-fingerprint: chrome
   cipher: aes-256-cfb
   password: amazonskr05
+  tfo: false
+  delay: 353
   udp: true
 - name: JP_speednode_0048
-  server: 35.77.89.124
+  server: 18.183.101.186
+  port: 443
+  type: ss
+  udp: true
+  password: amazonskr05
+  cipher: aes-256-cfb
+  delay: 300
+- name: JP_speednode_0049
+  server: 43.206.237.42
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: KR_speednode_0049
-  server: 13.209.11.98
+- name: JP_speednode_0050
+  server: 52.194.214.99
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: KR_speednode_0050
-  server: 43.201.56.52
+- name: JP_speednode_0051
+  server: 13.112.216.180
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: KR_speednode_0051
-  server: 54.180.138.72
+- name: JP_speednode_0052
+  server: 52.195.225.184
   port: 443
   type: ss
   cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: KR_speednode_0052
-  server: 43.201.6.30
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  country: 🇰🇷KR
   password: amazonskr05
   udp: true
 - name: KR_speednode_0053
-  server: 54.180.133.185
+  server: 43.201.6.30
   port: 443
   type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  delay: 396
+  Inc. - 1: None
   udp: true
+  password: amazonskr05
+  cipher: aes-256-cfb
+  delay: 347
 - name: KR_speednode_0054
-  server: 3.34.200.94
+  server: 43.201.56.52
   port: 443
   type: ss
   cipher: aes-256-cfb
@@ -551,6 +587,7 @@ proxies:
   server: 43.203.201.192
   port: 443
   type: ss
+  Inc. - 1: None
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
@@ -558,17 +595,20 @@ proxies:
   server: 45.82.31.164
   port: 3389
   type: vmess
-  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
   alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: http
+  h2-opts: {}
   http-opts:
+    headers:
+      Host:
+      - 45.82.31.164
     method: GET
     path:
     - /
+  network: http
+  skip-cert-verify: true
   udp: true
+  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
 - name: KZ_speednode_0057
   server: 45.82.31.164
   port: 3389
@@ -590,120 +630,185 @@ proxies:
   server: 45.82.31.164
   port: 3389
   type: vmess
+  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
   alterId: 0
   cipher: auto
-  h2-opts: {}
+  tls: false
+  skip-cert-verify: false
+  network: http
   http-opts:
-    headers:
-      Host:
-      - 45.82.31.164
     method: GET
     path:
     - /
-  network: http
-  skip-cert-verify: true
   udp: true
-  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
 - name: NL_speednode_0059
-  server: 185.70.186.10
-  port: 2188
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9ZS8D1WEqefSScNkFmNatF
+  server: 185.236.233.111
+  port: 2053
+  type: trojan
+  country: 🇸🇨SC
+  password: ba74833c-8c0f-4dcd-8cbc-13e3c32d3765
+  skip-cert-verify: true
+  sni: ftp.debian.org
   udp: true
 - name: NL_speednode_0060
   server: 185.236.233.111
   port: 2053
   type: trojan
-  country: 🇳🇱NL
   password: ba74833c-8c0f-4dcd-8cbc-13e3c32d3765
   skip-cert-verify: true
-  sni: ftp.debian.org
   udp: true
-  delay: 1680
 - name: NL_speednode_0061
-  server: 185.236.233.111
-  port: 2053
-  type: trojan
-  password: ba74833c-8c0f-4dcd-8cbc-13e3c32d3765
+  server: 46.182.107.181
+  port: 41000
+  type: vmess
+  alterId: 64
+  cipher: auto
+  network: ws
   skip-cert-verify: true
+  tls: true
   udp: true
+  uuid: 21155efd-8e29-43d2-95bc-fe3190ecb1c6
+  ws-opts:
+    path: /path/1710638116560
 - name: SG_speednode_0062
-  server: 52.221.183.250
+  server: 13.229.57.68
   port: 443
   type: ss
-  Inc. - 2: None
+  udp: true
   password: amazonskr05
   cipher: aes-256-cfb
-  delay: 360
-  udp: true
+  delay: 270
 - name: SG_speednode_0063
-  server: 18.141.207.80
+  server: 54.169.201.145
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
 - name: SG_speednode_0064
-  server: 54.169.114.152
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: SG_speednode_0065
   server: 18.142.56.221
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: SG_speednode_0066
+- name: SG_speednode_0065
   server: 139.162.50.27
   port: 80
   type: ss
   cipher: chacha20-ietf-poly1305
   password: w6f5kNwwvCZTkh0JZztIV3
   udp: true
-- name: TW_speednode_0067
-  server: b12.ntbq.dynu.net
-  port: 9755
-  type: trojan
-  Ltd. - 6: None
-  udp: true
-  password: 4c1400d1-f58b-4551-8df7-c7e3557e1a98
-  sni: b12.ntbq.dynu.net
-  skip-cert-verify: true
-  delay: 2677
-- name: TW_speednode_0068
+- name: TW_speednode_0066
   server: ty11t.twty.dynu.net
   port: 13761
   type: trojan
-  password: 4c1400d1-f58b-4551-8df7-c7e3557e1a98
-  skip-cert-verify: true
+  Ltd. - 4: None
+  password: 645f0af0-dec8-48db-862f-82b6346408b4
   sni: ty11t.twty.dynu.net
   udp: true
-- name: TW_speednode_0069
-  server: b13.ntbq.dynu.net
-  port: 9489
+  delay: 2387
+- name: TW_speednode_0067
+  server: b24.ntbq.dynu.net
+  port: 3271
   type: trojan
   Ltd. - 3: None
-  password: 4c1400d1-f58b-4551-8df7-c7e3557e1a98
+  country: 🇹🇼TW
+  password: a2db6566-32c7-4e6e-89d7-b258ff55959f
+  sni: b24.ntbq.dynu.net
   skip-cert-verify: true
   udp: true
-  delay: 1475
-- name: TW_speednode_0070
-  server: b22.ntbq.dynu.net
-  port: 19489
+  delay: 1748
+- name: TW_speednode_0068
+  server: ty12t.twty.dynu.net
+  port: 18912
+  type: trojan
+  Ltd. - 11: None
+  country: 🇹🇼TW
+  udp: true
+  password: 8258210b-4b61-4d96-be4f-4e6be911a6e7
+  sni: ty12t.twty.dynu.net
+  skip-cert-verify: true
+  delay: 2275
+- name: TW_speednode_0069
+  server: ty12t.twty.dynu.net
+  port: 18912
   type: trojan
   Ltd. - 5: None
+  password: 645f0af0-dec8-48db-862f-82b6346408b4
+  sni: ty12t.twty.dynu.net
+  udp: true
+  delay: 1537
+- name: TW_speednode_0070
+  server: ty12t.twty.dynu.net
+  port: 18912
+  type: trojan
+  Ltd. - 6: None
+  country: 🇹🇼TW
+  password: a2db6566-32c7-4e6e-89d7-b258ff55959f
+  skip-cert-verify: true
+  udp: true
+  delay: 933
+- name: TW_speednode_0071
+  server: b12.ntbq.dynu.net
+  port: 9755
+  type: trojan
+  Ltd. - 10: None
   country: 🇹🇼TW
   udp: true
   password: 645f0af0-dec8-48db-862f-82b6346408b4
+  sni: b12.ntbq.dynu.net
+  skip-cert-verify: true
+  delay: 1158
+- name: TW_speednode_0072
+  server: b12.ntbq.dynu.net
+  port: 9755
+  type: trojan
+  Ltd. - 12: None
+  country: 🇹🇼TW
+  udp: true
+  password: 8258210b-4b61-4d96-be4f-4e6be911a6e7
+  sni: b12.ntbq.dynu.net
+  skip-cert-verify: true
+  delay: 542
+- name: TW_speednode_0073
+  server: b22.ntbq.dynu.net
+  port: 19489
+  type: trojan
+  Ltd. - 13: None
+  country: 🇹🇼TW
+  udp: true
+  password: 8258210b-4b61-4d96-be4f-4e6be911a6e7
   sni: b22.ntbq.dynu.net
   skip-cert-verify: true
-  delay: 1244
-- name: US_speednode_0071
+  delay: 1033
+- name: TW_speednode_0074
+  server: b22.ntbq.dynu.net
+  port: 19489
+  type: trojan
+  Ltd. - 7: None
+  password: 645f0af0-dec8-48db-862f-82b6346408b4
+  sni: b22.ntbq.dynu.net
+  skip-cert-verify: true
+  udp: true
+  delay: 653
+- name: US_speednode_0075
+  server: 154.198.227.34
+  port: 12696
+  type: vmess
+  udp: true
+  uuid: a2f6696a-bf90-43ae-960b-c5bdc1fe947a
+  alterId: 0
+  cipher: auto
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+  h2-opts: {}
+  skip-cert-verify: true
+  delay: 167
+- name: US_speednode_0076
   server: 154.198.227.34
   port: 12696
   type: vmess
@@ -718,135 +823,104 @@ proxies:
   tls: false
   udp: true
   uuid: a2f6696a-bf90-43ae-960b-c5bdc1fe947a
-- name: US_speednode_0072
+- name: US_speednode_0077
+  server: 52.33.243.193
+  port: 443
+  type: ss
+  Inc. - 13: None
+  cipher: aes-256-cfb
+  password: amazonskr05
+  delay: 739
+  udp: true
+- name: US_speednode_0078
+  server: 34.219.76.253
+  port: 443
+  type: ss
+  Inc. - 7: None
+  country: 🇺🇸US
+  password: amazonskr05
+  cipher: aes-256-cfb
+  delay: 917
+  udp: true
+- name: US_speednode_0079
   server: 54.190.1.40
   port: 443
   type: ss
-  Inc. - 9: None
-  password: amazonskr05
+  Inc. - 12: None
   cipher: aes-256-cfb
-  delay: 766
+  password: amazonskr05
+  delay: 787
   udp: true
-- name: US_speednode_0073
+- name: US_speednode_0080
+  server: 54.218.30.121
+  port: 443
+  type: ss
+  Inc. - 9: None
+  cipher: aes-256-cfb
+  password: amazonskr05
+  delay: 903
+  udp: true
+- name: US_speednode_0081
+  server: 54.187.81.197
+  port: 443
+  type: ss
+  Inc. - 10: None
+  cipher: aes-256-cfb
+  password: amazonskr05
+  delay: 744
+  udp: true
+- name: US_speednode_0082
+  server: 104.20.30.205
+  port: 80
+  type: vmess
+  alterId: 0
+  cipher: auto
+  country: 🏁ZZ
+  h2-opts: {}
+  http-opts: {}
+  network: ws
+  servername: newsg1.xn--mes53ddysu0o3gl.top
+  skip-cert-verify: true
+  uuid: 1cfaad16-d2ba-4c49-af07-d7b9f11f43d0
+  ws-opts:
+    headers:
+      HOST: newsg1.xn--mes53ddysu0o3gl.top
+    path: /xn--mes53ddysu0o3gl
+  udp: true
+- name: US_speednode_0083
+  server: 45.56.69.64
+  port: 80
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: QxS7HoM6VSTGHCJg8sVFBS
+  udp: true
+- name: US_speednode_0084
+  server: 136.175.176.25
+  port: 23331
+  type: trojan
+  password: mikuu404
+  sni: bing.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: bing.com
+  udp: true
+  delay: 845
+- name: US_speednode_0085
   server: 18.246.240.239
   port: 443
   type: ss
   Inc - 10: None
-  udp: true
-  password: amazonskr05
   cipher: aes-256-cfb
-  delay: 677
-- name: US_speednode_0074
-  server: 54.218.30.121
+  password: amazonskr05
+  udp: true
+- name: US_speednode_0086
+  server: 18.236.72.6
   port: 443
   type: ss
-  Inc. - 1: None
-  password: amazonskr05
-  cipher: aes-256-cfb
-  delay: 564
-  udp: true
-- name: US_speednode_0075
-  server: 148.135.31.52
-  port: 30000
-  type: vmess
-  alterId: 64
-  cipher: auto
-  network: ws
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    path: /path/1710685091418
-- name: US_speednode_0076
-  server: 148.135.14.108
-  port: 443
-  type: vmess
-  alterId: 64
-  cipher: auto
-  network: ws
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    path: /path/1710840982803
-- name: US_speednode_0077
-  server: 52.12.160.73
-  port: 443
-  type: ss
+  Inc. - 2: None
   cipher: aes-256-cfb
   password: amazonskr05
-  udp: true
-- name: US_speednode_0078
-  server: 136.175.176.25
-  port: 23331
-  type: trojan
-  network: ws
-  password: mikuu404
-  skip-cert-verify: true
-  sni: bing.com
-  udp: true
-  ws-opts:
-    path: /
-  delay: 952
-- name: US_speednode_0079
-  server: 172.111.57.195
-  port: 443
-  type: vmess
-  alterId: 64
-  cipher: auto
-  country: 🇺🇸US
-  h2-opts: {}
-  http-opts: {}
-  network: ws
-  skip-cert-verify: true
-  tls: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  ws-opts:
-    path: /path/1710760555155
-  udp: true
-- name: US_speednode_0080
-  server: 152.42.220.91
-  port: 443
-  type: trojan
-  password: e85bfecf-62f5-4e92-b974-31dd953d15bf
-  skip-cert-verify: true
-  udp: true
-- name: US_speednode_0081
-  server: cfcdn1.sanfencdn9.com
-  port: 2052
-  type: vmess
-  uuid: ba4e86e7-d4f7-4c4e-aa8f-a91b8cd9de8a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /video/GQ2qE5Us9g
-    headers:
-      Host: tw1bQiWSE4x.fzbqfrse.xyz
-  udp: true
-- name: US_speednode_0082
-  server: sg-full.privateip.net
-  port: 443
-  type: trojan
-  password: e85bfecf-62f5-4e92-b974-31dd953d15bf
-  sni: sg-full.privateip.net
-  skip-cert-verify: true
-  udp: true
-- name: US_speednode_0083
-  server: 104.21.63.52
-  port: 80
-  type: vmess
-  uuid: 60f12435-bb55-4da2-cb7d-4fea34ecfa37
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: us65.netfilx.live
   udp: true
