@@ -154,21 +154,25 @@ proxies:
   ws-opts:
     path: 55021a7c-bd6c-418e-be95-ceac8ba27b45-vm
   udp: true
-- name: '[🇪🇸]台湾_1114'
-  server: cfcdn1.sanfencdn9.com
-  port: 2052
+- name: '[🇳🇱]_1084'
+  server: 159.223.211.229
+  port: 49585
   type: vmess
-  uuid: 56a3514d-57e7-3650-af91-60380cde2499
+  alpn:
+  - h2
+  - http/1.1
   alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /video/GQ2qE5Us9g
-    headers:
-      Host: tw1bQiWSE4x.fzbqfrse.xyz
+  http-opts:
+    method: GET
+    path:
+    - /
+  network: http
+  servername: www.speedtest.net
+  skip-cert-verify: true
+  tls: true
   udp: true
+  uuid: 38b61c60-f1e6-3f7f-9c51-a22bbd165779
 - name: '[🇹🇼]_1085'
   server: 103.123.132.28
   port: 443
@@ -184,6 +188,21 @@ proxies:
     path: /path/311227222808
     headers:
       Host: www.97254291.xyz
+  udp: true
+- name: '[🇺🇸]台湾_1114'
+  server: cfcdn1.sanfencdn9.com
+  port: 2052
+  type: vmess
+  uuid: 274a1098-3282-3926-9198-d7bef5af8b87
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /video/GQ2qE5Us9g
+    headers:
+      Host: tw1bQiWSE4x.fzbqfrse.xyz
   udp: true
 - name: '[🇺🇸]美国_1126'
   server: 172.67.218.101
@@ -246,11 +265,11 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: '[🇺🇸]_1132'
-  server: be1-vmess.sshmax.xyz
-  port: 80
+- name: '[🇺🇸]_1140'
+  server: 172.67.229.38
+  port: 2086
   type: vmess
-  uuid: 15893ec0-e388-310b-9616-33cd5f056fc0
+  uuid: daedf5c5-f8c6-3aea-8a54-2f272af90877
   alterId: 0
   cipher: auto
   tls: false
@@ -259,13 +278,13 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: be1-vmess.sshmax.xyz
+      Host: ca6.tehme100.fun
   udp: true
-- name: '[🇺🇸]_1140'
-  server: 172.67.229.38
+- name: '[🇺🇸]_1142'
+  server: 172.67.229.39
   port: 2086
   type: vmess
-  uuid: daedf5c5-f8c6-3aea-8a54-2f272af90877
+  uuid: 413162c2-c32c-3cad-a8d0-7980b9679862
   alterId: 0
   cipher: auto
   tls: false
@@ -291,20 +310,15 @@ proxies:
     headers:
       Host: ca6.tehme100.fun
   udp: true
-- name: '[🇺🇸]_1142'
-  server: 172.67.229.39
-  port: 2086
+- name: '[🇫🇷]法国_1128'
+  server: 213.32.63.176
+  port: 3586
   type: vmess
-  uuid: 413162c2-c32c-3cad-a8d0-7980b9679862
+  uuid: 74e629d0-f935-325f-a2b2-4b475e14f505
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ca6.tehme100.fun
   udp: true
 - name: '[🇺🇸]_1148'
   server: 172.67.49.214
@@ -336,25 +350,36 @@ proxies:
     headers:
       Host: eu2.openxai.link
   udp: true
-- name: '[🇨🇳]香港_1123'
-  server: 120.232.242.88
-  port: 34602
+- name: '[🇺🇸]_1102'
+  server: hkcft01.xqc.best
+  port: 443
   type: vmess
-  uuid: deca5640-e64c-317a-8db0-b37ba308d471
-  alterId: 64
+  uuid: cb052846-b9dc-3d9d-851b-4d975df8696b
+  alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   skip-cert-verify: false
+  servername: drplky41bs67j.cloudfront.net
+  network: ws
+  ws-opts:
+    path: /stream
+    headers:
+      Host: hkcft01.xqc.best
   udp: true
-- name: '[🇫🇷]法国_1128'
-  server: 213.32.63.176
-  port: 3586
+- name: '[🇺🇸]_1132'
+  server: be1-vmess.sshmax.xyz
+  port: 80
   type: vmess
-  uuid: 74e629d0-f935-325f-a2b2-4b475e14f505
+  uuid: 15893ec0-e388-310b-9616-33cd5f056fc0
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: be1-vmess.sshmax.xyz
   udp: true
 - name: '[🇺🇸]_1157'
   server: hkd1.quickerlink.xyz
@@ -384,21 +409,19 @@ proxies:
   ws-headers:
     Host: a.prapt1.ir
   udp: true
-- name: '[🇺🇸]_1102'
-  server: hkcft01.xqc.best
-  port: 443
+- name: '[🇦🇶]_1160'
+  server: 104.21.227.15
+  port: 80
   type: vmess
-  uuid: cb052846-b9dc-3d9d-851b-4d975df8696b
+  uuid: 4c628923-4322-3436-b6c9-982d7a52a6ac
   alterId: 0
   cipher: auto
-  tls: true
-  skip-cert-verify: false
-  servername: drplky41bs67j.cloudfront.net
+  skip-cert-verify: true
   network: ws
-  ws-opts:
-    path: /stream
-    headers:
-      Host: hkcft01.xqc.best
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: a.prapt4.ir
   udp: true
 - name: '[🇦🇶]_1161'
   server: 104.16.148.244
@@ -414,20 +437,6 @@ proxies:
   ws-headers:
     Host: bibliographic-sword-sequence-advertisers.trycloudflare.com
   udp: true
-- name: '[🇦🇶]_1160'
-  server: 104.21.227.15
-  port: 80
-  type: vmess
-  uuid: 4c628923-4322-3436-b6c9-982d7a52a6ac
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: a.prapt4.ir
-  udp: true
 - name: '[🇸🇬]_1156'
   server: 159.223.94.156
   port: 80
@@ -441,6 +450,38 @@ proxies:
   tls: false
   ws-headers:
     Host: 159.223.94.156
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇦🇶]_1165'
+  network: ws
+  port: 80
+  server: de1e-haha.v2freevpn.com
+  servername: de1e-haha.v2freevpn.com
+  skip-cert-verify: true
+  type: vmess
+  uuid: c098ba23-f304-3b88-96f7-1e62451f538d
+  ws-opts:
+    headers:
+      HOST: de1e-haha.v2freevpn.com
+    path: /v1893298323Py
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: SG
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇸🇬]_1164'
+  network: tcp
+  port: 443
+  server: 66.42.55.85
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 3e0aaf27-86d9-3b38-b845-e4fff08ae29b
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -458,26 +499,28 @@ proxy-groups:
   - '[🇨🇦]_1109'
   - '[🇨🇦]_1110'
   - '[🇨🇦]_1111'
-  - '[🇪🇸]台湾_1114'
+  - '[🇳🇱]_1084'
   - '[🇹🇼]_1085'
+  - '[🇺🇸]台湾_1114'
   - '[🇺🇸]美国_1126'
   - '[🇦🇶]美国_1127'
   - '[🇸🇬]新加坡_1118'
   - '[🇯🇵]日本_1125'
-  - '[🇺🇸]_1132'
   - '[🇺🇸]_1140'
-  - '[🇺🇸]_1145'
   - '[🇺🇸]_1142'
+  - '[🇺🇸]_1145'
+  - '[🇫🇷]法国_1128'
   - '[🇺🇸]_1148'
   - '[🇺🇸]_1149'
-  - '[🇨🇳]香港_1123'
-  - '[🇫🇷]法国_1128'
+  - '[🇺🇸]_1102'
+  - '[🇺🇸]_1132'
   - '[🇺🇸]_1157'
   - '[🇦🇶]_1159'
-  - '[🇺🇸]_1102'
-  - '[🇦🇶]_1161'
   - '[🇦🇶]_1160'
+  - '[🇦🇶]_1161'
   - '[🇸🇬]_1156'
+  - '[🇦🇶]_1165'
+  - '[🇸🇬]_1164'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
@@ -493,26 +536,28 @@ proxy-groups:
   - '[🇨🇦]_1109'
   - '[🇨🇦]_1110'
   - '[🇨🇦]_1111'
-  - '[🇪🇸]台湾_1114'
+  - '[🇳🇱]_1084'
   - '[🇹🇼]_1085'
+  - '[🇺🇸]台湾_1114'
   - '[🇺🇸]美国_1126'
   - '[🇦🇶]美国_1127'
   - '[🇸🇬]新加坡_1118'
   - '[🇯🇵]日本_1125'
-  - '[🇺🇸]_1132'
   - '[🇺🇸]_1140'
-  - '[🇺🇸]_1145'
   - '[🇺🇸]_1142'
+  - '[🇺🇸]_1145'
+  - '[🇫🇷]法国_1128'
   - '[🇺🇸]_1148'
   - '[🇺🇸]_1149'
-  - '[🇨🇳]香港_1123'
-  - '[🇫🇷]法国_1128'
+  - '[🇺🇸]_1102'
+  - '[🇺🇸]_1132'
   - '[🇺🇸]_1157'
   - '[🇦🇶]_1159'
-  - '[🇺🇸]_1102'
-  - '[🇦🇶]_1161'
   - '[🇦🇶]_1160'
+  - '[🇦🇶]_1161'
   - '[🇸🇬]_1156'
+  - '[🇦🇶]_1165'
+  - '[🇸🇬]_1164'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -528,26 +573,28 @@ proxy-groups:
   - '[🇨🇦]_1109'
   - '[🇨🇦]_1110'
   - '[🇨🇦]_1111'
-  - '[🇪🇸]台湾_1114'
+  - '[🇳🇱]_1084'
   - '[🇹🇼]_1085'
+  - '[🇺🇸]台湾_1114'
   - '[🇺🇸]美国_1126'
   - '[🇦🇶]美国_1127'
   - '[🇸🇬]新加坡_1118'
   - '[🇯🇵]日本_1125'
-  - '[🇺🇸]_1132'
   - '[🇺🇸]_1140'
-  - '[🇺🇸]_1145'
   - '[🇺🇸]_1142'
+  - '[🇺🇸]_1145'
+  - '[🇫🇷]法国_1128'
   - '[🇺🇸]_1148'
   - '[🇺🇸]_1149'
-  - '[🇨🇳]香港_1123'
-  - '[🇫🇷]法国_1128'
+  - '[🇺🇸]_1102'
+  - '[🇺🇸]_1132'
   - '[🇺🇸]_1157'
   - '[🇦🇶]_1159'
-  - '[🇺🇸]_1102'
-  - '[🇦🇶]_1161'
   - '[🇦🇶]_1160'
+  - '[🇦🇶]_1161'
   - '[🇸🇬]_1156'
+  - '[🇦🇶]_1165'
+  - '[🇸🇬]_1164'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -563,26 +610,28 @@ proxy-groups:
   - '[🇨🇦]_1109'
   - '[🇨🇦]_1110'
   - '[🇨🇦]_1111'
-  - '[🇪🇸]台湾_1114'
+  - '[🇳🇱]_1084'
   - '[🇹🇼]_1085'
+  - '[🇺🇸]台湾_1114'
   - '[🇺🇸]美国_1126'
   - '[🇦🇶]美国_1127'
   - '[🇸🇬]新加坡_1118'
   - '[🇯🇵]日本_1125'
-  - '[🇺🇸]_1132'
   - '[🇺🇸]_1140'
-  - '[🇺🇸]_1145'
   - '[🇺🇸]_1142'
+  - '[🇺🇸]_1145'
+  - '[🇫🇷]法国_1128'
   - '[🇺🇸]_1148'
   - '[🇺🇸]_1149'
-  - '[🇨🇳]香港_1123'
-  - '[🇫🇷]法国_1128'
+  - '[🇺🇸]_1102'
+  - '[🇺🇸]_1132'
   - '[🇺🇸]_1157'
   - '[🇦🇶]_1159'
-  - '[🇺🇸]_1102'
-  - '[🇦🇶]_1161'
   - '[🇦🇶]_1160'
+  - '[🇦🇶]_1161'
   - '[🇸🇬]_1156'
+  - '[🇦🇶]_1165'
+  - '[🇸🇬]_1164'
 - name: 🛑 全球拦截
   type: select
   proxies:
@@ -596,26 +645,28 @@ proxy-groups:
   - '[🇨🇦]_1109'
   - '[🇨🇦]_1110'
   - '[🇨🇦]_1111'
-  - '[🇪🇸]台湾_1114'
+  - '[🇳🇱]_1084'
   - '[🇹🇼]_1085'
+  - '[🇺🇸]台湾_1114'
   - '[🇺🇸]美国_1126'
   - '[🇦🇶]美国_1127'
   - '[🇸🇬]新加坡_1118'
   - '[🇯🇵]日本_1125'
-  - '[🇺🇸]_1132'
   - '[🇺🇸]_1140'
-  - '[🇺🇸]_1145'
   - '[🇺🇸]_1142'
+  - '[🇺🇸]_1145'
+  - '[🇫🇷]法国_1128'
   - '[🇺🇸]_1148'
   - '[🇺🇸]_1149'
-  - '[🇨🇳]香港_1123'
-  - '[🇫🇷]法国_1128'
+  - '[🇺🇸]_1102'
+  - '[🇺🇸]_1132'
   - '[🇺🇸]_1157'
   - '[🇦🇶]_1159'
-  - '[🇺🇸]_1102'
-  - '[🇦🇶]_1161'
   - '[🇦🇶]_1160'
+  - '[🇦🇶]_1161'
   - '[🇸🇬]_1156'
+  - '[🇦🇶]_1165'
+  - '[🇸🇬]_1164'
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -631,26 +682,28 @@ proxy-groups:
   - '[🇨🇦]_1109'
   - '[🇨🇦]_1110'
   - '[🇨🇦]_1111'
-  - '[🇪🇸]台湾_1114'
+  - '[🇳🇱]_1084'
   - '[🇹🇼]_1085'
+  - '[🇺🇸]台湾_1114'
   - '[🇺🇸]美国_1126'
   - '[🇦🇶]美国_1127'
   - '[🇸🇬]新加坡_1118'
   - '[🇯🇵]日本_1125'
-  - '[🇺🇸]_1132'
   - '[🇺🇸]_1140'
-  - '[🇺🇸]_1145'
   - '[🇺🇸]_1142'
+  - '[🇺🇸]_1145'
+  - '[🇫🇷]法国_1128'
   - '[🇺🇸]_1148'
   - '[🇺🇸]_1149'
-  - '[🇨🇳]香港_1123'
-  - '[🇫🇷]法国_1128'
+  - '[🇺🇸]_1102'
+  - '[🇺🇸]_1132'
   - '[🇺🇸]_1157'
   - '[🇦🇶]_1159'
-  - '[🇺🇸]_1102'
-  - '[🇦🇶]_1161'
   - '[🇦🇶]_1160'
+  - '[🇦🇶]_1161'
   - '[🇸🇬]_1156'
+  - '[🇦🇶]_1165'
+  - '[🇸🇬]_1164'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
