@@ -26,55 +26,11 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_769'
-  server: us02.xpoti.online
-  port: 80
-  type: vmess
-  uuid: 351b253b-a2e1-3f9d-8b2e-0c8984694e91
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: us02.xpoti.online
-  udp: true
-- name: '[🇯🇵]_777'
-  server: jp04.xpoti.online
-  port: 80
-  type: vmess
-  uuid: fbada918-46b7-30f8-bb7c-cb73010d848a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: jp04.xpoti.online
-  udp: true
-- name: '[🇸🇬]_784'
-  server: 159.223.94.156
-  port: 80
-  type: vmess
-  uuid: 6cdbcbb2-9d51-39d9-8de4-c43659167079
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /anti13.zingfast.vn
-  tls: false
-  ws-headers:
-    Host: 159.223.94.156
-  udp: true
-- name: '[🇺🇸]_785'
+- name: '[🇺🇸]_790'
   server: hkd1.quickerlink.xyz
   port: 443
   type: vmess
-  uuid: db300ee5-a402-3a47-ae50-276ae5e14dae
+  uuid: 217c1910-67ed-3481-935c-b3133d194e08
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -84,11 +40,11 @@ proxies:
   ws-headers:
     Host: hkd1.quickerlink.xyz
   udp: true
-- name: '[🇦🇶]_787'
+- name: '[🇦🇶]_792'
   server: 104.21.224.156
   port: 80
   type: vmess
-  uuid: 347d93cf-2cf7-3424-9e07-e3be6768873f
+  uuid: 34b9bcc8-3ff4-3edc-b69b-ec766457a3a2
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -98,11 +54,25 @@ proxies:
   ws-headers:
     Host: a.prapt1.ir
   udp: true
-- name: '[🇦🇶]_789'
+- name: '[🇦🇶]_793'
+  server: 104.21.232.41
+  port: 80
+  type: vmess
+  uuid: b506933e-ea03-33b0-850b-b3c2c449f528
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: a.prapt4.ir
+  udp: true
+- name: '[🇦🇶]_794'
   server: 104.21.221.240
   port: 80
   type: vmess
-  uuid: 2131aea4-1afc-30ec-b469-7478d942486d
+  uuid: 607f7c2c-f341-3b95-bf3c-236ebcd9341c
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -112,39 +82,11 @@ proxies:
   ws-headers:
     Host: a.prapt1.ir
   udp: true
-- name: '[🇦🇶]_788'
-  server: 104.21.232.41
-  port: 80
-  type: vmess
-  uuid: 12c3fb74-ce2d-3402-9641-d72d3fba7d0d
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: a.prapt4.ir
-  udp: true
-- name: '[🇺🇸]_791'
-  server: jpc.flha.ru
-  port: 2095
-  type: vmess
-  uuid: cae98c58-3164-35ab-a41e-0c7149dbfb8a
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: jpc.flha.ru
-  udp: true
-- name: '[🇦🇶]_790'
+- name: '[🇦🇶]_795'
   server: 104.21.238.91
   port: 80
   type: vmess
-  uuid: ad228d50-5627-3e59-98c0-401a46233fc6
+  uuid: ea4d0eba-4941-32c4-b8b1-47bd19386bed
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -154,6 +96,34 @@ proxies:
   ws-headers:
     Host: a.prapt4.ir
   udp: true
+- name: '[🇦🇶]_796'
+  server: jpc.flha.ru
+  port: 2095
+  type: vmess
+  uuid: 6629b579-876e-37fc-a408-f1e37d85afa7
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: jpc.flha.ru
+  udp: true
+- name: '[🇸🇬]_789'
+  server: 159.223.94.156
+  port: 80
+  type: vmess
+  uuid: f846dd31-4728-36e3-aa8a-7c1529d18d20
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /anti13.zingfast.vn
+  tls: false
+  ws-headers:
+    Host: 159.223.94.156
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -161,88 +131,76 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_769'
-  - '[🇯🇵]_777'
-  - '[🇸🇬]_784'
-  - '[🇺🇸]_785'
-  - '[🇦🇶]_787'
-  - '[🇦🇶]_789'
-  - '[🇦🇶]_788'
-  - '[🇺🇸]_791'
-  - '[🇦🇶]_790'
+  - '[🇺🇸]_790'
+  - '[🇦🇶]_792'
+  - '[🇦🇶]_793'
+  - '[🇦🇶]_794'
+  - '[🇦🇶]_795'
+  - '[🇦🇶]_796'
+  - '[🇸🇬]_789'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_769'
-  - '[🇯🇵]_777'
-  - '[🇸🇬]_784'
-  - '[🇺🇸]_785'
-  - '[🇦🇶]_787'
-  - '[🇦🇶]_789'
-  - '[🇦🇶]_788'
-  - '[🇺🇸]_791'
-  - '[🇦🇶]_790'
+  - '[🇺🇸]_790'
+  - '[🇦🇶]_792'
+  - '[🇦🇶]_793'
+  - '[🇦🇶]_794'
+  - '[🇦🇶]_795'
+  - '[🇦🇶]_796'
+  - '[🇸🇬]_789'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_769'
-  - '[🇯🇵]_777'
-  - '[🇸🇬]_784'
-  - '[🇺🇸]_785'
-  - '[🇦🇶]_787'
-  - '[🇦🇶]_789'
-  - '[🇦🇶]_788'
-  - '[🇺🇸]_791'
-  - '[🇦🇶]_790'
+  - '[🇺🇸]_790'
+  - '[🇦🇶]_792'
+  - '[🇦🇶]_793'
+  - '[🇦🇶]_794'
+  - '[🇦🇶]_795'
+  - '[🇦🇶]_796'
+  - '[🇸🇬]_789'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_769'
-  - '[🇯🇵]_777'
-  - '[🇸🇬]_784'
-  - '[🇺🇸]_785'
-  - '[🇦🇶]_787'
-  - '[🇦🇶]_789'
-  - '[🇦🇶]_788'
-  - '[🇺🇸]_791'
-  - '[🇦🇶]_790'
+  - '[🇺🇸]_790'
+  - '[🇦🇶]_792'
+  - '[🇦🇶]_793'
+  - '[🇦🇶]_794'
+  - '[🇦🇶]_795'
+  - '[🇦🇶]_796'
+  - '[🇸🇬]_789'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_769'
-  - '[🇯🇵]_777'
-  - '[🇸🇬]_784'
-  - '[🇺🇸]_785'
-  - '[🇦🇶]_787'
-  - '[🇦🇶]_789'
-  - '[🇦🇶]_788'
-  - '[🇺🇸]_791'
-  - '[🇦🇶]_790'
+  - '[🇺🇸]_790'
+  - '[🇦🇶]_792'
+  - '[🇦🇶]_793'
+  - '[🇦🇶]_794'
+  - '[🇦🇶]_795'
+  - '[🇦🇶]_796'
+  - '[🇸🇬]_789'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_769'
-  - '[🇯🇵]_777'
-  - '[🇸🇬]_784'
-  - '[🇺🇸]_785'
-  - '[🇦🇶]_787'
-  - '[🇦🇶]_789'
-  - '[🇦🇶]_788'
-  - '[🇺🇸]_791'
-  - '[🇦🇶]_790'
+  - '[🇺🇸]_790'
+  - '[🇦🇶]_792'
+  - '[🇦🇶]_793'
+  - '[🇦🇶]_794'
+  - '[🇦🇶]_795'
+  - '[🇦🇶]_796'
+  - '[🇸🇬]_789'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
