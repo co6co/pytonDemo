@@ -26,45 +26,34 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇸🇬]_816'
+  server: 159.223.94.156
+  port: 80
+  type: vmess
+  uuid: 4522d435-6d57-33da-afab-d6daf0631a3f
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /anti13.zingfast.vn
+  tls: false
+  ws-headers:
+    Host: 159.223.94.156
+  udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇺🇸]_933'
-  network: tcp
+  name: '[🇯🇵]法国_828'
+  network: ws
   port: 80
-  server: 172.233.107.186
+  server: 57.180.246.126
   servername: ''
   tls: false
   type: vmess
-  uuid: 762cf5fe-e7e5-325a-a864-884824ff6700
-  udp: true
-- alterId: 0
-  cipher: auto
-  country: ZZ
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇦🇶]_932'
-  network: ws
-  port: 80
-  server: bs2.loadingip.com
-  servername: bs2.loadingip.com
-  skip-cert-verify: true
-  type: vmess
-  uuid: 262c3383-102d-3a38-9079-afdf1f737ed9
+  uuid: 435acfb4-71c6-3fc3-990e-2fd8a634630b
   ws-opts:
     headers:
-      HOST: bs2.loadingip.com
-    path: /bs
-  udp: true
-- alterId: 1
-  cipher: auto
-  name: '[🇯🇵]日本_942'
-  network: tcp
-  port: 28786
-  server: 54.249.214.28
-  servername: 7oi23-g04.jp06-7c5a-vm0.entry.fr0307a.art
-  tls: true
-  type: vmess
-  uuid: 4859ce2f-3377-314c-896e-84feddec7eae
+      Host: jp01.hajimihajimihajimi.online
+    path: /
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -73,52 +62,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_933'
-  - '[🇦🇶]_932'
-  - '[🇯🇵]日本_942'
+  - '[🇸🇬]_816'
+  - '[🇯🇵]法国_828'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_933'
-  - '[🇦🇶]_932'
-  - '[🇯🇵]日本_942'
+  - '[🇸🇬]_816'
+  - '[🇯🇵]法国_828'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_933'
-  - '[🇦🇶]_932'
-  - '[🇯🇵]日本_942'
+  - '[🇸🇬]_816'
+  - '[🇯🇵]法国_828'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_933'
-  - '[🇦🇶]_932'
-  - '[🇯🇵]日本_942'
+  - '[🇸🇬]_816'
+  - '[🇯🇵]法国_828'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_933'
-  - '[🇦🇶]_932'
-  - '[🇯🇵]日本_942'
+  - '[🇸🇬]_816'
+  - '[🇯🇵]法国_828'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_933'
-  - '[🇦🇶]_932'
-  - '[🇯🇵]日本_942'
+  - '[🇸🇬]_816'
+  - '[🇯🇵]法国_828'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
