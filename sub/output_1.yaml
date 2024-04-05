@@ -28,45 +28,16 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]美国_910'
-  network: ws
-  port: 2052
-  server: lol.ps
-  tls: false
-  type: vmess
-  uuid: d3579d1a-5ee9-3c1a-a94b-85057c450aac
-  ws-opts:
-    headers:
-      Host: mysan2.jaquay22.workers.dev
-    path: /afrhms16v.bestxray.buzz/linkws
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]美国_911'
+  name: '[🇦🇶]美国_911'
   network: ws
   port: 8880
   server: cdn.vds-server.ir
   tls: false
   type: vmess
-  uuid: 00f61278-37a9-3e78-b16a-22d7eec93bc2
+  uuid: 414efaa3-d666-3bda-8c74-95326fa6123d
   ws-opts:
     headers:
       Host: cdn.vds-server.ir
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇯🇵]日本东京_907'
-  network: ws
-  port: 80
-  server: 52.196.147.196
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 821ec32f-8451-3bc2-916a-7f815dfd2352
-  ws-opts:
-    headers:
-      Host: jp04.hajimihajimihajimi.online
     path: /
   udp: true
 - alterId: 0
@@ -84,6 +55,21 @@ proxies:
       Host: ''
     path: /name
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_905'
+  network: ws
+  port: 51275
+  server: 202.81.231.30
+  servername: jp.pddf.buzz
+  tls: true
+  type: vmess
+  uuid: b21fecec-9171-33bd-8a0d-895934e13f97
+  ws-opts:
+    headers:
+      Host: jp.pddf.buzz
+    path: /pdd?ed=2048
+  udp: true
 - alterId: 1
   cipher: auto
   name: '[🇯🇵]日本东京_909'
@@ -95,17 +81,6 @@ proxies:
   type: vmess
   uuid: 85eae015-9de6-3f35-9ce5-b3187888ea17
   udp: true
-- alterId: 0
-  cipher: auto
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇺🇸]_790'
-  port: 43834
-  server: 50.114.243.61
-  skip-cert-verify: true
-  type: vmess
-  udp: true
-  uuid: 217c1910-67ed-3481-935c-b3133d194e08
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -113,70 +88,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]美国_910'
-  - '[🇺🇸]美国_911'
-  - '[🇯🇵]日本东京_907'
+  - '[🇦🇶]美国_911'
   - '[🇯🇵]法国_908'
+  - '[🇭🇰]香港_905'
   - '[🇯🇵]日本东京_909'
-  - '[🇺🇸]_790'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_910'
-  - '[🇺🇸]美国_911'
-  - '[🇯🇵]日本东京_907'
+  - '[🇦🇶]美国_911'
   - '[🇯🇵]法国_908'
+  - '[🇭🇰]香港_905'
   - '[🇯🇵]日本东京_909'
-  - '[🇺🇸]_790'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_910'
-  - '[🇺🇸]美国_911'
-  - '[🇯🇵]日本东京_907'
+  - '[🇦🇶]美国_911'
   - '[🇯🇵]法国_908'
+  - '[🇭🇰]香港_905'
   - '[🇯🇵]日本东京_909'
-  - '[🇺🇸]_790'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_910'
-  - '[🇺🇸]美国_911'
-  - '[🇯🇵]日本东京_907'
+  - '[🇦🇶]美国_911'
   - '[🇯🇵]法国_908'
+  - '[🇭🇰]香港_905'
   - '[🇯🇵]日本东京_909'
-  - '[🇺🇸]_790'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]美国_910'
-  - '[🇺🇸]美国_911'
-  - '[🇯🇵]日本东京_907'
+  - '[🇦🇶]美国_911'
   - '[🇯🇵]法国_908'
+  - '[🇭🇰]香港_905'
   - '[🇯🇵]日本东京_909'
-  - '[🇺🇸]_790'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]美国_910'
-  - '[🇺🇸]美国_911'
-  - '[🇯🇵]日本东京_907'
+  - '[🇦🇶]美国_911'
   - '[🇯🇵]法国_908'
+  - '[🇭🇰]香港_905'
   - '[🇯🇵]日本东京_909'
-  - '[🇺🇸]_790'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
