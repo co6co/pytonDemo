@@ -26,24 +26,43 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 64
+- alterId: 0
   cipher: auto
   country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇺🇸]_785'
+  name: '[🇺🇸]_786'
   network: ws
-  port: 30000
-  server: 148.135.0.219
-  servername: www.32497476.xyz
+  port: 443
+  server: zula.ir
+  servername: hdfy5c1.freeairlaines.com
   skip-cert-verify: true
   tls: true
   type: vmess
-  uuid: db300ee5-a402-3a47-ae50-276ae5e14dae
+  uuid: c1c33025-85fd-3ad2-9250-c8175ee53f89
   ws-opts:
     headers:
-      HOST: www.32497476.xyz
-    path: /path/153428133302
+      HOST: hdfy5c1.freeairlaines.com
+    path: /Nbs2DSTSkFW6MrrFQHeSDQ7
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: HK
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇭🇰]_782'
+  network: ws
+  port: 4431
+  server: 152.32.190.239
+  servername: cfhk.393930.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 59cc489a-6976-3df8-ae10-8337a9f4de28
+  ws-opts:
+    headers:
+      HOST: cfhk.393930.xyz
+    path: /
   udp: true
 - alterId: 0
   cipher: auto
@@ -80,18 +99,18 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇸🇬]新加坡_875'
+  name: '[🇰🇷]韩国首尔_876'
   network: ws
   port: 80
-  server: 54.255.213.192
+  server: 13.125.220.73
   servername: ''
   tls: false
   type: vmess
-  uuid: ca93ac3c-1691-3d3f-89c1-8043e2301f5d
+  uuid: cb40137f-7e90-34d7-b21a-273053ab24fd
   ws-opts:
     headers:
-      Host: ''
-    path: ''
+      Host: kr04.victorialouisa.online
+    path: /
   udp: true
 - alterId: 0
   cipher: auto
@@ -106,21 +125,6 @@ proxies:
   ws-opts:
     headers:
       Host: jp03.victorialouisa.online
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇰🇷]韩国首尔_876'
-  network: ws
-  port: 80
-  server: 13.125.220.73
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: cb40137f-7e90-34d7-b21a-273053ab24fd
-  ws-opts:
-    headers:
-      Host: kr04.victorialouisa.online
     path: /
   udp: true
 - alterId: 0
@@ -145,12 +149,12 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_785'
+  - '[🇺🇸]_786'
+  - '[🇭🇰]_782'
   - '[🇸🇬]_783'
   - '[🇯🇵]日本_874'
-  - '[🇸🇬]新加坡_875'
-  - '[🇯🇵]日本_877'
   - '[🇰🇷]韩国首尔_876'
+  - '[🇯🇵]日本_877'
   - '[🇰🇷]美国_878'
 - name: 🎯 负载均衡
   type: load-balance
@@ -158,12 +162,12 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_785'
+  - '[🇺🇸]_786'
+  - '[🇭🇰]_782'
   - '[🇸🇬]_783'
   - '[🇯🇵]日本_874'
-  - '[🇸🇬]新加坡_875'
-  - '[🇯🇵]日本_877'
   - '[🇰🇷]韩国首尔_876'
+  - '[🇯🇵]日本_877'
   - '[🇰🇷]美国_878'
 - name: ♻️ 自动选择
   type: fallback
@@ -171,12 +175,12 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_785'
+  - '[🇺🇸]_786'
+  - '[🇭🇰]_782'
   - '[🇸🇬]_783'
   - '[🇯🇵]日本_874'
-  - '[🇸🇬]新加坡_875'
-  - '[🇯🇵]日本_877'
   - '[🇰🇷]韩国首尔_876'
+  - '[🇯🇵]日本_877'
   - '[🇰🇷]美国_878'
 - name: 🔰 延迟最低
   type: url-test
@@ -184,23 +188,23 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_785'
+  - '[🇺🇸]_786'
+  - '[🇭🇰]_782'
   - '[🇸🇬]_783'
   - '[🇯🇵]日本_874'
-  - '[🇸🇬]新加坡_875'
-  - '[🇯🇵]日本_877'
   - '[🇰🇷]韩国首尔_876'
+  - '[🇯🇵]日本_877'
   - '[🇰🇷]美国_878'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_785'
+  - '[🇺🇸]_786'
+  - '[🇭🇰]_782'
   - '[🇸🇬]_783'
   - '[🇯🇵]日本_874'
-  - '[🇸🇬]新加坡_875'
-  - '[🇯🇵]日本_877'
   - '[🇰🇷]韩国首尔_876'
+  - '[🇯🇵]日本_877'
   - '[🇰🇷]美国_878'
 - name: 🎯 全球直连
   type: select
@@ -208,12 +212,12 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_785'
+  - '[🇺🇸]_786'
+  - '[🇭🇰]_782'
   - '[🇸🇬]_783'
   - '[🇯🇵]日本_874'
-  - '[🇸🇬]新加坡_875'
-  - '[🇯🇵]日本_877'
   - '[🇰🇷]韩国首尔_876'
+  - '[🇯🇵]日本_877'
   - '[🇰🇷]美国_878'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
