@@ -28,71 +28,54 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  country: CA
+  country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇨🇦]_848'
+  name: '[🇺🇸]_890'
   network: ws
-  port: 8080
-  server: 23.227.38.86
-  servername: dongtaiwang13.dtku47.xyz
-  skip-cert-verify: true
-  type: vmess
-  uuid: 9091c73a-74a9-331d-99e5-2d2c939376ae
-  ws-opts:
-    headers:
-      HOST: dongtaiwang13.dtku47.xyz
-    path: /1IKYjV0r/
-  udp: true
-- alterId: 1
-  cipher: auto
-  country: JP
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇯🇵]_851'
-  network: tcp
-  port: 21583
-  server: 0i4ui-g03.jp03-7d22-vm0.entry.fr0307a.art
+  port: 443
+  server: 172.67.201.200
+  servername: maggiy.shop
   skip-cert-verify: true
   tls: true
   type: vmess
-  uuid: 85d9dc69-138b-3a66-b1c0-7ce819c94553
-  udp: true
-- alterId: 0
-  cipher: auto
-  country: ZZ
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇺🇸]_863'
-  network: ws
-  port: 8080
-  server: yh1.freeh1.xyz
-  servername: bibliographic-sword-sequence-advertisers.trycloudflare.com
-  skip-cert-verify: true
-  type: vmess
-  uuid: ff801f43-cd66-3925-89a2-dc68b61ab650
+  uuid: 6d0cc317-22b0-395c-9a27-af85fe944589
   ws-opts:
     headers:
-      HOST: bibliographic-sword-sequence-advertisers.trycloudflare.com
-    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
+      HOST: maggiy.shop
+    path: /linkvws
   udp: true
 - alterId: 0
   cipher: auto
   country: ZZ
   h2-opts: {}
   http-opts: {}
-  name: '[🇦🇶]_864'
+  name: '[🇺🇸]_891'
   network: ws
   port: 80
   server: upload.ir
   servername: lv1-vmess.sshmax.xyz
   skip-cert-verify: true
   type: vmess
-  uuid: 655601ea-74cd-33ac-95eb-2214be4b0ed1
+  uuid: a7893689-f0b0-3a80-8355-6f68996de437
   ws-opts:
     headers:
       HOST: lv1-vmess.sshmax.xyz
     path: /vmess
+  udp: true
+- name: '[🇸🇬]_870'
+  server: 159.223.94.156
+  port: 80
+  type: vmess
+  uuid: 988cb13a-7044-34d5-9153-83df41792704
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /anti13.zingfast.vn
+  tls: false
+  ws-headers:
+    Host: 159.223.94.156
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -101,58 +84,52 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇨🇦]_848'
-  - '[🇯🇵]_851'
-  - '[🇺🇸]_863'
-  - '[🇦🇶]_864'
+  - '[🇺🇸]_890'
+  - '[🇺🇸]_891'
+  - '[🇸🇬]_870'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇦]_848'
-  - '[🇯🇵]_851'
-  - '[🇺🇸]_863'
-  - '[🇦🇶]_864'
+  - '[🇺🇸]_890'
+  - '[🇺🇸]_891'
+  - '[🇸🇬]_870'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇦]_848'
-  - '[🇯🇵]_851'
-  - '[🇺🇸]_863'
-  - '[🇦🇶]_864'
+  - '[🇺🇸]_890'
+  - '[🇺🇸]_891'
+  - '[🇸🇬]_870'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇦]_848'
-  - '[🇯🇵]_851'
-  - '[🇺🇸]_863'
-  - '[🇦🇶]_864'
+  - '[🇺🇸]_890'
+  - '[🇺🇸]_891'
+  - '[🇸🇬]_870'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇨🇦]_848'
-  - '[🇯🇵]_851'
-  - '[🇺🇸]_863'
-  - '[🇦🇶]_864'
+  - '[🇺🇸]_890'
+  - '[🇺🇸]_891'
+  - '[🇸🇬]_870'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇨🇦]_848'
-  - '[🇯🇵]_851'
-  - '[🇺🇸]_863'
-  - '[🇦🇶]_864'
+  - '[🇺🇸]_890'
+  - '[🇺🇸]_891'
+  - '[🇸🇬]_870'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
