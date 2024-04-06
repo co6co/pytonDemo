@@ -28,17 +28,49 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
+  country: CA
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇨🇦]_848'
+  network: ws
+  port: 8080
+  server: 23.227.38.86
+  servername: dongtaiwang13.dtku47.xyz
+  skip-cert-verify: true
+  type: vmess
+  uuid: 9091c73a-74a9-331d-99e5-2d2c939376ae
+  ws-opts:
+    headers:
+      HOST: dongtaiwang13.dtku47.xyz
+    path: /1IKYjV0r/
+  udp: true
+- alterId: 1
+  cipher: auto
+  country: JP
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇯🇵]_851'
+  network: tcp
+  port: 21583
+  server: 0i4ui-g03.jp03-7d22-vm0.entry.fr0307a.art
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 85d9dc69-138b-3a66-b1c0-7ce819c94553
+  udp: true
+- alterId: 0
+  cipher: auto
   country: ZZ
   h2-opts: {}
   http-opts: {}
-  name: '[🇦🇶]_863'
+  name: '[🇺🇸]_863'
   network: ws
   port: 8080
   server: yh1.freeh1.xyz
   servername: bibliographic-sword-sequence-advertisers.trycloudflare.com
   skip-cert-verify: true
   type: vmess
-  uuid: 1f4f23ab-ccff-3c3e-90fb-f6e775e543cd
+  uuid: ff801f43-cd66-3925-89a2-dc68b61ab650
   ws-opts:
     headers:
       HOST: bibliographic-sword-sequence-advertisers.trycloudflare.com
@@ -62,20 +94,6 @@ proxies:
       HOST: lv1-vmess.sshmax.xyz
     path: /vmess
   udp: true
-- alterId: 1
-  cipher: auto
-  country: JP
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇯🇵]_851'
-  network: tcp
-  port: 21583
-  server: 0i4ui-g03.jp03-7d22-vm0.entry.fr0307a.art
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 85d9dc69-138b-3a66-b1c0-7ce819c94553
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -83,52 +101,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_863'
-  - '[🇦🇶]_864'
+  - '[🇨🇦]_848'
   - '[🇯🇵]_851'
+  - '[🇺🇸]_863'
+  - '[🇦🇶]_864'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_863'
-  - '[🇦🇶]_864'
+  - '[🇨🇦]_848'
   - '[🇯🇵]_851'
+  - '[🇺🇸]_863'
+  - '[🇦🇶]_864'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_863'
-  - '[🇦🇶]_864'
+  - '[🇨🇦]_848'
   - '[🇯🇵]_851'
+  - '[🇺🇸]_863'
+  - '[🇦🇶]_864'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_863'
-  - '[🇦🇶]_864'
+  - '[🇨🇦]_848'
   - '[🇯🇵]_851'
+  - '[🇺🇸]_863'
+  - '[🇦🇶]_864'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_863'
-  - '[🇦🇶]_864'
+  - '[🇨🇦]_848'
   - '[🇯🇵]_851'
+  - '[🇺🇸]_863'
+  - '[🇦🇶]_864'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_863'
-  - '[🇦🇶]_864'
+  - '[🇨🇦]_848'
   - '[🇯🇵]_851'
+  - '[🇺🇸]_863'
+  - '[🇦🇶]_864'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
