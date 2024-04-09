@@ -26,12 +26,26 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇦🇶]_765'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: b1d3976d-fdab-37b7-a4f2-27b2018fbd81
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
+  udp: true
 - alterId: 1
   cipher: auto
   country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇺🇸]_768'
+  name: '[🇺🇸]_769'
   network: ws
   port: 443
   server: hms07.xfixedfloat.cfd
@@ -39,25 +53,11 @@ proxies:
   skip-cert-verify: true
   tls: true
   type: vmess
-  uuid: 262772c8-3550-39a5-af77-a18207aa8727
+  uuid: 351b253b-a2e1-3f9d-8b2e-0c8984694e91
   ws-opts:
     headers:
       HOST: afrhms07.xfixedfloat.cfd
     path: /linkws
-  udp: true
-- name: '[🇸🇬]_759'
-  server: 159.223.94.156
-  port: 80
-  type: vmess
-  uuid: 52f5dc7e-97d7-3b2e-b482-68e55657b484
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /anti13.zingfast.vn
-  tls: false
-  ws-headers:
-    Host: 159.223.94.156
   udp: true
 - alterId: 0
   cipher: auto
@@ -85,29 +85,28 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇰🇷]韩国_769'
+  name: '[🇰🇷]韩国_770'
   network: tcp
   port: 10001
   server: 103.214.68.57
   servername: ''
   tls: true
   type: vmess
-  uuid: 79f31639-dfe1-3895-a559-6fbfefeb4380
+  uuid: 3f57aab0-0a06-3dc7-b42b-f8796b63b09d
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇰🇷]美国_770'
-  network: ws
-  port: 55210
-  server: 130.162.134.31
-  servername: ''
-  tls: false
+- name: '[🇸🇬]_764'
+  server: 159.223.94.156
+  port: 80
   type: vmess
-  uuid: 10ae74e8-9f00-34a2-8624-aa3c0652a5c7
-  ws-opts:
-    headers:
-      Host: ''
-    path: /huaxia
+  uuid: 00b60ef9-3aa6-3632-9f32-a5186b19dc39
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /anti13.zingfast.vn
+  tls: false
+  ws-headers:
+    Host: 159.223.94.156
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -116,70 +115,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_768'
-  - '[🇸🇬]_759'
+  - '[🇦🇶]_765'
+  - '[🇺🇸]_769'
   - '[🇦🇶]美国_771'
   - '[🇺🇸]美国_772'
-  - '[🇰🇷]韩国_769'
-  - '[🇰🇷]美国_770'
+  - '[🇰🇷]韩国_770'
+  - '[🇸🇬]_764'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_768'
-  - '[🇸🇬]_759'
+  - '[🇦🇶]_765'
+  - '[🇺🇸]_769'
   - '[🇦🇶]美国_771'
   - '[🇺🇸]美国_772'
-  - '[🇰🇷]韩国_769'
-  - '[🇰🇷]美国_770'
+  - '[🇰🇷]韩国_770'
+  - '[🇸🇬]_764'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_768'
-  - '[🇸🇬]_759'
+  - '[🇦🇶]_765'
+  - '[🇺🇸]_769'
   - '[🇦🇶]美国_771'
   - '[🇺🇸]美国_772'
-  - '[🇰🇷]韩国_769'
-  - '[🇰🇷]美国_770'
+  - '[🇰🇷]韩国_770'
+  - '[🇸🇬]_764'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_768'
-  - '[🇸🇬]_759'
+  - '[🇦🇶]_765'
+  - '[🇺🇸]_769'
   - '[🇦🇶]美国_771'
   - '[🇺🇸]美国_772'
-  - '[🇰🇷]韩国_769'
-  - '[🇰🇷]美国_770'
+  - '[🇰🇷]韩国_770'
+  - '[🇸🇬]_764'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_768'
-  - '[🇸🇬]_759'
+  - '[🇦🇶]_765'
+  - '[🇺🇸]_769'
   - '[🇦🇶]美国_771'
   - '[🇺🇸]美国_772'
-  - '[🇰🇷]韩国_769'
-  - '[🇰🇷]美国_770'
+  - '[🇰🇷]韩国_770'
+  - '[🇸🇬]_764'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_768'
-  - '[🇸🇬]_759'
+  - '[🇦🇶]_765'
+  - '[🇺🇸]_769'
   - '[🇦🇶]美国_771'
   - '[🇺🇸]美国_772'
-  - '[🇰🇷]韩国_769'
-  - '[🇰🇷]美国_770'
+  - '[🇰🇷]韩国_770'
+  - '[🇸🇬]_764'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
