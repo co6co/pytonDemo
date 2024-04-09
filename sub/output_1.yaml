@@ -26,11 +26,41 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_765'
+- name: '[🇦🇶]未知国家_684'
+  server: 104.17.25.1
+  port: 80
+  type: vmess
+  uuid: e3c5c6b6-565d-3952-b110-b1a2b15b8446
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: kr.catnipballs.gay
+  udp: true
+- name: '[🇦🇶]未知国家_694'
+  server: cfcdn2.sanfencdn9.com
+  port: 2052
+  type: vmess
+  uuid: 458ee222-71a3-335c-9893-0d62665e2ada
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /video/c9efxRCi
+    headers:
+      Host: 7nAi74jJsg1.yofnhkfc.xyz
+  udp: true
+- name: '[🇺🇸]_757'
   server: cold-dawn-9246.fly.dev
   port: 443
   type: vmess
-  uuid: 11501d0b-ec10-385f-b2d4-9c160f8919f4
+  uuid: 1190f1e2-144a-3a81-a024-dfb8e5776ba1
   alterId: 0
   cipher: auto
   tls: true
@@ -41,11 +71,11 @@ proxies:
     headers:
       Host: cold-dawn-9246.fly.dev
   udp: true
-- name: '[🇸🇬]_756'
+- name: '[🇸🇬]_767'
   server: 159.223.94.156
   port: 80
   type: vmess
-  uuid: 6132f855-7f43-3aab-9fc5-02cb8c5307ba
+  uuid: 4284403b-983c-38a3-8d9e-652630256832
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -55,6 +85,57 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
+- name: '[🇦🇶]_768'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: 57c00232-01c1-3389-8cd7-9b5a71405b89
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
+  udp: true
+- alterId: 0
+  cipher: auto
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_771'
+  network: ws
+  port: 80
+  server: 129.153.126.128
+  skip-cert-verify: true
+  type: vmess
+  uuid: 3626bd06-cc22-3ca8-9729-0ff7705eb540
+  ws-opts: {}
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]美国_772'
+  network: ws
+  port: 2052
+  server: lol.ps
+  tls: false
+  type: vmess
+  uuid: eca712d7-c6ed-3a3d-9a96-fe5ce1876e0c
+  ws-opts:
+    headers:
+      Host: mysan2.jaquay22.workers.dev
+    path: /afrhms16v.bestxray.buzz/linkws
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇺🇸]美国_773'
+  network: tcp
+  port: 28241
+  server: 38.147.160.101
+  tls: false
+  type: vmess
+  uuid: c316a2d0-477a-30a7-a40c-fb87f7f63f78
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -62,46 +143,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_765'
-  - '[🇸🇬]_756'
+  - '[🇦🇶]未知国家_684'
+  - '[🇦🇶]未知国家_694'
+  - '[🇺🇸]_757'
+  - '[🇸🇬]_767'
+  - '[🇦🇶]_768'
+  - '[🇺🇸]_771'
+  - '[🇦🇶]美国_772'
+  - '[🇺🇸]美国_773'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_765'
-  - '[🇸🇬]_756'
+  - '[🇦🇶]未知国家_684'
+  - '[🇦🇶]未知国家_694'
+  - '[🇺🇸]_757'
+  - '[🇸🇬]_767'
+  - '[🇦🇶]_768'
+  - '[🇺🇸]_771'
+  - '[🇦🇶]美国_772'
+  - '[🇺🇸]美国_773'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_765'
-  - '[🇸🇬]_756'
+  - '[🇦🇶]未知国家_684'
+  - '[🇦🇶]未知国家_694'
+  - '[🇺🇸]_757'
+  - '[🇸🇬]_767'
+  - '[🇦🇶]_768'
+  - '[🇺🇸]_771'
+  - '[🇦🇶]美国_772'
+  - '[🇺🇸]美国_773'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_765'
-  - '[🇸🇬]_756'
+  - '[🇦🇶]未知国家_684'
+  - '[🇦🇶]未知国家_694'
+  - '[🇺🇸]_757'
+  - '[🇸🇬]_767'
+  - '[🇦🇶]_768'
+  - '[🇺🇸]_771'
+  - '[🇦🇶]美国_772'
+  - '[🇺🇸]美国_773'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_765'
-  - '[🇸🇬]_756'
+  - '[🇦🇶]未知国家_684'
+  - '[🇦🇶]未知国家_694'
+  - '[🇺🇸]_757'
+  - '[🇸🇬]_767'
+  - '[🇦🇶]_768'
+  - '[🇺🇸]_771'
+  - '[🇦🇶]美国_772'
+  - '[🇺🇸]美国_773'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_765'
-  - '[🇸🇬]_756'
+  - '[🇦🇶]未知国家_684'
+  - '[🇦🇶]未知国家_694'
+  - '[🇺🇸]_757'
+  - '[🇸🇬]_767'
+  - '[🇦🇶]_768'
+  - '[🇺🇸]_771'
+  - '[🇦🇶]美国_772'
+  - '[🇺🇸]美国_773'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
