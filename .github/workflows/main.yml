@@ -38,7 +38,7 @@ jobs:
           git config --local user.name '${{ secrets.NAME }}'
           git pull origin master
           git add ./sub/*
-          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update"
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update" && git push || echo "No changes to commit"
       - name: 推送更改
         uses:  ad-m/github-push-action@master
         with:
