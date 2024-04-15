@@ -40,7 +40,7 @@ jobs:
           git pull origin master
           git status
           git add ./sub/*
-          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update"
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update" && git push || echo "No changes to commit"
           git status
       - name: 推送更改
         uses:  ad-m/github-push-action@master
