@@ -26,11 +26,56 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇸🇬]_697'
+- alterId: 0
+  cipher: auto
+  country: ' NL'
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇰🇷]韩国_727'
+  network: tcp
+  port: 10001
+  server: 103.214.68.57
+  servername: ''
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: ee2e25c0-a7aa-30b8-9f42-7aff1020b324
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇦🇶]_737'
+  network: ws
+  port: 443
+  server: us-b.sbyt01.shop
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 9d7a1516-847b-3c3c-ad14-8f2e32ae6370
+  ws-opts:
+    path: /v2ray
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]美国_744'
+  network: ws
+  port: 2082
+  server: c2.v2raybrasil.cloud
+  tls: false
+  type: vmess
+  uuid: 9a849788-a2fc-398e-bbf6-acca7c9a5615
+  ws-opts:
+    headers:
+      Host: s2.redbullplus.xyz
+    path: /t.me/xraybr
+  udp: true
+- name: '[🇸🇬]_701'
   server: 159.223.94.156
   port: 80
   type: vmess
-  uuid: 5f8aea75-6eed-3597-8c7e-5eab6d5a77ce
+  uuid: ef644676-b113-3204-8b58-e796f4ce6738
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -40,15 +85,19 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
-- name: '[🇭🇰]_711'
-  server: 218.102.135.177
-  port: 20000
-  type: vmess
-  uuid: 8ce49d43-7b09-3ea3-937c-3cb6c9ebed25
-  alterId: 0
+- alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
+  country: TW
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇹🇼]_731'
+  network: tcp
+  port: 39999
+  server: twgnjby3f.kw1030v8.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 4ce6d666-4576-3b54-a19a-abb1a48561ef
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -57,46 +106,64 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇸🇬]_697'
-  - '[🇭🇰]_711'
+  - '[🇰🇷]韩国_727'
+  - '[🇦🇶]_737'
+  - '[🇦🇶]美国_744'
+  - '[🇸🇬]_701'
+  - '[🇹🇼]_731'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_697'
-  - '[🇭🇰]_711'
+  - '[🇰🇷]韩国_727'
+  - '[🇦🇶]_737'
+  - '[🇦🇶]美国_744'
+  - '[🇸🇬]_701'
+  - '[🇹🇼]_731'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_697'
-  - '[🇭🇰]_711'
+  - '[🇰🇷]韩国_727'
+  - '[🇦🇶]_737'
+  - '[🇦🇶]美国_744'
+  - '[🇸🇬]_701'
+  - '[🇹🇼]_731'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇸🇬]_697'
-  - '[🇭🇰]_711'
+  - '[🇰🇷]韩国_727'
+  - '[🇦🇶]_737'
+  - '[🇦🇶]美国_744'
+  - '[🇸🇬]_701'
+  - '[🇹🇼]_731'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇸🇬]_697'
-  - '[🇭🇰]_711'
+  - '[🇰🇷]韩国_727'
+  - '[🇦🇶]_737'
+  - '[🇦🇶]美国_744'
+  - '[🇸🇬]_701'
+  - '[🇹🇼]_731'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇸🇬]_697'
-  - '[🇭🇰]_711'
+  - '[🇰🇷]韩国_727'
+  - '[🇦🇶]_737'
+  - '[🇦🇶]美国_744'
+  - '[🇸🇬]_701'
+  - '[🇹🇼]_731'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
