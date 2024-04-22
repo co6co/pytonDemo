@@ -26,35 +26,34 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇭🇰]香港_748'
-  server: hkt.nat.01.mikunet.work
-  port: 20000
-  client-fingerprint: chrome
-  type: vmess
-  uuid: 7e624159-52aa-3d40-bb6e-2e5e8cda56f4
-  alterId: 0
+- alterId: 0
   cipher: auto
+  name: '[🇦🇶]美国_784'
+  network: ws
+  port: 2082
+  server: 162.159.136.220
+  servername: ''
   tls: false
-  tfo: false
-  skip-cert-verify: false
+  type: vmess
+  uuid: b1fb03d4-3748-393a-a2dc-2a8d69baec9e
+  ws-opts:
+    headers:
+      Host: sgv8.gas51qwrhmzz8.top
+    path: /
   udp: true
 - alterId: 0
   cipher: auto
-  country: JP
   h2-opts: {}
   http-opts: {}
-  name: '[🇯🇵]_784'
+  name: '[🇺🇸]_778'
   network: ws
-  port: 2052
-  server: 47.74.34.38
-  servername: jpyouyou.mac2winer.cfd
+  port: 22210
+  server: 23.94.100.187
   skip-cert-verify: true
   type: vmess
-  uuid: 54d14885-5ef2-30a6-a0c0-7f9e432eac80
+  uuid: d2e3af07-95b0-35df-92ea-9af97dfa1f86
   ws-opts:
-    headers:
-      HOST: jpyouyou.mac2winer.cfd
-    path: /039fc4e4
+    path: /dwax
   udp: true
 - name: '[🇸🇬]_763'
   server: 159.223.94.156
@@ -72,14 +71,25 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇭🇰]香港_795'
-  network: ws
-  port: 80
-  server: 47.243.162.49
+  name: '[🇭🇰]香港_785'
+  network: tcp
+  port: 39996
+  server: 218.102.135.214
   servername: ''
   tls: false
   type: vmess
-  uuid: 05723d26-b76f-3f68-af64-ad0607d28d82
+  uuid: 95264b38-e250-3af4-8af5-828e988aaa80
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_786'
+  network: ws
+  port: 80
+  server: 8.210.9.129
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 832b3476-ba85-39dd-a185-8f2c64499657
   ws-opts:
     headers:
       Host: mix.tgdns68.vps666.onflashdrive.app
@@ -92,58 +102,64 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇭🇰]香港_748'
-  - '[🇯🇵]_784'
+  - '[🇦🇶]美国_784'
+  - '[🇺🇸]_778'
   - '[🇸🇬]_763'
-  - '[🇭🇰]香港_795'
+  - '[🇭🇰]香港_785'
+  - '[🇭🇰]香港_786'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]香港_748'
-  - '[🇯🇵]_784'
+  - '[🇦🇶]美国_784'
+  - '[🇺🇸]_778'
   - '[🇸🇬]_763'
-  - '[🇭🇰]香港_795'
+  - '[🇭🇰]香港_785'
+  - '[🇭🇰]香港_786'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]香港_748'
-  - '[🇯🇵]_784'
+  - '[🇦🇶]美国_784'
+  - '[🇺🇸]_778'
   - '[🇸🇬]_763'
-  - '[🇭🇰]香港_795'
+  - '[🇭🇰]香港_785'
+  - '[🇭🇰]香港_786'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]香港_748'
-  - '[🇯🇵]_784'
+  - '[🇦🇶]美国_784'
+  - '[🇺🇸]_778'
   - '[🇸🇬]_763'
-  - '[🇭🇰]香港_795'
+  - '[🇭🇰]香港_785'
+  - '[🇭🇰]香港_786'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇭🇰]香港_748'
-  - '[🇯🇵]_784'
+  - '[🇦🇶]美国_784'
+  - '[🇺🇸]_778'
   - '[🇸🇬]_763'
-  - '[🇭🇰]香港_795'
+  - '[🇭🇰]香港_785'
+  - '[🇭🇰]香港_786'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇭🇰]香港_748'
-  - '[🇯🇵]_784'
+  - '[🇦🇶]美国_784'
+  - '[🇺🇸]_778'
   - '[🇸🇬]_763'
-  - '[🇭🇰]香港_795'
+  - '[🇭🇰]香港_785'
+  - '[🇭🇰]香港_786'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
