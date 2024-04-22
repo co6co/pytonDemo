@@ -26,19 +26,73 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇨🇿]_764'
+  server: 77.75.230.125
+  port: 2082
+  type: vmess
+  uuid: 79feea6c-5054-34bd-9991-cadae8c11722
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+  udp: true
+- name: '[🇨🇿]_765'
+  server: 77.75.230.125
+  port: 8080
+  type: vmess
+  uuid: 022098bc-e257-39ff-8bbf-144e2e3249dc
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+  udp: true
+- name: '[🇺🇸]_770'
+  server: 172.67.204.84
+  port: 8880
+  type: vmess
+  uuid: 6fc0aac5-fab8-3b4a-aeb5-11dac817a15f
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cdn.vds-server.ir
+  udp: true
+- name: '[🇨🇿]_766'
+  server: 77.75.230.125
+  port: 80
+  type: vmess
+  uuid: 94a79319-cb3d-36bc-8248-51ada18e90e5
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vmess
+  udp: true
 - alterId: 0
   cipher: auto
   country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇦🇶]_779'
+  name: '[🇺🇸]_781'
   network: ws
   port: 8080
   server: kkyx.yydsii.com
   servername: oiictw.yydsii.com
   skip-cert-verify: true
   type: vmess
-  uuid: a76566b9-eaf6-3158-b3fe-526b6c47ce5b
+  uuid: 20357252-5715-3583-9206-90f9e3d0f9b2
   ws-opts:
     headers:
       HOST: oiictw.yydsii.com
@@ -49,7 +103,7 @@ proxies:
   country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇦🇶]_780'
+  name: '[🇺🇸]_782'
   network: ws
   port: 443
   server: upload.ir
@@ -57,74 +111,57 @@ proxies:
   skip-cert-verify: true
   tls: true
   type: vmess
-  uuid: 713d37b5-2bcd-355d-83f7-ce9a4101f289
+  uuid: 15c73b10-0213-328e-97dc-160fe206c1c6
   ws-opts:
     headers:
       HOST: pl1-vmess.sshmax.xyz
     path: /vmess
   udp: true
-- name: '[🇺🇸]_765'
-  server: freejc.test.freecarriertraffic.hongkong.133141.xyz
-  port: 80
+- name: '[🇨🇿]_768'
+  server: 77.75.230.125
+  port: 8880
   type: vmess
-  uuid: 11501d0b-ec10-385f-b2d4-9c160f8919f4
+  uuid: ba057686-0085-3b10-9390-fb627a5b36d6
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: baidu.com
-  udp: true
-- alterId: 0
-  cipher: auto
-  country: CZ
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇨🇿]_770'
-  network: ws
-  port: 80
-  server: 77.75.230.125
-  skip-cert-verify: true
-  type: vmess
-  uuid: 1da3c6cd-9bbf-3eac-b1ad-8d6359bee548
-  ws-opts:
     path: /vmess
+  udp: true
+- name: '[🇭🇰]_769'
+  server: 8.217.147.230
+  port: 80
+  type: vmess
+  uuid: e020fc08-d81d-3924-a85d-afe76e8c3c9f
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /TG@dns68公益节点
+    headers:
+      Host: mix.tgdns68.vps666.onflashdrive.app
   udp: true
 - alterId: 0
   cipher: auto
   country: JP
   h2-opts: {}
   http-opts: {}
-  name: '[🇯🇵]_774'
+  name: '[🇯🇵]_776'
   network: ws
   port: 2052
   server: 47.74.34.38
   servername: jpyouyou.mac2winer.cfd
   skip-cert-verify: true
   type: vmess
-  uuid: 27db1b07-7bd8-393b-b391-4c202e1570b2
+  uuid: 8b8b95fa-ec17-351c-89d2-1f22beed61a0
   ws-opts:
     headers:
       HOST: jpyouyou.mac2winer.cfd
     path: /039fc4e4
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]中国_781'
-  network: ws
-  port: 80
-  server: 8.217.147.230
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 5876c666-1d1a-3254-b009-40cf3341f415
-  ws-opts:
-    headers:
-      Host: mix.tgdns68.vps666.onflashdrive.app
-    path: /TG@dns68公益节点
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -133,70 +170,88 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_779'
-  - '[🇦🇶]_780'
-  - '[🇺🇸]_765'
-  - '[🇨🇿]_770'
-  - '[🇯🇵]_774'
-  - '[🇭🇰]中国_781'
+  - '[🇨🇿]_764'
+  - '[🇨🇿]_765'
+  - '[🇺🇸]_770'
+  - '[🇨🇿]_766'
+  - '[🇺🇸]_781'
+  - '[🇺🇸]_782'
+  - '[🇨🇿]_768'
+  - '[🇭🇰]_769'
+  - '[🇯🇵]_776'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_779'
-  - '[🇦🇶]_780'
-  - '[🇺🇸]_765'
-  - '[🇨🇿]_770'
-  - '[🇯🇵]_774'
-  - '[🇭🇰]中国_781'
+  - '[🇨🇿]_764'
+  - '[🇨🇿]_765'
+  - '[🇺🇸]_770'
+  - '[🇨🇿]_766'
+  - '[🇺🇸]_781'
+  - '[🇺🇸]_782'
+  - '[🇨🇿]_768'
+  - '[🇭🇰]_769'
+  - '[🇯🇵]_776'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_779'
-  - '[🇦🇶]_780'
-  - '[🇺🇸]_765'
-  - '[🇨🇿]_770'
-  - '[🇯🇵]_774'
-  - '[🇭🇰]中国_781'
+  - '[🇨🇿]_764'
+  - '[🇨🇿]_765'
+  - '[🇺🇸]_770'
+  - '[🇨🇿]_766'
+  - '[🇺🇸]_781'
+  - '[🇺🇸]_782'
+  - '[🇨🇿]_768'
+  - '[🇭🇰]_769'
+  - '[🇯🇵]_776'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_779'
-  - '[🇦🇶]_780'
-  - '[🇺🇸]_765'
-  - '[🇨🇿]_770'
-  - '[🇯🇵]_774'
-  - '[🇭🇰]中国_781'
+  - '[🇨🇿]_764'
+  - '[🇨🇿]_765'
+  - '[🇺🇸]_770'
+  - '[🇨🇿]_766'
+  - '[🇺🇸]_781'
+  - '[🇺🇸]_782'
+  - '[🇨🇿]_768'
+  - '[🇭🇰]_769'
+  - '[🇯🇵]_776'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_779'
-  - '[🇦🇶]_780'
-  - '[🇺🇸]_765'
-  - '[🇨🇿]_770'
-  - '[🇯🇵]_774'
-  - '[🇭🇰]中国_781'
+  - '[🇨🇿]_764'
+  - '[🇨🇿]_765'
+  - '[🇺🇸]_770'
+  - '[🇨🇿]_766'
+  - '[🇺🇸]_781'
+  - '[🇺🇸]_782'
+  - '[🇨🇿]_768'
+  - '[🇭🇰]_769'
+  - '[🇯🇵]_776'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_779'
-  - '[🇦🇶]_780'
-  - '[🇺🇸]_765'
-  - '[🇨🇿]_770'
-  - '[🇯🇵]_774'
-  - '[🇭🇰]中国_781'
+  - '[🇨🇿]_764'
+  - '[🇨🇿]_765'
+  - '[🇺🇸]_770'
+  - '[🇨🇿]_766'
+  - '[🇺🇸]_781'
+  - '[🇺🇸]_782'
+  - '[🇨🇿]_768'
+  - '[🇭🇰]_769'
+  - '[🇯🇵]_776'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
