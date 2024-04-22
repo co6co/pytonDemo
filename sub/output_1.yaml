@@ -26,33 +26,34 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇦🇶]_715'
-  server: 104.19.40.211
-  port: 8880
+- name: '[🇭🇰]_694'
+  server: 8.217.147.230
+  port: 80
   type: vmess
-  uuid: 09dcd0d7-16e5-3878-b755-0db9c64b96d8
+  uuid: 7d369981-10b7-3067-8c7e-f2c55039f733
   alterId: 0
   cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /d/65dd503.TG.WangCai2.WangCai_8:107690
   tls: false
-  ws-headers:
-    Host: uk.moss.network
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /TG@dns68公益节点
+    headers:
+      Host: mix.tgdns68.vps666.onflashdrive.app
   udp: true
-- name: '[🇺🇸]_719'
-  server: 172.67.152.170
-  port: 2095
-  type: vmess
-  uuid: 42ba641b-76ae-3d44-a6a3-f1f015e8946a
-  alterId: 0
+- alterId: 0
   cipher: auto
-  skip-cert-verify: true
+  name: '[🇦🇶]美国_737'
   network: ws
-  ws-path: /
+  port: 2082
+  server: c2.v2raybrasil.cloud
   tls: false
-  ws-headers:
-    Host: tu.mahilu.site
+  type: vmess
+  uuid: ceb43bee-4e30-31ae-bc94-9fa88df16292
+  ws-opts:
+    headers:
+      Host: s2.redbullplus.xyz
+    path: /t.me/xraybr
   udp: true
 - name: '[🇭🇰]_699'
   server: 8.218.207.169
@@ -68,22 +69,6 @@ proxies:
     path: /TG@dns68公益节点
     headers:
       Host: mix.tgdns68.vps666.onflashdrive.app
-  udp: true
-- name: '[🇰🇷]_676'
-  server: 14.52.249.135
-  port: 10082
-  type: vless
-  Inc. - 17: None
-  uuid: fa665076-530f-3f24-a652-2b89c53d02ae
-  network: ws
-  tls: true
-  client-fingerprint: chrome
-  servername: cfed.tgzdyz2.top
-  ws-opts:
-    path: TG@ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
-  delay: 1572
   udp: true
 - name: '[🇸🇬]_710'
   server: 159.223.94.156
@@ -106,10 +91,9 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_715'
-  - '[🇺🇸]_719'
+  - '[🇭🇰]_694'
+  - '[🇦🇶]美国_737'
   - '[🇭🇰]_699'
-  - '[🇰🇷]_676'
   - '[🇸🇬]_710'
 - name: 🎯 负载均衡
   type: load-balance
@@ -117,10 +101,9 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_715'
-  - '[🇺🇸]_719'
+  - '[🇭🇰]_694'
+  - '[🇦🇶]美国_737'
   - '[🇭🇰]_699'
-  - '[🇰🇷]_676'
   - '[🇸🇬]_710'
 - name: ♻️ 自动选择
   type: fallback
@@ -128,10 +111,9 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_715'
-  - '[🇺🇸]_719'
+  - '[🇭🇰]_694'
+  - '[🇦🇶]美国_737'
   - '[🇭🇰]_699'
-  - '[🇰🇷]_676'
   - '[🇸🇬]_710'
 - name: 🔰 延迟最低
   type: url-test
@@ -139,19 +121,17 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_715'
-  - '[🇺🇸]_719'
+  - '[🇭🇰]_694'
+  - '[🇦🇶]美国_737'
   - '[🇭🇰]_699'
-  - '[🇰🇷]_676'
   - '[🇸🇬]_710'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_715'
-  - '[🇺🇸]_719'
+  - '[🇭🇰]_694'
+  - '[🇦🇶]美国_737'
   - '[🇭🇰]_699'
-  - '[🇰🇷]_676'
   - '[🇸🇬]_710'
 - name: 🎯 全球直连
   type: select
@@ -159,10 +139,9 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_715'
-  - '[🇺🇸]_719'
+  - '[🇭🇰]_694'
+  - '[🇦🇶]美国_737'
   - '[🇭🇰]_699'
-  - '[🇰🇷]_676'
   - '[🇸🇬]_710'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
