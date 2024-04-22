@@ -26,40 +26,82 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 0
+- name: '[🇭🇰]_699'
+  server: 8.218.207.169
+  port: 80
+  type: vmess
+  uuid: b895712f-f213-3f86-9579-ac434a42544c
+  alterId: 0
   cipher: auto
-  name: '[🇦🇶]美国_784'
-  network: ws
-  port: 2082
-  server: 162.159.136.220
-  servername: ''
   tls: false
-  type: vmess
-  uuid: b1fb03d4-3748-393a-a2dc-2a8d69baec9e
-  ws-opts:
-    headers:
-      Host: sgv8.gas51qwrhmzz8.top
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇺🇸]_778'
+  skip-cert-verify: false
   network: ws
-  port: 22210
-  server: 23.94.100.187
-  skip-cert-verify: true
-  type: vmess
-  uuid: d2e3af07-95b0-35df-92ea-9af97dfa1f86
   ws-opts:
-    path: /dwax
+    path: /TG@dns68公益节点
+    headers:
+      Host: mix.tgdns68.vps666.onflashdrive.app
   udp: true
-- name: '[🇸🇬]_763'
+- name: '[🇦🇶]_714'
+  server: 104.19.40.48
+  port: 8880
+  type: vmess
+  uuid: 26c9c835-e6c9-3655-9612-1eeb9c185245
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /d/65dd503.TG.WangCai2.WangCai_8:107690
+  tls: false
+  ws-headers:
+    Host: uk.moss.network
+  udp: true
+- name: '[🇦🇶]_711'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: ce59853f-a79f-3f61-b618-3c9d6d45b79c
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
+  udp: true
+- name: '[🇺🇸]_719'
+  server: 172.67.152.170
+  port: 2095
+  type: vmess
+  uuid: 42ba641b-76ae-3d44-a6a3-f1f015e8946a
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: tu.mahilu.site
+  udp: true
+- name: '[🇦🇶]_715'
+  server: 104.19.40.211
+  port: 8880
+  type: vmess
+  uuid: 09dcd0d7-16e5-3878-b755-0db9c64b96d8
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /d/65dd503.TG.WangCai2.WangCai_8:107690
+  tls: false
+  ws-headers:
+    Host: uk.moss.network
+  udp: true
+- name: '[🇸🇬]_710'
   server: 159.223.94.156
   port: 80
   type: vmess
-  uuid: 975b9cab-87b2-3ce5-80e0-cdef492557bc
+  uuid: acf28d44-cc74-3a40-bdec-ca1fd6c57c11
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -69,32 +111,6 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]香港_785'
-  network: tcp
-  port: 39996
-  server: 218.102.135.214
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 95264b38-e250-3af4-8af5-828e988aaa80
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]香港_786'
-  network: ws
-  port: 80
-  server: 8.210.9.129
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 832b3476-ba85-39dd-a185-8f2c64499657
-  ws-opts:
-    headers:
-      Host: mix.tgdns68.vps666.onflashdrive.app
-    path: /TG@dns68公益节点
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -102,64 +118,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]美国_784'
-  - '[🇺🇸]_778'
-  - '[🇸🇬]_763'
-  - '[🇭🇰]香港_785'
-  - '[🇭🇰]香港_786'
+  - '[🇭🇰]_699'
+  - '[🇦🇶]_714'
+  - '[🇦🇶]_711'
+  - '[🇺🇸]_719'
+  - '[🇦🇶]_715'
+  - '[🇸🇬]_710'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_784'
-  - '[🇺🇸]_778'
-  - '[🇸🇬]_763'
-  - '[🇭🇰]香港_785'
-  - '[🇭🇰]香港_786'
+  - '[🇭🇰]_699'
+  - '[🇦🇶]_714'
+  - '[🇦🇶]_711'
+  - '[🇺🇸]_719'
+  - '[🇦🇶]_715'
+  - '[🇸🇬]_710'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_784'
-  - '[🇺🇸]_778'
-  - '[🇸🇬]_763'
-  - '[🇭🇰]香港_785'
-  - '[🇭🇰]香港_786'
+  - '[🇭🇰]_699'
+  - '[🇦🇶]_714'
+  - '[🇦🇶]_711'
+  - '[🇺🇸]_719'
+  - '[🇦🇶]_715'
+  - '[🇸🇬]_710'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]美国_784'
-  - '[🇺🇸]_778'
-  - '[🇸🇬]_763'
-  - '[🇭🇰]香港_785'
-  - '[🇭🇰]香港_786'
+  - '[🇭🇰]_699'
+  - '[🇦🇶]_714'
+  - '[🇦🇶]_711'
+  - '[🇺🇸]_719'
+  - '[🇦🇶]_715'
+  - '[🇸🇬]_710'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]美国_784'
-  - '[🇺🇸]_778'
-  - '[🇸🇬]_763'
-  - '[🇭🇰]香港_785'
-  - '[🇭🇰]香港_786'
+  - '[🇭🇰]_699'
+  - '[🇦🇶]_714'
+  - '[🇦🇶]_711'
+  - '[🇺🇸]_719'
+  - '[🇦🇶]_715'
+  - '[🇸🇬]_710'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]美国_784'
-  - '[🇺🇸]_778'
-  - '[🇸🇬]_763'
-  - '[🇭🇰]香港_785'
-  - '[🇭🇰]香港_786'
+  - '[🇭🇰]_699'
+  - '[🇦🇶]_714'
+  - '[🇦🇶]_711'
+  - '[🇺🇸]_719'
+  - '[🇦🇶]_715'
+  - '[🇸🇬]_710'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
