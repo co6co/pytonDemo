@@ -26,39 +26,41 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇨🇿]_749'
-  server: 77.75.230.125
-  port: 8880
+- name: '[🇭🇰]香港_748'
+  server: hkt.nat.01.mikunet.work
+  port: 20000
+  client-fingerprint: chrome
   type: vmess
-  uuid: a40be73c-8bf4-39ce-975d-2d13769cd7de
+  uuid: 7e624159-52aa-3d40-bb6e-2e5e8cda56f4
   alterId: 0
   cipher: auto
   tls: false
+  tfo: false
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /vmess
   udp: true
-- name: '[🇭🇰]_750'
-  server: 8.217.147.230
-  port: 80
-  type: vmess
-  uuid: 8990c737-b5b1-33c1-b51f-3107ddba4cbc
-  alterId: 0
+- alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
+  country: JP
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇯🇵]_784'
   network: ws
+  port: 2052
+  server: 47.74.34.38
+  servername: jpyouyou.mac2winer.cfd
+  skip-cert-verify: true
+  type: vmess
+  uuid: 54d14885-5ef2-30a6-a0c0-7f9e432eac80
   ws-opts:
-    path: /TG@dns68公益节点
     headers:
-      Host: mix.tgdns68.vps666.onflashdrive.app
+      HOST: jpyouyou.mac2winer.cfd
+    path: /039fc4e4
   udp: true
-- name: '[🇸🇬]_758'
+- name: '[🇸🇬]_763'
   server: 159.223.94.156
   port: 80
   type: vmess
-  uuid: fffa25fd-fb13-3834-8b6b-8d6472c0edec
+  uuid: 975b9cab-87b2-3ce5-80e0-cdef492557bc
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -70,36 +72,14 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]江苏省_781'
-  network: tcp
-  port: 21322
-  server: 223.113.130.60
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 004408a4-1fa7-3d03-9d9b-6618eb284946
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇳]江苏省_782'
-  network: tcp
-  port: 22300
-  server: 223.113.130.62
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 16fbde03-c9c3-3b4c-bf80-c4ead5e22a43
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇭🇰]中国_783'
+  name: '[🇭🇰]香港_795'
   network: ws
   port: 80
-  server: 8.218.207.169
+  server: 47.243.162.49
   servername: ''
   tls: false
   type: vmess
-  uuid: bcd93c22-8355-3c06-b5e0-78e07940035a
+  uuid: 05723d26-b76f-3f68-af64-ad0607d28d82
   ws-opts:
     headers:
       Host: mix.tgdns68.vps666.onflashdrive.app
@@ -112,70 +92,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇨🇿]_749'
-  - '[🇭🇰]_750'
-  - '[🇸🇬]_758'
-  - '[🇨🇳]江苏省_781'
-  - '[🇨🇳]江苏省_782'
-  - '[🇭🇰]中国_783'
+  - '[🇭🇰]香港_748'
+  - '[🇯🇵]_784'
+  - '[🇸🇬]_763'
+  - '[🇭🇰]香港_795'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇿]_749'
-  - '[🇭🇰]_750'
-  - '[🇸🇬]_758'
-  - '[🇨🇳]江苏省_781'
-  - '[🇨🇳]江苏省_782'
-  - '[🇭🇰]中国_783'
+  - '[🇭🇰]香港_748'
+  - '[🇯🇵]_784'
+  - '[🇸🇬]_763'
+  - '[🇭🇰]香港_795'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇿]_749'
-  - '[🇭🇰]_750'
-  - '[🇸🇬]_758'
-  - '[🇨🇳]江苏省_781'
-  - '[🇨🇳]江苏省_782'
-  - '[🇭🇰]中国_783'
+  - '[🇭🇰]香港_748'
+  - '[🇯🇵]_784'
+  - '[🇸🇬]_763'
+  - '[🇭🇰]香港_795'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇨🇿]_749'
-  - '[🇭🇰]_750'
-  - '[🇸🇬]_758'
-  - '[🇨🇳]江苏省_781'
-  - '[🇨🇳]江苏省_782'
-  - '[🇭🇰]中国_783'
+  - '[🇭🇰]香港_748'
+  - '[🇯🇵]_784'
+  - '[🇸🇬]_763'
+  - '[🇭🇰]香港_795'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇨🇿]_749'
-  - '[🇭🇰]_750'
-  - '[🇸🇬]_758'
-  - '[🇨🇳]江苏省_781'
-  - '[🇨🇳]江苏省_782'
-  - '[🇭🇰]中国_783'
+  - '[🇭🇰]香港_748'
+  - '[🇯🇵]_784'
+  - '[🇸🇬]_763'
+  - '[🇭🇰]香港_795'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇨🇿]_749'
-  - '[🇭🇰]_750'
-  - '[🇸🇬]_758'
-  - '[🇨🇳]江苏省_781'
-  - '[🇨🇳]江苏省_782'
-  - '[🇭🇰]中国_783'
+  - '[🇭🇰]香港_748'
+  - '[🇯🇵]_784'
+  - '[🇸🇬]_763'
+  - '[🇭🇰]香港_795'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
