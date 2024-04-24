@@ -26,107 +26,15 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇦🇶]_734'
-  server: 104.19.40.211
-  port: 8880
-  type: vmess
-  uuid: d15e3197-704c-3bd4-8038-a2903f8b9e9f
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /d/65dd503.TG.WangCai2.WangCai_8:107690
-  tls: false
-  ws-headers:
-    Host: uk.moss.network
-  udp: true
-- name: '[🇰🇷]_681'
-  server: 152.70.251.80
-  port: 22802
-  type: vless
-  Inc. - 33: None
-  client-fingerprint: random
-  uuid: f23f7692-a9bc-3d02-8995-c6b429d6f047
-  tls: true
-  tfo: false
-  servername: cfed.tgzdyz2.top
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: TG@ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
-  delay: 985
-- name: '[🇹🇼]台湾_743'
-  server: 36.235.166.17
-  port: 39999
-  client-fingerprint: chrome
-  type: vmess
-  uuid: ec2470f5-ef90-3f2a-9d19-22a64d6bd344
-  alterId: 0
-  cipher: auto
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: twgnjby3f.kw1030v8.xyz
-  udp: true
 - alterId: 0
   cipher: auto
-  country: US
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇺🇸]_780'
-  network: ws
-  port: 8080
-  server: 172.67.199.144
-  servername: oiictw.yydsii.com
-  skip-cert-verify: true
-  type: vmess
-  uuid: ce16eb42-47d8-3ee8-b175-2944266d2e76
-  ws-opts:
-    headers:
-      HOST: oiictw.yydsii.com
-    path: /
-  udp: true
-- name: '[🇹🇼]_762'
-  server: twgnjby3f.kw1030v8.xyz
-  port: 39999
-  type: vmess
-  uuid: dd2c21c1-9615-3252-90df-c713448f8231
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]美国_789'
-  network: ws
-  port: 2082
-  server: c2.v2raybrasil.cloud
+  name: '[🇺🇸]巴基斯坦_1027'
+  network: tcp
+  port: 43834
+  server: 50.114.243.61
   tls: false
   type: vmess
-  uuid: 462bc393-d3a2-3df7-8c05-cdc45e4c456a
-  ws-opts:
-    headers:
-      Host: s2.redbullplus.xyz
-    path: /t.me/xraybr
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇯🇵]日本_787'
-  network: ws
-  port: 41597
-  server: 183.181.36.194
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: be3446da-e19c-3ec3-8e4a-847c9444d0ac
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
+  uuid: bfaef5be-d9d5-3cc4-b7b7-ef7dc250f890
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -135,76 +43,40 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_734'
-  - '[🇰🇷]_681'
-  - '[🇹🇼]台湾_743'
-  - '[🇺🇸]_780'
-  - '[🇹🇼]_762'
-  - '[🇦🇶]美国_789'
-  - '[🇯🇵]日本_787'
+  - '[🇺🇸]巴基斯坦_1027'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_734'
-  - '[🇰🇷]_681'
-  - '[🇹🇼]台湾_743'
-  - '[🇺🇸]_780'
-  - '[🇹🇼]_762'
-  - '[🇦🇶]美国_789'
-  - '[🇯🇵]日本_787'
+  - '[🇺🇸]巴基斯坦_1027'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_734'
-  - '[🇰🇷]_681'
-  - '[🇹🇼]台湾_743'
-  - '[🇺🇸]_780'
-  - '[🇹🇼]_762'
-  - '[🇦🇶]美国_789'
-  - '[🇯🇵]日本_787'
+  - '[🇺🇸]巴基斯坦_1027'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_734'
-  - '[🇰🇷]_681'
-  - '[🇹🇼]台湾_743'
-  - '[🇺🇸]_780'
-  - '[🇹🇼]_762'
-  - '[🇦🇶]美国_789'
-  - '[🇯🇵]日本_787'
+  - '[🇺🇸]巴基斯坦_1027'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_734'
-  - '[🇰🇷]_681'
-  - '[🇹🇼]台湾_743'
-  - '[🇺🇸]_780'
-  - '[🇹🇼]_762'
-  - '[🇦🇶]美国_789'
-  - '[🇯🇵]日本_787'
+  - '[🇺🇸]巴基斯坦_1027'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_734'
-  - '[🇰🇷]_681'
-  - '[🇹🇼]台湾_743'
-  - '[🇺🇸]_780'
-  - '[🇹🇼]_762'
-  - '[🇦🇶]美国_789'
-  - '[🇯🇵]日本_787'
+  - '[🇺🇸]巴基斯坦_1027'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
