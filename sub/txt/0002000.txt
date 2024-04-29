@@ -23,12 +23,13 @@ proxies:
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   alterId: 0
   cipher: auto
-  tls: true
   skip-cert-verify: true
   network: ws
+  tls: true
   ws-opts:
     path: /linkvws
-  delay: 2554
+    headers:
+      Host: 158.51.123.111
   udp: true
 - name: CA_speednode_0003
   server: 158.51.123.111
@@ -44,76 +45,103 @@ proxies:
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   ws-opts:
     path: /linkvws
-- name: CN_speednode_0004
-  server: 221.215.48.116
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: f478f13:54448
+- name: CA_speednode_0004
+  server: 158.51.121.36
+  port: 443
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: 158.51.121.36
   udp: true
 - name: CN_speednode_0005
-  server: 221.215.48.117
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: f478f13:54448
+  server: 13.v2-ray.cyou
+  port: 23613
+  type: vmess
+  uuid: c0c1622d-9566-34e9-b5e6-79bdcd785668
+  alterId: 2
+  cipher: auto
+  skip-cert-vertify: true
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      host: 13.v2-ray.cyou
   udp: true
 - name: CN_speednode_0006
-  server: 221.215.48.118
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: f478f13:54448
+  server: 12.v2-ray.cyou
+  port: 23612
+  type: vmess
+  uuid: c0c1622d-9566-34e9-b5e6-79bdcd785668
+  alterId: 2
+  cipher: auto
+  skip-cert-vertify: true
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      host: 12.v2-ray.cyou
   udp: true
 - name: CN_speednode_0007
-  server: 221.215.48.68
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
+  server: 15.v2-ray.cyou
+  port: 23615
+  type: vmess
+  uuid: c0c1622d-9566-34e9-b5e6-79bdcd785668
+  alterId: 2
+  cipher: auto
+  skip-cert-vertify: true
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      host: 15.v2-ray.cyou
   udp: true
 - name: CN_speednode_0008
-  server: 120.241.46.100
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
+  server: 14.v2-ray.cyou
+  port: 23614
+  type: vmess
+  uuid: c0c1622d-9566-34e9-b5e6-79bdcd785668
+  alterId: 2
+  cipher: auto
+  skip-cert-vertify: true
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      host: 14.v2-ray.cyou
   udp: true
-- name: CN_speednode_0009
-  server: 120.241.46.106
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
+- name: HK_speednode_0009
+  server: 8.217.229.36
+  port: 26343
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 552
+  tfo: false
+  skip-cert-verify: false
   udp: true
 - name: HK_speednode_0010
   server: 8.217.85.212
   port: 18980
   type: vless
+  Inc. - 2: None
   client-fingerprint: chrome
   network: ws
   servername: a.ssll.gay
@@ -125,11 +153,30 @@ proxies:
     headers:
       Host: a.ssll.gay
     path: /proxyIP=oracle.gitgoogle.com
+  delay: 449
   udp: true
 - name: HK_speednode_0011
+  server: 8.217.229.36
+  port: 58029
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 840
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: HK_speednode_0012
   server: 8.210.160.12
   port: 37564
   type: vless
+  Inc. - 3: None
   client-fingerprint: chrome
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   tls: true
@@ -141,28 +188,24 @@ proxies:
     path: /proxyIP=oracle.gitgoogle.com
     headers:
       Host: a.ssll.gay
-  delay: 560
-  udp: true
-- name: HK_speednode_0012
-  server: 8.217.45.182
-  port: 34237
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
+  delay: 510
   udp: true
 - name: HK_speednode_0013
-  server: 94.74.100.2
-  port: 13080
+  server: 45.11.104.44
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: b491fd9:82122
+  udp: true
+- name: HK_speednode_0014
+  server: 8.217.85.212
+  port: 48952
   type: vless
+  Inc. - 7: None
   client-fingerprint: chrome
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   tls: true
@@ -174,9 +217,9 @@ proxies:
     path: /proxyIP=oracle.gitgoogle.com
     headers:
       Host: a.ssll.gay
-  delay: 612
+  delay: 921
   udp: true
-- name: HK_speednode_0014
+- name: HK_speednode_0015
   server: 8.210.1.45
   port: 34237
   type: vless
@@ -192,10 +235,74 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
-- name: HK_speednode_0015
+- name: HK_speednode_0016
+  server: 45.11.104.113
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: b491fd9:82122
+  udp: true
+- name: HK_speednode_0017
+  server: 8.217.85.212
+  port: 29558
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 530
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: HK_speednode_0018
+  server: 8.217.229.36
+  port: 34159
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 490
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: HK_speednode_0019
+  server: 8.217.45.182
+  port: 34237
+  type: vless
+  Inc. - 4: None
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  delay: 500
+  udp: true
+- name: HK_speednode_0020
   server: 8.210.168.29
   port: 34237
   type: vless
+  Inc. - 6: None
   client-fingerprint: chrome
   network: ws
   servername: a.ssll.gay
@@ -207,10 +314,58 @@ proxies:
     headers:
       Host: a.ssll.gay
     path: /proxyIP=oracle.gitgoogle.com
+  delay: 924
   udp: true
-- name: HK_speednode_0016
-  server: 8.217.85.212
-  port: 48952
+- name: HK_speednode_0021
+  server: 45.11.104.79
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: b491fd9:82122
+  udp: true
+- name: HK_speednode_0022
+  server: 103.234.53.204
+  port: 41473
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: HK_speednode_0023
+  server: 43.129.171.137
+  port: 443
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: HK_speednode_0024
+  server: 101.32.40.116
+  port: 8888
   type: vless
   client-fingerprint: chrome
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -220,11 +375,154 @@ proxies:
   servername: a.ssll.gay
   network: ws
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
     headers:
       Host: a.ssll.gay
   udp: true
-- name: HK_speednode_0017
+- name: HK_speednode_0025
+  server: 58.82.242.199
+  port: 13973
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: HK_speednode_0026
+  server: 152.32.252.175
+  port: 8969
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 842
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: HK_speednode_0027
+  server: 206.237.1.247
+  port: 8443
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: HK_speednode_0028
+  server: 52.175.21.95
+  port: 2053
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: HK_speednode_0029
+  server: 103.247.29.92
+  port: 34237
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: HK_speednode_0030
+  server: 38.207.161.158
+  port: 36166
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: HK_speednode_0031
+  server: 103.73.67.54
+  port: 3028
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: HK_speednode_0032
+  server: 103.234.53.242
+  port: 45398
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: HK_speednode_0033
   server: 43.132.244.52
   port: 22338
   type: vless
@@ -236,125 +534,12 @@ proxies:
   servername: a.ssll.gay
   network: ws
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
     headers:
       Host: a.ssll.gay
   udp: true
-- name: HK_speednode_0018
-  server: 45.249.246.59
-  port: 49454
-  type: vless
-  Inc. - 3: None
-  udp: true
-  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
-  network: ws
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: cfed.tgzdyz2.top
-  ws-opts:
-    path: TG@ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
-  delay: 648
-- name: HK_speednode_0019
-  server: 45.249.246.59
-  port: 49454
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: HK_speednode_0020
-  server: 47.243.179.249
-  port: 2096
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: HK_speednode_0021
-  server: aliyun.godns.onflashdrive.app
-  port: 2096
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: HK_speednode_0022
-  server: 43.129.171.137
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: HK_speednode_0023
-  server: 103.234.53.204
-  port: 41473
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: HK_speednode_0024
-  server: 103.225.199.188
-  port: 28976
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: HK_speednode_0025
-  server: 194.104.146.113
+- name: JP_speednode_0034
+  server: 139.162.108.118
   port: 2377
   type: ss
   cipher: chacha20-ietf-poly1305
@@ -362,108 +547,155 @@ proxies:
   plugin: obfs
   plugin-opts:
     mode: tls
-    host: 39017ae:70870
-  udp: true
-- name: HK_speednode_0026
-  server: 103.152.221.89
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: 39017ae:70870
-  udp: true
-- name: HK_speednode_0027
-  server: 103.152.221.90
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: 39017ae:70870
-  udp: true
-- name: HK_speednode_0028
-  server: 103.152.221.207
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: 39017ae:70870
-  udp: true
-- name: HK_speednode_0029
-  server: 45.11.104.44
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: b491fd9:82122
-  udp: true
-- name: HK_speednode_0030
-  server: 45.11.104.79
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: b491fd9:82122
-  udp: true
-- name: HK_speednode_0031
-  server: 45.11.104.113
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: b491fd9:82122
-  udp: true
-- name: HK_speednode_0032
-  server: 103.152.221.212
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: HK_speednode_0033
-  server: 45.11.104.59
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: HK_speednode_0034
-  server: 45.11.104.94
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
+    host: d0a8692:32667
   udp: true
 - name: JP_speednode_0035
+  server: 103.29.68.226
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: d0a8692:32667
+  udp: true
+- name: JP_speednode_0036
+  server: 139.162.79.8
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    host: (TG @WangCai2)d0a8692:32667
+    mode: tls
+  udp: true
+- name: JP_speednode_0037
+  server: 18.176.215.63
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: 34b5fbc:109157
+  udp: true
+- name: JP_speednode_0038
+  server: 54.178.71.192
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: e2322f9:87491
+  udp: true
+- name: JP_speednode_0039
+  server: 139.162.88.148
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: e2322f9:87491
+  udp: true
+- name: JP_speednode_0040
+  server: 103.29.70.9
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: d0a8692:32667
+  udp: true
+- name: JP_speednode_0041
+  server: 139.162.108.42
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: e2322f9:87491
+  udp: true
+- name: JP_speednode_0042
+  server: 139.162.84.183
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: d0a8692:32667
+  udp: true
+- name: JP_speednode_0043
+  server: 52.69.48.25
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: e2322f9:87491
+  udp: true
+- name: JP_speednode_0044
+  server: 172.104.96.103
+  port: 2377
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: d0a8692:32667
+  udp: true
+- name: JP_speednode_0045
+  server: 45.251.241.103
+  port: 34237
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: JP_speednode_0046
+  server: 45.251.241.103
+  port: 34237
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1203
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: JP_speednode_0047
   server: 45.251.241.13
   port: 34237
   type: vless
@@ -479,538 +711,111 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
-- name: JP_speednode_0036
-  server: 195.245.241.39
-  port: 35463
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: JP_speednode_0037
-  server: 193.32.151.217
-  port: 33211
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: JP_speednode_0038
-  server: 45.66.130.112
-  port: 56061
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: JP_speednode_0039
-  server: 18.176.215.63
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: 34b5fbc:109157
-  udp: true
-- name: JP_speednode_0040
-  server: 103.29.68.226
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: d0a8692:32667
-  udp: true
-- name: JP_speednode_0041
-  server: 103.29.70.9
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: d0a8692:32667
-  udp: true
-- name: JP_speednode_0042
-  server: 139.162.108.118
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: d0a8692:32667
-  udp: true
-- name: JP_speednode_0043
-  server: 139.162.79.8
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: d0a8692:32667
-  udp: true
-- name: JP_speednode_0044
-  server: 139.162.84.183
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: d0a8692:32667
-  udp: true
-- name: JP_speednode_0045
-  server: 172.104.96.103
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: d0a8692:32667
-  udp: true
-- name: JP_speednode_0046
-  server: 54.95.215.125
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: 28492a5:57003
-  udp: true
-- name: JP_speednode_0047
-  server: 172.104.90.43
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: 28492a5:57003
-  udp: true
 - name: JP_speednode_0048
-  server: 13.114.31.41
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: 28492a5:57003
+  server: 147.78.247.234
+  port: 21817
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
   udp: true
 - name: JP_speednode_0049
-  server: 54.178.71.192
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: e2322f9:87491
+  server: 176.97.73.99
+  port: 8420
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: random
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1163
+  tfo: false
+  skip-cert-verify: false
   udp: true
 - name: JP_speednode_0050
-  server: 139.162.88.148
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: e2322f9:87491
-  udp: true
-- name: JP_speednode_0051
-  server: 139.162.108.42
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: e2322f9:87491
-  udp: true
-- name: JP_speednode_0052
-  server: 52.69.48.25
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: e2322f9:87491
-  udp: true
-- name: JP_speednode_0053
-  server: 172.105.220.7
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: f1f3227:111548
-  udp: true
-- name: JP_speednode_0054
-  server: 54.65.130.9
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: f1f3227:111548
-  udp: true
-- name: JP_speednode_0055
-  server: 13.230.213.154
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: f1f3227:111548
-  udp: true
-- name: JP_speednode_0056
-  server: 18.181.146.122
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: f1f3227:111548
-  udp: true
-- name: JP_speednode_0057
-  server: 139.162.102.32
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0058
-  server: 172.105.205.74
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0059
-  server: 172.105.205.214
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0060
-  server: 172.105.208.94
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0061
-  server: 172.105.219.224
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0062
-  server: 172.105.230.133
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0063
-  server: 18.177.142.32
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0064
-  server: 18.179.16.135
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0065
-  server: 18.179.37.79
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0066
-  server: 18.179.58.237
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0067
-  server: 52.199.164.162
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0068
-  server: 52.199.249.206
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0069
-  server: 54.178.26.105
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0070
-  server: 54.249.220.208
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0071
-  server: 54.250.34.221
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0072
-  server: 13.231.106.60
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0073
-  server: 18.183.87.73
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0074
-  server: 35.72.184.29
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0075
-  server: 172.104.117.248
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0076
-  server: 43.207.207.206
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0077
-  server: 18.179.197.162
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0078
-  server: 52.195.228.139
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: JP_speednode_0079
-  server: 13.231.105.239
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: KR_speednode_0080
-  server: 193.122.110.164
-  port: 25800
+  server: 176.97.73.99
+  port: 2053
   type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
   client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
   servername: a.ssll.gay
-  network: ws
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
     headers:
       Host: a.ssll.gay
+  delay: 1189
+  tfo: false
+  skip-cert-verify: false
   udp: true
-- name: KR_speednode_0081
-  server: 146.56.171.182
-  port: 11659
+- name: KR_speednode_0051
+  server: 193.123.239.18
+  port: 49248
   type: vless
-  client-fingerprint: random
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
   network: ws
+  tls: true
+  client-fingerprint: random
+  servername: a.ssll.gay
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
     headers:
       Host: a.ssll.gay
+  delay: 675
+  tfo: false
+  skip-cert-verify: false
   udp: true
-- name: KR_speednode_0082
+- name: KR_speednode_0052
+  server: 1.232.40.93
+  port: 11211
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0053
+  server: 146.56.188.95
+  port: 48888
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1112
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: KR_speednode_0054
   server: 132.226.171.158
   port: 9527
   type: vless
@@ -1026,24 +831,117 @@ proxies:
       host: cfed.tgzdyz2.top
   skip-cert-verify: false
   tfo: false
+  delay: 1091
+  security: tls
   udp: true
-- name: KR_speednode_0083
-  server: 146.56.166.59
-  port: 46060
+- name: KR_speednode_0055
+  server: 146.56.151.32
+  port: 19
   type: vless
-  client-fingerprint: chrome
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
   network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
     headers:
       Host: a.ssll.gay
+  delay: 1011
+  tfo: false
+  skip-cert-verify: false
   udp: true
-- name: KR_speednode_0084
+- name: KR_speednode_0056
+  server: 129.154.192.48
+  port: 21650
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1150
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: KR_speednode_0057
+  server: 1.232.40.93
+  port: 12203
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0058
+  server: 129.154.206.254
+  port: 59158
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  network: ws
+  tls: true
+  client-fingerprint: random
+  servername: cfed.tgzdyz2.top
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  delay: 856
+  security: tls
+  sni: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0059
+  server: 146.56.171.182
+  port: 11659
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0060
+  server: 124.50.116.202
+  port: 36831
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1195
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: KR_speednode_0061
   server: 146.56.151.32
   port: 19
   type: vless
@@ -1059,8 +957,27 @@ proxies:
       host: cfed.tgzdyz2.top
   skip-cert-verify: false
   tfo: false
+  delay: 1192
+  security: tls
   udp: true
-- name: KR_speednode_0085
+- name: KR_speednode_0062
+  server: 132.226.172.226
+  port: 46730
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 872
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: KR_speednode_0063
   server: 132.226.171.158
   port: 9527
   type: vless
@@ -1076,7 +993,210 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
-- name: KR_speednode_0086
+- name: KR_speednode_0064
+  server: 146.56.141.168
+  port: 47590
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0065
+  server: 193.122.110.164
+  port: 25800
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0066
+  server: 146.56.42.31
+  port: 48652
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1167
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: KR_speednode_0067
+  server: 132.145.95.170
+  port: 39637
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  network: ws
+  tls: true
+  client-fingerprint: random
+  servername: cfed.tgzdyz2.top
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  delay: 819
+  security: tls
+  sni: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0068
+  server: 146.56.144.32
+  port: 11202
+  type: vless
+  client-fingerprint: random
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0069
+  server: 193.122.103.10
+  port: 45171
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0070
+  server: 146.56.171.182
+  port: 11659
+  type: vless
+  client-fingerprint: random
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0071
+  server: 211.109.41.62
+  port: 36795
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0072
+  server: 175.125.207.253
+  port: 39732
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0073
+  server: 193.123.233.169
+  port: 39803
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0074
+  server: 146.56.141.168
+  port: 47590
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0075
+  server: 146.56.166.59
+  port: 46060
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0076
   server: 193.123.250.205
   port: 56785
   type: vless
@@ -1093,9 +1213,127 @@ proxies:
       Host: a.ssll.gay
   delay: 1358
   udp: true
-- name: KR_speednode_0087
-  server: 146.56.141.168
-  port: 47590
+- name: KR_speednode_0077
+  server: 132.226.235.126
+  port: 59408
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0078
+  server: 152.70.248.236
+  port: 28756
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0079
+  server: 146.56.145.38
+  port: 50001
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0080
+  server: 146.56.161.141
+  port: 45593
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0081
+  server: 140.238.14.228
+  port: 58854
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: KR_speednode_0082
+  server: 129.154.211.201
+  port: 33155
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0083
+  server: 132.145.95.170
+  port: 39637
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /proxyIP=oracle.gitgoogle.com
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0084
+  server: 152.70.232.173
+  port: 28756
   type: vless
   uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
   tls: true
@@ -1109,8 +1347,10 @@ proxies:
       host: cfed.tgzdyz2.top
   skip-cert-verify: false
   tfo: false
+  delay: 744
+  security: tls
   udp: true
-- name: KR_speednode_0088
+- name: KR_speednode_0085
   server: 210.111.176.108
   port: 20082
   type: vless
@@ -1127,12 +1367,30 @@ proxies:
       host: cfed.tgzdyz2.top
   skip-cert-verify: false
   tfo: false
+  delay: 1074
+  security: tls
   udp: true
-- name: KR_speednode_0089
-  server: 146.56.144.32
-  port: 11202
+- name: KR_speednode_0086
+  server: 132.145.95.170
+  port: 39637
   type: vless
   client-fingerprint: random
+  uuid: 4f42d8f7-8beb-47e1-9465-8f390c6d658d
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: toujiediansigema.666888.lol
+  network: ws
+  ws-opts:
+    path: TG@mianfeicf
+    headers:
+      Host: toujiediansigema.666888.lol
+  udp: true
+- name: KR_speednode_0087
+  server: 132.226.230.177
+  port: 48132
+  type: vless
+  client-fingerprint: chrome
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   tls: true
   tfo: false
@@ -1143,6 +1401,40 @@ proxies:
     path: /proxyIP=oracle.gitgoogle.com
     headers:
       Host: a.ssll.gay
+  udp: true
+- name: KR_speednode_0088
+  server: 140.238.7.57
+  port: 9999
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1093
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: KR_speednode_0089
+  server: 58.238.50.200
+  port: 32118
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  sni: cfed.tgzdyz2.top
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
   udp: true
 - name: KR_speednode_0090
   server: 1.232.40.93
@@ -1162,29 +1454,83 @@ proxies:
       Host: cfed.tgzdyz2.top
   delay: 1348
 - name: KR_speednode_0091
-  server: 193.122.112.161
-  port: 10003
+  server: 119.17.25.40
+  port: 37992
   type: vless
-  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
-  tls: true
-  servername: cfed.tgzdyz2.top
-  sni: cfed.tgzdyz2.top
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: tg%40zdyz2
-    headers:
-      host: cfed.tgzdyz2.top
-  skip-cert-verify: false
-  tfo: false
+  '...': None
   udp: true
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  network: ws
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: cfed.tgzdyz2.top
+  ws-opts:
+    path: TG@ZDYZ2
+    headers:
+      Host: cfed.tgzdyz2.top
+  delay: 1257
 - name: KR_speednode_0092
-  server: 152.70.232.173
-  port: 28756
+  server: 146.56.136.49
+  port: 61153
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: random
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai2 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 998
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: KZ_speednode_0093
+  server: 45.82.31.164
+  port: 3389
+  type: vmess
+  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
+  alterId: 0
+  cipher: auto
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+  h2-opts: {}
+  skip-cert-verify: true
+  delay: 1506
+  udp: true
+  tls: false
+- name: SG_speednode_0094
+  server: 8.219.173.195
+  port: 8443
   type: vless
   uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
   tls: true
   servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: SG_speednode_0095
+  server: 47.129.2.211
+  port: 8443
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
   sni: cfed.tgzdyz2.top
   client-fingerprint: random
   network: ws
@@ -1195,25 +1541,9 @@ proxies:
   skip-cert-verify: false
   tfo: false
   udp: true
-- name: KR_speednode_0093
-  server: 140.238.17.177
-  port: 28756
-  type: vless
-  client-fingerprint: random
-  uuid: 4f42d8f7-8beb-47e1-9465-8f390c6d658d
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: toujiediansigema.666888.lol
-  network: ws
-  ws-opts:
-    path: TG@mianfeicf
-    headers:
-      Host: toujiediansigema.666888.lol
-  udp: true
-- name: KR_speednode_0094
-  server: 140.238.17.177
-  port: 28756
+- name: TW_speednode_0096
+  server: 211.22.240.107
+  port: 30686
   type: vless
   client-fingerprint: chrome
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -1223,17 +1553,35 @@ proxies:
   servername: a.ssll.gay
   network: ws
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
     headers:
       Host: a.ssll.gay
   udp: true
-- name: KR_speednode_0095
-  server: 125.187.182.106
-  port: 30053
+- name: TW_speednode_0097
+  server: 211.75.74.232
+  port: 4443
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 941
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: TW_speednode_0098
+  server: 220.133.227.253
+  port: 25424
   type: vless
   uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
   tls: true
   servername: cfed.tgzdyz2.top
+  security: tls
   sni: cfed.tgzdyz2.top
   client-fingerprint: random
   network: ws
@@ -1244,444 +1592,43 @@ proxies:
   skip-cert-verify: false
   tfo: false
   udp: true
-- name: KR_speednode_0096
-  server: 58.238.50.200
-  port: 32118
+- name: TW_speednode_0099
+  server: 165.154.161.183
+  port: 553
   type: vless
   uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
   tls: true
   servername: cfed.tgzdyz2.top
+  security: tls
   sni: cfed.tgzdyz2.top
+  fp: random
   client-fingerprint: random
   network: ws
   ws-opts:
-    path: tg%40zdyz2
+    path: TG%40ZDYZ2
     headers:
       host: cfed.tgzdyz2.top
   skip-cert-verify: false
   tfo: false
   udp: true
-- name: KR_speednode_0097
-  server: 193.122.126.64
-  port: 53777
+- name: TW_speednode_0100
+  server: 118.163.128.81
+  port: 13688
   type: vless
-  client-fingerprint: random
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
   network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0098
-  server: 193.122.103.10
-  port: 45171
-  type: vless
+  tls: true
   client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
   servername: a.ssll.gay
-  network: ws
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
     headers:
       Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0099
-  server: 132.145.95.170
-  port: 39637
-  type: vless
-  client-fingerprint: random
-  uuid: 4f42d8f7-8beb-47e1-9465-8f390c6d658d
-  tls: true
+  delay: 873
   tfo: false
   skip-cert-verify: false
-  servername: toujiediansigema.666888.lol
-  network: ws
-  ws-opts:
-    path: TG@mianfeicf
-    headers:
-      Host: toujiediansigema.666888.lol
   udp: true
-- name: KR_speednode_0100
-  server: 193.123.233.169
-  port: 39803
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0101
-  server: 152.70.248.236
-  port: 28756
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0102
-  server: 132.145.95.170
-  port: 39637
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0103
-  server: 146.56.161.141
-  port: 45593
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0104
-  server: 132.226.230.177
-  port: 48132
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0105
-  server: 129.154.211.201
-  port: 33155
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0106
-  server: 146.56.141.168
-  port: 47590
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0107
-  server: 146.56.146.8
-  port: 11370
-  type: vless
-  client-fingerprint: random
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  tfo: false
-  skip-cert-verify: false
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  udp: true
-- name: KR_speednode_0108
-  server: 130.162.134.215
-  port: 2052
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: KR_speednode_0109
-  server: 140.238.13.96
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: KR_speednode_0110
-  server: 64.110.88.46
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: KR_speednode_0111
-  server: 146.56.44.88
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: KR_speednode_0112
-  server: 210.87.195.139
-  port: 26439
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: KR_speednode_0113
-  server: 59.3.3.161
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: KR_speednode_0114
-  server: 45.93.30.117
-  port: 27445
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: SG_speednode_0115
-  server: 103.172.116.16
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0116
-  server: 103.172.116.113
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0117
-  server: 103.172.116.190
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0118
-  server: 103.172.116.220
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0119
-  server: 103.172.116.221
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0120
-  server: 103.172.116.251
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0121
-  server: 103.172.116.252
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0122
-  server: 185.230.245.213
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0123
-  server: 5.44.249.50
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0124
-  server: 5.44.249.51
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0125
-  server: 5.44.249.52
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: SG_speednode_0126
-  server: 5.44.249.53
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0127
+- name: TW_speednode_0101
   server: 118.163.128.81
   port: 13688
   type: vless
@@ -1697,8 +1644,45 @@ proxies:
       host: cfed.tgzdyz2.top
   skip-cert-verify: false
   tfo: false
+  delay: 1057
+  security: tls
   udp: true
-- name: TW_speednode_0128
+- name: TW_speednode_0102
+  server: 60.248.63.88
+  port: 36697
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: TW_speednode_0103
+  server: 118.163.128.81
+  port: 38370
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  network: ws
+  tls: true
+  client-fingerprint: random
+  servername: cfed.tgzdyz2.top
+  ws-opts:
+    path: tg%40zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  delay: 591
+  security: tls
+  sni: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: TW_speednode_0104
   server: 220.133.227.253
   port: 25424
   type: vless
@@ -1714,26 +1698,60 @@ proxies:
     headers:
       Host: toujiediansigema.666888.lol
   udp: true
-- name: TW_speednode_0129
-  server: 61.220.41.143
-  port: 36633
+- name: TW_speednode_0105
+  server: 118.163.128.81
+  port: 12559
   type: vless
-  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
-  tls: true
-  servername: cfed.tgzdyz2.top
-  sni: cfed.tgzdyz2.top
-  client-fingerprint: random
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
   ws-opts:
-    path: tg%40zdyz2
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
     headers:
-      host: cfed.tgzdyz2.top
-  skip-cert-verify: false
+      Host: a.ssll.gay
+  delay: 942
   tfo: false
+  skip-cert-verify: false
   udp: true
-- name: TW_speednode_0130
-  server: 61.220.41.143
-  port: 36633
+- name: TW_speednode_0106
+  server: 118.163.128.81
+  port: 32733
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1109
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: TW_speednode_0107
+  server: 118.163.128.81
+  port: 39560
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 857
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: TW_speednode_0108
+  server: 118.163.128.81
+  port: 17333
   type: vless
   client-fingerprint: chrome
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -1743,11 +1761,77 @@ proxies:
   servername: a.ssll.gay
   network: ws
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
     headers:
       Host: a.ssll.gay
   udp: true
-- name: TW_speednode_0131
+- name: TW_speednode_0109
+  server: 118.163.128.81
+  port: 22904
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1004
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: TW_speednode_0110
+  server: 118.163.128.81
+  port: 15991
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: TW_speednode_0111
+  server: 61.220.65.189
+  port: 26832
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 952
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: TW_speednode_0112
+  server: 118.163.128.81
+  port: 15665
+  type: vless
+  client-fingerprint: chrome
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: TW_speednode_0113
   server: 118.163.128.81
   port: 25593
   type: vless
@@ -1759,28 +1843,30 @@ proxies:
   servername: a.ssll.gay
   network: ws
   ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
     headers:
       Host: a.ssll.gay
   udp: true
-- name: TW_speednode_0132
-  server: 61.220.41.143
-  port: 36633
+- name: TW_speednode_0114
+  server: 103.137.63.37
+  port: 53760
   type: vless
-  Inc. - 1...: None
-  udp: true
   uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
-  network: ws
   tls: true
-  skip-cert-verify: true
-  client-fingerprint: random
   servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
   ws-opts:
-    path: TG@ZDYZ2
+    path: TG%40ZDYZ2
     headers:
-      Host: cfed.tgzdyz2.top
-  delay: 886
-- name: TW_speednode_0133
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: TW_speednode_0115
   server: 118.163.128.81
   port: 12559
   type: vless
@@ -1797,13 +1883,63 @@ proxies:
   skip-cert-verify: false
   tfo: false
   udp: true
-- name: TW_speednode_0134
-  server: 211.75.74.232
-  port: 4443
+- name: US_speednode_0116
+  server: 156.146.38.163
+  port: 443
+  type: ss
+  cipher: aes-128-cfb
+  password: shadowsocks
+  delay: 590
+  alterId: -1
+  country: US
+  udp: true
+- name: US_speednode_0117
+  server: jpcft01.xqc.best
+  port: 443
+  type: vmess
+  country: 🇺🇸US
+  uuid: 9b57caed-da32-45cd-9b61-34b22a663ef5
+  alterId: 0
+  cipher: auto
+  network: ws
+  servername: dd7xps5fj6dfo.cloudfront.net
+  http-opts: {}
+  h2-opts: {}
+  tls: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /stream
+    headers:
+      HOST: dd7xps5fj6dfo.cloudfront.net
+  delay: 1966
+  udp: true
+- name: US_speednode_0118
+  server: 192.69.90.203
+  port: 35658
   type: vless
   uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
   tls: true
   servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
+- name: US_speednode_0119
+  server: 43.153.103.203
+  port: 443
+  type: vless
+  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
   sni: cfed.tgzdyz2.top
   client-fingerprint: random
   network: ws
@@ -1813,458 +1949,4 @@ proxies:
       host: cfed.tgzdyz2.top
   skip-cert-verify: false
   tfo: false
-  udp: true
-- name: TW_speednode_0135
-  server: 165.154.161.183
-  port: 553
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: TW_speednode_0136
-  server: 103.137.63.37
-  port: 53760
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: TW_speednode_0137
-  server: 35.201.203.106
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: TW_speednode_0138
-  server: 35.229.161.32
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: TW_speednode_0139
-  server: 211.72.35.152
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0140
-  server: 211.72.35.154
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0141
-  server: 211.72.35.155
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0142
-  server: 211.72.35.157
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0143
-  server: 211.72.35.158
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0144
-  server: 60.248.114.183
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0145
-  server: 60.248.114.184
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0146
-  server: 60.248.114.185
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0147
-  server: 60.248.114.186
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0148
-  server: 60.248.114.187
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0149
-  server: 60.249.3.125
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0150
-  server: 60.249.3.227
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0151
-  server: 60.249.3.228
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0152
-  server: 60.249.3.229
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0153
-  server: 60.249.3.230
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: TW_speednode_0154
-  server: 60.249.3.231
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0155
-  server: 34.95.126.8
-  port: 80
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  client-fingerprint: chrome
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  delay: 1236
-  udp: true
-- name: US_speednode_0156
-  server: 34.95.126.8
-  port: 80
-  type: vless
-  client-fingerprint: chrome
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: false
-  tfo: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: a.ssll.gay
-  delay: 1236
-  udp: true
-- name: US_speednode_0157
-  server: 154.9.207.173
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: US_speednode_0158
-  server: 43.153.80.208
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: US_speednode_0159
-  server: 154.17.0.31
-  port: 39725
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: US_speednode_0160
-  server: 38.59.245.159
-  port: 41697
-  type: vless
-  client-fingerprint: random
-  uuid: c1483db0-35ea-4a21-b71b-43beb7285735
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: tg.hellitroy.xyz
-  network: ws
-  ws-opts:
-    path: /proxyIP=oracle.gitgoogle.com
-    headers:
-      Host: tg.hellitroy.xyz
-  udp: true
-- name: US_speednode_0161
-  server: 23.247.137.67
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0162
-  server: 23.247.137.165
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0163
-  server: 23.247.137.166
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0164
-  server: 95.174.71.27
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0165
-  server: 95.174.71.28
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0166
-  server: 95.174.71.29
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0167
-  server: 95.174.71.30
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0168
-  server: 95.174.71.96
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0169
-  server: 95.174.71.98
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0170
-  server: 95.174.71.99
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
-  udp: true
-- name: US_speednode_0171
-  server: 95.174.71.101
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: ff5c0fb:30513
   udp: true
