@@ -26,78 +26,11 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_1133'
-  server: 155.248.202.141
-  port: 443
-  type: vless
-  client-fingerprint: random
-  uuid: c4fc83d5-af78-303e-a36a-45d9d20abb0d
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: TG.CMLiussss.elementfx.com
-  network: ws
-  ws-opts:
-    path: /proxyIP=proxyip.us.fxxk.dedyn.io
-    headers:
-      Host: TG.CMLiussss.elementfx.com
-  udp: true
-- name: '[🇺🇸]_1135'
-  server: 158.101.32.53
-  port: 2053
-  type: vless
-  client-fingerprint: random
-  uuid: 214ad633-e45e-3ce8-ac0c-76fa83033ab9
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: TG.CMLiussss.elementfx.com
-  network: ws
-  ws-opts:
-    path: /proxyIP=proxyip.us.fxxk.dedyn.io
-    headers:
-      Host: TG.CMLiussss.elementfx.com
-  udp: true
-- name: '[🇺🇸]_1134'
-  server: 43.153.16.136
-  port: 4333
-  type: vless
-  client-fingerprint: random
-  uuid: 398e48a8-9d86-37d0-9f42-43ade62d8cd5
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: TG.CMLiussss.elementfx.com
-  network: ws
-  ws-opts:
-    path: /proxyIP=proxyip.us.fxxk.dedyn.io
-    headers:
-      Host: TG.CMLiussss.elementfx.com
-  udp: true
-- name: '[🇰🇷]_1086'
-  server: 193.122.126.64
-  port: 53777
-  type: vless
-  uuid: 0a22ccbd-f067-30a3-94db-52e57527a9e7
-  tls: true
-  servername: cfed.tgzdyz2.top
-  security: tls
-  sni: cfed.tgzdyz2.top
-  fp: random
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: TG%40ZDYZ2
-    headers:
-      host: cfed.tgzdyz2.top
-  skip-cert-verify: false
-  tfo: false
-  udp: true
-- name: '[🇹🇼]_1105'
+- name: '[🇹🇼]_1106'
   server: 61.220.41.143
   port: 36633
   type: vless
-  uuid: fe2843f5-3ee4-3a04-b1e1-3020902df9c4
+  uuid: 1ab24304-faa4-3ea3-b9e6-47c5be77cbf8
   network: ws
   tls: true
   client-fingerprint: random
@@ -127,6 +60,69 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
+- name: '[🇹🇼]_1114'
+  server: 118.163.128.81
+  port: 38370
+  type: vless
+  uuid: b4ed6b95-5a6f-379b-a1e0-175311bdad48
+  tls: true
+  servername: cfed.tgzdyz2.top
+  network: ws
+  ws-opts:
+    path: tg@zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  udp: true
+- name: '[🇹🇼]_1113'
+  server: 118.163.128.81
+  port: 15991
+  type: vless
+  uuid: a710747d-8a0e-3c16-bf6a-c62e237df1cd
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 679
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇹🇼]_1115'
+  server: 118.163.128.81
+  port: 22904
+  type: vless
+  client-fingerprint: chrome
+  uuid: 39bd195d-2792-34e6-921d-8dbf0fcafd31
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- name: '[🇹🇼]_1117'
+  server: 118.163.128.81
+  port: 15665
+  type: vless
+  uuid: 7b7252a0-8737-3940-b223-cb02472b3b92
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 913
+  tfo: false
+  skip-cert-verify: false
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -134,70 +130,70 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1133'
-  - '[🇺🇸]_1135'
-  - '[🇺🇸]_1134'
-  - '[🇰🇷]_1086'
-  - '[🇹🇼]_1105'
+  - '[🇹🇼]_1106'
   - '[🇸🇬]_1143'
+  - '[🇹🇼]_1114'
+  - '[🇹🇼]_1113'
+  - '[🇹🇼]_1115'
+  - '[🇹🇼]_1117'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1133'
-  - '[🇺🇸]_1135'
-  - '[🇺🇸]_1134'
-  - '[🇰🇷]_1086'
-  - '[🇹🇼]_1105'
+  - '[🇹🇼]_1106'
   - '[🇸🇬]_1143'
+  - '[🇹🇼]_1114'
+  - '[🇹🇼]_1113'
+  - '[🇹🇼]_1115'
+  - '[🇹🇼]_1117'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1133'
-  - '[🇺🇸]_1135'
-  - '[🇺🇸]_1134'
-  - '[🇰🇷]_1086'
-  - '[🇹🇼]_1105'
+  - '[🇹🇼]_1106'
   - '[🇸🇬]_1143'
+  - '[🇹🇼]_1114'
+  - '[🇹🇼]_1113'
+  - '[🇹🇼]_1115'
+  - '[🇹🇼]_1117'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1133'
-  - '[🇺🇸]_1135'
-  - '[🇺🇸]_1134'
-  - '[🇰🇷]_1086'
-  - '[🇹🇼]_1105'
+  - '[🇹🇼]_1106'
   - '[🇸🇬]_1143'
+  - '[🇹🇼]_1114'
+  - '[🇹🇼]_1113'
+  - '[🇹🇼]_1115'
+  - '[🇹🇼]_1117'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1133'
-  - '[🇺🇸]_1135'
-  - '[🇺🇸]_1134'
-  - '[🇰🇷]_1086'
-  - '[🇹🇼]_1105'
+  - '[🇹🇼]_1106'
   - '[🇸🇬]_1143'
+  - '[🇹🇼]_1114'
+  - '[🇹🇼]_1113'
+  - '[🇹🇼]_1115'
+  - '[🇹🇼]_1117'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1133'
-  - '[🇺🇸]_1135'
-  - '[🇺🇸]_1134'
-  - '[🇰🇷]_1086'
-  - '[🇹🇼]_1105'
+  - '[🇹🇼]_1106'
   - '[🇸🇬]_1143'
+  - '[🇹🇼]_1114'
+  - '[🇹🇼]_1113'
+  - '[🇹🇼]_1115'
+  - '[🇹🇼]_1117'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
