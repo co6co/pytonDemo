@@ -26,43 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇰🇷]_1096'
-  server: 183.104.40.186
-  port: 10200
-  type: vless
-  uuid: a7c248e1-b7c3-35df-a3b3-e2c586a83be3
-  tls: true
-  servername: cfed.tgzdyz2.top
-  security: tls
-  sni: cfed.tgzdyz2.top
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: tg%40zdyz2
-    headers:
-      host: cfed.tgzdyz2.top
-  skip-cert-verify: false
-  tfo: false
-  udp: true
-- name: '[🇰🇷]_1098'
-  server: 1.232.40.93
-  port: 12203
-  type: vless
-  uuid: a07fae35-7a2d-3dae-9ca0-62619dbaf55c
-  tls: true
-  servername: cfed.tgzdyz2.top
-  security: tls
-  sni: cfed.tgzdyz2.top
-  fp: random
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: TG%40ZDYZ2
-    headers:
-      host: cfed.tgzdyz2.top
-  skip-cert-verify: false
-  tfo: false
-  udp: true
 - alterId: 0
   cipher: auto
   name: '[🇭🇰]香港_1198'
@@ -80,21 +43,6 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇰🇷]韩国_1200'
-  network: ws
-  port: 80
-  server: 141.164.58.183
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 3bc3c6e8-2cb2-3efd-8c0c-2765fc0c8284
-  ws-opts:
-    headers:
-      Host: kr02.hajimihajimihajimi.online
-    path: /
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇦🇶]美国_1204'
   network: ws
   port: 8880
@@ -109,71 +57,13 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇨🇳]江苏省常州市_1199'
-  network: ws
-  port: 15764
-  server: 43.248.139.144
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 57e897ca-5382-336f-8e8e-a0fe07e9f24e
-  ws-opts:
-    headers:
-      Host: ''
-    path: ''
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇰🇷]韩国_1203'
-  network: tcp
-  port: 10001
-  server: 103.214.68.57
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: df4c21a9-54d7-3b7d-bfd1-e947ebaf4ef5
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇨🇳]江苏省常州市_1202'
-  network: ws
-  port: 15761
-  server: 43.248.139.144
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 24fd3d23-e39a-37f7-8233-a36c77e8338f
-  ws-opts:
-    headers:
-      Host: ''
-    path: ''
-  udp: true
-- name: '[🇹🇼]_1116'
-  server: 118.163.128.81
-  port: 15665
-  type: vless
-  uuid: 10237c7a-cae0-3ee2-9c08-465b8141f72f
-  network: ws
-  tls: true
-  client-fingerprint: chrome
-  servername: a.ssll.gay
-  ws-opts:
-    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
-    headers:
-      Host: a.ssll.gay
-  delay: 913
-  tfo: false
-  skip-cert-verify: false
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇺🇸]美国_1212'
+  name: '[🇦🇶]美国_1212'
   network: ws
   port: 2082
   server: s1c.v2.v001sss.xyz
   tls: false
   type: vmess
-  uuid: a47adcd3-187d-368d-b332-2849cbd3823b
+  uuid: 709ce7ad-1529-33b0-93c8-40bc4b927f25
   ws-opts: {}
   udp: true
 proxy-groups:
@@ -183,94 +73,52 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇰🇷]_1096'
-  - '[🇰🇷]_1098'
   - '[🇭🇰]香港_1198'
-  - '[🇰🇷]韩国_1200'
   - '[🇦🇶]美国_1204'
-  - '[🇨🇳]江苏省常州市_1199'
-  - '[🇰🇷]韩国_1203'
-  - '[🇨🇳]江苏省常州市_1202'
-  - '[🇹🇼]_1116'
-  - '[🇺🇸]美国_1212'
+  - '[🇦🇶]美国_1212'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇰🇷]_1096'
-  - '[🇰🇷]_1098'
   - '[🇭🇰]香港_1198'
-  - '[🇰🇷]韩国_1200'
   - '[🇦🇶]美国_1204'
-  - '[🇨🇳]江苏省常州市_1199'
-  - '[🇰🇷]韩国_1203'
-  - '[🇨🇳]江苏省常州市_1202'
-  - '[🇹🇼]_1116'
-  - '[🇺🇸]美国_1212'
+  - '[🇦🇶]美国_1212'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇰🇷]_1096'
-  - '[🇰🇷]_1098'
   - '[🇭🇰]香港_1198'
-  - '[🇰🇷]韩国_1200'
   - '[🇦🇶]美国_1204'
-  - '[🇨🇳]江苏省常州市_1199'
-  - '[🇰🇷]韩国_1203'
-  - '[🇨🇳]江苏省常州市_1202'
-  - '[🇹🇼]_1116'
-  - '[🇺🇸]美国_1212'
+  - '[🇦🇶]美国_1212'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇰🇷]_1096'
-  - '[🇰🇷]_1098'
   - '[🇭🇰]香港_1198'
-  - '[🇰🇷]韩国_1200'
   - '[🇦🇶]美国_1204'
-  - '[🇨🇳]江苏省常州市_1199'
-  - '[🇰🇷]韩国_1203'
-  - '[🇨🇳]江苏省常州市_1202'
-  - '[🇹🇼]_1116'
-  - '[🇺🇸]美国_1212'
+  - '[🇦🇶]美国_1212'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇰🇷]_1096'
-  - '[🇰🇷]_1098'
   - '[🇭🇰]香港_1198'
-  - '[🇰🇷]韩国_1200'
   - '[🇦🇶]美国_1204'
-  - '[🇨🇳]江苏省常州市_1199'
-  - '[🇰🇷]韩国_1203'
-  - '[🇨🇳]江苏省常州市_1202'
-  - '[🇹🇼]_1116'
-  - '[🇺🇸]美国_1212'
+  - '[🇦🇶]美国_1212'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇰🇷]_1096'
-  - '[🇰🇷]_1098'
   - '[🇭🇰]香港_1198'
-  - '[🇰🇷]韩国_1200'
   - '[🇦🇶]美国_1204'
-  - '[🇨🇳]江苏省常州市_1199'
-  - '[🇰🇷]韩国_1203'
-  - '[🇨🇳]江苏省常州市_1202'
-  - '[🇹🇼]_1116'
-  - '[🇺🇸]美国_1212'
+  - '[🇦🇶]美国_1212'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
