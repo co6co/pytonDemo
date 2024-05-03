@@ -26,23 +26,80 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]美国_3'
+- name: '[🇦🇶]美国_15'
   type: vmess
-  server: www.darkroom.lol
+  server: kkyx.yydsii.com
   port: 8080
-  uuid: 94202119-6fd7-3896-a6e0-71745e2a33ee
+  uuid: 059b5ed0-8624-3492-afbe-bfa703bfdbf8
   alterId: 0
   cipher: auto
   udp: true
   network: ws
   ws-path: /
   ws-headers:
-    Host: www.darkroom.lol
-- name: '[🇱🇺]印度_1'
+    Host: oiictw.yydsii.com
+- name: '[🇺🇸]美国_19'
+  type: vmess
+  server: 172.67.172.219
+  port: 8080
+  uuid: 2c5ca288-b264-3e5f-8744-ac8b7e068112
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /
+  ws-headers:
+    Host: oiictw.yydsii.com
+- name: '[🇦🇶]美国_26'
+  type: vmess
+  server: 104.19.250.15
+  port: 2052
+  uuid: c3197609-b92b-324d-ab10-8d4d21a3aecf
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /
+  ws-headers:
+    Host: helanv6cf.inekokkk.top
+- name: '[🇺🇸]美国加利福尼亚州洛杉矶_23'
+  type: vmess
+  server: 207.246.102.64
+  port: 21636
+  uuid: a3873211-d31a-39f4-a74f-93aba3b00b9e
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: tcp
+  ws-path: ''
+- name: '[🇰🇷]韩国首尔_28'
+  type: vmess
+  server: awskr1.072659.xyz
+  port: 80
+  uuid: 8d088199-c4e1-399c-a3f1-d143f8785405
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /
+  ws-headers:
+    Host: tms.dingtalk.com
+- name: '[🇳🇱]捷克_6'
+  type: vmess
+  server: nl2-full.privateip.net
+  port: 443
+  uuid: 3b0fff8c-ebc0-3e52-895b-e3f6b6bcd3d7
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-path: /RACEVPN
+- name: '[🇱🇺]印度_20'
   type: vmess
   server: 202.78.162.5
   port: 443
-  uuid: 4ff715a4-74f8-3d68-bea3-0ecf19c4733e
+  uuid: 8621d6a7-7665-3982-8aa4-c23750f800cf
   alterId: 0
   cipher: auto
   udp: true
@@ -50,7 +107,7 @@ proxies:
   tls: true
   ws-path: /@forwardv2ray
   ws-headers:
-    Host: pendar.onthewifi.com
+    Host: sahand.serveminecraft.net
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -58,46 +115,76 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]美国_3'
-  - '[🇱🇺]印度_1'
+  - '[🇦🇶]美国_15'
+  - '[🇺🇸]美国_19'
+  - '[🇦🇶]美国_26'
+  - '[🇺🇸]美国加利福尼亚州洛杉矶_23'
+  - '[🇰🇷]韩国首尔_28'
+  - '[🇳🇱]捷克_6'
+  - '[🇱🇺]印度_20'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_3'
-  - '[🇱🇺]印度_1'
+  - '[🇦🇶]美国_15'
+  - '[🇺🇸]美国_19'
+  - '[🇦🇶]美国_26'
+  - '[🇺🇸]美国加利福尼亚州洛杉矶_23'
+  - '[🇰🇷]韩国首尔_28'
+  - '[🇳🇱]捷克_6'
+  - '[🇱🇺]印度_20'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_3'
-  - '[🇱🇺]印度_1'
+  - '[🇦🇶]美国_15'
+  - '[🇺🇸]美国_19'
+  - '[🇦🇶]美国_26'
+  - '[🇺🇸]美国加利福尼亚州洛杉矶_23'
+  - '[🇰🇷]韩国首尔_28'
+  - '[🇳🇱]捷克_6'
+  - '[🇱🇺]印度_20'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_3'
-  - '[🇱🇺]印度_1'
+  - '[🇦🇶]美国_15'
+  - '[🇺🇸]美国_19'
+  - '[🇦🇶]美国_26'
+  - '[🇺🇸]美国加利福尼亚州洛杉矶_23'
+  - '[🇰🇷]韩国首尔_28'
+  - '[🇳🇱]捷克_6'
+  - '[🇱🇺]印度_20'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]美国_3'
-  - '[🇱🇺]印度_1'
+  - '[🇦🇶]美国_15'
+  - '[🇺🇸]美国_19'
+  - '[🇦🇶]美国_26'
+  - '[🇺🇸]美国加利福尼亚州洛杉矶_23'
+  - '[🇰🇷]韩国首尔_28'
+  - '[🇳🇱]捷克_6'
+  - '[🇱🇺]印度_20'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]美国_3'
-  - '[🇱🇺]印度_1'
+  - '[🇦🇶]美国_15'
+  - '[🇺🇸]美国_19'
+  - '[🇦🇶]美国_26'
+  - '[🇺🇸]美国加利福尼亚州洛杉矶_23'
+  - '[🇰🇷]韩国首尔_28'
+  - '[🇳🇱]捷克_6'
+  - '[🇱🇺]印度_20'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
