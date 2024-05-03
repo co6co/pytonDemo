@@ -26,6 +26,51 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1114'
+  network: ws
+  port: 1299
+  server: 45.92.219.118
+  skip-cert-verify: true
+  type: vmess
+  uuid: 95ba08e4-18d1-3a51-bb9e-e0ab4a982539
+  ws-opts:
+    path: /akileipv6zhuyaoji
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1115'
+  network: ws
+  port: 1299
+  server: akhk.jiediandiqus.sbs
+  skip-cert-verify: true
+  type: vmess
+  uuid: cb4a4ecd-986b-32fc-ad9a-5b2e57b179a0
+  ws-opts:
+    path: /akileipv6zhuyaoji
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]亚太地区_1125'
+  network: ws
+  port: 9126
+  server: 103.169.126.238
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 0fc9f7ed-d67d-3cde-86bb-1e31db6041e7
+  ws-opts:
+    headers:
+      Host: kcd.jiediandiqus.sbs
+    path: /awufgboawbf
+  udp: true
 - name: '[🇹🇼]_1001'
   server: 60.248.63.88
   port: 36697
@@ -50,6 +95,9 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇺🇸]_1114'
+  - '[🇺🇸]_1115'
+  - '[🇭🇰]亚太地区_1125'
   - '[🇹🇼]_1001'
 - name: 🎯 负载均衡
   type: load-balance
@@ -57,6 +105,9 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1114'
+  - '[🇺🇸]_1115'
+  - '[🇭🇰]亚太地区_1125'
   - '[🇹🇼]_1001'
 - name: ♻️ 自动选择
   type: fallback
@@ -64,6 +115,9 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1114'
+  - '[🇺🇸]_1115'
+  - '[🇭🇰]亚太地区_1125'
   - '[🇹🇼]_1001'
 - name: 🔰 延迟最低
   type: url-test
@@ -71,11 +125,17 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1114'
+  - '[🇺🇸]_1115'
+  - '[🇭🇰]亚太地区_1125'
   - '[🇹🇼]_1001'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇺🇸]_1114'
+  - '[🇺🇸]_1115'
+  - '[🇭🇰]亚太地区_1125'
   - '[🇹🇼]_1001'
 - name: 🎯 全球直连
   type: select
@@ -83,6 +143,9 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇺🇸]_1114'
+  - '[🇺🇸]_1115'
+  - '[🇭🇰]亚太地区_1125'
   - '[🇹🇼]_1001'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
