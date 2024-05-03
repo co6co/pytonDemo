@@ -38,18 +38,6 @@ proxies:
   ws-path: /glweidf.cfd/linkws
   ws-headers:
     Host: freevpn878.hamidimorteza680.workers.dev
-- name: '[🇦🇶]美国_15'
-  type: vmess
-  server: 104.19.40.58
-  port: 8880
-  uuid: 059b5ed0-8624-3492-afbe-bfa703bfdbf8
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /d/65dd503.TG.WangCai2.WangCai_8:107690
-  ws-headers:
-    Host: uk.moss.network
 - name: '[🇺🇸]美国_11'
   type: vmess
   server: www.darkroom.lol
@@ -62,6 +50,18 @@ proxies:
   ws-path: /
   ws-headers:
     Host: www.darkroom.lol
+- name: '[🇦🇶]美国_15'
+  type: vmess
+  server: 104.19.40.58
+  port: 8880
+  uuid: 059b5ed0-8624-3492-afbe-bfa703bfdbf8
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /d/65dd503.TG.WangCai2.WangCai_8:107690
+  ws-headers:
+    Host: uk.moss.network
 - name: '[🇺🇸]美国_25'
   type: vmess
   server: 172.67.172.219
@@ -84,18 +84,6 @@ proxies:
   udp: true
   network: ws
   ws-path: /
-- name: '[🇰🇷]韩国首尔_13'
-  type: vmess
-  server: awskr1.072659.xyz
-  port: 80
-  uuid: 44c58223-212a-3bfd-8675-2a691c24aa5a
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /
-  ws-headers:
-    Host: tms.dingtalk.com
 - name: '[🇦🇶]北美地区_6'
   type: vmess
   server: 23.158.56.50
@@ -119,6 +107,18 @@ proxies:
   ws-path: /?ed=2048
   ws-headers:
     Host: www.gov.uk
+- name: '[🇰🇷]韩国首尔_13'
+  type: vmess
+  server: awskr1.072659.xyz
+  port: 80
+  uuid: 44c58223-212a-3bfd-8675-2a691c24aa5a
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /
+  ws-headers:
+    Host: tms.dingtalk.com
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -127,13 +127,13 @@ proxy-groups:
   - ♻️ 自动选择
   - 🔰 延迟最低
   - '[🇦🇶]美国_5'
-  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_11'
+  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_25'
   - '[🇺🇸]美国赛基诺州立大学_16'
-  - '[🇰🇷]韩国首尔_13'
   - '[🇦🇶]北美地区_6'
   - '[🇺🇸]法国_8'
+  - '[🇰🇷]韩国首尔_13'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
@@ -141,13 +141,13 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇦🇶]美国_5'
-  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_11'
+  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_25'
   - '[🇺🇸]美国赛基诺州立大学_16'
-  - '[🇰🇷]韩国首尔_13'
   - '[🇦🇶]北美地区_6'
   - '[🇺🇸]法国_8'
+  - '[🇰🇷]韩国首尔_13'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -155,13 +155,13 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇦🇶]美国_5'
-  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_11'
+  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_25'
   - '[🇺🇸]美国赛基诺州立大学_16'
-  - '[🇰🇷]韩国首尔_13'
   - '[🇦🇶]北美地区_6'
   - '[🇺🇸]法国_8'
+  - '[🇰🇷]韩国首尔_13'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -169,25 +169,25 @@ proxy-groups:
   proxies:
   - REJECT
   - '[🇦🇶]美国_5'
-  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_11'
+  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_25'
   - '[🇺🇸]美国赛基诺州立大学_16'
-  - '[🇰🇷]韩国首尔_13'
   - '[🇦🇶]北美地区_6'
   - '[🇺🇸]法国_8'
+  - '[🇰🇷]韩国首尔_13'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
   - '[🇦🇶]美国_5'
-  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_11'
+  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_25'
   - '[🇺🇸]美国赛基诺州立大学_16'
-  - '[🇰🇷]韩国首尔_13'
   - '[🇦🇶]北美地区_6'
   - '[🇺🇸]法国_8'
+  - '[🇰🇷]韩国首尔_13'
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -195,13 +195,13 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - '[🇦🇶]美国_5'
-  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_11'
+  - '[🇦🇶]美国_15'
   - '[🇺🇸]美国_25'
   - '[🇺🇸]美国赛基诺州立大学_16'
-  - '[🇰🇷]韩国首尔_13'
   - '[🇦🇶]北美地区_6'
   - '[🇺🇸]法国_8'
+  - '[🇰🇷]韩国首尔_13'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
