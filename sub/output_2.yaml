@@ -26,6 +26,20 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇳🇱]_1057'
+  server: hk3.fdns.cloudlink123.com
+  port: 80
+  type: vmess
+  uuid: bb503015-c45f-312a-825b-d2883c5504b6
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: hk3.fdns.cloudlink123.com
+  udp: true
 - alterId: 0
   cipher: auto
   country: US
@@ -62,6 +76,45 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
+  name: '[🇰🇷]韩国_1150'
+  network: tcp
+  port: 10001
+  server: 103.214.68.57
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: 35322d49-0453-3506-8e6c-5be7e38189b6
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]美国_1151'
+  network: ws
+  port: 8880
+  server: 104.19.40.48
+  tls: false
+  type: vmess
+  uuid: 872a1452-e895-3b2b-876d-c0e50fbeb505
+  ws-opts:
+    headers:
+      Host: uk.moss.network
+    path: /d/65dd503.TG.WangCai2.WangCai_8:107690
+  udp: true
+- name: '[🇸🇬]_1072'
+  server: 159.223.94.156
+  port: 80
+  type: vmess
+  uuid: 7fb240cf-91db-3453-942b-a62564d913bf
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /anti13.zingfast.vn
+  tls: false
+  ws-headers:
+    Host: 159.223.94.156
+  udp: true
+- alterId: 0
+  cipher: auto
   name: '[🇰🇷]美国_1149'
   network: ws
   port: 80
@@ -94,44 +147,6 @@ proxies:
       HOST: dd7xps5fj6dfo.cloudfront.net
     path: /stream
   udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]美国_1151'
-  network: ws
-  port: 8880
-  server: 104.19.40.48
-  tls: false
-  type: vmess
-  uuid: 872a1452-e895-3b2b-876d-c0e50fbeb505
-  ws-opts:
-    headers:
-      Host: uk.moss.network
-    path: /d/65dd503.TG.WangCai2.WangCai_8:107690
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[🇰🇷]韩国_1150'
-  network: tcp
-  port: 10001
-  server: 103.214.68.57
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: 35322d49-0453-3506-8e6c-5be7e38189b6
-  udp: true
-- name: '[🇮🇪]_967'
-  server: 95.164.44.203
-  port: 8880
-  type: vmess
-  uuid: f5d0b69d-778d-37e0-a9b9-1821d085d68d
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -139,76 +154,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇳🇱]_1057'
   - '[🇺🇸]_1144'
   - '[🇺🇸]_1145'
+  - '[🇰🇷]韩国_1150'
+  - '[🇦🇶]美国_1151'
+  - '[🇸🇬]_1072'
   - '[🇰🇷]美国_1149'
   - '[🇺🇸]_1143'
-  - '[🇦🇶]美国_1151'
-  - '[🇰🇷]韩国_1150'
-  - '[🇮🇪]_967'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇳🇱]_1057'
   - '[🇺🇸]_1144'
   - '[🇺🇸]_1145'
+  - '[🇰🇷]韩国_1150'
+  - '[🇦🇶]美国_1151'
+  - '[🇸🇬]_1072'
   - '[🇰🇷]美国_1149'
   - '[🇺🇸]_1143'
-  - '[🇦🇶]美国_1151'
-  - '[🇰🇷]韩国_1150'
-  - '[🇮🇪]_967'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇳🇱]_1057'
   - '[🇺🇸]_1144'
   - '[🇺🇸]_1145'
+  - '[🇰🇷]韩国_1150'
+  - '[🇦🇶]美国_1151'
+  - '[🇸🇬]_1072'
   - '[🇰🇷]美国_1149'
   - '[🇺🇸]_1143'
-  - '[🇦🇶]美国_1151'
-  - '[🇰🇷]韩国_1150'
-  - '[🇮🇪]_967'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇳🇱]_1057'
   - '[🇺🇸]_1144'
   - '[🇺🇸]_1145'
+  - '[🇰🇷]韩国_1150'
+  - '[🇦🇶]美国_1151'
+  - '[🇸🇬]_1072'
   - '[🇰🇷]美国_1149'
   - '[🇺🇸]_1143'
-  - '[🇦🇶]美国_1151'
-  - '[🇰🇷]韩国_1150'
-  - '[🇮🇪]_967'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇳🇱]_1057'
   - '[🇺🇸]_1144'
   - '[🇺🇸]_1145'
+  - '[🇰🇷]韩国_1150'
+  - '[🇦🇶]美国_1151'
+  - '[🇸🇬]_1072'
   - '[🇰🇷]美国_1149'
   - '[🇺🇸]_1143'
-  - '[🇦🇶]美国_1151'
-  - '[🇰🇷]韩国_1150'
-  - '[🇮🇪]_967'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇳🇱]_1057'
   - '[🇺🇸]_1144'
   - '[🇺🇸]_1145'
+  - '[🇰🇷]韩国_1150'
+  - '[🇦🇶]美国_1151'
+  - '[🇸🇬]_1072'
   - '[🇰🇷]美国_1149'
   - '[🇺🇸]_1143'
-  - '[🇦🇶]美国_1151'
-  - '[🇰🇷]韩国_1150'
-  - '[🇮🇪]_967'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
