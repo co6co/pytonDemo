@@ -26,42 +26,16 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_1076'
-  server: 65.75.194.18
-  port: 13888
-  type: vless
-  uuid: faff362b-2625-3188-963b-dac7916a2982
-  tls: true
-  servername: jd.wxgqlfx.top
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      host: jd.wxgqlfx.top
-  udp: true
-- name: '[🇺🇸]_1077'
-  server: 65.75.194.2
-  port: 34237
-  type: vless
-  uuid: 6f245e91-5f2e-308d-8a44-329c9de68d5b
-  tls: true
-  servername: hk010.ylks.link
-  network: ws
-  ws-opts:
-    path: /freecodes
-    headers:
-      host: hk010.ylks.link
-  udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇩🇪]德国_1141'
+  name: '[🇩🇪]德国_1143'
   network: ws
   port: 45104
   server: 130.61.234.189
   servername: ''
   tls: false
   type: vmess
-  uuid: 1744efc3-c0b9-3d35-ac62-620dbaabd8b9
+  uuid: ea637ebc-34f3-3bfb-a4ee-7c85f683a3b7
   ws-opts:
     headers:
       Host: de-frankfurt-oracle-b26cf5.ip1.shop
@@ -69,32 +43,18 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇩🇪]德国_1142'
+  name: '[🇩🇪]德国_1144'
   network: ws
   port: 45103
   server: 130.61.234.189
   servername: ''
   tls: false
   type: vmess
-  uuid: 20c4aa30-c19f-3a71-8046-7693bd6d3051
+  uuid: 0a1c4587-0866-323d-8e67-9c3ba924390a
   ws-opts:
     headers:
       Host: oracle-de-01.t3csyun.buzz
     path: /de1
-  udp: true
-- name: '[🇸🇬]_1084'
-  server: 159.223.94.156
-  port: 80
-  type: vmess
-  uuid: dc369a72-19d3-3b94-84eb-82e579b33bfc
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /anti13.zingfast.vn
-  tls: false
-  ws-headers:
-    Host: 159.223.94.156
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -103,64 +63,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1076'
-  - '[🇺🇸]_1077'
-  - '[🇩🇪]德国_1141'
-  - '[🇩🇪]德国_1142'
-  - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1143'
+  - '[🇩🇪]德国_1144'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1076'
-  - '[🇺🇸]_1077'
-  - '[🇩🇪]德国_1141'
-  - '[🇩🇪]德国_1142'
-  - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1143'
+  - '[🇩🇪]德国_1144'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1076'
-  - '[🇺🇸]_1077'
-  - '[🇩🇪]德国_1141'
-  - '[🇩🇪]德国_1142'
-  - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1143'
+  - '[🇩🇪]德国_1144'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1076'
-  - '[🇺🇸]_1077'
-  - '[🇩🇪]德国_1141'
-  - '[🇩🇪]德国_1142'
-  - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1143'
+  - '[🇩🇪]德国_1144'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1076'
-  - '[🇺🇸]_1077'
-  - '[🇩🇪]德国_1141'
-  - '[🇩🇪]德国_1142'
-  - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1143'
+  - '[🇩🇪]德国_1144'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1076'
-  - '[🇺🇸]_1077'
-  - '[🇩🇪]德国_1141'
-  - '[🇩🇪]德国_1142'
-  - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1143'
+  - '[🇩🇪]德国_1144'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
