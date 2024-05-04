@@ -26,78 +26,31 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇹🇼]_1029'
-  server: 61.220.41.143
-  port: 36633
+- name: '[🇺🇸]_1076'
+  server: 65.75.194.18
+  port: 13888
   type: vless
-  uuid: 4f2ee39e-7860-32c7-ab01-f97c7a013e1d
-  network: ws
+  uuid: faff362b-2625-3188-963b-dac7916a2982
   tls: true
-  client-fingerprint: chrome
-  servername: a.ssll.gay
+  servername: jd.wxgqlfx.top
+  network: ws
   ws-opts:
-    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    path: /
     headers:
-      Host: a.ssll.gay
-  delay: 1040
-  tfo: false
-  skip-cert-verify: false
+      host: jd.wxgqlfx.top
   udp: true
-- name: '[🇺🇸]_1085'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: 6de987ef-98a8-318c-a490-763f942d8071
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
+- name: '[🇺🇸]_1077'
+  server: 65.75.194.2
+  port: 34237
+  type: vless
+  uuid: 6f245e91-5f2e-308d-8a44-329c9de68d5b
   tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
-  udp: true
-- name: '[🇺🇸]_1087'
-  server: 172.67.172.67
-  port: 8080
-  type: vmess
-  uuid: 50929d66-0840-3103-b9b2-9dc86ba2337e
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
+  servername: hk010.ylks.link
   network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: oiictw.yydsii.com
-  udp: true
-- name: '[🇦🇶]_1092'
-  server: 104.19.40.84
-  port: 8880
-  type: vmess
-  uuid: c80765f2-9f78-3edb-91f6-e61b7bd9c6be
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /d/65dd503.TG.WangCai2.WangCai_8:107690
-  tls: false
-  ws-headers:
-    Host: uk.moss.network
-  udp: true
-- name: '[🇸🇬]_1084'
-  server: 159.223.94.156
-  port: 80
-  type: vmess
-  uuid: dc369a72-19d3-3b94-84eb-82e579b33bfc
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /anti13.zingfast.vn
-  tls: false
-  ws-headers:
-    Host: 159.223.94.156
+  ws-opts:
+    path: /freecodes
+    headers:
+      host: hk010.ylks.link
   udp: true
 - alterId: 0
   cipher: auto
@@ -129,6 +82,20 @@ proxies:
       Host: oracle-de-01.t3csyun.buzz
     path: /de1
   udp: true
+- name: '[🇸🇬]_1084'
+  server: 159.223.94.156
+  port: 80
+  type: vmess
+  uuid: dc369a72-19d3-3b94-84eb-82e579b33bfc
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /anti13.zingfast.vn
+  tls: false
+  ws-headers:
+    Host: 159.223.94.156
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -136,76 +103,64 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇹🇼]_1029'
-  - '[🇺🇸]_1085'
-  - '[🇺🇸]_1087'
-  - '[🇦🇶]_1092'
-  - '[🇸🇬]_1084'
+  - '[🇺🇸]_1076'
+  - '[🇺🇸]_1077'
   - '[🇩🇪]德国_1141'
   - '[🇩🇪]德国_1142'
+  - '[🇸🇬]_1084'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1029'
-  - '[🇺🇸]_1085'
-  - '[🇺🇸]_1087'
-  - '[🇦🇶]_1092'
-  - '[🇸🇬]_1084'
+  - '[🇺🇸]_1076'
+  - '[🇺🇸]_1077'
   - '[🇩🇪]德国_1141'
   - '[🇩🇪]德国_1142'
+  - '[🇸🇬]_1084'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1029'
-  - '[🇺🇸]_1085'
-  - '[🇺🇸]_1087'
-  - '[🇦🇶]_1092'
-  - '[🇸🇬]_1084'
+  - '[🇺🇸]_1076'
+  - '[🇺🇸]_1077'
   - '[🇩🇪]德国_1141'
   - '[🇩🇪]德国_1142'
+  - '[🇸🇬]_1084'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_1029'
-  - '[🇺🇸]_1085'
-  - '[🇺🇸]_1087'
-  - '[🇦🇶]_1092'
-  - '[🇸🇬]_1084'
+  - '[🇺🇸]_1076'
+  - '[🇺🇸]_1077'
   - '[🇩🇪]德国_1141'
   - '[🇩🇪]德国_1142'
+  - '[🇸🇬]_1084'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇹🇼]_1029'
-  - '[🇺🇸]_1085'
-  - '[🇺🇸]_1087'
-  - '[🇦🇶]_1092'
-  - '[🇸🇬]_1084'
+  - '[🇺🇸]_1076'
+  - '[🇺🇸]_1077'
   - '[🇩🇪]德国_1141'
   - '[🇩🇪]德国_1142'
+  - '[🇸🇬]_1084'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇹🇼]_1029'
-  - '[🇺🇸]_1085'
-  - '[🇺🇸]_1087'
-  - '[🇦🇶]_1092'
-  - '[🇸🇬]_1084'
+  - '[🇺🇸]_1076'
+  - '[🇺🇸]_1077'
   - '[🇩🇪]德国_1141'
   - '[🇩🇪]德国_1142'
+  - '[🇸🇬]_1084'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
