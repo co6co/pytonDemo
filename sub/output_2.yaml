@@ -26,6 +26,37 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇹🇼]_1029'
+  server: 61.220.41.143
+  port: 36633
+  type: vless
+  uuid: 4f2ee39e-7860-32c7-ab01-f97c7a013e1d
+  network: ws
+  tls: true
+  client-fingerprint: chrome
+  servername: a.ssll.gay
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai_8 /?ed=2048
+    headers:
+      Host: a.ssll.gay
+  delay: 1040
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: '[🇺🇸]_1085'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: 6de987ef-98a8-318c-a490-763f942d8071
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
+  udp: true
 - name: '[🇺🇸]_1087'
   server: 172.67.172.67
   port: 8080
@@ -39,24 +70,6 @@ proxies:
   tls: false
   ws-headers:
     Host: oiictw.yydsii.com
-  udp: true
-- name: '[🇺🇸]_1074'
-  server: 150.136.241.40
-  port: 8443
-  type: vless
-  uuid: a3f4a2d9-deac-3321-b670-d306c3dbbc1a
-  tls: true
-  servername: edgood.889876.xyz
-  security: tls
-  sni: edgood.889876.xyz
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: '%2f%3fed%3d2048'
-    headers:
-      host: edgood.889876.xyz
-  skip-cert-verify: false
-  tfo: false
   udp: true
 - name: '[🇦🇶]_1092'
   server: 104.19.40.84
@@ -86,6 +99,36 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇩🇪]德国_1141'
+  network: ws
+  port: 45104
+  server: 130.61.234.189
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 1744efc3-c0b9-3d35-ac62-620dbaabd8b9
+  ws-opts:
+    headers:
+      Host: de-frankfurt-oracle-b26cf5.ip1.shop
+    path: /de2
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇩🇪]德国_1142'
+  network: ws
+  port: 45103
+  server: 130.61.234.189
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 20c4aa30-c19f-3a71-8046-7693bd6d3051
+  ws-opts:
+    headers:
+      Host: oracle-de-01.t3csyun.buzz
+    path: /de1
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -93,58 +136,76 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇹🇼]_1029'
+  - '[🇺🇸]_1085'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1074'
   - '[🇦🇶]_1092'
   - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1141'
+  - '[🇩🇪]德国_1142'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇹🇼]_1029'
+  - '[🇺🇸]_1085'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1074'
   - '[🇦🇶]_1092'
   - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1141'
+  - '[🇩🇪]德国_1142'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇹🇼]_1029'
+  - '[🇺🇸]_1085'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1074'
   - '[🇦🇶]_1092'
   - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1141'
+  - '[🇩🇪]德国_1142'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇹🇼]_1029'
+  - '[🇺🇸]_1085'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1074'
   - '[🇦🇶]_1092'
   - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1141'
+  - '[🇩🇪]德国_1142'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇹🇼]_1029'
+  - '[🇺🇸]_1085'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1074'
   - '[🇦🇶]_1092'
   - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1141'
+  - '[🇩🇪]德国_1142'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇹🇼]_1029'
+  - '[🇺🇸]_1085'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1074'
   - '[🇦🇶]_1092'
   - '[🇸🇬]_1084'
+  - '[🇩🇪]德国_1141'
+  - '[🇩🇪]德国_1142'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
