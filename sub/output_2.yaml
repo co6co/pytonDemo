@@ -26,26 +26,82 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇺🇸]_1086'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: 84cec44b-fd37-39c1-af50-0f3cdb3285ec
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
+  udp: true
+- name: '[🇹🇼]_982'
+  server: 118.163.128.81
+  port: 39560
+  type: vless
+  uuid: 6ec602e2-8f04-3002-a75f-a2b3db519397
+  tls: true
+  servername: cfed.tgzdyz2.top
+  security: tls
+  sni: cfed.tgzdyz2.top
+  fp: random
+  client-fingerprint: random
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  skip-cert-verify: false
+  tfo: false
+  udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇩🇪]德国_1143'
+  country: DE
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇦🇶]_1117'
   network: ws
-  port: 45104
-  server: 130.61.234.189
+  port: 443
+  server: 23.158.56.60
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 9135663b-500d-3d48-8839-326ad8af3fb9
+  ws-opts:
+    path: /linkvws
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇨🇳]江苏省_1142'
+  network: tcp
+  port: 22300
+  server: 223.113.130.62
   servername: ''
   tls: false
   type: vmess
-  uuid: ea637ebc-34f3-3bfb-a4ee-7c85f683a3b7
-  ws-opts:
-    headers:
-      Host: de-frankfurt-oracle-b26cf5.ip1.shop
-    path: /de2
+  uuid: 534ba46c-c9c2-32cc-a1a2-5f489e1f7aa6
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇭🇰]香港_1143'
+  network: tcp
+  port: 19901
+  server: 163.53.18.154
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 2f11a755-5836-335a-857e-1222e9f9962a
   udp: true
 - alterId: 0
   cipher: auto
   name: '[🇩🇪]德国_1144'
   network: ws
-  port: 45103
+  port: 45104
   server: 130.61.234.189
   servername: ''
   tls: false
@@ -53,8 +109,68 @@ proxies:
   uuid: 0a1c4587-0866-323d-8e67-9c3ba924390a
   ws-opts:
     headers:
+      Host: de-frankfurt-oracle-b26cf5.ip1.shop
+    path: /de2
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇩🇪]德国_1145'
+  network: ws
+  port: 45103
+  server: 130.61.234.189
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 5f657447-ecb7-3f64-a501-5adc51783e88
+  ws-opts:
+    headers:
       Host: oracle-de-01.t3csyun.buzz
     path: /de1
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇯🇵]日本东京_1147'
+  network: ws
+  port: 80
+  server: 3.112.7.179
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 2fcc2f12-df9a-39e7-ac9f-cecfa8fda90d
+  ws-opts:
+    headers:
+      Host: jp02.fredericamelody.online
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇰🇷]韩国首尔_1146'
+  network: ws
+  port: 80
+  server: 13.124.84.103
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 922f0643-d517-3009-a69a-381faeb73b30
+  ws-opts:
+    headers:
+      Host: kr01.victorialouisa.online
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇯🇵]日本_1148'
+  network: ws
+  port: 80
+  server: 54.249.182.82
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: b1f886ce-1ec0-3cb4-bfab-7daef09ea4d4
+  ws-opts:
+    headers:
+      Host: jp01.fredericamelody.online
+    path: /
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -63,46 +179,94 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇩🇪]德国_1143'
+  - '[🇺🇸]_1086'
+  - '[🇹🇼]_982'
+  - '[🇦🇶]_1117'
+  - '[🇨🇳]江苏省_1142'
+  - '[🇭🇰]香港_1143'
   - '[🇩🇪]德国_1144'
+  - '[🇩🇪]德国_1145'
+  - '[🇯🇵]日本东京_1147'
+  - '[🇰🇷]韩国首尔_1146'
+  - '[🇯🇵]日本_1148'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]德国_1143'
+  - '[🇺🇸]_1086'
+  - '[🇹🇼]_982'
+  - '[🇦🇶]_1117'
+  - '[🇨🇳]江苏省_1142'
+  - '[🇭🇰]香港_1143'
   - '[🇩🇪]德国_1144'
+  - '[🇩🇪]德国_1145'
+  - '[🇯🇵]日本东京_1147'
+  - '[🇰🇷]韩国首尔_1146'
+  - '[🇯🇵]日本_1148'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]德国_1143'
+  - '[🇺🇸]_1086'
+  - '[🇹🇼]_982'
+  - '[🇦🇶]_1117'
+  - '[🇨🇳]江苏省_1142'
+  - '[🇭🇰]香港_1143'
   - '[🇩🇪]德国_1144'
+  - '[🇩🇪]德国_1145'
+  - '[🇯🇵]日本东京_1147'
+  - '[🇰🇷]韩国首尔_1146'
+  - '[🇯🇵]日本_1148'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇩🇪]德国_1143'
+  - '[🇺🇸]_1086'
+  - '[🇹🇼]_982'
+  - '[🇦🇶]_1117'
+  - '[🇨🇳]江苏省_1142'
+  - '[🇭🇰]香港_1143'
   - '[🇩🇪]德国_1144'
+  - '[🇩🇪]德国_1145'
+  - '[🇯🇵]日本东京_1147'
+  - '[🇰🇷]韩国首尔_1146'
+  - '[🇯🇵]日本_1148'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇩🇪]德国_1143'
+  - '[🇺🇸]_1086'
+  - '[🇹🇼]_982'
+  - '[🇦🇶]_1117'
+  - '[🇨🇳]江苏省_1142'
+  - '[🇭🇰]香港_1143'
   - '[🇩🇪]德国_1144'
+  - '[🇩🇪]德国_1145'
+  - '[🇯🇵]日本东京_1147'
+  - '[🇰🇷]韩国首尔_1146'
+  - '[🇯🇵]日本_1148'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇩🇪]德国_1143'
+  - '[🇺🇸]_1086'
+  - '[🇹🇼]_982'
+  - '[🇦🇶]_1117'
+  - '[🇨🇳]江苏省_1142'
+  - '[🇭🇰]香港_1143'
   - '[🇩🇪]德国_1144'
+  - '[🇩🇪]德国_1145'
+  - '[🇯🇵]日本东京_1147'
+  - '[🇰🇷]韩国首尔_1146'
+  - '[🇯🇵]日本_1148'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
