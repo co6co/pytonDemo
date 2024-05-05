@@ -26,35 +26,36 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]美国_1'
+- name: '[🇺🇸]美国_6'
   type: vmess
-  server: 172.67.185.79
-  port: 8080
-  uuid: 959f6aba-c949-3ccb-80e4-9993b5352179
+  server: 151.101.195.10
+  port: 80
+  uuid: 649026bd-b366-3e3a-abf8-e146fbfc31d6
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /
+  ws-path: /aries?ed=2560
   ws-headers:
-    Host: oiictw.yydsii.com
-- name: '[🇦🇶]美国_8'
+    Host: nmsl.kp
+- name: '[🇺🇸]北美地区_7'
   type: vmess
-  server: cfcdn1.sanfencdn9.com
-  port: 2052
-  uuid: dd190a32-d6b4-393c-852c-4c111cfbd32a
+  server: 23.154.136.2
+  port: 443
+  uuid: 585b2cda-ee25-33d5-abab-250b8519713b
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /video/GQ2qE5Us9g
+  tls: true
+  ws-path: /linkvws
   ws-headers:
-    Host: tw1bQiWSE4x.fzbqfrse.xyz
-- name: '[🇺🇸]美国_17'
+    Host: 23.154.136.2
+- name: '[🇺🇸]美国_12'
   type: vmess
   server: 172.67.130.140
   port: 2082
-  uuid: 1b9f7b7c-4f95-3c08-b023-a57235d475aa
+  uuid: de6acdd9-1aef-3ada-8d46-88718d3839e1
   alterId: 0
   cipher: auto
   udp: true
@@ -62,30 +63,65 @@ proxies:
   ws-path: /
   ws-headers:
     Host: s1c.v2.v001sss.xyz
-- name: '[🇦🇶]美国_12'
+- name: '[🇦🇶]美国_17'
   type: vmess
-  server: 23.162.200.227
-  port: 443
-  uuid: 99be8cd7-c761-301b-8fd0-9e7c802c113b
+  server: onea.flha.ru
+  port: 2095
+  uuid: c14a04e4-a1f6-3d53-84a3-7b4b9bfdab3b
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  tls: true
-  ws-path: /linkvws
-- name: '[🇱🇺]保加利亚_15'
+  ws-path: /
+- name: '[🇦🇶]美国_18'
   type: vmess
-  server: 87.120.204.6
-  port: 8080
-  uuid: 2879a2cb-daed-336b-8db5-5df575ef540c
+  server: 104.19.250.15
+  port: 2052
+  uuid: 0dadef3f-c796-3ab0-9191-4881c44030d4
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  tls: true
   ws-path: /
   ws-headers:
-    Host: 87.120.204.6
+    Host: helanv6cf.inekokkk.top
+- name: '[🇦🇶]美国_19'
+  type: vmess
+  server: 104.19.40.99
+  port: 8880
+  uuid: 44ef4686-a1ec-331d-b28b-87bf94fac569
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /d/65dd503.TG.WangCai2.WangCai_8:107690
+  ws-headers:
+    Host: uk.moss.network
+- name: '[🇳🇱]捷克_1'
+  type: vmess
+  server: nl2-full.privateip.net
+  port: 443
+  uuid: bd0a9328-9e53-3025-bb2d-9ba4083b06ec
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-path: /RACEVPN
+  ws-headers:
+    Host: nl2-full.privateip.net
+- name: '[🇹🇼]台湾省台南市中华电信_15'
+  type: vmess
+  server: 61.227.176.105
+  port: 443
+  uuid: 4d62ac33-0a90-32af-b507-eabdbf39a947
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /
+  ws-headers:
+    Host: tms.dingtalk.com
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -93,64 +129,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]美国_1'
-  - '[🇦🇶]美国_8'
-  - '[🇺🇸]美国_17'
-  - '[🇦🇶]美国_12'
-  - '[🇱🇺]保加利亚_15'
+  - '[🇺🇸]美国_6'
+  - '[🇺🇸]北美地区_7'
+  - '[🇺🇸]美国_12'
+  - '[🇦🇶]美国_17'
+  - '[🇦🇶]美国_18'
+  - '[🇦🇶]美国_19'
+  - '[🇳🇱]捷克_1'
+  - '[🇹🇼]台湾省台南市中华电信_15'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_1'
-  - '[🇦🇶]美国_8'
-  - '[🇺🇸]美国_17'
-  - '[🇦🇶]美国_12'
-  - '[🇱🇺]保加利亚_15'
+  - '[🇺🇸]美国_6'
+  - '[🇺🇸]北美地区_7'
+  - '[🇺🇸]美国_12'
+  - '[🇦🇶]美国_17'
+  - '[🇦🇶]美国_18'
+  - '[🇦🇶]美国_19'
+  - '[🇳🇱]捷克_1'
+  - '[🇹🇼]台湾省台南市中华电信_15'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_1'
-  - '[🇦🇶]美国_8'
-  - '[🇺🇸]美国_17'
-  - '[🇦🇶]美国_12'
-  - '[🇱🇺]保加利亚_15'
+  - '[🇺🇸]美国_6'
+  - '[🇺🇸]北美地区_7'
+  - '[🇺🇸]美国_12'
+  - '[🇦🇶]美国_17'
+  - '[🇦🇶]美国_18'
+  - '[🇦🇶]美国_19'
+  - '[🇳🇱]捷克_1'
+  - '[🇹🇼]台湾省台南市中华电信_15'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]美国_1'
-  - '[🇦🇶]美国_8'
-  - '[🇺🇸]美国_17'
-  - '[🇦🇶]美国_12'
-  - '[🇱🇺]保加利亚_15'
+  - '[🇺🇸]美国_6'
+  - '[🇺🇸]北美地区_7'
+  - '[🇺🇸]美国_12'
+  - '[🇦🇶]美国_17'
+  - '[🇦🇶]美国_18'
+  - '[🇦🇶]美国_19'
+  - '[🇳🇱]捷克_1'
+  - '[🇹🇼]台湾省台南市中华电信_15'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]美国_1'
-  - '[🇦🇶]美国_8'
-  - '[🇺🇸]美国_17'
-  - '[🇦🇶]美国_12'
-  - '[🇱🇺]保加利亚_15'
+  - '[🇺🇸]美国_6'
+  - '[🇺🇸]北美地区_7'
+  - '[🇺🇸]美国_12'
+  - '[🇦🇶]美国_17'
+  - '[🇦🇶]美国_18'
+  - '[🇦🇶]美国_19'
+  - '[🇳🇱]捷克_1'
+  - '[🇹🇼]台湾省台南市中华电信_15'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]美国_1'
-  - '[🇦🇶]美国_8'
-  - '[🇺🇸]美国_17'
-  - '[🇦🇶]美国_12'
-  - '[🇱🇺]保加利亚_15'
+  - '[🇺🇸]美国_6'
+  - '[🇺🇸]北美地区_7'
+  - '[🇺🇸]美国_12'
+  - '[🇦🇶]美国_17'
+  - '[🇦🇶]美国_18'
+  - '[🇦🇶]美国_19'
+  - '[🇳🇱]捷克_1'
+  - '[🇹🇼]台湾省台南市中华电信_15'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
