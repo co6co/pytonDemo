@@ -28,22 +28,17 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇺🇸]_799'
+  name: '[🇨🇿]_774'
   network: ws
-  port: 8080
-  server: 172.67.185.64
-  servername: oiictw.yydsii.com
-  skip-cert-verify: true
+  port: 8880
+  server: 77.75.230.125
   type: vmess
-  uuid: b0369299-a349-3385-b0e0-cce79dd20673
-  ws-opts:
-    headers:
-      HOST: oiictw.yydsii.com
-    path: /
   udp: true
+  uuid: e1af3d05-0fd6-3cdb-a5bb-bc590dd0eea8
+  ws-opts:
+    path: /vmess
 - alterId: 0
   cipher: auto
   country: CZ
@@ -59,19 +54,6 @@ proxies:
   ws-opts:
     path: /vmess
   udp: true
-- alterId: 0
-  cipher: auto
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇨🇿]_774'
-  network: ws
-  port: 8880
-  server: 77.75.230.125
-  type: vmess
-  udp: true
-  uuid: e1af3d05-0fd6-3cdb-a5bb-bc590dd0eea8
-  ws-opts:
-    path: /vmess
 - alterId: 0
   cipher: auto
   country: CZ
@@ -117,17 +99,6 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇰🇷]韩国_803'
-  network: tcp
-  port: 10001
-  server: 103.214.68.57
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: da29a1ca-682d-39d4-b4fc-f0a18d5dfc73
-  udp: true
-- alterId: 0
-  cipher: auto
   name: '[🇯🇵]日本东京_801'
   network: ws
   port: 80
@@ -141,6 +112,32 @@ proxies:
       Host: ''
     path: ''
   udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇰🇷]韩国_802'
+  network: ws
+  port: 80
+  server: 52.79.134.36
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: e22f8a81-930a-3b45-ac9e-1259ad8013cc
+  ws-opts:
+    headers:
+      Host: ''
+    path: ''
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇰🇷]韩国_803'
+  network: tcp
+  port: 10001
+  server: 103.214.68.57
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: da29a1ca-682d-39d4-b4fc-f0a18d5dfc73
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -148,82 +145,82 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_799'
-  - '[🇨🇿]_775'
   - '[🇨🇿]_774'
+  - '[🇨🇿]_775'
   - '[🇨🇿]_776'
   - '[🇦🇶]美国_804'
   - '[🇦🇶]美国_805'
-  - '[🇰🇷]韩国_803'
   - '[🇯🇵]日本东京_801'
+  - '[🇰🇷]韩国_802'
+  - '[🇰🇷]韩国_803'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_799'
-  - '[🇨🇿]_775'
   - '[🇨🇿]_774'
+  - '[🇨🇿]_775'
   - '[🇨🇿]_776'
   - '[🇦🇶]美国_804'
   - '[🇦🇶]美国_805'
-  - '[🇰🇷]韩国_803'
   - '[🇯🇵]日本东京_801'
+  - '[🇰🇷]韩国_802'
+  - '[🇰🇷]韩国_803'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_799'
-  - '[🇨🇿]_775'
   - '[🇨🇿]_774'
+  - '[🇨🇿]_775'
   - '[🇨🇿]_776'
   - '[🇦🇶]美国_804'
   - '[🇦🇶]美国_805'
-  - '[🇰🇷]韩国_803'
   - '[🇯🇵]日本东京_801'
+  - '[🇰🇷]韩国_802'
+  - '[🇰🇷]韩国_803'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_799'
-  - '[🇨🇿]_775'
   - '[🇨🇿]_774'
+  - '[🇨🇿]_775'
   - '[🇨🇿]_776'
   - '[🇦🇶]美国_804'
   - '[🇦🇶]美国_805'
-  - '[🇰🇷]韩国_803'
   - '[🇯🇵]日本东京_801'
+  - '[🇰🇷]韩国_802'
+  - '[🇰🇷]韩国_803'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_799'
-  - '[🇨🇿]_775'
   - '[🇨🇿]_774'
+  - '[🇨🇿]_775'
   - '[🇨🇿]_776'
   - '[🇦🇶]美国_804'
   - '[🇦🇶]美国_805'
-  - '[🇰🇷]韩国_803'
   - '[🇯🇵]日本东京_801'
+  - '[🇰🇷]韩国_802'
+  - '[🇰🇷]韩国_803'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_799'
-  - '[🇨🇿]_775'
   - '[🇨🇿]_774'
+  - '[🇨🇿]_775'
   - '[🇨🇿]_776'
   - '[🇦🇶]美国_804'
   - '[🇦🇶]美国_805'
-  - '[🇰🇷]韩国_803'
   - '[🇯🇵]日本东京_801'
+  - '[🇰🇷]韩国_802'
+  - '[🇰🇷]韩国_803'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
