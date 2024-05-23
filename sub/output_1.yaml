@@ -26,11 +26,11 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇹🇼]_750'
+- name: '[🇹🇼]_753'
   server: 118.163.128.81
-  port: 38370
+  port: 39560
   type: vless
-  uuid: b2b07bdd-8acc-3748-b682-5b1c44e37ffb
+  uuid: aaf341ca-89d4-3772-9ff4-147622e9dab2
   tls: true
   servername: cfed.tgzdyz2.top
   network: ws
@@ -39,6 +39,19 @@ proxies:
     headers:
       host: cfed.tgzdyz2.top
   udp: true
+- name: '[🇹🇼]_754'
+  server: 35.201.203.106
+  port: 443
+  type: vless
+  uuid: 314fba7c-10f3-3f82-8fa7-e31d9c5bdffb
+  tls: true
+  servername: tg.dns68.cloudns.nz
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      host: tg.dns68.cloudns.nz
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -46,40 +59,46 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇹🇼]_750'
+  - '[🇹🇼]_753'
+  - '[🇹🇼]_754'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_750'
+  - '[🇹🇼]_753'
+  - '[🇹🇼]_754'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_750'
+  - '[🇹🇼]_753'
+  - '[🇹🇼]_754'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_750'
+  - '[🇹🇼]_753'
+  - '[🇹🇼]_754'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇹🇼]_750'
+  - '[🇹🇼]_753'
+  - '[🇹🇼]_754'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇹🇼]_750'
+  - '[🇹🇼]_753'
+  - '[🇹🇼]_754'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
