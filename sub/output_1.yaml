@@ -26,6 +26,34 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇺🇸]_833'
+  server: 172.67.171.49
+  port: 80
+  type: vmess
+  uuid: 45464f98-494d-3dcd-aaa9-3109d22b90c5
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /vmess
+  tls: false
+  ws-headers:
+    Host: Nl2.vmess.site.
+  udp: true
+- name: '[🇺🇸]_829'
+  server: 136.175.176.49
+  port: 20443
+  type: vless
+  network: ws
+  servername: v116.ylkszy.eu.org
+  tls: true
+  uuid: 3920c69e-cd50-34ad-b87b-1a88d3c9c5b2
+  ws-opts:
+    headers:
+      host: v116.ylkszy.eu.org
+    path: /proxyip=proxyip.us.fxxk.dedyn.io
+  delay: 1015
+  udp: true
 - name: '[🇹🇼]_816'
   server: 35.201.203.106
   port: 443
@@ -66,11 +94,11 @@ proxies:
       host: cfed.tgzdyz2.top
   delay: 711
   udp: true
-- name: '[🇸🇬]_860'
+- name: '[🇸🇬]_852'
   server: 139.162.59.41
   port: 80
   type: vmess
-  uuid: 99ecbd3a-4202-3dd2-84d1-691b4db8d5c7
+  uuid: 3f6d0703-7588-3f5a-84ba-11b7e8b84b5c
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -80,11 +108,11 @@ proxies:
   ws-headers:
     Host: Livestream2.tv360.vn
   udp: true
-- name: '[🇺🇸]_885'
+- name: '[🇳🇱]_877'
   server: oz.moonfree.top
   port: 443
   type: vmess
-  uuid: 8c4b1c4f-9eb3-35a1-b5fa-2611e19758b9
+  uuid: 85a590f1-c765-3f37-a57b-ec8e2a8ae44f
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -94,11 +122,11 @@ proxies:
   ws-headers:
     Host: oz.moonfree.top
   udp: true
-- name: '[🇺🇸]_893'
+- name: '[🇺🇸]_885'
   server: 172.64.147.71
   port: 443
   type: vmess
-  uuid: b669c519-f574-36aa-b76f-95e5cc6b5be2
+  uuid: 8c4b1c4f-9eb3-35a1-b5fa-2611e19758b9
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -108,11 +136,11 @@ proxies:
   ws-headers:
     Host: sg.wweblog.pw
   udp: true
-- name: '[🇺🇸]_894'
+- name: '[🇺🇸]_886'
   server: 172.64.81.27
   port: 443
   type: vmess
-  uuid: 69f6ecee-9e98-3fac-97d9-a78bf4ab8b78
+  uuid: ced899b0-6022-3f81-8fb1-e4ce00fc35dc
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -122,11 +150,11 @@ proxies:
   ws-headers:
     Host: sg.wweblog.pw
   udp: true
-- name: '[🇺🇸]_902'
+- name: '[🇳🇱]_894'
   server: ocrb2.moonfree.top
   port: 443
   type: vmess
-  uuid: 8c6c0dde-294a-334a-9fa7-7fc786411b06
+  uuid: c722cd61-1355-3390-95c6-e7a2f3de23fb
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -136,11 +164,11 @@ proxies:
   ws-headers:
     Host: ocrb2.moonfree.top
   udp: true
-- name: '[🇦🇶]_934'
+- name: '[🇦🇶]_926'
   server: hkd1.quickerlink.xyz
   port: 443
   type: vmess
-  uuid: 489ac707-1764-3d71-ada2-c753e6d36f57
+  uuid: e29f1d82-7468-3836-b195-253357a88591
   alterId: 64
   cipher: auto
   skip-cert-verify: true
@@ -150,11 +178,11 @@ proxies:
   ws-headers:
     Host: hkd1.quickerlink.xyz
   udp: true
-- name: '[🇺🇸]_937'
+- name: '[🇺🇸]_929'
   server: 172.67.172.67
   port: 8080
   type: vmess
-  uuid: b5d8d007-db33-3533-b434-1163c3764b00
+  uuid: 5187d6b5-8c6e-38ea-98bf-4ed766733b04
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -171,94 +199,106 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇺🇸]_833'
+  - '[🇺🇸]_829'
   - '[🇹🇼]_816'
   - '[🇸🇬]_815'
   - '[🇺🇸]_818'
-  - '[🇸🇬]_860'
+  - '[🇸🇬]_852'
+  - '[🇳🇱]_877'
   - '[🇺🇸]_885'
-  - '[🇺🇸]_893'
-  - '[🇺🇸]_894'
-  - '[🇺🇸]_902'
-  - '[🇦🇶]_934'
-  - '[🇺🇸]_937'
+  - '[🇺🇸]_886'
+  - '[🇳🇱]_894'
+  - '[🇦🇶]_926'
+  - '[🇺🇸]_929'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_833'
+  - '[🇺🇸]_829'
   - '[🇹🇼]_816'
   - '[🇸🇬]_815'
   - '[🇺🇸]_818'
-  - '[🇸🇬]_860'
+  - '[🇸🇬]_852'
+  - '[🇳🇱]_877'
   - '[🇺🇸]_885'
-  - '[🇺🇸]_893'
-  - '[🇺🇸]_894'
-  - '[🇺🇸]_902'
-  - '[🇦🇶]_934'
-  - '[🇺🇸]_937'
+  - '[🇺🇸]_886'
+  - '[🇳🇱]_894'
+  - '[🇦🇶]_926'
+  - '[🇺🇸]_929'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_833'
+  - '[🇺🇸]_829'
   - '[🇹🇼]_816'
   - '[🇸🇬]_815'
   - '[🇺🇸]_818'
-  - '[🇸🇬]_860'
+  - '[🇸🇬]_852'
+  - '[🇳🇱]_877'
   - '[🇺🇸]_885'
-  - '[🇺🇸]_893'
-  - '[🇺🇸]_894'
-  - '[🇺🇸]_902'
-  - '[🇦🇶]_934'
-  - '[🇺🇸]_937'
+  - '[🇺🇸]_886'
+  - '[🇳🇱]_894'
+  - '[🇦🇶]_926'
+  - '[🇺🇸]_929'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_833'
+  - '[🇺🇸]_829'
   - '[🇹🇼]_816'
   - '[🇸🇬]_815'
   - '[🇺🇸]_818'
-  - '[🇸🇬]_860'
+  - '[🇸🇬]_852'
+  - '[🇳🇱]_877'
   - '[🇺🇸]_885'
-  - '[🇺🇸]_893'
-  - '[🇺🇸]_894'
-  - '[🇺🇸]_902'
-  - '[🇦🇶]_934'
-  - '[🇺🇸]_937'
+  - '[🇺🇸]_886'
+  - '[🇳🇱]_894'
+  - '[🇦🇶]_926'
+  - '[🇺🇸]_929'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇺🇸]_833'
+  - '[🇺🇸]_829'
   - '[🇹🇼]_816'
   - '[🇸🇬]_815'
   - '[🇺🇸]_818'
-  - '[🇸🇬]_860'
+  - '[🇸🇬]_852'
+  - '[🇳🇱]_877'
   - '[🇺🇸]_885'
-  - '[🇺🇸]_893'
-  - '[🇺🇸]_894'
-  - '[🇺🇸]_902'
-  - '[🇦🇶]_934'
-  - '[🇺🇸]_937'
+  - '[🇺🇸]_886'
+  - '[🇳🇱]_894'
+  - '[🇦🇶]_926'
+  - '[🇺🇸]_929'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇺🇸]_833'
+  - '[🇺🇸]_829'
   - '[🇹🇼]_816'
   - '[🇸🇬]_815'
   - '[🇺🇸]_818'
-  - '[🇸🇬]_860'
+  - '[🇸🇬]_852'
+  - '[🇳🇱]_877'
   - '[🇺🇸]_885'
-  - '[🇺🇸]_893'
-  - '[🇺🇸]_894'
-  - '[🇺🇸]_902'
-  - '[🇦🇶]_934'
-  - '[🇺🇸]_937'
+  - '[🇺🇸]_886'
+  - '[🇳🇱]_894'
+  - '[🇦🇶]_926'
+  - '[🇺🇸]_929'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
