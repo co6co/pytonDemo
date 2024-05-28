@@ -26,6 +26,48 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇺🇸]_780'
+  server: 38.181.73.64
+  port: 62888
+  type: vless
+  uuid: ce16eb42-47d8-3ee8-b175-2944266d2e76
+  tls: true
+  servername: cfed.tgzdyz2.top
+  network: ws
+  ws-opts:
+    path: tg@zdyz2
+    headers:
+      host: cfed.tgzdyz2.top
+  udp: true
+- name: '[🇦🇶]_801'
+  server: bs4.loadingip.com
+  port: 80
+  type: vmess
+  uuid: 099d40f8-0d29-379d-b11d-cc67c12b414b
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: bs4.loadingip.com
+  udp: true
+- name: '[🇺🇸]_839'
+  server: ocrb1.moonfree.top
+  port: 443
+  type: vmess
+  uuid: 339a86ac-65cb-3bda-bc41-26805518d405
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: ocrb1.moonfree.top
+  udp: true
 - name: '[🇺🇸]_867'
   server: 172.64.147.71
   port: 443
@@ -54,20 +96,6 @@ proxies:
   ws-headers:
     Host: foxus.fovi.tk
   udp: true
-- name: '[🇳🇱]_871'
-  server: v6d1.moonfree.top
-  port: 443
-  type: vmess
-  uuid: 02f38198-1188-34ef-b96a-f0247cad67e8
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: true
-  ws-headers:
-    Host: v6d1.moonfree.top
-  udp: true
 - name: '[🇺🇸]_872'
   server: 172.66.47.44
   port: 2053
@@ -81,6 +109,20 @@ proxies:
   tls: true
   ws-headers:
     Host: web1.wweblog.pw
+  udp: true
+- name: '[🇳🇱]_871'
+  server: v6d1.moonfree.top
+  port: 443
+  type: vmess
+  uuid: 02f38198-1188-34ef-b96a-f0247cad67e8
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: v6d1.moonfree.top
   udp: true
 - name: '[🇺🇸]_882'
   server: oz.moonfree.top
@@ -96,11 +138,11 @@ proxies:
   ws-headers:
     Host: oz.moonfree.top
   udp: true
-- name: '[🇳🇱]_883'
+- name: '[🇺🇸]_883'
   server: awsxjp.moonfree.top
   port: 443
   type: vmess
-  uuid: 5d54b212-9b9d-3b5a-b3ca-331843a9cec0
+  uuid: e44b1bfa-b919-3d2c-a9b7-6b4bcd673258
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -210,14 +252,21 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇯🇵]美国_932'
-  network: tcp
-  port: 1069
-  server: 152.69.197.60
-  servername: ''
-  tls: false
+  country: VN
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇦🇶]_925'
+  network: ws
+  port: 80
+  server: 103.238.235.207
+  servername: bs5.loadingip.com
+  skip-cert-verify: true
   type: vmess
-  uuid: ef8aa38b-aaed-3cd5-8a34-ef60bc91c799
+  uuid: b7c35b7f-754d-3942-a5ac-bea4aaffb238
+  ws-opts:
+    headers:
+      HOST: bs5.loadingip.com
+    path: /bs
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -226,12 +275,15 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇺🇸]_780'
+  - '[🇦🇶]_801'
+  - '[🇺🇸]_839'
   - '[🇺🇸]_867'
   - '[🇦🇶]_868'
-  - '[🇳🇱]_871'
   - '[🇺🇸]_872'
+  - '[🇳🇱]_871'
   - '[🇺🇸]_882'
-  - '[🇳🇱]_883'
+  - '[🇺🇸]_883'
   - '[🇺🇸]_884'
   - '[🇦🇶]_895'
   - '[🇺🇸]_899'
@@ -239,19 +291,22 @@ proxy-groups:
   - '[🇦🇶]_913'
   - '[🇦🇶]_917'
   - '[🇦🇶]_920'
-  - '[🇯🇵]美国_932'
+  - '[🇦🇶]_925'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_780'
+  - '[🇦🇶]_801'
+  - '[🇺🇸]_839'
   - '[🇺🇸]_867'
   - '[🇦🇶]_868'
-  - '[🇳🇱]_871'
   - '[🇺🇸]_872'
+  - '[🇳🇱]_871'
   - '[🇺🇸]_882'
-  - '[🇳🇱]_883'
+  - '[🇺🇸]_883'
   - '[🇺🇸]_884'
   - '[🇦🇶]_895'
   - '[🇺🇸]_899'
@@ -259,19 +314,22 @@ proxy-groups:
   - '[🇦🇶]_913'
   - '[🇦🇶]_917'
   - '[🇦🇶]_920'
-  - '[🇯🇵]美国_932'
+  - '[🇦🇶]_925'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_780'
+  - '[🇦🇶]_801'
+  - '[🇺🇸]_839'
   - '[🇺🇸]_867'
   - '[🇦🇶]_868'
-  - '[🇳🇱]_871'
   - '[🇺🇸]_872'
+  - '[🇳🇱]_871'
   - '[🇺🇸]_882'
-  - '[🇳🇱]_883'
+  - '[🇺🇸]_883'
   - '[🇺🇸]_884'
   - '[🇦🇶]_895'
   - '[🇺🇸]_899'
@@ -279,19 +337,22 @@ proxy-groups:
   - '[🇦🇶]_913'
   - '[🇦🇶]_917'
   - '[🇦🇶]_920'
-  - '[🇯🇵]美国_932'
+  - '[🇦🇶]_925'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_780'
+  - '[🇦🇶]_801'
+  - '[🇺🇸]_839'
   - '[🇺🇸]_867'
   - '[🇦🇶]_868'
-  - '[🇳🇱]_871'
   - '[🇺🇸]_872'
+  - '[🇳🇱]_871'
   - '[🇺🇸]_882'
-  - '[🇳🇱]_883'
+  - '[🇺🇸]_883'
   - '[🇺🇸]_884'
   - '[🇦🇶]_895'
   - '[🇺🇸]_899'
@@ -299,17 +360,20 @@ proxy-groups:
   - '[🇦🇶]_913'
   - '[🇦🇶]_917'
   - '[🇦🇶]_920'
-  - '[🇯🇵]美国_932'
+  - '[🇦🇶]_925'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇺🇸]_780'
+  - '[🇦🇶]_801'
+  - '[🇺🇸]_839'
   - '[🇺🇸]_867'
   - '[🇦🇶]_868'
-  - '[🇳🇱]_871'
   - '[🇺🇸]_872'
+  - '[🇳🇱]_871'
   - '[🇺🇸]_882'
-  - '[🇳🇱]_883'
+  - '[🇺🇸]_883'
   - '[🇺🇸]_884'
   - '[🇦🇶]_895'
   - '[🇺🇸]_899'
@@ -317,19 +381,22 @@ proxy-groups:
   - '[🇦🇶]_913'
   - '[🇦🇶]_917'
   - '[🇦🇶]_920'
-  - '[🇯🇵]美国_932'
+  - '[🇦🇶]_925'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇺🇸]_780'
+  - '[🇦🇶]_801'
+  - '[🇺🇸]_839'
   - '[🇺🇸]_867'
   - '[🇦🇶]_868'
-  - '[🇳🇱]_871'
   - '[🇺🇸]_872'
+  - '[🇳🇱]_871'
   - '[🇺🇸]_882'
-  - '[🇳🇱]_883'
+  - '[🇺🇸]_883'
   - '[🇺🇸]_884'
   - '[🇦🇶]_895'
   - '[🇺🇸]_899'
@@ -337,7 +404,7 @@ proxy-groups:
   - '[🇦🇶]_913'
   - '[🇦🇶]_917'
   - '[🇦🇶]_920'
-  - '[🇯🇵]美国_932'
+  - '[🇦🇶]_925'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
