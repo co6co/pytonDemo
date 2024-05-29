@@ -26,6 +26,67 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇹🇼]_771'
+  server: 34.80.86.119
+  port: 4443
+  type: vless
+  client-fingerprint: random
+  uuid: 68904e02-8dff-3b16-bca6-0be0fb575525
+  tls: true
+  tfo: false
+  servername: cfed.tgzdyz2.top
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      Host: cfed.tgzdyz2.top
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_850'
+  network: ws
+  port: 8080
+  server: 172.67.185.218
+  servername: oiictw.yydsii.com
+  skip-cert-verify: true
+  type: vmess
+  uuid: 539f0d83-980b-3852-b3ce-3c86558d0207
+  ws-opts:
+    headers:
+      HOST: oiictw.yydsii.com
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_845'
+  network: tcp
+  port: 41001
+  server: bgroup.node5.v.nodelist-gfwairport2.top
+  skip-cert-verify: true
+  type: vmess
+  uuid: 78308d89-bd55-34ee-8952-be0061eaa10a
+  udp: true
+- name: '[🇮🇷]_816'
+  server: 79.175.176.221
+  port: 12397
+  type: vmess
+  uuid: 1f4a6c3e-2664-32da-a974-a1781fce28fc
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: google.com
+  udp: true
 - name: '[🇹🇼]_770'
   server: 61.220.41.143
   port: 36633
@@ -42,19 +103,41 @@ proxies:
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
-- name: '[🇮🇷]_816'
-  server: 79.175.176.221
-  port: 12397
-  type: vmess
-  uuid: 1f4a6c3e-2664-32da-a974-a1781fce28fc
-  alterId: 0
+- alterId: 0
   cipher: auto
-  skip-cert-verify: true
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇦🇶]_848'
   network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: google.com
+  port: 8080
+  server: yh4.dtku41.xyz
+  servername: dual-nothing-prep-exit.trycloudflare.com
+  skip-cert-verify: true
+  type: vmess
+  uuid: b272a9bf-10db-361b-a3fc-a12b538eea51
+  ws-opts:
+    headers:
+      HOST: dual-nothing-prep-exit.trycloudflare.com
+    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: VN
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇦🇶]_852'
+  network: ws
+  port: 80
+  server: 103.238.235.207
+  servername: bs5.loadingip.com
+  skip-cert-verify: true
+  type: vmess
+  uuid: bd7e997f-c8c7-3022-b5e5-f9be9100892b
+  ws-opts:
+    headers:
+      HOST: bs5.loadingip.com
+    path: /bs
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -63,46 +146,76 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇹🇼]_770'
+  - '[🇹🇼]_771'
+  - '[🇺🇸]_850'
+  - '[🇺🇸]_845'
   - '[🇮🇷]_816'
+  - '[🇹🇼]_770'
+  - '[🇦🇶]_848'
+  - '[🇦🇶]_852'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_770'
+  - '[🇹🇼]_771'
+  - '[🇺🇸]_850'
+  - '[🇺🇸]_845'
   - '[🇮🇷]_816'
+  - '[🇹🇼]_770'
+  - '[🇦🇶]_848'
+  - '[🇦🇶]_852'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_770'
+  - '[🇹🇼]_771'
+  - '[🇺🇸]_850'
+  - '[🇺🇸]_845'
   - '[🇮🇷]_816'
+  - '[🇹🇼]_770'
+  - '[🇦🇶]_848'
+  - '[🇦🇶]_852'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇹🇼]_770'
+  - '[🇹🇼]_771'
+  - '[🇺🇸]_850'
+  - '[🇺🇸]_845'
   - '[🇮🇷]_816'
+  - '[🇹🇼]_770'
+  - '[🇦🇶]_848'
+  - '[🇦🇶]_852'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇹🇼]_770'
+  - '[🇹🇼]_771'
+  - '[🇺🇸]_850'
+  - '[🇺🇸]_845'
   - '[🇮🇷]_816'
+  - '[🇹🇼]_770'
+  - '[🇦🇶]_848'
+  - '[🇦🇶]_852'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇹🇼]_770'
+  - '[🇹🇼]_771'
+  - '[🇺🇸]_850'
+  - '[🇺🇸]_845'
   - '[🇮🇷]_816'
+  - '[🇹🇼]_770'
+  - '[🇦🇶]_848'
+  - '[🇦🇶]_852'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
