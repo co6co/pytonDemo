@@ -26,20 +26,80 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇳🇱]_828'
-  server: 185.142.238.222
-  port: 8443
-  type: vless
-  udp: true
-  uuid: a1901825-4dc9-3b28-a809-9dea0086ce57
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1014'
+  network: ws
+  port: 443
+  server: cold-dawn-9246.fly.dev
+  servername: cold-dawn-9246.fly.dev
+  skip-cert-verify: true
   tls: true
-  servername: maps.google.com
-  flow: xtls-rprx-vision
+  type: vmess
+  uuid: 8919ab08-d2dc-3e97-9939-8274ab1e1c94
+  ws-opts:
+    headers:
+      HOST: cold-dawn-9246.fly.dev
+    path: /ea4909ef-7ca6-4b46-bf2e-6c07896ef338-vm
+  udp: true
+- name: '[🇹🇼]_993'
+  server: 103.123.132.27
+  port: 30000
+  type: vmess
+  uuid: b364a9d9-87ad-3620-b25f-1c36f1627d8b
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /path/182320181512
+  tls: true
+  ws-headers:
+    Host: 103.123.132.27
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[🇩🇪]印度_1017'
   network: tcp
-  reality-opts:
-    public-key: NbtOWq_km9k_SKgCJatXla3Jl7gGKVbjQ-GAtGg4bEk
-    short-id: bfde1c85a6a4112a
-  client-fingerprint: chrome
+  port: 2052
+  server: 49.13.8.155
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: b8e4db7b-f83d-3aab-81ae-fa567597f35d
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇹🇼]亚太地区_1019'
+  network: ws
+  port: 30000
+  server: 103.177.33.20
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: fdf1b5ab-fc02-3a1d-a0d7-06b506545ea1
+  ws-opts:
+    headers:
+      Host: ''
+    path: /path/341901080027
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: '[🇭🇰]马来西亚_1018'
+  network: ws
+  port: 443
+  server: 118.107.244.83
+  servername: ''
+  tls: true
+  type: vmess
+  uuid: f9034023-65ed-3f1e-894d-d5f72ebd94b1
+  ws-opts:
+    headers:
+      Host: ''
+    path: /path/341901080027
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -47,40 +107,64 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇳🇱]_828'
+  - '[🇺🇸]_1014'
+  - '[🇹🇼]_993'
+  - '[🇩🇪]印度_1017'
+  - '[🇹🇼]亚太地区_1019'
+  - '[🇭🇰]马来西亚_1018'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_828'
+  - '[🇺🇸]_1014'
+  - '[🇹🇼]_993'
+  - '[🇩🇪]印度_1017'
+  - '[🇹🇼]亚太地区_1019'
+  - '[🇭🇰]马来西亚_1018'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_828'
+  - '[🇺🇸]_1014'
+  - '[🇹🇼]_993'
+  - '[🇩🇪]印度_1017'
+  - '[🇹🇼]亚太地区_1019'
+  - '[🇭🇰]马来西亚_1018'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_828'
+  - '[🇺🇸]_1014'
+  - '[🇹🇼]_993'
+  - '[🇩🇪]印度_1017'
+  - '[🇹🇼]亚太地区_1019'
+  - '[🇭🇰]马来西亚_1018'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇳🇱]_828'
+  - '[🇺🇸]_1014'
+  - '[🇹🇼]_993'
+  - '[🇩🇪]印度_1017'
+  - '[🇹🇼]亚太地区_1019'
+  - '[🇭🇰]马来西亚_1018'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇳🇱]_828'
+  - '[🇺🇸]_1014'
+  - '[🇹🇼]_993'
+  - '[🇩🇪]印度_1017'
+  - '[🇹🇼]亚太地区_1019'
+  - '[🇭🇰]马来西亚_1018'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
