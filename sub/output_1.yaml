@@ -26,6 +26,19 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇺🇸]_868'
+  server: 45.159.217.54
+  port: 2087
+  type: vless
+  network: ws
+  servername: fq521.6789.cloudns.be
+  tls: true
+  uuid: 0053f6a9-de3a-3a01-a393-934b92a6c6b6
+  ws-opts:
+    headers:
+      host: fq521.6789.cloudns.be
+    path: Twitter%e8%8b%8f%e5%b0%8f%e6%9f%a0
+  udp: true
 - name: '[🇺🇸]_869'
   server: 209.46.30.217
   port: 8443
@@ -52,11 +65,11 @@ proxies:
     headers:
       host: juzibaipiao.5112233.xyz
   udp: true
-- name: '[🇺🇸]_871'
-  server: 216.205.52.109
-  port: 2083
+- name: '[🇺🇸]_872'
+  server: 159.112.235.14
+  port: 8443
   type: vless
-  uuid: c1c0b390-7ef9-3526-ae19-26fca19ddfe0
+  uuid: f8749d8c-f13b-3fe8-a07b-6a7911d0c8b0
   tls: true
   servername: juzibaipiao.5112233.xyz
   network: ws
@@ -65,11 +78,11 @@ proxies:
     headers:
       host: juzibaipiao.5112233.xyz
   udp: true
-- name: '[🇺🇸]_872'
-  server: 159.112.235.14
-  port: 8443
+- name: '[🇺🇸]_871'
+  server: 216.205.52.109
+  port: 2083
   type: vless
-  uuid: f8749d8c-f13b-3fe8-a07b-6a7911d0c8b0
+  uuid: c1c0b390-7ef9-3526-ae19-26fca19ddfe0
   tls: true
   servername: juzibaipiao.5112233.xyz
   network: ws
@@ -90,38 +103,6 @@ proxies:
     path: /
     headers:
       host: juzibaipiao.5112233.xyz
-  udp: true
-- name: '[🇹🇼]_851'
-  server: 60.248.63.88
-  port: 12031
-  type: vless
-  client-fingerprint: random
-  uuid: 18ffce53-6f6c-3856-9278-042cc67180ce
-  tls: true
-  tfo: false
-  servername: cfed.tgzdyz2.top
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: TG%40ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
-- name: '[🇹🇼]_853'
-  server: 211.75.74.232
-  port: 4443
-  type: vless
-  client-fingerprint: random
-  uuid: 574e0b32-866d-3b0f-9cb5-aef00be68bdb
-  tls: true
-  tfo: false
-  servername: cfed.tgzdyz2.top
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: TG%40ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
   udp: true
 - name: '[🇺🇸]_866'
   server: 109.104.152.101
@@ -176,11 +157,11 @@ proxies:
   ws-headers:
     Host: fcdn.flha.ru
   udp: true
-- name: '[🇺🇸]_889'
+- name: '[🇦🇶]_889'
   server: russia.com
   port: 2095
   type: vmess
-  uuid: e291ba95-46ab-385f-8b79-ebb97e4eda01
+  uuid: b27cd2f3-c754-3608-9fd3-f14fa4f23926
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -190,12 +171,28 @@ proxies:
   ws-headers:
     Host: sssub.v2.001.ssrsub.com
   udp: true
-- name: '[🇹🇼]_852'
-  server: 118.163.128.81
-  port: 13688
+- name: '[🇹🇼]_853'
+  server: 211.75.74.232
+  port: 4443
   type: vless
   client-fingerprint: random
-  uuid: 225582b6-92f4-3297-98d3-109989444c16
+  uuid: 574e0b32-866d-3b0f-9cb5-aef00be68bdb
+  tls: true
+  tfo: false
+  servername: cfed.tgzdyz2.top
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      Host: cfed.tgzdyz2.top
+  udp: true
+- name: '[🇹🇼]_855'
+  server: 61.220.41.143
+  port: 36633
+  type: vless
+  client-fingerprint: random
+  uuid: 662d71dd-8ae9-3e11-8a6a-9fc42c58ead3
   tls: true
   tfo: false
   servername: cfed.tgzdyz2.top
@@ -238,22 +235,6 @@ proxies:
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
-- name: '[🇹🇼]_855'
-  server: 61.220.41.143
-  port: 36633
-  type: vless
-  client-fingerprint: random
-  uuid: 662d71dd-8ae9-3e11-8a6a-9fc42c58ead3
-  tls: true
-  tfo: false
-  servername: cfed.tgzdyz2.top
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: TG%40ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -261,124 +242,118 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇺🇸]_868'
   - '[🇺🇸]_869'
   - '[🇺🇸]_870'
-  - '[🇺🇸]_871'
   - '[🇺🇸]_872'
+  - '[🇺🇸]_871'
   - '[🇺🇸]_873'
-  - '[🇹🇼]_851'
-  - '[🇹🇼]_853'
   - '[🇺🇸]_866'
   - '[🇺🇸]_883'
   - '[🇦🇶]_886'
-  - '[🇺🇸]_889'
-  - '[🇹🇼]_852'
+  - '[🇦🇶]_889'
+  - '[🇹🇼]_853'
+  - '[🇹🇼]_855'
   - '[🇹🇼]_856'
   - '[🇹🇼]_854'
-  - '[🇹🇼]_855'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_868'
   - '[🇺🇸]_869'
   - '[🇺🇸]_870'
-  - '[🇺🇸]_871'
   - '[🇺🇸]_872'
+  - '[🇺🇸]_871'
   - '[🇺🇸]_873'
-  - '[🇹🇼]_851'
-  - '[🇹🇼]_853'
   - '[🇺🇸]_866'
   - '[🇺🇸]_883'
   - '[🇦🇶]_886'
-  - '[🇺🇸]_889'
-  - '[🇹🇼]_852'
+  - '[🇦🇶]_889'
+  - '[🇹🇼]_853'
+  - '[🇹🇼]_855'
   - '[🇹🇼]_856'
   - '[🇹🇼]_854'
-  - '[🇹🇼]_855'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_868'
   - '[🇺🇸]_869'
   - '[🇺🇸]_870'
-  - '[🇺🇸]_871'
   - '[🇺🇸]_872'
+  - '[🇺🇸]_871'
   - '[🇺🇸]_873'
-  - '[🇹🇼]_851'
-  - '[🇹🇼]_853'
   - '[🇺🇸]_866'
   - '[🇺🇸]_883'
   - '[🇦🇶]_886'
-  - '[🇺🇸]_889'
-  - '[🇹🇼]_852'
+  - '[🇦🇶]_889'
+  - '[🇹🇼]_853'
+  - '[🇹🇼]_855'
   - '[🇹🇼]_856'
   - '[🇹🇼]_854'
-  - '[🇹🇼]_855'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_868'
   - '[🇺🇸]_869'
   - '[🇺🇸]_870'
-  - '[🇺🇸]_871'
   - '[🇺🇸]_872'
+  - '[🇺🇸]_871'
   - '[🇺🇸]_873'
-  - '[🇹🇼]_851'
-  - '[🇹🇼]_853'
   - '[🇺🇸]_866'
   - '[🇺🇸]_883'
   - '[🇦🇶]_886'
-  - '[🇺🇸]_889'
-  - '[🇹🇼]_852'
+  - '[🇦🇶]_889'
+  - '[🇹🇼]_853'
+  - '[🇹🇼]_855'
   - '[🇹🇼]_856'
   - '[🇹🇼]_854'
-  - '[🇹🇼]_855'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇺🇸]_868'
   - '[🇺🇸]_869'
   - '[🇺🇸]_870'
-  - '[🇺🇸]_871'
   - '[🇺🇸]_872'
+  - '[🇺🇸]_871'
   - '[🇺🇸]_873'
-  - '[🇹🇼]_851'
-  - '[🇹🇼]_853'
   - '[🇺🇸]_866'
   - '[🇺🇸]_883'
   - '[🇦🇶]_886'
-  - '[🇺🇸]_889'
-  - '[🇹🇼]_852'
+  - '[🇦🇶]_889'
+  - '[🇹🇼]_853'
+  - '[🇹🇼]_855'
   - '[🇹🇼]_856'
   - '[🇹🇼]_854'
-  - '[🇹🇼]_855'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇺🇸]_868'
   - '[🇺🇸]_869'
   - '[🇺🇸]_870'
-  - '[🇺🇸]_871'
   - '[🇺🇸]_872'
+  - '[🇺🇸]_871'
   - '[🇺🇸]_873'
-  - '[🇹🇼]_851'
-  - '[🇹🇼]_853'
   - '[🇺🇸]_866'
   - '[🇺🇸]_883'
   - '[🇦🇶]_886'
-  - '[🇺🇸]_889'
-  - '[🇹🇼]_852'
+  - '[🇦🇶]_889'
+  - '[🇹🇼]_853'
+  - '[🇹🇼]_855'
   - '[🇹🇼]_856'
   - '[🇹🇼]_854'
-  - '[🇹🇼]_855'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
