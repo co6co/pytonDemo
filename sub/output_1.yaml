@@ -26,21 +26,20 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- alterId: 64
-  cipher: auto
-  name: '[🇭🇰]马来西亚_915'
-  network: ws
-  port: 443
-  server: 118.107.244.83
-  servername: ''
-  tls: true
-  type: vmess
-  uuid: 23f0fcea-43bd-32d7-b0d1-1d74e7c216c0
-  ws-opts:
-    headers:
-      Host: ''
-    path: /path/341901080027
+- name: '[🇳🇱]_828'
+  server: 185.142.238.222
+  port: 8443
+  type: vless
   udp: true
+  uuid: a1901825-4dc9-3b28-a809-9dea0086ce57
+  tls: true
+  servername: maps.google.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: NbtOWq_km9k_SKgCJatXla3Jl7gGKVbjQ-GAtGg4bEk
+    short-id: bfde1c85a6a4112a
+  client-fingerprint: chrome
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -48,40 +47,40 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇭🇰]马来西亚_915'
+  - '[🇳🇱]_828'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]马来西亚_915'
+  - '[🇳🇱]_828'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]马来西亚_915'
+  - '[🇳🇱]_828'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇭🇰]马来西亚_915'
+  - '[🇳🇱]_828'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇭🇰]马来西亚_915'
+  - '[🇳🇱]_828'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇭🇰]马来西亚_915'
+  - '[🇳🇱]_828'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
