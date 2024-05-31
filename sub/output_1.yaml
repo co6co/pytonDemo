@@ -26,19 +26,159 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_906'
-  server: 152.42.248.167
-  port: 47632
+- name: '[🇺🇸]_785'
+  server: oz.moonfree.top
+  port: 443
   type: vmess
-  uuid: 42219bae-2a4d-38a0-aedd-f0ffbc6b2e51
+  uuid: db300ee5-a402-3a47-ae50-276ae5e14dae
   alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
   ws-path: /
+  tls: true
+  ws-headers:
+    Host: oz.moonfree.top
+  udp: true
+- name: '[🇺🇸]_787'
+  server: rk59.moonfree.top
+  port: 443
+  type: vmess
+  uuid: 29dc57a0-4294-3f8a-82b0-fa98f212f294
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: rk59.moonfree.top
+  udp: true
+- name: '[🇺🇸]_806'
+  server: 172.66.47.44
+  port: 2053
+  type: vmess
+  uuid: d4adabb1-c0db-338a-91b9-14691fdecbbe
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: xxX2
+  tls: true
+  ws-headers:
+    Host: web1.wweblog.pw
+  udp: true
+- name: '[🇺🇸]_809'
+  server: 172.67.140.112
+  port: 443
+  type: vmess
+  uuid: 4d416ce7-cd93-31fa-8e6e-8c5ccae10ad3
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: yzjd01-ublubeu.koyeb.app
+  udp: true
+- name: '[🇺🇸]_827'
+  server: xr-4.herokuapp.com
+  port: 443
+  type: vmess
+  uuid: 32bce871-9113-36cf-b298-96220fc2a93b
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /17af76e1-a5d7-41ab-ae87-b48f185075d1-vmess
+  tls: true
+  ws-headers:
+    Host: xr-4.herokuapp.com
+  udp: true
+- name: '[🇺🇸]_843'
+  server: rackedgeuk510.moonfree.top
+  port: 443
+  type: vmess
+  uuid: 139da5c3-7f70-3bb5-a153-98937656daa9
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: rackedgeuk510.moonfree.top
+  udp: true
+- name: '[🇺🇸]_844'
+  server: 172.64.81.27
+  port: 443
+  type: vmess
+  uuid: edad3d08-0549-35f2-834d-3091d1b94456
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /xxX6
+  tls: true
+  ws-headers:
+    Host: sg.wweblog.pw
+  udp: true
+- name: '[🇺🇸]_846'
+  server: ocrb1.moonfree.top
+  port: 443
+  type: vmess
+  uuid: 2faebd92-85f5-382a-bcac-1a61112ad710
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: ocrb1.moonfree.top
+  udp: true
+- name: '[🇺🇸]_865'
+  server: 172.64.94.238
+  port: 2053
+  type: vmess
+  uuid: 5feabba3-d63d-3ad1-beba-e3b78688e512
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: xxX3
+  tls: true
+  ws-headers:
+    Host: web1.wweblog.pw
+  udp: true
+- name: '[🇺🇸]_882'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: 6e6f67cb-790f-3fad-995e-799c39cad487
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
+  udp: true
+- name: '[🇺🇸]_889'
+  server: www.hkbu.edu.hk
+  port: 80
+  type: vmess
+  uuid: e291ba95-46ab-385f-8b79-ebb97e4eda01
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /aries?ed=2048
   tls: false
   ws-headers:
-    Host: 152.42.248.167
+    Host: nmsl.kp
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -47,40 +187,100 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_906'
+  - '[🇺🇸]_785'
+  - '[🇺🇸]_787'
+  - '[🇺🇸]_806'
+  - '[🇺🇸]_809'
+  - '[🇺🇸]_827'
+  - '[🇺🇸]_843'
+  - '[🇺🇸]_844'
+  - '[🇺🇸]_846'
+  - '[🇺🇸]_865'
+  - '[🇺🇸]_882'
+  - '[🇺🇸]_889'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_906'
+  - '[🇺🇸]_785'
+  - '[🇺🇸]_787'
+  - '[🇺🇸]_806'
+  - '[🇺🇸]_809'
+  - '[🇺🇸]_827'
+  - '[🇺🇸]_843'
+  - '[🇺🇸]_844'
+  - '[🇺🇸]_846'
+  - '[🇺🇸]_865'
+  - '[🇺🇸]_882'
+  - '[🇺🇸]_889'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_906'
+  - '[🇺🇸]_785'
+  - '[🇺🇸]_787'
+  - '[🇺🇸]_806'
+  - '[🇺🇸]_809'
+  - '[🇺🇸]_827'
+  - '[🇺🇸]_843'
+  - '[🇺🇸]_844'
+  - '[🇺🇸]_846'
+  - '[🇺🇸]_865'
+  - '[🇺🇸]_882'
+  - '[🇺🇸]_889'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_906'
+  - '[🇺🇸]_785'
+  - '[🇺🇸]_787'
+  - '[🇺🇸]_806'
+  - '[🇺🇸]_809'
+  - '[🇺🇸]_827'
+  - '[🇺🇸]_843'
+  - '[🇺🇸]_844'
+  - '[🇺🇸]_846'
+  - '[🇺🇸]_865'
+  - '[🇺🇸]_882'
+  - '[🇺🇸]_889'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_906'
+  - '[🇺🇸]_785'
+  - '[🇺🇸]_787'
+  - '[🇺🇸]_806'
+  - '[🇺🇸]_809'
+  - '[🇺🇸]_827'
+  - '[🇺🇸]_843'
+  - '[🇺🇸]_844'
+  - '[🇺🇸]_846'
+  - '[🇺🇸]_865'
+  - '[🇺🇸]_882'
+  - '[🇺🇸]_889'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_906'
+  - '[🇺🇸]_785'
+  - '[🇺🇸]_787'
+  - '[🇺🇸]_806'
+  - '[🇺🇸]_809'
+  - '[🇺🇸]_827'
+  - '[🇺🇸]_843'
+  - '[🇺🇸]_844'
+  - '[🇺🇸]_846'
+  - '[🇺🇸]_865'
+  - '[🇺🇸]_882'
+  - '[🇺🇸]_889'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
