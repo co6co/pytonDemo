@@ -1,20 +1,19 @@
 proxies:
-- name: 🇵🇱PL-51.77.53.200-000
-  server: 51.77.53.200
-  port: 7002
-  type: ss
-  cipher: aes-256-gcm
-  password: RexnBgU7EV5ADxG
-  udp: true
-- name: 🇺🇸US-35.95.189.119-001
-  server: 35.95.189.119
-  port: 22222
-  type: trojan
-  password: telegram-id-directvpn
-  sni: trojan.burgerip.co.uk
+- name: 🇩🇪DE-130.61.38.220-000
+  server: de-frankfurt-oracle-b26cf5.ip1.shop
+  port: 45103
+  type: vmess
+  uuid: 6d3404ef-27c6-48de-a83a-8ac6488760b4
+  alterId: 0
+  cipher: auto
   skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: de-frankfurt-oracle-b26cf5.ip1.shop
   udp: true
-- name: 🏁RELAY-104.16.38.71-002
+- name: 🏁RELAY-104.16.38.71-001
   server: 104.16.38.71
   port: 2052
   type: vmess
@@ -28,33 +27,47 @@ proxies:
   ws-headers:
     Host: us6_0.wish.ml
   udp: true
-- name: 🇵🇱PL-51.77.53.200-003
-  server: 51.77.53.200
-  port: 5004
+- name: 🇯🇵JP-154.16.55.112-002
+  server: 5.forlive.live
+  port: 60033
   type: ss
-  cipher: aes-256-gcm
-  password: g5MeD6Ft3CWlJId
+  cipher: chacha20-ietf-poly1305
+  password: 4c0e5766-0d17-318b-bff2-046c14cb27b5
   udp: true
-- name: 🏁RELAY-172.67.71.122-004
-  server: russia.com
-  port: 2095
+- name: 🇺🇸US-184.170.241.194-003
+  server: 184.170.241.194
+  port: 443
+  type: ss
+  cipher: aes-128-cfb
+  password: shadowsocks
+  udp: true
+- name: 🇷🇺RU-45.147.200.170-004
+  server: 45.147.200.170
+  port: 35972
   type: vmess
-  uuid: 64a57b5f-45e0-40c3-8316-97d0ff53fd96
+  uuid: 6a2afda8-8798-434c-8964-1deb4e7655a5
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 45.147.200.170
+  udp: true
+- name: 🏁RELAY-172.64.103.155-005
+  server: cfcdn2.sanfencdn9.com
+  port: 2052
+  type: vmess
+  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
   alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
-  ws-path: /api/v3/download.getFile
+  ws-path: /video/3YKfzGw4
   tls: false
   ws-headers:
-    Host: sssub.v2.001.ssrsub.com
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-005
-  server: 51.77.53.200
-  port: 8119
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
+    Host: rpmlybgzsg2.yofnhkfc.xyz
   udp: true
 - name: 🇷🇺RU-45.136.245.240-006
   server: 45.136.245.240
@@ -70,126 +83,29 @@ proxies:
   ws-headers:
     Host: 45.136.245.240
   udp: true
-- name: 🇵🇱PL-51.77.53.200-007
-  server: 51.77.53.200
-  port: 6379
-  type: ss
-  cipher: aes-256-gcm
-  password: zDNVedRFPQexG9v
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-008
-  server: 51.77.53.200
-  port: 6679
-  type: ss
-  cipher: aes-256-gcm
-  password: TEzjfAYq2IjtuoS
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-009
-  server: 51.77.53.200
-  port: 6697
-  type: ss
-  cipher: aes-256-gcm
-  password: TEzjfAYq2IjtuoS
-  udp: true
-- name: 🏁RELAY-172.67.71.122-010
-  server: russia.com
-  port: 8880
-  type: vmess
-  uuid: 64a57b5f-45e0-40c3-8316-97d0ff53fd96
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /api/v3/download.getFile
-  tls: false
-  ws-headers:
-    Host: sssub.v2.001.ssrsub.com
-  udp: true
-- name: 🇨🇳CN-183.240.179.207-011
-  server: 183.240.179.207
-  port: 30013
-  type: vmess
-  uuid: 5bd5899a-4b78-4d75-8570-4d21b43422c4
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: 183.240.179.207
-  udp: true
-- name: 🇨🇳CN-36.151.195.48-012
-  server: 36.151.195.48
-  port: 4787
+- name: 🇷🇺RU-45.156.24.4-007
+  server: 45.156.24.4
+  port: 443
   type: trojan
-  password: TNDSJfNv
+  password: ca3d2d6a-f7ea-4a52-ba12-37bd8fcea8d2
+  sni: minn2.viraticket.ir
   skip-cert-verify: true
   udp: true
-- name: 🇨🇳CN-36.151.195.48-013
-  server: 36.151.195.48
-  port: 4603
-  type: trojan
-  password: TNDSJfNv
-  skip-cert-verify: true
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-014
-  server: 51.77.53.200
-  port: 2375
-  type: ss
-  cipher: aes-256-gcm
-  password: faBAoD54k87UJG7
-  udp: true
-- name: 🏁RELAY-172.67.164.78-015
-  server: 172.67.164.78
-  port: 2052
-  type: vmess
-  uuid: c286daa2-59de-455c-8de8-ec032b6ce2e8
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: in3.wish.ml
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-016
-  server: 51.77.53.200
-  port: 8118
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-017
-  server: 51.77.53.200
-  port: 8091
-  type: ss
-  cipher: aes-256-gcm
-  password: PCnnH6SQSnfoS27
-  udp: true
-- name: 🇺🇸US-205.134.180.139-018
+- name: 🇺🇸US-205.134.180.139-008
   server: 205.134.180.139
   port: 443
   type: ss
   cipher: chacha20-ietf-poly1305
   password: lWaGPVFjmnag
   udp: true
-- name: 🏁RELAY-104.17.156.224-019
-  server: 104.17.156.224
-  port: 2052
-  type: vmess
-  uuid: c286daa2-59de-455c-8de8-ec032b6ce2e8
-  alterId: 0
-  cipher: auto
+- name: 🇺🇸US-23.142.200.175-009
+  server: 23.142.200.175
+  port: 443
+  type: trojan
+  password: 27876_t7d7f4e3f
   skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: in4.wish.ml
   udp: true
-- name: 🏁RELAY-162.159.129.90-020
+- name: 🏁RELAY-162.159.138.114-010
   server: hk.wish.ml
   port: 2052
   type: vmess
@@ -203,27 +119,138 @@ proxies:
   ws-headers:
     Host: us6_0.wish.ml
   udp: true
-- name: 🇨🇦CA-35.182.39.30-021
-  server: 35.182.39.30
-  port: 22222
-  type: trojan
-  password: telegram-id-directvpn
-  sni: trojan.burgerip.co.uk
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸US-23.142.200.175-022
-  server: 23.142.200.175
-  port: 443
-  type: trojan
-  password: 27876_t7d7f4e3f
-  skip-cert-verify: true
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-023
-  server: 51.77.53.200
-  port: 7306
+- name: 🇺🇸US-109.104.152.126-011
+  server: 109.104.152.126
+  port: 51122
   type: ss
   cipher: aes-256-gcm
-  password: FoOiGlkAA9yPEGP
+  password: dongtaiwang.com
+  udp: true
+- name: 🇺🇸US-137.184.178.57-012
+  server: us-sanfrancisco-02.t3csyun.buzz
+  port: 34053
+  type: vmess
+  uuid: 6d3404ef-27c6-48de-a83a-8ac6488760b4
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: us-sanfrancisco-02.t3csyun.buzz
+  udp: true
+- name: 🇺🇸US-35.94.178.238-013
+  server: 35.94.178.238
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🏁RELAY-104.17.156.224-014
+  server: 104.17.156.224
+  port: 2052
+  type: vmess
+  uuid: c286daa2-59de-455c-8de8-ec032b6ce2e8
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: in4.wish.ml
+  udp: true
+- name: 🇨🇳CN-36.151.195.48-015
+  server: 36.151.195.48
+  port: 4603
+  type: trojan
+  password: TNDSJfNv
+  skip-cert-verify: true
+  udp: true
+- name: 🏁RELAY-172.67.164.78-016
+  server: 172.67.164.78
+  port: 2052
+  type: vmess
+  uuid: c286daa2-59de-455c-8de8-ec032b6ce2e8
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: in3.wish.ml
+  udp: true
+- name: 🇨🇳CN-120.232.240.56-017
+  server: vip3.niuniupremium.xyz
+  port: 16928
+  type: vmess
+  uuid: 2ab54438-8af9-3711-bf1a-676fcc144586
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: vip3.niuniupremium.xyz
+  udp: true
+- name: 🇺🇸US-38.114.123.12-018
+  server: 38.114.123.12
+  port: 20001
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 🍄🍅🛦🍆🍇.🍈🧛.🍉
+  udp: true
+- name: 🇨🇳CN-36.151.195.48-019
+  server: 36.151.195.48
+  port: 4787
+  type: trojan
+  password: TNDSJfNv
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸US-52.88.161.5-020
+  server: 52.88.161.5
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇺🇸US-148.135.40.190-021
+  server: 148.135.40.190
+  port: 8080
+  type: vmess
+  uuid: f6c4905b-0308-4164-b1ad-4157531a8378
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 148.135.40.190
+  udp: true
+- name: 🏁RELAY-104.21.8.157-022
+  server: 104.21.8.157
+  port: 2082
+  type: vmess
+  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: s1c.v2.v001sss.xyz
+  udp: true
+- name: 🇺🇸US-34.208.170.155-023
+  server: 34.208.170.155
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
   udp: true
 - name: 🇸🇬SG-129.226.94.27-024
   server: 129.226.94.27
@@ -723,7 +750,7 @@ proxies:
   ws-headers:
     Host: 146.56.108.108
   udp: true
-- name: 🇺🇸US-74.63.241.23-062
+- name: 🇺🇸US-162.210.199.87-062
   server: ocrb2.moonfree.top
   port: 443
   type: vmess
@@ -786,7 +813,7 @@ proxies:
   ws-headers:
     Host: ahdaeph8.com
   udp: true
-- name: 🇨🇳CN-120.241.118.143-067
+- name: 🇨🇳CN-120.241.118.145-067
   server: bgpv2.ktyjsq.com
   port: 12224
   type: vmess
@@ -1006,7 +1033,7 @@ proxies:
   ws-headers:
     Host: sg.wweblog.pw
   udp: true
-- name: 🇺🇸US-69.162.95.2-089
+- name: 🇺🇸US-74.63.241.20-089
   server: rackedgeuk510.moonfree.top
   port: 443
   type: vmess
@@ -1247,7 +1274,7 @@ proxies:
   ws-headers:
     Host: hax.wodaming.cf
   udp: true
-- name: 🇺🇸US-74.63.241.23-110
+- name: 🇺🇸US-74.63.241.20-110
   server: v6d1.moonfree.top
   port: 443
   type: vmess
@@ -1324,7 +1351,7 @@ proxies:
   ws-headers:
     Host: u4.anmu.one
   udp: true
-- name: 🇺🇸US-199.115.116.216-116
+- name: 🇳🇱NL-82.192.82.225-116
   server: oz.moonfree.top
   port: 443
   type: vmess
@@ -1366,7 +1393,7 @@ proxies:
   ws-headers:
     Host: u4.anmu.one
   udp: true
-- name: 🇺🇸US-199.115.116.216-119
+- name: 🇳🇱NL-82.192.82.225-119
   server: oz.moonfree.top
   port: 443
   type: vmess
@@ -1394,7 +1421,7 @@ proxies:
   ws-headers:
     Host: tms.dingtalk.com
   udp: true
-- name: 🇳🇱NL-82.192.82.227-121
+- name: 🇳🇱NL-37.48.65.153-121
   server: rk59.moonfree.top
   port: 443
   type: vmess
@@ -1939,7 +1966,7 @@ proxies:
   ws-headers:
     Host: sahand.serveminecraft.net
   udp: true
-- name: 🏁RELAY-104.21.61.214-170
+- name: 🏁RELAY-172.64.80.1-170
   server: www.darkroom.lol
   port: 8080
   type: vmess
@@ -1960,7 +1987,7 @@ proxies:
   cipher: aes-256-gcm
   password: 7BcLdsO1WweoGD0X
   udp: true
-- name: 🏁RELAY-104.21.82.183-172
+- name: 🏁RELAY-172.64.80.1-172
   server: server31.beheshtbaneh.com
   port: 8880
   type: vmess
@@ -2023,7 +2050,7 @@ proxies:
   ws-headers:
     Host: pendar.onthewifi.com
   udp: true
-- name: 🇨🇳CN-120.238.122.159-177
+- name: 🇨🇳CN-120.238.122.160-177
   server: service.ouluyun9803.com
   port: 26667
   type: ss
@@ -2037,7 +2064,7 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: d6105bbd-be0d-45b2-82ad-31fd1071c1d2
   udp: true
-- name: 🇦🇶FASTLY-151.101.64.144-179
+- name: 🇦🇶FASTLY-151.101.128.144-179
   server: gov.uk
   port: 443
   type: vmess
@@ -2135,7 +2162,7 @@ proxies:
   ws-headers:
     Host: 159.223.94.156
   udp: true
-- name: 🏁RELAY-104.21.67.88-188
+- name: 🏁RELAY-172.67.219.34-188
   server: hkd1.quickerlink.xyz
   port: 443
   type: vmess
@@ -2149,39 +2176,11 @@ proxies:
   ws-headers:
     Host: hkd1.quickerlink.xyz
   udp: true
-- name: 🇵🇱PL-51.77.53.200-189
-  server: 51.77.53.200
-  port: 8888
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  udp: true
-- name: 🏁RELAY-104.19.45.88-190
-  server: 104.19.45.88
-  port: 2095
+- name: 🇨🇳CN-183.232.199.61-189
+  server: 183.232.199.61
+  port: 15601
   type: vmess
-  uuid: 7a737f41-b792-4260-94ff-3d864da67b80
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: onea.flha.ru
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-191
-  server: 149.202.82.172
-  port: 8080
-  type: ss
-  cipher: aes-256-gcm
-  password: KixLvKzwjekG00rm
-  udp: true
-- name: 🇺🇦UA-141.105.130.195-192
-  server: 141.105.130.195
-  port: 51596
-  type: vmess
-  uuid: 6e7173e9-6397-410a-aa84-a17a0b4adbd3
+  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -2189,112 +2188,166 @@ proxies:
   ws-path: /
   tls: false
   ws-headers:
-    Host: 141.105.130.195
+    Host: 183.232.199.61
   udp: true
-- name: 🇨🇦CA-158.51.121.36-193
-  server: 158.51.121.36
+- name: 🇨🇳CN-183.232.199.28-190
+  server: 183.232.199.28
+  port: 42001
+  type: vmess
+  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 183.232.199.28
+  udp: true
+- name: 🏁RELAY-172.67.130.140-191
+  server: 172.67.130.140
+  port: 2082
+  type: vmess
+  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: s1c.v2.v001sss.xyz
+  udp: true
+- name: 🇨🇳CN-120.233.42.83-192
+  server: data-us-v1.shwjfkw.cn
+  port: 20401
+  type: vmess
+  uuid: b1478e24-4916-3abe-8f17-15931012ecbe
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /debian
+  tls: false
+  ws-headers:
+    Host: data-us-v1.shwjfkw.cn
+  udp: true
+- name: 🇺🇸US-23.142.200.175-193
+  server: 23.142.200.175
+  port: 443
+  type: trojan
+  password: 27876_t7d7f4e3f
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵JP-13.230.73.63-194
+  server: t45a7-g03.jp02-9a99-vm0.entry.fr0307a.art
+  port: 11775
+  type: vmess
+  uuid: b37b7415-1608-3fcd-aa25-d9cc4aae5ded
+  alterId: 1
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: t45a7-g03.jp02-9a99-vm0.entry.fr0307a.art
+  udp: true
+- name: 🇩🇪DE-3.64.112.107-195
+  server: 3.64.112.107
+  port: 22222
+  type: trojan
+  password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼TW-118.163.201.73-196
+  server: sohtsa.taiwanesefood.link
+  port: 28332
+  type: trojan
+  password: TaE3D3Yc9R2eCzl4OuCpgyCFy4OuCpgyCFy3SlRNY88SKanIejx37OAFZaXDx0anIejx3
+  sni: sohtsa.taiwanesefood.link
+  skip-cert-verify: true
+  udp: true
+- name: 🇸🇬SG-47.128.149.238-197
+  server: 47.128.149.238
+  port: 14144
+  type: trojan
+  password: R3TTcQq75lDy
+  sni: appsvs.shop
+  skip-cert-verify: true
+  udp: true
+- name: 🇱🇺LU-202.78.162.5-198
+  server: 202.78.162.5
   port: 443
   type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  uuid: 716eded6-2201-4dbd-9d63-1638c9e8e677
   alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
-  ws-path: /linkvws
+  ws-path: /
   tls: true
   ws-headers:
-    Host: 158.51.121.36
+    Host: pendar.onthewifi.com
   udp: true
-- name: 🇵🇱PL-51.77.53.200-194
-  server: 51.77.53.200
-  port: 5000
+- name: 🇮🇪IE-52.31.74.7-199
+  server: 52.31.74.7
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷FR-51.158.241.235-200
+  server: 51.158.241.235
+  port: 443
   type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
+  cipher: chacha20-ietf-poly1305
+  password: YGHPaABdQFILAM7v6XoEVL
   udp: true
-- name: 🏁RELAY-172.64.167.53-195
-  server: cfcdn2.sanfencdn9.com
+- name: 🇳🇱NL-103.214.68.57-201
+  server: 103.214.68.57
+  port: 10001
+  type: vmess
+  uuid: ebca5f68-bf59-4081-e658-f158839c2f5c
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: 103.214.68.57
+  udp: true
+- name: 🏁RELAY-104.16.38.71-202
+  server: 104.16.38.71
   port: 2052
   type: vmess
-  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
+  uuid: c286daa2-59de-455c-8de8-ec032b6ce2e8
   alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
-  ws-path: /video/3YKfzGw4
+  ws-path: /
   tls: false
   ws-headers:
-    Host: rpmlybgzsg2.yofnhkfc.xyz
+    Host: us6_0.wish.ml
   udp: true
-- name: 🇫🇷FR-149.202.82.172-196
-  server: 149.202.82.172
-  port: 8882
+- name: 🇨🇳CN-120.238.122.159-203
+  server: service.ouluyun9803.com
+  port: 20005
   type: ss
-  cipher: aes-256-gcm
-  password: kDWvXYZoTBcGkC4
+  cipher: chacha20-ietf-poly1305
+  password: d6105bbd-be0d-45b2-82ad-31fd1071c1d2
   udp: true
-- name: 🇵🇱PL-51.77.53.200-197
-  server: 51.77.53.200
-  port: 8119
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-198
-  server: 51.77.53.200
-  port: 3389
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-199
-  server: 51.77.53.200
-  port: 8118
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
-  udp: true
-- name: 🏁RELAY-104.18.17.151-200
-  server: 104.18.17.151
-  port: 80
-  type: vmess
-  uuid: 0007f335-04ba-4604-8f39-ddb2b1d449a3
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /vmess
-  tls: false
-  ws-headers:
-    Host: 127.0.0.1.dl3.darkvpnpro.黄金神威.南北战争.mrarsha.贾伊·加内什.Jai.suonycars.buzz.
-  udp: true
-- name: 🇨🇳CN-120.236.196.21-201
-  server: 120.236.196.21
-  port: 29529
+- name: 🇺🇸US-35.95.199.142-204
+  server: 35.95.199.142
+  port: 22222
   type: trojan
-  password: TNDSJfNv
+  password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
   skip-cert-verify: true
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-202
-  server: 149.202.82.172
-  port: 6697
-  type: ss
-  cipher: aes-256-gcm
-  password: TEzjfAYq2IjtuoS
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-203
-  server: 149.202.82.172
-  port: 5600
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-204
-  server: 149.202.82.172
-  port: 5601
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
   udp: true
 - name: 🇨🇳CN-183.236.51.59-205
   server: 183.236.51.59
@@ -2310,96 +2363,68 @@ proxies:
   ws-headers:
     Host: 183.236.51.59
   udp: true
-- name: 🇫🇷FR-149.202.82.172-206
-  server: 149.202.82.172
-  port: 9102
-  type: ss
-  cipher: aes-256-gcm
-  password: e4FCWrgpkji3QY
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-207
-  server: 149.202.82.172
-  port: 9101
-  type: ss
-  cipher: aes-256-gcm
-  password: e4FCWrgpkji3QY
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-208
-  server: 51.77.53.200
-  port: 9101
-  type: ss
-  cipher: aes-256-gcm
-  password: e4FCWrgpkji3QY
-  udp: true
-- name: 🏁RELAY-104.21.47.176-209
-  server: 104.21.47.176
-  port: 443
-  type: trojan
-  password: 52701795-3c3b-46b4-b7cf-c5978b3a4cf2
-  sni: hdfyc1.achaemenidempireofpersia.uk
-  skip-cert-verify: true
-  udp: true
-- name: 🏁RELAY-104.16.74.98-210
-  server: cfcdn1.sanfencdn9.com
-  port: 8880
+- name: 🇨🇳CN-183.232.170.47-206
+  server: 183.232.170.47
+  port: 15606
   type: vmess
-  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
+  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
   alterId: 0
   cipher: auto
   skip-cert-verify: true
-  network: ws
-  ws-path: /video/bYdJ7Vc2We
+  network: tcp
+  ws-path: /
   tls: false
   ws-headers:
-    Host: us6gzxQRrE4.fzbqfrse.xyz
+    Host: 183.232.170.47
   udp: true
-- name: 🇨🇳CN-36.151.195.48-211
-  server: 36.151.195.48
-  port: 29841
+- name: 🇺🇸US-18.191.18.140-207
+  server: 18.191.18.140
+  port: 22222
+  type: trojan
+  password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇳CN-183.232.199.28-208
+  server: 183.232.199.28
+  port: 15601
+  type: vmess
+  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 183.232.199.28
+  udp: true
+- name: 🇨🇳CN-183.232.139.22-209
+  server: 183.232.139.22
+  port: 41446
   type: trojan
   password: TNDSJfNv
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷FR-149.202.82.172-212
-  server: 149.202.82.172
-  port: 443
+- name: 🇺🇸US-38.86.135.117-210
+  server: 38.86.135.117
+  port: 6379
   type: ss
   cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
+  password: zDNVedRFPQexG9v
   udp: true
-- name: 🇫🇷FR-149.202.82.172-213
-  server: 149.202.82.172
-  port: 8119
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
-  udp: true
-- name: 🇺🇸US-205.134.180.139-214
-  server: 205.134.180.139
-  port: 443
+- name: 🇺🇸US-38.114.123.12-211
+  server: 38.114.123.12
+  port: 20001
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: lWaGPVFjmnag
+  password: 🍄🍅🛦🍆🍇.🍈🧛.🍉
   udp: true
-- name: 🇫🇷FR-149.202.82.172-215
-  server: 149.202.82.172
-  port: 7001
-  type: ss
-  cipher: aes-256-gcm
-  password: RexnBgU7EV5ADxG
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-216
-  server: 149.202.82.172
-  port: 7307
-  type: ss
-  cipher: aes-256-gcm
-  password: FoOiGlkAA9yPEGP
-  udp: true
-- name: 🇨🇳CN-183.232.142.47-217
-  server: m.cnmjin.net
-  port: 16632
+- name: 🏁RELAY-162.159.135.79-212
+  server: hk.wish.ml
+  port: 2052
   type: vmess
-  uuid: 2b8cfb7b-d3e7-4525-8418-e13a9b8fd73b
+  uuid: c286daa2-59de-455c-8de8-ec032b6ce2e8
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -2407,20 +2432,11 @@ proxies:
   ws-path: /
   tls: false
   ws-headers:
-    Host: dcef278233434a15c3587ef998dd119d.mobgslb.tbcache.com
+    Host: in4.wish.ml
   udp: true
-- name: 🇰🇷KR-146.56.130.130-218
-  server: 146.56.130.130
-  port: 14850
-  type: trojan
-  password: moist
-  sni: trojan.freenods.sbs
-  ws-path: h=%2F%3Fed%3D2560
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇳CN-183.232.199.61-219
+- name: 🇨🇳CN-183.232.199.61-213
   server: 183.232.199.61
-  port: 21006
+  port: 15603
   type: vmess
   uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
   alterId: 0
@@ -2432,208 +2448,123 @@ proxies:
   ws-headers:
     Host: 183.232.199.61
   udp: true
-- name: 🏁RELAY-104.20.19.168-220
-  server: 104.20.19.168
-  port: 2083
-  type: trojan
-  password: auto
-  sni: e9464f45.trauma-2r4.pages.dev
-  skip-cert-verify: true
+- name: 🇫🇷FR-51.178.87.37-214
+  server: 51.178.87.37
+  port: 810
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: G!yBwPWH3Vao
   udp: true
-- name: 🏁RELAY-104.19.24.156-221
-  server: cfcdn3.sanfencdn9.com
-  port: 80
-  type: vmess
-  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: GWYp69Yujp2.yofnhkfc.xyz
+- name: 🇬🇧GB-51.145.101.254-216
+  server: 51.145.101.254
+  port: 19054
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: mGUCxJURD8yHfXexvivQhJ
   udp: true
-- name: 🏁RELAY-104.16.45.79-222
-  server: 104.16.45.79
-  port: 80
-  type: vmess
-  uuid: c0453a16-67e9-4eab-bdc9-b9624ad6bd29
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /?ed=2048&Telegram🇨🇳 @WangCai_8
-  tls: false
-  ws-headers:
-    Host: jp.xlb8.eu.org
+- name: 🇫🇷FR-149.202.82.172-217
+  server: 149.202.82.172
+  port: 8881
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
   udp: true
-- name: 🇩🇪DE-35.156.143.15-224
-  server: 35.156.143.15
+- name: 🇩🇪DE-3.78.55.231-218
+  server: 3.78.55.231
   port: 22222
   type: trojan
   password: telegram-id-directvpn
   sni: trojan.burgerip.co.uk
   skip-cert-verify: true
   udp: true
-- name: 🇵🇱PL-51.77.53.200-225
-  server: 51.77.53.200
-  port: 7306
-  type: ss
-  cipher: aes-256-gcm
-  password: FoOiGlkAA9yPEGP
-  udp: true
-- name: 🇦🇶FASTLY-151.101.128.144-226
-  server: gov.uk
-  port: 443
+- name: 🇷🇺RU-45.136.245.240-219
+  server: 45.136.245.240
+  port: 12910
   type: vmess
-  uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
+  uuid: 8259cb1c-dd6c-4739-9c88-af550d977525
   alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
-  ws-path: /77848824
+  ws-path: /
   tls: true
   ws-headers:
-    Host: zheshiscp.com
+    Host: 45.136.245.240
   udp: true
-- name: 🏁RELAY-172.64.167.53-227
-  server: cfcdn2.sanfencdn9.com
-  port: 2052
+- name: 🇸🇬SG-5.44.249.44-220
+  server: 5.44.249.44
+  port: 3306
+  type: trojan
+  password: b84d16a244460e09
+  sni: n2.gladns.com
+  ws-path: h=%2Fgateway%2Fconnect
+  skip-cert-verify: true
+  udp: true
+- name: 🏁RELAY-172.67.71.122-221
+  server: russia.com
+  port: 2095
   type: vmess
-  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
+  uuid: 4b05abf5-c68d-4ffc-915f-add2f3786dca
   alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
-  ws-path: /video/3YKfzGw4
+  ws-path: /api/v3/download.getFile
   tls: false
   ws-headers:
-    Host: rpmlybgzsg2.yofnhkfc.xyz
+    Host: sssub.v2.001.ssrsub.com
   udp: true
-- name: 🇬🇧GB-18.130.175.120-228
-  server: 18.130.175.120
-  port: 22222
-  type: trojan
-  password: telegram-id-privatevpns
-  sni: trojan.burgerip.co.uk
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸US-38.121.43.71-229
+- name: 🇺🇸US-38.121.43.71-222
   server: 38.121.43.71
-  port: 2375
+  port: 9102
   type: ss
   cipher: aes-256-gcm
-  password: faBAoD54k87UJG7
+  password: e4FCWrgpkji3QY
   udp: true
-- name: 🇨🇳CN-36.151.195.48-230
-  server: 36.151.195.48
-  port: 4787
-  type: trojan
-  password: TNDSJfNv
+- name: 🇨🇳CN-183.236.51.59-223
+  server: 183.236.51.59
+  port: 51707
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
   skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 183.236.51.59
   udp: true
-- name: 🇨🇦CA-3.97.13.28-231
-  server: 3.97.13.28
-  port: 14568
-  type: trojan
-  password: 6X9IJJJ5yF2g
-  sni: appsvs.shop
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-232
-  server: 149.202.82.172
-  port: 7306
-  type: ss
-  cipher: aes-256-gcm
-  password: FoOiGlkAA9yPEGP
-  udp: true
-- name: 🇺🇸US-109.104.152.126-233
-  server: 109.104.152.126
-  port: 51122
-  type: ss
-  cipher: aes-256-gcm
-  password: dongtaiwang.com
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-234
-  server: 149.202.82.172
-  port: 8090
-  type: ss
-  cipher: aes-256-gcm
-  password: PCnnH6SQSnfoS27
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-235
+- name: 🇫🇷FR-149.202.82.172-224
   server: 149.202.82.172
   port: 7307
   type: ss
   cipher: aes-256-gcm
   password: FoOiGlkAA9yPEGP
   udp: true
-- name: 🇸🇬SG-18.143.182.48-236
-  server: 18.143.182.48
-  port: 14583
+- name: 🇳🇱NL-103.214.68.57-225
+  server: 103.214.68.57
+  port: 10003
   type: trojan
-  password: QsqHdaDB9dft
-  sni: appsvs.shop
+  password: 6x8HcghsjS
+  sni: yes998.chickenkiller.com
   skip-cert-verify: true
   udp: true
-- name: 🇨🇳CN-120.238.122.159-237
-  server: service.ouluyun9803.com
-  port: 20005
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: d6105bbd-be0d-45b2-82ad-31fd1071c1d2
-  udp: true
-- name: 🇸🇪SE-65.20.113.203-238
-  server: 65.20.113.203
-  port: 80
+- name: 🇨🇳CN-183.236.51.59-226
+  server: 183.236.51.59
+  port: 54437
   type: vmess
-  uuid: 251780c1-1501-43b3-be2a-d144a20d479a
-  alterId: 0
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
   cipher: auto
   skip-cert-verify: true
-  network: ws
-  ws-path: /Nbs2DSTSkFW6MrrFQHeSDQ7
-  tls: false
-  ws-headers:
-    Host: internet.life.com.by
-  udp: true
-- name: 🇨🇳CN-116.162.172.120-239
-  server: yes.cnmjcn.net
-  port: 16632
-  type: vmess
-  uuid: 2b8cfb7b-d3e7-4525-8418-e13a9b8fd73b
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
+  network: tcp
   ws-path: /
   tls: false
   ws-headers:
-    Host: dcef278233434a15c3587ef998dd119d.mobgslb.tbcache.com
+    Host: 183.236.51.59
   udp: true
-- name: 🏁RELAY-104.19.24.156-240
-  server: cfcdn3.sanfencdn9.com
-  port: 80
-  type: vmess
-  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: GWYp69Yujp2.yofnhkfc.xyz
-  udp: true
-- name: 🇳🇱NL-185.242.86.156-241
-  server: 185.242.86.156
-  port: 54170
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 36ZCHeabUSfKjfQEvJ4HDV
-  udp: true
-- name: 🇨🇳CN-183.232.142.47-242
+- name: 🇨🇳CN-183.232.142.47-227
   server: 183.232.142.47
   port: 16632
   type: vmess
@@ -2647,193 +2578,50 @@ proxies:
   ws-headers:
     Host: dcef278233434a15c3587ef998dd119d.mobgslb.tbcache.com
   udp: true
-- name: 🇵🇱PL-51.77.53.200-243
-  server: 51.77.53.200
-  port: 7307
-  type: ss
-  cipher: aes-256-gcm
-  password: FoOiGlkAA9yPEGP
-  udp: true
-- name: 🏁RELAY-104.19.45.137-244
-  server: 104.19.45.137
-  port: 2095
+- name: 🏁RELAY-104.16.45.79-228
+  server: 104.16.45.79
+  port: 80
   type: vmess
-  uuid: 7a737f41-b792-4260-94ff-3d864da67b80
+  uuid: c0453a16-67e9-4eab-bdc9-b9624ad6bd29
   alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
-  ws-path: /
+  ws-path: /?ed=2048&Telegram🇨🇳 @WangCai_8
   tls: false
   ws-headers:
-    Host: onea.flha.ru
+    Host: jp.xlb8.eu.org
   udp: true
-- name: 🇳🇱NL-103.214.68.57-245
-  server: 103.214.68.57
-  port: 10001
-  type: vmess
-  uuid: ebca5f68-bf59-4081-e658-f158839c2f5c
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: true
-  ws-headers:
-    Host: 103.214.68.57
-  udp: true
-- name: 🇨🇳CN-183.232.199.28-246
-  server: 183.232.199.28
-  port: 15603
-  type: vmess
-  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: 183.232.199.28
-  udp: true
-- name: 🇩🇪DE-3.73.255.248-247
-  server: 3.73.255.248
-  port: 22222
-  type: trojan
-  password: telegram-id-privatevpns
-  sni: trojan.burgerip.co.uk
-  skip-cert-verify: true
-  udp: true
-- name: 🇵🇱PL-51.77.53.200-248
-  server: 51.77.53.200
-  port: 4444
-  type: ss
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-249
-  server: 149.202.82.172
-  port: 8000
-  type: ss
-  cipher: aes-256-gcm
-  password: KixLvKzwjekG00rm
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-250
-  server: 149.202.82.172
-  port: 3306
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  udp: true
-- name: 🇺🇸US-205.134.180.139-251
-  server: 205.134.180.139
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: lWaGPVFjmnag
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-252
-  server: 149.202.82.172
-  port: 6697
-  type: ss
-  cipher: aes-256-gcm
-  password: TEzjfAYq2IjtuoS
-  udp: true
-- name: 🇸🇪SE-16.171.223.163-253
-  server: 16.171.223.163
-  port: 22222
-  type: trojan
-  password: telegram-id-privatevpns
-  sni: trojan.burgerip.co.uk
-  skip-cert-verify: true
-  udp: true
-- name: 🇬🇧GB-18.171.60.11-254
-  server: 18.171.60.11
-  port: 14569
-  type: trojan
-  password: PRJmS0lekh7T
-  sni: appsvs.shop
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇳CN-119.23.104.213-255
-  server: 119.23.104.213
-  port: 8474
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: a501c82c72d790b8
-  udp: true
-- name: 🇫🇷FR-149.202.82.172-256
-  server: 149.202.82.172
-  port: 9101
-  type: ss
-  cipher: aes-256-gcm
-  password: e4FCWrgpkji3QY
-  udp: true
-- name: 🇨🇳CN-183.232.199.61-257
-  server: 183.232.199.61
-  port: 15603
-  type: vmess
-  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: 183.232.199.61
-  udp: true
-- name: 🏁RELAY-172.67.172.67-258
-  server: 172.67.172.67
-  port: 8080
-  type: vmess
-  uuid: b551aa22-22af-11ee-b8d8-f23c932eb68d
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: oiictw.yydsii.com
-  udp: true
-- name: 🇯🇵JP-13.230.76.57-259
-  server: 13.230.76.57
-  port: 14577
-  type: trojan
-  password: eSo15xVy8Ffo
-  sni: appsvs.shop
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸US-38.114.123.12-260
-  server: 38.114.123.12
+- name: 🇺🇸US-176.122.177.159-229
+  server: 176.122.177.159
   port: 20001
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: 🍄🍅🛦🍆🍇.🍈🧛.🍉
+  password: -🇺🇸node.ERSH,Uqwioxdw457*[fx
   udp: true
-- name: 🇨🇳CN-183.232.199.61-261
-  server: 183.232.199.61
-  port: 61001
+- name: 🇸🇪SE-13.51.27.76-230
+  server: 13.51.27.76
+  port: 22222
+  type: trojan
+  password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: true
+  udp: true
+- name: 🏁RELAY-104.17.235.201-231
+  server: cfcdn2.sanfencdn9.com
+  port: 2052
   type: vmess
-  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
+  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
   alterId: 0
   cipher: auto
   skip-cert-verify: true
-  network: tcp
-  ws-path: /
+  network: ws
+  ws-path: /video/3YKfzGw4
   tls: false
   ws-headers:
-    Host: 183.232.199.61
+    Host: rpmlybgzsg2.yofnhkfc.xyz
   udp: true
-- name: 🇬🇧GB-52.151.99.42-262
-  server: 52.151.99.42
-  port: 58939
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: jha5ZXvI7J4CkWQn4iB3AF
-  udp: true
-- name: 🏁RELAY-104.18.14.19-263
+- name: 🏁RELAY-104.18.14.19-232
   server: 104.18.14.19
   port: 80
   type: vmess
@@ -2847,91 +2635,71 @@ proxies:
   ws-headers:
     Host: thus-appliance-passenger-shoes.trycloudflare.com
   udp: true
-- name: 🇩🇪DE-18.199.96.104-264
-  server: 18.199.96.104
-  port: 14572
+- name: 🏁RELAY-104.19.24.156-233
+  server: cfcdn3.sanfencdn9.com
+  port: 80
+  type: vmess
+  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /video/VDXcaM7r
+  tls: false
+  ws-headers:
+    Host: GWYp69Yujp2.yofnhkfc.xyz
+  udp: true
+- name: 🇩🇪DE-3.75.195.20-234
+  server: 3.75.195.20
+  port: 15349
   type: trojan
-  password: dJz20ujo4I61
+  password: AESXMEebypjt
   sni: appsvs.shop
   skip-cert-verify: true
   udp: true
-- name: 🇰🇷KR-13.124.213.75-265
-  server: 13.124.213.75
-  port: 14578
+- name: 🇬🇧GB-3.10.226.71-235
+  server: 3.10.226.71
+  port: 15360
   type: trojan
-  password: ytwLsAY9HAq0
+  password: VahgcyTtrefe
   sni: appsvs.shop
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷FR-35.180.154.120-266
-  server: 35.180.154.120
+- name: 🇸🇪SE-51.20.231.4-236
+  server: 51.20.231.4
   port: 22222
   type: trojan
   password: telegram-id-privatevpns
   sni: trojan.burgerip.co.uk
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸US-23.157.40.87-267
-  server: 23.157.40.87
-  port: 7001
+- name: 🇺🇸US-38.121.43.71-237
+  server: 38.121.43.71
+  port: 2376
   type: ss
   cipher: aes-256-gcm
-  password: RexnBgU7EV5ADxG
+  password: faBAoD54k87UJG7
   udp: true
-- name: 🏁RELAY-162.159.9.55-268
-  server: 162.159.9.55
-  port: 80
-  type: vmess
-  uuid: 9133af1b-72e3-40b2-c811-45acaabd0ff0
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /?ed=2048
-  tls: false
-  ws-headers:
-    Host: hinet.alipay.ovh
-  udp: true
-- name: 🇳🇱NL-185.242.86.156-269
-  server: 185.242.86.156
-  port: 54170
+- name: 🇺🇸US-38.114.123.12-238
+  server: 38.114.123.12
+  port: 20001
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: 36ZCHeabUSfKjfQEvJ4HDV
+  password: 🍄🍅🛦🍆🍇.🍈🧛.🍉
   udp: true
-- name: 🇱🇺LU-202.78.162.5-270
-  server: 202.78.162.5
-  port: 443
-  type: vmess
-  uuid: 2ff97c6d-8557-42a4-b43f-19c77c5959ea
-  alterId: 0
-  cipher: auto
+- name: 🇮🇪IE-52.211.170.53-239
+  server: 52.211.170.53
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
   skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: true
-  ws-headers:
-    Host: irsoft.sytes.net
   udp: true
-- name: 🇱🇺LU-202.78.162.5-271
-  server: 202.78.162.5
-  port: 443
+- name: 🏁RELAY-162.159.128.226-240
+  server: hk.wish.ml
+  port: 2052
   type: vmess
-  uuid: 118287d2-e968-42e1-80d0-12fa2f5d38d6
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: true
-  ws-headers:
-    Host: sahand.serveminecraft.net
-  udp: true
-- name: 🏁RELAY-104.21.61.214-272
-  server: www.darkroom.lol
-  port: 8080
-  type: vmess
-  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
+  uuid: c286daa2-59de-455c-8de8-ec032b6ce2e8
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -2939,51 +2707,73 @@ proxies:
   ws-path: /
   tls: false
   ws-headers:
-    Host: www.darkroom.lol
+    Host: us6_0.wish.ml
   udp: true
-- name: 🇫🇷FR-193.243.147.128-273
+- name: 🇯🇵JP-35.78.175.29-241
+  server: 7oi23-g04.jp06-7c5a-vm0.entry.fr0307a.art
+  port: 28786
+  type: vmess
+  uuid: e147ce52-2598-31b0-950d-6b12c306b360
+  alterId: 1
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: 7oi23-g04.jp06-7c5a-vm0.entry.fr0307a.art
+  udp: true
+- name: 🏁RELAY-172.64.170.160-242
+  server: 172.64.170.160
+  port: 2052
+  type: vmess
+  uuid: ccd92698-4499-472d-a06f-f90e7e89ba4f
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /video/3YKfzGw4
+  tls: false
+  ws-headers:
+    Host: rpmlybgzsg2.yofnhkfc.xyz
+  udp: true
+- name: 🇨🇳CN-120.233.84.252-243
+  server: xiaonangua.lwjyj.com
+  port: 32652
+  type: ss
+  cipher: aes-128-gcm
+  password: fcf9cb7c-6bc9-406e-87c0-bd8b09d170ee
+  udp: true
+- name: 🇫🇷FR-193.243.147.128-244
   server: 193.243.147.128
   port: 40368
   type: ss
   cipher: aes-256-gcm
   password: 7BcLdsO1WweoGD0X
   udp: true
-- name: 🏁RELAY-172.67.161.114-274
-  server: server31.beheshtbaneh.com
-  port: 8880
-  type: vmess
-  uuid: 4154143c-bbba-47a4-9f79-c2ed087cbcc9
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: server31.beheshtbaneh.com
+- name: 🇫🇷FR-149.202.82.172-245
+  server: 149.202.82.172
+  port: 6379
+  type: ss
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
   udp: true
-- name: 🇨🇳CN-120.233.42.83-275
-  server: data-us-v1.shwjfkw.cn
-  port: 20401
-  type: vmess
-  uuid: b1478e24-4916-3abe-8f17-15931012ecbe
-  alterId: 0
-  cipher: auto
+- name: 🇸🇬SG-47.128.149.238-246
+  server: 47.128.149.238
+  port: 15355
+  type: trojan
+  password: RA43rV0XJSn8
+  sni: appsvs.shop
   skip-cert-verify: true
-  network: ws
-  ws-path: /debian
-  tls: false
-  ws-headers:
-    Host: data-us-v1.shwjfkw.cn
   udp: true
-- name: 🇨🇳CN-120.238.122.159-276
-  server: service.ouluyun9803.com
-  port: 20003
+- name: 🇬🇧GB-52.151.99.42-247
+  server: 52.151.99.42
+  port: 58939
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: d6105bbd-be0d-45b2-82ad-31fd1071c1d2
+  password: jha5ZXvI7J4CkWQn4iB3AF
   udp: true
-- name: 🏁RELAY-104.21.82.183-277
+- name: 🏁RELAY-104.21.82.183-248
   server: 104.21.82.183
   port: 8880
   type: vmess
@@ -2997,7 +2787,7 @@ proxies:
   ws-headers:
     Host: server26.beheshtbaneh.com
   udp: true
-- name: 🇱🇺LU-202.78.162.5-278
+- name: 🇱🇺LU-202.78.162.5-249
   server: 202.78.162.5
   port: 443
   type: vmess
@@ -3011,21 +2801,154 @@ proxies:
   ws-headers:
     Host: pendar.onthewifi.com
   udp: true
-- name: 🇨🇳CN-120.238.122.160-279
+- name: 🏁RELAY-104.21.8.157-250
+  server: 104.21.8.157
+  port: 2082
+  type: vmess
+  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: s1c.v2.v001sss.xyz
+  udp: true
+- name: 🇳🇱NL-185.242.86.156-251
+  server: 185.242.86.156
+  port: 54170
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 36ZCHeabUSfKjfQEvJ4HDV
+  udp: true
+- name: 🇱🇺LU-202.78.162.5-252
+  server: 202.78.162.5
+  port: 443
+  type: vmess
+  uuid: 2ff97c6d-8557-42a4-b43f-19c77c5959ea
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: irsoft.sytes.net
+  udp: true
+- name: 🇱🇺LU-202.78.162.5-253
+  server: 202.78.162.5
+  port: 443
+  type: vmess
+  uuid: 118287d2-e968-42e1-80d0-12fa2f5d38d6
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: sahand.serveminecraft.net
+  udp: true
+- name: 🏁RELAY-172.64.80.1-254
+  server: www.darkroom.lol
+  port: 8080
+  type: vmess
+  uuid: 22826b44-5c1a-4b4b-dbaa-83a2e8bd95f0
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: www.darkroom.lol
+  udp: true
+- name: 🇫🇷FR-193.243.147.128-255
+  server: 193.243.147.128
+  port: 40368
+  type: ss
+  cipher: aes-256-gcm
+  password: 7BcLdsO1WweoGD0X
+  udp: true
+- name: 🏁RELAY-172.64.80.1-256
+  server: server31.beheshtbaneh.com
+  port: 8880
+  type: vmess
+  uuid: 4154143c-bbba-47a4-9f79-c2ed087cbcc9
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: server31.beheshtbaneh.com
+  udp: true
+- name: 🇨🇳CN-120.233.42.83-257
+  server: data-us-v1.shwjfkw.cn
+  port: 20401
+  type: vmess
+  uuid: b1478e24-4916-3abe-8f17-15931012ecbe
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /debian
+  tls: false
+  ws-headers:
+    Host: data-us-v1.shwjfkw.cn
+  udp: true
+- name: 🇨🇳CN-120.238.122.160-258
+  server: service.ouluyun9803.com
+  port: 20003
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: d6105bbd-be0d-45b2-82ad-31fd1071c1d2
+  udp: true
+- name: 🏁RELAY-104.21.82.183-259
+  server: 104.21.82.183
+  port: 8880
+  type: vmess
+  uuid: 5a7021e0-26b4-45d6-b175-fe551601ca97
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: server26.beheshtbaneh.com
+  udp: true
+- name: 🇱🇺LU-202.78.162.5-260
+  server: 202.78.162.5
+  port: 443
+  type: vmess
+  uuid: 716eded6-2201-4dbd-9d63-1638c9e8e677
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: pendar.onthewifi.com
+  udp: true
+- name: 🇨🇳CN-120.238.122.159-261
   server: service.ouluyun9803.com
   port: 26667
   type: ss
   cipher: chacha20-ietf-poly1305
   password: d6105bbd-be0d-45b2-82ad-31fd1071c1d2
   udp: true
-- name: 🇨🇳CN-120.238.122.160-280
+- name: 🇨🇳CN-120.238.122.160-262
   server: service.ouluyun9803.com
   port: 20005
   type: ss
   cipher: chacha20-ietf-poly1305
   password: d6105bbd-be0d-45b2-82ad-31fd1071c1d2
   udp: true
-- name: 🇦🇶FASTLY-151.101.64.144-281
+- name: 🇦🇶FASTLY-151.101.128.144-263
   server: gov.uk
   port: 443
   type: vmess
@@ -3039,7 +2962,7 @@ proxies:
   ws-headers:
     Host: zheshiscp.com
   udp: true
-- name: 🇦🇶NOWHERE-0.0.0.0-282
+- name: 🇦🇶NOWHERE-0.0.0.0-264
   server: server32.beheshtbaneh.com
   port: 8880
   type: vmess
