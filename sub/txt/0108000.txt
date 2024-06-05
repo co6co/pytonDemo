@@ -17,8 +17,8 @@ proxies:
     skip-cert-verify: false
   udp: true
 - name: 🇭🇰香港|@ripaojiedian
-  server: 183.232.199.61
-  port: 15607
+  server: 183.232.199.28
+  port: 15601
   client-fingerprint: chrome
   type: vmess
   uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
@@ -29,20 +29,22 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: 🇭🇰香港2|@ripaojiedian
-  server: 183.232.199.61
-  port: 15604
+  server: 47.243.67.28
+  port: 2083
   client-fingerprint: chrome
-  type: vmess
-  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
-  alterId: 0
-  cipher: auto
-  tls: false
-  tfo: false
+  type: trojan
+  password: moist
+  sni: trojan.freenods.sbs
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: trojan.freenods.sbs
   udp: true
 - name: 🇭🇰香港3|@ripaojiedian
-  server: 183.232.170.47
-  port: 15604
+  server: 183.232.199.28
+  port: 15603
   client-fingerprint: chrome
   type: vmess
   uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
@@ -53,16 +55,16 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: 🇭🇰香港4|@ripaojiedian
-  server: 116.48.93.133
-  port: 443
+  server: 183.232.139.22
+  port: 4027
   client-fingerprint: chrome
   type: trojan
   password: gkviEOYc
   skip-cert-verify: true
   udp: true
 - name: 🇭🇰香港5|@ripaojiedian
-  server: 183.232.199.28
-  port: 15610
+  server: 183.232.199.61
+  port: 15601
   client-fingerprint: chrome
   type: vmess
   uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
@@ -90,6 +92,18 @@ proxies:
       Host: dcef278233434a15c3587ef998dd119d.mobgslb.tbcache.com
   udp: true
 - name: 🇭🇰香港7|@ripaojiedian
+  server: 183.232.199.28
+  port: 15605
+  client-fingerprint: chrome
+  type: vmess
+  uuid: aaaaaaaa-aaaa-aaaa-aaaa-daaaaaaaaaad
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇭🇰香港8|@ripaojiedian
   server: 183.232.170.47
   port: 15610
   client-fingerprint: chrome
@@ -110,34 +124,28 @@ proxies:
   password: hGkQ6915tD
   tfo: false
   udp: true
-- name: 🇹🇼台湾|@ripaojiedian
-  server: 879xhl1.hsspr5bu1-tw02.my777999.top
-  port: 34998
-  client-fingerprint: chrome
-  type: vmess
-  uuid: 33aefd89-3285-4347-9083-6249711f02e9
-  alterId: 0
-  cipher: auto
-  tls: false
-  tfo: false
-  skip-cert-verify: false
-  udp: true
 - name: 🇯🇵日本|@ripaojiedian
-  server: 36.151.195.48
-  port: 23051
+  server: 223.113.54.154
+  port: 23621
   client-fingerprint: chrome
   type: trojan
   password: gkviEOYc
   skip-cert-verify: true
   udp: true
 - name: 🇯🇵日本2|@ripaojiedian
-  server: nagoya.meijireform.com
-  port: 28333
+  server: 167.88.184.129
+  port: 49232
   client-fingerprint: chrome
-  type: trojan
-  password: DyF9KXR8gx5EclDF6pT2lS3BejSRDazY7C0aYwaOApn33ZquZyIOex4CS83NAC
-  sni: nagoya.meijireform.com
+  type: vmess
+  uuid: 1a331b20-4822-4c5f-b1ec-206a86d51b7c
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
   udp: true
 - name: 🇯🇵日本3|@ripaojiedian
   server: 183.232.170.47
@@ -151,22 +159,14 @@ proxies:
   tfo: false
   skip-cert-verify: false
   udp: true
-- name: 🇯🇵日本4|@ripaojiedian
-  server: jp5g.forlive.live
-  port: 80
+- name: 🇯🇵日本R|@ripaojiedian
+  server: 59.56.77.178
+  port: 15084
   client-fingerprint: chrome
-  type: vmess
-  uuid: e9394d66-d3cd-4e66-89dd-cda991bde821
-  alterId: 0
-  cipher: auto
-  tls: false
+  type: ss
+  cipher: aes-256-cfb
+  password: hGkQ6915tD
   tfo: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: tms.dingtalk.com
   udp: true
 - name: 🇯🇵日本5|@ripaojiedian
   server: 8987-3i640t6rlj4n.zpveerb-jp03.my777999.top
@@ -178,6 +178,15 @@ proxies:
   cipher: auto
   tls: false
   tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇯🇵日本6|@ripaojiedian
+  server: terture.meijireform.com
+  port: 28332
+  client-fingerprint: chrome
+  type: trojan
+  password: 7FwCA6Z9SyIagBDz0OaY3ep88z0OaY3ep88lKn343pFjE3SyORcRlZqDxAuxXC3SyORcR
+  sni: terture.meijireform.com
   skip-cert-verify: false
   udp: true
 - name: 🇰🇷韩国|@ripaojiedian
@@ -195,25 +204,11 @@ proxies:
       Host: trojan.freenods.sbs
   udp: true
 - name: 🇰🇷韩国2|@ripaojiedian
-  server: aws-kr-seoul-1.f1cflinec.com
-  port: 443
-  client-fingerprint: chrome
-  type: trojan
-  password: g76wex
-  sni: aws-kr-seoul-1.f1cflinec.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /f1rocket
-    headers:
-      Host: aws-kr-seoul-1.f1cflinec.com
-  udp: true
-- name: 🇰🇷韩国3|@ripaojiedian
   server: sui.forlive.live
-  port: 32460
+  port: 40396
   client-fingerprint: chrome
   type: vmess
-  uuid: 6e6bd87c-eca6-48fd-9337-c4f8d075622d
+  uuid: 502615aa-fa3d-42d1-8e4f-6ed9ecf0c95a
   alterId: 0
   cipher: auto
   tls: false
@@ -224,18 +219,6 @@ proxies:
     path: /
     headers:
       Host: tms.dingtalk.com
-  udp: true
-- name: 🇸🇬新加坡|@ripaojiedian
-  server: 9898.fz-6-0-kcet8y0fd-so04.my777999.top
-  port: 37996
-  client-fingerprint: chrome
-  type: vmess
-  uuid: 33aefd89-3285-4347-9083-6249711f02e9
-  alterId: 0
-  cipher: auto
-  tls: false
-  tfo: false
-  skip-cert-verify: false
   udp: true
 - name: 🇸🇬新加坡2|@ripaojiedian
   server: 183.232.199.28
@@ -295,15 +278,6 @@ proxies:
     headers:
       Host: us3AJ8biuQx.fzbqfrse.xyz
   udp: true
-- name: 🇺🇸美国3|@ripaojiedian
-  server: gobchang.koreanbbq.link
-  port: 28333
-  client-fingerprint: chrome
-  type: trojan
-  password: SREqCp9nAFy38S4xK03YYRzOlxK03YYRzOlcBlDea3OXD5pgZyaZ2eN8j6CITw5pgZyaZ
-  sni: gobchang.koreanbbq.link
-  skip-cert-verify: false
-  udp: true
 - name: 🇺🇸美国4|@ripaojiedian
   server: 36.151.195.48
   port: 4603
@@ -320,8 +294,26 @@ proxies:
   password: gkviEOYc
   skip-cert-verify: true
   udp: true
+- name: 🇺🇸美国R|@ripaojiedian
+  server: 59.56.77.178
+  port: 16058
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-256-cfb
+  password: hGkQ6915tD
+  tfo: false
+  udp: true
+- name: 🇰🇷韩国特殊|@ripaojiedian
+  server: 3.112.219.236
+  port: 443
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  tfo: false
+  udp: true
 - name: 🇸🇬狮城特殊|@ripaojiedian
-  server: 18.183.170.50
+  server: 13.215.177.171
   port: 443
   client-fingerprint: chrome
   type: ss
@@ -330,16 +322,7 @@ proxies:
   tfo: false
   udp: true
 - name: 🇯🇵日本特殊|@ripaojiedian
-  server: 18.182.65.163
-  port: 443
-  client-fingerprint: chrome
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  tfo: false
-  udp: true
-- name: 🇰🇷韩国特殊|@ripaojiedian
-  server: 52.199.63.26
+  server: 43.202.43.179
   port: 443
   client-fingerprint: chrome
   type: ss
