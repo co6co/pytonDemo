@@ -1,16 +1,14 @@
 proxies:
-- name: 🇺🇸_US_美国_1
-  server: 104.131.75.47
-  port: 27880
-  type: vmess
-  uuid: acab06f2-d134-4989-9bf6-7b868b0b4aba
-  alterId: 0
-  cipher: auto
-  tls: false
+- name: 🇮🇪_IE_爱尔兰_1
+  server: 34.251.156.68
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
   skip-cert-verify: false
   udp: true
-- name: 🇸🇪_SE_瑞典
-  server: 185.146.173.29
+- name: 🇺🇸_US_美国_1
+  server: 172.67.215.180
   port: 443
   type: trojan
   password: f91f38bb-72d5-4f3e-8311-1788986293f5
@@ -21,69 +19,126 @@ proxies:
     grpc-service-name: 2pxF1YL0obWgOVYsTfLJX3ihXJUp
   udp: true
 - name: 🇺🇸_US_美国_2
-  server: 104.21.20.148
-  port: 2087
+  server: 172.233.146.107
+  port: 23333
   type: trojan
-  password: f85e2ad7-3e26-4589-b478-b0b15b9b5907
-  sni: us1.trojanvpn.de
+  password: 450524c4-86ee-4a97-ac7f-888942039bcd
+  sni: test.com
+  skip-cert-verify: false
+  udp: true
+- name: 🇳🇱_RU_俄罗斯联邦->🇳🇱_NL_荷兰
+  server: 5.182.86.28
+  port: 12307
+  type: vmess
+  uuid: 9ad4e318-03fc-4e3b-e0ab-d86d2017de71
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸_US_美国->🇩🇪_DE_德国_1
+  server: 104.21.72.61
+  port: 8443
+  type: trojan
+  password: Jncm1NRGbZ
+  sni: frankfoortvip.followprovider.ir
   skip-cert-verify: false
   network: grpc
   grpc-opts:
-    grpc-service-name: grpc
+    grpc-service-name: frankfoortvip.followprovider.ir
   udp: true
-- name: 🇺🇸_US_美国->🇩🇪_DE_德国_1
-  server: 104.16.61.8
-  port: 2086
+- name: 🇺🇸_US_美国_3
+  server: 64.176.15.74
+  port: 3389
   type: vmess
-  uuid: 441da342-ce90-441e-bff9-d2ceb55e68ca
+  uuid: 9c050a86-d612-48f1-ec32-e573df08a1b7
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+  udp: true
+- name: 🇺🇸_US_美国->🇵🇹_PT_葡萄牙
+  server: 104.26.3.120
+  port: 80
+  type: vmess
+  uuid: f94c274d-f9c5-4c47-a3f5-fa839d80bfb1
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /ivideos.sbs/linkws
+    path: /etc
   udp: true
-- name: 🇺🇸_US_美国->🇩🇪_DE_德国_2
-  server: 104.16.60.8
-  port: 2086
-  type: vmess
-  uuid: f584de15-2034-4170-a723-f48c2bae5e0f
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /afrhms16v.bestxray.buzz/linkws
-  udp: true
-- name: 🇫🇷_SE_瑞典->🇫🇷_FR_法国
-  server: 185.146.173.31
+- name: 🇩🇪_SE_瑞典->🇩🇪_DE_德国
+  server: 185.146.173.29
   port: 443
   type: trojan
-  password: ItSjMC37sc
-  sni: sus.suski2025.ir
+  password: f91f38bb-72d5-4f3e-8311-1788986293f5
+  sni: iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpnc.iran-mehr14.ir
+  skip-cert-verify: false
+  network: grpc
+  grpc-opts:
+    grpc-service-name: 2pxF1YL0obWgOVYsTfLJX3ihXJUp
+  udp: true
+- name: 🇺🇸_US_美国_4
+  server: 104.19.38.28
+  port: 8880
+  type: vmess
+  uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
+  alterId: 0
+  cipher: auto
+  tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /proxy/graphql
-    headers:
-      Host: sus.suski2025.ir
+    path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
   udp: true
-- name: 🇩🇪_DE_德国
-  server: 3.76.60.159
+- name: 🇮🇪_IE_爱尔兰_2
+  server: 54.154.236.98
   port: 22222
   type: trojan
   password: telegram-id-directvpn
   sni: trojan.burgerip.co.uk
   skip-cert-verify: false
   udp: true
-- name: 🇨🇦_CA_加拿大_1
-  server: 35.182.12.150
-  port: 22222
+- name: 🇳🇴_NO_挪威
+  server: 46.29.219.44
+  port: 443
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /path/191019072927
+  udp: true
+- name: 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  server: 172.67.175.243
+  port: 8443
   type: trojan
-  password: telegram-id-directvpn
-  sni: trojan.burgerip.co.uk
+  password: Jncm1NRGbZ
+  sni: frankfoortvip.followprovider.ir
+  skip-cert-verify: false
+  network: grpc
+  grpc-opts:
+    grpc-service-name: frankfoortvip.followprovider.ir
+  udp: true
+- name: 🇷🇺_RU_俄罗斯联邦
+  server: 46.17.41.197
+  port: 55983
+  type: vmess
+  uuid: 034449ce-f7ad-4a51-8044-d677e80b2613
+  alterId: 0
+  cipher: auto
+  tls: false
   skip-cert-verify: false
   udp: true
 - name: 🇺🇸_US_美国->🇩🇪_DE_德国_3
@@ -97,26 +152,28 @@ proxies:
   grpc-opts:
     grpc-service-name: 2pxF1YL0obWgOVYsTfLJX3ihXJUp
   udp: true
-- name: 🇨🇦_CA_加拿大_2
-  server: 142.171.172.207
-  port: 23333
+- name: 🇨🇦_CA_加拿大_1
+  server: 15.157.124.7
+  port: 22222
   type: trojan
-  password: 450524c4-86ee-4a97-ac7f-888942039bcd
-  sni: test.com
+  password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
   skip-cert-verify: false
   udp: true
-- name: 🇺🇸_US_美国_3
-  server: 172.67.215.180
-  port: 443
-  type: trojan
-  password: f91f38bb-72d5-4f3e-8311-1788986293f5
-  sni: iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpn_iran_mehr_vpnc.iran-mehr14.ir
+- name: 🇺🇸_US_美国->🇫🇷_FR_法国
+  server: 104.21.8.157
+  port: 2082
+  type: vmess
+  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
+  alterId: 0
+  cipher: auto
+  tls: false
   skip-cert-verify: false
-  network: grpc
-  grpc-opts:
-    grpc-service-name: 2pxF1YL0obWgOVYsTfLJX3ihXJUp
+  network: ws
+  ws-opts:
+    path: /
   udp: true
-- name: 🇺🇸_US_美国_4
+- name: 🇺🇸_US_美国_5
   server: 104.16.1.10
   port: 443
   type: trojan
@@ -127,61 +184,28 @@ proxies:
   grpc-opts:
     grpc-service-name: 443trojan
   udp: true
-- name: 🇷🇺_RU_俄罗斯联邦
-  server: eedp257bubu2wefy2.lovebaipiao.net
-  port: 54321
+- name: 🇨🇦_CA_加拿大_2
+  server: 3.99.22.75
+  port: 22222
+  type: trojan
+  password: telegram-id-directvpn
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸_CN_中国->🇺🇸_US_美国
+  server: 223.113.54.160
+  port: 23223
+  type: trojan
+  password: gkviEOYc
+  skip-cert-verify: false
+  udp: true
+- name: 🇮🇷_IR_伊朗
+  server: 188.212.96.59
+  port: 1000
   type: vmess
-  uuid: ae840eaa-21a3-462c-8dc8-f5eded625799
+  uuid: 7926eb47-8a42-45f8-abb4-cc4d756bf4c0
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /iphone
-    headers:
-      Host: eedp257bubu2wefy2.lovebaipiao.net
-  udp: true
-- name: 🇺🇸_US_美国->🇨🇦_CA_加拿大
-  server: 104.19.38.28
-  port: 8880
-  type: vmess
-  uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
-  udp: true
-- name: 🇺🇸_US_美国->🇩🇪_DE_德国_4
-  server: cdnjs.com
-  port: 443
-  type: vmess
-  uuid: 6b880b07-e952-4c0b-b4a3-6c9ac4cf9d3f
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /QvtvPdDXXIlSdZMqnuxG
-    headers:
-      Host: cdnjs.com
-  udp: true
-- name: 🇺🇸_US_美国_5
-  server: speed.cloudflare.com
-  port: 80
-  type: vmess
-  uuid: 1052f24e-7b09-45eb-b0c5-d858eb124192
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /glweidf.cfd/linkws
-    headers:
-      Host: speed.cloudflare.com
   udp: true
