@@ -26,18 +26,21 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇷🇺]_750'
-  server: 185.176.24.186
-  port: 443
+- name: '[🇰🇷]_735'
+  server: 112.153.118.61
+  port: 11777
   type: vless
-  uuid: 78383e25-dc84-3602-b5f0-4ebb1b77e7b6
+  client-fingerprint: random
+  uuid: 45cfd24e-6dcf-32e3-af20-6b008313d574
   tls: true
+  tfo: false
+  skip-cert-verify: true
   servername: cfed.tgzdyz2.top
   network: ws
   ws-opts:
-    path: TG%40ZDYZ2
+    path: /TG@ZDYZ2
     headers:
-      host: cfed.tgzdyz2.top
+      Host: cfed.tgzdyz2.top
   udp: true
 - name: '[🇷🇺]_751'
   server: 185.59.218.144
@@ -52,11 +55,11 @@ proxies:
     headers:
       host: cfed.tgzdyz2.top
   udp: true
-- name: '[🇷🇺]_752'
-  server: 185.176.24.120
+- name: '[🇷🇺]_750'
+  server: 185.176.24.186
   port: 443
   type: vless
-  uuid: 0fe27a03-1178-3f15-903f-1dacb7e85820
+  uuid: 78383e25-dc84-3602-b5f0-4ebb1b77e7b6
   tls: true
   servername: cfed.tgzdyz2.top
   network: ws
@@ -81,6 +84,19 @@ proxies:
     headers:
       Host: g1.youyuan.us.kg
   udp: true
+- name: '[🇷🇺]_752'
+  server: 185.176.24.120
+  port: 443
+  type: vless
+  uuid: 0fe27a03-1178-3f15-903f-1dacb7e85820
+  tls: true
+  servername: cfed.tgzdyz2.top
+  network: ws
+  ws-opts:
+    path: TG%40ZDYZ2
+    headers:
+      host: cfed.tgzdyz2.top
+  udp: true
 - name: '[🇸🇨]_754'
   server: 45.133.247.18
   port: 443
@@ -94,54 +110,6 @@ proxies:
   network: ws
   ws-opts:
     path: TG%40ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
-- name: '[🇰🇷]_736'
-  server: 49.165.150.206
-  port: 18916
-  type: vless
-  client-fingerprint: random
-  uuid: cc63c0ae-ebb9-3237-b357-3f505b365670
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: cfed.tgzdyz2.top
-  network: ws
-  ws-opts:
-    path: /TG@ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
-- name: '[🇰🇷]_737'
-  server: 112.212.145.63
-  port: 38243
-  type: vless
-  client-fingerprint: random
-  uuid: b012476b-ab6b-3618-a325-88c8e6dae157
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: cfed.tgzdyz2.top
-  network: ws
-  ws-opts:
-    path: /TG@ZDYZ2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
-- name: '[🇰🇷]_739'
-  server: 121.176.33.148
-  port: 12564
-  type: vless
-  client-fingerprint: random
-  uuid: 02b2c10e-a056-309b-b225-61f9a699883d
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: cfed.tgzdyz2.top
-  network: ws
-  ws-opts:
-    path: /TG@ZDYZ2
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
@@ -176,6 +144,37 @@ proxies:
     headers:
       Host: ccs.443888.xyz
   udp: true
+- name: '[🇸🇬]_755'
+  server: 47.236.125.62
+  port: 2053
+  type: vless
+  client-fingerprint: chrome
+  uuid: cf86b6b2-68ab-3499-a76e-b6034da5d741
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /vless?ed=2560
+    headers:
+      Host: ccs.443888.xyz
+  udp: true
+- name: '[🇰🇷]_739'
+  server: 121.176.33.148
+  port: 12564
+  type: vless
+  client-fingerprint: random
+  uuid: 02b2c10e-a056-309b-b225-61f9a699883d
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: cfed.tgzdyz2.top
+  network: ws
+  ws-opts:
+    path: /TG@ZDYZ2
+    headers:
+      Host: cfed.tgzdyz2.top
+  udp: true
 - name: '[🇹🇼]_759'
   server: 211.72.156.10
   port: 23555
@@ -192,21 +191,6 @@ proxies:
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
-- name: '[🇸🇬]_755'
-  server: 47.236.125.62
-  port: 2053
-  type: vless
-  client-fingerprint: chrome
-  uuid: cf86b6b2-68ab-3499-a76e-b6034da5d741
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /vless?ed=2560
-    headers:
-      Host: ccs.443888.xyz
-  udp: true
 - name: '[🇺🇸]_762'
   server: 198.176.49.211
   port: 8443
@@ -222,12 +206,12 @@ proxies:
     headers:
       Host: ccs.443888.xyz
   udp: true
-- name: '[🇹🇼]_760'
-  server: 118.163.175.167
-  port: 23555
+- name: '[🇹🇼]_758'
+  server: 61.220.41.143
+  port: 36633
   type: vless
   client-fingerprint: random
-  uuid: 14ef550c-17bd-386e-ab23-0c56bc4000e6
+  uuid: e7c84244-d3ad-36f9-ba54-d34fb39f6b66
   tls: true
   tfo: false
   skip-cert-verify: true
@@ -238,12 +222,12 @@ proxies:
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
-- name: '[🇹🇼]_758'
-  server: 61.220.41.143
-  port: 36633
+- name: '[🇹🇼]_760'
+  server: 118.163.175.167
+  port: 23555
   type: vless
   client-fingerprint: random
-  uuid: e7c84244-d3ad-36f9-ba54-d34fb39f6b66
+  uuid: 14ef550c-17bd-386e-ab23-0c56bc4000e6
   tls: true
   tfo: false
   skip-cert-verify: true
@@ -517,6 +501,38 @@ proxies:
   ws-headers:
     Host: oiictw.yydsii.com
   udp: true
+- alterId: 64
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_862'
+  network: ws
+  port: 443
+  server: 107.167.20.188
+  servername: www.15314695.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 399de90e-4eee-3f13-93e6-aa40d217dcc3
+  ws-opts:
+    headers:
+      HOST: www.15314695.xyz
+    path: /path/191019072927
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: JP
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇯🇵]_858'
+  network: tcp
+  port: 41001
+  server: bgroup.node1.v.nodelist-gfwairport2.top
+  skip-cert-verify: true
+  type: vmess
+  uuid: 2f8c0f51-ea00-3588-b7fd-7d829dcefd8d
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -524,21 +540,20 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇷🇺]_750'
+  - '[🇰🇷]_735'
   - '[🇷🇺]_751'
-  - '[🇷🇺]_752'
+  - '[🇷🇺]_750'
   - '[🇷🇺]_753'
+  - '[🇷🇺]_752'
   - '[🇸🇨]_754'
-  - '[🇰🇷]_736'
-  - '[🇰🇷]_737'
-  - '[🇰🇷]_739'
   - '[🇺🇸]_744'
   - '[🇹🇼]_756'
-  - '[🇹🇼]_759'
   - '[🇸🇬]_755'
+  - '[🇰🇷]_739'
+  - '[🇹🇼]_759'
   - '[🇺🇸]_762'
-  - '[🇹🇼]_760'
   - '[🇹🇼]_758'
+  - '[🇹🇼]_760'
   - '[🇹🇼]_761'
   - '[🇭🇰]_766'
   - '[🇺🇸]_767'
@@ -557,27 +572,28 @@ proxy-groups:
   - '[🇺🇸]_785'
   - '[🇺🇸]_794'
   - '[🇺🇸]_800'
+  - '[🇺🇸]_862'
+  - '[🇯🇵]_858'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇷🇺]_750'
+  - '[🇰🇷]_735'
   - '[🇷🇺]_751'
-  - '[🇷🇺]_752'
+  - '[🇷🇺]_750'
   - '[🇷🇺]_753'
+  - '[🇷🇺]_752'
   - '[🇸🇨]_754'
-  - '[🇰🇷]_736'
-  - '[🇰🇷]_737'
-  - '[🇰🇷]_739'
   - '[🇺🇸]_744'
   - '[🇹🇼]_756'
-  - '[🇹🇼]_759'
   - '[🇸🇬]_755'
+  - '[🇰🇷]_739'
+  - '[🇹🇼]_759'
   - '[🇺🇸]_762'
-  - '[🇹🇼]_760'
   - '[🇹🇼]_758'
+  - '[🇹🇼]_760'
   - '[🇹🇼]_761'
   - '[🇭🇰]_766'
   - '[🇺🇸]_767'
@@ -596,27 +612,28 @@ proxy-groups:
   - '[🇺🇸]_785'
   - '[🇺🇸]_794'
   - '[🇺🇸]_800'
+  - '[🇺🇸]_862'
+  - '[🇯🇵]_858'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇷🇺]_750'
+  - '[🇰🇷]_735'
   - '[🇷🇺]_751'
-  - '[🇷🇺]_752'
+  - '[🇷🇺]_750'
   - '[🇷🇺]_753'
+  - '[🇷🇺]_752'
   - '[🇸🇨]_754'
-  - '[🇰🇷]_736'
-  - '[🇰🇷]_737'
-  - '[🇰🇷]_739'
   - '[🇺🇸]_744'
   - '[🇹🇼]_756'
-  - '[🇹🇼]_759'
   - '[🇸🇬]_755'
+  - '[🇰🇷]_739'
+  - '[🇹🇼]_759'
   - '[🇺🇸]_762'
-  - '[🇹🇼]_760'
   - '[🇹🇼]_758'
+  - '[🇹🇼]_760'
   - '[🇹🇼]_761'
   - '[🇭🇰]_766'
   - '[🇺🇸]_767'
@@ -635,27 +652,28 @@ proxy-groups:
   - '[🇺🇸]_785'
   - '[🇺🇸]_794'
   - '[🇺🇸]_800'
+  - '[🇺🇸]_862'
+  - '[🇯🇵]_858'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇷🇺]_750'
+  - '[🇰🇷]_735'
   - '[🇷🇺]_751'
-  - '[🇷🇺]_752'
+  - '[🇷🇺]_750'
   - '[🇷🇺]_753'
+  - '[🇷🇺]_752'
   - '[🇸🇨]_754'
-  - '[🇰🇷]_736'
-  - '[🇰🇷]_737'
-  - '[🇰🇷]_739'
   - '[🇺🇸]_744'
   - '[🇹🇼]_756'
-  - '[🇹🇼]_759'
   - '[🇸🇬]_755'
+  - '[🇰🇷]_739'
+  - '[🇹🇼]_759'
   - '[🇺🇸]_762'
-  - '[🇹🇼]_760'
   - '[🇹🇼]_758'
+  - '[🇹🇼]_760'
   - '[🇹🇼]_761'
   - '[🇭🇰]_766'
   - '[🇺🇸]_767'
@@ -674,25 +692,26 @@ proxy-groups:
   - '[🇺🇸]_785'
   - '[🇺🇸]_794'
   - '[🇺🇸]_800'
+  - '[🇺🇸]_862'
+  - '[🇯🇵]_858'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇷🇺]_750'
+  - '[🇰🇷]_735'
   - '[🇷🇺]_751'
-  - '[🇷🇺]_752'
+  - '[🇷🇺]_750'
   - '[🇷🇺]_753'
+  - '[🇷🇺]_752'
   - '[🇸🇨]_754'
-  - '[🇰🇷]_736'
-  - '[🇰🇷]_737'
-  - '[🇰🇷]_739'
   - '[🇺🇸]_744'
   - '[🇹🇼]_756'
-  - '[🇹🇼]_759'
   - '[🇸🇬]_755'
+  - '[🇰🇷]_739'
+  - '[🇹🇼]_759'
   - '[🇺🇸]_762'
-  - '[🇹🇼]_760'
   - '[🇹🇼]_758'
+  - '[🇹🇼]_760'
   - '[🇹🇼]_761'
   - '[🇭🇰]_766'
   - '[🇺🇸]_767'
@@ -711,27 +730,28 @@ proxy-groups:
   - '[🇺🇸]_785'
   - '[🇺🇸]_794'
   - '[🇺🇸]_800'
+  - '[🇺🇸]_862'
+  - '[🇯🇵]_858'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇷🇺]_750'
+  - '[🇰🇷]_735'
   - '[🇷🇺]_751'
-  - '[🇷🇺]_752'
+  - '[🇷🇺]_750'
   - '[🇷🇺]_753'
+  - '[🇷🇺]_752'
   - '[🇸🇨]_754'
-  - '[🇰🇷]_736'
-  - '[🇰🇷]_737'
-  - '[🇰🇷]_739'
   - '[🇺🇸]_744'
   - '[🇹🇼]_756'
-  - '[🇹🇼]_759'
   - '[🇸🇬]_755'
+  - '[🇰🇷]_739'
+  - '[🇹🇼]_759'
   - '[🇺🇸]_762'
-  - '[🇹🇼]_760'
   - '[🇹🇼]_758'
+  - '[🇹🇼]_760'
   - '[🇹🇼]_761'
   - '[🇭🇰]_766'
   - '[🇺🇸]_767'
@@ -750,6 +770,8 @@ proxy-groups:
   - '[🇺🇸]_785'
   - '[🇺🇸]_794'
   - '[🇺🇸]_800'
+  - '[🇺🇸]_862'
+  - '[🇯🇵]_858'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
