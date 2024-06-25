@@ -26,48 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇦🇶]_1176'
-  server: 104.19.34.167
-  port: 80
-  type: vmess
-  uuid: 7fbc624a-0f2c-3454-a2e7-83a317c489d4
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /ws?ed=2048&Telegram🇨🇳 @WangCai_8
-  tls: false
-  ws-headers:
-    Host: m2-sg3.m2network.icu
-  udp: true
-- name: '[🇦🇶]_1177'
-  server: 104.19.35.114
-  port: 80
-  type: vmess
-  uuid: db84e82d-c349-3d61-b48c-5541699cd505
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /ws?ed=2048&Telegram🇨🇳 @WangCai_8
-  tls: false
-  ws-headers:
-    Host: m2-sg3.m2network.icu
-  udp: true
-- name: '[🇦🇶]_1178'
-  server: 104.19.33.247
-  port: 80
-  type: vmess
-  uuid: 5a4cc34f-0ec2-3c55-b7b6-2f41a0a39b80
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /ws?ed=2048&Telegram🇨🇳 @WangCai_8
-  tls: false
-  ws-headers:
-    Host: m2-sg3.m2network.icu
-  udp: true
 - name: '[🇦🇶]_1181'
   server: 104.19.34.192
   port: 80
@@ -124,11 +82,11 @@ proxies:
   ws-headers:
     Host: m2-sg3.m2network.icu
   udp: true
-- name: '[🇦🇶]_1186'
-  server: 104.19.34.251
+- name: '[🇦🇶]_1185'
+  server: 104.19.33.0
   port: 80
   type: vmess
-  uuid: d531ef8b-c888-335d-aafc-6fb5f95aa45b
+  uuid: 58ff125f-4607-32bf-9e0d-f41e1eef72d8
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -138,11 +96,11 @@ proxies:
   ws-headers:
     Host: m2-sg3.m2network.icu
   udp: true
-- name: '[🇦🇶]_1185'
-  server: 104.19.33.0
+- name: '[🇦🇶]_1186'
+  server: 104.19.34.251
   port: 80
   type: vmess
-  uuid: 58ff125f-4607-32bf-9e0d-f41e1eef72d8
+  uuid: d531ef8b-c888-335d-aafc-6fb5f95aa45b
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -180,6 +138,31 @@ proxies:
   ws-headers:
     Host: m2-sg3.m2network.icu
   udp: true
+- alterId: 0
+  cipher: auto
+  country: JP
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇯🇵]_1195'
+  network: tcp
+  port: 41001
+  server: bgroup.node1.v.nodelist-gfwairport2.top
+  skip-cert-verify: true
+  type: vmess
+  uuid: 955df888-4c77-35e8-9581-61e2c4a2e3f7
+  udp: true
+- alterId: 0
+  cipher: auto
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇯🇵]_1191'
+  network: ws
+  port: 80
+  server: 131.186.41.136
+  type: vmess
+  uuid: bbec8136-1cd9-3cba-aa57-e10b3116fe36
+  ws-opts: {}
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -187,100 +170,94 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_1176'
-  - '[🇦🇶]_1177'
-  - '[🇦🇶]_1178'
   - '[🇦🇶]_1181'
   - '[🇦🇶]_1182'
   - '[🇦🇶]_1183'
   - '[🇦🇶]_1184'
-  - '[🇦🇶]_1186'
   - '[🇦🇶]_1185'
+  - '[🇦🇶]_1186'
   - '[🇦🇶]_1188'
   - '[🇦🇶]_1189'
+  - '[🇯🇵]_1195'
+  - '[🇯🇵]_1191'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1176'
-  - '[🇦🇶]_1177'
-  - '[🇦🇶]_1178'
   - '[🇦🇶]_1181'
   - '[🇦🇶]_1182'
   - '[🇦🇶]_1183'
   - '[🇦🇶]_1184'
-  - '[🇦🇶]_1186'
   - '[🇦🇶]_1185'
+  - '[🇦🇶]_1186'
   - '[🇦🇶]_1188'
   - '[🇦🇶]_1189'
+  - '[🇯🇵]_1195'
+  - '[🇯🇵]_1191'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1176'
-  - '[🇦🇶]_1177'
-  - '[🇦🇶]_1178'
   - '[🇦🇶]_1181'
   - '[🇦🇶]_1182'
   - '[🇦🇶]_1183'
   - '[🇦🇶]_1184'
-  - '[🇦🇶]_1186'
   - '[🇦🇶]_1185'
+  - '[🇦🇶]_1186'
   - '[🇦🇶]_1188'
   - '[🇦🇶]_1189'
+  - '[🇯🇵]_1195'
+  - '[🇯🇵]_1191'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1176'
-  - '[🇦🇶]_1177'
-  - '[🇦🇶]_1178'
   - '[🇦🇶]_1181'
   - '[🇦🇶]_1182'
   - '[🇦🇶]_1183'
   - '[🇦🇶]_1184'
-  - '[🇦🇶]_1186'
   - '[🇦🇶]_1185'
+  - '[🇦🇶]_1186'
   - '[🇦🇶]_1188'
   - '[🇦🇶]_1189'
+  - '[🇯🇵]_1195'
+  - '[🇯🇵]_1191'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_1176'
-  - '[🇦🇶]_1177'
-  - '[🇦🇶]_1178'
   - '[🇦🇶]_1181'
   - '[🇦🇶]_1182'
   - '[🇦🇶]_1183'
   - '[🇦🇶]_1184'
-  - '[🇦🇶]_1186'
   - '[🇦🇶]_1185'
+  - '[🇦🇶]_1186'
   - '[🇦🇶]_1188'
   - '[🇦🇶]_1189'
+  - '[🇯🇵]_1195'
+  - '[🇯🇵]_1191'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_1176'
-  - '[🇦🇶]_1177'
-  - '[🇦🇶]_1178'
   - '[🇦🇶]_1181'
   - '[🇦🇶]_1182'
   - '[🇦🇶]_1183'
   - '[🇦🇶]_1184'
-  - '[🇦🇶]_1186'
   - '[🇦🇶]_1185'
+  - '[🇦🇶]_1186'
   - '[🇦🇶]_1188'
   - '[🇦🇶]_1189'
+  - '[🇯🇵]_1195'
+  - '[🇯🇵]_1191'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
