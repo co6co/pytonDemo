@@ -26,39 +26,11 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_1068'
-  server: 156.225.72.100
-  port: 443
-  type: vless
-  uuid: 2f8e7400-cadc-328e-9364-c8ea0c1d5725
-  tls: true
-  servername: cfed.tgzdyz2.top
-  network: ws
-  ws-opts:
-    path: tg@zdyz2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
-- name: '[🇭🇰]_1016'
-  server: 156.251.176.109
-  port: 46010
-  type: vless
-  client-fingerprint: chrome
-  uuid: 44af3347-8479-3c0d-a174-35a8a4847bc2
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /vless?ed=2560
-    headers:
-      Host: ccs.443888.xyz
-  udp: true
-- name: '[🇺🇸]_1069'
+- name: '[🇺🇸]_1070'
   server: 204.93.210.80
   port: 2096
   type: vless
-  uuid: 6632b394-b1d8-35fb-bd6f-a307acc6d519
+  uuid: aa28b223-551c-3d48-a206-04eda00a3a79
   tls: true
   servername: a.ssll.gay
   network: ws
@@ -67,11 +39,11 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
-- name: '[🇺🇸]_1070'
+- name: '[🇺🇸]_1071'
   server: 155.46.213.166
   port: 443
   type: vless
-  uuid: aa28b223-551c-3d48-a206-04eda00a3a79
+  uuid: 3d29ada7-c9c4-30aa-ae6d-83a1a6216736
   tls: true
   servername: cfed.tgzdyz2.top
   network: ws
@@ -80,31 +52,34 @@ proxies:
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
-- name: '[🇺🇸]_1050'
-  server: 43.153.103.203
-  port: 443
+- name: '[🇹🇼]_1015'
+  server: 60.249.89.74
+  port: 23555
   type: vless
-  uuid: 85508419-eda8-3e07-a9c0-85502a7f8aaa
+  client-fingerprint: random
+  uuid: 0937927b-86da-34a7-8526-aa5ac93829b0
   tls: true
+  tfo: false
+  skip-cert-verify: true
   servername: cfed.tgzdyz2.top
   network: ws
   ws-opts:
-    path: tg@zdyz2
+    path: /TG@ZDYZ2
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
-- name: '[🇺🇸]_1055'
-  server: 174.136.206.95
-  port: 57757
+- name: '[🇺🇸]_1065'
+  server: 192.9.246.112
+  port: 8443
   type: vless
-  uuid: 439e7720-923f-3d52-b58b-5d03ab298336
+  uuid: dafef298-d6b1-3bda-a1f3-7f53d87320b0
   tls: true
-  servername: juzibaipiao.5112233.xyz
+  servername: hk.twittei.link
   network: ws
   ws-opts:
-    path: /
+    path: Twitterfreecodes
     headers:
-      Host: juzibaipiao.5112233.xyz
+      Host: hk.twittei.link
   udp: true
 - name: '[🇺🇸]_1081'
   server: hkd1.quickerlink.xyz
@@ -153,25 +128,27 @@ proxies:
       HOST: afrhms07.xfixedfloat.cfd
     path: /linkws
   udp: true
-- name: '[🇺🇸]_1064'
-  server: 192.9.246.112
-  port: 8443
+- name: '[🇭🇰]_1017'
+  server: 156.251.176.109
+  port: 46010
   type: vless
-  uuid: c9988faf-8e82-34f0-84bb-7ac31fe84f04
+  client-fingerprint: chrome
+  uuid: 251b7082-5fac-35cd-919f-7c75e36f320d
   tls: true
-  servername: hk.twittei.link
+  tfo: false
+  skip-cert-verify: true
   network: ws
   ws-opts:
-    path: Twitterfreecodes
+    path: /vless?ed=2560
     headers:
-      Host: hk.twittei.link
+      Host: ccs.443888.xyz
   udp: true
-- name: '[🇹🇼]_1012'
+- name: '[🇹🇼]_1013'
   server: 61.220.41.143
   port: 36633
   type: vless
   client-fingerprint: random
-  uuid: bddf09bf-3bd7-3610-9518-942dfe31acf8
+  uuid: 14a2e430-6ebd-3f59-9d62-675e698f0a14
   tls: true
   tfo: false
   skip-cert-verify: true
@@ -189,100 +166,88 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1068'
-  - '[🇭🇰]_1016'
-  - '[🇺🇸]_1069'
   - '[🇺🇸]_1070'
-  - '[🇺🇸]_1050'
-  - '[🇺🇸]_1055'
+  - '[🇺🇸]_1071'
+  - '[🇹🇼]_1015'
+  - '[🇺🇸]_1065'
   - '[🇺🇸]_1081'
   - '[🇦🇶]_1083'
   - '[🇺🇸]_1107'
-  - '[🇺🇸]_1064'
-  - '[🇹🇼]_1012'
+  - '[🇭🇰]_1017'
+  - '[🇹🇼]_1013'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1068'
-  - '[🇭🇰]_1016'
-  - '[🇺🇸]_1069'
   - '[🇺🇸]_1070'
-  - '[🇺🇸]_1050'
-  - '[🇺🇸]_1055'
+  - '[🇺🇸]_1071'
+  - '[🇹🇼]_1015'
+  - '[🇺🇸]_1065'
   - '[🇺🇸]_1081'
   - '[🇦🇶]_1083'
   - '[🇺🇸]_1107'
-  - '[🇺🇸]_1064'
-  - '[🇹🇼]_1012'
+  - '[🇭🇰]_1017'
+  - '[🇹🇼]_1013'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1068'
-  - '[🇭🇰]_1016'
-  - '[🇺🇸]_1069'
   - '[🇺🇸]_1070'
-  - '[🇺🇸]_1050'
-  - '[🇺🇸]_1055'
+  - '[🇺🇸]_1071'
+  - '[🇹🇼]_1015'
+  - '[🇺🇸]_1065'
   - '[🇺🇸]_1081'
   - '[🇦🇶]_1083'
   - '[🇺🇸]_1107'
-  - '[🇺🇸]_1064'
-  - '[🇹🇼]_1012'
+  - '[🇭🇰]_1017'
+  - '[🇹🇼]_1013'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1068'
-  - '[🇭🇰]_1016'
-  - '[🇺🇸]_1069'
   - '[🇺🇸]_1070'
-  - '[🇺🇸]_1050'
-  - '[🇺🇸]_1055'
+  - '[🇺🇸]_1071'
+  - '[🇹🇼]_1015'
+  - '[🇺🇸]_1065'
   - '[🇺🇸]_1081'
   - '[🇦🇶]_1083'
   - '[🇺🇸]_1107'
-  - '[🇺🇸]_1064'
-  - '[🇹🇼]_1012'
+  - '[🇭🇰]_1017'
+  - '[🇹🇼]_1013'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1068'
-  - '[🇭🇰]_1016'
-  - '[🇺🇸]_1069'
   - '[🇺🇸]_1070'
-  - '[🇺🇸]_1050'
-  - '[🇺🇸]_1055'
+  - '[🇺🇸]_1071'
+  - '[🇹🇼]_1015'
+  - '[🇺🇸]_1065'
   - '[🇺🇸]_1081'
   - '[🇦🇶]_1083'
   - '[🇺🇸]_1107'
-  - '[🇺🇸]_1064'
-  - '[🇹🇼]_1012'
+  - '[🇭🇰]_1017'
+  - '[🇹🇼]_1013'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1068'
-  - '[🇭🇰]_1016'
-  - '[🇺🇸]_1069'
   - '[🇺🇸]_1070'
-  - '[🇺🇸]_1050'
-  - '[🇺🇸]_1055'
+  - '[🇺🇸]_1071'
+  - '[🇹🇼]_1015'
+  - '[🇺🇸]_1065'
   - '[🇺🇸]_1081'
   - '[🇦🇶]_1083'
   - '[🇺🇸]_1107'
-  - '[🇺🇸]_1064'
-  - '[🇹🇼]_1012'
+  - '[🇭🇰]_1017'
+  - '[🇹🇼]_1013'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
