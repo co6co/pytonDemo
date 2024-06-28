@@ -26,38 +26,8 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇦🇶]_1065'
-  server: 104.19.47.197
-  port: 8443
-  type: vmess
-  uuid: 7c4a1a2f-716f-3d96-ab18-31bba3ac8ce1
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: hk01.linkitnow.net
-  udp: true
-- name: '[🇦🇶]_1066'
-  server: 104.19.47.23
-  port: 8443
-  type: vmess
-  uuid: d29007ee-213c-30ad-abef-34fe2e1a2308
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: hk01.linkitnow.net
-  udp: true
 - name: '[🇦🇶]_1067'
-  server: 104.19.47.43
+  server: 104.19.47.23
   port: 8443
   type: vmess
   uuid: 9c48ab6d-10e4-3de5-a41c-7e0cceb2c915
@@ -71,11 +41,41 @@ proxies:
     headers:
       Host: hk01.linkitnow.net
   udp: true
-- name: '[🇳🇱]_1068'
+- name: '[🇦🇶]_1066'
+  server: 104.19.47.197
+  port: 8443
+  type: vmess
+  uuid: d29007ee-213c-30ad-abef-34fe2e1a2308
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: hk01.linkitnow.net
+  udp: true
+- name: '[🇦🇶]_1068'
+  server: 104.19.47.43
+  port: 8443
+  type: vmess
+  uuid: d1b1072e-acac-30ce-8852-a48958b86536
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: hk01.linkitnow.net
+  udp: true
+- name: '[🇳🇱]_1069'
   server: 188.114.97.7
   port: 443
   type: vmess
-  uuid: 78171485-fa6e-388d-832c-f64e56db6ec3
+  uuid: 4c3a4e67-d814-3fae-9b83-a12defa2d337
   alterId: 0
   cipher: auto
   tls: true
@@ -87,11 +87,11 @@ proxies:
     headers:
       Host: linde06.indiavideo.sbs
   udp: true
-- name: '[🇳🇱]_1069'
+- name: '[🇳🇱]_1070'
   server: 188.114.99.205
   port: 443
   type: vmess
-  uuid: 4c3a4e67-d814-3fae-9b83-a12defa2d337
+  uuid: a21980e0-f78e-3d90-865f-f3b7473c9e1e
   alterId: 0
   cipher: auto
   tls: true
@@ -103,11 +103,11 @@ proxies:
     headers:
       Host: linde06.indiavideo.sbs
   udp: true
-- name: '[🇦🇶]_1070'
+- name: '[🇦🇶]_1071'
   server: 104.19.45.11
   port: 8443
   type: vmess
-  uuid: 9226d53f-ff87-39cb-a0ec-f968437c8bb9
+  uuid: 615294dd-dbac-354a-877e-bf2a9a4f7841
   alterId: 0
   cipher: auto
   tls: true
@@ -205,6 +205,19 @@ proxies:
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
+- name: '[🇰🇷]_925'
+  server: 146.56.166.59
+  port: 46060
+  type: vless
+  uuid: 12abbd91-1fed-3ffa-a1f4-a872ebe7bce2
+  tls: true
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: a.ssll.gay
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -212,106 +225,112 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_1065'
-  - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
-  - '[🇳🇱]_1068'
+  - '[🇦🇶]_1066'
+  - '[🇦🇶]_1068'
   - '[🇳🇱]_1069'
-  - '[🇦🇶]_1070'
+  - '[🇳🇱]_1070'
+  - '[🇦🇶]_1071'
   - '[🇺🇸]_1079'
   - '[🇦🇶]_1080'
   - '[🇦🇶]_1085'
   - '[🇯🇵]_1082'
   - '[🇷🇺]_1090'
   - '[🇹🇼]_958'
+  - '[🇰🇷]_925'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1065'
-  - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
-  - '[🇳🇱]_1068'
+  - '[🇦🇶]_1066'
+  - '[🇦🇶]_1068'
   - '[🇳🇱]_1069'
-  - '[🇦🇶]_1070'
+  - '[🇳🇱]_1070'
+  - '[🇦🇶]_1071'
   - '[🇺🇸]_1079'
   - '[🇦🇶]_1080'
   - '[🇦🇶]_1085'
   - '[🇯🇵]_1082'
   - '[🇷🇺]_1090'
   - '[🇹🇼]_958'
+  - '[🇰🇷]_925'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1065'
-  - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
-  - '[🇳🇱]_1068'
+  - '[🇦🇶]_1066'
+  - '[🇦🇶]_1068'
   - '[🇳🇱]_1069'
-  - '[🇦🇶]_1070'
+  - '[🇳🇱]_1070'
+  - '[🇦🇶]_1071'
   - '[🇺🇸]_1079'
   - '[🇦🇶]_1080'
   - '[🇦🇶]_1085'
   - '[🇯🇵]_1082'
   - '[🇷🇺]_1090'
   - '[🇹🇼]_958'
+  - '[🇰🇷]_925'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1065'
-  - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
-  - '[🇳🇱]_1068'
+  - '[🇦🇶]_1066'
+  - '[🇦🇶]_1068'
   - '[🇳🇱]_1069'
-  - '[🇦🇶]_1070'
+  - '[🇳🇱]_1070'
+  - '[🇦🇶]_1071'
   - '[🇺🇸]_1079'
   - '[🇦🇶]_1080'
   - '[🇦🇶]_1085'
   - '[🇯🇵]_1082'
   - '[🇷🇺]_1090'
   - '[🇹🇼]_958'
+  - '[🇰🇷]_925'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_1065'
-  - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
-  - '[🇳🇱]_1068'
+  - '[🇦🇶]_1066'
+  - '[🇦🇶]_1068'
   - '[🇳🇱]_1069'
-  - '[🇦🇶]_1070'
+  - '[🇳🇱]_1070'
+  - '[🇦🇶]_1071'
   - '[🇺🇸]_1079'
   - '[🇦🇶]_1080'
   - '[🇦🇶]_1085'
   - '[🇯🇵]_1082'
   - '[🇷🇺]_1090'
   - '[🇹🇼]_958'
+  - '[🇰🇷]_925'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_1065'
-  - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
-  - '[🇳🇱]_1068'
+  - '[🇦🇶]_1066'
+  - '[🇦🇶]_1068'
   - '[🇳🇱]_1069'
-  - '[🇦🇶]_1070'
+  - '[🇳🇱]_1070'
+  - '[🇦🇶]_1071'
   - '[🇺🇸]_1079'
   - '[🇦🇶]_1080'
   - '[🇦🇶]_1085'
   - '[🇯🇵]_1082'
   - '[🇷🇺]_1090'
   - '[🇹🇼]_958'
+  - '[🇰🇷]_925'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
