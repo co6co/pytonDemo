@@ -26,6 +26,62 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇺🇸]_1052'
+  server: hkd1.quickerlink.xyz
+  port: 443
+  type: vmess
+  uuid: ee4906aa-6bd7-3486-920d-f3d7352805ba
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /h6jr23x9h3lqiitg
+  tls: true
+  ws-headers:
+    Host: hkd1.quickerlink.xyz
+  udp: true
+- name: '[🇦🇶]_1058'
+  server: 104.19.46.233
+  port: 2086
+  type: vmess
+  uuid: ba106bb9-0f5c-362d-bf34-7d619b56d7a8
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: github.com/Alvin9999
+  tls: false
+  ws-headers:
+    Host: ip002-2.dtku47.xyz
+  udp: true
+- name: '[🇺🇸]_1054'
+  server: 192.74.241.164
+  port: 38002
+  type: vmess
+  uuid: 4d9a5174-221d-3033-b261-0744c953acd2
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /path/191019072927
+  tls: true
+  ws-headers:
+    Host: 192.74.241.164
+  udp: true
+- name: '[🇺🇸]_1062'
+  server: russia.com
+  port: 2095
+  type: vmess
+  uuid: 5af3315c-2a09-3fa9-b125-f984d87d3f28
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /api/v3/download.getFile
+  tls: false
+  ws-headers:
+    Host: sssub.v2.001.ssrsub.com
+  udp: true
 - name: '[🇦🇶]_1063'
   server: 104.19.47.65
   port: 2086
@@ -82,6 +138,42 @@ proxies:
   ws-headers:
     Host: oiictw.yydsii.com
   udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1097'
+  network: ws
+  port: 8080
+  server: 172.67.199.144
+  servername: oiictw.yydsii.com
+  skip-cert-verify: true
+  type: vmess
+  uuid: 4d5a18b9-2b2d-3985-8022-7161c1ec7b3b
+  ws-opts:
+    headers:
+      HOST: oiictw.yydsii.com
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1098'
+  network: ws
+  port: 8080
+  server: 172.67.172.67
+  servername: oiictw.yydsii.com
+  skip-cert-verify: true
+  type: vmess
+  uuid: 22ac0f17-2510-3498-a475-562ba2172980
+  ws-opts:
+    headers:
+      HOST: oiictw.yydsii.com
+    path: /
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -89,58 +181,94 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇺🇸]_1052'
+  - '[🇦🇶]_1058'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1062'
   - '[🇦🇶]_1063'
   - '[🇷🇺]_1064'
   - '[🇺🇸]_1065'
   - '[🇦🇶]_1066'
+  - '[🇺🇸]_1097'
+  - '[🇺🇸]_1098'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1052'
+  - '[🇦🇶]_1058'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1062'
   - '[🇦🇶]_1063'
   - '[🇷🇺]_1064'
   - '[🇺🇸]_1065'
   - '[🇦🇶]_1066'
+  - '[🇺🇸]_1097'
+  - '[🇺🇸]_1098'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1052'
+  - '[🇦🇶]_1058'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1062'
   - '[🇦🇶]_1063'
   - '[🇷🇺]_1064'
   - '[🇺🇸]_1065'
   - '[🇦🇶]_1066'
+  - '[🇺🇸]_1097'
+  - '[🇺🇸]_1098'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1052'
+  - '[🇦🇶]_1058'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1062'
   - '[🇦🇶]_1063'
   - '[🇷🇺]_1064'
   - '[🇺🇸]_1065'
   - '[🇦🇶]_1066'
+  - '[🇺🇸]_1097'
+  - '[🇺🇸]_1098'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇺🇸]_1052'
+  - '[🇦🇶]_1058'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1062'
   - '[🇦🇶]_1063'
   - '[🇷🇺]_1064'
   - '[🇺🇸]_1065'
   - '[🇦🇶]_1066'
+  - '[🇺🇸]_1097'
+  - '[🇺🇸]_1098'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇺🇸]_1052'
+  - '[🇦🇶]_1058'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1062'
   - '[🇦🇶]_1063'
   - '[🇷🇺]_1064'
   - '[🇺🇸]_1065'
   - '[🇦🇶]_1066'
+  - '[🇺🇸]_1097'
+  - '[🇺🇸]_1098'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
