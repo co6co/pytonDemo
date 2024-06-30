@@ -26,67 +26,25 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_1107'
-  server: 192.74.241.164
-  port: 38002
+- name: '[🇦🇶]_1063'
+  server: 104.19.47.65
+  port: 2086
   type: vmess
-  uuid: 638cedc5-8eb4-385e-a863-7df13e5b09b1
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /path/191019072927
-  tls: true
-  ws-headers:
-    Host: 192.74.241.164
-  udp: true
-- name: '[🇺🇸]_1115'
-  server: 172.67.172.88
-  port: 8080
-  type: vmess
-  uuid: cb4a4ecd-986b-32fc-ad9a-5b2e57b179a0
+  uuid: 76e2290a-ce81-3480-9639-aeead0e501e6
   alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
-  ws-path: /
+  ws-path: github.com/Alvin9999
   tls: false
   ws-headers:
-    Host: oiictw.yydsii.com
+    Host: ip11-2.freegradely.xyz
   udp: true
-- name: '[🇺🇸]_1118'
-  server: 172.67.199.69
-  port: 8080
-  type: vmess
-  uuid: 13ccd331-1b00-317e-8fa5-65f5f62e8899
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: oiictw.yydsii.com
-  udp: true
-- name: '[🇺🇸]_1120'
-  server: 172.67.130.140
-  port: 2082
-  type: vmess
-  uuid: 074555db-82be-301c-aad2-4d5ba02552b3
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: s1c.v2.v001sss.xyz
-  udp: true
-- name: '[🇷🇺]_1117'
+- name: '[🇷🇺]_1064'
   server: 45.14.244.133
   port: 443
   type: vmess
-  uuid: 1b49dbcb-d691-3570-9456-879b2ce7c950
+  uuid: 97fe57d5-490a-31e7-814b-1c08f47cf48d
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -96,6 +54,34 @@ proxies:
   ws-headers:
     Host: 45.14.244.133
   udp: true
+- name: '[🇺🇸]_1065'
+  server: 172.67.130.140
+  port: 2082
+  type: vmess
+  uuid: dafef298-d6b1-3bda-a1f3-7f53d87320b0
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: s1c.v2.v001sss.xyz
+  udp: true
+- name: '[🇦🇶]_1066'
+  server: 104.19.47.4
+  port: 8080
+  type: vmess
+  uuid: d29007ee-213c-30ad-abef-34fe2e1a2308
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /?ed=2048
+  tls: false
+  ws-headers:
+    Host: oiictw.yydsii.com
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -103,64 +89,58 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1107'
-  - '[🇺🇸]_1115'
-  - '[🇺🇸]_1118'
-  - '[🇺🇸]_1120'
-  - '[🇷🇺]_1117'
+  - '[🇦🇶]_1063'
+  - '[🇷🇺]_1064'
+  - '[🇺🇸]_1065'
+  - '[🇦🇶]_1066'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1107'
-  - '[🇺🇸]_1115'
-  - '[🇺🇸]_1118'
-  - '[🇺🇸]_1120'
-  - '[🇷🇺]_1117'
+  - '[🇦🇶]_1063'
+  - '[🇷🇺]_1064'
+  - '[🇺🇸]_1065'
+  - '[🇦🇶]_1066'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1107'
-  - '[🇺🇸]_1115'
-  - '[🇺🇸]_1118'
-  - '[🇺🇸]_1120'
-  - '[🇷🇺]_1117'
+  - '[🇦🇶]_1063'
+  - '[🇷🇺]_1064'
+  - '[🇺🇸]_1065'
+  - '[🇦🇶]_1066'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1107'
-  - '[🇺🇸]_1115'
-  - '[🇺🇸]_1118'
-  - '[🇺🇸]_1120'
-  - '[🇷🇺]_1117'
+  - '[🇦🇶]_1063'
+  - '[🇷🇺]_1064'
+  - '[🇺🇸]_1065'
+  - '[🇦🇶]_1066'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1107'
-  - '[🇺🇸]_1115'
-  - '[🇺🇸]_1118'
-  - '[🇺🇸]_1120'
-  - '[🇷🇺]_1117'
+  - '[🇦🇶]_1063'
+  - '[🇷🇺]_1064'
+  - '[🇺🇸]_1065'
+  - '[🇦🇶]_1066'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1107'
-  - '[🇺🇸]_1115'
-  - '[🇺🇸]_1118'
-  - '[🇺🇸]_1120'
-  - '[🇷🇺]_1117'
+  - '[🇦🇶]_1063'
+  - '[🇷🇺]_1064'
+  - '[🇺🇸]_1065'
+  - '[🇦🇶]_1066'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
