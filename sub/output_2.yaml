@@ -26,48 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_1040'
-  server: api.qiscus.com
-  port: 443
-  type: vmess
-  uuid: d86285ce-c380-3a34-8dd6-95fe1332344b
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /726f5dd4/
-  tls: true
-  ws-headers:
-    Host: sgazure-d.solusihost.my.id
-  udp: true
-- name: '[🇺🇸]_1041'
-  server: pp1.zhengzhongfeizhu.xyz
-  port: 33003
-  type: vmess
-  uuid: f1b6b72f-feac-3afc-b811-7838593a11c3
-  alterId: 1
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /j20-usa4-243
-  tls: false
-  ws-headers:
-    Host: pp1.zhengzhongfeizhu.xyz
-  udp: true
-- name: '[🇺🇸]_1061'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: c7b468a9-c7a2-3b74-9c54-fcc73cff754e
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
-  tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
-  udp: true
 - name: '[🇺🇸]_1062'
   server: 172.64.32.154
   port: 2087
@@ -180,41 +138,81 @@ proxies:
   ws-headers:
     Host: ury-unit-c030ehei8.poget71138.workers.dev
   udp: true
-- alterId: 0
+- alterId: 64
   cipher: auto
   country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇺🇸]_1104'
+  name: '[🇺🇸]_1122'
   network: ws
-  port: 8080
-  server: 172.67.199.144
-  servername: oiictw.yydsii.com
+  port: 37000
+  server: 38.33.19.85
+  servername: www.59653884.xyz
   skip-cert-verify: true
+  tls: true
   type: vmess
-  uuid: 7d405ece-bbfc-3410-9856-789622c51263
+  uuid: d8ac5cd6-289b-3222-abef-8d0eb6082343
   ws-opts:
     headers:
-      HOST: oiictw.yydsii.com
-    path: /
+      HOST: www.59653884.xyz
+    path: /path/191019072927
   udp: true
-- alterId: 0
+- alterId: 64
   cipher: auto
   country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇺🇸]_1105'
+  name: '[🇺🇸]_1123'
   network: ws
-  port: 8080
-  server: 172.67.172.67
-  servername: oiictw.yydsii.com
+  port: 38001
+  server: 38.11.20.78
+  servername: www.45174198.xyz
   skip-cert-verify: true
+  tls: true
   type: vmess
-  uuid: c68a100d-dc91-3179-aecb-5235c7964e5c
+  uuid: 42ef1bf2-636a-3103-b10f-351b6792629d
   ws-opts:
     headers:
-      HOST: oiictw.yydsii.com
-    path: /
+      HOST: www.45174198.xyz
+    path: /path/191019072927
+  udp: true
+- alterId: 64
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1125'
+  network: ws
+  port: 37000
+  server: 38.11.60.90
+  servername: www.72795025.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 9a71fc94-eaf5-3d47-88d8-04c3276d76eb
+  ws-opts:
+    headers:
+      HOST: www.72795025.xyz
+    path: /path/191019072927
+  udp: true
+- alterId: 64
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1124'
+  network: ws
+  port: 37000
+  server: 38.11.60.88
+  servername: www.72795025.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 703848af-0b92-369b-87b7-67285f39aaf8
+  ws-opts:
+    headers:
+      HOST: www.72795025.xyz
+    path: /path/191019072927
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -223,9 +221,6 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1040'
-  - '[🇺🇸]_1041'
-  - '[🇺🇸]_1061'
   - '[🇺🇸]_1062'
   - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
@@ -234,17 +229,16 @@ proxy-groups:
   - '[🇦🇶]_1072'
   - '[🇦🇶]_1074'
   - '[🇦🇶]_1075'
-  - '[🇺🇸]_1104'
-  - '[🇺🇸]_1105'
+  - '[🇺🇸]_1122'
+  - '[🇺🇸]_1123'
+  - '[🇺🇸]_1125'
+  - '[🇺🇸]_1124'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1040'
-  - '[🇺🇸]_1041'
-  - '[🇺🇸]_1061'
   - '[🇺🇸]_1062'
   - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
@@ -253,17 +247,16 @@ proxy-groups:
   - '[🇦🇶]_1072'
   - '[🇦🇶]_1074'
   - '[🇦🇶]_1075'
-  - '[🇺🇸]_1104'
-  - '[🇺🇸]_1105'
+  - '[🇺🇸]_1122'
+  - '[🇺🇸]_1123'
+  - '[🇺🇸]_1125'
+  - '[🇺🇸]_1124'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1040'
-  - '[🇺🇸]_1041'
-  - '[🇺🇸]_1061'
   - '[🇺🇸]_1062'
   - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
@@ -272,17 +265,16 @@ proxy-groups:
   - '[🇦🇶]_1072'
   - '[🇦🇶]_1074'
   - '[🇦🇶]_1075'
-  - '[🇺🇸]_1104'
-  - '[🇺🇸]_1105'
+  - '[🇺🇸]_1122'
+  - '[🇺🇸]_1123'
+  - '[🇺🇸]_1125'
+  - '[🇺🇸]_1124'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1040'
-  - '[🇺🇸]_1041'
-  - '[🇺🇸]_1061'
   - '[🇺🇸]_1062'
   - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
@@ -291,15 +283,14 @@ proxy-groups:
   - '[🇦🇶]_1072'
   - '[🇦🇶]_1074'
   - '[🇦🇶]_1075'
-  - '[🇺🇸]_1104'
-  - '[🇺🇸]_1105'
+  - '[🇺🇸]_1122'
+  - '[🇺🇸]_1123'
+  - '[🇺🇸]_1125'
+  - '[🇺🇸]_1124'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1040'
-  - '[🇺🇸]_1041'
-  - '[🇺🇸]_1061'
   - '[🇺🇸]_1062'
   - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
@@ -308,17 +299,16 @@ proxy-groups:
   - '[🇦🇶]_1072'
   - '[🇦🇶]_1074'
   - '[🇦🇶]_1075'
-  - '[🇺🇸]_1104'
-  - '[🇺🇸]_1105'
+  - '[🇺🇸]_1122'
+  - '[🇺🇸]_1123'
+  - '[🇺🇸]_1125'
+  - '[🇺🇸]_1124'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1040'
-  - '[🇺🇸]_1041'
-  - '[🇺🇸]_1061'
   - '[🇺🇸]_1062'
   - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
@@ -327,8 +317,10 @@ proxy-groups:
   - '[🇦🇶]_1072'
   - '[🇦🇶]_1074'
   - '[🇦🇶]_1075'
-  - '[🇺🇸]_1104'
-  - '[🇺🇸]_1105'
+  - '[🇺🇸]_1122'
+  - '[🇺🇸]_1123'
+  - '[🇺🇸]_1125'
+  - '[🇺🇸]_1124'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
