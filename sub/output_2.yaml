@@ -26,6 +26,21 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇭🇰]_930'
+  server: 156.251.176.11
+  port: 60559
+  type: vless
+  client-fingerprint: chrome
+  uuid: daa094b0-dc6e-3644-b7c3-5d468906c1ee
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /vless?ed=2560
+    headers:
+      Host: ccs.443888.xyz
+  udp: true
 - name: '[🇸🇬]_959'
   server: 159.223.54.93
   port: 80
@@ -39,6 +54,20 @@ proxies:
   tls: false
   ws-headers:
     Host: 159.223.54.93
+  udp: true
+- name: '[🇨🇳]_960'
+  server: 1.tw.zz.xxxxx.x-t-fuckword.network
+  port: 53137
+  type: vmess
+  uuid: 75f4945f-173b-302e-bf82-d959844fc12c
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /ll
+  tls: false
+  ws-headers:
+    Host: open.dingtalk.com
   udp: true
 - name: '[🇺🇸]_984'
   server: 172.64.156.14
@@ -68,25 +97,25 @@ proxies:
   ws-headers:
     Host: ctn.nextvpn.cc
   udp: true
-- name: '[🇺🇸]_999'
-  server: pp1.zhengzhongfeizhu.xyz
-  port: 43960
+- name: '[🇨🇳]_1010'
+  server: 1.kr.zz.xxxxx.x-t-fuckword.network
+  port: 36676
   type: vmess
-  uuid: 0678472b-963d-3cdd-a262-858859a165ee
-  alterId: 1
+  uuid: abf702af-5e86-3c14-9be4-1a299f51f42f
+  alterId: 0
   cipher: auto
   skip-cert-verify: true
-  network: ws
-  ws-path: /j20-hgc2
+  network: tcp
+  ws-path: /ll
   tls: false
   ws-headers:
-    Host: '%7B%22Host%22:%22pp1.zhengzhongfeizhu.xyz%22%7D'
+    Host: open.dingtalk.com
   udp: true
-- name: '[🇨🇳]_1014'
-  server: 3.4.1.fuckppppp.today
-  port: 49126
+- name: '[🇨🇳]_1020'
+  server: hk1.v2.zz.cn.fuckword.club
+  port: 49511
   type: vmess
-  uuid: 7aebb3eb-fc87-37d0-b6bf-3a930b79ce17
+  uuid: b62a7b48-105a-3f1d-9f23-e5132cfa5a12
   alterId: 0
   cipher: auto
   skip-cert-verify: true
@@ -212,11 +241,13 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇭🇰]_930'
   - '[🇸🇬]_959'
+  - '[🇨🇳]_960'
   - '[🇺🇸]_984'
   - '[🇮🇩]_989'
-  - '[🇺🇸]_999'
-  - '[🇨🇳]_1014'
+  - '[🇨🇳]_1010'
+  - '[🇨🇳]_1020'
   - '[🇺🇸]_1026'
   - '[🇺🇸]_1048'
   - '[🇦🇶]_1054'
@@ -231,11 +262,13 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇭🇰]_930'
   - '[🇸🇬]_959'
+  - '[🇨🇳]_960'
   - '[🇺🇸]_984'
   - '[🇮🇩]_989'
-  - '[🇺🇸]_999'
-  - '[🇨🇳]_1014'
+  - '[🇨🇳]_1010'
+  - '[🇨🇳]_1020'
   - '[🇺🇸]_1026'
   - '[🇺🇸]_1048'
   - '[🇦🇶]_1054'
@@ -250,11 +283,13 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇭🇰]_930'
   - '[🇸🇬]_959'
+  - '[🇨🇳]_960'
   - '[🇺🇸]_984'
   - '[🇮🇩]_989'
-  - '[🇺🇸]_999'
-  - '[🇨🇳]_1014'
+  - '[🇨🇳]_1010'
+  - '[🇨🇳]_1020'
   - '[🇺🇸]_1026'
   - '[🇺🇸]_1048'
   - '[🇦🇶]_1054'
@@ -269,11 +304,13 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇭🇰]_930'
   - '[🇸🇬]_959'
+  - '[🇨🇳]_960'
   - '[🇺🇸]_984'
   - '[🇮🇩]_989'
-  - '[🇺🇸]_999'
-  - '[🇨🇳]_1014'
+  - '[🇨🇳]_1010'
+  - '[🇨🇳]_1020'
   - '[🇺🇸]_1026'
   - '[🇺🇸]_1048'
   - '[🇦🇶]_1054'
@@ -286,11 +323,13 @@ proxy-groups:
   type: select
   proxies:
   - REJECT
+  - '[🇭🇰]_930'
   - '[🇸🇬]_959'
+  - '[🇨🇳]_960'
   - '[🇺🇸]_984'
   - '[🇮🇩]_989'
-  - '[🇺🇸]_999'
-  - '[🇨🇳]_1014'
+  - '[🇨🇳]_1010'
+  - '[🇨🇳]_1020'
   - '[🇺🇸]_1026'
   - '[🇺🇸]_1048'
   - '[🇦🇶]_1054'
@@ -305,11 +344,13 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇭🇰]_930'
   - '[🇸🇬]_959'
+  - '[🇨🇳]_960'
   - '[🇺🇸]_984'
   - '[🇮🇩]_989'
-  - '[🇺🇸]_999'
-  - '[🇨🇳]_1014'
+  - '[🇨🇳]_1010'
+  - '[🇨🇳]_1020'
   - '[🇺🇸]_1026'
   - '[🇺🇸]_1048'
   - '[🇦🇶]_1054'
