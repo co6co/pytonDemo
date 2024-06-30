@@ -26,48 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_1061'
-  server: hkd1.quickerlink.xyz
-  port: 443
-  type: vmess
-  uuid: c7b468a9-c7a2-3b74-9c54-fcc73cff754e
-  alterId: 64
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /h6jr23x9h3lqiitg
-  tls: true
-  ws-headers:
-    Host: hkd1.quickerlink.xyz
-  udp: true
-- name: '[🇺🇸]_1062'
-  server: 172.64.32.154
-  port: 2087
-  type: vmess
-  uuid: 5af3315c-2a09-3fa9-b125-f984d87d3f28
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: grpc
-  ws-path: /
-  tls: true
-  ws-headers:
-    Host: 172.64.32.154
-  udp: true
-- name: '[🇺🇸]_1063'
-  server: 172.67.71.122
-  port: 2095
-  type: vmess
-  uuid: 39b3e869-3543-3c21-a2fa-13b83ad49888
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /api/v3/download.getFile
-  tls: false
-  ws-headers:
-    Host: sssub.v2.001.ssrsub.com
-  udp: true
 - name: '[🇦🇶]_1066'
   server: 104.19.47.16
   port: 8080
@@ -159,16 +117,16 @@ proxies:
   http-opts: {}
   name: '[🇺🇸]_1122'
   network: ws
-  port: 37000
-  server: 38.33.19.85
-  servername: www.59653884.xyz
+  port: 38001
+  server: 38.33.34.24
+  servername: www.78274451.xyz
   skip-cert-verify: true
   tls: true
   type: vmess
   uuid: d8ac5cd6-289b-3222-abef-8d0eb6082343
   ws-opts:
     headers:
-      HOST: www.59653884.xyz
+      HOST: www.78274451.xyz
     path: /path/191019072927
   udp: true
 - alterId: 64
@@ -179,15 +137,15 @@ proxies:
   name: '[🇺🇸]_1123'
   network: ws
   port: 38001
-  server: 38.11.20.78
-  servername: www.45174198.xyz
+  server: 38.33.57.19
+  servername: www.40023947.xyz
   skip-cert-verify: true
   tls: true
   type: vmess
   uuid: 42ef1bf2-636a-3103-b10f-351b6792629d
   ws-opts:
     headers:
-      HOST: www.45174198.xyz
+      HOST: www.40023947.xyz
     path: /path/191019072927
   udp: true
 - alterId: 64
@@ -198,15 +156,15 @@ proxies:
   name: '[🇺🇸]_1124'
   network: ws
   port: 37000
-  server: 38.11.60.88
-  servername: www.72795025.xyz
+  server: 38.33.56.45
+  servername: www.93599412.xyz
   skip-cert-verify: true
   tls: true
   type: vmess
   uuid: 703848af-0b92-369b-87b7-67285f39aaf8
   ws-opts:
     headers:
-      HOST: www.72795025.xyz
+      HOST: www.93599412.xyz
     path: /path/191019072927
   udp: true
 - alterId: 64
@@ -216,16 +174,35 @@ proxies:
   http-opts: {}
   name: '[🇺🇸]_1125'
   network: ws
-  port: 37000
-  server: 38.11.60.90
-  servername: www.72795025.xyz
+  port: 38001
+  server: 192.74.231.105
+  servername: www.65320526.xyz
   skip-cert-verify: true
   tls: true
   type: vmess
   uuid: 9a71fc94-eaf5-3d47-88d8-04c3276d76eb
   ws-opts:
     headers:
-      HOST: www.72795025.xyz
+      HOST: www.65320526.xyz
+    path: /path/191019072927
+  udp: true
+- alterId: 64
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1126'
+  network: ws
+  port: 38001
+  server: 192.74.231.110
+  servername: www.65320526.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  uuid: 34fd6dac-5b0f-34fa-a629-529456db0215
+  ws-opts:
+    headers:
+      HOST: www.65320526.xyz
     path: /path/191019072927
   udp: true
 proxy-groups:
@@ -235,9 +212,6 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1061'
-  - '[🇺🇸]_1062'
-  - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
   - '[🇺🇸]_1069'
@@ -248,15 +222,13 @@ proxy-groups:
   - '[🇺🇸]_1123'
   - '[🇺🇸]_1124'
   - '[🇺🇸]_1125'
+  - '[🇺🇸]_1126'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1061'
-  - '[🇺🇸]_1062'
-  - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
   - '[🇺🇸]_1069'
@@ -267,15 +239,13 @@ proxy-groups:
   - '[🇺🇸]_1123'
   - '[🇺🇸]_1124'
   - '[🇺🇸]_1125'
+  - '[🇺🇸]_1126'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1061'
-  - '[🇺🇸]_1062'
-  - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
   - '[🇺🇸]_1069'
@@ -286,15 +256,13 @@ proxy-groups:
   - '[🇺🇸]_1123'
   - '[🇺🇸]_1124'
   - '[🇺🇸]_1125'
+  - '[🇺🇸]_1126'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1061'
-  - '[🇺🇸]_1062'
-  - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
   - '[🇺🇸]_1069'
@@ -305,13 +273,11 @@ proxy-groups:
   - '[🇺🇸]_1123'
   - '[🇺🇸]_1124'
   - '[🇺🇸]_1125'
+  - '[🇺🇸]_1126'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1061'
-  - '[🇺🇸]_1062'
-  - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
   - '[🇺🇸]_1069'
@@ -322,15 +288,13 @@ proxy-groups:
   - '[🇺🇸]_1123'
   - '[🇺🇸]_1124'
   - '[🇺🇸]_1125'
+  - '[🇺🇸]_1126'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1061'
-  - '[🇺🇸]_1062'
-  - '[🇺🇸]_1063'
   - '[🇦🇶]_1066'
   - '[🇦🇶]_1067'
   - '[🇺🇸]_1069'
@@ -341,6 +305,7 @@ proxy-groups:
   - '[🇺🇸]_1123'
   - '[🇺🇸]_1124'
   - '[🇺🇸]_1125'
+  - '[🇺🇸]_1126'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
