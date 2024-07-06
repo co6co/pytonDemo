@@ -28,22 +28,20 @@ dns:
 proxies:
 - alterId: 0
   cipher: auto
-  country: US
   h2-opts: {}
   http-opts: {}
-  name: '[🇺🇸]_1122'
+  name: '[🇸🇪]_1090'
   network: ws
   port: 80
-  server: 172.67.166.118
-  servername: dl2..3.m..wonkacapitano.buzz.
+  server: 65.20.113.203
   skip-cert-verify: true
   type: vmess
-  uuid: d8ac5cd6-289b-3222-abef-8d0eb6082343
+  udp: true
+  uuid: df5e1c27-846a-3bfd-9959-ad78411df83a
   ws-opts:
     headers:
-      HOST: dl2..3.m..wonkacapitano.buzz.
-    path: /vmess
-  udp: true
+      Host: internet.life.com.by
+    path: /Nbs2DSTSkFW6MrrFQHeSDQ7
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -51,40 +49,40 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_1122'
+  - '[🇸🇪]_1090'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1122'
+  - '[🇸🇪]_1090'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1122'
+  - '[🇸🇪]_1090'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_1122'
+  - '[🇸🇪]_1090'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_1122'
+  - '[🇸🇪]_1090'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_1122'
+  - '[🇸🇪]_1090'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
