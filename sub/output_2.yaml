@@ -26,20 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇦🇶]_994'
-  server: 104.19.47.136
-  port: 8080
-  type: vmess
-  uuid: 6f75e4cd-b817-322b-ba5c-cb8866871e35
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /?ed=2048&Telegram🇨🇳 @WangCai2
-  tls: false
-  ws-headers:
-    Host: oiictw.yydsii.com
-  udp: true
 - name: '[🇦🇶]_995'
   server: 104.19.47.54
   port: 8080
@@ -138,20 +124,6 @@ proxies:
   ws-headers:
     Host: hk01.linkitnow.net
   udp: true
-- name: '[🇦🇶]_1014'
-  server: 104.16.67.38
-  port: 8880
-  type: vmess
-  uuid: 25b3164b-5035-3377-961c-a2b241e981da
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: worker-divine-hat-02d6.savofir317.workers.dev
-  udp: true
 - name: '[🇭🇰]_972'
   server: xg1.tcity8.buzz
   port: 10010
@@ -166,6 +138,35 @@ proxies:
   ws-headers:
     Host: xg1.tcity8.buzz
   udp: true
+- name: '[🇦🇶]_1014'
+  server: 104.16.67.38
+  port: 8880
+  type: vmess
+  uuid: 25b3164b-5035-3377-961c-a2b241e981da
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: worker-divine-hat-02d6.savofir317.workers.dev
+  udp: true
+- name: '[🇭🇰]_941'
+  server: 156.251.176.109
+  port: 46010
+  type: vless
+  network: ws
+  uuid: bad9dd94-dd97-3892-a7b6-b18636f3d165
+  skip-cert-verify: true
+  tls: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: ccs.443888.xyz
+    path: /vless?ed=2560
+  udp: true
 - name: '[🇦🇶]_1017'
   server: 104.19.47.178
   port: 8080
@@ -179,48 +180,6 @@ proxies:
   tls: false
   ws-headers:
     Host: oiictw.yydsii.com
-  udp: true
-- name: '[🇭🇰]_991'
-  server: xg3.tcity8.buzz
-  port: 10010
-  type: vmess
-  uuid: 33ca3971-5c0e-33b9-ab40-4e074e832e33
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: xg3.tcity8.buzz
-  udp: true
-- name: '[🇦🇶]_1015'
-  server: 23.162.152.6
-  port: 22324
-  type: vmess
-  uuid: 72ba5e59-136c-3522-80b2-46af872c9095
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: 23.162.152.6
-  udp: true
-- name: '[🇱🇺]_980'
-  server: 23.145.56.36
-  port: 41356
-  type: vmess
-  uuid: d2c283e1-65ea-35d8-b908-631cc9855c78
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: true
-  ws-headers:
-    Host: 23.145.56.36
   udp: true
 - alterId: 64
   cipher: auto
@@ -241,6 +200,34 @@ proxies:
       HOST: www.15314695.xyz
     path: /path/191019072927
   udp: true
+- name: '[🇦🇶]_1015'
+  server: 23.162.152.6
+  port: 22324
+  type: vmess
+  uuid: 72ba5e59-136c-3522-80b2-46af872c9095
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 23.162.152.6
+  udp: true
+- name: '[🇭🇰]_991'
+  server: xg3.tcity8.buzz
+  port: 10010
+  type: vmess
+  uuid: 33ca3971-5c0e-33b9-ab40-4e074e832e33
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: xg3.tcity8.buzz
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -248,7 +235,6 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_994'
   - '[🇦🇶]_995'
   - '[🇺🇸]_996'
   - '[🇺🇸]_1002'
@@ -256,20 +242,19 @@ proxy-groups:
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
   - '[🇦🇶]_1013'
-  - '[🇦🇶]_1014'
   - '[🇭🇰]_972'
+  - '[🇦🇶]_1014'
+  - '[🇭🇰]_941'
   - '[🇦🇶]_1017'
-  - '[🇭🇰]_991'
-  - '[🇦🇶]_1015'
-  - '[🇱🇺]_980'
   - '[🇺🇸]_1044'
+  - '[🇦🇶]_1015'
+  - '[🇭🇰]_991'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_994'
   - '[🇦🇶]_995'
   - '[🇺🇸]_996'
   - '[🇺🇸]_1002'
@@ -277,20 +262,19 @@ proxy-groups:
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
   - '[🇦🇶]_1013'
-  - '[🇦🇶]_1014'
   - '[🇭🇰]_972'
+  - '[🇦🇶]_1014'
+  - '[🇭🇰]_941'
   - '[🇦🇶]_1017'
-  - '[🇭🇰]_991'
-  - '[🇦🇶]_1015'
-  - '[🇱🇺]_980'
   - '[🇺🇸]_1044'
+  - '[🇦🇶]_1015'
+  - '[🇭🇰]_991'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_994'
   - '[🇦🇶]_995'
   - '[🇺🇸]_996'
   - '[🇺🇸]_1002'
@@ -298,20 +282,19 @@ proxy-groups:
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
   - '[🇦🇶]_1013'
-  - '[🇦🇶]_1014'
   - '[🇭🇰]_972'
+  - '[🇦🇶]_1014'
+  - '[🇭🇰]_941'
   - '[🇦🇶]_1017'
-  - '[🇭🇰]_991'
-  - '[🇦🇶]_1015'
-  - '[🇱🇺]_980'
   - '[🇺🇸]_1044'
+  - '[🇦🇶]_1015'
+  - '[🇭🇰]_991'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_994'
   - '[🇦🇶]_995'
   - '[🇺🇸]_996'
   - '[🇺🇸]_1002'
@@ -319,18 +302,17 @@ proxy-groups:
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
   - '[🇦🇶]_1013'
-  - '[🇦🇶]_1014'
   - '[🇭🇰]_972'
+  - '[🇦🇶]_1014'
+  - '[🇭🇰]_941'
   - '[🇦🇶]_1017'
-  - '[🇭🇰]_991'
-  - '[🇦🇶]_1015'
-  - '[🇱🇺]_980'
   - '[🇺🇸]_1044'
+  - '[🇦🇶]_1015'
+  - '[🇭🇰]_991'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_994'
   - '[🇦🇶]_995'
   - '[🇺🇸]_996'
   - '[🇺🇸]_1002'
@@ -338,20 +320,19 @@ proxy-groups:
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
   - '[🇦🇶]_1013'
-  - '[🇦🇶]_1014'
   - '[🇭🇰]_972'
+  - '[🇦🇶]_1014'
+  - '[🇭🇰]_941'
   - '[🇦🇶]_1017'
-  - '[🇭🇰]_991'
-  - '[🇦🇶]_1015'
-  - '[🇱🇺]_980'
   - '[🇺🇸]_1044'
+  - '[🇦🇶]_1015'
+  - '[🇭🇰]_991'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_994'
   - '[🇦🇶]_995'
   - '[🇺🇸]_996'
   - '[🇺🇸]_1002'
@@ -359,13 +340,13 @@ proxy-groups:
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
   - '[🇦🇶]_1013'
-  - '[🇦🇶]_1014'
   - '[🇭🇰]_972'
+  - '[🇦🇶]_1014'
+  - '[🇭🇰]_941'
   - '[🇦🇶]_1017'
-  - '[🇭🇰]_991'
-  - '[🇦🇶]_1015'
-  - '[🇱🇺]_980'
   - '[🇺🇸]_1044'
+  - '[🇦🇶]_1015'
+  - '[🇭🇰]_991'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
