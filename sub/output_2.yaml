@@ -26,6 +26,34 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇺🇸]_1002'
+  server: 172.64.150.8
+  port: 2052
+  type: vmess
+  uuid: b4e9d87f-7ca9-347e-9d1f-3fab0158c37e
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: ybr.redbullplus.xyz
+  udp: true
+- name: '[🇱🇺]_980'
+  server: 23.145.56.36
+  port: 41356
+  type: vmess
+  uuid: d2c283e1-65ea-35d8-b908-631cc9855c78
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: true
+  ws-headers:
+    Host: 23.145.56.36
+  udp: true
 - name: '[🇺🇸]_1007'
   server: 172.64.150.8
   port: 2082
@@ -128,27 +156,13 @@ proxies:
   cipher: auto
   h2-opts: {}
   http-opts: {}
-  name: '[🇺🇸]_1020'
-  network: ws
-  port: 48889
-  server: 23.94.100.187
-  skip-cert-verify: true
-  type: vmess
-  uuid: 4e40884e-f1bf-3282-8e4e-51637ae05df9
-  ws-opts:
-    path: /awd
-  udp: true
-- alterId: 0
-  cipher: auto
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇺🇸]_1021'
+  name: '[🇺🇸]_1028'
   network: ws
   port: 12723
   server: 23.94.100.187
   skip-cert-verify: true
   type: vmess
-  uuid: 9322a6ab-b7e9-3e06-b017-731410fa1dbb
+  uuid: 11ff830a-2461-3c16-80d6-94b8270e6ea5
   ws-opts:
     path: /adw
   udp: true
@@ -166,38 +180,48 @@ proxies:
   ws-headers:
     Host: 23.162.152.6
   udp: true
-- alterId: 32
-  cipher: auto
-  country: ' NL'
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇺🇸]_1025'
-  network: ws
-  port: 443
-  server: 77.83.141.171
-  servername: vc.fly.dev
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 807115d4-c65c-3bbd-87a6-006cd93d6ed3
-  ws-opts:
-    headers:
-      HOST: vc.fly.dev
-    path: /vc
-  udp: true
 - alterId: 0
   cipher: auto
   h2-opts: {}
   http-opts: {}
-  name: '[🇺🇸]_1022'
+  name: '[🇺🇸]_1029'
   network: ws
   port: 22210
   server: 23.94.100.187
   skip-cert-verify: true
   type: vmess
-  uuid: a4cb2e12-4723-3077-bef0-204425d726c1
+  uuid: 545f979b-4dd5-392c-ae95-61395f240b0b
   ws-opts:
     path: /dwax
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1054'
+  network: ws
+  port: 52008
+  server: 38.95.119.243
+  skip-cert-verify: true
+  type: vmess
+  uuid: 4d9a5174-221d-3033-b261-0744c953acd2
+  ws-opts:
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1030'
+  network: ws
+  port: 48889
+  server: 23.94.100.187
+  skip-cert-verify: true
+  type: vmess
+  uuid: 10508790-fc00-3d82-9bd0-323632b2d389
+  ws-opts:
+    path: /awd
   udp: true
 - name: '[🇭🇰]_991'
   server: xg3.tcity8.buzz
@@ -219,25 +243,18 @@ proxies:
   h2-opts: {}
   http-opts: {}
   name: '[🇺🇸]_1053'
-  network: tcp
-  port: 39771
-  server: 198.2.234.98
+  network: ws
+  port: 38002
+  server: 137.175.1.228
+  servername: www.33859315.xyz
   skip-cert-verify: true
+  tls: true
   type: vmess
   uuid: e4fe573e-46cd-345d-b763-b3104a35c1de
-  udp: true
-- alterId: 0
-  cipher: auto
-  country: KR
-  h2-opts: {}
-  http-opts: {}
-  name: '[🇰🇷]_1024'
-  network: tcp
-  port: 26022
-  server: 152.70.39.9
-  skip-cert-verify: true
-  type: vmess
-  uuid: cc72596a-ee80-3294-9592-9ab36b06a646
+  ws-opts:
+    headers:
+      HOST: www.33859315.xyz
+    path: /path/191019072927
   udp: true
 proxy-groups:
 - name: 🚀 节点选择
@@ -246,6 +263,8 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇺🇸]_1002'
+  - '[🇱🇺]_980'
   - '[🇺🇸]_1007'
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
@@ -253,20 +272,21 @@ proxy-groups:
   - '[🇦🇶]_1014'
   - '[🇦🇶]_1017'
   - '[🇭🇰]_972'
-  - '[🇺🇸]_1020'
-  - '[🇺🇸]_1021'
+  - '[🇺🇸]_1028'
   - '[🇦🇶]_1015'
-  - '[🇺🇸]_1025'
-  - '[🇺🇸]_1022'
+  - '[🇺🇸]_1029'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1030'
   - '[🇭🇰]_991'
   - '[🇺🇸]_1053'
-  - '[🇰🇷]_1024'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1002'
+  - '[🇱🇺]_980'
   - '[🇺🇸]_1007'
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
@@ -274,20 +294,21 @@ proxy-groups:
   - '[🇦🇶]_1014'
   - '[🇦🇶]_1017'
   - '[🇭🇰]_972'
-  - '[🇺🇸]_1020'
-  - '[🇺🇸]_1021'
+  - '[🇺🇸]_1028'
   - '[🇦🇶]_1015'
-  - '[🇺🇸]_1025'
-  - '[🇺🇸]_1022'
+  - '[🇺🇸]_1029'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1030'
   - '[🇭🇰]_991'
   - '[🇺🇸]_1053'
-  - '[🇰🇷]_1024'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1002'
+  - '[🇱🇺]_980'
   - '[🇺🇸]_1007'
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
@@ -295,20 +316,21 @@ proxy-groups:
   - '[🇦🇶]_1014'
   - '[🇦🇶]_1017'
   - '[🇭🇰]_972'
-  - '[🇺🇸]_1020'
-  - '[🇺🇸]_1021'
+  - '[🇺🇸]_1028'
   - '[🇦🇶]_1015'
-  - '[🇺🇸]_1025'
-  - '[🇺🇸]_1022'
+  - '[🇺🇸]_1029'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1030'
   - '[🇭🇰]_991'
   - '[🇺🇸]_1053'
-  - '[🇰🇷]_1024'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
+  - '[🇺🇸]_1002'
+  - '[🇱🇺]_980'
   - '[🇺🇸]_1007'
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
@@ -316,18 +338,19 @@ proxy-groups:
   - '[🇦🇶]_1014'
   - '[🇦🇶]_1017'
   - '[🇭🇰]_972'
-  - '[🇺🇸]_1020'
-  - '[🇺🇸]_1021'
+  - '[🇺🇸]_1028'
   - '[🇦🇶]_1015'
-  - '[🇺🇸]_1025'
-  - '[🇺🇸]_1022'
+  - '[🇺🇸]_1029'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1030'
   - '[🇭🇰]_991'
   - '[🇺🇸]_1053'
-  - '[🇰🇷]_1024'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇺🇸]_1002'
+  - '[🇱🇺]_980'
   - '[🇺🇸]_1007'
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
@@ -335,20 +358,21 @@ proxy-groups:
   - '[🇦🇶]_1014'
   - '[🇦🇶]_1017'
   - '[🇭🇰]_972'
-  - '[🇺🇸]_1020'
-  - '[🇺🇸]_1021'
+  - '[🇺🇸]_1028'
   - '[🇦🇶]_1015'
-  - '[🇺🇸]_1025'
-  - '[🇺🇸]_1022'
+  - '[🇺🇸]_1029'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1030'
   - '[🇭🇰]_991'
   - '[🇺🇸]_1053'
-  - '[🇰🇷]_1024'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇺🇸]_1002'
+  - '[🇱🇺]_980'
   - '[🇺🇸]_1007'
   - '[🇺🇸]_1008'
   - '[🇦🇶]_1011'
@@ -356,14 +380,13 @@ proxy-groups:
   - '[🇦🇶]_1014'
   - '[🇦🇶]_1017'
   - '[🇭🇰]_972'
-  - '[🇺🇸]_1020'
-  - '[🇺🇸]_1021'
+  - '[🇺🇸]_1028'
   - '[🇦🇶]_1015'
-  - '[🇺🇸]_1025'
-  - '[🇺🇸]_1022'
+  - '[🇺🇸]_1029'
+  - '[🇺🇸]_1054'
+  - '[🇺🇸]_1030'
   - '[🇭🇰]_991'
   - '[🇺🇸]_1053'
-  - '[🇰🇷]_1024'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
