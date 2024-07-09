@@ -26,6 +26,34 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
+- name: '[🇷🇺]_1044'
+  server: 212.41.15.119
+  port: 443
+  type: vless
+  uuid: 288e3781-c34d-32ea-892e-87ec10c5d8a2
+  tls: true
+  servername: juzibaipiao.5112233.xyz
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: juzibaipiao.5112233.xyz
+  udp: true
+- name: '[🇰🇷]_1021'
+  server: 132.226.229.248
+  port: 34237
+  type: vless
+  network: ws
+  uuid: 7a2248ad-e28f-3596-9b71-e623bcae59cd
+  skip-cert-verify: true
+  tls: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: ccs.443888.xyz
+    path: /vless?ed=2560
+  udp: true
 - name: '[🇰🇷]_1022'
   server: 125.129.129.66
   port: 12245
@@ -54,25 +82,28 @@ proxies:
     headers:
       Host: ccs.443888.xyz
   udp: true
-- name: '[🇷🇺]_1044'
-  server: 212.41.15.119
-  port: 443
-  type: vless
-  uuid: 288e3781-c34d-32ea-892e-87ec10c5d8a2
-  tls: true
-  servername: juzibaipiao.5112233.xyz
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: juzibaipiao.5112233.xyz
-  udp: true
 - name: '[🇸🇬]_1050'
   server: 47.236.10.182
   port: 2087
   type: vless
   client-fingerprint: random
   uuid: ed2cab40-e13b-36d9-bdcc-de5ef1b1ef9c
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: mositr.freenods.sbs
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: mositr.freenods.sbs
+  udp: true
+- name: '[🇸🇬]_1051'
+  server: 47.236.189.92
+  port: 2053
+  type: vless
+  client-fingerprint: random
+  uuid: f4b34e59-14a1-3481-a3fd-31c3b26e6d8e
   tls: true
   tfo: false
   skip-cert-verify: true
@@ -96,22 +127,6 @@ proxies:
     path: /?ed=2560
     headers:
       Host: go.jp980.cloudns.org
-- name: '[🇸🇬]_1051'
-  server: 47.236.189.92
-  port: 2053
-  type: vless
-  client-fingerprint: random
-  uuid: f4b34e59-14a1-3481-a3fd-31c3b26e6d8e
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: mositr.freenods.sbs
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: mositr.freenods.sbs
-  udp: true
 - name: '[🇸🇬]_1053'
   server: 47.236.232.148
   port: 8443
@@ -165,41 +180,11 @@ proxies:
     path: /?ed=2048
     headers:
       Host: juzibaipiao.5112233.xyz
-- name: '[🇸🇬]_1056'
-  server: 47.236.75.152
-  port: 2053
-  type: vless
-  client-fingerprint: random
-  uuid: 40566992-492a-3263-84d2-9f2c4771c67e
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  servername: mositr.freenods.sbs
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: mositr.freenods.sbs
-  udp: true
 - name: '[🇭🇰]_1065'
   server: 27.50.49.232
   port: 8443
   type: vless
   uuid: b7fa0284-0d2d-3ea2-b5f8-163d5cdf517e
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: juzibaipiao.5112233.xyz
-  network: ws
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: juzibaipiao.5112233.xyz
-- name: '[🇭🇰]_1066'
-  server: 27.50.48.222
-  port: 443
-  type: vless
-  uuid: 5cb3bab2-10f6-3b13-b146-977a46a73e21
   udp: true
   tls: true
   skip-cert-verify: false
@@ -222,6 +207,36 @@ proxies:
     headers:
       Host: mositr.freenods.sbs
   udp: true
+- name: '[🇭🇰]_1066'
+  server: 27.50.48.222
+  port: 443
+  type: vless
+  uuid: 5cb3bab2-10f6-3b13-b146-977a46a73e21
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: juzibaipiao.5112233.xyz
+  network: ws
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: juzibaipiao.5112233.xyz
+- name: '[🇸🇬]_1056'
+  server: 47.236.75.152
+  port: 2053
+  type: vless
+  client-fingerprint: random
+  uuid: 40566992-492a-3263-84d2-9f2c4771c67e
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: mositr.freenods.sbs
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: mositr.freenods.sbs
+  udp: true
 - name: '[🇸🇬]_1057'
   server: 47.236.232.148
   port: 2083
@@ -235,12 +250,25 @@ proxies:
     path: /?ed=2560
     headers:
       Host: go.jp980.cloudns.org
-- name: '[🇺🇸]_1069'
-  server: 38.59.240.180
-  port: 47403
+- name: '[🇸🇬]_1058'
+  server: 8.219.124.227
+  port: 2087
   type: vless
   udp: true
-  uuid: 6632b394-b1d8-35fb-bd6f-a307acc6d519
+  uuid: 48fa47ec-1ae4-3736-b526-f8cf7f4acc38
+  network: ws
+  tls: true
+  servername: go.jp980.cloudns.org
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go.jp980.cloudns.org
+- name: '[🇸🇬]_1059'
+  server: 47.236.145.85
+  port: 2087
+  type: vless
+  udp: true
+  uuid: 846a9443-795f-3839-b332-56da02b5b08a
   network: ws
   tls: true
   servername: go.jp980.cloudns.org
@@ -301,32 +329,6 @@ proxies:
     path: /?ed=2048
     headers:
       Host: juzibaipiao.5112233.xyz
-- name: '[🇸🇬]_1058'
-  server: 8.219.124.227
-  port: 2087
-  type: vless
-  udp: true
-  uuid: 48fa47ec-1ae4-3736-b526-f8cf7f4acc38
-  network: ws
-  tls: true
-  servername: go.jp980.cloudns.org
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: go.jp980.cloudns.org
-- name: '[🇺🇸]_1076'
-  server: 38.59.244.77
-  port: 28555
-  type: vless
-  udp: true
-  uuid: faff362b-2625-3188-963b-dac7916a2982
-  network: ws
-  tls: true
-  servername: go.jp980.cloudns.org
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: go.jp980.cloudns.org
 - name: '[🇺🇸]_1077'
   server: 155.46.213.100
   port: 80
@@ -340,45 +342,6 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
-- name: '[🇸🇬]_1060'
-  server: 47.236.80.110
-  port: 2096
-  type: vless
-  uuid: 1db8ad0e-7948-3a34-9a84-f2a1731cadd5
-  tls: true
-  servername: cfed.tgzdyz2.top
-  network: ws
-  ws-opts:
-    path: /tg@zdyz2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
-- name: '[🇸🇬]_1059'
-  server: 47.236.145.85
-  port: 2087
-  type: vless
-  udp: true
-  uuid: 846a9443-795f-3839-b332-56da02b5b08a
-  network: ws
-  tls: true
-  servername: go.jp980.cloudns.org
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: go.jp980.cloudns.org
-- name: '[🇸🇬]_1061'
-  server: 8.219.111.147
-  port: 443
-  type: vless
-  uuid: eb3739da-244b-3546-b685-3f641a47b987
-  tls: true
-  servername: cfed.tgzdyz2.top
-  network: ws
-  ws-opts:
-    path: /tg@zdyz2
-    headers:
-      Host: cfed.tgzdyz2.top
-  udp: true
 - name: '[🇺🇸]_1078'
   server: 66.81.247.161
   port: 80
@@ -391,19 +354,6 @@ proxies:
     path: Twitterfreecodes
     headers:
       Host: a.ssll.gay
-  udp: true
-- name: '[🇸🇬]_1062'
-  server: 8.222.204.128
-  port: 443
-  type: vless
-  uuid: 8909a13b-1258-3c40-9605-9cd253050fba
-  tls: true
-  servername: dns68.putata.eu.org
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: dns68.putata.eu.org
   udp: true
 - name: '[🇺🇸]_1079'
   server: 204.93.210.208
@@ -431,6 +381,19 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
+- name: '[🇺🇸]_1069'
+  server: 38.59.240.180
+  port: 47403
+  type: vless
+  udp: true
+  uuid: 6632b394-b1d8-35fb-bd6f-a307acc6d519
+  network: ws
+  tls: true
+  servername: go.jp980.cloudns.org
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go.jp980.cloudns.org
 - name: '[🇺🇸]_1082'
   server: 204.93.210.46
   port: 80
@@ -458,6 +421,19 @@ proxies:
     path: /?ed=2048
     headers:
       Host: juzibaipiao.5112233.xyz
+- name: '[🇺🇸]_1076'
+  server: 38.59.244.77
+  port: 28555
+  type: vless
+  udp: true
+  uuid: faff362b-2625-3188-963b-dac7916a2982
+  network: ws
+  tls: true
+  servername: go.jp980.cloudns.org
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go.jp980.cloudns.org
 - name: '[🇺🇸]_1085'
   server: 216.205.52.109
   port: 2083
@@ -485,19 +461,6 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
-- name: '[🇺🇸]_1081'
-  server: 43.153.103.203
-  port: 443
-  type: vless
-  udp: true
-  uuid: 177a6c55-4cff-38e8-9884-f2b5e197846a
-  network: ws
-  tls: true
-  servername: go.jp980.cloudns.org
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: go.jp980.cloudns.org
 - name: '[🇺🇸]_1087'
   server: 204.93.210.49
   port: 2096
@@ -511,12 +474,12 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
-- name: '[🇺🇸]_1083'
-  server: 43.153.80.208
+- name: '[🇺🇸]_1081'
+  server: 43.153.103.203
   port: 443
   type: vless
   udp: true
-  uuid: 64628834-8af6-3fc5-8762-7d110a74bcdb
+  uuid: 177a6c55-4cff-38e8-9884-f2b5e197846a
   network: ws
   tls: true
   servername: go.jp980.cloudns.org
@@ -524,6 +487,32 @@ proxies:
     path: /?ed=2560
     headers:
       Host: go.jp980.cloudns.org
+- name: '[🇸🇬]_1060'
+  server: 47.236.80.110
+  port: 2096
+  type: vless
+  uuid: 1db8ad0e-7948-3a34-9a84-f2a1731cadd5
+  tls: true
+  servername: cfed.tgzdyz2.top
+  network: ws
+  ws-opts:
+    path: /tg@zdyz2
+    headers:
+      Host: cfed.tgzdyz2.top
+  udp: true
+- name: '[🇸🇬]_1061'
+  server: 8.219.111.147
+  port: 443
+  type: vless
+  uuid: eb3739da-244b-3546-b685-3f641a47b987
+  tls: true
+  servername: cfed.tgzdyz2.top
+  network: ws
+  ws-opts:
+    path: /tg@zdyz2
+    headers:
+      Host: cfed.tgzdyz2.top
+  udp: true
 - name: '[🇺🇸]_1090'
   server: 167.68.11.48
   port: 443
@@ -630,6 +619,19 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
+- name: '[🇸🇬]_1062'
+  server: 8.222.204.128
+  port: 443
+  type: vless
+  uuid: 8909a13b-1258-3c40-9605-9cd253050fba
+  tls: true
+  servername: dns68.putata.eu.org
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: dns68.putata.eu.org
+  udp: true
 - name: '[🇺🇸]_1099'
   server: 204.93.210.184
   port: 8443
@@ -643,6 +645,19 @@ proxies:
     headers:
       Host: a.ssll.gay
   udp: true
+- name: '[🇺🇸]_1083'
+  server: 43.153.80.208
+  port: 443
+  type: vless
+  udp: true
+  uuid: 64628834-8af6-3fc5-8762-7d110a74bcdb
+  network: ws
+  tls: true
+  servername: go.jp980.cloudns.org
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go.jp980.cloudns.org
 - name: '[🇺🇸]_1100'
   server: 155.46.213.37
   port: 443
@@ -655,19 +670,6 @@ proxies:
     path: tg@zdyz2
     headers:
       Host: cfed.tgzdyz2.top
-  udp: true
-- name: '[🇸🇬]_1063'
-  server: 168.138.160.54
-  port: 19081
-  type: vless
-  uuid: ab4911ea-6162-33ab-8117-bc728105c180
-  tls: true
-  servername: a.ssll.gay
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: a.ssll.gay
   udp: true
 - name: '[🇺🇸]_1101'
   server: 155.46.213.9
@@ -748,19 +750,6 @@ proxies:
     headers:
       Host: cfed.tgzdyz2.top
   udp: true
-- name: '[🇹🇼]_1068'
-  server: 35.229.179.98
-  port: 25775
-  type: vless
-  udp: true
-  uuid: 746f85f2-4269-31fa-8d80-c54174286a03
-  network: ws
-  tls: true
-  servername: go.jp980.cloudns.org
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: go.jp980.cloudns.org
 - name: '[🇺🇸]_1115'
   server: hkd1.quickerlink.xyz
   port: 443
@@ -775,12 +764,128 @@ proxies:
   ws-headers:
     Host: hkd1.quickerlink.xyz
   udp: true
-- name: '[🇭🇰]_1089'
-  server: 156.251.176.11
-  port: 60559
+- name: '[🇸🇬]_1063'
+  server: 168.138.160.54
+  port: 19081
+  type: vless
+  uuid: ab4911ea-6162-33ab-8117-bc728105c180
+  tls: true
+  servername: a.ssll.gay
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: a.ssll.gay
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: NL
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇳🇱]_1127'
+  network: ws
+  port: 80
+  server: 188.114.96.3
+  servername: 127.0.0.1.kleksacademy..ak..wonkacapitano.buzz.
+  skip-cert-verify: true
+  type: vmess
+  uuid: d135220f-d9c1-321b-8cd0-0615db8944fe
+  ws-opts:
+    headers:
+      HOST: 127.0.0.1.kleksacademy..ak..wonkacapitano.buzz.
+    path: /vmess
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1132'
+  network: ws
+  port: 8080
+  server: 172.67.172.246
+  servername: oiictw.yydsii.com
+  skip-cert-verify: true
+  type: vmess
+  uuid: 15893ec0-e388-310b-9616-33cd5f056fc0
+  ws-opts:
+    headers:
+      HOST: oiictw.yydsii.com
+    path: /
+  udp: true
+- name: '[🇹🇼]_1068'
+  server: 35.229.179.98
+  port: 25775
+  type: vless
+  udp: true
+  uuid: 746f85f2-4269-31fa-8d80-c54174286a03
+  network: ws
+  tls: true
+  servername: go.jp980.cloudns.org
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: go.jp980.cloudns.org
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1133'
+  network: ws
+  port: 2082
+  server: c3.v2raybrasil.cloud
+  servername: ybr.redbullplus.xyz
+  skip-cert-verify: true
+  type: vmess
+  uuid: c4fc83d5-af78-303e-a36a-45d9d20abb0d
+  ws-opts:
+    headers:
+      HOST: ybr.redbullplus.xyz
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1134'
+  network: ws
+  port: 8080
+  server: 172.67.169.189
+  servername: oiictw.yydsii.com
+  skip-cert-verify: true
+  type: vmess
+  uuid: 398e48a8-9d86-37d0-9f42-43ade62d8cd5
+  ws-opts:
+    headers:
+      HOST: oiictw.yydsii.com
+    path: /
+  udp: true
+- alterId: 0
+  cipher: auto
+  country: US
+  h2-opts: {}
+  http-opts: {}
+  name: '[🇺🇸]_1135'
+  network: ws
+  port: 2052
+  server: 172.64.150.8
+  servername: ybr.redbullplus.xyz
+  skip-cert-verify: true
+  type: vmess
+  uuid: 214ad633-e45e-3ce8-ac0c-76fa83033ab9
+  ws-opts:
+    headers:
+      HOST: ybr.redbullplus.xyz
+    path: /
+  udp: true
+- name: '[🇭🇰]_1088'
+  server: 156.251.176.112
+  port: 38337
   type: vless
   client-fingerprint: chrome
-  uuid: 0597f385-a0da-3501-b8b8-72e1812ce572
+  uuid: 05465960-647c-3752-b663-186542e9f4d3
   tls: true
   tfo: false
   skip-cert-verify: true
@@ -790,12 +895,12 @@ proxies:
     headers:
       Host: ccs.443888.xyz
   udp: true
-- name: '[🇭🇰]_1088'
-  server: 156.251.176.112
-  port: 38337
+- name: '[🇭🇰]_1089'
+  server: 156.251.176.11
+  port: 60559
   type: vless
   client-fingerprint: chrome
-  uuid: 05465960-647c-3752-b663-186542e9f4d3
+  uuid: 0597f385-a0da-3501-b8b8-72e1812ce572
   tls: true
   tfo: false
   skip-cert-verify: true
@@ -827,43 +932,42 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
+  - '[🇷🇺]_1044'
+  - '[🇰🇷]_1021'
   - '[🇰🇷]_1022'
   - '[🇰🇷]_1020'
-  - '[🇷🇺]_1044'
   - '[🇸🇬]_1050'
-  - '[🇸🇬]_1052'
   - '[🇸🇬]_1051'
+  - '[🇸🇬]_1052'
   - '[🇸🇬]_1053'
   - '[🇸🇬]_1054'
   - '[🇸🇬]_1055'
   - '[🇭🇰]_1064'
-  - '[🇸🇬]_1056'
   - '[🇭🇰]_1065'
-  - '[🇭🇰]_1066'
   - '[🇭🇰]_1067'
+  - '[🇭🇰]_1066'
+  - '[🇸🇬]_1056'
   - '[🇸🇬]_1057'
-  - '[🇺🇸]_1069'
+  - '[🇸🇬]_1058'
+  - '[🇸🇬]_1059'
   - '[🇺🇸]_1072'
   - '[🇺🇸]_1073'
   - '[🇺🇸]_1074'
   - '[🇺🇸]_1075'
-  - '[🇸🇬]_1058'
-  - '[🇺🇸]_1076'
   - '[🇺🇸]_1077'
-  - '[🇸🇬]_1060'
-  - '[🇸🇬]_1059'
-  - '[🇸🇬]_1061'
   - '[🇺🇸]_1078'
-  - '[🇸🇬]_1062'
   - '[🇺🇸]_1079'
   - '[🇺🇸]_1080'
+  - '[🇺🇸]_1069'
   - '[🇺🇸]_1082'
   - '[🇺🇸]_1084'
+  - '[🇺🇸]_1076'
   - '[🇺🇸]_1085'
   - '[🇺🇸]_1086'
-  - '[🇺🇸]_1081'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1083'
+  - '[🇺🇸]_1081'
+  - '[🇸🇬]_1060'
+  - '[🇸🇬]_1061'
   - '[🇺🇸]_1090'
   - '[🇺🇸]_1091'
   - '[🇺🇸]_1092'
@@ -872,19 +976,26 @@ proxy-groups:
   - '[🇺🇸]_1096'
   - '[🇺🇸]_1097'
   - '[🇺🇸]_1098'
+  - '[🇸🇬]_1062'
   - '[🇺🇸]_1099'
+  - '[🇺🇸]_1083'
   - '[🇺🇸]_1100'
-  - '[🇸🇬]_1063'
   - '[🇺🇸]_1101'
   - '[🇺🇸]_1102'
   - '[🇺🇸]_1103'
   - '[🇺🇸]_1104'
   - '[🇺🇸]_1105'
   - '[🇺🇸]_1106'
-  - '[🇹🇼]_1068'
   - '[🇺🇸]_1115'
-  - '[🇭🇰]_1089'
+  - '[🇸🇬]_1063'
+  - '[🇳🇱]_1127'
+  - '[🇺🇸]_1132'
+  - '[🇹🇼]_1068'
+  - '[🇺🇸]_1133'
+  - '[🇺🇸]_1134'
+  - '[🇺🇸]_1135'
   - '[🇭🇰]_1088'
+  - '[🇭🇰]_1089'
   - '[🇭🇰]_1094'
 - name: 🎯 负载均衡
   type: load-balance
@@ -892,43 +1003,42 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇷🇺]_1044'
+  - '[🇰🇷]_1021'
   - '[🇰🇷]_1022'
   - '[🇰🇷]_1020'
-  - '[🇷🇺]_1044'
   - '[🇸🇬]_1050'
-  - '[🇸🇬]_1052'
   - '[🇸🇬]_1051'
+  - '[🇸🇬]_1052'
   - '[🇸🇬]_1053'
   - '[🇸🇬]_1054'
   - '[🇸🇬]_1055'
   - '[🇭🇰]_1064'
-  - '[🇸🇬]_1056'
   - '[🇭🇰]_1065'
-  - '[🇭🇰]_1066'
   - '[🇭🇰]_1067'
+  - '[🇭🇰]_1066'
+  - '[🇸🇬]_1056'
   - '[🇸🇬]_1057'
-  - '[🇺🇸]_1069'
+  - '[🇸🇬]_1058'
+  - '[🇸🇬]_1059'
   - '[🇺🇸]_1072'
   - '[🇺🇸]_1073'
   - '[🇺🇸]_1074'
   - '[🇺🇸]_1075'
-  - '[🇸🇬]_1058'
-  - '[🇺🇸]_1076'
   - '[🇺🇸]_1077'
-  - '[🇸🇬]_1060'
-  - '[🇸🇬]_1059'
-  - '[🇸🇬]_1061'
   - '[🇺🇸]_1078'
-  - '[🇸🇬]_1062'
   - '[🇺🇸]_1079'
   - '[🇺🇸]_1080'
+  - '[🇺🇸]_1069'
   - '[🇺🇸]_1082'
   - '[🇺🇸]_1084'
+  - '[🇺🇸]_1076'
   - '[🇺🇸]_1085'
   - '[🇺🇸]_1086'
-  - '[🇺🇸]_1081'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1083'
+  - '[🇺🇸]_1081'
+  - '[🇸🇬]_1060'
+  - '[🇸🇬]_1061'
   - '[🇺🇸]_1090'
   - '[🇺🇸]_1091'
   - '[🇺🇸]_1092'
@@ -937,19 +1047,26 @@ proxy-groups:
   - '[🇺🇸]_1096'
   - '[🇺🇸]_1097'
   - '[🇺🇸]_1098'
+  - '[🇸🇬]_1062'
   - '[🇺🇸]_1099'
+  - '[🇺🇸]_1083'
   - '[🇺🇸]_1100'
-  - '[🇸🇬]_1063'
   - '[🇺🇸]_1101'
   - '[🇺🇸]_1102'
   - '[🇺🇸]_1103'
   - '[🇺🇸]_1104'
   - '[🇺🇸]_1105'
   - '[🇺🇸]_1106'
-  - '[🇹🇼]_1068'
   - '[🇺🇸]_1115'
-  - '[🇭🇰]_1089'
+  - '[🇸🇬]_1063'
+  - '[🇳🇱]_1127'
+  - '[🇺🇸]_1132'
+  - '[🇹🇼]_1068'
+  - '[🇺🇸]_1133'
+  - '[🇺🇸]_1134'
+  - '[🇺🇸]_1135'
   - '[🇭🇰]_1088'
+  - '[🇭🇰]_1089'
   - '[🇭🇰]_1094'
 - name: ♻️ 自动选择
   type: fallback
@@ -957,43 +1074,42 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇷🇺]_1044'
+  - '[🇰🇷]_1021'
   - '[🇰🇷]_1022'
   - '[🇰🇷]_1020'
-  - '[🇷🇺]_1044'
   - '[🇸🇬]_1050'
-  - '[🇸🇬]_1052'
   - '[🇸🇬]_1051'
+  - '[🇸🇬]_1052'
   - '[🇸🇬]_1053'
   - '[🇸🇬]_1054'
   - '[🇸🇬]_1055'
   - '[🇭🇰]_1064'
-  - '[🇸🇬]_1056'
   - '[🇭🇰]_1065'
-  - '[🇭🇰]_1066'
   - '[🇭🇰]_1067'
+  - '[🇭🇰]_1066'
+  - '[🇸🇬]_1056'
   - '[🇸🇬]_1057'
-  - '[🇺🇸]_1069'
+  - '[🇸🇬]_1058'
+  - '[🇸🇬]_1059'
   - '[🇺🇸]_1072'
   - '[🇺🇸]_1073'
   - '[🇺🇸]_1074'
   - '[🇺🇸]_1075'
-  - '[🇸🇬]_1058'
-  - '[🇺🇸]_1076'
   - '[🇺🇸]_1077'
-  - '[🇸🇬]_1060'
-  - '[🇸🇬]_1059'
-  - '[🇸🇬]_1061'
   - '[🇺🇸]_1078'
-  - '[🇸🇬]_1062'
   - '[🇺🇸]_1079'
   - '[🇺🇸]_1080'
+  - '[🇺🇸]_1069'
   - '[🇺🇸]_1082'
   - '[🇺🇸]_1084'
+  - '[🇺🇸]_1076'
   - '[🇺🇸]_1085'
   - '[🇺🇸]_1086'
-  - '[🇺🇸]_1081'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1083'
+  - '[🇺🇸]_1081'
+  - '[🇸🇬]_1060'
+  - '[🇸🇬]_1061'
   - '[🇺🇸]_1090'
   - '[🇺🇸]_1091'
   - '[🇺🇸]_1092'
@@ -1002,19 +1118,26 @@ proxy-groups:
   - '[🇺🇸]_1096'
   - '[🇺🇸]_1097'
   - '[🇺🇸]_1098'
+  - '[🇸🇬]_1062'
   - '[🇺🇸]_1099'
+  - '[🇺🇸]_1083'
   - '[🇺🇸]_1100'
-  - '[🇸🇬]_1063'
   - '[🇺🇸]_1101'
   - '[🇺🇸]_1102'
   - '[🇺🇸]_1103'
   - '[🇺🇸]_1104'
   - '[🇺🇸]_1105'
   - '[🇺🇸]_1106'
-  - '[🇹🇼]_1068'
   - '[🇺🇸]_1115'
-  - '[🇭🇰]_1089'
+  - '[🇸🇬]_1063'
+  - '[🇳🇱]_1127'
+  - '[🇺🇸]_1132'
+  - '[🇹🇼]_1068'
+  - '[🇺🇸]_1133'
+  - '[🇺🇸]_1134'
+  - '[🇺🇸]_1135'
   - '[🇭🇰]_1088'
+  - '[🇭🇰]_1089'
   - '[🇭🇰]_1094'
 - name: 🔰 延迟最低
   type: url-test
@@ -1022,43 +1145,42 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
+  - '[🇷🇺]_1044'
+  - '[🇰🇷]_1021'
   - '[🇰🇷]_1022'
   - '[🇰🇷]_1020'
-  - '[🇷🇺]_1044'
   - '[🇸🇬]_1050'
-  - '[🇸🇬]_1052'
   - '[🇸🇬]_1051'
+  - '[🇸🇬]_1052'
   - '[🇸🇬]_1053'
   - '[🇸🇬]_1054'
   - '[🇸🇬]_1055'
   - '[🇭🇰]_1064'
-  - '[🇸🇬]_1056'
   - '[🇭🇰]_1065'
-  - '[🇭🇰]_1066'
   - '[🇭🇰]_1067'
+  - '[🇭🇰]_1066'
+  - '[🇸🇬]_1056'
   - '[🇸🇬]_1057'
-  - '[🇺🇸]_1069'
+  - '[🇸🇬]_1058'
+  - '[🇸🇬]_1059'
   - '[🇺🇸]_1072'
   - '[🇺🇸]_1073'
   - '[🇺🇸]_1074'
   - '[🇺🇸]_1075'
-  - '[🇸🇬]_1058'
-  - '[🇺🇸]_1076'
   - '[🇺🇸]_1077'
-  - '[🇸🇬]_1060'
-  - '[🇸🇬]_1059'
-  - '[🇸🇬]_1061'
   - '[🇺🇸]_1078'
-  - '[🇸🇬]_1062'
   - '[🇺🇸]_1079'
   - '[🇺🇸]_1080'
+  - '[🇺🇸]_1069'
   - '[🇺🇸]_1082'
   - '[🇺🇸]_1084'
+  - '[🇺🇸]_1076'
   - '[🇺🇸]_1085'
   - '[🇺🇸]_1086'
-  - '[🇺🇸]_1081'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1083'
+  - '[🇺🇸]_1081'
+  - '[🇸🇬]_1060'
+  - '[🇸🇬]_1061'
   - '[🇺🇸]_1090'
   - '[🇺🇸]_1091'
   - '[🇺🇸]_1092'
@@ -1067,61 +1189,67 @@ proxy-groups:
   - '[🇺🇸]_1096'
   - '[🇺🇸]_1097'
   - '[🇺🇸]_1098'
+  - '[🇸🇬]_1062'
   - '[🇺🇸]_1099'
+  - '[🇺🇸]_1083'
   - '[🇺🇸]_1100'
-  - '[🇸🇬]_1063'
   - '[🇺🇸]_1101'
   - '[🇺🇸]_1102'
   - '[🇺🇸]_1103'
   - '[🇺🇸]_1104'
   - '[🇺🇸]_1105'
   - '[🇺🇸]_1106'
-  - '[🇹🇼]_1068'
   - '[🇺🇸]_1115'
-  - '[🇭🇰]_1089'
+  - '[🇸🇬]_1063'
+  - '[🇳🇱]_1127'
+  - '[🇺🇸]_1132'
+  - '[🇹🇼]_1068'
+  - '[🇺🇸]_1133'
+  - '[🇺🇸]_1134'
+  - '[🇺🇸]_1135'
   - '[🇭🇰]_1088'
+  - '[🇭🇰]_1089'
   - '[🇭🇰]_1094'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
+  - '[🇷🇺]_1044'
+  - '[🇰🇷]_1021'
   - '[🇰🇷]_1022'
   - '[🇰🇷]_1020'
-  - '[🇷🇺]_1044'
   - '[🇸🇬]_1050'
-  - '[🇸🇬]_1052'
   - '[🇸🇬]_1051'
+  - '[🇸🇬]_1052'
   - '[🇸🇬]_1053'
   - '[🇸🇬]_1054'
   - '[🇸🇬]_1055'
   - '[🇭🇰]_1064'
-  - '[🇸🇬]_1056'
   - '[🇭🇰]_1065'
-  - '[🇭🇰]_1066'
   - '[🇭🇰]_1067'
+  - '[🇭🇰]_1066'
+  - '[🇸🇬]_1056'
   - '[🇸🇬]_1057'
-  - '[🇺🇸]_1069'
+  - '[🇸🇬]_1058'
+  - '[🇸🇬]_1059'
   - '[🇺🇸]_1072'
   - '[🇺🇸]_1073'
   - '[🇺🇸]_1074'
   - '[🇺🇸]_1075'
-  - '[🇸🇬]_1058'
-  - '[🇺🇸]_1076'
   - '[🇺🇸]_1077'
-  - '[🇸🇬]_1060'
-  - '[🇸🇬]_1059'
-  - '[🇸🇬]_1061'
   - '[🇺🇸]_1078'
-  - '[🇸🇬]_1062'
   - '[🇺🇸]_1079'
   - '[🇺🇸]_1080'
+  - '[🇺🇸]_1069'
   - '[🇺🇸]_1082'
   - '[🇺🇸]_1084'
+  - '[🇺🇸]_1076'
   - '[🇺🇸]_1085'
   - '[🇺🇸]_1086'
-  - '[🇺🇸]_1081'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1083'
+  - '[🇺🇸]_1081'
+  - '[🇸🇬]_1060'
+  - '[🇸🇬]_1061'
   - '[🇺🇸]_1090'
   - '[🇺🇸]_1091'
   - '[🇺🇸]_1092'
@@ -1130,19 +1258,26 @@ proxy-groups:
   - '[🇺🇸]_1096'
   - '[🇺🇸]_1097'
   - '[🇺🇸]_1098'
+  - '[🇸🇬]_1062'
   - '[🇺🇸]_1099'
+  - '[🇺🇸]_1083'
   - '[🇺🇸]_1100'
-  - '[🇸🇬]_1063'
   - '[🇺🇸]_1101'
   - '[🇺🇸]_1102'
   - '[🇺🇸]_1103'
   - '[🇺🇸]_1104'
   - '[🇺🇸]_1105'
   - '[🇺🇸]_1106'
-  - '[🇹🇼]_1068'
   - '[🇺🇸]_1115'
-  - '[🇭🇰]_1089'
+  - '[🇸🇬]_1063'
+  - '[🇳🇱]_1127'
+  - '[🇺🇸]_1132'
+  - '[🇹🇼]_1068'
+  - '[🇺🇸]_1133'
+  - '[🇺🇸]_1134'
+  - '[🇺🇸]_1135'
   - '[🇭🇰]_1088'
+  - '[🇭🇰]_1089'
   - '[🇭🇰]_1094'
 - name: 🎯 全球直连
   type: select
@@ -1150,43 +1285,42 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
+  - '[🇷🇺]_1044'
+  - '[🇰🇷]_1021'
   - '[🇰🇷]_1022'
   - '[🇰🇷]_1020'
-  - '[🇷🇺]_1044'
   - '[🇸🇬]_1050'
-  - '[🇸🇬]_1052'
   - '[🇸🇬]_1051'
+  - '[🇸🇬]_1052'
   - '[🇸🇬]_1053'
   - '[🇸🇬]_1054'
   - '[🇸🇬]_1055'
   - '[🇭🇰]_1064'
-  - '[🇸🇬]_1056'
   - '[🇭🇰]_1065'
-  - '[🇭🇰]_1066'
   - '[🇭🇰]_1067'
+  - '[🇭🇰]_1066'
+  - '[🇸🇬]_1056'
   - '[🇸🇬]_1057'
-  - '[🇺🇸]_1069'
+  - '[🇸🇬]_1058'
+  - '[🇸🇬]_1059'
   - '[🇺🇸]_1072'
   - '[🇺🇸]_1073'
   - '[🇺🇸]_1074'
   - '[🇺🇸]_1075'
-  - '[🇸🇬]_1058'
-  - '[🇺🇸]_1076'
   - '[🇺🇸]_1077'
-  - '[🇸🇬]_1060'
-  - '[🇸🇬]_1059'
-  - '[🇸🇬]_1061'
   - '[🇺🇸]_1078'
-  - '[🇸🇬]_1062'
   - '[🇺🇸]_1079'
   - '[🇺🇸]_1080'
+  - '[🇺🇸]_1069'
   - '[🇺🇸]_1082'
   - '[🇺🇸]_1084'
+  - '[🇺🇸]_1076'
   - '[🇺🇸]_1085'
   - '[🇺🇸]_1086'
-  - '[🇺🇸]_1081'
   - '[🇺🇸]_1087'
-  - '[🇺🇸]_1083'
+  - '[🇺🇸]_1081'
+  - '[🇸🇬]_1060'
+  - '[🇸🇬]_1061'
   - '[🇺🇸]_1090'
   - '[🇺🇸]_1091'
   - '[🇺🇸]_1092'
@@ -1195,19 +1329,26 @@ proxy-groups:
   - '[🇺🇸]_1096'
   - '[🇺🇸]_1097'
   - '[🇺🇸]_1098'
+  - '[🇸🇬]_1062'
   - '[🇺🇸]_1099'
+  - '[🇺🇸]_1083'
   - '[🇺🇸]_1100'
-  - '[🇸🇬]_1063'
   - '[🇺🇸]_1101'
   - '[🇺🇸]_1102'
   - '[🇺🇸]_1103'
   - '[🇺🇸]_1104'
   - '[🇺🇸]_1105'
   - '[🇺🇸]_1106'
-  - '[🇹🇼]_1068'
   - '[🇺🇸]_1115'
-  - '[🇭🇰]_1089'
+  - '[🇸🇬]_1063'
+  - '[🇳🇱]_1127'
+  - '[🇺🇸]_1132'
+  - '[🇹🇼]_1068'
+  - '[🇺🇸]_1133'
+  - '[🇺🇸]_1134'
+  - '[🇺🇸]_1135'
   - '[🇭🇰]_1088'
+  - '[🇭🇰]_1089'
   - '[🇭🇰]_1094'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
