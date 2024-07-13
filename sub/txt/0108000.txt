@@ -1,7 +1,7 @@
 proxies:
 - name: 🇭🇰香港KT|@ripaojiedian
-  server: 118.170.93.63
-  port: 8443
+  server: 36.232.12.155
+  port: 443
   client-fingerprint: chrome
   type: ss
   cipher: aes-128-gcm
@@ -10,7 +10,7 @@ proxies:
   plugin: v2ray-plugin
   plugin-opts:
     mode: websocket
-    host: a1.wagaga.online
+    host: h2.wagaga.online
     path: ''
     tls: true
     mux: true
@@ -26,8 +26,8 @@ proxies:
   tfo: false
   udp: true
 - name: 🇭🇰香港2|@ripaojiedian
-  server: 183.240.235.166
-  port: 31778
+  server: 183.238.202.173
+  port: 51193
   client-fingerprint: chrome
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
@@ -38,16 +38,13 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: 🇭🇰香港3|@ripaojiedian
-  server: 112.132.212.19
-  port: 50004
+  server: 02hz.rvxpwa.tech
+  port: 35013
   client-fingerprint: chrome
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
+  type: ss
+  cipher: aes-256-gcm
+  password: 48d20ad2-7416-49a8-b5d4-b4f1e0a29274
   tfo: false
-  skip-cert-verify: false
   udp: true
 - name: 🇭🇰香港4|@ripaojiedian
   server: 183.232.139.22
@@ -56,18 +53,6 @@ proxies:
   type: trojan
   password: RmdXQRXg
   skip-cert-verify: true
-  udp: true
-- name: 🇭🇰香港5|@ripaojiedian
-  server: 120.232.153.71
-  port: 45972
-  client-fingerprint: chrome
-  type: vmess
-  uuid: 770ee730-2450-4e3c-a6c6-3932bd32afbd
-  alterId: 64
-  cipher: auto
-  tls: false
-  tfo: false
-  skip-cert-verify: false
   udp: true
 - name: 🇭🇰香港R|@ripaojiedian
   server: 59.56.77.178
@@ -79,17 +64,31 @@ proxies:
   tfo: false
   udp: true
 - name: 🇹🇼台湾|@ripaojiedian
-  server: 13.125.132.18
-  port: 80
+  server: 60.249.89.74
+  port: 23555
+  client-fingerprint: chrome
+  type: trojan
+  password: moist
+  sni: trojan.freenods.sbs
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: trojan.freenods.sbs
+  udp: true
+- name: 🇹🇼台湾2|@ripaojiedian
+  server: 79ea.ens3.buzz
+  port: 12837
   client-fingerprint: chrome
   type: ss
-  cipher: aes-256-gcm
-  password: amazonskr05
+  cipher: aes-128-gcm
+  password: 5bc60592-aa74-48c1-baad-15bfa9b939d9
   tfo: false
   udp: true
 - name: 🇯🇵日本|@ripaojiedian
-  server: 223.113.54.154
-  port: 23621
+  server: 183.232.139.22
+  port: 36931
   client-fingerprint: chrome
   type: trojan
   password: RmdXQRXg
@@ -113,16 +112,34 @@ proxies:
       Host: agzbjszujp4.yofnhkfc.xyz
   udp: true
 - name: 🇯🇵日本3|@ripaojiedian
-  server: 45.159.50.214
-  port: 43347
+  server: 2a53.ens3.buzz
+  port: 29803
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-128-gcm
+  password: 5bc60592-aa74-48c1-baad-15bfa9b939d9
+  tfo: false
+  udp: true
+- name: 🇯🇵日本4|@ripaojiedian
+  server: 45.159.51.6
+  port: 46249
   client-fingerprint: chrome
   type: vmess
-  uuid: 4c1fb969-4aea-4947-a71c-1095a8c95c83
+  uuid: 1fe35721-be3a-485c-a2aa-eeb785eb827e
   alterId: 0
   cipher: auto
   tls: false
   tfo: false
   skip-cert-verify: false
+  udp: true
+- name: 🇯🇵日本5|@ripaojiedian
+  server: shcub.donghui.tech
+  port: 22638
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-128-gcm
+  password: 764f7bbd-259c-43b1-996d-bf595ab21618
+  tfo: false
   udp: true
 - name: 🇯🇵日本R|@ripaojiedian
   server: 59.56.77.178
@@ -134,12 +151,21 @@ proxies:
   tfo: false
   udp: true
 - name: 🇰🇷韩国|@ripaojiedian
-  server: 47.129.42.209
-  port: 80
+  server: kkr100515a.go02.top
+  port: 30056
+  client-fingerprint: chrome
+  type: trojan
+  password: M3lOal9RPR
+  sni: kkr100515a.go02.top
+  skip-cert-verify: false
+  udp: true
+- name: 🇸🇬新加坡|@ripaojiedian
+  server: 123.88.148.9
+  port: 50046
   client-fingerprint: chrome
   type: ss
-  cipher: aes-256-gcm
-  password: amazonskr05
+  cipher: chacha20-ietf-poly1305
+  password: fe3038e9-5653-4ec1-be64-04532782d8b0
   tfo: false
   udp: true
 - name: 🇺🇸美国|@ripaojiedian
@@ -159,14 +185,6 @@ proxies:
     headers:
       Host: ip005.dtku47.xyz
   udp: true
-- name: 🇺🇸美国4|@ripaojiedian
-  server: 183.232.139.22
-  port: 40081
-  client-fingerprint: chrome
-  type: trojan
-  password: GsKYmYOE
-  skip-cert-verify: true
-  udp: true
 - name: 🇺🇸美国2|@ripaojiedian
   server: cfcdn1.sanfencdn9.com
   port: 2052
@@ -183,6 +201,26 @@ proxies:
     path: /video/DDC4btA8wc/
     headers:
       Host: us2jdgv5GC7.fzbqfrse.xyz
+  udp: true
+- name: 🇺🇸美国3|@ripaojiedian
+  server: bvip.hongxingdl.vip
+  port: 19358
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 7cd29891-fe78-4f8f-8844-abb31b9d9a75
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸美国4|@ripaojiedian
+  server: 183.232.139.22
+  port: 40081
+  client-fingerprint: chrome
+  type: trojan
+  password: GsKYmYOE
+  skip-cert-verify: true
   udp: true
 - name: 🇺🇸美国5|@ripaojiedian
   server: 104.26.0.56
@@ -219,7 +257,7 @@ proxies:
       Host: cdn2.freegradely.xyz
   udp: true
 - name: 🇸🇬狮城特殊|@ripaojiedian
-  server: 13.250.98.179
+  server: 54.95.211.49
   port: 443
   client-fingerprint: chrome
   type: ss
@@ -228,7 +266,7 @@ proxies:
   tfo: false
   udp: true
 - name: 🇯🇵日本特殊|@ripaojiedian
-  server: 57.180.19.240
+  server: 3.112.152.101
   port: 443
   client-fingerprint: chrome
   type: ss
@@ -237,7 +275,7 @@ proxies:
   tfo: false
   udp: true
 - name: 🇰🇷韩国特殊|@ripaojiedian
-  server: 54.250.63.178
+  server: 13.230.162.23
   port: 443
   client-fingerprint: chrome
   type: ss
@@ -253,13 +291,4 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   tfo: false
-  udp: true
-- name: 🇦🇺澳大利亚|@ripaojiedian
-  server: ttolpro.bigkangaroo.net
-  port: 28332
-  client-fingerprint: chrome
-  type: trojan
-  password: yElqzjIaSR9KF3Xg7Z8OD2AlAg7Z8OD2AlApwYY4pe3c33RuZaxBDCSC08D56x3RuZaxB
-  sni: ttolpro.bigkangaroo.net
-  skip-cert-verify: false
   udp: true

@@ -621,14 +621,14 @@ proxies:
   password: a-wym4ovY4Yw
   plugin: v2ray-plugin
   plugin-opts:
-    host: a1.wagaga.online
+    host: h2.wagaga.online
     mode: websocket
     mux: true
     path: ''
     skip-cert-verify: false
     tls: true
-  port: 8443
-  server: 118.170.93.63
+  port: 443
+  server: 36.232.12.155
   tfo: false
   type: ss
   udp: true
@@ -643,24 +643,21 @@ proxies:
 - alterId: 64
   cipher: auto
   name: 10|🇭🇰香港2|@ripaojiedian
-  port: 31778
-  server: 183.240.235.166
+  port: 51193
+  server: 183.238.202.173
   skip-cert-verify: false
   tfo: false
   tls: false
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
   udp: true
-- alterId: 64
-  cipher: auto
+- cipher: aes-256-gcm
   name: 10|🇭🇰香港3|@ripaojiedian
-  port: 50004
-  server: 112.132.212.19
-  skip-cert-verify: false
+  password: 48d20ad2-7416-49a8-b5d4-b4f1e0a29274
+  port: 35013
+  server: 02hz.rvxpwa.tech
   tfo: false
-  tls: false
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  type: ss
   udp: true
 - name: 10|🇭🇰香港4|@ripaojiedian
   password: RmdXQRXg
@@ -668,17 +665,6 @@ proxies:
   server: 183.232.139.22
   skip-cert-verify: true
   type: trojan
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 10|🇭🇰香港5|@ripaojiedian
-  port: 45972
-  server: 120.232.153.71
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: 770ee730-2450-4e3c-a6c6-3932bd32afbd
   udp: true
 - cipher: aes-256-cfb
   name: 10|🇭🇰香港R|@ripaojiedian
@@ -688,18 +674,31 @@ proxies:
   tfo: false
   type: ss
   udp: true
-- cipher: aes-256-gcm
-  name: 10|🇹🇼台湾|@ripaojiedian
-  password: amazonskr05
-  port: 80
-  server: 13.125.132.18
+- name: 10|🇹🇼台湾|@ripaojiedian
+  network: ws
+  password: moist
+  port: 23555
+  server: 60.249.89.74
+  skip-cert-verify: false
+  sni: trojan.freenods.sbs
+  type: trojan
+  ws-opts:
+    headers:
+      Host: trojan.freenods.sbs
+    path: /?ed=2560
+  udp: true
+- cipher: aes-128-gcm
+  name: 10|🇹🇼台湾2|@ripaojiedian
+  password: 5bc60592-aa74-48c1-baad-15bfa9b939d9
+  port: 12837
+  server: 79ea.ens3.buzz
   tfo: false
   type: ss
   udp: true
 - name: 10|🇯🇵日本|@ripaojiedian
   password: RmdXQRXg
-  port: 23621
-  server: 223.113.54.154
+  port: 36931
+  server: 183.232.139.22
   skip-cert-verify: true
   type: trojan
   udp: true
@@ -720,16 +719,32 @@ proxies:
       Host: agzbjszujp4.yofnhkfc.xyz
     path: /video/ibCT6z55
   udp: true
+- cipher: aes-128-gcm
+  name: 10|🇯🇵日本3|@ripaojiedian
+  password: 5bc60592-aa74-48c1-baad-15bfa9b939d9
+  port: 29803
+  server: 2a53.ens3.buzz
+  tfo: false
+  type: ss
+  udp: true
 - alterId: 0
   cipher: auto
-  name: 10|🇯🇵日本3|@ripaojiedian
-  port: 43347
-  server: 45.159.50.214
+  name: 10|🇯🇵日本4|@ripaojiedian
+  port: 46249
+  server: 45.159.51.6
   skip-cert-verify: false
   tfo: false
   tls: false
   type: vmess
-  uuid: 4c1fb969-4aea-4947-a71c-1095a8c95c83
+  uuid: 1fe35721-be3a-485c-a2aa-eeb785eb827e
+  udp: true
+- cipher: aes-128-gcm
+  name: 10|🇯🇵日本5|@ripaojiedian
+  password: 764f7bbd-259c-43b1-996d-bf595ab21618
+  port: 22638
+  server: shcub.donghui.tech
+  tfo: false
+  type: ss
   udp: true
 - cipher: aes-256-cfb
   name: 10|🇯🇵日本R|@ripaojiedian
@@ -739,20 +754,21 @@ proxies:
   tfo: false
   type: ss
   udp: true
-- cipher: aes-256-gcm
-  name: 10|🇰🇷韩国|@ripaojiedian
-  password: amazonskr05
-  port: 80
-  server: 47.129.42.209
+- name: 10|🇰🇷韩国|@ripaojiedian
+  password: M3lOal9RPR
+  port: 30056
+  server: kkr100515a.go02.top
+  skip-cert-verify: false
+  sni: kkr100515a.go02.top
+  type: trojan
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 10|🇸🇬新加坡|@ripaojiedian
+  password: fe3038e9-5653-4ec1-be64-04532782d8b0
+  port: 50046
+  server: 123.88.148.9
   tfo: false
   type: ss
-  udp: true
-- name: 10|🇺🇸美国4|@ripaojiedian
-  password: GsKYmYOE
-  port: 40081
-  server: 183.232.139.22
-  skip-cert-verify: true
-  type: trojan
   udp: true
 - alterId: 0
   cipher: auto
@@ -770,6 +786,24 @@ proxies:
     headers:
       Host: us2jdgv5GC7.fzbqfrse.xyz
     path: /video/DDC4btA8wc/
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 10|🇺🇸美国3|@ripaojiedian
+  port: 19358
+  server: bvip.hongxingdl.vip
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 7cd29891-fe78-4f8f-8844-abb31b9d9a75
+  udp: true
+- name: 10|🇺🇸美国4|@ripaojiedian
+  password: GsKYmYOE
+  port: 40081
+  server: 183.232.139.22
+  skip-cert-verify: true
+  type: trojan
   udp: true
 - alterId: 0
   cipher: auto
@@ -809,7 +843,7 @@ proxies:
   name: 10|🇸🇬狮城特殊|@ripaojiedian
   password: amazonskr05
   port: 443
-  server: 13.250.98.179
+  server: 54.95.211.49
   tfo: false
   type: ss
   udp: true
@@ -817,7 +851,7 @@ proxies:
   name: 10|🇯🇵日本特殊|@ripaojiedian
   password: amazonskr05
   port: 443
-  server: 57.180.19.240
+  server: 3.112.152.101
   tfo: false
   type: ss
   udp: true
@@ -825,7 +859,7 @@ proxies:
   name: 10|🇰🇷韩国特殊|@ripaojiedian
   password: amazonskr05
   port: 443
-  server: 54.250.63.178
+  server: 13.230.162.23
   tfo: false
   type: ss
   udp: true
@@ -837,57 +871,38 @@ proxies:
   tfo: false
   type: ss
   udp: true
-- name: 10|🇦🇺澳大利亚|@ripaojiedian
-  password: yElqzjIaSR9KF3Xg7Z8OD2AlAg7Z8OD2AlApwYY4pe3c33RuZaxBDCSC08D56x3RuZaxB
-  port: 28332
-  server: ttolpro.bigkangaroo.net
-  skip-cert-verify: false
-  sni: ttolpro.bigkangaroo.net
-  type: trojan
-  udp: true
 - alterId: 64
   cipher: auto
   name: 11|香港2|@ripaojiedian
   network: tcp
-  port: 31778
-  server: 183.240.235.166
+  port: 51193
+  server: 183.238.202.173
   servername: ''
   tls: false
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 11|香港3|@ripaojiedian
-  network: tcp
-  port: 50004
-  server: 112.132.212.19
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  udp: true
-- alterId: 64
-  cipher: auto
-  name: 11|香港5|@ripaojiedian
-  network: tcp
-  port: 45972
-  server: 120.232.153.71
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 770ee730-2450-4e3c-a6c6-3932bd32afbd
   udp: true
 - alterId: 0
   cipher: auto
-  name: 11|日本3|@ripaojiedian
+  name: 11|日本4|@ripaojiedian
   network: tcp
-  port: 43347
-  server: 45.159.50.214
+  port: 46249
+  server: 45.159.51.6
   servername: ''
   tls: false
   type: vmess
-  uuid: 4c1fb969-4aea-4947-a71c-1095a8c95c83
+  uuid: 1fe35721-be3a-485c-a2aa-eeb785eb827e
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 11|美国3|@ripaojiedian
+  network: tcp
+  port: 19358
+  server: bvip.hongxingdl.vip
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 7cd29891-fe78-4f8f-8844-abb31b9d9a75
   udp: true
 - name: 12|AT_speednode_0005
   password: 09191dbf-e7f7-4e7d-b405-c4785ea992bf
