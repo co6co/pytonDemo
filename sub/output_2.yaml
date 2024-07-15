@@ -26,20 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇦🇶]_1077'
-  server: 104.19.47.113
-  port: 8080
-  type: vmess
-  uuid: cf12f4ff-3186-35d9-8308-638287ef3fb3
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: /?ed=2048&Telegram🇨🇳 @WangCai2
-  tls: false
-  ws-headers:
-    Host: oiictw.yydsii.com
-  udp: true
 - name: '[🇦🇶]_1078'
   server: 104.16.60.8
   port: 2095
@@ -61,7 +47,6 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇦🇶]_1077'
   - '[🇦🇶]_1078'
 - name: 🎯 负载均衡
   type: load-balance
@@ -69,7 +54,6 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1077'
   - '[🇦🇶]_1078'
 - name: ♻️ 自动选择
   type: fallback
@@ -77,7 +61,6 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1077'
   - '[🇦🇶]_1078'
 - name: 🔰 延迟最低
   type: url-test
@@ -85,13 +68,11 @@ proxy-groups:
   interval: 300
   proxies:
   - REJECT
-  - '[🇦🇶]_1077'
   - '[🇦🇶]_1078'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇦🇶]_1077'
   - '[🇦🇶]_1078'
 - name: 🎯 全球直连
   type: select
@@ -99,7 +80,6 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇦🇶]_1077'
   - '[🇦🇶]_1078'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
