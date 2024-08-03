@@ -1,10 +1,33 @@
 proxies:
-- cipher: chacha20-ietf-poly1305
-  name: 0|-https://t.me/MrXbin-1
-  password: JIhN6rBKkaEboLNXVSv5rq
-  port: 80
-  server: 142.4.216.225
-  type: ss
+- cipher: rc4-md5
+  name: 0|-https://t.me/MrXbin-3
+  obfs: tls1.2_ticket_auth
+  password: Cskw6d
+  port: 13183
+  protocol: auth_aes128_md5
+  protocol-param: 524959:5u4MZ6
+  server: z5is.cdn.node.a.tddns-ounk.com
+  type: ssr
+  udp: true
+- cipher: rc4-md5
+  name: 0|-https://t.me/MrXbin-4
+  obfs: tls1.2_ticket_auth
+  password: Cskw6d
+  port: 13682
+  protocol: auth_aes128_md5
+  protocol-param: 524959:5u4MZ6
+  server: z5is.cdn.node.a.tddns-ounk.com
+  type: ssr
+  udp: true
+- cipher: rc4-md5
+  name: 0|-https://t.me/MrXbin-5
+  obfs: tls1.2_ticket_auth
+  password: Cskw6d
+  port: 13630
+  protocol: auth_aes128_md5
+  protocol-param: 524959:5u4MZ6
+  server: bb29cs.cdn.node.a.tddns-ounk.com
+  type: ssr
   udp: true
 - cipher: aes-256-cfb
   name: 0|-https://t.me/MrXbin-7
@@ -13,16 +36,6 @@ proxies:
   port: 8081
   protocol: origin
   server: us-am3.eqnode.net
-  type: ssr
-  udp: true
-- cipher: rc4-md5
-  name: 0|-https://t.me/MrXbin-8
-  obfs: tls1.2_ticket_auth
-  password: Cskw6d
-  port: 13171
-  protocol: auth_aes128_md5
-  protocol-param: 524959:5u4MZ6
-  server: z5is.cdn.node.a.tddns-ounk.com
   type: ssr
   udp: true
 - alterId: 0
@@ -640,16 +653,22 @@ proxies:
     headers:
       Host: cdn3.freegradely.xyz
     path: github.com/Alvin9999
-- alterId: 0
-  cipher: auto
-  name: 10|🇭🇰香港|@ripaojiedian
-  port: 29767
-  server: iepl.hongxingdl.vip
+- name: 10,11|香港|@ripaojiedian
+  network: tcp
+  password: NUeBvQHox0BmnHpu
+  port: 443
+  server: gnmktnwq58.xyz
   skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: 47205b34-a0d2-462a-b603-438f62ad8027
+  sni: gnmktnwq58.xyz
+  type: trojan
+  udp: true
+- name: 10,11|香港4|@ripaojiedian
+  network: tcp
+  password: llyEnxJlVC
+  port: 51017
+  server: 183.232.139.24
+  skip-cert-verify: true
+  type: trojan
   udp: true
 - alterId: 0
   cipher: auto
@@ -667,14 +686,6 @@ proxies:
       Host: mmhk01.micloud.buzz
     path: /zh-cn
   udp: true
-- name: 10,11|香港4|@ripaojiedian
-  network: tcp
-  password: llyEnxJlVC
-  port: 51017
-  server: 183.232.139.24
-  skip-cert-verify: true
-  type: trojan
-  udp: true
 - alterId: 64
   cipher: auto
   name: 10|🇭🇰香港5|@ripaojiedian
@@ -688,27 +699,31 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 10|🇭🇰香港6|@ripaojiedian
+  name: 10,11|香港6|@ripaojiedian
   network: ws
-  port: 2052
-  server: v4.yydspp.cc
+  port: 50185
+  server: hkt1.hkg.hypernat.com
+  servername: ''
   skip-cert-verify: false
   tfo: false
   tls: false
   type: vmess
-  uuid: 4929f0ca-2793-4aa3-b2d0-7445447097f6
+  uuid: 273a61f5-03b5-4449-9d18-7e914d3808c4
   ws-opts:
     headers:
-      Host: oiichk.yydsii.com
+      Host: hkt1.hkg.hypernat.com
     path: /
   udp: true
-- cipher: chacha20-ietf-poly1305
+- alterId: 0
+  cipher: auto
   name: 10|🇭🇰香港7|@ripaojiedian
-  password: 356cd62f-a0ea-4630-8d67-847b6f2b3321
-  port: 36993
-  server: aa01gg.sssyun.xyz
+  port: 10184
+  server: 36.139.183.164
+  skip-cert-verify: false
   tfo: false
-  type: ss
+  tls: false
+  type: vmess
+  uuid: 273a61f5-03b5-4449-9d18-7e914d3808c4
   udp: true
 - name: 10,11|香港8|@ripaojiedian
   network: tcp
@@ -728,45 +743,17 @@ proxies:
   sni: hknode02.oportal.cc
   type: trojan
   udp: true
-- name: 10|🇭🇰香港10|@ripaojiedian
-  password: NUeBvQHox0BmnHpu
-  port: 443
-  server: gquuangc27.xyz
-  skip-cert-verify: false
-  sni: gquuangc27.xyz
-  type: trojan
-  udp: true
-- name: 10|🇹🇼台湾|@ripaojiedian
-  password: NUeBvQHox0BmnHpu
-  port: 443
-  server: lsodgkanq01.xyz
-  skip-cert-verify: false
-  sni: lsodgkanq01.xyz
-  type: trojan
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 10|🇹🇼台湾2|@ripaojiedian
-  password: 4e079290-392b-4e4b-bdc4-f0a1f56ae841
-  port: 28102
-  server: tw04.51feitu.com
+- cipher: aes-128-gcm
+  name: 10|🇹🇼台湾3|@ripaojiedian
+  password: VktroSoMbaFIFFhndcUqaSuGoHygMvg9kmTQzZeGB7BF
+  plugin: obfs
+  plugin-opts:
+    host: baidu.com
+    mode: http
+  port: 40304
+  server: 166.0.199.245
   tfo: false
   type: ss
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 10|🇹🇼台湾3|@ripaojiedian
-  network: ws
-  port: 80
-  server: v4.cfnode.eu.org
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: 4929f0ca-2793-4aa3-b2d0-7445447097f6
-  ws-opts:
-    headers:
-      Host: oiictw.yydsii.com
-    path: /
   udp: true
 - name: 10,11|日本|@ripaojiedian
   network: tcp
@@ -775,6 +762,22 @@ proxies:
   server: 36.151.195.77
   skip-cert-verify: true
   type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 10|🇯🇵日本5|@ripaojiedian
+  network: ws
+  port: 46011
+  server: mmjp11.micloud.buzz
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: f9b02d8c-b69b-435f-aa25-68393e5fb121
+  ws-opts:
+    headers:
+      Host: mmjp11.micloud.buzz
+    path: /zh-cn
   udp: true
 - alterId: 0
   cipher: auto
@@ -792,22 +795,6 @@ proxies:
     headers:
       Host: agzbjszujp4.yofnhkfc.xyz
     path: /video/ibCT6z55
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 10|🇯🇵日本5|@ripaojiedian
-  network: ws
-  port: 46011
-  server: mmjp11.micloud.buzz
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: f9b02d8c-b69b-435f-aa25-68393e5fb121
-  ws-opts:
-    headers:
-      Host: mmjp11.micloud.buzz
-    path: /zh-cn
   udp: true
 - name: 10,11|韩国|@ripaojiedian
   network: tcp
@@ -834,6 +821,22 @@ proxies:
     headers:
       Host: jpafzyhfsg3.yofnhkfc.xyz
     path: /video/u4eCZTxW
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 10|🇸🇬新加坡2|@ripaojiedian
+  network: ws
+  port: 46016
+  server: mmsg16.micloud.buzz
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: f9b02d8c-b69b-435f-aa25-68393e5fb121
+  ws-opts:
+    headers:
+      Host: mmsg16.micloud.buzz
+    path: /zh-cn
   udp: true
 - alterId: 0
   cipher: auto
@@ -879,6 +882,22 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
+  name: 10|🇺🇸美国4|@ripaojiedian
+  network: ws
+  port: 46036
+  server: mmus36.micloud.buzz
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: f9b02d8c-b69b-435f-aa25-68393e5fb121
+  ws-opts:
+    headers:
+      Host: mmus36.micloud.buzz
+    path: /zh-cn
+  udp: true
+- alterId: 0
+  cipher: auto
   name: 10,11|美国5|@ripaojiedian
   network: ws
   port: 2086
@@ -893,14 +912,6 @@ proxies:
     headers:
       Host: ip14.freegradely.xyz
     path: github.com/Alvin9999
-  udp: true
-- name: 11|香港|@ripaojiedian
-  network: tcp
-  password: NUeBvQHox0BmnHpu
-  port: 443
-  server: gnmktnwq58.xyz
-  sni: gnmktnwq58.xyz
-  type: trojan
   udp: true
 - alterId: 0
   cipher: auto
@@ -927,21 +938,6 @@ proxies:
   tls: false
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 11|香港6|@ripaojiedian
-  network: ws
-  port: 50185
-  server: hkt1.hkg.hypernat.com
-  servername: ''
-  tls: false
-  type: vmess
-  uuid: 273a61f5-03b5-4449-9d18-7e914d3808c4
-  ws-opts:
-    headers:
-      Host: hkt1.hkg.hypernat.com
-    path: /
   udp: true
 - alterId: 0
   cipher: auto
