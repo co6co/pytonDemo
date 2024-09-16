@@ -26,19 +26,33 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇳🇱]_1270'
-  server: 46.182.107.16
-  port: 41004
+- name: '[🇱🇺]_1261'
+  server: lu1.xv2ray.net
+  port: 80
   type: vmess
-  uuid: 3519222b-ac47-3d0c-af5b-1d09dee31b41
-  alterId: 64
+  uuid: 3075f7b2-7834-3a10-b2d8-9ad45f7f90d1
+  alterId: 0
   cipher: auto
   skip-cert-verify: true
   network: ws
-  ws-path: /path/181721272114
-  tls: true
+  ws-path: /vmess
+  tls: false
   ws-headers:
-    Host: www.42077230.xyz
+    Host: lu1.xv2ray.net
+  udp: true
+- name: '[🇦🇶]_1283'
+  server: 104.19.45.144
+  port: 2095
+  type: vmess
+  uuid: dd96b490-331e-3c48-9493-d332adb6446e
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: onea.flha.ru
   udp: true
 - name: '[🇺🇸]_1285'
   server: 172.67.2.238
@@ -96,20 +110,48 @@ proxies:
   ws-headers:
     Host: onea.flha.ru
   udp: true
-- name: '[🇺🇸]_1229'
-  server: 154.17.10.2
-  port: 12776
-  type: vless
-  uuid: a83fc768-03ad-3147-8af0-7f6a9b97bd95
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: global2.ccdd.site
+- name: '[🇳🇱]_1270'
+  server: 46.182.107.16
+  port: 41004
+  type: vmess
+  uuid: 3519222b-ac47-3d0c-af5b-1d09dee31b41
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
   network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: global2.ccdd.site
+  ws-path: /path/181721272114
+  tls: true
+  ws-headers:
+    Host: www.42077230.xyz
+  udp: true
+- name: '[🇸🇬]_1257'
+  server: 159.223.94.156
+  port: 80
+  type: vmess
+  uuid: 9c299ab9-b907-3329-85d2-d0b6accc0780
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: ws
+  ws-path: /anti13.zingfast.vn
+  tls: false
+  ws-headers:
+    Host: 159.223.94.156
+  udp: true
+- name: '[🇨🇳]_1284'
+  server: 183.236.51.23
+  port: 54104
+  type: vmess
+  uuid: e665075d-fa57-378f-8ea8-22f746ee5ef0
+  alterId: 64
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: 183.236.51.23
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -117,70 +159,88 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇳🇱]_1270'
+  - '[🇱🇺]_1261'
+  - '[🇦🇶]_1283'
   - '[🇺🇸]_1285'
   - '[🇦🇶]_1287'
   - '[🇦🇶]_1289'
   - '[🇦🇶]_1290'
-  - '[🇺🇸]_1229'
+  - '[🇳🇱]_1270'
+  - '[🇸🇬]_1257'
+  - '[🇨🇳]_1284'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1270'
+  - '[🇱🇺]_1261'
+  - '[🇦🇶]_1283'
   - '[🇺🇸]_1285'
   - '[🇦🇶]_1287'
   - '[🇦🇶]_1289'
   - '[🇦🇶]_1290'
-  - '[🇺🇸]_1229'
+  - '[🇳🇱]_1270'
+  - '[🇸🇬]_1257'
+  - '[🇨🇳]_1284'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1270'
+  - '[🇱🇺]_1261'
+  - '[🇦🇶]_1283'
   - '[🇺🇸]_1285'
   - '[🇦🇶]_1287'
   - '[🇦🇶]_1289'
   - '[🇦🇶]_1290'
-  - '[🇺🇸]_1229'
+  - '[🇳🇱]_1270'
+  - '[🇸🇬]_1257'
+  - '[🇨🇳]_1284'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇳🇱]_1270'
+  - '[🇱🇺]_1261'
+  - '[🇦🇶]_1283'
   - '[🇺🇸]_1285'
   - '[🇦🇶]_1287'
   - '[🇦🇶]_1289'
   - '[🇦🇶]_1290'
-  - '[🇺🇸]_1229'
+  - '[🇳🇱]_1270'
+  - '[🇸🇬]_1257'
+  - '[🇨🇳]_1284'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇳🇱]_1270'
+  - '[🇱🇺]_1261'
+  - '[🇦🇶]_1283'
   - '[🇺🇸]_1285'
   - '[🇦🇶]_1287'
   - '[🇦🇶]_1289'
   - '[🇦🇶]_1290'
-  - '[🇺🇸]_1229'
+  - '[🇳🇱]_1270'
+  - '[🇸🇬]_1257'
+  - '[🇨🇳]_1284'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇳🇱]_1270'
+  - '[🇱🇺]_1261'
+  - '[🇦🇶]_1283'
   - '[🇺🇸]_1285'
   - '[🇦🇶]_1287'
   - '[🇦🇶]_1289'
   - '[🇦🇶]_1290'
-  - '[🇺🇸]_1229'
+  - '[🇳🇱]_1270'
+  - '[🇸🇬]_1257'
+  - '[🇨🇳]_1284'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
