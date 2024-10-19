@@ -26,20 +26,6 @@ dns:
     geoip: true
     ipcidr: null
 proxies:
-- name: '[🇺🇸]_923'
-  server: 172.64.167.15
-  port: 2082
-  type: vmess
-  uuid: 1103209b-37a5-3f84-b450-3d791b66a92e
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: ws
-  ws-path: github.com/Alvin9999
-  tls: false
-  ws-headers:
-    Host: ip3.6929198.xyz
-  udp: true
 - name: '[🇯🇵]_926'
   server: jp1.119.buzz
   port: 443
@@ -110,6 +96,20 @@ proxies:
   ws-headers:
     Host: hk2.siris.eu.org
   udp: true
+- name: '[🇮🇷]_945'
+  server: 31.184.166.84
+  port: 26763
+  type: vmess
+  uuid: e295468b-41ee-3df1-9b26-cf7d681219f5
+  alterId: 0
+  cipher: auto
+  skip-cert-verify: true
+  network: tcp
+  ws-path: /
+  tls: false
+  ws-headers:
+    Host: telewebion.com
+  udp: true
 - name: '[🇺🇸]_950'
   server: 151.101.2.228
   port: 80
@@ -165,20 +165,6 @@ proxies:
   tls: false
   ws-headers:
     Host: ip3.6929198.xyz
-  udp: true
-- name: '[🇮🇷]_945'
-  server: 31.184.166.84
-  port: 26763
-  type: vmess
-  uuid: e295468b-41ee-3df1-9b26-cf7d681219f5
-  alterId: 0
-  cipher: auto
-  skip-cert-verify: true
-  network: tcp
-  ws-path: /
-  tls: false
-  ws-headers:
-    Host: telewebion.com
   udp: true
 - name: '[🇦🇶]_965'
   server: 104.19.45.42
@@ -383,10 +369,46 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: '[🇦🇶]_1030'
+  name: '[🇦🇶]_1028'
   network: ws
   port: 8443
   server: 104.21.238.200
+  servername: http1.9290254.xyz
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f47e45b8-c48b-384c-8bdf-a26651170572
+  ws-opts:
+    early-data-header-name: Sec-WebSocket-Protocol
+    headers:
+      Host: http1.9290254.xyz
+    path: github.com/Alvin9999
+    v2ray-http-upgrade: true
+    v2ray-http-upgrade-fast-open: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]_1029'
+  network: ws
+  port: 8443
+  server: 104.21.238.201
+  servername: http1.9290254.xyz
+  tls: true
+  type: vmess
+  udp: true
+  uuid: e4baeef1-3e64-37b4-97e6-485c79ee5a7d
+  ws-opts:
+    early-data-header-name: Sec-WebSocket-Protocol
+    headers:
+      Host: http1.9290254.xyz
+    path: github.com/Alvin9999
+    v2ray-http-upgrade: true
+    v2ray-http-upgrade-fast-open: true
+- alterId: 0
+  cipher: auto
+  name: '[🇦🇶]_1030'
+  network: ws
+  port: 8443
+  server: 104.21.238.202
   servername: http1.9290254.xyz
   tls: true
   type: vmess
@@ -404,48 +426,12 @@ proxies:
   name: '[🇦🇶]_1031'
   network: ws
   port: 8443
-  server: 104.21.238.201
-  servername: http1.9290254.xyz
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 92c2e822-dddb-3e6f-ab78-4d4e932c558a
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: http1.9290254.xyz
-    path: github.com/Alvin9999
-    v2ray-http-upgrade: true
-    v2ray-http-upgrade-fast-open: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1032'
-  network: ws
-  port: 8443
-  server: 104.21.238.202
-  servername: http1.9290254.xyz
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 0266c7b8-c639-3621-b2ee-e20e5de71d39
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: http1.9290254.xyz
-    path: github.com/Alvin9999
-    v2ray-http-upgrade: true
-    v2ray-http-upgrade-fast-open: true
-- alterId: 0
-  cipher: auto
-  name: '[🇦🇶]_1033'
-  network: ws
-  port: 8443
   server: 104.21.238.203
   servername: http1.9290254.xyz
   tls: true
   type: vmess
   udp: true
-  uuid: 6cd197e8-b7d1-3244-8964-957b3abbf9e6
+  uuid: 92c2e822-dddb-3e6f-ab78-4d4e932c558a
   ws-opts:
     early-data-header-name: Sec-WebSocket-Protocol
     headers:
@@ -460,17 +446,16 @@ proxy-groups:
   - 🎯 负载均衡
   - ♻️ 自动选择
   - 🔰 延迟最低
-  - '[🇺🇸]_923'
   - '[🇯🇵]_926'
   - '[🇭🇰]_927'
   - '[🇦🇶]_939'
   - '[🇺🇸]_940'
   - '[🇦🇶]_937'
+  - '[🇮🇷]_945'
   - '[🇺🇸]_950'
   - '[🇦🇶]_953'
   - '[🇦🇶]_954'
   - '[🇦🇶]_959'
-  - '[🇮🇷]_945'
   - '[🇦🇶]_965'
   - '[🇦🇶]美国_992'
   - '[🇦🇶]美国_993'
@@ -483,27 +468,26 @@ proxy-groups:
   - '[🇺🇸]日本东京_1018'
   - '[🇦🇶]美国_1021'
   - '[🇺🇸]美国_1024'
+  - '[🇦🇶]_1028'
+  - '[🇦🇶]_1029'
   - '[🇦🇶]_1030'
   - '[🇦🇶]_1031'
-  - '[🇦🇶]_1032'
-  - '[🇦🇶]_1033'
 - name: 🎯 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_923'
   - '[🇯🇵]_926'
   - '[🇭🇰]_927'
   - '[🇦🇶]_939'
   - '[🇺🇸]_940'
   - '[🇦🇶]_937'
+  - '[🇮🇷]_945'
   - '[🇺🇸]_950'
   - '[🇦🇶]_953'
   - '[🇦🇶]_954'
   - '[🇦🇶]_959'
-  - '[🇮🇷]_945'
   - '[🇦🇶]_965'
   - '[🇦🇶]美国_992'
   - '[🇦🇶]美国_993'
@@ -516,27 +500,26 @@ proxy-groups:
   - '[🇺🇸]日本东京_1018'
   - '[🇦🇶]美国_1021'
   - '[🇺🇸]美国_1024'
+  - '[🇦🇶]_1028'
+  - '[🇦🇶]_1029'
   - '[🇦🇶]_1030'
   - '[🇦🇶]_1031'
-  - '[🇦🇶]_1032'
-  - '[🇦🇶]_1033'
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_923'
   - '[🇯🇵]_926'
   - '[🇭🇰]_927'
   - '[🇦🇶]_939'
   - '[🇺🇸]_940'
   - '[🇦🇶]_937'
+  - '[🇮🇷]_945'
   - '[🇺🇸]_950'
   - '[🇦🇶]_953'
   - '[🇦🇶]_954'
   - '[🇦🇶]_959'
-  - '[🇮🇷]_945'
   - '[🇦🇶]_965'
   - '[🇦🇶]美国_992'
   - '[🇦🇶]美国_993'
@@ -549,27 +532,26 @@ proxy-groups:
   - '[🇺🇸]日本东京_1018'
   - '[🇦🇶]美国_1021'
   - '[🇺🇸]美国_1024'
+  - '[🇦🇶]_1028'
+  - '[🇦🇶]_1029'
   - '[🇦🇶]_1030'
   - '[🇦🇶]_1031'
-  - '[🇦🇶]_1032'
-  - '[🇦🇶]_1033'
 - name: 🔰 延迟最低
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - REJECT
-  - '[🇺🇸]_923'
   - '[🇯🇵]_926'
   - '[🇭🇰]_927'
   - '[🇦🇶]_939'
   - '[🇺🇸]_940'
   - '[🇦🇶]_937'
+  - '[🇮🇷]_945'
   - '[🇺🇸]_950'
   - '[🇦🇶]_953'
   - '[🇦🇶]_954'
   - '[🇦🇶]_959'
-  - '[🇮🇷]_945'
   - '[🇦🇶]_965'
   - '[🇦🇶]美国_992'
   - '[🇦🇶]美国_993'
@@ -582,25 +564,24 @@ proxy-groups:
   - '[🇺🇸]日本东京_1018'
   - '[🇦🇶]美国_1021'
   - '[🇺🇸]美国_1024'
+  - '[🇦🇶]_1028'
+  - '[🇦🇶]_1029'
   - '[🇦🇶]_1030'
   - '[🇦🇶]_1031'
-  - '[🇦🇶]_1032'
-  - '[🇦🇶]_1033'
 - name: 🛑 全球拦截
   type: select
   proxies:
   - REJECT
-  - '[🇺🇸]_923'
   - '[🇯🇵]_926'
   - '[🇭🇰]_927'
   - '[🇦🇶]_939'
   - '[🇺🇸]_940'
   - '[🇦🇶]_937'
+  - '[🇮🇷]_945'
   - '[🇺🇸]_950'
   - '[🇦🇶]_953'
   - '[🇦🇶]_954'
   - '[🇦🇶]_959'
-  - '[🇮🇷]_945'
   - '[🇦🇶]_965'
   - '[🇦🇶]美国_992'
   - '[🇦🇶]美国_993'
@@ -613,27 +594,26 @@ proxy-groups:
   - '[🇺🇸]日本东京_1018'
   - '[🇦🇶]美国_1021'
   - '[🇺🇸]美国_1024'
+  - '[🇦🇶]_1028'
+  - '[🇦🇶]_1029'
   - '[🇦🇶]_1030'
   - '[🇦🇶]_1031'
-  - '[🇦🇶]_1032'
-  - '[🇦🇶]_1033'
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
   - ♻️ 自动选择
-  - '[🇺🇸]_923'
   - '[🇯🇵]_926'
   - '[🇭🇰]_927'
   - '[🇦🇶]_939'
   - '[🇺🇸]_940'
   - '[🇦🇶]_937'
+  - '[🇮🇷]_945'
   - '[🇺🇸]_950'
   - '[🇦🇶]_953'
   - '[🇦🇶]_954'
   - '[🇦🇶]_959'
-  - '[🇮🇷]_945'
   - '[🇦🇶]_965'
   - '[🇦🇶]美国_992'
   - '[🇦🇶]美国_993'
@@ -646,10 +626,10 @@ proxy-groups:
   - '[🇺🇸]日本东京_1018'
   - '[🇦🇶]美国_1021'
   - '[🇺🇸]美国_1024'
+  - '[🇦🇶]_1028'
+  - '[🇦🇶]_1029'
   - '[🇦🇶]_1030'
   - '[🇦🇶]_1031'
-  - '[🇦🇶]_1032'
-  - '[🇦🇶]_1033'
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
