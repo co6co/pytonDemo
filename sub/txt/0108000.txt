@@ -1,29 +1,41 @@
 proxies:
 - name: 🇭🇰香港|@ripaojiedian
-  server: 154.197.98.64
+  server: z3.fragranceninja.com
+  port: 12959
+  client-fingerprint: chrome
+  type: vmess
+  uuid: a32313ad-5e39-4f9a-9cad-512041790050
+  alterId: 0
+  cipher: auto
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  servername: z3.fragranceninja.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: z3.fragranceninja.com
+  udp: true
+- name: 🇭🇰香港3|@ripaojiedian
+  server: 103.224.80.27
+  port: 45219
+  client-fingerprint: chrome
+  type: vmess
+  uuid: ac134134-87e5-42b5-8805-565395a30acc
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇭🇰香港4|@ripaojiedian
+  server: 38.147.190.72
   port: 8388
   client-fingerprint: chrome
   type: ss
   cipher: chacha20-ietf
   password: asd123456
-  tfo: false
-  udp: true
-- name: 🇭🇰香港2|@ripaojiedian
-  server: 183.240.255.75
-  port: 11001
-  client-fingerprint: chrome
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 0b94687a-2628-4ef1-a677-aab2431e2182
-  tfo: false
-  udp: true
-- name: 🇭🇰香港3|@ripaojiedian
-  server: 183.240.188.43
-  port: 12003
-  client-fingerprint: chrome
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 0b94687a-2628-4ef1-a677-aab2431e2182
   tfo: false
   udp: true
 - name: 🇭🇰香港5|@ripaojiedian
@@ -38,14 +50,43 @@ proxies:
   tfo: false
   skip-cert-verify: false
   udp: true
+- name: 🇭🇰香港R|@ripaojiedian
+  server: 7438974b54cf5c57.cdn.jiashule.com
+  port: 40206
+  client-fingerprint: chrome
+  type: ssr
+  cipher: rc4-md5
+  password: ENZ52K
+  protocol: auth_aes128_md5
+  obfs: plain
+  protocol-param: 86416:SlZFuy
+  obfs-param: 8195986416.6602b8463464108506.microsoft.com
+  udp: true
 - name: 🇹🇼台湾|@ripaojiedian
-  server: hzhz1.sssyun.xyz
-  port: 39201
+  server: 163.177.58.179
+  port: 1170
   client-fingerprint: chrome
   type: ss
-  cipher: chacha20-ietf-poly1305
-  password: f2a7baac-c6d4-4d29-aab2-02426814f0ce
+  cipher: rc4-md5
+  password: Paofu
   tfo: false
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 7c0ad96494.microsoft.com
+  udp: true
+- name: 🇹🇼台湾2|@ripaojiedian
+  server: 163.177.58.179
+  port: 1171
+  client-fingerprint: chrome
+  type: ss
+  cipher: rc4-md5
+  password: Paofu
+  tfo: false
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 7c0ad96494.microsoft.com
   udp: true
 - name: 🇯🇵日本|@ripaojiedian
   server: d.baodesign.top
@@ -59,21 +100,57 @@ proxies:
   tfo: false
   skip-cert-verify: false
   udp: true
-- name: 🇯🇵日本R|@ripaojiedian
-  server: 14.152.94.40
-  port: 8191
+- name: 🇯🇵日本2|@ripaojiedian
+  server: naiu-jp.05vr9nyqg5.download
+  port: 13013
   client-fingerprint: chrome
-  type: ssr
-  cipher: dummy
-  password: 123456
-  protocol: auth_chain_a
-  obfs: plain
-  protocol-param: 59869:ES8PT7
-  obfs-param: 59869:ES8PT7
+  type: trojan
+  password: 5b4becce-5739-483f-97ec-68b81a855d68
+  sni: cloudflare.node-ssl.cdn-alibaba.com
+  skip-cert-verify: false
+  udp: true
+- name: 🇯🇵日本3|@ripaojiedian
+  server: 3.112.215.69
+  port: 443
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  tfo: false
+  udp: true
+- name: 🇯🇵日本4|@ripaojiedian
+  server: 149.22.87.240
+  port: 443
+  client-fingerprint: chrome
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  tfo: false
   udp: true
 - name: 🇰🇷韩国|@ripaojiedian
+  server: 45.94.68.140
+  port: 54997
+  client-fingerprint: chrome
+  type: vmess
+  uuid: 287dca94-9652-47c1-88e2-92b455b49591
+  alterId: 0
+  cipher: auto
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇰🇷韩国2|@ripaojiedian
+  server: hzhz2.sssyun.xyz
+  port: 40015
+  client-fingerprint: chrome
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: f2a7baac-c6d4-4d29-aab2-02426814f0ce
+  tfo: false
+  udp: true
+- name: 🇰🇷韩国3|@ripaojiedian
   server: hzhz1.sssyun.xyz
-  port: 39206
+  port: 39202
   client-fingerprint: chrome
   type: ss
   cipher: chacha20-ietf-poly1305
@@ -81,13 +158,17 @@ proxies:
   tfo: false
   udp: true
 - name: 🇸🇬新加坡|@ripaojiedian
-  server: osg020.nod3.org
-  port: 29971
+  server: 163.177.58.179
+  port: 1190
   client-fingerprint: chrome
   type: ss
-  cipher: aes-128-gcm
-  password: 1c47b2d3-6ff0-491d-89fa-7f8a38e49c99
+  cipher: rc4-md5
+  password: Paofu
   tfo: false
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 7c0ad96494.microsoft.com
   udp: true
 - name: 🇸🇬新加坡2|@ripaojiedian
   server: naiu-sg.05vr9nyqg5.download
@@ -98,14 +179,23 @@ proxies:
   sni: cloudflare.node-ssl.cdn-alibaba.com
   skip-cert-verify: false
   udp: true
-- name: 🇺🇸美国|@ripaojiedian
-  server: careful-platypus.opossum872.cfd
+- name: 🇸🇬新加坡3|@ripaojiedian
+  server: 54.169.139.18
   port: 443
   client-fingerprint: chrome
-  type: trojan
-  password: 3690911436885991424
-  sni: careful-platypus.opossum872.cfd
-  skip-cert-verify: false
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  tfo: false
+  udp: true
+- name: 🇺🇸美国|@ripaojiedian
+  server: 150.241.95.62
+  port: 14416
+  client-fingerprint: chrome
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: -4-M1Q%$He
+  tfo: false
   udp: true
 - name: 🇺🇸美国3|@ripaojiedian
   server: 183.238.202.173
@@ -119,17 +209,8 @@ proxies:
   tfo: false
   skip-cert-verify: false
   udp: true
-- name: 🇺🇸美国-圣克拉拉-GTHost-55
-  server: 23.157.40.113
-  port: 3306
-  client-fingerprint: chrome
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  tfo: false
-  udp: true
-- name: 🇯🇵日本特殊|@ripaojiedian
-  server: 13.229.98.87
+- name: 🇰🇷韩国特殊|@ripaojiedian
+  server: 44.244.21.125
   port: 443
   client-fingerprint: chrome
   type: ss
@@ -137,8 +218,8 @@ proxies:
   password: amazonskr05
   tfo: false
   udp: true
-- name: 🇰🇷韩国特殊|@ripaojiedian
-  server: 54.255.245.62
+- name: 🇯🇵日本特殊|@ripaojiedian
+  server: 18.142.50.59
   port: 443
   client-fingerprint: chrome
   type: ss
@@ -147,7 +228,7 @@ proxies:
   tfo: false
   udp: true
 - name: 🇸🇬狮城特殊|@ripaojiedian
-  server: 13.113.17.246
+  server: 54.169.135.226
   port: 443
   client-fingerprint: chrome
   type: ss
