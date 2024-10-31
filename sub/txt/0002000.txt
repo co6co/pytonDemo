@@ -1,31 +1,12 @@
 proxies:
-- name: AE_speednode_0001
-  type: vless
-  server: m3.jadidistorefandogh.ir
-  port: 2053
-  uuid: 1873b7c8-8341-4759-be82-139037d5c198
-  udp: true
-  tls: true
-  client-fingerprint: chrome
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  skip-cert-verify: false
-  servername: my.jadidistorefandogh.ir
-  network: ws
-  ws-opts:
-    path: /digikala.com/login/?ed=2560
-    headers:
-      Host: my.jadidistorefandogh.ir
-- name: CA_speednode_0002
+- name: CA_speednode_0001
   type: ss
   server: 149.22.95.183
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-- name: CA_speednode_0003
+- name: CA_speednode_0002
   server: 23.162.200.227
   port: 443
   type: vmess
@@ -38,27 +19,18 @@ proxies:
   ws-opts:
     path: /linkvws
   udp: true
-- name: CN_speednode_0004
-  server: dajbxtw.naikonode1.top
-  port: 15504
-  type: ssr
-  cipher: chacha20-ietf
-  obfs: plain
-  obfs-param: 83e2a40208.microsoft.com
-  password: NaikoCloud
-  protocol: auth_aes128_md5
-  protocol-param: 40208:yYyiNvXTethxtYP7
-  udp: true
-- name: CN_speednode_0005
-  server: b.baodesign.top
-  port: 25006
+- name: CN_speednode_0003
   type: vmess
-  uuid: ba2e86ee-65fc-4b4e-97c7-165b5b64023b
-  alterId: 0
+  server: 183.236.51.23
+  port: 51002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
   cipher: auto
-  tls: false
   udp: true
-- name: CR_speednode_0006
+  tls: false
+  skip-cert-verify: true
+  network: tcp
+- name: CR_speednode_0004
   type: vless
   server: 190.93.247.155
   port: 80
@@ -70,7 +42,7 @@ proxies:
     path: /vless
     headers:
       Host: Hu2.v2vless.site.
-- name: FR_speednode_0007
+- name: FR_speednode_0005
   type: vmess
   server: 23.162.152.177
   port: 443
@@ -86,27 +58,56 @@ proxies:
     path: /linkvws
     headers:
       Host: 23.162.152.177
-- name: GB_speednode_0008
+- name: FR_speednode_0006
+  type: vmess
+  server: 23.162.152.177
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 1
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: 23.162.152.177
+- name: GB_speednode_0007
   server: 212.102.47.131
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-- name: GB_speednode_0009
+- name: GB_speednode_0008
+  type: vless
+  server: 94.247.142.241
   port: 443
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: fq521.6789.cloudns.be
+  network: ws
+  ws-opts:
+    path: /twitterfreecodessecurityfp=chrome
+    headers:
+      Host: fq521.6789.cloudns.be
+- name: GB_speednode_0009
   server: 94.247.142.241
   type: vless
+  port: 443
+  udp: true
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
   network: ws
   tls: true
-  udp: true
-  servername: fq521.6789.cloudns.be
   skip-cert-verify: true
+  servername: fq521.6789.cloudns.be
   ws-opts:
     path: /Twitterfreecodes
     headers:
       Host: fq521.6789.cloudns.be
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
 - name: GB_speednode_0010
   port: 443
   server: 94.247.142.241
@@ -131,7 +132,7 @@ proxies:
   servername: fq521.6789.cloudns.be
   skip-cert-verify: true
   ws-opts:
-    path: /twitterfreecodessecurity
+    path: /Twitterfreecodes
     headers:
       Host: fq521.6789.cloudns.be
   uuid: 775213ac-3976-439a-8977-3277c0e4735d
@@ -149,8 +150,22 @@ proxies:
     headers:
       Host: fq521.6789.cloudns.be
   uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  client-fingerprint: chrome
 - name: GB_speednode_0013
+  port: 443
+  server: 94.247.142.241
+  type: vless
+  network: ws
+  tls: true
+  udp: true
+  servername: fq521.6789.cloudns.be
+  skip-cert-verify: true
+  ws-opts:
+    path: /twitterfreecodessecurity
+    headers:
+      Host: fq521.6789.cloudns.be
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  client-fingerprint: chrome
+- name: GB_speednode_0014
   type: vless
   server: 94.247.142.241
   port: 443
@@ -163,7 +178,21 @@ proxies:
     headers:
       Host: fq521.6789.cloudns.be
   udp: true
-- name: GB_speednode_0014
+- name: GB_speednode_0015
+  type: vless
+  network: ws
+  server: 94.247.142.241
+  port: 443
+  uuid: 775213ac-3976-439a-8977-3277c0e4735d
+  servername: fq521.6789.cloudns.be
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: fq521.6789.cloudns.be
+    path: /twitterfreecodessecurity
+  udp: true
+- name: GB_speednode_0016
   type: vless
   server: 94.247.142.241
   port: 443
@@ -182,63 +211,24 @@ proxies:
     path: /twitterfreecodessecurity=tls
     headers:
       Host: fq521.6789.cloudns.be
-- name: GB_speednode_0015
-  type: vless
-  network: ws
-  server: 94.247.142.241
-  port: 443
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  servername: fq521.6789.cloudns.be
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: fq521.6789.cloudns.be
-    path: /twitterfreecodessecurity
-  udp: true
-- name: GB_speednode_0016
-  server: 94.247.142.241
-  type: vless
-  port: 443
-  udp: true
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  network: ws
-  tls: true
-  skip-cert-verify: true
-  servername: fq521.6789.cloudns.be
-  ws-opts:
-    path: /Twitterfreecodes
-    headers:
-      Host: fq521.6789.cloudns.be
-- name: GB_speednode_0017
-  type: vless
-  server: 94.247.142.241
-  port: 443
-  uuid: 775213ac-3976-439a-8977-3277c0e4735d
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: fq521.6789.cloudns.be
-  network: ws
-  ws-opts:
-    path: /twitterfreecodessecurityfp=chrome
-    headers:
-      Host: fq521.6789.cloudns.be
-- name: IE_speednode_0018
+- name: IE_speednode_0017
   type: ss
   server: 52.164.203.76
   port: 20143
   cipher: chacha20-ietf-poly1305
   password: 81aBd6IJIgFwT1lqcojSzK
   udp: true
-- name: IN_speednode_0019
-  server: 103.174.86.113
-  port: 51348
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: vZr8MlUXUihNEndqIpjDxQdSeqi37FbgoHBmQ1syy6ZjkbBn
+- name: IR_speednode_0018
+  type: vless
+  server: 2.189.130.90
+  port: 35208
+  uuid: 173a3cf8-a87b-4e07-93cb-6a683712d13e
   udp: true
-- name: JO_speednode_0020
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+- name: JO_speednode_0019
   type: vless
   network: ws
   server: 62.72.166.67
@@ -251,76 +241,110 @@ proxies:
       Host: fq521.6789.cloudns.be
     path: /Twitter苏小柠
   udp: true
-- name: JP_speednode_0021
-  server: 149.22.87.241
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: JP_speednode_0022
+- name: JP_speednode_0020
   server: 149.22.87.240
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-- name: NL_speednode_0023
+- name: NL_speednode_0021
   type: ss
-  server: 79.127.239.84
-  port: 19175
+  server: 208.67.105.196
+  port: 42029
   cipher: chacha20-ietf-poly1305
-  password: 5Au7NhFmcBqMnika4KVk7h4ZdV3wD4hFtJ8PJ3AlHzLeU1chEBaz19a643q7hBPV
+  password: SjdGCHwafjktt1rzpGxTKYTvVBWb8Xa6E5DTr6MzbdHQSwvpLiDczj3n6MBjy2uyFSzgqgvCWsDQmpM4VQzfPzyGYF58wdyD
   udp: true
-- name: NL_speednode_0024
-  server: ams1.fromblancwithlove.com
-  port: 19175
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 5Au7NhFmcBqMnika4KVk7h4ZdV3wD4hFtJ8PJ3AlHzLeU1chEBaz19a643q7hBPV
+- name: RU_speednode_0022
+  type: vmess
+  server: n002.kovmk.website
+  port: 8080
+  uuid: 6dde3b3f-0a00-448a-a406-26d0960d1655
+  alterId: 0
+  cipher: auto
   udp: true
-- name: RU_speednode_0025
-  type: vless
-  network: ws
-  server: 188.42.145.159
-  port: 443
-  uuid: 54ef4ecf-ff37-436a-be13-95c8a8a1114d
-  servername: VIrgiNiavPn-nL.pagEs.dEv
-  skip-cert-verify: true
   tls: true
-  udp: true
+  servername: n002.kovmk.website
+  skip-cert-verify: true
+  network: ws
   ws-opts:
+    path: /xyz
     headers:
-      Host: VIrgiNiavPn-nL.pagEs.dEv
-    path: /security=tls
+      Host: daohang.kovmk.website
+- name: RU_speednode_0023
+  type: vmess
+  server: n001.kovmk.website
+  port: 8080
+  uuid: 92f1932f-ee19-464f-900c-93df90df830d
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: n001.kovmk.website
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /xyz
+    headers:
+      Host: daohang.kovmk.website
+- name: RU_speednode_0024
+  type: vmess
+  server: m003.mmzhk.website
+  port: 8080
+  uuid: 6dde3b3f-0a00-448a-a406-26d0960d1655
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: m003.mmzhk.website
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /xyz
+    headers:
+      Host: daohang.mmzhk.website
+- name: SC_speednode_0025
+  server: 154.83.2.54
+  type: vless
+  port: 2096
+  udp: true
+  uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
+  network: ws
+  tls: true
+  skip-cert-verify: true
+  servername: am-tunnel-6fs.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: am-tunnel-6fs.pages.dev
 - name: SC_speednode_0026
+  port: 2096
+  server: 154.83.2.54
   type: vless
   network: ws
-  server: 154.83.2.54
-  port: 2096
-  uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
-  servername: am-tunnel-6fs.pages.dev
-  skip-cert-verify: true
   tls: true
   udp: true
+  servername: am-tunnel-6fs.pages.dev
+  skip-cert-verify: true
   ws-opts:
+    path: /
     headers:
       Host: am-tunnel-6fs.pages.dev
-    path: /
+  uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
 - name: SC_speednode_0027
-  server: 154.83.2.54
   type: vless
-  port: 2096
-  udp: true
-  uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
   network: ws
-  tls: true
-  skip-cert-verify: true
+  server: 154.83.2.54
+  port: 2096
+  uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
   servername: am-tunnel-6fs.pages.dev
+  skip-cert-verify: true
+  tls: true
+  udp: true
   ws-opts:
-    path: /
     headers:
       Host: am-tunnel-6fs.pages.dev
+    path: /
 - name: SC_speednode_0028
   type: vless
   server: 154.83.2.54
@@ -334,21 +358,7 @@ proxies:
     headers:
       Host: am-tunnel-6fs.pages.dev
   udp: true
-- name: SC_speednode_0029
-  port: 2096
-  server: 154.83.2.54
-  type: vless
-  network: ws
-  tls: true
-  udp: true
-  servername: am-tunnel-6fs.pages.dev
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: am-tunnel-6fs.pages.dev
-  uuid: fe962226-fe1c-4391-a5ba-7b7c62adda19
-- name: SE_speednode_0030
+- name: SE_speednode_0029
   type: vless
   server: 185.146.173.58
   port: 8080
@@ -360,44 +370,26 @@ proxies:
     path: /servernett
     headers:
       Host: lc72.lebasnoo.ir.
-- name: US_speednode_0031
-  server: 104.19.209.229
+- name: US_speednode_0030
   type: vless
-  port: 8880
+  server: 167.82.30.71
+  port: 80
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   udp: true
-  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /?ed=2560
+    path: /4u7lAS4nPLtz0xPz?ed=2560
     headers:
-      Host: late-tooth.granzinhannah.workers.dev
-- name: US_speednode_0032
+      Host: samane.ir
+- name: US_speednode_0031
   server: 150.241.95.62
   port: 42445
   type: ss
   cipher: chacha20-ietf-poly1305
   password: flj72wu+&R
   udp: true
-- name: US_speednode_0033
-  server: 156.146.38.168
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: US_speednode_0034
-  type: vless
-  network: ws
-  server: 199.232.37.15
-  port: 80
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  skip-cert-verify: false
-  udp: true
-  ws-opts:
-    headers:
-      Host: sara193.ir
-    path: /BCXzvAcvSB7JzMWj?ed=2560
-- name: US_speednode_0035
+- name: US_speednode_0032
   type: vless
   server: 199.232.5.101
   port: 443
@@ -415,7 +407,26 @@ proxies:
     path: /H?ed=2560
     headers:
       Host: mefa.ir
-- name: US_speednode_0036
+- name: US_speednode_0033
+  type: vless
+  network: ws
+  server: 199.232.37.15
+  port: 80
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  skip-cert-verify: false
+  udp: true
+  ws-opts:
+    headers:
+      Host: sara193.ir
+    path: /BCXzvAcvSB7JzMWj?ed=2560
+- name: US_speednode_0034
+  server: 156.146.38.168
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: US_speednode_0035
   type: vless
   server: 199.232.37.15
   port: 80
@@ -427,7 +438,32 @@ proxies:
     path: /BCXzvAcvSB7JzMWj?ed=2560
     headers:
       Host: sara193.ir
+- name: US_speednode_0036
+  server: 38.110.1.107
+  port: 5000
+  type: ss
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
 - name: US_speednode_0037
+  server: 104.19.209.229
+  type: vless
+  port: 8880
+  udp: true
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: late-tooth.granzinhannah.workers.dev
+- name: US_speednode_0038
+  type: ss
+  server: 23.134.94.168
+  port: 3389
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
+- name: US_speednode_0039
   type: vless
   server: www.speedtest.net
   port: 443
@@ -445,48 +481,7 @@ proxies:
     path: /W5V92vB3BQrJH2yY?ed=2560
     headers:
       Host: cconfigplus.spdtest.ggff.net
-- name: US_speednode_0038
-  type: ss
-  server: 23.134.94.168
-  port: 3389
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  udp: true
-- name: US_speednode_0039
-  server: 38.110.1.107
-  port: 5000
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  udp: true
 - name: US_speednode_0040
-  type: trojan
-  server: 216.128.147.13
-  port: 443
-  password: wkmY1R4EcP
-  sni: z-v2-003274.kailib.com
-  skip-cert-verify: true
-  udp: true
-- name: US_speednode_0041
-  server: 142.202.48.105
-  port: 5004
-  type: ss
-  cipher: aes-256-gcm
-  password: g5MeD6Ft3CWlJId
-  udp: true
-- name: US_speednode_0042
-  type: vless
-  server: 167.82.30.71
-  port: 80
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /4u7lAS4nPLtz0xPz?ed=2560
-    headers:
-      Host: samane.ir
-- name: US_speednode_0043
   server: 159.246.55.132
   port: 443
   type: trojan
@@ -499,14 +494,7 @@ proxies:
       Host: vip.123789.pp.ua
   skip-cert-verify: true
   udp: true
-- name: US_speednode_0044
-  server: 38.121.43.204
-  port: 8090
-  type: ss
-  cipher: aes-256-gcm
-  password: PCnnH6SQSnfoS27
-  udp: true
-- name: US_speednode_0045
+- name: US_speednode_0041
   type: vmess
   server: 104.19.72.200
   port: 443
@@ -522,61 +510,112 @@ proxies:
     path: /juzi
     headers:
       Host: sjuzius.zdzdzd.xyz
-- name: US_speednode_0046
-  type: vmess
-  server: 69.50.93.90
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
+- name: US_speednode_0042
+  type: vless
+  server: 151.101.2.165
+  port: 80
+  uuid: 4639cda7-0742-4bcd-ab1e-b7c879c2189c
   udp: true
-  tls: true
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /linkvws
+    path: /v2pedia?ed=2048
     headers:
-      Host: 69.50.93.90
+      Host: que4.ir
+- name: US_speednode_0043
+  type: vless
+  server: 172.67.39.222
+  port: 443
+  uuid: eb64ed2c-46b3-4f67-b64d-5832cb810c65
+  udp: true
+  tls: true
+  client-fingerprint: random
+  alpn:
+  - http/1.1
+  skip-cert-verify: false
+  servername: yelafohfh9f9ufun.thelastronin.cloudns.org
+  network: ws
+  ws-opts:
+    path: /VLESS/nl-full.privateip.net
+    headers:
+      Host: yelan.thelastronin.cloudns.org
+- name: US_speednode_0044
+  type: vless
+  server: 104.21.69.44
+  port: 8443
+  uuid: 17fafaf9-7402-40eb-87ae-a75944c84c52
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: ggho.pages.dev.
+  network: ws
+  ws-opts:
+    path: /Telegram-@V2ray_Alpha/?ed=2048
+    headers:
+      Host: ggho.pages.dev.
+- name: US_speednode_0045
+  type: vless
+  server: 104.20.19.168
+  port: 8880
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: late-tooth.granzinhannah.workers.dev
+- name: US_speednode_0046
+  type: vless
+  server: 104.20.71.132
+  port: 8880
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /Telegram@Linkvws?ed=2560
+    headers:
+      Host: late-tooth.granzinhannah.workers.dev
 - name: US_speednode_0047
   type: vmess
-  server: 69.50.93.90
+  server: www.baldengineer.com
   port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  uuid: f584de15-2034-4170-a723-f48c2bae5e0f
   alterId: 0
   cipher: auto
   udp: true
   tls: true
+  servername: yen63jj36j3jfflan.thelastronin.cloudns.org
   skip-cert-verify: true
+  alpn:
+  - http/1.1
   network: ws
   ws-opts:
-    path: /linkvws
+    path: /linkws/afrhms16v.bestxray.buzz
+    headers:
+      Host: yelan.thelastronin.cloudns.org
 - name: US_speednode_0048
   type: vless
-  server: hajlab.ucdavis.edu
-  port: 443
-  uuid: 9e8aad0e-5ba2-4005-b5fb-03521dc00345
+  server: www.speedtest.net
+  port: 2095
+  uuid: a70e1ca7-0cfa-5d07-b068-ca7657f9aba8
   udp: true
-  tls: true
-  client-fingerprint: chrome
   skip-cert-verify: false
-  servername: hajlab.ucdavis.edu
   network: ws
   ws-opts:
-    path: /
+    path: /join-@mosiv2-@mosiv2-?ed=2048
     headers:
-      Host: wWw.SpEeDtEsT.NeT.ZuLa.aIr.IkCoSaLeS.iR.D662599.v03.TzZLiMitTNeW.NeT
+      Host: www.digikala.com.joinTelegram.mosiv2.fi3.vless.Sitespeedtest.net.
 - name: US_speednode_0049
   type: vless
-  server: hajlab.ucdavis.edu
-  port: 443
-  uuid: 9e8aad0e-5ba2-4005-b5fb-03521dc00345
+  server: www.speedtest.net
+  port: 2052
+  uuid: bd51708b-07de-561f-9053-d2e90ca4ee20
   udp: true
-  tls: true
-  client-fingerprint: chrome
   skip-cert-verify: false
-  servername: hajlab.ucdavis.edu
   network: ws
   ws-opts:
-    path: /
+    path: /join-@mosiv2-@mosiv2-?ed=2048
     headers:
-      Host: wWw.SpEeDtEsT.NeT.ZuLa.aIr.IkCoSaLeS.iR.D662599.v10.TzZLiMitTNeW.NeT
+      Host: www.digikala.com.joinTelegram.mosiv2.pl1.vless.Sitespeedtest.net.
